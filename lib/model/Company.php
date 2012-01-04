@@ -43,9 +43,7 @@ class Company extends BaseCompany
 	    	($this->isNew() && $this->getConfirmedAt())
 	    	)
 	    {
-
-
-
+	  		
 	    	$c = new Criteria();
 	    	$c->add(GlobalSettingPeer::NAME, 'Customer_Service_Department_Email');
 	    	
