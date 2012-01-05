@@ -40,7 +40,18 @@ class CARBORDFISH_SMS {
         $queryString = http_build_query($data, '', '&');
         $queryString = smsCharacter::smsCharacterReplacement($queryString);
         $res = file_get_contents('http://sms1.cardboardfish.com:9001/HTTPSMS?' . $queryString);
-        return $res;    
+        sleep(0.15);
+
+        $smsLog = new SmsLog();
+        $smsLog->setMessage($smsText);
+        $smsLog->setStatus($res);
+        $smsLog->setSenderName($senderName);
+        $smsLog->setMobileNumber($mobileNumber);
+        $smsLog->save();
+        if (substr($res, 0, 2) == 'OK')
+            return true;
+        else
+            return false;
     }
 
 }
