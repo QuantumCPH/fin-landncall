@@ -1,17 +1,23 @@
 
+<div id="sf_admin_container">
+ <h1>The News & Updates set for Agents </h1>
 
-<center><h2>The News & Updates set for Agents </h2></center>
-<p> </p>
-<table width="100%" border="2" cellspacing="0" cellpadding="0" class="callhistory">
-    <tr>
-    <td>ID</td>
-	<td>Active?</td>
-    <td>Starting Date</td>
-    <td>Heading</td>
-    <td>Message</td>
-    <td> </td>
+ 
+
+<div id="sf_admin_content">
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class="sf_admin_list">
+
+    <thead><tr>
+    <th>ID</th>
+	<th>Active?</th>
+    <th>Starting Date</th>
+    <th>Heading</th>
+    <th>Message</th>
+    <th> </th>
     
     </tr>
+    </thead><tbody>
 <?php
 foreach($messages as $message)
 {?>
@@ -34,5 +40,6 @@ foreach($messages as $message)
 }
 ?>
 
-</table>
-
+</table></tbody>
+</div>
+</div>
