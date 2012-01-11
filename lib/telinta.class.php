@@ -49,7 +49,7 @@ class Telienta {
 
     public static function createAAccount($mobileNumber, $uniqueId) {
 
-        $url = "https://mybilling.telinta.com/htdocs/zapna/zapna.pl?type=account&action=activate&name=a" . $mobileNumber . "&customer= " . $uniqueId . "&opening_balance=0&credit_limit=&product=" . self::$AProduct . "&outgoing_default_r_r=2034&billing_model=1&password=asdf1asd";
+        $url = "https://mybilling.telinta.com/htdocs/zapna/zapna.pl?type=account&action=activate&name=a" . $mobileNumber . "&customer=" . $uniqueId . "&opening_balance=0&credit_limit=&product=" . self::$AProduct . "&outgoing_default_r_r=2034&billing_model=1&password=asdf1asd";
         $aAccount = file_get_contents($url);
 
         sleep(0.5);
@@ -121,7 +121,7 @@ class Telienta {
 
      public static function getBalance($uniqueId){
 
-        $url = "https://mybilling.telinta.com/htdocs/zapna/zapna.pl?action=getbalance&name=' . $uniqueId . '&type=customer";
+        $url = "https://mybilling.telinta.com/htdocs/zapna/zapna.pl?action=getbalance&name=" . $uniqueId . "&type=customer";
         $bal = file_get_contents($url);
         sleep(0.5);
         if (!$bal) {
