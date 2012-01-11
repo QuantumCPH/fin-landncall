@@ -9,5 +9,7 @@
  */
 class cityActions extends autocityActions
 {
- 
+   public function handleErrorSave() {
+     $this->forward('city','edit');
+  }
 }

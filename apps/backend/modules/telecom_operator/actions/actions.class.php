@@ -9,5 +9,7 @@
  */
 class telecom_operatorActions extends autotelecom_operatorActions
 {
-  
+   public function handleErrorSave() {
+     $this->forward('telecom_operator','edit');
+  }
 }

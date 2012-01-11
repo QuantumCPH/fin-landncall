@@ -10,4 +10,7 @@
  */
 class manufacturerActions extends automanufacturerActions
 {
+     public function handleErrorSave() {
+     $this->forward('manufacturer','edit');
+  }
 }

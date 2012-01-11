@@ -10,6 +10,11 @@
  */
 class userActions extends autouserActions
 {
+        public function handleErrorSave() {
+     $this->forward('user','edit');
+  }
+
+
     public function executeLogin($request){
 
         $this->loginForm = new LoginForm();

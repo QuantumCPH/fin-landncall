@@ -125,8 +125,8 @@
                 <div id="m7"
                     onmouseover="mcancelclosetime()"
                     onmouseout="mclosetime()">
-		    <?php echo link_to('List All Updates', 'agent_company/newsList') ?>
-                    <?php echo link_to('New Update', 'agent_company/newsUpdate') ?>
+
+                    <?php echo link_to('New Updates', 'newupdate/index') ?>
                       <?php echo link_to('FAQ', 'faqs/index') ?>
                     <?php echo link_to('User Guide', 'userguide/index') ?>
 
@@ -146,20 +146,20 @@
 
                 </div>
             </li> -->
-            <li>
+        
+ <!--     <li>
                 <a href="#"
                 onmouseover="mopen('m9')"
                 onmouseout="mclosetime()">Revenue</a>
                 <div id="m9"
                     onmouseover="mcancelclosetime()"
                     onmouseout="mclosetime()">
-		    <?php echo link_to('Revenue Report', 'invoice/selectIntervalCompanyList') ?>
+		    <?php //echo link_to('Revenue Report', 'invoice/selectIntervalCompanyList') ?>
 
 
                 </div>
             </li>
-
- <!--         <li>
+        <li>
 				<a href="#"
                 onmouseover="mopen('m6')"
                 onmouseout="mclosetime()">Fonet</a>
@@ -242,12 +242,12 @@
                         <?php echo link_to('Mobile Models', 'device/index'); ?>
                         <?php echo link_to('Mobile Brands', 'manufacturer/index'); ?>
                         <?php echo link_to('Mobile Operator', 'telecom_operator/index') ?>
-                        <?php echo link_to('Postal charges', 'postal_charges/index') ?>
+                        <?php //echo link_to('Postal charges', 'postal_charges/index') ?>
                         <?php
                         // As per Omair Instruction - He need these changes - AHTSHAM - 08/17/2011
                         // echo link_to('<b></b>', '') ?>
-                        <a href="javascript:;"><b>Agent Setting</b></a>
-                         <?php echo link_to('Agent commission Invoices Note', 'invoice_note/index') ?>
+<!--                         <a href="javascript:;"><b>Agent Setting</b></a>-->
+                         <?php //echo link_to('Agent commission Invoices Note', 'invoice_note/index') ?>
                         <?php //echo link_to('apartment form', 'apartment_form/index') ?>
                         <?php //echo link_to('commission period', 'commission_period/index') ?>
                         <?php //echo link_to('revenue interval', 'revenue_interval/index') ?>
@@ -265,8 +265,9 @@
                         <?php echo link_to('Usage Alert', 'usage_alert/index') ?>
                         <?php echo link_to('Usage Alert Sender', 'usage_alert_sender/index') ?>
                         <?php echo link_to('Telecom Operator', 'telecom_operator/index') ?>
-                        <?php echo link_to('DeActivat eCustomer', 'customer/deActivateCustomer') ?>
-                        <a href="http://landncall.zerocall.com/backend_dev.php/client_documents">Upload Client Document</a>
+                        <?php //echo link_to('DeActivat eCustomer', 'customer/deActivateCustomer') ?>
+                         <?php //echo link_to('Upload Client Document', 'client_documents/index') ?>
+<!--                        <a href="https://wls2.zerocall.com/backend_dev.php/client_documents">Upload Client Document</a>-->
                         <?php //echo link_to('global setting', 'global_setting/index') ?>
                         <?php //echo link_to('employee products', 'employee_product/index') ?>
 
