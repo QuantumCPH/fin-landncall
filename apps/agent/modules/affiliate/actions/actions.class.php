@@ -358,21 +358,7 @@ class affiliateActions extends sfActions {
         if ($request->isMethod('post')) {
             $mobile_number = $request->getParameter('mobile_number');
             $extra_refill = $request->getParameter('extra_refill');
-
-//                        echo $mobile_number;
-//                        echo '<br/>';
-//                        echo $extra_refill;
-//                        echo '<br/>';
-
-
             $is_recharged = true;
-
-//                        if($agent->getIsPrepaid()==true){
-//                            if ($extra_refill > $agent->getBalance()){
-//                                $is_recharged = false;
-//                                $balance_error = true;
-//                            }
-//                        }
 
             $transaction = new Transaction();
             $order = new CustomerOrder();
@@ -393,55 +379,27 @@ class affiliateActions extends sfActions {
                 $this->error_mobile_number = 'invalid mobile number';
                 return;
             }
-
-
-//			echo 'validating form';
             if ($validated) {
-            //if(true)
-
-
-
-//                                echo "form valid";
-//                                echo '<br />';
-                //create order
-                //get customer first product purchase
                 $c = new Criteria();
                 $c->add(CustomerProductPeer::CUSTOMER_ID, $customer->getId());
                 $customer_product = CustomerProductPeer::doSelectOne($c)->getProduct();
-
-//                                echo 'customer product :';
-//                                echo $customer_product->getId();
-//                                echo '<br />';
-
                 $order->setCustomerId($customer->getId());
                 $order->setProductId($customer_product->getId());
                 $order->setQuantity(1);
                 $order->setExtraRefill($extra_refill);
                 $order->setIsFirstOrder(false);
                 $order->setOrderStatusId(sfConfig::get('app_status_new'));
-                //$order->setAgentCommissionPackageId($agent->getAgentCommissionPackageId());
-
                 $order->save();
-
-//				echo 'customer order :';
-//                                echo $order->getId();
-//                                echo '<br />';
-                //create transaction
 
                 $transaction->setOrderId($order->getId());
                 $transaction->setCustomerId($customer->getId());
                 $transaction->setAmount($extra_refill);
 
                 //get agent name
-                $transaction->setDescription($this->getContext()->getI18N()->__('LandNCall AB Refill via agent ') . '(' . $agent->getName() . ')');
+                $transaction->setDescription($this->getContext()->getI18N()->__('Refill via agent ') . '(' . $agent->getName() . ')');
                 $transaction->setAgentCompanyId($agent->getId());
 
-//                                echo "assigning commission";
-                //assign commission to transaction;
-                /////////////////////////////////////////////////////////////////////////////////////////////////
-                //    $order->setAgentCommissionPackageId($order->getCustomer()->getAgentCompany()->getAgentCommissionPackageId());
                 $order->setAgentCommissionPackageId($agent->getAgentCommissionPackageId());
-                ///////////////////////////commision calculation by agent product ///////////////////////////////////////
 
                 $agent_company_id = $this->getUser()->getAttribute('agent_company_id', '', 'usersession');
 
@@ -449,13 +407,10 @@ class affiliateActions extends sfActions {
                 $cp->add(AgentProductPeer::AGENT_ID, $agent_company_id);
                 $cp->add(AgentProductPeer::PRODUCT_ID, $order->getProductId());
                 $agentproductcount = AgentProductPeer::doCount($cp);
-
-
                 if ($agentproductcount > 0) {
                     $p = new Criteria;
                     $p->add(AgentProductPeer::AGENT_ID, $agent_company_id = $this->getUser()->getAttribute('agent_company_id', '', 'usersession'));
                     $p->add(AgentProductPeer::PRODUCT_ID, $order->getProductId());
-
                     $agentproductcomesion = AgentProductPeer::doSelectOne($p);
                     $agentcomession = $agentproductcomesion->getExtraPaymentsShareEnable();
                 }
@@ -463,23 +418,18 @@ class affiliateActions extends sfActions {
                 ////////   commission setting  through  agent commision//////////////////////
 
                 if ($agentcomession) {
-
                     if ($agentproductcomesion->getIsExtraPaymentsShareValuePc()) {
-
                         $transaction->setCommissionAmount(($transaction->getAmount() / 100) * $agentproductcomesion->getExtraPaymentsShareValue());
                     } else {
                         $transaction->setCommissionAmount($agentproductcomesion->getExtraPaymentsShareValue());
                     }
                 } else {
-
-
                     if ($commission_package->getIsExtraPaymentsShareValuePc()) {
                         $transaction->setCommissionAmount(($transaction->getAmount() / 100) * $commission_package->getExtraPaymentsShareValue());
                     } else {
                         $transaction->setCommissionAmount($commission_package->getExtraPaymentsShareValue());
                     }
                 }
-
                 //calculated amount for agent commission
                 if ($agent->getIsPrepaid() == true) {
                     if ($agent->getBalance() < ($transaction->getAmount() - $transaction->getCommissionAmount())) {
@@ -488,15 +438,8 @@ class affiliateActions extends sfActions {
                     }
                 }
 
-
-
-
-//                                echo 'is_recharged '.$is_recharged;
-//                                echo '<br/>';
                 if ($is_recharged) {
-//                                    echo 'isrecharged = true';
                     $transaction->save();
-
                     if ($agent->getIsPrepaid() == true) {
                         $agent->setBalance($agent->getBalance() - ($transaction->getAmount() - $transaction->getCommissionAmount()));
                         $agent->save();
@@ -512,47 +455,20 @@ class affiliateActions extends sfActions {
                         $aph->save();
                     }
 
-                    if ($customer->getFonetCustomerId()) {
-                        //                                        echo 'got fonet id';
-                        //                                        echo '<br/>';
-                        //                                        As per omair Instruction now need to rechange the account on Fonet on landncall  we not not Fonet system on landncall
-                        //Fonet::recharge($customer, $transaction->getAmount());
-                    }
-
-                    //When the customer account is being refilled from the agent portal, Telinta should be update also
-                    //Refill The Customer
                     $uniqueId = $customer->getUniqueid();
                     $OpeningBalance = $transaction->getAmount();
-
-                    if ($uniqueId != '') {
-                        $telintaRefillcustomer = file_get_contents('https://mybilling.telinta.com/htdocs/zapna/zapna.pl?action=recharge&name=' . $uniqueId . '&amount=' . $OpeningBalance . '&type=customer');
-                    }
-
-
-                    $string = $telintaRefillcustomer;
-                    $find = 'ERROR';
-                    if (strpos($string, $find)) {
-                        $message_body = $telintaRefillcustomer . "Error on Refill Customer<br / >Unique Id: $uniqueId";
-                        //Send Email to User/Agent/Support --- when Customer Refilll --- 01/15/11
-                        emailLib::sendErrorTelinta($this->customer, $message_body);
-                    } else {
-                        
-                    }
-
+                    Telienta::recharge($uniqueId, $transaction->getAmount());
                     //set status
                     $order->setOrderStatusId(sfConfig::get('app_status_completed'));
                     $transaction->setTransactionStatusId(sfConfig::get('app_status_completed'));
 
-
-
-
                     $order->save();
                     $transaction->save();
                     $this->customer = $order->getCustomer();
-                    $this->getUser()->setCulture('sv');
+                    $this->getUser()->setCulture('de');
                     emailLib::sendRefillEmail($this->customer, $order);
                     $this->getUser()->setCulture('en');
-                    $this->getUser()->setFlash('message', $this->getContext()->getI18N()->__('%1% account is successfully refilled with %2% SEK.', array("%1%" => $customer->getMobileNumber(), "%2%" => $transaction->getAmount())));
+                    $this->getUser()->setFlash('message', $this->getContext()->getI18N()->__('%1% account is successfully refilled with %2% EURO.', array("%1%" => $customer->getMobileNumber(), "%2%" => $transaction->getAmount())));
 //                                      echo 'rehcarged, redirecting';
                     $this->redirect('affiliate/receipts');
                 } else {
@@ -1196,7 +1112,6 @@ class affiliateActions extends sfActions {
         $ca->add(AgentCompanyPeer::ID, $agent_company_id = $this->getUser()->getAttribute('agent_company_id', '', 'usersession'));
         $agent = AgentCompanyPeer::doSelectOne($ca);
         //echo $agent->getId();
-
         //getting agent commission
         $cc = new Criteria();
         $cc->add(AgentCommissionPackagePeer::ID, $agent->getAgentCommissionPackageId());
@@ -1287,17 +1202,17 @@ class affiliateActions extends sfActions {
 
 
 /////////////////////////end of commission setting ////////////////////////////////////////////
-           // echo 'entering if';
-          //  echo '<br/>';
+            // echo 'entering if';
+            //  echo '<br/>';
             if ($agent->getIsPrepaid() == true) {
 
-               // echo 'agent is prepaid';
-              //  echo '<br/>';
-              //  echo $agent->getBalance();
-               // echo '<br/>';
-              //  echo $transaction->getCommissionAmount();
-               // echo '<br/>';
-               // echo $agent->getBalance() < $transaction->getCommissionAmount();
+                // echo 'agent is prepaid';
+                //  echo '<br/>';
+                //  echo $agent->getBalance();
+                // echo '<br/>';
+                //  echo $transaction->getCommissionAmount();
+                // echo '<br/>';
+                // echo $agent->getBalance() < $transaction->getCommissionAmount();
 
                 if ($agent->getBalance() < ($transaction->getAmount() - $transaction->getCommissionAmount())) {
                     $this->redirect('affiliate/setProductDetails?product_id=' . $order->getProductId() . '&customer_id=' . $transaction->getCustomerId() . '&balance_error=1');
@@ -1377,9 +1292,9 @@ class affiliateActions extends sfActions {
             $getFirstnumberofMobile = substr($this->customer->getMobileNumber(), 0, 1);     // bcdef
             if ($getFirstnumberofMobile == 0) {
                 $TelintaMobile = substr($this->customer->getMobileNumber(), 1);
-                $TelintaMobile = '46' . $TelintaMobile;
+                $TelintaMobile = '49' . $TelintaMobile;
             } else {
-                $TelintaMobile = '46' . $this->customer->getMobileNumber();
+                $TelintaMobile = '49' . $this->customer->getMobileNumber();
             }
 
             $callbacklog = new CallbackLog();
@@ -1393,10 +1308,6 @@ class affiliateActions extends sfActions {
             Telienta::ResgiterCustomer($this->customer->getUniqueid(), $order->getExtraRefill());
             Telienta::createAAccount($TelintaMobile, $this->customer->getUniqueid());
             //Telienta::createCBount($TelintaMobile, $this->customer->getUniqueid());
-            
-
-            
-
             //generate Email
             $this->getUser()->setCulture('de');
             emailLib::sendCustomerRegistrationViaAgentEmail($this->customer, $order);

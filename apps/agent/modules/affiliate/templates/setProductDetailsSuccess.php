@@ -226,7 +226,7 @@ $product_price = ($order->getProduct()->getPrice() - $order->getProduct()->getIn
 
 echo $product_price;
 ?>" />
-                        <label class="fr ac"><span class="vat_span"> <?php echo format_number($product_price) ?> </span>SEK</label>
+                        <label class="fr ac"><span class="vat_span"> <?php echo format_number($product_price) ?> </span>&euro;</label>
                         <br />
                         <input type="hidden" id="extra_refill" value="<?php $extra_refill = $order->getExtraRefill();
                                echo $extra_refill; ?>" />
