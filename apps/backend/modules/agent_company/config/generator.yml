@@ -6,7 +6,7 @@ generator:
     theme:            default
     edit:
       title: Create/Edit AgentCompany
-      display: [name, cvr_number,ean_number,address,post_code,country_id,cityname,contact_name,email, mobile_number,head_phone_number,fax_number,website,status_id,company_type_id,account_manager_id,agent_commission_package_id,sms_code,is_prepaid,balance,invoice_method_id]
+      display: [name, cvr_number,ean_number,address,post_code,country_id,cityname,contact_name,email, mobile_number,head_phone_number,mobile_number,fax_number,website,status_id,company_type_id,account_manager_id,agent_commission_package_id,sms_code,is_prepaid,balance,invoice_method_id]
       fields:
          enablecountry: {name: Country}
              
