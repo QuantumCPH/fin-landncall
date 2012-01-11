@@ -14,11 +14,10 @@ class Telienta {
 
     //put your code here
 
-    private static $customerReseller = '';
+    private static $customerReseller = 'R_Partner_WLS2d';
     private static $companyReseller = '';
-    private static $currency = '';
-    private static $enable_dialingrules = '';
-    private static $AProduct = '';
+    private static $currency = 'EUR';
+    private static $AProduct = 'WLS2_CT';
     private static $CBProduct = '';
     private static $VoipProduct = '';
 
