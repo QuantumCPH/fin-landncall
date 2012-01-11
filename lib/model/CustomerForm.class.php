@@ -40,25 +40,7 @@ class CustomerForm extends BaseCustomerForm
                //Product / Country Change As Per Sub-Domain - dk/pl/intl - Against New Feature
                 $mystring = @$_SERVER["HTTP_REFERER"];
                // Add As Per requirements - - - -
-                if(strpos($mystring, 'dk.zerocall.com')==true){
-                   sfContext::getInstance()->getUser()->setAttribute('productslng', 'SE');
-                   $lngSymbol = sfContext::getInstance()->getUser()->getAttribute('productslng', '');
-                }else if(strpos($mystring, 'pl.zerocall.com')==true){
-                    sfContext::getInstance()->getUser()->setAttribute('productslng', 'SE');
-                   $lngSymbol = sfContext::getInstance()->getUser()->getAttribute('productslng', '');
-                }else if(strpos($mystring, 'intl.zerocall.com')==true){
-                   sfContext::getInstance()->getUser()->setAttribute('productslng', 'SE');
-                   $lngSymbol = sfContext::getInstance()->getUser()->getAttribute('productslng', '');
-                }else{
-                    if(sfContext::getInstance()->getUser()->getAttribute('productslng', '')!=''){
-                         sfContext::getInstance()->getUser()->setAttribute('productslng', 'SE');
-                        $lngSymbol = sfContext::getInstance()->getUser()->getAttribute('productslng', '');
-                    }else{
-                        
-                        sfContext::getInstance()->getUser()->setAttribute('productslng', 'SE');
-                        $lngSymbol = sfContext::getInstance()->getUser()->getAttribute('productslng', '');
-                    }
-                }
+
 
                 $countrylng = new Criteria();
                 $countrylng->add(EnableCountryPeer::LANGUAGE_SYMBOL, $lngSymbol);

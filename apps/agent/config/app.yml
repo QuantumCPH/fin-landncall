@@ -23,4 +23,4 @@ all:
    error: 5
    #
    pending: 4
- main_url: http://localhost/wls2/web/agent_dev.php
+ main_url: http://localhost/wls2/web/agent_dev.php/

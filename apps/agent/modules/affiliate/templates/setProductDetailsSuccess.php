@@ -138,7 +138,7 @@
 		
         //if (!valid)
         //	alert('Please complete out the payment form.');
-		
+	
         return valid;
     }
 	
@@ -271,12 +271,12 @@ echo $product_price;
                         <label class="fr ac" >
                             <span id="vat_span">
 <?php echo format_number($vat) ?>
-                               </span> SEK
+                            </span> &euro;
                                <br />
 <?php $total = $product_price + $extra_refill + $vat ?>
                             <span id="total_span">
                     <?php echo format_number($total) ?>
-                                       </span> SEK
+                            </span> &euro;
                                    </label>
                                </li>
                     <?php if ($sf_user->hasFlash('error_message')): ?>

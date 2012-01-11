@@ -14,7 +14,7 @@ require_once(sfConfig::get('sf_lib_dir') . '/changeLanguageCulture.php');
 class affiliateActions extends sfActions {
 
     private function getTargetUrl() {
-        return config("main_url") . "affiliate";
+        return sfConfig::get('app_main_url') . "affiliate/";
     }
 
     /**
@@ -1398,7 +1398,7 @@ class affiliateActions extends sfActions {
             
 
             //generate Email
-            $this->getUser()->setCulture('gr');
+            $this->getUser()->setCulture('de');
             emailLib::sendCustomerRegistrationViaAgentEmail($this->customer, $order);
             $this->getUser()->setCulture('en');
             $this->getUser()->setFlash('message', 'Customer ' . $this->customer->getMobileNumber() . ' is registered successfully');
