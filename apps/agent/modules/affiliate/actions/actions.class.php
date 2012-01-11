@@ -1392,7 +1392,7 @@ class affiliateActions extends sfActions {
 
             Telienta::ResgiterCustomer($this->customer->getUniqueid(), $order->getExtraRefill());
             Telienta::createAAccount($TelintaMobile, $this->customer->getUniqueid());
-            Telienta::createCBount($TelintaMobile, $this->customer->getUniqueid());
+            //Telienta::createCBount($TelintaMobile, $this->customer->getUniqueid());
             
 
             
