@@ -14,7 +14,7 @@ class Telienta {
 
     //put your code here
 
-    private static $customerReseller = 'R_Partner_WLS2d';
+    private static $customerReseller = 'R_Partner_WLS2';
     private static $companyReseller = '';
     private static $currency = 'EUR';
     private static $AProduct = 'WLS2_CT';
