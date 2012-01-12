@@ -66,7 +66,7 @@
   		
       </ul>
       <ul id="sddm">
-             <li><a href="#"
+<!--             <li><a href="#"
                 onmouseover="mopen('m2')"
                 onmouseout="mclosetime()">B2B</a>
                 <div id="m2"
@@ -82,23 +82,23 @@
                     <?php //echo link_to('invoices', 'invoice/index'); ?>
                     <?php //echo link_to('Product orders', 'product_order/index') ?>
                 </div>
-            </li>
+            </li>-->
             <li>
                 <a href="#"
                 onmouseover="mopen('m5')"
-                onmouseout="mclosetime()">Landncall</a>
+                onmouseout="mclosetime()">Wls2</a>
                 <div id="m5"
                     onmouseover="mcancelclosetime()"
                     onmouseout="mclosetime()">
                     <?php echo link_to('All Registered Customer', 'customer/allRegisteredCustomer'); ?>
-                    <?php echo link_to('Registered Customer(Web)', 'customer/registeredByWeb'); ?>
-                    <?php echo link_to('Registered Customer(Agent)', 'customer/registeredByAgent'); ?>
-                    <?php echo link_to('Registered Customer(Agent Link)', 'customer/registeredByAgentLink'); ?>
-                    <?php echo link_to('Registered Customer(Agent SMS)', 'customer/registeredBySms'); ?>
-                    <?php echo link_to('Registered Customer(Mobile App)', 'customer/registeredByApp'); ?>
-                    <?php echo link_to('Partial Registeration(Web)', 'customer/partialRegisteredByWeb'); ?>
-                    <?php echo link_to('Partial Registeration(Agent)', 'customer/partialRegisteredByAgent'); ?>
-                    <?php echo link_to('Partial Registeration(Agent Link)', 'customer/partialRegisteredByAgentLink'); ?>
+                    <?php //echo link_to('Registered Customer(Web)', 'customer/registeredByWeb'); ?>
+                    <?php //echo link_to('Registered Customer(Agent)', 'customer/registeredByAgent'); ?>
+                    <?php //echo link_to('Registered Customer(Agent Link)', 'customer/registeredByAgentLink'); ?>
+                    <?php //echo link_to('Registered Customer(Agent SMS)', 'customer/registeredBySms'); ?>
+                    <?php //echo link_to('Registered Customer(Mobile App)', 'customer/registeredByApp'); ?>
+                    <?php //echo link_to('Partial Registeration(Web)', 'customer/partialRegisteredByWeb'); ?>
+                    <?php //echo link_to('Partial Registeration(Agent)', 'customer/partialRegisteredByAgent'); ?>
+                    <?php //echo link_to('Partial Registeration(Agent Link)', 'customer/partialRegisteredByAgentLink'); ?>
                 </div>
             </li>
 
