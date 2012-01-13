@@ -7,7 +7,7 @@
         <?php include_title() ?>
         <?php
                 $va = new Criteria();
-		$va->add(AgentCompanyPeer::ID, $sf_user->getAttribute('agent_company_id', '', 'usersession'));
+		$va->add(AgentCompanyPeer::ID, $sf_user->getAttribute('agent_company_id', '', 'agentsession'));
 		$agent_company = AgentCompanyPeer::doSelectOne($va);
                 
         ?>
@@ -33,9 +33,9 @@ color:#F00000;
                     <h1 class="slogan">CRM/Billing/Agent Portal</h1>
                 </div>
 
-                <?php if($sf_user->getAttribute('username', '', 'usersession')){?>
+                <?php if($sf_user->getAttribute('username', '', 'agentsession')){?>
                  <div id="slogan" style="position:absolute; left: 812px; top: -6px; width: 104px; white-space:nowrap;">
-<?php echo __('Logged in as:') ?><b>&nbsp;<?php echo $sf_user->getAttribute('username', '', 'usersession')?></b><br />
+<?php echo __('Logged in as:') ?><b>&nbsp;<?php echo $sf_user->getAttribute('username', '', 'agentsession')?></b><br />
                     <?php
                         if($agent_company){
                         if($agent_company->getIsPrepaid()){ ?>
@@ -118,8 +118,8 @@ color:#F00000;
                 <?php if($sf_user->isAuthenticated()): ?>
                 <div>&nbsp;</div>
                 <p ><br /><?php echo __('Provide this link to your customers while they signup with your reference.') ?>				
-				<a href="http://landncall.zerocall.com/b2c/signup/step1?ref=<?php echo $sf_user->getAttribute('agent_company_id', '', 'usersession') ?>">
-				http://landncall.zerocall.com/b2c/signup/step1?ref=<?php echo $sf_user->getAttribute('agent_company_id', '', 'usersession')?>
+				<a href="http://landncall.zerocall.com/b2c/signup/step1?ref=<?php echo $sf_user->getAttribute('agent_company_id', '', 'agentsession') ?>">
+				http://landncall.zerocall.com/b2c/signup/step1?ref=<?php echo $sf_user->getAttribute('agent_company_id', '', 'agentsession')?>
 				</a>			
 				</p>				
 				<?php endif; ?>

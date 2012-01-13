@@ -136,7 +136,7 @@ $wrap_content  = isset($wrap)?$wrap:false;
     <?php if ($order->getIsFirstOrder())
     {
         echo $order->getProduct()->getName();
-        if($transaction->getDescription()=="Registrering inkl. taletid"){
+        if($transaction->getDescription()=="Anmeldung inc. sprechen"){
           echo "<br />[Smartsim inklusive pott]";
         }else{
             echo  '<br />['. $transaction->getDescription() .']';

@@ -80,9 +80,9 @@ class agentUserActions extends sfActions {
 
                 if($agent_user){
                     $this->getUser()->setAuthenticated(true);
-                    $this->getUser()->setAttribute('agent_id', $agent_user->getId(), 'usersession');
-                      $this->getUser()->setAttribute('username', $agent_user->getUsername(), 'usersession');
-                    $this->getUser()->setAttribute('agent_company_id', $agent_user->getAgentCompanyId(), 'usersession');
+                    $this->getUser()->setAttribute('agent_id', $agent_user->getId(), 'agentsession');
+                      $this->getUser()->setAttribute('username', $agent_user->getUsername(), 'agentsession');
+                    $this->getUser()->setAttribute('agent_company_id', $agent_user->getAgentCompanyId(), 'agentsession');
                     //$this->redirect('@homepage');
                     $this->redirect('affiliate/report?show_summary=1');
                 }
@@ -91,7 +91,7 @@ class agentUserActions extends sfActions {
     }
 
     public function executeLogout(){
-        $this->getUser()->getAttributeHolder()->removeNamespace('usersession');
+        $this->getUser()->getAttributeHolder()->removeNamespace('agentsession');
         $this->getUser()->setAuthenticated(false);
         $this->redirect('@homepage');
     }

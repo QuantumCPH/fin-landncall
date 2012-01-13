@@ -13,7 +13,7 @@ class companyActions extends sfActions
   public function executeIndex(sfWebRequest $request)
   {
       $c = new Criteria();
-      $c->add(CompanyPeer::AGENT_COMPANY_ID, $this->getUser()->getAttribute('agent_company_id', '', 'usersession'));
+      $c->add(CompanyPeer::AGENT_COMPANY_ID, $this->getUser()->getAttribute('agent_company_id', '', 'agentsession'));
       $c->addDescendingOrderByColumn('created_at');
 
     $this->company_list = CompanyPeer::doSelect($c);
@@ -23,7 +23,7 @@ class companyActions extends sfActions
   {
       $this->form = new CompanyForm();
 
-      $agent_user = AgentUserPeer::retrieveByPK($this->getUser()->getAttribute('agent_id', '', 'usersession'));
+      $agent_user = AgentUserPeer::retrieveByPK($this->getUser()->getAttribute('agent_id', '', 'agentsession'));
 
       $this->form->setDefault('agent_company_id', $agent_user->getAgentCompanyId());
 

@@ -94,7 +94,7 @@ class agentcompanyActions extends sfActions
       //call Culture Method For Get Current Set Culture - Against Feature# 6.1 --- 01/24/11 - Ahtsham
      changeLanguageCulture::languageCulture($request,$this);
      
-      $agent_id = $this->getUser()->getAttribute('agent_id', '', 'usersession');
+      $agent_id = $this->getUser()->getAttribute('agent_id', '', 'agentsession');
 
       $agent = AgentUserPeer::retrieveByPK($agent_id);
 

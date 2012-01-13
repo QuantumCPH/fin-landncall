@@ -13,7 +13,7 @@ class employeeActions extends sfActions
   public function executeIndex(sfWebRequest $request)
   {
     $c = new Criteria();
-    $this->employee_list = EmployeePeer::getEmployeeList($this->getUser()->getAttribute('agent_company_id', '', 'usersession'));
+    $this->employee_list = EmployeePeer::getEmployeeList($this->getUser()->getAttribute('agent_company_id', '', 'agentsession'));
   }
 
   public function executeNew(sfWebRequest $request)

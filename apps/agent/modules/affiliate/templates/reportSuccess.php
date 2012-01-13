@@ -163,7 +163,7 @@
 		?>
 		<?php
                      // echo  $description=substr($efo->getDescription(),0 ,26).'<br>';                      
-                        $stringfind  = 'LandNCall AB Refill via agent';
+                        $stringfind  = 'Refill via agent';
                         // echo $efo->getDescription().'<br>';    
                         //$description = strpos($efo->getDescription(), $findme);
 
