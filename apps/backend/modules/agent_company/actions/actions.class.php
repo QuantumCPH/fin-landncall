@@ -10,6 +10,10 @@
  */
 class agent_companyActions extends autoagent_companyActions
 {
+
+         public function handleErrorSave() {
+     $this->forward('agent_company','edit');
+  }
     public function executeCountrycity($request){
 
 		$this->country_id = 2;

@@ -3,7 +3,13 @@ generator:
   param:
     model_class:      Device
     theme:            default
-    
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          categories
+    with_propel_route:     1
+ 
     list:
       display: [id, name, manufacturer]
       fields:
@@ -15,8 +21,5 @@ generator:
     edit:
       title: 'Create/Edit device'
       display: [id, name, manufacturer_id]
-    create:
-      title: 'Create device'
-      display: [id, name, manufacturer_id]
-      _delete: ~
+    
       

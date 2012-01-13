@@ -18,8 +18,8 @@ class BaseAgentCompanyForm extends BaseFormPropel
       'ean_number'                  => new sfWidgetFormInput(),
       'address'                     => new sfWidgetFormInput(),
       'post_code'                   => new sfWidgetFormInput(),
-      'country_id'                  => new sfWidgetFormPropelChoice(array('model' => 'Country', 'add_empty' => true)),
-      'city_id'                     => new sfWidgetFormPropelChoice(array('model' => 'City', 'add_empty' => true)),
+      'country_id'                  => new sfWidgetFormPropelChoice(array('model' => 'EnableCountry', 'add_empty' => true)),
+      'cityname'                    => new sfWidgetFormInput(),
       'contact_name'                => new sfWidgetFormInput(),
       'email'                       => new sfWidgetFormInput(),
       'mobile_number'               => new sfWidgetFormInput(),
@@ -36,7 +36,7 @@ class BaseAgentCompanyForm extends BaseFormPropel
       'sms_code'                    => new sfWidgetFormInput(),
       'is_prepaid'                  => new sfWidgetFormInputCheckbox(),
       'balance'                     => new sfWidgetFormInput(),
-      'invoice_method_id'           => new sfWidgetFormInput(),
+      'invoice_method_id'           => new sfWidgetFormPropelChoice(array('model' => 'InvoiceMethod', 'add_empty' => false)),
     ));
 
     $this->setValidators(array(
@@ -46,8 +46,8 @@ class BaseAgentCompanyForm extends BaseFormPropel
       'ean_number'                  => new sfValidatorInteger(array('required' => false)),
       'address'                     => new sfValidatorString(array('max_length' => 255)),
       'post_code'                   => new sfValidatorInteger(),
-      'country_id'                  => new sfValidatorPropelChoice(array('model' => 'Country', 'column' => 'id', 'required' => false)),
-      'city_id'                     => new sfValidatorPropelChoice(array('model' => 'City', 'column' => 'id', 'required' => false)),
+      'country_id'                  => new sfValidatorPropelChoice(array('model' => 'EnableCountry', 'column' => 'id', 'required' => false)),
+      'cityname'                    => new sfValidatorString(array('max_length' => 255, 'required' => false)),
       'contact_name'                => new sfValidatorString(array('max_length' => 150)),
       'email'                       => new sfValidatorString(array('max_length' => 255)),
       'mobile_number'               => new sfValidatorString(array('max_length' => 255)),
@@ -64,7 +64,7 @@ class BaseAgentCompanyForm extends BaseFormPropel
       'sms_code'                    => new sfValidatorString(array('max_length' => 4, 'required' => false)),
       'is_prepaid'                  => new sfValidatorBoolean(array('required' => false)),
       'balance'                     => new sfValidatorNumber(array('required' => false)),
-      'invoice_method_id'           => new sfValidatorInteger(),
+      'invoice_method_id'           => new sfValidatorPropelChoice(array('model' => 'InvoiceMethod', 'column' => 'id')),
     ));
 
     $this->widgetSchema->setNameFormat('agent_company[%s]');
