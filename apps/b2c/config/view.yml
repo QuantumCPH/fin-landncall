@@ -3,7 +3,7 @@ default:
     content-type: text/html
 
   metas:
-    title:         LandNCall AB
+    title:         WLS2
     #description:  symfony project
     #keywords:     symfony, project
     #language:     en

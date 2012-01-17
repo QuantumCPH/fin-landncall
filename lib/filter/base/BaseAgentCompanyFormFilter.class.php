@@ -19,8 +19,8 @@ class BaseAgentCompanyFormFilter extends BaseFormFilterPropel
       'ean_number'                  => new sfWidgetFormFilterInput(),
       'address'                     => new sfWidgetFormFilterInput(),
       'post_code'                   => new sfWidgetFormFilterInput(),
-      'country_id'                  => new sfWidgetFormPropelChoice(array('model' => 'Country', 'add_empty' => true)),
-      'city_id'                     => new sfWidgetFormPropelChoice(array('model' => 'City', 'add_empty' => true)),
+      'country_id'                  => new sfWidgetFormPropelChoice(array('model' => 'EnableCountry', 'add_empty' => true)),
+      'cityname'                    => new sfWidgetFormFilterInput(),
       'contact_name'                => new sfWidgetFormFilterInput(),
       'email'                       => new sfWidgetFormFilterInput(),
       'mobile_number'               => new sfWidgetFormFilterInput(),
@@ -37,7 +37,7 @@ class BaseAgentCompanyFormFilter extends BaseFormFilterPropel
       'sms_code'                    => new sfWidgetFormFilterInput(),
       'is_prepaid'                  => new sfWidgetFormChoice(array('choices' => array('' => 'yes or no', 1 => 'yes', 0 => 'no'))),
       'balance'                     => new sfWidgetFormFilterInput(),
-      'invoice_method_id'           => new sfWidgetFormFilterInput(),
+      'invoice_method_id'           => new sfWidgetFormPropelChoice(array('model' => 'InvoiceMethod', 'add_empty' => true)),
     ));
 
     $this->setValidators(array(
@@ -46,8 +46,8 @@ class BaseAgentCompanyFormFilter extends BaseFormFilterPropel
       'ean_number'                  => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
       'address'                     => new sfValidatorPass(array('required' => false)),
       'post_code'                   => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
-      'country_id'                  => new sfValidatorPropelChoice(array('required' => false, 'model' => 'Country', 'column' => 'id')),
-      'city_id'                     => new sfValidatorPropelChoice(array('required' => false, 'model' => 'City', 'column' => 'id')),
+      'country_id'                  => new sfValidatorPropelChoice(array('required' => false, 'model' => 'EnableCountry', 'column' => 'id')),
+      'cityname'                    => new sfValidatorPass(array('required' => false)),
       'contact_name'                => new sfValidatorPass(array('required' => false)),
       'email'                       => new sfValidatorPass(array('required' => false)),
       'mobile_number'               => new sfValidatorPass(array('required' => false)),
@@ -64,7 +64,7 @@ class BaseAgentCompanyFormFilter extends BaseFormFilterPropel
       'sms_code'                    => new sfValidatorPass(array('required' => false)),
       'is_prepaid'                  => new sfValidatorChoice(array('required' => false, 'choices' => array('', 1, 0))),
       'balance'                     => new sfValidatorSchemaFilter('text', new sfValidatorNumber(array('required' => false))),
-      'invoice_method_id'           => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
+      'invoice_method_id'           => new sfValidatorPropelChoice(array('required' => false, 'model' => 'InvoiceMethod', 'column' => 'id')),
     ));
 
     $this->widgetSchema->setNameFormat('agent_company_filters[%s]');
@@ -89,7 +89,7 @@ class BaseAgentCompanyFormFilter extends BaseFormFilterPropel
       'address'                     => 'Text',
       'post_code'                   => 'Number',
       'country_id'                  => 'ForeignKey',
-      'city_id'                     => 'ForeignKey',
+      'cityname'                    => 'Text',
       'contact_name'                => 'Text',
       'email'                       => 'Text',
       'mobile_number'               => 'Text',
@@ -106,7 +106,7 @@ class BaseAgentCompanyFormFilter extends BaseFormFilterPropel
       'sms_code'                    => 'Text',
       'is_prepaid'                  => 'Boolean',
       'balance'                     => 'Number',
-      'invoice_method_id'           => 'Number',
+      'invoice_method_id'           => 'ForeignKey',
     );
   }
 }

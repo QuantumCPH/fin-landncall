@@ -5,15 +5,14 @@
   <div class="left-col">
     <div class="split-form-sign-up">
         <div class="step-details"> <strong><?php echo __('Become a Customer') ?> <span class="active">- <?php echo __('Step 1') ?>: <?php echo __('Registrera') ?> </span><span class="inactive">- <?php echo __('Step 2') ?>: <?php echo __('Payment') ?></span></strong>
-            <br></br><br></br> * obligatoriska fält att att fylla i</div>
-      
-      <div class="fl col">
+            </br></br></br></br> * Pflichtfelder auszufüllen</div>
+            <div class="fl col">
         <?php echo $form->renderHiddenFields() ?>
-          <ul>
+          <ul>   
             <?php 
             $error_mobile_number = false;
             if($form['mobile_number']->hasError())
-            	$error_mobile_number = true;
+            $error_mobile_number = true;
             ?>
             <li>
              <?php echo $form['mobile_number']->renderLabel() ?>
@@ -229,8 +228,7 @@
              <div class='inline-error'><?php echo $error_telecom_operator_id?$form['telecom_operator_id']->renderError():'&nbsp;'?></div>
             </li>
             <!-- end telecom operator -->
-            
-            <!-- 
+                        <!-- 
           <li class="fr"><img src="<?php echo image_path('../zerocall/images/moto-flipout.png') ?>" alt=" " /></li>
            -->
           <!-- end device -->
@@ -248,7 +246,7 @@
             <?php } ?>
             <li style=" width: 200px;">
              <?php echo $form['terms_conditions'] ?>
-             <span><a href="http://www.landncall.com/index.php?option=com_content&view=article&id=70" target="_blank" style="outline:none"><?php echo $form['terms_conditions']->renderHelp() ?></a></span>
+             <span><a href="#" target="_blank" style="outline:none"><?php echo $form['terms_conditions']->renderHelp() ?></a></span>
              </li>
 			 <?php
             $error_is_newsletter_subscriber = false;;
@@ -263,24 +261,21 @@
             <li style="display:none">
              <?php echo $form['is_newsletter_subscriber'] ?>
              <span><?php echo $form['is_newsletter_subscriber']->renderHelp() ?></span>
-            </li>
+            </li>  
 			</div>
-          <!-- end newsletter -->
-		  
-			 <div id="content" >
+          <!-- end newsletter --><br/>
+          <li>
+		 <div id="content" >
 			 	<input type="submit" class="butonsigninsmall" name="submit" style="cursor: pointer; margin-left: 70px;"  value="<?php echo __('Next') ?>" ></div>
-			
-            </li>
-			</div>
+					</div>     </li>
           <!-- end terms and conditions -->
-            
-          <li class="fr buttonplacement">     </li>
+         <li class="fr buttonplacement">     </li>
         </ul>   
                  
      
       </div>
     </div>
-	<?php //include_partial('signup/steps_indicator', array('active_step'=>1)) ?>
+	 
   </div>
 </form>
 <script type="text/javascript">

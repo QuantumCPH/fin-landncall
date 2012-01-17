@@ -43,7 +43,7 @@ class changeLanguageCulture{
                     $clsObj->getUser()->setAttribute('activelanguage', $getCultue);
 					
                 }else if($activelanguage!='' &&  ($request->getParameter('language')=='')){
-                    $clsObj->getUser()->setCulture('sv');
+                    $clsObj->getUser()->setCulture('de');
                     $getCultue = $clsObj->getUser()->getCulture();
                      // Store data in the user session
                     $clsObj->getUser()->setAttribute('activelanguage', $getCultue);
@@ -75,7 +75,7 @@ class changeLanguageCulture{
                         $clsObj->getUser()->setAttribute('activelanguage', $getCultue);
                     }else{
                         
-                        $clsObj->getUser()->setCulture('sv');
+                        $clsObj->getUser()->setCulture('de');
                         $getCultue = $clsObj->getUser()->getCulture();
                         // Store data in the user session
                         $clsObj->getUser()->setAttribute('activelanguage', $getCultue);

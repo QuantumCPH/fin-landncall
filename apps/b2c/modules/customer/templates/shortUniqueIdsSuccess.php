@@ -5,4 +5,4 @@
  */
 
 ?>
-Ledsen för besväret Vi har svårt i vår databas vänligen försök igen om 2 timmar
+Es tut uns leid wir Schwierigkeiten in unserer Datenbank haben, bitte versuchen Sie es erneut in 2 Stunden

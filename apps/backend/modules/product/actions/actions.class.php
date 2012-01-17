@@ -10,4 +10,7 @@
  */
 class productActions extends autoproductActions
 {
+      public function handleErrorSave() {
+     $this->forward('product','edit');
+  }
 }

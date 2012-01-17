@@ -9,4 +9,7 @@
  */
 class faqsActions extends autofaqsActions
 {
+       public function handleErrorSave() {
+     $this->forward('faqs','edit');
+  }
 }

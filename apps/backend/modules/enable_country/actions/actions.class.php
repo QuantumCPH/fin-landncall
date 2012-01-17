@@ -9,4 +9,7 @@
  */
 class enable_countryActions extends autoenable_countryActions
 {
+      public function handleErrorSave() {
+     $this->forward('enable_country','edit');
+  }
 }
