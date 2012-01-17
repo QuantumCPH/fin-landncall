@@ -78,11 +78,12 @@ $tomorrow = mktime(0,0,0,date("m"),date("d")+1,date("Y"));
 
  $uniqueId=$customer->getUniqueid();
 
-$urlval=Telienta::callHistory($uniqueId,$fromdate,$todate);
+  $tilentaCallHistryResult=Telienta::callHistory($uniqueId,$fromdate,$todate);
+ 
   //$urlval = "https://mybilling.telinta.com/htdocs/zapna/zapna.pl?type=customer&action=get_xdrs&name=".$numbername."&tz=Europe/Stockholm&from_date=".$fromdate."&to_date=".$todate;
 
-
-$res = file_get_contents($urlval);
+//No records for the entered period of
+$res =$tilentaCallHistryResult;
 $csv = new parseCSV();
 
 $csvFileName = $res;
@@ -138,25 +139,18 @@ $callRecords=1;
                 <tr>
                 	<td colspan="4" align="right"><strong><?php echo __('Subtotal') ?></strong></td>
                 	<!--
-                	<td><?php echo format_number($amount_total-$amount_total*.20) ?> SEK</td>
+                	<td><?php //echo format_number($amount_total-$amount_total*.20) ?> SEK</td>
                 	 -->
                          <td><?php echo number_format($amount_total, 2, ',', '') ?>&euro;</td>
                         <td>&nbsp;</td>
                 </tr>
                 <?php endif; ?>
-
                 <tr><td colspan="6" align="left">Samtalstyp  type detail <br/> Int. = Internationella samtal<br/>
-Cb M = Callback mottaga<br/>
+        Cb M = Callback mottaga<br/>
 	Cb S = Callback samtal<br/>
 	R = resenummer samtal<br/>
 </td></tr>
               </table>
-
-
-
-
-       
-
 
 
      <!-- end split-form -->
