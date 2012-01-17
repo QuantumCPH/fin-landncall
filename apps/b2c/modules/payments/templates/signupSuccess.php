@@ -4,9 +4,7 @@
 <?php include_javascripts_for_form($form) ?>
 <?php
 $relay_script_url = sfConfig::get('app_epay_relay_script_url');
-//$customer_id = $sf_request->getParameter('cid');
-//$customer = CustomerPeer::retrieveByPK($customer_id);
-
+ 
 $customer_form = new CustomerForm();
 $customer_form->unsetAllExcept(array('auto_refill_amount', 'auto_refill_min_balance'));
 ?>
@@ -32,15 +30,7 @@ $customer_form->unsetAllExcept(array('auto_refill_amount', 'auto_refill_min_bala
 				//$('#quantity_error').hide();
 			}
 		});
-		
-		
-		
-		
-		
-		
-		
-
-		
+	
 		$('#quantity').change(function(){
 			calc();
 		});
@@ -156,25 +146,7 @@ $customer_form->unsetAllExcept(array('auto_refill_amount', 'auto_refill_min_bala
       <div class="step-details"> <strong><?php echo __('Become a Customer') ?> <span class="inactive">- <?php echo __('Step 1') ?>: <?php echo __('Registrera') ?> </span><span class="active">- <?php echo __('Step 2') ?>: <?php echo __('Payment') ?></span></strong> </div>
       <div class="fl col">
           <ul>
-<?php
-/*
-          	<!-- extra_refill -->
-            <?php
-            $error_extra_refill = false;;
-            if($form['extra_refill']->hasError())
-            	$error_extra_refill = true;
-            ?>
-            <?php if($error_extra_refill) { ?>
-            <li class="error">
-            	<?php echo $form['extra_refill']->renderError() ?>
-            </li>
-            <?php } ?>
-            <li>
-              <?php echo $form['extra_refill']->renderLabel() ?>
-              <?php echo $form['extra_refill']->render(array('class' => 'radbx')); ?>
-            </li>
-*/
-?>
+
             
             <!-- payment details -->
             <li>
@@ -188,7 +160,7 @@ $customer_form->unsetAllExcept(array('auto_refill_amount', 'auto_refill_min_bala
 
               <input type="hidden" id="product_price" value="<?php 
               	$product_price_vat = ($order->getProduct()->getPrice()-$order->getProduct()->getInitialBalance())*.20;
-              	//$product_price = ($order->getProduct()->getPrice()) - ($order->getProduct()->getPrice()*.20); echo $product_price; 
+
               	$product_price = ($order->getProduct()->getPrice()-$order->getProduct()->getInitialBalance()) - $product_price_vat;
               	
               	echo $product_price;
@@ -197,11 +169,11 @@ $customer_form->unsetAllExcept(array('auto_refill_amount', 'auto_refill_min_bala
               
               
               <label class="fr ac">
-              	<span class="product_price_span"> <?php echo format_number($product_price) ?> </span>SEK
+              	<span class="product_price_span"> <?php echo format_number($product_price) ?> </span>&euro;
               	<br />
               	<span id="extra_refill_span">
 					<?php echo format_number($extra_refill) ?>
-				</span> SEK
+				</span>&euro;
 			  </label>
 
             </li>
@@ -233,42 +205,37 @@ $customer_form->unsetAllExcept(array('auto_refill_amount', 'auto_refill_min_bala
               <label class="fr ac" >
               	<span id="vat_span">
               	<?php echo format_number($vat) ?>
-              	</span> SEK
+              	</span>&euro;
               <br />
               	<?php $total = $product_price + $extra_refill + $vat ?>
               	<span id="total_span">
               	<?php echo format_number($total) ?>
-              	</span> SEK
+              	</span>&euro;
               </label>
             </li>
 			
           </ul>
         <!-- hidden fields -->
 		<?php echo $form->renderHiddenFields() ?>
-		<?php 
-			
-			define("DIBS_MD5KEY2","r!oRvYT8}L5%,7XFj~Rlr$+Y[W3t3vho");
-			define("DIBS_MD5KEY1","cBI&R8y*KsGD.o}1z^WF]HqK5,*R[Y^w");
-			//define("PATH_WEB","http://landncall.zerocall.com/");
-			$md5key   =  md5(DIBS_MD5KEY2.md5(DIBS_MD5KEY1.'merchant=90049676&orderid='.$order_id.'&currency=752&amount='.$total));
-		?>
-
 		
 		<input type="hidden" name="merchant" value="90049676" />
 		<input type="hidden" name="amount" id="total" value="<?php echo $total;?>" />
-		<input type="hidden" name="currency" value="752" />
+		<input type="hidden" name="currency" value="978" />
 		<input type="hidden" name="orderid" value="<?php echo $order_id;?>" />
-		
-            
-		
 		<input type="hidden" name="account" value="YTIP" />
 		  <input type="hidden" name="addfee" value="0" />
+           
+                <input type="hidden" name="test" value="yes" />
        
                 <div id="autorefilop" >
                     <input type="hidden" name="maketicket" value="foo" />
                 </div>
-           
-         <input type="hidden" name="lang" value="sv" />
+<!--           test credit card info
+           4711100000000000
+           06
+           24
+           684-->
+         <input type="hidden" name="lang" value="de" />
 	
      <input type="hidden" name="status" value="" />
 		<input type="hidden" name="cancelurl" value="<?php echo $relay_script_url.url_for('@epay_reject_url', true)  ?>?accept=cancel&subscriptionid=&orderid=<?php echo $order->getId(); ?>&amount=<?php echo $order->getExtraRefill(); ?>" />
@@ -294,7 +261,7 @@ $customer_form->unsetAllExcept(array('auto_refill_amount', 'auto_refill_min_bala
                                                                                                         'id'=>'user_attr_3',
 			  										'style'=>'width: 80px;'
 			  									)) 
-			  ?> sek       
+                                  ?>&euro;
             </li>
            <li id="user_attr_2_field">
               <label for="user_attr_2" style="margin-right: 50px;"><?php echo __('Auto refill amount:') ?></label>
@@ -307,28 +274,25 @@ $customer_form->unsetAllExcept(array('auto_refill_amount', 'auto_refill_min_bala
      ?>
             </li>
             <li id="" style="border-style:solid;border-width:3px;width: 295px; padding-left: 10px;">
-                <br /><b>Vad är automatisk påfyllnad?</b><br />
-                LandNCall rekommenderar att aktivera denna tjänst <br />
-                så slipper du fylla på manuellt då saldot börjar ta slut.<br />
-                100 eller 200 kronor dras när saldot på kontot når<br /> 
-                25 eller 50 kronor. Påfyllningsbeloppet adderas till<br />
-                ditt konto på några minuter. Din påfyllning<br />
-                kan du sedan se under "Översikt – Dina krediter".
+                <br /><b>Was ist die automatische Nachschub? </ B> <br />
+                 Land nennen empfohlen, diesen Service <br /> aktivieren
+                 so müssen Sie nicht ausfüllen manuell, <br /> wenn Ihr Guthaben zur Neige geht. <br />
+                 100 oder 200 Kronen einander,  <br />wenn der Kontostand erreicht <br />
+                 25 oder 50 Dollar. Füllmenge ist <br /> hinzugefügt
+                 Ihr Konto in Minuten. Ihre Füllung <br />
+                 Sie können dann sehen, der "Übersicht - Ihr Kredit".
                 
                 <br /><br />
-                
-                 
+                                
             </li>
         </ul>
             <input type="submit"  class="butonsigninsmall"  name="paybutan"  style="cursor: pointer;margin-left: 185px;" value="<?php echo __('Pay') ?>">
 			
         <span class="testt">
-           
-<!--            <button onclick="return checkForm();$('#payment').submit()" style="cursor: pointer; top: 150px"><?php echo __('Pay') ?></button>-->
+               <button onclick="return checkForm();$('#payment').submit()" style="cursor: pointer; top: 150px"><?php echo __('Pay') ?></button>-->
             </span>
       </div>
     </div>
-	<?php //include_partial('signup/steps_indicator', array('active_step'=>2)) ?>
   </div>
 </form>
 

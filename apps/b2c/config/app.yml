@@ -30,3 +30,4 @@ all:
    - { module: payments,  action: signup}
    - { module: payments,  action: accept}
    - { module: payments,  action: reject}
+  main_url: http://localhost/wls2/web/b2c.php/
