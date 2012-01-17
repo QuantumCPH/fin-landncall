@@ -238,11 +238,11 @@
                         <?php
                         // As per Omair Instruction - He need these changes - AHTSHAM - 08/17/2011
                          //echo link_to('<b>Zerocall Setting</b>', '') ?>
-                        <a href="javascript:;"><b>LandnCall Setting</b></a>
+                        <a href="javascript:;"><b>WLS2 Setting</b></a>
                         <?php echo link_to('Mobile Models', 'device/index'); ?>
                         <?php echo link_to('Mobile Brands', 'manufacturer/index'); ?>
                         <?php echo link_to('Mobile Operator', 'telecom_operator/index') ?>
-                        <?php //echo link_to('Postal charges', 'postal_charges/index') ?>
+                        <?php  echo link_to('Postal charges', 'postal_charges/index') ?>
                         <?php
                         // As per Omair Instruction - He need these changes - AHTSHAM - 08/17/2011
                         // echo link_to('<b></b>', '') ?>
@@ -261,7 +261,7 @@
                         <?php echo link_to('products', 'product/index') ?>
                         <?php echo link_to('Language Type', 'enable_country/index') ?>
                         <?php echo link_to('Cities', 'city/index') ?>
-                        <?php //echo link_to('SMS TEXT', 'sms_text/index') ?>
+                        <?php echo link_to('SMS TEXT', 'sms_text/index') ?>
                         <?php echo link_to('Usage Alert', 'usage_alert/index') ?>
                         <?php echo link_to('Usage Alert Sender', 'usage_alert_sender/index') ?>
                         <?php echo link_to('Telecom Operator', 'telecom_operator/index') ?>

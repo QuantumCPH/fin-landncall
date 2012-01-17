@@ -1,42 +1,6 @@
 <?php use_helper('I18N') ?>
 <?php use_helper('Number') ?>
 
-<?php /* 
-            <li>
-              <label>Phone number:</label>
-              <select>
-                <option>&nbsp;</option>
-              </select>
-            </li>
-            <li>
-              <label>From:</label>
-              <select class="quater">
-                <option>&nbsp;</option>
-              </select>
-              <select class="quater">
-                <option>&nbsp;</option>
-              </select>
-              <select class="quater">
-                <option>&nbsp;</option>
-              </select>
-            </li>
-            <li>
-              <label>To:</label>
-              <select class="quater">
-                <option>&nbsp;</option>
-              </select>
-              <select class="quater">
-                <option>&nbsp;</option>
-              </select>
-              <select class="quater">
-                <option>&nbsp;</option>
-              </select>
-            </li>
-            <li>
-              <button><?php echo __('Show') ?></button>
-            </li>
-*/ ?>
-             
               <!--Always use tables for tabular data-->
               <table width="70%" cellspacing="0" cellpadding="0" class="callhistory" style="float: left;">
                   <tr>
@@ -79,13 +43,7 @@
                   <td><?php echo  $transaction->getCreatedAt() ?></td>
                   <td><?php echo $transaction->getDescription() ?></td>
                   <td><?php echo $transaction->getAmount(); $amount_total += $transaction->getAmount() ?>
-                            <?php if($lang=="pl"){
-                                echo ('plz');
-                            }else if($lang=="en"){
-                                echo ('eur');
-                            }else{
-                                echo ('SEK');
-                            } ?></td>
+                              &nbsp;&euro;</td>
                 
                 </tr>
                 <?php endforeach; ?>
@@ -97,13 +55,7 @@
                 <tr>
                 	<td colspan="3" align="right"><strong>Total</strong></td>
                 	<td><?php echo format_number($amount_total) ?>
-                            <?php if($lang=="pl"){
-                                echo ('plz');
-                            }else if($lang=="en"){
-                                echo ('eur');
-                            }else{
-                                echo ('SEK');
-                            } ?></td>
+                              &nbsp;&euro;</td>
                 	<td>&nbsp;</td>
                 </tr>	
                 <?php endif; ?>

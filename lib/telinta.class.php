@@ -189,7 +189,7 @@ class Telienta {
     }
 
     public static function callHistory($uniqueId,$fromDate,$toDate){
-        $history = "https://mybilling.telinta.com/htdocs/zapna/zapna.pl?type=customer&action=get_xdrs&name=".$uniqueId."&tz=Europe/Stockholm&from_date=".$fromDate."&to_date=".$toDate;
+        $url = "https://mybilling.telinta.com/htdocs/zapna/zapna.pl?type=customer&action=get_xdrs&name=".$uniqueId."&tz=Europe/Stockholm&from_date=".$fromDate."&to_date=".$toDate;
         $history = file_get_contents($url);
         sleep(0.5);
         if (!$history) {
