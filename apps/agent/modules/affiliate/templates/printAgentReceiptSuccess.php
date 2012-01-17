@@ -48,21 +48,21 @@ $wrap_content  = isset($wrap)?$wrap:false;
 
 <table class="receipt" cellspacing="0" width="600px">
 <tr bgcolor="#CCCCCC" class="receipt_header">
-    <td colspan="4"> LandNCall AB
+    <td colspan="4"> WLS2
     </td>
   </tr>
   <tr>
   <td colspan="4" class="payer_summary">
-	Telefonv&atilde;gen 30
+	xxxx xxxx xxxx
 	<br />
-	126 37 H&atilde;gersten
+	xxxxx xxxxx
 	<br />
 	
 	<br />
-	Tel:      +46 85 17 81 100
+	Tel:      +49 xxxxxx
 	<br />	
 	<br />
-	Cvr:     32068219
+	Cvr:     xxxxxx
 	<br />
   </td>
   </tr>
@@ -75,9 +75,9 @@ $wrap_content  = isset($wrap)?$wrap:false;
     <td colspan="4" class="payer_summary">
       <?php echo sprintf("%s ", $agent->getName())?><br/>
       <?php echo $agent->getAddress() ?><br/>
-      <?php echo sprintf('%s, %s', $agent->getCity(), $agent->getPostCode()) ?><br/>
+      <?php echo sprintf('%s, %s', $agent->getCityname(), $agent->getPostCode()) ?><br/>
       <?php $eC = new Criteria();
-	  $eC->add(EnableCountryPeer::ID, $agent->getCountryId());
+	  $eC->add(EnableCountryPeer::ID, $agent->getEnableCountry());
 	  $eC = EnableCountryPeer::doSelectOne($eC);
 	  echo $eC->getName(); ?>
 
@@ -145,12 +145,12 @@ $wrap_content  = isset($wrap)?$wrap:false;
 
 <p>
 	<?php echo __('If you have any questions please feel free to contact our customer support center at '); ?>
-	<a href="mailto:support@landncall.com">support@landncall.com</a>
+	<a href="mailto:support@wls2.com">support@wls2.com</a>
 </p>
 
 <p><?php echo __('Cheers') ?></p>
 
 <p>
 <?php echo __('Support') ?><br />
-LandNCall AB
+WLS2
 </p>
