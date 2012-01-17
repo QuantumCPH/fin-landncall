@@ -45,7 +45,7 @@
 
   <label class="grid_2 required">Country:</label>
   <div class="grid_2 content">
-        <?php echo $company->getCountry()->getName() ?>
+        <?php echo $company->getEnableCountryCountry()->getName() ?>
   </div>
 
   <label class="grid_2 required">City:</label>
