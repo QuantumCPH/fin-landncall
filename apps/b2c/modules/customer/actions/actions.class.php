@@ -3,8 +3,8 @@
 require_once(sfConfig::get('sf_lib_dir') . '/emailLib.php');
 require_once(sfConfig::get('sf_lib_dir') . '/smsCharacterReplacement.php');
 require_once(sfConfig::get('sf_lib_dir') . '/changeLanguageCulture.php');
-
 require_once(sfConfig::get('sf_lib_dir') . '/parsecsv.lib.php');
+require_once(sfConfig::get('sf_lib_dir') . '/telinta.class.php');
 
 /**
  * customer actions.
@@ -417,9 +417,9 @@ class customerActions extends sfActions {
         $getFirstnumberofMobile = substr($this->customer->getMobileNumber(), 0, 1);     // bcdef
         if ($getFirstnumberofMobile == 0) {
             $TelintaMobile = substr($this->customer->getMobileNumber(), 1);
-            $TelintaMobile = '46' . $TelintaMobile;
+            $TelintaMobile = '49' . $TelintaMobile;
         } else {
-            $TelintaMobile = '46' . $this->customer->getMobileNumber();
+            $TelintaMobile = '49' . $this->customer->getMobileNumber();
         }
         $emailId = $this->customer->getEmail();
         $uniqueId = $this->customer->getUniqueid();
@@ -431,20 +431,11 @@ class customerActions extends sfActions {
             emailLib::sendErrorTelinta($this->customer, $message_body);
         }
         //This is for Retrieve balance From Telinta
-        $telintaGetBalance = file_get_contents('https://mybilling.telinta.com/htdocs/zapna/zapna.pl?action=getbalance&name=' . $uniqueId . '&type=customer');
+       // $telintaGetBalance = file_get_contents('https://mybilling.telinta.com/htdocs/zapna/zapna.pl?action=getbalance&name=' . $uniqueId . '&type=customer');
+  $telintaGetBalance=Telienta::getBalance($uniqueId);
+       
 
-        $string = $telintaGetBalance;
-        $find = 'No such a customer';
-        if (strpos($string, $find)) {
-            $message_body = "No Customer Found in Telinta Against Of This Mobile Number $TelintaMobile <br / >Unique Id: $uniqueId";
-            //Send Email to User/Agent/Support --- when Customer Refilll --- 01/15/11
-            emailLib::sendErrorTelinta($this->customer, $message_body);
-        } else {
-
-        }
-
-        $telintaGetBalance = str_replace('success=OK&Balance=', '', $telintaGetBalance);
-        $telintaGetBalance = str_replace('-', '', $telintaGetBalance);
+      
         $this->customer_balance = $telintaGetBalance;
 
 
@@ -785,7 +776,7 @@ class customerActions extends sfActions {
     }
 
     public function executeRefill(sfWebRequest $request) {
-
+       $this->target = $this->getTargetUrl();
         //call Culture Method For Get Current Set Culture - Against Feature# 6.1 --- 02/28/11
         changeLanguageCulture::languageCulture($request, $this);
         //-----------------------
@@ -1281,6 +1272,7 @@ class customerActions extends sfActions {
         //call Culture Method For Get Current Set Culture - Against Feature# 6.1 --- 02/28/11
         changeLanguageCulture::languageCulture($request, $this);
         $this->target = $this->getTargetUrl();
+        $this->getTargetUrl();
         
         //-----------------------
 
@@ -1310,7 +1302,8 @@ class customerActions extends sfActions {
 
                 $customer->setPlainText($paswordval);
                 $customer->save();
-   die;
+             
+ 
                 //$this->redirect('@customer_dashboard');
                 if ($request->isXmlHttpRequest())
                     $this->renderText('ok');

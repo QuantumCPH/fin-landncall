@@ -67,16 +67,16 @@ kreditkort.
      
     <div  style="width:500px;">
     <div style="float:left;width:250px;font-weight:bold;"> Du har valt automatisk påfyllning när potten underskrider: </div>
-    <div  style="margin-left: 20px;float:left;width:100px;font-weight:bold;"> <?php echo   $customer_form->getObject()->getAutoRefillMinBalance() ?> SEK</div>
+    <div  style="margin-left: 20px;float:left;width:100px;font-weight:bold;"> <?php echo   $customer_form->getObject()->getAutoRefillMinBalance() ?> &euro;</div>
     <div  style="float:left;width:150px;"></div> 
     </div>
   
     <div  style="width:500px;clear:both;">
                <br/>
     <div  style="float:left;width:250px;font-weight:bold; ">Potten fylls då på med:</div>
-    <div  style="margin-left: 20px;float:left;width:100px;font-weight:bold;">  <?php echo   $customer_form->getObject()->getAutoRefillAmount() ?> SEK</div>
+    <div  style="margin-left: 20px;float:left;width:100px;font-weight:bold;">  <?php echo   $customer_form->getObject()->getAutoRefillAmount() ?> &euro;</div>
     <div style="float: left; margin-top: 61px; text-align: left; width: 134px;">
-    <form method="post" action="http://landncall.zerocall.com/b2c.php/customer/deActivateAutoRefill">
+    <form method="post" action="<?php echo $target; ?>customer/deActivateAutoRefill">
     <input type="hidden" name="customer_id" value="<?php echo   $customer_form->getObject()->getId() ?>" />
                 <input type="submit" class="butonsigninsmall" name="button" style="cursor: pointer;float: right; margin-left: 134px; margin-top: -10px;"  value="<?php echo __('Avaktivera') ?>" >
                 </form>			
@@ -108,17 +108,17 @@ kreditkort.
   <input type="hidden" name="merchant" value="90049676" />
   <input type="hidden" name="amount" value="1" />
       <input type="hidden" name="customerid" value="<?php echo   $customer_form->getObject()->getId() ?>" />
-  <input type="hidden" name="currency" value="752" />
+  <input type="hidden" name="currency" value="978" />
   <input type="hidden" name="orderid" value="<?php echo $randomOrderId; ?>" />
 
+    <input type="hidden" name="test" value="yes" />
 
-  <input type="hidden" name="calcfee" value="yes" />
    <input type="hidden" name="account" value="YTIP" />
-  <input type="hidden" name="lang" value="sv" />
+  <input type="hidden" name="lang" value="de" />
   <input type="hidden" name="preauth" value="true">
-  <input type="hidden" name="cancelurl" value="http://landncall.zerocall.com/b2c.php/customer/dashboard" />
-  <input type="hidden" name="callbackurl" id="idcallbackURLauto" value="http://landncall.zerocall.com/b2c.php/customer/activateAutoRefill?customerid=<?php echo   $customer_form->getObject()->getId() ?>" />
-  <input type="hidden" name="accepturl" value="http://landncall.zerocall.com/b2c.php/customer/dashboard" />
+  <input type="hidden" name="cancelurl" value="<?php echo $target; ?>customer/dashboard" />
+  <input type="hidden" name="callbackurl" id="idcallbackURLauto" value="<?php echo $target; ?>customer/activateAutoRefill?customerid=<?php echo   $customer_form->getObject()->getId() ?>" />
+  <input type="hidden" name="accepturl" value="<?php echo $target; ?>customer/dashboard" />
  <div style="width:348px;float:left;">
         <ul>
             <!-- auto fill -->
@@ -132,7 +132,7 @@ kreditkort.
 			  										'name'=>'user_attr_3',
 			  										'style'=>'width: 80px;'
 			  									)) 
-			  ?> SEK        
+			  ?>  &euro;
             </li>
             
             
@@ -142,7 +142,7 @@ kreditkort.
 			  													'name'=>'user_attr_2',
                                                                                                                                 'style'=>'width: 80px;'
 			  												)); 
-			  ?> SEK&nbsp;           
+			  ?>  &euro;&nbsp;
             </li> </ul>
             </div>
           <div style="width:135px;float:left;padding-top:15px;">  <input type="submit" class="butonsigninsmall" name="button" style="cursor: pointer;float: right;width:132px"  value="<?php echo __('Aktivera') ?>" >	</div>
@@ -172,7 +172,7 @@ kreditkort.
             <?php } ?>
             <li>
               <label for="extra_refill"><?php echo __('Välj belopp att fylla på med:') ?></label>
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;<?php echo $form['extra_refill']?> SEK
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;<?php echo $form['extra_refill']?>  &euro;
             </li>
 
             <?php if($sf_user->hasFlash('error_message')): ?>
@@ -188,10 +188,11 @@ kreditkort.
       
         <input type="hidden" name="merchant" value="90049676" />
         <input type="hidden" name="amount" id="total" value="" />
-        <input type="hidden" name="currency" value="752" />
+        <input type="hidden" name="currency" value="978" />
         <input type="hidden" name="orderid" value="<?php echo $randomOrderId; ?>" />
-       
-        <input type="hidden" name="lang" value="sv" />
+
+    <input type="hidden" name="test" value="yes" />
+        <input type="hidden" name="lang" value="de" />
         <input type="hidden" name="account" value="YTIP" />
         <input type="hidden" name="addfee" value="0" />
         <input type="hidden" name="status" value="" />

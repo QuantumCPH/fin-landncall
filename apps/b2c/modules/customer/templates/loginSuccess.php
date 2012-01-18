@@ -86,4 +86,4 @@ header('P3P:CP="IDC DSP COR ADM DEVi TAIi PSA PSD IVAi IVDi CONi HIS OUR IND CNT
 	</div>
   </div> <!-- end left-col -->
   <?php //include_partial('customer/sidebar') ?></td></tr></table>
-  <iframe src="http://zerocall.com/b2c/testc.php" style="display:none"></iframe>
+ 

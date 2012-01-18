@@ -152,14 +152,14 @@ if(isset($val) && $val!=""){  ?>
                       if(isset($uid) && $uid>0){
                       ?>
 
-                       <tr  style="background-color:#FFFFFF">
+<!--                       <tr  style="background-color:#FFFFFF">
                     <th    style="float:left;"  >IMSI number</th>
-                     <td  ><?php  echo $unumber->getImsi();  ?></td>
+                     <td  ><?php  //echo $unumber->getImsi();  ?></td>
                       </tr>
                         <tr  style="background-color:#EEEEFF">
                     <th    style="float:left;"  >IMSI Registration Date</th>
-                     <td  ><?php  echo $unumber->getCreated();  ?></td>
-                      </tr>
+                     <td  ><?php // echo $unumber->getCreated();  ?></td>
+                      </tr>-->
 
                       <?php } ?>
 <!--                  <tr style="background-color:#EEEEFF">
