@@ -1606,7 +1606,7 @@ public function executeTaisys(sfWebrequest $request){
 
         }
 
-public function executeSmsRegisteration(sfWebrequest $request) {
+public function executeSmsRegistration(sfWebrequest $request) {
     
     $number = $request->getParameter('mobile');
     $customercount = 0;
@@ -1617,7 +1617,7 @@ public function executeSmsRegisteration(sfWebrequest $request) {
     $mnc->addAnd(CustomerPeer::CUSTOMER_STATUS_ID, 3);
     $customercount = CustomerPeer::doCount($mnc);
     if ($customercount > 0) {
-        //"Mobile number Already exist";
+        echo "Mobile number Already exist";
         $sm = new Criteria();
         $sm->add(SmsTextPeer::ID, 1);
         $smstext = SmsTextPeer::doSelectOne($sm);
@@ -1635,7 +1635,7 @@ public function executeSmsRegisteration(sfWebrequest $request) {
     $c->add(AgentCompanyPeer::SMS_CODE, $agent_code);
     $agentCount = AgentCompanyPeer::doCount($c);
     if ($agentCount == 0) {
-        //"Agent not found";
+        echo "Agent not found";
         $sm = new Criteria();
         $sm->add(SmsTextPeer::ID, 3);
         $smstext = SmsTextPeer::doSelectOne($sm);
@@ -1652,7 +1652,7 @@ public function executeSmsRegisteration(sfWebrequest $request) {
     $pc->add(ProductPeer::SMS_CODE, $product_code);
     $productCount = ProductPeer::doCount($pc);
     if ($productCount == 0) {
-        //echo 'Product not found';
+        echo 'Product not found';
         $sm = new Criteria();
         $sm->add(SmsTextPeer::ID, 4);
         $smstext = SmsTextPeer::doSelectOne($sm);
@@ -1672,16 +1672,14 @@ public function executeSmsRegisteration(sfWebrequest $request) {
     $customer->setFirstName($mobile);
     $customer->setLastName($mobile);
     $customer->setMobileNumber($mobile);
-    $customer->setCountryMobileNumber($number);
     $customer->setPassword($mobile);
     $customer->setEmail($agent->getEmail());
     $customer->setReferrerId($agent->getId());
-    $customer->setCountryCode($calingcode);
     $customer->setCountryId(1);
     $customer->setCity("");
     $customer->setAddress("");
-    $customer->setTelecomOperatorId(13);
-    $customer->setDeviceId(2191);
+    $customer->setTelecomOperatorId(1);
+    $customer->setDeviceId(1474);
     $customer->setCustomerStatusId(1);
     $customer->setPlainText($mobile);
     $customer->setRegistrationTypeId(4);
@@ -1719,7 +1717,7 @@ public function executeSmsRegisteration(sfWebrequest $request) {
     $availableUniqueId = UniqueIdsPeer::doSelectOne($uc);
 
     if ($availableUniqueCount == 0) {
-        // Unique Ids are not avaialable.  send email to the support.
+        echo " Unique Ids are not avaialable.  send email to the support.";
         $sm = new Criteria();
         $sm->add(SmsTextPeer::ID, 6);
         $smstext = SmsTextPeer::doSelectOne($sm);
@@ -1741,11 +1739,15 @@ public function executeSmsRegisteration(sfWebrequest $request) {
     
     $massage = commissionLib::registrationCommission($agentid, $productid, $transactionid);
     if (isset($massage) && $massage == "balance_error") {
+        echo 'balance issue';
         $sm = new Criteria();
         $sm->add(SmsTextPeer::ID, 7);
         $smstext = SmsTextPeer::doSelectOne($sm);
         $sms_text = $smstext->getMessageText();
         CARBORDFISH_SMS::Send($number, $sms_text);
+         $availableUniqueId->setStatus(0);
+        $availableUniqueId->setAssignedAt(" ");
+        $availableUniqueId->save();
         die;
     }
 
