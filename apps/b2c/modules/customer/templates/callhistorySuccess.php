@@ -29,105 +29,7 @@
           <ul>
 <?php ?>
             <li>
-                <?php $unid=$customer->getUniqueid();
-if((int)$unid>200000){?>
-
-
-  <table width="70%" cellspacing="0" cellpadding="0" class="callhistory" style="float: left;">
-                       <tr>
-                           <th align="left"colspan="5">&nbsp; </th>
-
-                      </tr>
-                    
-                        <tr>
-                            <th align="left" colspan="5"  style="background-color: #CCCCFF;color: #000000;text-align: left;">Call History</th>
-
-                      </tr>
-                    <tr  style="background-color: #CCCCFF;color: #000000;">
-                    <th width="20%"   align="left"><?php echo __('Date &amp; time') ?></th>
-                    <th  width="20%"  align="left"><?php echo __('till Number') ?></th>
-                    <th  width="20%"  align="left"><?php echo __('från Number') ?></th>
-                    <th width="10%"   align="left"><?php echo __('Duration') ?></th>
-                    <th width="20%"   align="left"><?php echo __('Cost <small>(Incl. VAT)</small>') ?></th>
-
-                  </tr>
-<?php
-
-    $customerid=$customer->getId();
-   $tc = new Criteria();
-        $tc->add(UsNumberPeer::CUSTOMER_ID, $customerid);
-        $usnumber = UsNumberPeer::doSelectOne($tc);
-
-
-        $username = "Zapna";
-        $password = "ZUkATradafEfA4reYeWr";
-        $msisdn = $usnumber->getMsisdn();
-        $iccid = $usnumber->getIccid();
-
-$tomorrow1 = mktime(0,0,0,date("m")-2,date("d")-15,date("Y"));
-$fromdate=date("Y-m-d h:m:s", $tomorrow1);
-$tomorrow = mktime(0,0,0,date("m"),date("d")+1,date("Y"));
- $todate=date("Y-m-d h:m:s", $tomorrow);
-
-$url = "https://forumtel.com/ExternalApi/Rest/BillingServices.ashx";
-  $post_string = '<get-subscriber-call-history trid="37543937592">
-<authentication>
-<username>' . $username . '</username>
-<password>' . $password . '</password>
-</authentication>
-<msisdn>' . $msisdn . '</msisdn>
-<iccid>' . $iccid . '</iccid>
-<start-date>'.$fromdate.'</start-date>
-<end-date>'.$todate.'</end-date>
-</get-subscriber-call-history>';
-
-
-  $header = array();
-$header[] = "Content-type: text/xml";
-$header[] = "Content-length: ".strlen($post_string);
-$header[] = "Connection: close";
-
-$ch = curl_init();
-curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
-curl_setopt($ch, CURLOPT_URL,$url);
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-curl_setopt($ch, CURLOPT_TIMEOUT, 50);
-
-  curl_setopt($ch, CURLOPT_POST, true);
-curl_setopt($ch, CURLOPT_POSTFIELDS, $post_string);
- curl_setopt($ch, CURLOPT_HEADER, true);
-
-
-  $data = curl_exec($ch);
-
-
-
-   $pieces = explode("<get-subscriber-call-history-response",$data);
-    // piece1
-  $data="<get-subscriber-call-history-response".$pieces[1];    // piece2
-
- // $data = substr($data, 200);
-    $xml_obj = new SimpleXMLElement($data);
-  //var_dump($xml_obj);
-
-     // echo  $data = $xml_obj->calls->call[0]->cost;
-      // echo "<hr/>";
-      foreach ($xml_obj->calls->call as $calls) {  ?>
-      <tr>
-        <td ><?php
-$cld='called-date';
- echo   $calls->$cld;   ?></td> <td><?php
-   echo   $calls->to;  ?></td><td><?php
-   echo   $calls->from;   ?></td><td> <?php
-   echo   $calls->duration;  ?></td><td>
-            <?php
-   echo   $calls->cost;   ?></td></tr>
-<?php }  ?>
-
-              </table>
-
-
-                <?php }else{   ?>
+       
 		<table width="100%" border="0" cellspacing="0" cellpadding="0" class="callhistory">
                   <tr>
                     <td class="title"><?php echo __('Date &amp; time') ?></td>
@@ -164,13 +66,10 @@ $tomorrow = mktime(0,0,0,date("m"),date("d")+1,date("Y"));
  $numbername=$customer->getUniqueid();
 
 
-
-  $urlval = "https://mybilling.telinta.com/htdocs/zapna/zapna.pl?type=customer&action=get_xdrs&name=".$numbername."&tz=Europe/Stockholm&from_date=".$fromdate."&to_date=".$todate;
-
+  $tilentaCallHistryResult=Telienta::callHistory($numbername,$fromdate,$todate);
 
 
-
-$res = file_get_contents($urlval);
+$res = $tilentaCallHistryResult;
 $csv = new parseCSV();
 
 $csvFileName = $res;
@@ -239,7 +138,7 @@ Cb M = Callback mottaga<br/>
 </td></tr>
               </table>
 
-                <?php } ?>
+
             </li>
                     </ul>
         </form>

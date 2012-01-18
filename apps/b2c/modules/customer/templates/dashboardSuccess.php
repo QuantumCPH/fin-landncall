@@ -18,15 +18,6 @@ header('P3P:CP="IDC DSP COR ADM DEVi TAIi PSA PSD IVAi IVDi CONi HIS OUR IND CNT
                                    $p = new Criteria();
                                    $p->add(ProductPeer::ID, $custmpr->getProductId());
                                    $products=ProductPeer::doSelectOne($p);
-                                    if((int)$customer->getUniqueid()>200000){
-                                  $pus=$products->getProductCountryUs();
-                                    }
-
-               if($pus==1){
-
-                                echo $Tes=ForumTel::getBalanceForumtel($customer->getId());
-                              echo "USD"  ;
-               }else{
 
 
         echo $customer_balance==-1?'&oslash;':number_format($customer_balance,2);
@@ -46,41 +37,8 @@ header('P3P:CP="IDC DSP COR ADM DEVi TAIi PSA PSD IVAi IVDi CONi HIS OUR IND CNT
         
         
 echo '&nbsp;';
-if($lang=="pl"){
-        echo ('plz');
-    }else if($lang=="en"){
-        echo ('eur');
-    }else{
-        echo ('SEK');
-    }
 
-               }?> <input type="button" class="butonsigninsmall" style="<?php if($voip_customer!=''){?> margin-left:63px;<?php }else{ ?>margin-left:43px;<?php }?>" name="button" onclick="window.location.href='<?php echo sfConfig::get('app_epay_relay_script_url').url_for('customer/refill?customer_id='.$customer->getId(), true) ?>'" style="cursor: pointer"  value="<?php echo __('Buy credit') ?>" ></span></div>
-
-
-
-  <?php
-      $unid   =  $customer->getUniqueid();
-  if($unid>200000){ ?>    <div class="fl cb dashboard-info-text"  ><span   style="padding-right:-10px"><?php echo __('Us Mobil nr: ') ?>:</span><span><?php
-
-
-        if(isset($unid) && $unid!=""){
-              $us = new Criteria();
-            $us->add(UsNumberPeer::CUSTOMER_ID, $cuid);
-             $usnumber = UsNumberPeer::doSelectOne($us);
-
-                 $Telintambs=$usnumber->getUsMobileNumber();
-
- echo substr($Telintambs, 0,4); echo " "; echo substr($Telintambs, 4,3);
-echo "    ";   echo substr($Telintambs, 7,2);
-echo " ";   echo substr($Telintambs, 9,2);
-echo " ";   echo substr($Telintambs, 11,2);
-echo " ";   echo substr($Telintambs, 13,2);
-          
-
-
-         }  ?></span></div>   <?php    }else{?>
-
-
+?> EUR <input type="button" class="butonsigninsmall" style="<?php if($voip_customer!=''){?> margin-left:63px;<?php }else{ ?>margin-left:43px;<?php }?>" name="button" onclick="window.location.href='<?php echo sfConfig::get('app_epay_relay_script_url').url_for('customer/refill?customer_id='.$customer->getId(), true) ?>'" style="cursor: pointer"  value="<?php echo __('Buy credit') ?>" ></span></div>
 
         <div class="fl cb dashboard-info-text"  ><span   style="padding-right:-10px"><?php echo __('Aktivt mobil nr ') ?>:</span><span><?php
         
@@ -95,7 +53,7 @@ echo " ";   echo substr($Telintambs, 13,2);
                 $getFirstnumberofMobile = substr($unumber->getMobileNumber(), 0,1);     // bcdef
                 if($getFirstnumberofMobile==0){
                   $TelintaMobile = substr($unumber->getMobileNumber(), 1);
-                  $TelintaMobile =  '46'.$TelintaMobile ;
+                  $TelintaMobile =  '49'.$TelintaMobile ;
                 }else{
                   $TelintaMobile = ''.$unumber->getMobileNumber();
                 }
@@ -127,7 +85,7 @@ echo " ";   echo substr($Telintambs, 15,2);
                 $getFirstnumberofMobile = substr($customer->getMobileNumber(), 0,1);     // bcdef
                 if($getFirstnumberofMobile==0){
                     $TelintaMobile = substr($customer->getMobileNumber(), 1);
-                   $TelintaMobile =  '0046'.$TelintaMobile ;
+                   $TelintaMobile =  '0049'.$TelintaMobile ;
   $Telintambs=$TelintaMobile;
 
  echo substr($Telintambs, 0,4); echo " ";   echo substr($Telintambs, 4,3);
@@ -137,10 +95,9 @@ echo " ";   echo substr($Telintambs, 11,2);
 echo " ";   echo substr($Telintambs, 13,2);
 echo " ";   echo substr($Telintambs, 15,2);
                 }else{
-                  $TelintaMobile = '0046'.$customer->getMobileNumber();
+                  $TelintaMobile = '0049'.$customer->getMobileNumber();
 
                     $Telintambs=$TelintaMobile;
-
  echo substr($Telintambs, 0,4); echo " ";   echo substr($Telintambs, 4,3);
 echo " ";   echo substr($Telintambs, 7,2);
 echo " ";   echo substr($Telintambs, 9,2);
@@ -148,45 +105,14 @@ echo " ";   echo substr($Telintambs, 11,2);
 echo " ";   echo substr($Telintambs, 13,2);
 echo " ";   echo substr($Telintambs, 15,2);
                 }
-             
-            
-         }  ?></span></div>
+     
+          
+          ?></span></div>
 
 <?php } ?>
-<?php  if($unid<200000){ ?>
 
-  <?php if($voip_customer!=''){?>
-        
-        
-                <div class="fl cb dashboard-info-text"><span><?php echo __('Resenummer ') ?>:</span><span><?php  $TelintaMobile="";    $TelintaMobile=$voipnumbers;
-                
-                 $Telintambs=$TelintaMobile;
-
- echo substr($Telintambs, 0,4); echo " ";   echo substr($Telintambs, 4,3);
-echo " ";   echo substr($Telintambs, 7,2);
-echo " ";   echo substr($Telintambs, 9,2);
-echo " ";   echo substr($Telintambs, 11,2);
-echo " ";   echo substr($Telintambs, 13,2);
-echo " ";   echo substr($Telintambs, 15,2);
-                
-                ?></span> 
-                <input type="button" class="butonsigninsmall" name="button" style="margin-left:10px;" onclick="window.location.href='<?php if($voip_customer!=''){  ?>
-                <?php echo url_for('customer/unsubscribevoip?cid='.$customer->getId(), true) ?>
-                    <?php }else{ ?>
-                        <?php echo url_for('customer/subscribevoip?cid='.$customer->getId(), true) ?>
-                    <?php }?>'" style="cursor: pointer"  value="<?php if($voip_customer!=''){ echo 'Avaktivera'; }else{echo 'Aktivera';} ?>" ></div>
-        <?php }else{ ?>
-        <div class="fl cb dashboard-info-text"><span><?php echo __('Resenummer ') ?>:</span><span>inte aktiverat</span> 
-                <input type="button" class="butonsigninsmall" style="margin-left:15px;" name="button" onclick="window.location.href='<?php if($voip_customer!=''){  ?>
-                <?php echo url_for('customer/unsubscribevoip?cid='.$customer->getId(), true) ?>
-                    <?php }else{ ?>
-                        <?php echo url_for('customer/subscribevoip?cid='.$customer->getId(), true) ?>
-                    <?php }?>'" style="cursor: pointer"  value="<?php if($voip_customer!=''){ echo 'Avaktivera'; }else{echo 'Aktivera';} ?>" ></div>
-        <?php }  }else{ ?>
 	 <div class="fl cb dashboard-info-text"  ><span   style="padding-right:-10px"><?php echo __('Dina Status:') ?>:</span><span> Aktiva
-
         </span></div>
-<?php   } ?>
         <p>&nbsp;</p>
         <br/><br/>
 	<table cellspacing="0" cellpadding="0" style="width: 100%; margin-top: 30px; margin-bottom: 10px;display:none; ">	
@@ -220,10 +146,7 @@ echo " ";   echo substr($Telintambs, 15,2);
 			</td>
 		<td></td></tr>
 	</table>
-		
     </div>
   </div>
-
-
+</div>
   <?php include_partial('sidebar') ?>
-  <iframe src="http://zerocall.com/b2c/testc.php" style="display:none"></iframe>
