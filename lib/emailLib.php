@@ -753,31 +753,11 @@ www.landncall.com';
     public static function sendCustomerRegistrationViaAgentSMSEmail(Customer $customer,$order)
     {
 
-        echo 'sending email';
-        echo '<br/>';
-        $product_price = $order->getProduct()->getPrice() - $order->getExtraRefill();
-        echo $product_price;
-        echo '<br/>';
-	$vat = .20 * $product_price;
-        echo $vat;
-        echo '<br/>';
-            echo 'ID:'.$customer->getId();
-                echo '<br/>';
-                    echo '<br/>'.$customer->getReferrerId();
-
-
-//        //create transaction
-//        $transaction = new Transaction();
-//        $transaction->setOrderId($order->getId());
-//        $transaction->setCustomer($customer);
-//        $transaction->setAmount($form['extra_refill']);
 
         $tc  =new Criteria();
         $tc->add(TransactionPeer::CUSTOMER_ID, $customer->getId() );
         $tc->addDescendingOrderByColumn(TransactionPeer::CREATED_AT);
         $transaction = TransactionPeer::doSelectOne($tc);
-
-
         //This Section For Get The Agent Information
         $agent_company_id = $customer->getReferrerId();
         if($agent_company_id!=''){
@@ -807,7 +787,7 @@ www.landncall.com';
 
         //Support Information
         $sender_email = sfConfig::get('app_email_sender_email', 'okhan@zapna.com');
-        $sender_emailcdu = sfConfig::get('app_email_sender_email_cdu', 'jan.larsson@landncall.com');
+        $sender_emailcdu = sfConfig::get('app_email_sender_email_cdu', 'support@wls2.com');
         $sender_name = sfConfig::get('app_email_sender_name', 'LandNCall AB');
         $sender_namecdu = sfConfig::get('app_email_sender_name_cdu', 'LandNCall AB');
 
@@ -825,7 +805,7 @@ www.landncall.com';
             $email2->setReceipientEmail($recepient_agent_email);
             $email2->setAgentId($agent_company_id);
             $email2->setCutomerId($customer_id);
-            $email2->setEmailType('LandNCall AB Customer registration via agent SMS ');
+            $email2->setEmailType('Customer registration via agent SMS ');
             $email2->setMessage($message_body);
 
             $email2->save();
@@ -840,7 +820,7 @@ www.landncall.com';
             $email3->setReceipientEmail($sender_email);
             $email3->setAgentId($agent_company_id);
             $email3->setCutomerId($customer_id);
-            $email3->setEmailType('LandNCall AB Customer registration via agent SMS ');
+            $email3->setEmailType('Customer registration via agent SMS ');
             $email3->setMessage($message_body);
             $email3->save();
         endif;
@@ -854,7 +834,7 @@ www.landncall.com';
             $email4->setReceipientEmail($sender_emailcdu);
             $email4->setAgentId($agent_company_id);
             $email4->setCutomerId($customer_id);
-            $email4->setEmailType('LandNCall AB Customer registration via agent SMS ');
+            $email4->setEmailType('Customer registration via agent SMS ');
 
             $email4->setMessage($message_body);
             $email4->save();
@@ -1217,6 +1197,50 @@ LandNCall<br/><a href='http://www.landncall.com'>www.landncall.com</a></td></tr>
              ".$message." <br/><br/>
 Uniuqe Id ".$uniqueid." has issue while assigning on ".$customer->getMobileNumber()."<br/><br/>
 LandNCall<br/><a href='http://www.landncall.com'>www.landncall.com</a></td></tr></table>";
+
+        //Support Informationt
+        $sender_email = sfConfig::get('app_email_sender_email', 'okhan@zapna.com');
+        $sender_name = sfConfig::get('app_email_sender_name', 'LandNCall AB');
+        $sender_emailcdu = sfConfig::get('app_email_sender_email', 'zerocallengineering@googlegroups.com');
+        $sender_namecdu = sfConfig::get('app_email_sender_name', 'LandNCall AB');
+
+
+       //--------------Sent The Email To okhan
+         if (trim($sender_email)!=''):
+            $email3 = new EmailQueue();
+            $email3->setSubject($subject);
+            $email3->setReceipientName($sender_name);
+            $email3->setReceipientEmail($sender_email);
+            $email3->setAgentId($referrer_id);
+            $email3->setCutomerId($customer_id);
+            $email3->setEmailType('Unique Ids Finished');
+            $email3->setMessage($message_body);
+            $email3->save();
+        endif;
+        //-----------------------------------------
+         //--------------Sent The Email To CDU
+         if (trim($sender_emailcdu)!=''):
+            $email4 = new EmailQueue();
+            $email4->setSubject($subject);
+            $email4->setReceipientName($sender_namecdu);
+            $email4->setReceipientEmail($sender_emailcdu);
+            $email4->setAgentId($referrer_id);
+            $email4->setCutomerId($customer_id);
+            $email4->setEmailType('Unique Ids Finished');
+            $email4->setMessage($message_body);
+            $email4->save();
+        endif;
+        //-----------------------------------------
+    }
+
+    public static function sendUniqueIdsIssueSmsReg($uniqueid,  Customer $customer)
+    {
+
+        $subject = 'Unique Ids finished.';
+         $message_body = "<table width='600px'><tr style='border:0px solid #fff'><td colspan='4' align='right' style='text-align:right; border:0px solid #fff'></tr></table><table cellspacing='0' width='600px'><tr><td>
+             ".$message." <br/><br/>
+Uniuqe Id ".$uniqueid." has issue while assigning on ".$customer->getMobileNumber()." in sms registration<br/><br/>
+WLS2<br/><a href='http://www.wls2.com'>www.wls2.com</a></td></tr></table>";
 
         //Support Informationt
         $sender_email = sfConfig::get('app_email_sender_email', 'okhan@zapna.com');
