@@ -95,7 +95,7 @@ $customer_form->unsetAllExcept(array('auto_refill_amount', 'auto_refill_min_bala
 	{
 		var product_price = $('#product_price').val();
 		var quantity = $('#quantity').val();
-		
+			var postal=  $('#postal').val();
 		var extra_refill = $('#extra_refill').val();
 		
 		var cf_options = {
@@ -112,12 +112,14 @@ $customer_form->unsetAllExcept(array('auto_refill_amount', 'auto_refill_min_bala
 		
 		//var vat = .20 * (parseFloat(product_price) * parseFloat(quantity));
 		var vat = .25 * (parseFloat(product_price) * parseFloat(quantity));
-		
+	
 		$('#vat').val(vat);
+
+
 		$('#vat_span').text(vat);
 		$('#vat_span').formatCurrency(cf_options);
 		
-		var total = Math.ceil(parseFloat(product_price) * parseFloat(quantity) + parseFloat(extra_refill) + parseFloat(vat));
+		var total = Math.ceil(parseFloat(product_price) * parseFloat(quantity) + parseFloat(extra_refill) + parseFloat(vat)+ parseFloat(postal));
 		$('#total_span').text(total);
 		$('#total_span').formatCurrency(cf_options);
 		$('#total').val(total*100);
@@ -139,6 +141,29 @@ $customer_form->unsetAllExcept(array('auto_refill_amount', 'auto_refill_min_bala
 	
 	
 </script>
+ <?php
+                $lang =  'de';
+                //$this->lang = $lang;
+                $countrylng = new Criteria();
+                $countrylng->add(EnableCountryPeer::LANGUAGE_SYMBOL, $lang);
+                $countrylng = EnableCountryPeer::doSelectOne($countrylng);
+                if($countrylng){
+                    $countryName = $countrylng->getName();
+                    $languageSymbol = $countrylng->getLanguageSymbol();
+                    $lngId = $countrylng->getId();
+                    $postalcharges = new Criteria();
+                    $postalcharges->add(PostalChargesPeer::COUNTRY, $lngId);
+                    $postalcharges->add(PostalChargesPeer::STATUS, 1);
+                    $postalcharges = PostalChargesPeer::doSelectOne($postalcharges);
+                    if($postalcharges){
+                        $postalcharge =  $postalcharges->getCharges();
+                    }else{
+                        $postalcharge =  0;
+                    }
+                }
+
+
+                ?>
 
 <form action="https://payment.architrade.com/paymentweb/start.action"   method="post" id="payment" onsubmit="return checkForm()">
   <div class="left-col">
@@ -200,20 +225,24 @@ $customer_form->unsetAllExcept(array('auto_refill_amount', 'auto_refill_min_bala
             </li>
             <li>
               <label><?php echo __('VAT') ?> (25%)<br />
+                  <?php echo __('Liefer-und Versandkosten') ?> <br />
               <?php echo __('Total amount') ?></label>
               <input type="hidden" id="vat" value="<?php $vat = .25 * ($product_price); echo $vat; ?>" />
+                <input type="hidden" id="postal" value="<?php  echo $postalcharge; ?>" />
               <label class="fr ac" >
               	<span id="vat_span">
               	<?php echo format_number($vat) ?>
               	</span>&euro;
-              <br />
-              	<?php $total = $product_price + $extra_refill + $vat ?>
+                <br /><?php echo $postalcharge;  ?>&nbsp; &euro;
+   <br />
+              	<?php //$total = $product_price + $extra_refill + $vat ?>
+                <?php $total = $product_price + $extra_refill + $vat+ $postalcharge ?>
               	<span id="total_span">
               	<?php echo format_number($total) ?>
               	</span>&euro;
               </label>
             </li>
-			
+	
           </ul>
         <!-- hidden fields -->
 		<?php echo $form->renderHiddenFields() ?>
@@ -288,9 +317,7 @@ $customer_form->unsetAllExcept(array('auto_refill_amount', 'auto_refill_min_bala
         </ul>
             <input type="submit"  class="butonsigninsmall"  name="paybutan"  style="cursor: pointer;margin-left: 185px;" value="<?php echo __('Pay') ?>">
 			
-        <span class="testt">
-               <button onclick="return checkForm();$('#payment').submit()" style="cursor: pointer; top: 150px"><?php echo __('Pay') ?></button>-->
-            </span>
+       
       </div>
     </div>
   </div>

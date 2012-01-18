@@ -118,7 +118,38 @@ class paymentsActions extends sfActions {
 
         $this->form = new PaymentForm();
 
+///////////////////////postal charges section//////////////////////////////
+        $lang =  'de';
+        $this->lang = $lang;
 
+        $countrylng = new Criteria();
+        $countrylng->add(EnableCountryPeer::LANGUAGE_SYMBOL, $lang);
+        $countrylng = EnableCountryPeer::doSelectOne($countrylng);
+        if($countrylng){
+            $countryName = $countrylng->getName();
+            $languageSymbol = $countrylng->getLanguageSymbol();
+            $lngId = $countrylng->getId();
+
+            $postalcharges = new Criteria();
+            $postalcharges->add(PostalChargesPeer::COUNTRY, $lngId);
+            $postalcharges->add(PostalChargesPeer::STATUS, 1);
+            $postalcharges = PostalChargesPeer::doSelectOne($postalcharges);
+            if($postalcharges){
+              $this->postalcharge =  $postalcharges->getCharges();
+            }else{
+                $this->postalcharge =  0;
+            }
+        }
+
+
+
+
+
+
+
+
+
+///////////////////////////////////////////////////////////////////////////////////////
         $product_id = $request->getParameter('pid');
         $customer_id = $request->getParameter('cid');
 
@@ -128,35 +159,27 @@ class paymentsActions extends sfActions {
         if ($product_id == '' || $customer_id == '') {
             $this->forward404('Product id not found in session');
         }
-
         $order = new CustomerOrder();
         $transaction = new Transaction();
-
         $order->setProductId($product_id);
         $order->setCustomerId($customer_id);
         $order->setExtraRefill($order->getProduct()->getInitialBalance());
-
         //$extra_refil_choices = ProductPeer::getRefillChoices();
         //TODO: restrict quantity to be 1
         $order->setQuantity(1);
-
         //$order->setExtraRefill($extra_refil_choices[0]);//minumum refill amount
         $order->setIsFirstOrder(1);
-
         $order->save();
-
-        $transaction->setAmount($order->getProduct()->getPrice() - $order->getProduct()->getInitialBalance() + $order->getExtraRefill());
+        //$transaction->setAmount($order->getProduct()->getPrice() - $order->getProduct()->getInitialBalance() + $order->getExtraRefill());
+        $transaction->setAmount($order->getProduct()->getPrice() + $this->postalcharge);
         //TODO: $transaction->setAmount($order->getProduct()->getPrice());
         $transaction->setDescription($this->getContext()->getI18N()->__('Registrering inkl. taletid'));
         $transaction->setOrderId($order->getId());
         $transaction->setCustomerId($customer_id);
         //$transaction->setTransactionStatusId() // default value 1
-
         $transaction->save();
-
         $this->order = $order;
         $this->forward404Unless($this->order);
-
         $this->order_id = $order->getId();
         $this->amount = $transaction->getAmount();
     }
@@ -508,12 +531,33 @@ class paymentsActions extends sfActions {
                         emailLib::sendCustomerConfirmRegistrationEmail($invite->getCustomerId());
                     }
                 }
-           
+              $lang = 'de';
+            $this->lang = $lang;
+
+            $countrylng = new Criteria();
+            $countrylng->add(EnableCountryPeer::LANGUAGE_SYMBOL, $lang);
+            $countrylng = EnableCountryPeer::doSelectOne($countrylng);
+            if ($countrylng) {
+                $countryName = $countrylng->getName();
+                $languageSymbol = $countrylng->getLanguageSymbol();
+                $lngId = $countrylng->getId();
+
+                $postalcharges = new Criteria();
+                $postalcharges->add(PostalChargesPeer::COUNTRY, $lngId);
+                $postalcharges->add(PostalChargesPeer::STATUS, 1);
+                $postalcharges = PostalChargesPeer::doSelectOne($postalcharges);
+                if ($postalcharges) {
+                    $postalcharge = $postalcharges->getCharges();
+                } else {
+                    $postalcharge = '';
+                }
+            }
                 $message_body = $this->getPartial('payments/order_receipt', array(
                             'customer' => $this->customer,
                             'order' => $order,
                             'transaction' => $transaction,
                             'vat' => $product_price_vat,
+                            'postalcharge' => $postalcharge,
                             'wrap' => true
                         ));
 

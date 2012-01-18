@@ -658,14 +658,38 @@ www.landncall.com';
             $recepient_agent_email  = '';
             $recepient_agent_name = '';
         }
+
+          $lang = 'de';
+            $this->lang = $lang;
+
+            $countrylng = new Criteria();
+            $countrylng->add(EnableCountryPeer::LANGUAGE_SYMBOL, $lang);
+            $countrylng = EnableCountryPeer::doSelectOne($countrylng);
+            if ($countrylng) {
+                $countryName = $countrylng->getName();
+                $languageSymbol = $countrylng->getLanguageSymbol();
+                $lngId = $countrylng->getId();
+
+                $postalcharges = new Criteria();
+                $postalcharges->add(PostalChargesPeer::COUNTRY, $lngId);
+                $postalcharges->add(PostalChargesPeer::STATUS, 1);
+                $postalcharges = PostalChargesPeer::doSelectOne($postalcharges);
+                if ($postalcharges) {
+                    $postalcharge = $postalcharges->getCharges();
+                } else {
+                    $postalcharge = '';
+                }
+            }
+            
         //$this->renderPartial('affiliate/order_receipt', array(
         sfContext::getInstance()->getConfiguration()->loadHelpers('Partial');
-        $message_body = get_partial('pScripts/order_receipt', array(
+        $message_body = get_partial('pScripts/order_receipt_web_reg', array(
                 'customer'=>$customer,
                 'order'=>$order,
                 'transaction'=>$transaction,
                 'vat'=>$vat,
                 'agent_name'=>$recepient_agent_name,
+              'postalcharge'=>$postalcharge,
                 'wrap'=>true,
         ));
 

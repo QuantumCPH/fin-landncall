@@ -1281,6 +1281,7 @@ class customerActions extends sfActions {
         //call Culture Method For Get Current Set Culture - Against Feature# 6.1 --- 02/28/11
         changeLanguageCulture::languageCulture($request, $this);
         $this->target = $this->getTargetUrl();
+        
         //-----------------------
 
         if ($request->isMethod('post') &&
@@ -1309,12 +1310,14 @@ class customerActions extends sfActions {
 
                 $customer->setPlainText($paswordval);
                 $customer->save();
-
+   die;
                 //$this->redirect('@customer_dashboard');
                 if ($request->isXmlHttpRequest())
                     $this->renderText('ok');
                 else {
-                    $this->redirect('customer/dashboard');
+
+                 
+                    $this->redirect($this->getTargetUrl().'customer/dashboard');
                 }
             } else {
                 //
