@@ -76,10 +76,7 @@ $wrap_content  = isset($wrap)?$wrap:false;
       <?php echo sprintf("%s ", $agent->getName())?><br/>
       <?php echo $agent->getAddress() ?><br/>
       <?php echo sprintf('%s, %s', $agent->getCityname(), $agent->getPostCode()) ?><br/>
-      <?php $eC = new Criteria();
-	  $eC->add(EnableCountryPeer::ID, $agent->getEnableCountry());
-	  $eC = EnableCountryPeer::doSelectOne($eC);
-	  echo $eC->getName(); ?>
+      <?php  echo $agent->getEnableCountry()->getName(); ?>
 
 
       <br /><br />
