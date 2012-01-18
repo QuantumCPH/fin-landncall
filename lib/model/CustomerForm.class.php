@@ -19,7 +19,7 @@ class CustomerForm extends BaseCustomerForm
         if(sfConfig::get('sf_app')=='agent'){
             //-----------------------------------
             $Ac = new Criteria();
-            $Ac->add(AgentCompanyPeer::ID, sfContext::getInstance()->getUser()->getAttribute('agent_company_id', '', 'usersession'));
+            $Ac->add(AgentCompanyPeer::ID, sfContext::getInstance()->getUser()->getAttribute('agent_company_id', '', 'agentsession'));
             $country_id = AgentCompanyPeer::doSelectOne($Ac);//->getId();
             $country_id = $country_id->getCountryId();
             //------------Get The Country List For Customer Registration - From Agent
