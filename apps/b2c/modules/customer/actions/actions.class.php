@@ -1080,36 +1080,51 @@ class customerActions extends sfActions {
         $this->redirectUnless($this->customer, "@homepage");
 
         $this->form = new CustomerForm(CustomerPeer::retrieveByPK($this->customer->getId()));
-        unset($this->form['terms_conditions']);
-        //unset($this->form['password']);
-        unset($this->form['product']);
+      
 
-
-
+    unset($this->form['first_name']);
+                    unset($this->form['last_name']);
+                    unset($this->form['country_id']);
+                    unset($this->form['city']);
+                    unset($this->form['po_box_number']);
+                    unset($this->form['mobile_number']);
+                    unset($this->form['device_id']);
+                    unset($this->form['email']);
+                    unset($this->form['is_newsletter_subscriber']);
+                    unset($this->form['created_at']);
+                    unset($this->form['updated_at']);
+                    unset($this->form['customer_status_id']);
+                    unset($this->form['address']);
+                    unset($this->form['fonet_customer_id']);
+                    unset($this->form['referrer_id']);
+                    unset($this->form['telecom_operator_id']);
+                    unset($this->form['date_of_birth']);
+                    unset($this->form['other']);
+                    unset($this->form['subscription_type']);
+                    unset($this->form['auto_refill_amount']);
+                    unset($this->form['subscription_id']);
+                    unset($this->form['last_auto_refill']);
+                    unset($this->form['auto_refill_min_balance']);
+                    unset($this->form['c9_customer_number']);
+                    unset($this->form['registration_type_id']);
+                    unset($this->form['imsi']);
+                    unset($this->form['uniqueid']);
+                    unset($this->form['plain_text']);
+                    unset($this->form['ticketval']);
+                    unset($this->form['to_date']);
+                    unset($this->form['from_date']);
+                     unset($this->form['uniqueid']);
+                    unset($this->form['plain_text']);
+                    unset($this->form['ticketval']);
+                    unset($this->form['to_date']);
+                    unset($this->form['from_date']);
+                    unset($this->form['terms_conditions']);
+                    unset($this->form['manufacturer']);
+                    unset($this->form['product']);
         //unset($this->form['password_confirm']);
         /////////////////////////////////////
-        unset($this->form['created_at']);
-        unset($this->form['fonet_customer_id']);
-        unset($this->form['referrer_id']);
-        unset($this->form['registration_type_id']);
-        unset($this->form['plain_text']);
-        unset($this->form['plain_text']);
-        unset($this->form['manufacturer']);
-        unset($this->form['device_id']);
-
-        $this->uniqueidValue = $this->customer->getUniqueId();
-        //This Section For Get the Language Symbol For Set Currency -
-        $getvoipInfo = new Criteria();
-        $getvoipInfo->add(SeVoipNumberPeer::CUSTOMER_ID, $this->customer->getId());
-        $getvoipInfos = SeVoipNumberPeer::doSelectOne($getvoipInfo); //->getId();
-        if (isset($getvoipInfos)) {
-            $this->voipnumbers = $getvoipInfos->getNumber();
-            $this->voip_customer = $getvoipInfos->getCustomerId();
-        } else {
-            $this->voipnumbers = '';
-            $this->voip_customer = '';
-        }
-
+             
+ 
 
         /////////////////////////////////////////
         $this->oldpasswordError = '';
@@ -1129,7 +1144,6 @@ class customerActions extends sfActions {
             }
             $this->oldpassword = $customers["oldpassword"];
             $this->form->bind($request->getParameter($this->form->getName()), $request->getFiles($this->form->getName()));
-            //  echo 'before validation';
 
             if ($this->form->isValid() && $this->oldpasswordError == '') {
                 //	echo 'validated';
@@ -1148,34 +1162,8 @@ class customerActions extends sfActions {
         }
 
 
+      
 
-        //disable
-        //$this->form->widgetSchema['mobile_number']->setAttribute('readonly','readonly');
-        $this->form->getWidget('mobile_number')->setAttribute('readonly', 'readonly');
-        //$this->form->getWidget('mobile_number')->setAttribute('disabled','disabled');
-        //	$this->form->getWidget('email')->setAttribute('readonly','readonly');
-        //$this->form->getWidget('email')->setAttribute('disabled','disabled');
-        //$this->getValidator['mobile_number'] = new sfValidatorReadOnlyField(array('field' => 'mobile_number', 'object' => $this->form->getObject()));
-        //$this->form->getWidget('manufacturer')->setLabel('Mobile brand','Mobile brand');
-        // $this->widgetSchema->setLabel('customer_manufacturer','Mobile brand');
-        //$this->form->getWidget->('customer_manufacturer', "Yes");
-        //$this->form->getWidget('password')->setOption('always_render_empty', false);
-        //$this->form->getWidget('password_confirm')->setOption('always_render_empty', false);
-        //get default pre-requisites
-//                $c = new Criteria();
-//                $c->add(DevicePeer::ID, $this->customer->getDeviceId());
-//
-//                $device = DevicePeer::doSelectOne($c);
-//
-//                $manufacturer = $device->getManufacturer();
-//
-//                $this->form->setDefault(
-//                'manufacturer', $manufacturer->getId()
-//                );
-//
-//                $this->form->setDefault(
-//                'device_id', $device->getId()
-//                );
     }
 
     public function executeSettings(sfWebRequest $request) {
