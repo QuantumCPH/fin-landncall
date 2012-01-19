@@ -31,31 +31,8 @@
 			 <?php endif; ?>
              <div class='inline-error'><?php echo $error_mobile_number?$form['mobile_number']->renderError():'&nbsp;'?></div>
             </li>
-            <!-- end mobile_number -->
-<?php /*
-            <?php
-            $error_product = false;;
-            if($form['product']->hasError())
-            	$error_product = true;
-            ?>
-            <li>
-             <?php echo $form['product']->renderLabel() ?>
-             <?php echo $form['product'] ?>
-             <?php if ($error_product): ?>
-             <span id="cardno_decl" class="alertstep1">
-			  	<?php echo image_tag('../zerocall/images/decl.png', array('absolute'=>true)) ?>
-			 </span>
-			 <?php endif; ?>
-             <div class='inline-error'><?php echo $error_product?$form['product']->renderError():'&nbsp;'?></div>
-            </li>
-            <!--  end product -->
-*/ ?>
-            <li>
-            <label class="required"><?php echo __("Resenumber") ?></label>
-          
-            <input type="text" value="<?php echo $voipnumbers?>" disabled="true" />
-              <div class="inline-error">&nbsp;</div>
-            </li>
+         
+       
 
             <li>
             <label class="required"><?php echo __("Aktivt mobil nr") ?></label>
@@ -106,16 +83,6 @@
 			 <?php endif; ?>
              <div class='inline-error'><?php echo $error_last_name?$form['last_name']->renderError():'&nbsp;'?></div>
             </li>
-            <!-- end last name -->
-            
-            <!-- end email -->
-            <li>&nbsp;</br></br></li>
-          </ul>
-                    <input type="submit" class="butonsigninsmall"  name="submit"  style="cursor: pointer; float: right;"  value="<?php echo __('Update') ?>"  >
-      </div>
-      <div class="fr col">
-        <ul>
-            
             <?php
             $error_address = false;;
             if($form['address']->hasError())
@@ -132,6 +99,14 @@
              <div class='inline-error'><?php echo $error_address?$form['address']->renderError():'&nbsp;'?></div>
             </li>
             <!-- end address -->
+            <li>&nbsp;</br></br></li>
+          </ul>
+                    <input type="submit" class="butonsigninsmall"  name="submit"  style="cursor: pointer; float: right;"  value="<?php echo __('Update') ?>"  >
+      </div>
+      <div class="fr col">
+        <ul>
+            
+           
             <?php
             $error_po_box_number = false;;
             if($form['po_box_number']->hasError())
