@@ -1491,108 +1491,73 @@ class customerActions extends sfActions {
         $this->total_pages = $pager->getNbResults() / $items_per_page;
     }
 
-public function executeWebsms(sfWebRequest $request){
+    public function executeWebsms(sfWebRequest $request) {
 
         //call Culture Method For Get Current Set Culture - Against Feature# 6.1 --- 02/28/11
-        changeLanguageCulture::languageCulture($request,$this);
+        changeLanguageCulture::languageCulture($request, $this);
         //-----------------------
 
 
         $this->customer = CustomerPeer::retrieveByPK(
-			$this->getUser()->getAttribute('customer_id', null, 'usersession')
-			);
-		$this->redirectUnless($this->customer, "@homepage");
+                        $this->getUser()->getAttribute('customer_id', null, 'usersession')
+        );
+        $this->redirectUnless($this->customer, "@homepage");
 
 
-$cunt = new Criteria();
-$cunt->addAscendingOrderByColumn(CountryPeer::NAME);
-$countries = CountryPeer::doSelect($cunt);
-$this->msgSent = "";
-$this->countries = $countries;
-$this->res_cbf = "";
-$this->balance = (double)Fonet::getBalance($this->customer);
+        $cunt = new Criteria();
+        $cunt->addAscendingOrderByColumn(CountryPeer::NAME);
+        $countries = CountryPeer::doSelect($cunt);
+        $this->msgSent = "";
+        $this->countries = $countries;
+        $this->res_cbf = "";
+        $this->balance = (double) Telienta::getBalance($this->customer->getUniqueid());
+
+        $message = $request->getParameter('message');
 
 
-$message = $request->getParameter('message');
+        if ($message) {
+            $this->msgSent = "No";
+            $country_code = $request->getParameter('country');
+            $number = $request->getParameter('number');
+            $destination = $country_code . $number;
+
+            $c = new Criteria();
+            $c->add(CountryPeer::CALLING_CODE, $request->getParameter('country'));
+            $country = CountryPeer::doSelectOne($c);
+
+            $messages = array();
+            if (strlen($message) < 142) {
+                $messages[1] = $message . "-Sent by wls2-";
+            } else if (strlen($message) > 142 and strlen($message) < 302) {
+
+                $messages[1] = substr($message, 1, 142) . "-Sent by wls2-";
+                $messages[2] = substr($message, 143) . "-Sent by wls2-";
+            } else if (strlen($message) > 382) {
+                $messages[1] = substr($message, 1, 142) . "-Sent by wls2-";
+                $messages[2] = substr($message, 143, 302) . "-Sent by wls2-";
+                $messages[3] = substr($message, 303, 432) . "-Sent by wls2-";
+            }
+
+            foreach ($messages as $sms_text) {
+                $cbf = new Cbf();
+                $cbf->setS('H');
+                $cbf->setDa($destination);
+                $cbf->setMessage($sms_text);
+                $cbf->setCountryId($country->getId());
+                $cbf->setMobileNumber($this->customer->getMobileNumber());
+                $cbf->save();
+                $cc = CurrencyConversionPeer::retrieveByPK(1);
+                $amt = $cc->getBppDkk() * $country->getCbfRate();
+                $amt = number_format($amt, 2);
 
 
-if($message){
-		$this->msgSent = "No";
-	  $country_code = $request->getParameter('country');
-	  $number = $request->getParameter('number');
-	  $destination = $country_code."".$number;
-
-	  $c = new Criteria();
-	  $c->add(CountryPeer::CALLING_CODE,$request->getParameter('country') );
-	  $country = CountryPeer::doSelectOne($c);
-
-
-
-	  $messages = array();
-	  if(strlen($message) < 142 ){
-		  $messages[1] = $message."-Sent by zer0call-";
-	  }
-	  else if (strlen($message) > 142 and strlen($message) < 302){
-
-			$messages[1]=substr($message,1,142)."-Sent by zer0call-";
-			$messages[2]=substr($message,143)."-Sent by zer0call-";
-
-	  }else if (strlen($message) > 382){
-		 $messages[1]=substr($message,1,142)."-Sent by zer0call-";
-		 $messages[2]=substr($message,143,302)."-Sent by zer0call-";
-		 $messages[3]=substr($message,303,432)."-Sent by zer0call-";
-
-	  }
-
-		  foreach($messages as $sms_text){
-				  $cbf = new Cbf();
-				  $cbf->setS('H');
-				  $cbf->setDa($destination);
-				  $cbf->setMessage($sms_text);
-				  $cbf->setCountryId($country->getId());
-				  $cbf->setMobileNumber($this->customer->getMobileNumber());
-
-
-				  $cbf->save();
-
-				  //recharge fonet
-				  //get currency conversion rate
-				  $cc = CurrencyConversionPeer::retrieveByPK(1);
-				  $amt = $cc->getBppDkk()* $country->getCbfRate();
-				  $amt = number_format($amt,2);
-				  $amt = $amt;
-
-
-				  Fonet::recharge($this->customer, -('000'.$amt));
-
-
-
-				  $data = array(
-						  'S' => 'H',
-						  'UN'=>'zapna1',
-						  'P'=>'Zapna2010',
-						  'DA'=>$destination,
-						  'SA' => $this->customer->getMobileNumber(),
-						  'M'=>$sms_text,
-						  'ST'=>'5'
-				);
-
-
-				$queryString = http_build_query($data,'', '&');
-				$queryString=smsCharacter::smsCharacterReplacement($queryString);
-				$res = @file_get_contents('http://sms1.cardboardfish.com:9001/HTTPSMS?'.$queryString);
-				$this->res_cbf = 'Response from CBF is: ';
-				$this->res_cbf .= $res;
-
-				//echo $res;
-				$this->msgSent = "Yes";
-
-		  }
-
-	  }
-
-
-}
+                if (CARBORDFISH_SMS::Send($destination, $sms_text, $this->customer->getMobileNumber())) {
+                    Telienta::recharge($this->customer->getUniqueid(), $amt);
+                    $this->msgSent = "Yes";
+                }
+            }
+        }
+    }
 
 public function executeSmsHistory(sfWebrequest $request){
 

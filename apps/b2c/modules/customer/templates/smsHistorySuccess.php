@@ -70,14 +70,10 @@
                   $c = new Criteria();
                   $c->add(CountryPeer::ID, $smsRecord->getCountryId());
                   $country = CountryPeer::doSelectOne($c);
-
-                  $cc = CurrencyConversionPeer::retrieveByPK(1);
-                  $amt = $country->getCbfRate() * $cc->getBppDkk();
+                  $amt = $country->getCbfRate();
                   
-//                  $rate = $cc->getDkkPlz();
-//                  $amt = $amt * $rate;
                   ?>
-                  <td><?php $amount_total += $amt; echo number_format($amt, 2, ',', '') ?> <?php echo __('dkk')?></td>
+                  <td><?php $amount_total += $amt; echo number_format($amt, 2, ',', '') ?> &euro;</td>
                 </tr>
                 <?php endforeach; ?>
                 <?php if(count($smsRecords)==0): ?>
@@ -90,7 +86,7 @@
                 	<!--
                 	<td><?php echo format_number($amount_total-$amount_total*.20) ?> dkk</td>
                 	 -->
-                	<td><?php echo number_format($amount_total, 2, ',', '') ?> dkk</td>
+                         <td><?php echo number_format($amount_total, 2, ',', '') ?> &euro;</td>
                 </tr>
                 <?php endif; ?>
               </table>
