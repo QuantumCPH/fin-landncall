@@ -23,4 +23,4 @@ generator:
       object_actions:
         _edit: ~
         _delete: ~
-        viewDetail : {label: view details, action: view}
+      #  viewDetail : {label: view details, action: view}

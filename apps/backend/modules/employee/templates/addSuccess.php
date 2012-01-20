@@ -15,6 +15,11 @@
 <h2>Employee is added successfully</h2>
 </div>
 <?php  }  }   ?>
+<?php if ($sf_user->hasFlash('messageError')): ?>
+<div style="color:#FF0000">
+ <?php echo __($sf_user->getFlash('messageError')) ?>
+</div>
+<?php endif; ?>
 <div id="sf_admin_container">
 <h1>New My employee</h1></div>
 <form id="sf_admin_form" name="sf_admin_edit_form" method="post" enctype="multipart/form-data" action="saveEmployee">
@@ -33,19 +38,19 @@
         <td style="padding: 5px;">Company:</td>
         <td style="padding: 5px;">
   <select name="company_id" id="employee_company_id"    class="required"  style="width:190px;">
-      <option value="" selected="selected"></option>
+      <option value="">Select Company</option>
       <?php foreach($companys as $company){  ?>
-<option value="<?php echo $company->getId();   ?>"><?php echo $company->getName()   ?></option>
+<option value="<?php echo $company->getId(); ?>"<?php echo ($companyval==$company->getId())?"selected='selected'":''?>><?php echo $company->getName()   ?></option>
 <?php   }  ?>
 </select>  </td>
                 </tr>
-                  <tr>
+<!--                  <tr>
         <td style="padding: 5px;">Country Code:</td>
         <td style="padding: 5px;"> <input type="text" name="country_code" id="employee_country_code"   size="25"   class="required digits" /> </td>
-                </tr>
+                </tr>-->
                  <tr>
         <td style="padding: 5px;">Mobile number:</td>
-        <td style="padding: 5px;"> <input type="text" name="mobile_number" id="employee_mobile_number"  size="25"   class="required digits"  minlength="8" /> </td>
+        <td style="padding: 5px;"> <input type="text" name="mobile_number" id="employee_mobile_number"  size="25"   class="required digits"  minlength="8" /><span id="msgbox" style="display:none"></span> </td>
                 </tr>
                  <tr>
         <td style="padding: 5px;">Email:</td>
@@ -87,7 +92,7 @@
               
    <tr>
 
-       <td colspan="2"><ul class="sf_admin_actions">
+       <td colspan="2"><ul class="sf_admin_actions"><input type="hidden" value="" id="error" name="error">
 
   <li>  <input class="sf_admin_action_list" value="list" type="button" onclick="document.location.href='../employee';" /></li>
   <li><input type="submit" name="save" value="save" class="sf_admin_action_save" /> </li>

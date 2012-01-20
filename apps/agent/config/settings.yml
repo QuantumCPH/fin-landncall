@@ -94,4 +94,4 @@ all:
 #    logging_enabled:        on
 #
 #    # i18n
-    default_culture:        gr        # Default user culture
+    default_culture:        de        # Default user culture

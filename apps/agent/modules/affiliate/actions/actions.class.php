@@ -152,178 +152,132 @@ class affiliateActions extends sfActions {
         $news = NewupdatePeer::doSelect($c);
         $this->news = $news;
     }
-
-    public function executeReport(sfWebRequest $request) {
-
-        //call Culture Method For Get Current Set Culture - Against Feature# 6.1 --- 01/24/11 - Ahtsham
-        changeLanguageCulture::languageCulture($request, $this);
-
-        $this->forward404Unless($this->getUser()->isAuthenticated());
-
-        $nc = new Criteria();
-        $nc->addDescendingOrderByColumn(NewupdatePeer::STARTING_DATE);
-        $this->updateNews = NewupdatePeer::doSelect($nc);
-
-        //verify if agent is already logged in
-        $ca = new Criteria();
-        $ca->add(AgentCompanyPeer::ID, $agent_company_id = $this->getUser()->getAttribute('agent_company_id', '', 'agentsession'));
-        $agent = AgentCompanyPeer::doSelectOne($ca);
-        $this->forward404Unless($agent);
-
-        $this->agent = $agent;
-
-
-
-        //get All customer registrations from customer table
-        try {
-
-            $c = new Criteria();
-            $c->add(CustomerPeer::REFERRER_ID, $agent_company_id);
-            $c->add(CustomerPeer::CUSTOMER_STATUS_ID, 3);
-            $c->add(CustomerPeer::REGISTRATION_TYPE_ID, 4, Criteria::NOT_EQUAL);
-            $c->addDescendingOrderByColumn(CustomerPeer::CREATED_AT);
-            $customers = CustomerPeer::doSelect($c);
-
-
-
-            $registration_sum = 0.00;
-            $registration_commission = 0.00;
-            $registrations = array();
-            $comregistrations = array();
-            $i = 1;
-            foreach ($customers as $customer) {
-                $tc = new Criteria();
-                //echo $customer->getId();
-                $tc->add(TransactionPeer::CUSTOMER_ID, $customer->getId());
-                $tc->add(TransactionPeer::TRANSACTION_STATUS_ID, 3);
-                $tc->add(TransactionPeer::DESCRIPTION, 'Anmeldung inc. sprechen');
-                if (TransactionPeer::doSelectOne($tc)) {
+     public function executeReport(sfWebRequest $request) {
+                    //call Culture Method For Get Current Set Culture - Against Feature# 6.1 --- 01/24/11 - Ahtsham
+                    changeLanguageCulture::languageCulture($request, $this);
+                    $this->forward404Unless($this->getUser()->isAuthenticated());
+                    $nc = new Criteria();
+                    $nc->addDescendingOrderByColumn(NewupdatePeer::STARTING_DATE);
+                    $this->updateNews = NewupdatePeer::doSelect($nc);
+                    //verify if agent is already logged in
+                    $ca = new Criteria();
+                    $ca->add(AgentCompanyPeer::ID, $agent_company_id = $this->getUser()->getAttribute('agent_company_id', '', 'agentsession'));
+                    $agent = AgentCompanyPeer::doSelectOne($ca);
+                    $this->forward404Unless($agent);
+                    $this->agent = $agent;
+                    //get All customer registrations from customer table
+                    try {
+                    $c = new Criteria();
+                    $c->add(CustomerPeer::REFERRER_ID, $agent_company_id);
+                    $c->add(CustomerPeer::CUSTOMER_STATUS_ID, 3);
+                    $c->add(CustomerPeer::REGISTRATION_TYPE_ID, 4, Criteria::NOT_EQUAL);
+                    $c->addDescendingOrderByColumn(CustomerPeer::CREATED_AT);
+                    $customers = CustomerPeer::doSelect($c);
+                    $registration_sum = 0.00;
+                    $registration_commission = 0.00;
+                    $registrations = array();
+                    $comregistrations = array();
+                    $i = 1;
+                    foreach ($customers as $customer) {
+                    $tc = new Criteria();
+                    //echo $customer->getId();
+                    $tc->add(TransactionPeer::CUSTOMER_ID, $customer->getId());
+                    $tc->add(TransactionPeer::TRANSACTION_STATUS_ID, 3);
+                    $tc->add(TransactionPeer::DESCRIPTION, 'Anmeldung inc. sprechen');
+                    if (TransactionPeer::doSelectOne($tc)) {
                     $registrations[$i] = TransactionPeer::doSelectOne($tc);
-                }
-                $i = $i + 1;
-//
-//                           echo $customer->getId();
-//                           echo '<br/>';
-            }
-//                       echo 'transactions';
-//                       echo '<br/>';
-            //print_r($registrations);
-            if (count($registrations) >= 1) {
-
-                //echo count($registrations);
-                foreach ($registrations as $registration) {
-
-
-//                       echo $registration->getCustomerId();
-//                       echo '<br/>';
-                    $registration_sum = $registration_sum + $registration->getAmount();
-
-                    if ($registration != NULL) {
-                        $coc = new Criteria();
-                        $coc->add(CustomerOrderPeer::ID, $registration->getOrderId());
-                        $customer_order = CustomerOrderPeer::doSelectOne($coc);
-
-                        $registration_commission = $registration_commission + ($registration->getCommissionAmount());
                     }
-                }
-            }
-
-
-            $this->registrations = $registrations;
-            $this->registration_revenue = $registration_sum;
-            $this->registration_commission = $registration_commission;
-
-
-
-            $cc = new Criteria();
-            $cc->add(TransactionPeer::AGENT_COMPANY_ID, $agent_company_id);
-            $cc->add(TransactionPeer::DESCRIPTION, 'LandNCall AB Refill');
-            $cc->add(TransactionPeer::TRANSACTION_STATUS_ID, 3);
-            $cc->addDescendingOrderByColumn(TransactionPeer::CREATED_AT);
-            $refills = TransactionPeer::doSelect($cc);
-
-
-            $refill_sum = 0.00;
-            $refill_com = 0.00;
-            foreach ($refills as $refill) {
-                $refill_sum = $refill_sum + $refill->getAmount();
-                $refill_com = $refill_com + $refill->getCommissionAmount();
-            }
-
-
-
-            $this->refills = $refills;
-            $this->refill_revenue = $refill_sum;
-            $this->refill_com = $refill_com;
-
-
-
-
-
-            $efc = new Criteria();
-            $efc->add(TransactionPeer::AGENT_COMPANY_ID, $agent_company_id);
-            $efc->add(TransactionPeer::TRANSACTION_STATUS_ID, 3);
-            $efc->addDescendingOrderByColumn(TransactionPeer::CREATED_AT);
-            $ef = TransactionPeer::doSelect($efc);
-
-            $ef_sum = 0.00;
-            $ef_com = 0.00;
-            foreach ($ef as $efo) {
-                $description = substr($efo->getDescription(), 0, 26);
-                $stringfinds = 'Refill via agent';
-                if (strstr($efo->getDescription(), $stringfinds)) {
+                    $i = $i + 1;
+                    //
+                    //                           echo $customer->getId();
+                    //                           echo '<br/>';
+                    }
+                    //                       echo 'transactions';
+                    //                       echo '<br/>';
+                    //print_r($registrations);
+                    if (count($registrations) >= 1) {
+                    //echo count($registrations);
+                    foreach ($registrations as $registration) {
+                    //                       echo $registration->getCustomerId();
+                    //                       echo '<br/>';
+                    $registration_sum = $registration_sum + $registration->getAmount();
+                    if ($registration != NULL) {
+                    $coc = new Criteria();
+                    $coc->add(CustomerOrderPeer::ID, $registration->getOrderId());
+                    $customer_order = CustomerOrderPeer::doSelectOne($coc);
+                    $registration_commission = $registration_commission + ($registration->getCommissionAmount());
+                    }
+                    }
+                    }
+                    $this->registrations = $registrations;
+                    $this->registration_revenue = $registration_sum;
+                    $this->registration_commission = $registration_commission;
+                    $cc = new Criteria();
+                    $cc->add(TransactionPeer::AGENT_COMPANY_ID, $agent_company_id);
+                    $cc->add(TransactionPeer::DESCRIPTION, 'LandNCall AB Refill');
+                    $cc->add(TransactionPeer::TRANSACTION_STATUS_ID, 3);
+                    $cc->addDescendingOrderByColumn(TransactionPeer::CREATED_AT);
+                    $refills = TransactionPeer::doSelect($cc);
+                    $refill_sum = 0.00;
+                    $refill_com = 0.00;
+                    foreach ($refills as $refill) {
+                    $refill_sum = $refill_sum + $refill->getAmount();
+                    $refill_com = $refill_com + $refill->getCommissionAmount();
+                    }
+                    $this->refills = $refills;
+                    $this->refill_revenue = $refill_sum;
+                    $this->refill_com = $refill_com;
+                    $efc = new Criteria();
+                    $efc->add(TransactionPeer::AGENT_COMPANY_ID, $agent_company_id);
+                    $efc->add(TransactionPeer::TRANSACTION_STATUS_ID, 3);
+                    $efc->addDescendingOrderByColumn(TransactionPeer::CREATED_AT);
+                    $ef = TransactionPeer::doSelect($efc);
+                    $ef_sum = 0.00;
+                    $ef_com = 0.00;
+                    foreach ($ef as $efo) {
+                    $description = substr($efo->getDescription(), 0, 26);
+                    $stringfinds = 'Refill via agent';
+                    if (strstr($efo->getDescription(), $stringfinds)) {
                     //if($description== 'LandNCall AB Refill via agent ')
                     $ef_sum = $ef_sum + $efo->getAmount();
                     $ef_com = $ef_com + $efo->getCommissionAmount();
-                }
-            }
-
-
-
-            $this->ef = $ef;
-            $this->ef_sum = $ef_sum;
-            $this->ef_com = $ef_com;
-
-/////////// SMS Registrations
-
-            $cs = new Criteria();
-            $cs->add(CustomerPeer::REFERRER_ID, $agent_company_id);
-            $cs->add(CustomerPeer::CUSTOMER_STATUS_ID, 3);
-            $cs->add(CustomerPeer::REGISTRATION_TYPE_ID, 4);
-            $cs->addDescendingOrderByColumn(CustomerPeer::CREATED_AT);
-            $sms_customers = CustomerPeer::doSelect($cs);
-
-
-            $sms_registrations = array();
-            $sms_registration_earnings = 0.0;
-            $sms_commission_earnings = 0.0;
-            $i = 1;
-            foreach ($sms_customers as $sms_customer) {
-                $tc = new Criteria();
-                $tc->add(TransactionPeer::CUSTOMER_ID, $sms_customer->getId());
-                $tc->add(TransactionPeer::TRANSACTION_STATUS_ID, 3);
-                $tc->add(TransactionPeer::DESCRIPTION, 'Anmeldung inc. sprechen');
-                $sms_registrations[$i] = TransactionPeer::doSelectOne($tc);
-
-                if (count($sms_registrations) >= 1) {
+                    }
+                    }
+                    $this->ef = $ef;
+                    $this->ef_sum = $ef_sum;
+                    $this->ef_com = $ef_com;
+                    /////////// SMS Registrations
+                    $cs = new Criteria();
+                    $cs->add(CustomerPeer::REFERRER_ID, $agent_company_id);
+                    $cs->add(CustomerPeer::CUSTOMER_STATUS_ID, 3);
+                    $cs->add(CustomerPeer::REGISTRATION_TYPE_ID, 4);
+                    $cs->addDescendingOrderByColumn(CustomerPeer::CREATED_AT);
+                    $sms_customers = CustomerPeer::doSelect($cs);
+                    $sms_registrations = array();
+                    $sms_registration_earnings = 0.0;
+                    $sms_commission_earnings = 0.0;
+                    $i = 1;
+                    foreach ($sms_customers as $sms_customer) {
+                    $tc = new Criteria();
+                    $tc->add(TransactionPeer::CUSTOMER_ID, $sms_customer->getId());
+                    $tc->add(TransactionPeer::TRANSACTION_STATUS_ID, 3);
+                    $tc->add(TransactionPeer::DESCRIPTION, 'Anmeldung inc. sprechen');
+                    $sms_registrations[$i] = TransactionPeer::doSelectOne($tc);
+                    if (count($sms_registrations) >= 1) {
                     $sms_registration_earnings = $sms_registration_earnings + $sms_registrations[$i]->getAmount();
                     $sms_commission_earnings = $sms_commission_earnings + $sms_registrations[$i]->getCommissionAmount();
-                }
-                $i = $i + 1;
-            }
-
-
-            $this->sms_registrations = $sms_registrations;
-            $this->sms_registration_earnings = $sms_registration_earnings;
-            $this->sms_commission_earnings = $sms_commission_earnings;
-
-////////// End SMS registrations
-            $this->sf_request = $request;
-        } catch (Exception $e) {
-            echo $e->getMessage();
-        }
+                    }
+                    $i = $i + 1;
+                    }
+                    $this->sms_registrations = $sms_registrations;
+                    $this->sms_registration_earnings = $sms_registration_earnings;
+                    $this->sms_commission_earnings = $sms_commission_earnings;
+                    ////////// End SMS registrations
+                    $this->sf_request = $request;
+                    } catch (Exception $e) {
+                    echo $e->getMessage();
+                    }
     }
-
     public function executeRefill(sfWebRequest $request) {
 
         //call Culture Method For Get Current Set Culture - Against Feature# 6.1 --- 03/09/11 - Ahtsham
