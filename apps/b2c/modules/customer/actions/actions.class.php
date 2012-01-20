@@ -2003,9 +2003,9 @@ class customerActions extends sfActions {
             $getFirstnumberofMobile = substr($this->customer->getMobileNumber(), 0, 1);     // bcdef
             if ($getFirstnumberofMobile == 0) {
                 $TelintaMobile = substr($this->customer->getMobileNumber(), 1);
-                $TelintaMobile = '46' . $TelintaMobile;
+                $TelintaMobile = '49' . $TelintaMobile;
             } else {
-                $TelintaMobile = '46' . $this->customer->getMobileNumber();
+                $TelintaMobile = '49' . $this->customer->getMobileNumber();
             }
             $uniqueId = $this->customer->getUniqueid();
             $OpeningBalance = $order->getExtraRefill();
@@ -2107,8 +2107,6 @@ class customerActions extends sfActions {
         $ticket_id = $request->getParameter('transact');
         //set subscription id in case 'use current c.c for future auto refills' is set to 1
         //set auto_refill amount
-
-
     
         $order->save();
         $transaction->save();
@@ -2134,16 +2132,16 @@ class customerActions extends sfActions {
             //  Fonet::recharge($this->customer, $transaction->getAmount());
             $vat = 0;
 
-            $TelintaMobile = '46' . $this->customer->getMobileNumber();
+            $TelintaMobile = '49' . $this->customer->getMobileNumber();
             $emailId = $this->customer->getEmail();
             $OpeningBalance = $transaction->getAmount();
             $customerPassword = $this->customer->getPlainText();
             $getFirstnumberofMobile = substr($this->customer->getMobileNumber(), 0, 1);     // bcdef
             if ($getFirstnumberofMobile == 0) {
                 $TelintaMobile = substr($this->customer->getMobileNumber(), 1);
-                $TelintaMobile = '46' . $TelintaMobile;
+                $TelintaMobile = '49' . $TelintaMobile;
             } else {
-                $TelintaMobile = '46' . $this->customer->getMobileNumber();
+                $TelintaMobile = '49' . $this->customer->getMobileNumber();
             }
 
   $unidc=$this->customer->getUniqueid();
@@ -2151,44 +2149,14 @@ class customerActions extends sfActions {
  echo $unidc;
  echo "<br/>";
 
-if((int)$unidc>200000){
-              $cuserid = $this->customer->getId();
-               $amt=$OpeningBalance;
-                  $amt=CurrencyConverter::convertSekToUsd($amt);
-                $Test=ForumTel::rechargeForumtel($cuserid,$amt);
 
-
-                  $email2 = new DibsCall();
-        $email2->setCallurl($amt.$cuserid);
-
-        $email2->save();
-}else{
     //echo $OpeningBalance."Balance";
     //echo "<br/>";
     
             //This is for Recharge the Customer
-            $MinuesOpeningBalance = $OpeningBalance * 3;
-            $telintaAddAccountCB = file_get_contents('https://mybilling.telinta.com/htdocs/zapna/zapna.pl?action=recharge&name=' . $unidc . '&amount=' . $OpeningBalance . '&type=customer');
-            $email2 = new DibsCall();
-            $email2->setCallurl('https://mybilling.telinta.com/htdocs/zapna/zapna.pl?action=recharge&name=' . $unidc . '&amount=' . $OpeningBalance . '&type=customer');
-            $email2->save();
-            $email2 = new DibsCall();
-            $email2->setCallurl($telintaAddAccountCB);
-            $email2->save();
-            if(!$telintaAddAccountCB){
-                echo "<br/>We are not able to load the balance due to System Call";
-            }
-            $find = '';
-            $string = $telintaAddAccountCB;
-            $find = 'ERROR';
-            if (strpos($string, $find)) {
-                $message_body = " km testing     Error ON Refill Customer within Environment <br> Unique Id :$unidc <br / >Amount: $OpeningBalance";
-                //Send Email to User/Agent/Support --- when Customer Refilll --- 01/15/11
-                emailLib::sendErrorTelinta($this->customer, $message_body);
-            } else {
-
-                
-            }
+          //  $MinuesOpeningBalance = $OpeningBalance * 3;
+            Telienta::recharge($unidc, $OpeningBalance);
+          
                          
             //This is for Recharge the Account
             //this condition for if follow me is Active
@@ -2204,7 +2172,7 @@ if((int)$unidc>200000){
             }
             // $telintaAddAccountCB = file_get_contents('https://mybilling.telinta.com/htdocs/zapna/zapna.pl?action=recharge&name=a'.$TelintaMobile.'&amount='.$OpeningBalance.'&type=account');
             // $telintaAddAccountCB = file_get_contents('https://mybilling.telinta.com/htdocs/zapna/zapna.pl?action=recharge&name=cb'.$TelintaMobile.'&amount='.$OpeningBalance.'&type=account');
-}
+
             $MinuesOpeningBalance = $OpeningBalance * 3;
             //type=<account_customer>&action=manual_charge&name=<name>&amount=<amount>
             //This is for Recharge the Customer
@@ -2230,15 +2198,7 @@ if((int)$unidc>200000){
             //send email
 
               $unidid = $this->customer->getUniqueid();
-              if((int)$unidid>200000){
-            $message_body = $this->getPartial('customer/order_receipt_us', array(
-                        'customer' => $this->customer,
-                        'order' => $order,
-                        'transaction' => $transaction,
-                        'vat' => $vat,
-                        'wrap' => false
-                    ));
-              }else{
+           
               $message_body = $this->getPartial('payments/order_receipt', array(
                         'customer' => $this->customer,
                         'order' => $order,
@@ -2247,7 +2207,7 @@ if((int)$unidc>200000){
                         'wrap' => false
                     ));
 
-              }
+
 
             emailLib::sendCustomerRefillEmail($this->customer, $order, $transaction);
         }
