@@ -77,7 +77,7 @@
 //                  $rate = $cc->getDkkPlz();
 //                  $amt = $amt * $rate;
                   ?>
-                  <td><?php $amount_total += $amt; echo number_format($amt, 2, ',', '') ?> <?php echo __('SEK')?></td>
+                  <td><?php $amount_total += $amt; echo number_format($amt, 2, ',', '') ?> <?php echo __('dkk')?></td>
                 </tr>
                 <?php endforeach; ?>
                 <?php if(count($smsRecords)==0): ?>
@@ -90,7 +90,7 @@
                 	<!--
                 	<td><?php echo format_number($amount_total-$amount_total*.20) ?> dkk</td>
                 	 -->
-                	<td><?php echo number_format($amount_total, 2, ',', '') ?> SEK</td>
+                	<td><?php echo number_format($amount_total, 2, ',', '') ?> dkk</td>
                 </tr>
                 <?php endif; ?>
               </table>

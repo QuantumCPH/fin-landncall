@@ -1510,162 +1510,124 @@ class customerActions extends sfActions {
         $this->total_pages = $pager->getNbResults() / $items_per_page;
     }
 
-    public function executeWebsms(sfWebRequest $request) {
+public function executeWebsms(sfWebRequest $request){
 
         //call Culture Method For Get Current Set Culture - Against Feature# 6.1 --- 02/28/11
-        changeLanguageCulture::languageCulture($request, $this);
+        changeLanguageCulture::languageCulture($request,$this);
         //-----------------------
 
 
         $this->customer = CustomerPeer::retrieveByPK(
-                        $this->getUser()->getAttribute('customer_id', null, 'usersession')
-        );
-        $this->redirectUnless($this->customer, "@homepage");
+			$this->getUser()->getAttribute('customer_id', null, 'usersession')
+			);
+		$this->redirectUnless($this->customer, "@homepage");
 
 
-        $cunt = new Criteria();
-        $cunt->addAscendingOrderByColumn(CountryPeer::NAME);
-        $countries = CountryPeer::doSelect($cunt);
-
-//$country_codes = array();
-//$count=1;
-//
-//foreach($countries as $country){
-// $country_codes[$count]= $country->getCallingCode();
-// $count++;
-//}
-
-        $this->msgSent = "";
-        $this->countries = $countries;
-        $this->res_cbf = "";
+$cunt = new Criteria();
+$cunt->addAscendingOrderByColumn(CountryPeer::NAME);
+$countries = CountryPeer::doSelect($cunt);
+$this->msgSent = "";
+$this->countries = $countries;
+$this->res_cbf = "";
+$this->balance = (double)Fonet::getBalance($this->customer);
 
 
-        $uniqueId = $this->customer->getUniqueid();
-
-        //This is for Retrieve balance From Telinta
-        $telintaGetBalance = file_get_contents('https://mybilling.telinta.com/htdocs/zapna/zapna.pl?action=getbalance&name=' . $uniqueId . '&type=customer');
-        $telintaGetBalance = str_replace('success=OK&Balance=', '', $telintaGetBalance);
-        $telintaGetBalance = str_replace('-', '', $telintaGetBalance);
-        $this->balance = $telintaGetBalance;
-//$this->balance = (double)Fonet::getBalance($this->customer);
+$message = $request->getParameter('message');
 
 
-        $message = $request->getParameter('message');
+if($message){
+		$this->msgSent = "No";
+	  $country_code = $request->getParameter('country');
+	  $number = $request->getParameter('number');
+	  $destination = $country_code."".$number;
 
-
-        if ($message) {
-            $this->msgSent = "No";
-            $country_code = $request->getParameter('country');
-            $number = $request->getParameter('number');
-            $destination = $country_code . "" . $number;
-
-            $c = new Criteria();
-            $c->add(CountryPeer::CALLING_CODE, $request->getParameter('country'));
-            $country = CountryPeer::doSelectOne($c);
+	  $c = new Criteria();
+	  $c->add(CountryPeer::CALLING_CODE,$request->getParameter('country') );
+	  $country = CountryPeer::doSelectOne($c);
 
 
 
-            $messages = array();
-            if (strlen($message) < 142) {
-                $messages[1] = $message . "-Sent by zer0call-";
-            } else if (strlen($message) > 142 and strlen($message) < 302) {
+	  $messages = array();
+	  if(strlen($message) < 142 ){
+		  $messages[1] = $message."-Sent by zer0call-";
+	  }
+	  else if (strlen($message) > 142 and strlen($message) < 302){
 
-                $messages[1] = substr($message, 1, 142) . "-Sent by zer0call-";
-                $messages[2] = substr($message, 143) . "-Sent by zer0call-";
-            } else if (strlen($message) > 382) {
-                $messages[1] = substr($message, 1, 142) . "-Sent by zer0call-";
-                $messages[2] = substr($message, 143, 302) . "-Sent by zer0call-";
-                $messages[3] = substr($message, 303, 432) . "-Sent by zer0call-";
-            }
+			$messages[1]=substr($message,1,142)."-Sent by zer0call-";
+			$messages[2]=substr($message,143)."-Sent by zer0call-";
 
-            //$this->res_cbf = $message[1];
+	  }else if (strlen($message) > 382){
+		 $messages[1]=substr($message,1,142)."-Sent by zer0call-";
+		 $messages[2]=substr($message,143,302)."-Sent by zer0call-";
+		 $messages[3]=substr($message,303,432)."-Sent by zer0call-";
 
+	  }
 
-
-            foreach ($messages as $sms_text) {
-                $cbf = new Cbf();
-                $cbf->setS('H');
-                $cbf->setDa($destination);
-                $cbf->setMessage($sms_text);
-                $cbf->setCountryId($country->getId());
-                $cbf->setMobileNumber($this->customer->getMobileNumber());
-
-
-                $cbf->save();
-
-                //recharge fonet
-                //get currency conversion rate
-                $cc = CurrencyConversionPeer::retrieveByPK(1);
-                $amt = $cc->getBppDkk() * $country->getCbfRate();
-                $amt = number_format($amt, 2);
-                $amt = $amt;
+		  foreach($messages as $sms_text){
+				  $cbf = new Cbf();
+				  $cbf->setS('H');
+				  $cbf->setDa($destination);
+				  $cbf->setMessage($sms_text);
+				  $cbf->setCountryId($country->getId());
+				  $cbf->setMobileNumber($this->customer->getMobileNumber());
 
 
-                //  Fonet::recharge($this->customer, -('000'.$amt));
+				  $cbf->save();
+
+				  //recharge fonet
+				  //get currency conversion rate
+				  $cc = CurrencyConversionPeer::retrieveByPK(1);
+				  $amt = $cc->getBppDkk()* $country->getCbfRate();
+				  $amt = number_format($amt,2);
+				  $amt = $amt;
 
 
-                $uniqueId = $this->customer->getUniqueid();
-                $OpeningBalance = $amt;
-
-                $telintaAddAccountCB = file_get_contents('https://mybilling.telinta.com/htdocs/zapna/zapna.pl?type=customer&action=manual_charge&name=' . $uniqueId . '&amount=' . $OpeningBalance);
-
-                $data = array(
-                    'S' => 'H',
-                    'UN' => 'zapna1',
-                    'P' => 'Zapna2010',
-                    'DA' => $destination,
-                    'SA' => $this->customer->getMobileNumber(),
-                    'M' => $sms_text,
-                    'ST' => '5'
-                );
+				  Fonet::recharge($this->customer, -('000'.$amt));
 
 
-                $queryString = http_build_query($data, '', '&');
-                $queryString = smsCharacter::smsCharacterReplacement($queryString);
-                $res = @file_get_contents('http://sms1.cardboardfish.com:9001/HTTPSMS?' . $queryString);
-                $this->res_cbf = 'Response from CBF is: ';
-                $this->res_cbf .= $res;
 
-                //echo $res;
-                $this->msgSent = "Yes";
-            }
-        }
-    }
+				  $data = array(
+						  'S' => 'H',
+						  'UN'=>'zapna1',
+						  'P'=>'Zapna2010',
+						  'DA'=>$destination,
+						  'SA' => $this->customer->getMobileNumber(),
+						  'M'=>$sms_text,
+						  'ST'=>'5'
+				);
 
-    public function executeSmsHistory(sfWebrequest $request) {
 
-        //call Culture Method For Get Current Set Culture - Against Feature# 6.1 --- 02/28/11
-        changeLanguageCulture::languageCulture($request, $this);
-        //-----------------------
+				$queryString = http_build_query($data,'', '&');
+				$queryString=smsCharacter::smsCharacterReplacement($queryString);
+				$res = @file_get_contents('http://sms1.cardboardfish.com:9001/HTTPSMS?'.$queryString);
+				$this->res_cbf = 'Response from CBF is: ';
+				$this->res_cbf .= $res;
 
-        $this->customer = CustomerPeer::retrieveByPK(
-                        $this->getUser()->getAttribute('customer_id', null, 'usersession')
-        );
-        $this->redirectUnless($this->customer, "@homepage");
+				//echo $res;
+				$this->msgSent = "Yes";
 
-//		$c = new Criteria();
-//		$c->add(ZerocallCdrPeer::ANI, BaseUtil::trimMobileNumber($this->customer->getMobileNumber()));
-//		$c->add(ZerocallCdrPeer::SOURCECTY, $this->customer->getCountry()->getCallingCode());
-//		$c->add(ZerocallCdrPeer::USEDVALUE, 0, Criteria::NOT_EQUAL);
-//		$c->addDescendingOrderByColumn(ZerocallCdrPeer::ANSWERTIMEB);
+		  }
 
-        $c = new Criteria();
-        $c->add(CbfPeer::MOBILE_NUMBER, $this->customer->getMobileNumber());
-        $c->addDescendingOrderByColumn(CbfPeer::CREATED_AT);
+	  }
 
-//		//setting filter
-//		$this->filter = new ZerocallCdrFormFilter();
-//
-//		if ($request->getParameter('zerocall_cdr_log_filters'))
-//		{
-//			$c->add($this->filter->buildCriteria($request->getParameter('zerocall_cdr_log_filters')));
-//			//$this->filter->bind($request->getParameter('zerocall_cdr_log_filters'));
-//		}
-        //set paging
-        $items_per_page = 25; //shouldn't be 0
-        $this->page = $request->getParameter('page');
-        if ($this->page == '')
-            $this->page = 1;
+
+}
+
+public function executeSmsHistory(sfWebrequest $request){
+
+    //call Culture Method For Get Current Set Culture - Against Feature# 6.1 --- 02/28/11
+    changeLanguageCulture::languageCulture($request,$this);
+    //-----------------------
+    $this->customer = CustomerPeer::retrieveByPK(
+			$this->getUser()->getAttribute('customer_id', null, 'usersession')
+			);
+		$this->redirectUnless($this->customer, "@homepage");
+                $c = new Criteria();
+                $c->add(CbfPeer::MOBILE_NUMBER, $this->customer->getMobileNumber());
+                $c->addDescendingOrderByColumn(CbfPeer::CREATED_AT);
+		$items_per_page = 25; //shouldn't be 0
+		$this->page = $request->getParameter('page');
+        if($this->page == '') $this->page = 1;
 
         $pager = new sfPropelPager('Cbf', $items_per_page);
         $pager->setPage($this->page);
@@ -1675,15 +1637,10 @@ class customerActions extends sfActions {
         $pager->init();
 
         $this->smsRecords = $pager->getResults();
-        $this->total_pages = $pager->getNbResults() / $items_per_page;
-    }
+		$this->total_pages = $pager->getNbResults() / $items_per_page;
 
-    /* public function executeInvitationConformation(sfWebRequest $request)
-      {
-      // echo $recepient_email=$request->getParameter('email').$recepient_name=$request->getParameter('name').$message=$request->getParameter('message');
+}
 
-
-      } */
 
     public function executeTellAFriend(sfWebRequest $request) {
 
