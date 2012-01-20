@@ -66,7 +66,7 @@
   		
       </ul>
       <ul id="sddm">
-<!--             <li><a href="#"
+             <li><a href="#"
                 onmouseover="mopen('m2')"
                 onmouseout="mclosetime()">B2B</a>
                 <div id="m2"
@@ -75,14 +75,11 @@
 
                     <?php echo link_to('Companies list', 'company/index') ?>
                     <?php echo link_to('Employee lists', 'employee/index') ?>
-                    <?php // echo link_to('Generte App Code', 'employee/appCode') ?>
-                    <?php //echo link_to('sale activity', 'sale_activity/index'); ?>
-                    <?php //echo link_to('support activity', 'support_activity/index'); ?>
-                    <?php //echo link_to('usage', 'cdr/index'); ?>
-                    <?php //echo link_to('invoices', 'invoice/index'); ?>
-                    <?php //echo link_to('Product orders', 'product_order/index') ?>
+                    <?php  echo link_to('Payment History', 'company/paymenthistory') ?>
+                    <?php echo link_to('Refill', 'company/refill'); ?>
+                
                 </div>
-            </li>-->
+            </li>
             <li>
                 <a href="#"
                 onmouseover="mopen('m5')"
@@ -364,5 +361,149 @@ jQuery('#sf_admin_edit_form').validate({
 
 
 </script>
+    
+    <script language="javascript" type="text/javascript">
+
+	jQuery('#company_vat_no').blur(function(){
+		//remove all the class add the messagebox classes and start fading
+		jQuery("#msgbox").removeClass().addClass('messagebox').text('Checking...').fadeIn("slow");
+
+                 var val=jQuery(this).val();
+
+                if(val==''){
+                    jQuery("#msgbox").fadeTo(200,0.1,function() //start fading the messagebox
+			{
+			  //add message and change the class of the box and start fading
+			  jQuery(this).html('Enter Vat Number').addClass('messageboxerror').fadeTo(900,1);
+			});
+                        jQuery('#error').val("error");
+                }else{
+		//check the username exists or not from ajax
+		jQuery.post("http://stagelc.zerocall.com/backend.php/company/vat",{ vat_no:val } ,function(data)
+        {//alert(data);
+		  if(data=='no') //if username not avaiable
+		  {
+		  	jQuery("#msgbox").fadeTo(200,0.1,function() //start fading the messagebox
+			{
+			  //add message and change the class of the box and start fading
+			  jQuery(this).html('This Vat No Already exists').addClass('messageboxerror').fadeTo(900,1);
+			});jQuery('#error').val("error");
+          }
+		  else
+		  {
+		  	jQuery("#msgbox").fadeTo(200,0.1,function()  //start fading the messagebox
+			{
+			  //add message and change the class of the box and start fading
+			  jQuery(this).html('Vat No is available').addClass('messageboxok').fadeTo(900,1);
+			});jQuery('#error').val("");
+		  }
+
+        });
+                }
+	});
+
+        	jQuery('#employee_mobile_number').blur(function(){
+		//remove all the class add the messagebox classes and start fading
+		jQuery("#msgbox").removeClass().addClass('messagebox').text('Checking...').fadeIn("slow");
+		//check the username exists or not from ajax
+                var val=jQuery(this).val();
+
+                if(val==''){
+                    jQuery("#msgbox").fadeTo(200,0.1,function() //start fading the messagebox
+			{
+			  //add message and change the class of the box and start fading
+			  jQuery(this).html('Enter Mobile Number').addClass('messageboxerror').fadeTo(900,1);
+			});
+                        jQuery('#error').val("error");
+                }else{
+                    if(val.length >7){
+
+                    if(val.substr(0, 1)==0){
+                jQuery("#msgbox").fadeTo(200,0.1,function() //start fading the messagebox
+			{
+			  //add message and change the class of the box and start fading
+			  jQuery(this).html('Please enter a valid mobile number not starting with 0').addClass('messageboxerror').fadeTo(900,1);
+			});
+                        jQuery('#error').val("error");
+                }else{
+
+		jQuery.post("http://stagelc.zerocall.com/backend.php/employee/mobile",{ mobile_no: val} ,function(data)
+        {
+		  if(data=='no') //if username not avaiable
+		  {
+		  	jQuery("#msgbox").fadeTo(200,0.1,function() //start fading the messagebox
+			{
+			  //add message and change the class of the box and start fading
+			  jQuery(this).html('This Mobile No Already exists').addClass('messageboxerror').fadeTo(900,1);
+			});jQuery('#error').val("error");
+          }
+		  else
+		  {
+		  	jQuery("#msgbox").fadeTo(200,0.1,function()  //start fading the messagebox
+			{
+			  //add message and change the class of the box and start fading
+			  jQuery(this).html('Mobile No is available').addClass('messageboxok').fadeTo(900,1);
+			});jQuery('#error').val("");
+		  }
+
+        });
+                }}}
+	});
+
+    jQuery("#sf_admin_form").submit(function() {
+      if (jQuery("#error").val() == "error") {
+
+        return false;
+      }else{
+          return true;
+      }
+
+
+    });
+       jQuery("#sf_admin_edit_form").submit(function() {
+      if (jQuery("#error").val() == "error") {
+
+        return false;
+      }else{
+          return true;
+      }
+
+
+    });
+
+
+</script>
+<style type="text/css">
+.messagebox{
+	position:absolute;
+	width:100px;
+	margin-left:30px;
+	border:1px solid #c93;
+	background:#ffc;
+	padding:3px;
+}
+.messageboxok{
+	position:absolute;
+	width:auto;
+	margin-left:30px;
+	border:1px solid #349534;
+	background:#C9FFCA;
+	padding:3px;
+	font-weight:bold;
+	color:#008000;
+
+}
+.messageboxerror{
+	position:absolute;
+	width:auto;
+	margin-left:30px;
+	border:1px solid #CC0000;
+	background:#F7CBCA;
+	padding:3px;
+	font-weight:bold;
+	color:#CC0000;
+}
+
+</style>
   </body>
 </html>

@@ -137,14 +137,26 @@ class companyActions extends sfActions {
 
     protected function saveCompany($company) {
         $companyData = $this->getRequestParameter('company');
+        if($company->isNew()){
+            $res = CompanyEmployeActivation::telintaRegisterCompany($companyData['vat_no']);
+        }
+        $company->isNew().":".$res; 
 
-        $res = CompanyEmployeActivation::telintaRegisterCompany($companyData['vat_no']);
-        echo $company->isNew().":".$res;
-        if($company->isNew() && $res){
-        var_dump($companyData);
-        var_dump($company);
+        if($company->isNew()&& $res){
 
+            //var_dump($companyData);
+            //var_dump($company);
             $company->save();
+
+            $transaction = new CompanyTransaction();
+            $transaction->setAmount(5000);
+            $transaction->setCompanyId($company->getId());
+            $transaction->setExtraRefill(5000);
+            $transaction->setTransactionStatusId(3);
+            $transaction->setPaymenttype(1);//Registered
+            $transaction->setDescription('Company Registered');
+            $transaction->save();
+
         }elseif(!$company->isNew()){
             $company->save();
         }elseif(!$res){
@@ -309,8 +321,8 @@ class companyActions extends sfActions {
             $criterion = $c->getNewCriterion(CompanyPeer::COMPANY_NAME, '');
             $criterion->addOr($c->getNewCriterion(CompanyPeer::COMPANY_NAME, null, Criteria::ISNULL));
             $c->add($criterion);
-        } else if (isset($this->filters['company_name']) && $this->filters['company_name'] !== '') {
-            $c->add(CompanyPeer::COMPANY_NAME, $this->filters['company_name']);
+        } else if (isset($this->filters['id']) && $this->filters['id'] !== '') {
+            $c->add(CompanyPeer::ID, $this->filters['id']);
         }
         if (isset($this->filters['vat_no_is_empty'])) {
             $criterion = $c->getNewCriterion(CompanyPeer::VAT_NO, '');
@@ -366,5 +378,92 @@ class companyActions extends sfActions {
     public function executeUsage($request) {
         $this->company = CompanyPeer::retrieveByPK($request->getParameter('company_id'));
     }
+
+    public function executeRefill(sfWebRequest $request)
+{
+
+        $c = new Criteria();
+        $this->companys = CompanyPeer::doSelect($c);
+        if ($request->isMethod('post')){
+
+            $company_id = $request->getParameter('company_id');
+            $refill_amount = $request->getParameter('refill');
+
+            $c1 = new Criteria();
+            $c1->addAnd(CompanyPeer::ID, $company_id);
+            $this->company = CompanyPeer::doSelectOne($c1);
+            $companyCVR=$this->company->getVatNo();
+
+            $transaction = new CompanyTransaction();
+            $transaction->setAmount($refill_amount);
+            $transaction->setCompanyId($company_id);
+            $transaction->setExtraRefill($refill_amount);
+            $transaction->setTransactionStatusId(1);
+            $transaction->setPaymenttype(2);//Refill
+            $transaction->setDescription('Company Refill');
+            $transaction->save();
+          
+            if($companyCVR!=''){
+                $telintaRefillcustomer = file_get_contents('https://mybilling.telinta.com/htdocs/zapna/zapna.pl?action=recharge&name='.$companyCVR.'&amount='.$refill_amount.'&type=customer');
+
+                sleep(0.5);
+
+                if(!$telintaRefillcustomer){
+                   emailLib::sendErrorInTelinta("Error in B2b company Refill", "Unable to call. We have faced an issue in company refill on telinta. this is the error on the following url https://mybilling.telinta.com/htdocs/zapna/zapna.pl?action=recharge&name='.$companyCVR.'&amount='.$refill_amount.'&type=customer. <br/> Please Investigate.");
+                   $this->getUser()->setFlash('message', 'Error in B2B Company Refill');
+                   $this->redirect('company/paymenthistory');
+                   return false;
+                }
+                parse_str($telintaRefillcustomer, $success);
+                if(isset($success['success']) && $success['success']!="OK"){
+                    emailLib::sendErrorInTelinta("Error in B2b company Refill", "Unable to call. We have faced an issue in company refill on telinta. this is the error on the following url https://mybilling.telinta.com/htdocs/zapna/zapna.pl?action=recharge&name='.$companyCVR.'&amount='.$refill_amount.'&type=customer. <br/> Please Investigate.");
+                    $this->getUser()->setFlash('message', 'Error in B2B Company Refill');
+                    $this->redirect('company/paymenthistory');
+                    return false;
+                }
+
+                    $transaction->setTransactionStatusId(3);
+                    $transaction->save();
+                    $this->getUser()->setFlash('message', 'B2B Company Refill Successfully');
+                    $this->redirect('company/paymenthistory');
+            }else{
+
+                $this->getUser()->setFlash('message', 'Please Select B2B Company');
+                
+            }
+                    //$telintaAddAccount='success=OK&Amount=$amount{$cust_info->{iso_4217}}';
+                    //parse_str($telintaAddAccount, $success);print_r($success);echo $success['success'];
+
+        }
+}
+
+public function executePaymenthistory(sfWebRequest $request)
+	{
+
+        $c = new Criteria();
+        $companyid=$request->getParameter('company_id');
+        $this->companyval=$companyid;
+        $c->add(CompanyTransactionPeer::TRANSACTION_STATUS_ID,  3);
+        if (isset($companyid) && $companyid != '') {
+        $c->addAnd(CompanyTransactionPeer::COMPANY_ID,  $companyid);
+
+        }
+        $this->transactions = CompanyTransactionPeer::doSelect($c);
+
+	}
+
+        public function executeVat(sfWebRequest $request)
+	{
+
+        $c = new Criteria();
+        $vat_no=$_POST['vat_no'];
+        $c->add(CompanyPeer::VAT_NO,  $vat_no);
+            if(CompanyPeer::doSelectOne($c)){
+
+                echo "no";
+            }else{
+               echo "yes";
+            }
+        }
 
 }

@@ -24,25 +24,25 @@
             <td style="padding: 5px;">Last name:</td>
             <td style="padding: 5px;"> <input type="text" name="last_name" id="employee_last_name"   value="<?php echo $employee->getLastName(); ?>"   class="required"    size="25" /></td>
         </tr>
-<!--        <tr>
+
+          <tr>
             <td style="padding: 5px;">Company:</td>
             <td style="padding: 5px;">
-                <select name="company_id" id="employee_company_id"  class="required"  style="width:190px;" disabled="disabled">
-                    <option value="" selected="selected"></option>
-<?php //foreach ($companys as $company) { ?>
-                    <option value="<?php //echo $comid = $company->getId(); ?>"   <?php //$varcom = $employee->getCompanyId();
-                   // if (isset($varcom) && $varcom == $comid) { ?>  selected="selected" <?php //} ?>   ><?php //echo $company->getName() ?></option>
-<?php //} ?>
+                <?php foreach ($companys as $company) { ?>
+                   <?php   $comid = $company->getId(); ?>    <?php $varcom =$employee->getCompanyId();
+                     if (isset($varcom) && $varcom == $comid) { ?>  <?php  echo $company->getName() ?> <?php } ?>   
+<?php  } ?>
+                <input type="hidden" name="company_id" id="employee_company_id"  class="required" value="<?php echo $employee->getCompanyId();   ?>">
+                </td>
+        </tr>
 
-                </select>  </td>
-        </tr>-->
-        <tr>
+<!--        <tr>
             <td style="padding: 5px;">Country Code:</td>
             <td style="padding: 5px;"> <input type="text" name="country_code" id="employee_country_code"   class="required digits"   value="<?php echo $employee->getCountryCode(); ?>" size="25"  /> </td>
-        </tr>
+        </tr>-->
         <tr>
             <td style="padding: 5px;">Mobile number:</td>
-            <td style="padding: 5px;"> <input type="text" name="mobile_number" id="employee_mobile_number"   class="required digits"   value="<?php echo $employee->getMobileNumber(); ?>"   size="25"  minlength="8" /> </td>
+            <td style="padding: 5px;"> <input type="text" name="mobile_number" id="employee_mobile_number"   class="required digits"   value="<?php echo $employee->getMobileNumber(); ?>"   size="25"  minlength="8" readonly="" /> </td>
         </tr>
         <tr>
             <td style="padding: 5px;">Email:</td>
@@ -89,7 +89,7 @@
         <tr>
             <td style="padding: 5px;">Product:</td>
             <td style="padding: 5px;"> <select name="productid" id="employee_product_id"   class="required" >
-                    <option value="" selected="selected"></option>
+<!--                    <option value="" selected="selected"></option>-->
 <?php foreach ($products as $product) { ?>
                     <option value="<?php echo $pid = $product->getId(); ?>"   <?php $varp = $employee->getProductId();
                     if (isset($varp) && $varp == $pid) { ?>  selected="selected" <?php } ?>><?php echo $product->getName() ?></option>
