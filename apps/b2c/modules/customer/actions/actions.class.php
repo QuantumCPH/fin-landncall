@@ -1087,7 +1087,7 @@ class customerActions extends sfActions {
                     unset($this->form['country_id']);
                     unset($this->form['city']);
                     unset($this->form['po_box_number']);
-                    unset($this->form['mobile_number']);
+                  //  unset($this->form['mobile_number']);
                     unset($this->form['device_id']);
                     unset($this->form['email']);
                     unset($this->form['is_newsletter_subscriber']);
@@ -1121,9 +1121,10 @@ class customerActions extends sfActions {
                     unset($this->form['terms_conditions']);
                     unset($this->form['manufacturer']);
                     unset($this->form['product']);
-        //unset($this->form['password_confirm']);
+                   //  unset($this->form['password']);
+        // unset($this->form['password_confirm']);
         /////////////////////////////////////
-             
+               $this->form->getWidget('password')->setAttribute('value', '');
  
 
         /////////////////////////////////////////

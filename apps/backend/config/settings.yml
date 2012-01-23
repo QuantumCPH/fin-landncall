@@ -21,6 +21,7 @@ test:
 
 all:
   .settings:
+    i18n: on
     # Form security secret (CSRF protection)
     csrf_secret:       false     # Unique secret to enable CSRF protection or false to disable
 
@@ -84,7 +85,7 @@ all:
 #    enabled_modules:        [default]
 #
 #    # Charset used for the response
-    charset:                utf-8
+#    charset:                utf-8
 #
 #    # Miscellaneous
 #    strip_comments:         on         # Remove comments in core framework classes as defined in the core_compile.yml
@@ -94,4 +95,6 @@ all:
 #    logging_enabled:        on
 #
 #    # i18n
-    default_culture:        en        # Default user culture
+#    default_culture:        en        # Default user culture
+    default_culture:        de_DE
+    charset:                utf-8
