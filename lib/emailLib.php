@@ -43,7 +43,7 @@ class emailLib{
 
         //Support Information
       $sender_email = sfConfig::get('app_email_sender_email', 'okhan@zapna.com');
-        #$sender_emailcdu = sfConfig::get('app_email_sender_email_cdu', 'jan.larsson@landncall.com');
+        $sender_emailcdu = sfConfig::get('app_email_sender_email_cdu', 'rs@zapna.com');
         $sender_name = sfConfig::get('app_email_sender_name', 'WLS 2');
         $sender_namecdu = sfConfig::get('app_email_sender_name_cdu', 'WLS 2');
 
@@ -143,7 +143,7 @@ class emailLib{
 
         //Support Information
       $sender_email = sfConfig::get('app_email_sender_email', 'okhan@zapna.com');
-        #$sender_emailcdu = sfConfig::get('app_email_sender_email_cdu', 'jan.larsson@landncall.com');
+        $sender_emailcdu = sfConfig::get('app_email_sender_email_cdu', 'rs@zapna.com');
         $sender_name = sfConfig::get('app_email_sender_name', 'WLS 2');
         $sender_namecdu = sfConfig::get('app_email_sender_name_cdu', 'WLS 2');
 
@@ -259,7 +259,7 @@ class emailLib{
 
         //Support Information
         $sender_email = sfConfig::get('app_email_sender_email', 'okhan@zapna.com');
-        #$sender_emailcdu = sfConfig::get('app_email_sender_email_cdu', 'jan.larsson@landncall.com');
+        $sender_emailcdu = sfConfig::get('app_email_sender_email_cdu', 'rs@zapna.com');
         $sender_name = sfConfig::get('app_email_sender_name', 'WLS 2');
         $sender_namecdu = sfConfig::get('app_email_sender_name_cdu', 'WLS 2');
 
@@ -390,7 +390,7 @@ class emailLib{
         //Support Information
         $sender_email = sfConfig::get('app_email_sender_email', 'okhan@zapna.com');
         $sender_name = sfConfig::get('app_email_sender_name', 'WLS 2');
-         $sender_emailcdu = sfConfig::get('app_email_sender_email', 'jan.larsson@landncall.com');
+         $sender_emailcdu = sfConfig::get('app_email_sender_email', 'rs@zapna.com');
         $sender_namecdu = sfConfig::get('app_email_sender_name', 'WLS 2');
         //------------------Sent The Email To Customer
         if(trim($recepient_email)!=''){
@@ -453,7 +453,7 @@ class emailLib{
         $subject = __('Payment Confirmation');
         $sender_email = sfConfig::get('app_email_sender_email', 'okhan@zapna.com');
         $sender_name = sfConfig::get('app_email_sender_name', 'WLS 2 ');
-         $sender_emailcdu = sfConfig::get('app_email_sender_email_cdu', ' jan.larsson@landncall.com');
+         $sender_emailcdu = sfConfig::get('app_email_sender_email_cdu', 'rs@zapna.com');
         $sender_namecdu = sfConfig::get('app_email_sender_name_cdu', 'WLS 2 ');
 
         $recepient_email = trim($customer->getEmail());
@@ -508,7 +508,7 @@ class emailLib{
         $subject            = __('Payment Confirmation');
         $sender_email       = sfConfig::get('app_email_sender_email', 'okhan@zapna.com');
         $sender_name        = sfConfig::get('app_email_sender_name', 'WLS 2 ');
-        $sender_emailcdu       = sfConfig::get('app_email_sender_email_cdu', 'jan.larsson@landncall.com');
+        $sender_emailcdu       = sfConfig::get('app_email_sender_email_cdu', 'rs@zapna.com');
         $sender_namecdu        = sfConfig::get('app_email_sender_name_cdu', 'WLS 2 ');
 
         $recepient_email    = trim($customer->getEmail());
@@ -564,7 +564,7 @@ class emailLib{
 
         $sender_email       = sfConfig::get('app_email_sender_email', 'support@landncall.com');
         $sender_name        = sfConfig::get('app_email_sender_name', 'WLS 2 support');
-        $sender_emailcdu       = sfConfig::get('app_email_sender_email_cdu', 'jan.larsson@landncall.com');
+        $sender_emailcdu       = sfConfig::get('app_email_sender_email_cdu', 'rs@zapna.com');
         $sender_namecdu        = sfConfig::get('app_email_sender_name_cdu', 'WLS 2 support');
         $message_body   =   '
 Härmed bekräftas att du har fått provision insatt på ditt konto för att du har tipsat en vän om Smartsim från LandNCall.
@@ -702,7 +702,7 @@ www.landncall.com';
         //Support Information
         $sender_email       = sfConfig::get('app_email_sender_email', 'okhan@zapna.com');
         $sender_name        = sfConfig::get('app_email_sender_name', 'WLS 2 ');
-        $sender_emailcdu       = sfConfig::get('app_email_sender_email_cdu', 'jan.larsson@landncall.com');
+        $sender_emailcdu       = sfConfig::get('app_email_sender_email_cdu', 'rs@zapna.com');
         $sender_namecdu        = sfConfig::get('app_email_sender_name_cdu', 'WLS 2 ');
 
         //------------------Sent The Email To Customer
@@ -787,7 +787,7 @@ www.landncall.com';
 
         //Support Information
         $sender_email = sfConfig::get('app_email_sender_email', 'okhan@zapna.com');
-        $sender_emailcdu = sfConfig::get('app_email_sender_email_cdu', 'support@wls2.com');
+        $sender_emailcdu = sfConfig::get('app_email_sender_email_cdu', 'rs@zapna.com');
         $sender_name = sfConfig::get('app_email_sender_name', 'WLS 2');
         $sender_namecdu = sfConfig::get('app_email_sender_name_cdu', 'WLS 2');
 
@@ -897,7 +897,7 @@ www.landncall.com';
 
         //Support Information
         $sender_email = sfConfig::get('app_email_sender_email', 'okhan@zapna.com');
-        $sender_emailcdu = sfConfig::get('app_email_sender_email_cdu', 'jan.larsson@landncall.com');
+        $sender_emailcdu = sfConfig::get('app_email_sender_email_cdu', 'rs@zapna.com');
         $sender_name = sfConfig::get('app_email_sender_name', 'WLS 2');
         $sender_namecdu = sfConfig::get('app_email_sender_name_cdu', 'WLS 2');
 
@@ -1008,15 +1008,15 @@ public static function sendvoipemail(Customer $customer,$order,$transaction)
         
         
         
-         $message_body = "<table width='600px'><tr style='border:0px solid #fff'><td colspan='4' align='right' style='text-align:right; border:0px solid #fff'>".image_tag('http://landncall.zerocall.com/images/logo.gif')."</tr></table><table cellspacing='0' width='600px'><tr><td>Grattis till ditt nya resenummer. Detta nummer är alltid kopplat till den telefon där du har Smartsim aktiverat. Med resenumret blir du nådd utomlands då du har ett lokalt SIM-kort. Se prislistan för hur mycket det kostar att ta emot samtal. 
+         $message_body = "<table width='600px'><tr style='border:0px solid #fff'><td colspan='4' align='right' style='text-align:right; border:0px solid #fff'>".image_tag('https://wls2.zerocall.com/images/logo.gif')."</tr></table><table cellspacing='0' width='600px'><tr><td>Grattis till ditt nya resenummer. Detta nummer är alltid kopplat till den telefon där du har Smartsim aktiverat. Med resenumret blir du nådd utomlands då du har ett lokalt SIM-kort. Se prislistan för hur mycket det kostar att ta emot samtal.
 Ditt resenummer är $voipnumbers.<br/><br/>
 Med vänlig hälsning<br/><br/>
-LandNCall<br/><a href='http://www.landncall.com'>www.landncall.com</a></td></tr></table>";
+WLS2<br/><a href='http://www.wls2.zerocall.com.com'>www.wls2.zerocall.com.com</a></td></tr></table>";
 
         //Support Information
         $sender_email = sfConfig::get('app_email_sender_email', 'okhan@zapna.com');
         $sender_name = sfConfig::get('app_email_sender_name', 'WLS 2');
-        $sender_emailcdu = sfConfig::get('app_email_sender_email', 'jan.larsson@landncall.com');
+        $sender_emailcdu = sfConfig::get('app_email_sender_email', 'rs@zapna.com');
         $sender_namecdu = sfConfig::get('app_email_sender_name', 'WLS 2');
         //------------------Sent The Email To Customer
         if(trim($recepient_email)!=''){
@@ -1107,12 +1107,12 @@ LandNCall<br/><a href='http://www.landncall.com'>www.landncall.com</a></td></tr>
          $message_body = "<table width='600px'><tr style='border:0px solid #fff'><td colspan='4' align='right' style='text-align:right; border:0px solid #fff'></tr></table><table cellspacing='0' width='600px'><tr><td>
              ".$message." <br/><br/>
 Med vänlig hälsning<br/><br/>
-LandNCall<br/><a href='http://www.landncall.com'>www.landncall.com</a></td></tr></table>";
+WLS2<br/><a href='http://www.wls2.zerocall.com.com'>www.wls2.zerocall.com.com</a></td></tr></table>";
 
         //Support Information
         $sender_email = sfConfig::get('app_email_sender_email', 'okhan@zapna.com');
         $sender_name = sfConfig::get('app_email_sender_name', 'WLS 2');
-        $sender_emailcdu = sfConfig::get('app_email_sender_email', 'zerocallengineering@googlegroups.com');
+        $sender_emailcdu = sfConfig::get('app_email_sender_email', 'rs@zapna.com');
         $sender_namecdu = sfConfig::get('app_email_sender_name', 'WLS 2');
        
 
@@ -1151,12 +1151,12 @@ LandNCall<br/><a href='http://www.landncall.com'>www.landncall.com</a></td></tr>
          $message_body = "<table width='600px'><tr style='border:0px solid #fff'><td colspan='4' align='right' style='text-align:right; border:0px solid #fff'></tr></table><table cellspacing='0' width='600px'><tr><td>
              ".$message." <br/><br/>
 Uniuqe Ids finsihed.<br/><br/>
-LandNCall<br/><a href='http://www.landncall.com'>www.landncall.com</a></td></tr></table>";
+WLS2<br/><a href='http://www.wls2.zerocall.com.com'>www.wls2.zerocall.com.com</a></td></tr></table>";
 
         //Support Informationt
         $sender_email = sfConfig::get('app_email_sender_email', 'okhan@zapna.com');
         $sender_name = sfConfig::get('app_email_sender_name', 'WLS 2');
-        $sender_emailcdu = sfConfig::get('app_email_sender_email', 'zerocallengineering@googlegroups.com');
+        $sender_emailcdu = sfConfig::get('app_email_sender_email', 'rs@zapna.com');
         $sender_namecdu = sfConfig::get('app_email_sender_name', 'WLS 2');
 
 
@@ -1196,7 +1196,7 @@ LandNCall<br/><a href='http://www.landncall.com'>www.landncall.com</a></td></tr>
          $message_body = "<table width='600px'><tr style='border:0px solid #fff'><td colspan='4' align='right' style='text-align:right; border:0px solid #fff'></tr></table><table cellspacing='0' width='600px'><tr><td>
              ".$message." <br/><br/>
 Uniuqe Id ".$uniqueid." has issue while assigning on ".$customer->getMobileNumber()."<br/><br/>
-LandNCall<br/><a href='http://www.landncall.com'>www.landncall.com</a></td></tr></table>";
+wls2<br/><a href='http://www.wls2.zerocall.com.com'>www.wls2.zerocall.com.com</a></td></tr></table>";
 
         //Support Informationt
         $sender_email = sfConfig::get('app_email_sender_email', 'okhan@zapna.com');
