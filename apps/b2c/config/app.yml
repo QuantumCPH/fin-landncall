@@ -14,7 +14,7 @@ all:
    smtp_username: csi10201
    smtp_password: zap6723an
    sender:
-     name: Zer0Call Support
+     name: wls2 Support
      email: no-reply@zerocall.com
  status:
    new: 1
