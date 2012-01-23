@@ -1011,7 +1011,7 @@
                 <target>från datum</target>
             </trans-unit>
               <trans-unit id="10846" translate="yes" reformat="yes" xml:space="default">
-                <source>Title</source>
+                <source>description</source>
                 <target>tttttttttt</target>
             </trans-unit>
         </body>

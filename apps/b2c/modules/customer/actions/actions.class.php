@@ -1087,7 +1087,7 @@ class customerActions extends sfActions {
                     unset($this->form['country_id']);
                     unset($this->form['city']);
                     unset($this->form['po_box_number']);
-                  //  unset($this->form['mobile_number']);
+                    unset($this->form['mobile_number']);
                     unset($this->form['device_id']);
                     unset($this->form['email']);
                     unset($this->form['is_newsletter_subscriber']);
@@ -1124,7 +1124,7 @@ class customerActions extends sfActions {
                    //  unset($this->form['password']);
         // unset($this->form['password_confirm']);
         /////////////////////////////////////
-               $this->form->getWidget('password')->setAttribute('value', '');
+            //   $this->form->getWidget('password')->setAttribute('value', '');
  
 
         /////////////////////////////////////////
@@ -1145,7 +1145,9 @@ class customerActions extends sfActions {
             }
             $this->oldpassword = $customers["oldpassword"];
             $this->form->bind($request->getParameter($this->form->getName()), $request->getFiles($this->form->getName()));
+ 
 
+ 
             if ($this->form->isValid() && $this->oldpasswordError == '') {
                 //	echo 'validated';
                 $customer = $this->form->save();

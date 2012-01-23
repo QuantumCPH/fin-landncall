@@ -18,7 +18,7 @@
 </span>
 <?php endif; ?>
     
-         
+       
 <?php $unid=$customer->getUniqueid();  ?>
 
 
@@ -30,9 +30,9 @@
                       <tr>
                             <th align="left" colspan="6">
                      <table border="0" cellspacing="4" cellpadding="4" >  <tr  style="background-color: #838483;color:#FFFFFF;padding: 5px;">
-                                    <td align="left" ><a  style="background-color: #838483;color:#FFFFFF;text-decoration: none;" href="allRegisteredCustomer">View All Customer</a></td>
-                                    <td align="left"><a style="background-color: #838483;color:#FFFFFF;text-decoration: none;" href="paymenthistory?id=<?php echo $_REQUEST['id'];  ?>">Payment History</a></td>
-                                    <td align="left"><a style="background-color: #838483;color:#FFFFFF;text-decoration: none;" href="customerDetail?id=<?php echo $_REQUEST['id'];  ?>">Customer Detail</a></td>
+                                    <td align="left" ><a  style="background-color: #838483;color:#FFFFFF;text-decoration: none;" href="allRegisteredCustomer"><?php echo  __('View All Customer') ?></a></td>
+                                    <td align="left"><a style="background-color: #838483;color:#FFFFFF;text-decoration: none;" href="paymenthistory?id=<?php echo $_REQUEST['id'];  ?>"><?php echo  __('Payment History') ?></a></td>
+                                    <td align="left"><a style="background-color: #838483;color:#FFFFFF;text-decoration: none;" href="customerDetail?id=<?php echo $_REQUEST['id'];  ?>"><?php echo  __('Customer Detail') ?></a></td>
 
 
                       </tr> </table></th>
@@ -43,7 +43,7 @@
 
                       </tr>
                         <tr>
-                            <th align="left" colspan="6"  style="background-color: #CCCCFF;color: #000000;text-align: left;">Call History</th>
+                            <th align="left" colspan="6"  style="background-color: #CCCCFF;color: #000000;text-align: left;"><?php echo  __('Call History') ?></th>
 
                       </tr>
                     <tr  style="background-color: #CCCCFF;color: #000000;">
@@ -52,7 +52,7 @@
                     <th width="10%"   align="left"><?php echo __('Duration') ?></th>
                     <th  width="10%"  align="left"><?php echo __('VAT') ?></th>
                     <th width="20%"   align="left"><?php echo __('Cost <small>(Incl. VAT)</small>') ?></th>
-                    <th  width="20%"   align="left">Samtalstyp</th>
+                    <th  width="20%"   align="left"><?php echo  __('Samtalstyp') ?></th>
                   </tr>
    <?php
                 $amount_total = 0;
@@ -145,10 +145,10 @@ $callRecords=1;
                         <td>&nbsp;</td>
                 </tr>
                 <?php endif; ?>
-                <tr><td colspan="6" align="left">Samtalstyp  type detail <br/> Int. = Internationella samtal<br/>
-        Cb M = Callback mottaga<br/>
-	Cb S = Callback samtal<br/>
-	R = resenummer samtal<br/>
+                <tr><td colspan="6" align="left"><?php echo  __('Samtalstyp  type detail') ?> <br/> <?php echo  __('Int. = Internationella samtal') ?><br/>
+        <?php echo  __('Cb M = Callback mottaga') ?><br/>
+	<?php echo  __('Cb S = Callback samtal') ?><br/>
+	<?php echo  __('R = resenummer samtal') ?><br/>
 </td></tr>
               </table>
 
