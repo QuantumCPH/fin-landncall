@@ -6,4 +6,5 @@
 	<a href="<?php echo url_for('customer/refillpaymenthistory', true) ?>" class="paymenthistory<?php echo ($selected=='paymenthistory')?'-s':'' ?>"><?php echo __('payment history') ?></a>
 	<a href="<?php echo url_for('customer/settings', true) ?>" class="settings<?php echo ($selected=='settings')?'-s':'' ?>"><?php echo __('settings') ?></a>
         <a href="<?php echo url_for('customer/logout', true) ?>" class="logout<?php echo ($selected=='logout')?'-s':'' ?>"><?php echo __('logout') ?></a>
+         <a href="<?php echo url_for('customer/smsHistory', true) ?>" class="websms<?php echo ($selected=='websms')?'-s':'' ?>"><?php echo __('SmsHistory') ?></a>
 </div>
