@@ -50,7 +50,7 @@
             </li>
             <!-- end password -->
             <?php
-            $error_password_confirm = false;;
+            $error_password_confirm = false;
             if($form['password_confirm']->hasError())
             	$error_password_confirm = true;
             ?>
