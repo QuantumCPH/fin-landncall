@@ -5,10 +5,10 @@
   <div class="left-col">
     <?php include_partial('navigation', array('selected'=>'callhistory', 'customer_id'=>$customer->getId())) ?>
       <div class="split-form-btn" style="margin-top: 70px;">
-          
+<!--
           <input type="button" class="butonsigninsmall"  name="button" onclick="window.location.href='<?php echo url_for('customer/paymenthistory', true); ?>'" style="cursor: pointer"  value="<?php echo __('Övrig historik') ?>" >
-                 </div>
-      <br />
+                 -->
+     </div> <br />
         <div class="alert_bar" style="width: 470px;">
             <?php echo __('Call history is updated after every 5-10 minutes.') ?>
         </div>
@@ -75,7 +75,7 @@ $csv = new parseCSV();
 $csvFileName = $res;
 # Parse '_books.csv' using automatic delimiter detection...
 $csv->auto($csvFileName);
-
+$callRecords=0;
 
 foreach ($csv->data as $key => $row) {
 
