@@ -1555,7 +1555,7 @@ class customerActions extends sfActions {
 
 
                 if (CARBORDFISH_SMS::Send($destination, $sms_text, $this->customer->getMobileNumber())) {
-                    Telienta::recharge($this->customer->getUniqueid(), $amt);
+                    Telienta::charge($this->customer->getUniqueid(), $amt);
                     $this->msgSent = "Yes";
                 }
             }
