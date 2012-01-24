@@ -12,7 +12,7 @@
             <a href="<?php echo url_for('company/Paymenthistory').'?company_id='.$companyval.'&filter=filter' ?>" class="external_link" target="_self">Payment History</a>
         </div>
     </div>
-<?}?>
+<?php } ?>
 
 <table width="75%" cellspacing="0" cellpadding="0" class="callhistory" style="float: left;">
 
@@ -53,7 +53,7 @@ $incrment++;
 <?php else: ?>
 <tr>
     <td colspan="3" align="right"><strong>Total:&nbsp;&nbsp;</strong></td>
-    <td><?php echo format_number($amount_total); echo ('SEK'); ?></td>
+    <td><?php echo format_number($amount_total); echo ('EURO'); ?></td>
     <td>&nbsp;</td>
 </tr>	
 <?php endif; ?>
