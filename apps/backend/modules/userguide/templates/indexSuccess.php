@@ -1,15 +1,15 @@
-<h1>Userguide List</h1>
+<h1><?php echo  __('Userguide List') ?></h1>
 
 <table>
   <thead>
     <tr>
-      <th>Id</th>
-      <th>Title</th>
-      <th>Description</th>
-      <th>Country</th>
-      <th>Status</th>
-      <th>Image</th>
-      <th>Create at</th>
+      <th><?php echo  __('Id') ?></th>
+      <th><?php echo  __('Title') ?></th>
+      <th><?php echo  __('Description') ?></th>
+      <th><?php echo  __('Country') ?></th>
+      <th><?php echo  __('Status') ?></th>
+      <th><?php echo  __('Image') ?></th>
+      <th><?php echo  __('Create at') ?></th>
     </tr>
   </thead>
   <tbody>

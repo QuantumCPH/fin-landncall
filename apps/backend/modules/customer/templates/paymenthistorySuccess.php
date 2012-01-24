@@ -9,14 +9,14 @@
                       </tr>
                               <tr>
                             <th align="left" colspan="4"> <table border="0" cellspacing="4" cellpadding="4" >  <tr  style="background-color: #838483;color:#FFFFFF;padding: 5px;">
-                                    <td align="left" ><a  style="background-color: #838483;color:#FFFFFF;text-decoration: none;" href="allRegisteredCustomer">View All Customer</a></td>
-                                    <td align="left"><a style="background-color: #838483;color:#FFFFFF;text-decoration: none;" href="customerDetail?id=<?php echo $_REQUEST['id'];  ?>">Customer Detail</a></td>
-                                    <td align="left"><a style="background-color: #838483;color:#FFFFFF;text-decoration: none;" href="callhistory?id=<?php echo $_REQUEST['id'];  ?>">Call History</a></td>
+                                    <td align="left" ><a  style="background-color: #838483;color:#FFFFFF;text-decoration: none;" href="allRegisteredCustomer"><?php echo  __('View All Customer') ?></a></td>
+                                    <td align="left"><a style="background-color: #838483;color:#FFFFFF;text-decoration: none;" href="customerDetail?id=<?php echo $_REQUEST['id'];  ?>"><?php echo  __('Customer Detail') ?></a></td>
+                                    <td align="left"><a style="background-color: #838483;color:#FFFFFF;text-decoration: none;" href="callhistory?id=<?php echo $_REQUEST['id'];  ?>"><?php echo  __('Call History') ?></a></td>
 
                       </tr> </table></th>
                           
 
-                      </tr>                              <tr><th colspan="4"  style="background-color: #CCCCFF;color: #000000;text-align: left">Payment History</th></tr>
+                      </tr>                              <tr><th colspan="4"  style="background-color: #CCCCFF;color: #000000;text-align: left"><?php echo  __('Payment History') ?></th></tr>
                             
                    <tr style="background-color: #CCCCFF;color: #000000;">
                        <th width="15%"  align="left"><?php echo __('Order Numer') ?></th>

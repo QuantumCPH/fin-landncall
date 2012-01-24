@@ -85,12 +85,21 @@ class CustomerForm extends BaseCustomerForm
 
 //        //This Code Add For Duplication Entery Again Task # 4.3 Date:01-18-11
          $mobileno=000000000;
-            if(isset($_REQUEST['customer']) && $_REQUEST['customer']!=""){
+
+           if(sfContext::getInstance()->getRouting()->getCurrentInternalUri()=='customer/passwordchange'){
+
+
+          
+             }else{
+
+                if(isset($_REQUEST['customer']) && $_REQUEST['customer']!=""){
             $mobileno=$_REQUEST['customer']['mobile_number'];
 
             }
+             }
           //$this->form->getValues('mobile_number');
    if(sfContext::getInstance()->getRouting()->getCurrentInternalUri()=='customer/settings'){
+
    }else{ 
 		$count=0;
 		$countc=0;

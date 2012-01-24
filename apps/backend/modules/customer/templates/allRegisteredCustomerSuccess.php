@@ -8,17 +8,17 @@
 
 		<table width="75%" cellspacing="0" cellpadding="2" style="float:left;">
                     <thead>
-                          <tr  ><th colspan="7"> All Registered Customer </th>  </tr>
+                          <tr  ><th colspan="7">   <?php echo  __('All Registered Customer') ?></th>  </tr>
                         <tr style="background-color: #CCCCFF;color: #000000;">
-                     <th width="10%" style="text-align: left" >Id</th>
-                  <th  width="20%" style="text-align: left"  >Customer Number</th>
-                      <th  width="20%" style="text-align: left" >Mobile Number</th>
-                       <th width="20%" style="text-align: left" >First Name</th>
-                    <th  width="20%"  style="text-align: left" >Last Name</th>
-                       <th  width="20%"  style="text-align: left" >Unique ID</th>
+                     <th width="10%" style="text-align: left" ><?php echo  __('Id') ?></th>
+                  <th  width="20%" style="text-align: left"  ><?php echo  __('Customer Number') ?></th>
+                      <th  width="20%" style="text-align: left" ><?php echo  __('Mobile Number') ?></th>
+                       <th width="20%" style="text-align: left" ><?php echo  __('First Name') ?></th>
+                    <th  width="20%"  style="text-align: left" ><?php echo  __('Last Name') ?></th>
+                       <th  width="20%"  style="text-align: left" ><?php echo  __('Unique ID') ?></th>
 
 
-                    <th width="10%" style="text-align: left"  >Action</th>
+                    <th width="10%" style="text-align: left"  > <?php echo  __('Action') ?></th>
                         </tr>
 		                  </thead>
                   <tfoot>

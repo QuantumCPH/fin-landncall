@@ -20,7 +20,7 @@
 		<div class="fl col">
         <?php echo $form->renderHiddenFields() ?>
           <ul>
-
+ 
             
               <li>
              <label for="customer_password" class="required"><?php echo __('Old Password') ?> *</label>
