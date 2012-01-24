@@ -36,7 +36,7 @@ return true;}
 </script>
 
 
-<?php include_partial('dashboard_header', array('customer'=> $customer, 'section'=>__('Refill') ) ) ?>
+<?php include_partial('dashboard_header', array('customer'=> $customer, 'section'=>__('Websms') ) ) ?>
 
 
 <div class="left-col">
