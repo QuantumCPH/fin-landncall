@@ -3,3 +3,4 @@
 class GlobalSettings extends BaseGlobalSettings
 {
 }
+
