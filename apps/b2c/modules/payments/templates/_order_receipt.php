@@ -198,5 +198,5 @@ $wrap_content  = isset($wrap)?$wrap:false;
 <p style="font-weight: bold;"><?php echo __('Cheers') ?></p>
 
 <p style="font-weight: bold;">
-<?php echo __('Support') ?>&nbsp;LandNCall AB
+<?php echo __('Support') ?>&nbsp;WLS2
 </p>
