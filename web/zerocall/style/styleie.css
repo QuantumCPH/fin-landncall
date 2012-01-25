@@ -94,7 +94,7 @@ width:232px;
 .right-col .box a span{ background-image:url(../images/bg-greenbutton-.png); background-position:right top; background-repeat:no-repeat; display:block; padding:3px 5px 3px; width:75px;}
 .right-col .box-last{ margin:0px;}
 .dash-nav{ width:520px; float:left;}
-.dash-nav a{ width:78px; height:58px; float:left; overflow:hidden; display:block; text-indent:9000em; white-space:nowrap; background-image:url(../images/dash-nav-sprite.gif); background-repeat:no-repeat; margin-right:7px;}
+.dash-nav a{ width:72px; height:58px; float:left; overflow:hidden; display:block; text-indent:9000em; white-space:nowrap; background-image:url(../images/dash-nav-sprite.gif); background-repeat:no-repeat; margin-right:0px;}
 .dash-nav a.dashboard{ background-position:0px 0px}
 .dash-nav a.dashboard:hover{ background-position:-85px 0px}
 .dash-nav a.dashboard-s{ background-position:-85px 0px}
