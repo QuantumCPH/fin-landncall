@@ -1409,7 +1409,7 @@ class customerActions extends sfActions {
             $customer->setPassword($new_password);
             $message_body = $this->getContext()->getI18N()->__('Hi') . ' ' . $customer->getFirstName() . '!';
             $message_body .= '<br /><br />';
-            $message_body .= $this->getContext()->getI18N()->__('Your password has been changed. Please use the following information to login to your LandNCall AB account.');
+            $message_body .= $this->getContext()->getI18N()->__('Your password has been changed. Please use the following information to login to your WLS2 account.');
             $message_body .= '<br /><br />';
             $message_body .= sprintf('Mobilnummer: %s', $customer->getMobileNumber());
             $message_body .= '<br />';
@@ -1422,8 +1422,8 @@ class customerActions extends sfActions {
 
 
             $subject = $this->getContext()->getI18N()->__('Password Request');
-            $sender_email = sfConfig::get('app_email_sender_email', 'support@landncall.com');
-            $sender_name = sfConfig::get('app_email_sender_name', 'LandNCall AB support');
+            $sender_email = sfConfig::get('app_email_sender_email', 'rs@zapna.com');
+            $sender_name = sfConfig::get('app_email_sender_name', 'support');
 
             $message = $message_body;
 
