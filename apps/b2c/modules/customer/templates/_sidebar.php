@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 /*
   <div class="right-col">
     <div class="box box-b">
@@ -7,12 +7,14 @@
       <p>Luda esse singularis simmilas
         vector ludo prosint nunc pro
         exreas...</p>
-      <a href="#" class="more"><span>L�s og bestil &raquo;</span></a> </div>
+      <a href="#" class="more"><span>L?s og bestil &raquo;</span></a> </div>
 
   </div>
 */?>
   
 <!-- new sidebar -->
+
+
 <div id="sidebar" role="complementary">
 
 	<div class="right-col">
@@ -24,9 +26,6 @@
 		</div>
 
 	</div>
-</div>
-
-<div id="sidebar" role="complementary">
 
 	<div class="right-col">
 		<div class="box box-0">
