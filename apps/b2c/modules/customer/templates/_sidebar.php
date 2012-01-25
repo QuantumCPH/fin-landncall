@@ -13,8 +13,17 @@
 */?>
   
 <!-- new sidebar -->
-
 <div id="sidebar" role="complementary">
+
+	<div class="right-col">
+		<div class="box box-0">
+                    <h3></h3>
+                    <p> <span style="margin-top:5px;font-weight:bold;text-align:left;color:#000;padding-top:9px;font-size:14px;"><?php echo __('Web SMS') ?></span></p><p style="color:#000;">
+<?php echo __('Send SMS worldwide at the best prices of market') ?></p>
+                    <a title="<?php echo __('Web SMS') ?>" rel="bookmark11" href="<?php echo url_for('customer/websms', true) ?>"><span style="color:#000000;"><?php echo __('Send SMS') ?></span></a>
+		</div>
+
+	</div>
 
 	<div class="right-col">
 		<div class="box box-0">
