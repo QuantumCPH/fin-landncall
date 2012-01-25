@@ -1768,7 +1768,9 @@ class customerActions extends sfActions {
             $subject = $this->getContext()->getI18N()->__("WLS2 inbjudan");
             $name = $this->customer->getFirstName() . ' ' . $this->customer->getLastName();
             $message_body = 'Hej ' . $recepient_name . ',<br /> ' . $this->getContext()->getI18N()->__("This invitation is sent to you with the refrence of") . ' ' . $name . ', ' . $this->getContext()->getI18N()->__("en användare av Smartsim från WLS2.");
-            $message_body_end = 'Vänligen klicka på acceptera för att börja spara pengar direkt med Smartsim du ocksåg' . '<a  href="http://wls2.zerocall.com/b2c.php/customer/signup?invite_id=' . $invite->getId() . '"> ' . $this->getContext()->getI18N()->__("Accept") . '</a><br/> Läs mer på <a href="www.zerocall.com">www.zerocall.com/</a>';
+
+            $message_body_end = 'Vänligen klicka på acceptera för att börja spara pengar direkt med Smartsim du ocksåg' . '<a  href="http://wls2.zerocall.com/b2c.php/customer/signup?invite_id=' . $invite->getId() . '"> ' . $this->getContext()->getI18N()->__("Accept") . '</a><br/> Läs mer på <a href="www.zerocall.com">www.zerocall.com</a>';
+
             //send email
             if ($recepient_name != ''):
                 $email = new EmailQueue();
