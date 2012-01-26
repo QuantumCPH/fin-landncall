@@ -5,11 +5,11 @@
         <header />
         <body>
               <trans-unit id="1" translate="yes" reformat="yes" xml:space="default">
-                <source>B2B Company List</source>
-                <target>B2B Firmenliste</target>
+                <source>Wls2</source>
+                <target>Wls2</target>
             </trans-unit>
              <trans-unit id="2" translate="yes" reformat="yes" xml:space="default">
-                <source>no result</source>
+                <source>Companies list</source>
                 <target>kein Ergebnis</target>
             </trans-unit>
 
