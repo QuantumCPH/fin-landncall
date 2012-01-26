@@ -1629,7 +1629,7 @@ public function executeSmsHistory(sfWebrequest $request){
             $invite->setMessage($message);
             $invite->save();
 
-            //set email attributes
+            //set email attributes$this->getContext()->getI18N()->__('Auto Refill is deactivated.')
             $subject = $this->getContext()->getI18N()->__("WLS inbjudan");
             $name = $this->customer->getFirstName() . ' ' . $this->customer->getLastName();
             $message_body = 'Hej ' . $recepient_name . ',<br /> ' . $this->getContext()->getI18N()->__("This invitation is sent to you with the refrence of") . ' ' . $name . ', ' . $this->getContext()->getI18N()->__("en användare av Smartsim från wls2.");
