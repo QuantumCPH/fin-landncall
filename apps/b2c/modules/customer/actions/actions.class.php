@@ -1617,7 +1617,6 @@ public function executeSmsHistory(sfWebrequest $request){
 
             //$this->form = new ContactForm();
 
-
             $recepient_email = $request->getParameter('email');
             $recepient_name = $request->getParameter('name');
 
@@ -1629,7 +1628,8 @@ public function executeSmsHistory(sfWebrequest $request){
             $invite->setMessage($message);
             $invite->save();
 
-        $subject = $this->getContext()->getI18N()->__("WLS2 inbjudan");
+            $subject = $this->getContext()->getI18N()->__("WLS inbjudan");
+
             $name = $this->customer->getFirstName() . ' ' . $this->customer->getLastName();
             $message_body = 'Hej ' . $recepient_name . ',<br /> ' . $this->getContext()->getI18N()->__("This invitation is sent to you with the refrence of") . ' ' . $name . ', ' . $this->getContext()->getI18N()->__("en användare av Smartsim från WLS2.");
 
