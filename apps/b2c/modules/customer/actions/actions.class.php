@@ -1630,12 +1630,19 @@ public function executeSmsHistory(sfWebrequest $request){
             $invite->save();
 
             //set email attributes
+<<<<<<< HEAD
             $subject = $this->getContext()->getI18N()->__("WLS2 inbjudan");
             $name = $this->customer->getFirstName() . ' ' . $this->customer->getLastName();
             $message_body = 'Hej ' . $recepient_name . ',<br /> ' . $this->getContext()->getI18N()->__("This invitation is sent to you with the refrence of") . ' ' . $name . ', ' . $this->getContext()->getI18N()->__("en användare av Smartsim från WLS2.");
 
             $message_body_end = 'Vänligen klicka på acceptera för att börja spara pengar direkt med Smartsim du ocksåg' . '<a  href="http://wls2.zerocall.com/b2c.php/customer/signup?invite_id=' . $invite->getId() . '"> ' . $this->getContext()->getI18N()->__("Accept") . '</a><br/> Läs mer på <a href="www.zerocall.com">www.zerocall.com</a>';
 
+=======
+            $subject = $this->getContext()->getI18N()->__("WLS inbjudan");
+            $name = $this->customer->getFirstName() . ' ' . $this->customer->getLastName();
+            $message_body = 'Hej ' . $recepient_name . ',<br /> ' . $this->getContext()->getI18N()->__("This invitation is sent to you with the refrence of") . ' ' . $name . ', ' . $this->getContext()->getI18N()->__("en användare av Smartsim från wls2.");
+            $message_body_end = 'Vänligen klicka på acceptera för att börja spara pengar direkt med Smartsim du ocksåg' . '<a  href="http://wls2.zerocall.com/b2c.php/customer/signup?invite_id=' . $invite->getId() . '"> ' . $this->getContext()->getI18N()->__("Accept") . '</a><br/> Läs mer på <a href="www.wls2.zerocall.com">www.wls2.zerocall.com</a>';
+>>>>>>> ff47ec6ef270debd99e74f808cf6a6559c19e205
             //send email
             if ($recepient_name != ''):
                 $email = new EmailQueue();

@@ -4,7 +4,19 @@
     <file source-language="EN" target-language="de" datatype="plaintext" original="messages" date="2010-07-22T17:23:11Z" product-name="messages" xml:space="default">
         <header />
         <body>
-            
+              <trans-unit id="1" translate="yes" reformat="yes" xml:space="default">
+                <source>B2B Company List</source>
+                <target>B2B Firmenliste</target>
+            </trans-unit>
+             <trans-unit id="2" translate="yes" reformat="yes" xml:space="default">
+                <source>no result</source>
+                <target>kein Ergebnis</target>
+            </trans-unit>
+
+
+
+
+
         </body>
     </file>
 </xliff>

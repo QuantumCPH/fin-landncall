@@ -1,11 +1,11 @@
 <div id="sf_admin_container">
     <div id="sf_admin_content">
-        <a href="<?php echo url_for('employee/view').'?id='.$employee->getId() ?>" class="external_link" target="_self">Employee Detail</a>
+        <a href="<?php echo url_for('employee/view').'?id='.$employee->getId() ?>" class="external_link" target="_self"><?php echo __('Employee Detail') ?></a>
     </div>
 </div><br>
 <table width="75%">
     <tr>
-        <th align="left" colspan="6"  style="background-color: #CCCCFF;color: #000000;text-align: left;">Call History</th>
+        <th align="left" colspan="6"  style="background-color: #CCCCFF;color: #000000;text-align: left;"><?php echo __('Call History') ?></th>
     </tr>
     <tr  style="background-color: #CCCCFF;color: #000000;">
         <th width="20%"   align="left"><?php echo __('Date &amp; time') ?></th>
@@ -13,7 +13,7 @@
         <th width="10%"   align="left"><?php echo __('Duration') ?></th>
         <th  width="10%"  align="left"><?php echo __('VAT') ?></th>
         <th width="20%"   align="left"><?php echo __('Cost <small>(Incl. VAT)</small>') ?></th>
-        <th  width="20%"   align="left">Samtalstyp</th>
+        <th  width="20%"   align="left"><?php echo __('Samtalstyp') ?></th>
     </tr>
 <?php
 
@@ -57,7 +57,7 @@ foreach ($csv->data as $key => $row) {
         <td><?php echo  $CLD; ?></td>
         <td><?php echo number_format($charged_quantity/60 ,2);  ?></td>
         <td><?php echo  number_format($charged_amount/4,2); ?></td>
-        <td><?php echo number_format($charged_amount,2);      $amount_total+= number_format($charged_amount,2); ?> SEK</td>
+        <td><?php echo number_format($charged_amount,2);      $amount_total+= number_format($charged_amount,2); ?> &euro;</td>
         <td><?php $account_id;    $typecall=substr($account_id,0,1);
            if($typecall=='a'){ echo "Int.";  }
            if($typecall=='4'){ echo "R";  }
@@ -95,7 +95,7 @@ foreach ($csvcb->data as $keycb => $rowcb) {
         <td><?php echo  $CLD; ?></td>
         <td><?php echo number_format($charged_quantity/60 ,2);  ?></td>
         <td><?php echo  number_format($charged_amount/4,2); ?></td>
-        <td><?php echo number_format($charged_amount,2);      $amount_total+= number_format($charged_amount,2); ?> SEK</td>
+        <td><?php echo number_format($charged_amount,2);      $amount_total+= number_format($charged_amount,2); ?> &euro;</td>
         <td><?php $account_id;    $typecall=substr($account_id,0,1);
            if($typecall=='a'){ echo "Int.";  }
            if($typecall=='4'){ echo "R";  }
@@ -144,7 +144,7 @@ foreach ($csvrese->data as $keyrese => $rowrese) {
         <td><?php echo  $CLD; ?></td>
         <td><?php echo number_format($charged_quantity/60 ,2);  ?></td>
         <td><?php echo  number_format($charged_amount/4,2); ?></td>
-        <td><?php echo number_format($charged_amount,2);     // $amount_total+= number_format($charged_amount,2); ?> SEK</td>
+        <td><?php echo number_format($charged_amount,2);     // $amount_total+= number_format($charged_amount,2); ?>&euro;</td>
         <td><?php $account_id;    $typecall=substr($account_id,0,1);
            if($typecall=='a'){ echo "Int.";  }
            if($typecall=='4'){ echo "R";  }
@@ -165,16 +165,16 @@ $callRecordsrese=1;
 <?php }else{ ?>
     <tr>
         <td colspan="4" align="right"><strong><?php echo __('Subtotal') ?></strong></td>
-        <td><?php echo number_format($amount_total, 2, ',', '') ?> SEK</td>
+        <td><?php echo number_format($amount_total, 2, ',', '') ?> &euro;</td>
         <td>&nbsp;</td>
     </tr>
 <?php } ?>
 
     <tr>
-        <td colspan="6" align="left">Samtalstyp  type detail <br/> Int. = Internationella samtal<br/>
-            Cb M = Callback mottaga<br/>
-            Cb S = Callback samtal<br/>
-            R = resenummer samtal<br/>
+        <td colspan="6" align="left"><?php echo __('Samtalstyp  type detail') ?> <br/><?php echo __('Int. = Internationella samtal') ?> <br/>
+            <?php echo __('Cb M = Callback mottaga') ?><br/>
+            <?php echo __('Cb S = Callback samtal') ?><br/>
+            <?php echo __('R = resenummer samtal') ?><br/>
         </td>
     </tr>
 </table>

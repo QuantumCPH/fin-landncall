@@ -4,7 +4,7 @@
         
         
 <div class="save-ok">
-<h2>Employee is not added and  registered on tilinta please check email </h2>
+<h2><?php echo  __('Employee is not added and  registered on tilinta please check email') ?> </h2>
 </div>
         
   <?php }else{  ?>
@@ -12,7 +12,7 @@
 
 
 <div class="save-ok">
-<h2>Employee is added successfully</h2>
+<h2><?php echo  __('Employee is added successfully') ?></h2>
 </div>
 <?php  }  }   ?>
 <?php if ($sf_user->hasFlash('messageError')): ?>
@@ -21,50 +21,50 @@
 </div>
 <?php endif; ?>
 <div id="sf_admin_container">
-<h1>New My employee</h1></div>
+<h1><?php echo  __('New My employee') ?></h1></div>
 <form id="sf_admin_form" name="sf_admin_edit_form" method="post" enctype="multipart/form-data" action="saveEmployee">
     <div id="sf_admin_content">
     <fieldset id="sf_fieldset_none" class="">
     <table style="padding: 0px;"  id="sf_admin_container" >
         <tr>
-        <td style="padding: 5px;">First name:</td>
+        <td style="padding: 5px;"><?php echo  __('First name:') ?></td>
         <td style="padding: 5px;"><input type="text" name="first_name" id="employee_first_name"  class="required"  size="25" /></td>
                 </tr>
                  <tr>
-        <td style="padding: 5px;">Last name:</td>
+        <td style="padding: 5px;"><?php echo  __('Last name:') ?></td>
         <td style="padding: 5px;"> <input type="text" name="last_name" id="employee_last_name"   class="required"   size="25" /></td>
                 </tr>
                  <tr>
-        <td style="padding: 5px;">Company:</td>
+        <td style="padding: 5px;"><?php echo  __('Company:') ?></td>
         <td style="padding: 5px;">
   <select name="company_id" id="employee_company_id"    class="required"  style="width:190px;">
-      <option value="">Select Company</option>
+      <option value=""><?php echo  __('Select Company') ?></option>
       <?php foreach($companys as $company){  ?>
 <option value="<?php echo $company->getId(); ?>"<?php echo ($companyval==$company->getId())?"selected='selected'":''?>><?php echo $company->getName()   ?></option>
 <?php   }  ?>
 </select>  </td>
                 </tr>
 <!--                  <tr>
-        <td style="padding: 5px;">Country Code:</td>
+        <td style="padding: 5px;"><?php echo  __('Country Code:') ?></td>
         <td style="padding: 5px;"> <input type="text" name="country_code" id="employee_country_code"   size="25"   class="required digits" /> </td>
                 </tr>-->
                  <tr>
-        <td style="padding: 5px;">Mobile number:</td>
+        <td style="padding: 5px;"><?php echo  __('Mobile number:') ?></td>
         <td style="padding: 5px;"> <input type="text" name="mobile_number" id="employee_mobile_number"  size="25"   class="required digits"  minlength="8" /><span id="msgbox" style="display:none"></span> </td>
                 </tr>
                  <tr>
-        <td style="padding: 5px;">Email:</td>
+        <td style="padding: 5px;"><?php echo  __('Email:') ?></td>
         <td style="padding: 5px;"> <input type="text" name="email" id="employee_email"   class="required email"  size="25" /> </td>
                 </tr>
-                 <tr>
-        <td style="padding: 5px;">Rese number:</td>
+<!--                 <tr>
+        <td style="padding: 5px;"><?php echo  __('Rese number:') ?></td>
         <td style="padding: 5px;">
   <select name="registration_type" id="employee_registration_type">
-         <option value="0"> no</option>
-      <option value="1"> yes</option>
+         <option value="0"><?php echo  __('no') ?></option>
+      <option value="1"><?php echo  __('yes') ?></option>
     
 </select> </td>
-                </tr>
+                </tr>-->
   <!--<tr>
         <td>App code:</td>
         <td> <input type="text" name="app_code" id="employee_app_code" value="" size="25" /></td>
@@ -81,7 +81,7 @@
         <td style="padding: 5px;"> <input type="text" name="price" id="employee_password"   size="25" />  </td>
                 </tr>-->
                   <tr>
-        <td style="padding: 5px;">Product:</td>
+        <td style="padding: 5px;"><?php echo __('Product:') ?></td>
         <td style="padding: 5px;"> <select name="productid" id="productid"    class="required"  >
 <!--      <option value="" selected="selected"></option>-->
       <?php foreach($products as $product){  ?>

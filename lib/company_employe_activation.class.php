@@ -55,17 +55,17 @@ class CompanyEmployeActivation {
                         emailLib::sendErrorInTelinta("Error in employee  a account   registration", "We have faced an issue in employee registrtion on telinta. this is the error on the following url https://mybilling.telinta.com/htdocs/zapna/zapna.pl?type=account&action=activate&name=a".$employeMobileNumber."&customer=".$companyCVRNumber."&opening_balance=0&credit_limit=&product=YYYLandncall_CT&outgoing_default_r_r=2034&billing_model=1&password=asdf1asd. <br/> Please Investigate.");
                         return false;
                     }
-    sleep(0.25);
-         $telintaAddAccountCB = file_get_contents('https://mybilling.telinta.com/htdocs/zapna/zapna.pl?type=account&action=activate&name=cb'.$employeMobileNumber.'&customer='.$companyCVRNumber.'&opening_balance=0&credit_limit=&product=YYYLandncall_callback&outgoing_default_r_r=2034&billing_model=1&password=asdf1asd');
-  if(!$telintaAddAccountCB){
-                       emailLib::sendErrorInTelinta("Error in B2b employee CB account registration", "We have faced an issue in employee registrtion on telinta. this is the error on the following url https://mybilling.telinta.com/htdocs/zapna/zapna.pl?type=account&action=activate&name=cb".$employeMobileNumber."&customer=".$companyCVRNumber."&opening_balance=0&credit_limit=&product=YYYLandncall_CT&outgoing_default_r_r=2034&billing_model=1&password=asdf1asd. <br/> Please Investigate.");
-                        return false;
-                    }
-                    parse_str($telintaAddAccountCB);
-                    if(isset($success) && $success!="OK"){
-                        emailLib::sendErrorInTelinta("Error in B2b employee CB account registration", "We have faced an issue in employee registrtion on telinta. this is the error on the following url https://mybilling.telinta.com/htdocs/zapna/zapna.pl?type=account&action=activate&name=cb".$employeMobileNumber."&customer=".$companyCVRNumber."&opening_balance=0&credit_limit=&product=YYYLandncall_CT&outgoing_default_r_r=2034&billing_model=1&password=asdf1asd. <br/> Please Investigate.");
-                        return false;
-                    }
+  //  sleep(0.25);
+//         $telintaAddAccountCB = file_get_contents('https://mybilling.telinta.com/htdocs/zapna/zapna.pl?type=account&action=activate&name=cb'.$employeMobileNumber.'&customer='.$companyCVRNumber.'&opening_balance=0&credit_limit=&product=YYYLandncall_callback&outgoing_default_r_r=2034&billing_model=1&password=asdf1asd');
+//  if(!$telintaAddAccountCB){
+//                       emailLib::sendErrorInTelinta("Error in B2b employee CB account registration", "We have faced an issue in employee registrtion on telinta. this is the error on the following url https://mybilling.telinta.com/htdocs/zapna/zapna.pl?type=account&action=activate&name=cb".$employeMobileNumber."&customer=".$companyCVRNumber."&opening_balance=0&credit_limit=&product=YYYLandncall_CT&outgoing_default_r_r=2034&billing_model=1&password=asdf1asd. <br/> Please Investigate.");
+//                        return false;
+//                    }
+//                    parse_str($telintaAddAccountCB);
+//                    if(isset($success) && $success!="OK"){
+//                        emailLib::sendErrorInTelinta("Error in B2b employee CB account registration", "We have faced an issue in employee registrtion on telinta. this is the error on the following url https://mybilling.telinta.com/htdocs/zapna/zapna.pl?type=account&action=activate&name=cb".$employeMobileNumber."&customer=".$companyCVRNumber."&opening_balance=0&credit_limit=&product=YYYLandncall_CT&outgoing_default_r_r=2034&billing_model=1&password=asdf1asd. <br/> Please Investigate.");
+//                        return false;
+//                    }
 
    return true;    
     }
