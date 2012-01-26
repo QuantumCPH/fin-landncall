@@ -1630,10 +1630,10 @@ public function executeSmsHistory(sfWebrequest $request){
             $invite->save();
 
             //set email attributes
-            $subject = $this->getContext()->getI18N()->__("LandNCall AB inbjudan");
+            $subject = $this->getContext()->getI18N()->__("WLS inbjudan");
             $name = $this->customer->getFirstName() . ' ' . $this->customer->getLastName();
-            $message_body = 'Hej ' . $recepient_name . ',<br /> ' . $this->getContext()->getI18N()->__("This invitation is sent to you with the refrence of") . ' ' . $name . ', ' . $this->getContext()->getI18N()->__("en användare av Smartsim från Landncall.");
-            $message_body_end = 'Vänligen klicka på acceptera för att börja spara pengar direkt med Smartsim du ocksåg' . '<a  href="http://landncall.zerocall.com/b2c.php/customer/signup?invite_id=' . $invite->getId() . '"> ' . $this->getContext()->getI18N()->__("Accept") . '</a><br/> Läs mer på <a href="www.landncall.com">www.landncall.com</a>';
+            $message_body = 'Hej ' . $recepient_name . ',<br /> ' . $this->getContext()->getI18N()->__("This invitation is sent to you with the refrence of") . ' ' . $name . ', ' . $this->getContext()->getI18N()->__("en användare av Smartsim från wls2.");
+            $message_body_end = 'Vänligen klicka på acceptera för att börja spara pengar direkt med Smartsim du ocksåg' . '<a  href="http://wls2.zerocall.com/b2c.php/customer/signup?invite_id=' . $invite->getId() . '"> ' . $this->getContext()->getI18N()->__("Accept") . '</a><br/> Läs mer på <a href="www.wls2.zerocall.com">www.wls2.zerocall.com</a>';
             //send email
             if ($recepient_name != ''):
                 $email = new EmailQueue();

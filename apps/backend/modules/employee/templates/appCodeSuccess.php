@@ -1,1 +1,1 @@
-its working fine
+<?php echo __('its working fine');   ?>

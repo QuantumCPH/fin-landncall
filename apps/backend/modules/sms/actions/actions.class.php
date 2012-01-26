@@ -53,7 +53,7 @@ class smsActions extends sfActions
       $cbf->setDa($number);
       $cbf->setMessage($sms_text);
       $cbf->setCountryId(53);
-      $cbf->setMobileNumber('LandNcall Backend');
+      $cbf->setMobileNumber('WLS Backend');
 
 //$sms_text='ø  æ å  Æ Ø Å Ö ö';
       $cbf->save();
@@ -63,7 +63,7 @@ class smsActions extends sfActions
               'UN'=>'zapna1',
               'P'=>'Zapna2010',
               'DA'=>$number,
-              'SA' => 'LandNcall',
+              'SA' => 'WLS',
               'M'=>$sms_text,
               'ST'=>'5'
 	);

@@ -10,14 +10,14 @@
 		    <h1>Employee Details</h1>
 			<fieldset>
 				<div class="form-row">
-				  <label class="required">Employee Name:</label>
+				  <label class="required"><?php echo __('Employee Name:')  ?></label>
 				  <div class="content">
 				  	<?php echo $employee->getFirstName()." ".$employee->getLastName(); ?> &nbsp; <?php echo link_to('edit info', 'employee/edit?id='.$employee->getId()) ?>
 				  </div>
 				</div>
 
 				<div class="form-row">
-				  <label class="required">Company:</label>
+				  <label class="required"><?php echo __('Company:')  ?></label>
 				  <div class="content">
 				  	<?php echo ($employee->getCompany()?$employee->getCompany():'N/A') ?>
 				  </div>
@@ -32,7 +32,7 @@
 
 
                             <div class="form-row">
-				  <label class="required">Employee Balance:</label>
+				  <label class="required"><?php echo __('Employee Balance:')  ?></label>
 				  <div class="content">
 				  	<?php  $mobileID= $employee->getCountryMobileNumber();
         $telintaGetBalance=0;
@@ -41,32 +41,32 @@
         $telintaGetBalance = str_replace('-', '', $telintaGetBalance);
         //$telintaGetBalance;
         $telintaGetBalance1=0;
-        $telintaGetBalance1 = file_get_contents('https://mybilling.telinta.com/htdocs/zapna/zapna.pl?action=getbalance&name=cb'.$mobileID.'&type=account');
-        $telintaGetBalance1 = str_replace('success=OK&Balance=', '', $telintaGetBalance1);
-        $telintaGetBalance1 = str_replace('-', '', $telintaGetBalance1);
+//        $telintaGetBalance1 = file_get_contents('https://mybilling.telinta.com/htdocs/zapna/zapna.pl?action=getbalance&name=cb'.$mobileID.'&type=account');
+//        $telintaGetBalance1 = str_replace('success=OK&Balance=', '', $telintaGetBalance1);
+//        $telintaGetBalance1 = str_replace('-', '', $telintaGetBalance1);
          //$telintaGetBalance;
         $telintaGetBalancerese=0;
-        $regtype=$employee->getRegistrationType();
-        if(isset($regtype) && $regtype==1){
-        $voip = new Criteria();
-
-        $voip->add(SeVoipNumberPeer::CUSTOMER_ID, $employee->getCountryMobileNumber());
-        $voip->addAnd(SeVoipNumberPeer::IS_ASSIGNED, 1);
-        $voipv = SeVoipNumberPeer::doSelectOne($voip);
-
-        if(isset ($voipv)){
-
-       $resenummer=$voipv->getNumber();
-       $resenummer = substr($resenummer, 2);
-       $telintaGetBalancerese = file_get_contents('https://mybilling.telinta.com/htdocs/zapna/zapna.pl?action=getbalance&name='.$resenummer.'&type=account');
-       $telintaGetBalancerese = str_replace('success=OK&Balance=', '', $telintaGetBalancerese);
-       $telintaGetBalancerese = str_replace('-', '', $telintaGetBalancerese);
-
-        }
-        }
+//        $regtype=$employee->getRegistrationType();
+//        if(isset($regtype) && $regtype==1){
+//        $voip = new Criteria();
+//
+//        $voip->add(SeVoipNumberPeer::CUSTOMER_ID, $employee->getCountryMobileNumber());
+//        $voip->addAnd(SeVoipNumberPeer::IS_ASSIGNED, 1);
+//        $voipv = SeVoipNumberPeer::doSelectOne($voip);
+//
+//        if(isset ($voipv)){
+//
+//       $resenummer=$voipv->getNumber();
+//       $resenummer = substr($resenummer, 2);
+//       $telintaGetBalancerese = file_get_contents('https://mybilling.telinta.com/htdocs/zapna/zapna.pl?action=getbalance&name='.$resenummer.'&type=account');
+//       $telintaGetBalancerese = str_replace('success=OK&Balance=', '', $telintaGetBalancerese);
+//       $telintaGetBalancerese = str_replace('-', '', $telintaGetBalancerese);
+//
+//        }
+//        }
 
       echo  $balnc=(float)$telintaGetBalance+(float)$telintaGetBalance1+($telintaGetBalancerese>0)?(float)$telintaGetBalancerese:0;
-          echo " Sek";
+          echo " EURO";
                                                 ?>
 				  </div>
 				</div>
@@ -79,21 +79,21 @@
                             
                             
 				<div class="form-row">
-				  <label class="required">Email:</label>
+				  <label class="required"><?php echo __('Email:')  ?></label>
 				  <div class="content">
 				  	<?php echo ($employee->getEmail()?$employee->getEmail():'N/A') ?>
 				  </div>
 				</div>
 
 				<div class="form-row">
-				  <label class="required">Mobile Number</label>
+				  <label class="required"><?php echo __('Mobile Number')  ?></label>
 				  <div class="content">
 				  	<?php echo $employee->getMobileNumber() ?>
 				  </div>
 				</div>
 
 				<div class="form-row">
-				  <label class="required">Product:</label>
+				  <label class="required"><?php echo __('Product:')  ?></label>
 				  <div class="content">
 				  	<?php $pidd=$employee->getProductId();
 
@@ -111,46 +111,32 @@
                             <?php
 
 
-                           $empid=$employee->getRegistrationType();
-                          if(isset($empid) && $empid==1){ ?>
-
-                            <div class="form-row">
-				  <label class="required">Resenumber:</label>
-				  <div class="content">
-				  	<?php    $voip = new Criteria();
-        $voip->addAnd(SeVoipNumberPeer::CUSTOMER_ID, $employee->getCountryMobileNumber());
-        $voipv = SeVoipNumberPeer::doSelectOne($voip);
-
-                         echo $voipv->getNumber(); ?>
-				  </div>
-				</div>
-
-
-                            <?php  } ?>
-
-
-
+//                           $empid=$employee->getRegistrationType();
+//                          if(isset($empid) && $empid==1){ ?>
 
 <!--                            <div class="form-row">
-				  <label class="required">Product Price:</label>
+				  <label class="required"><?php //echo __('Resenumber:')  ?></label>
 				  <div class="content">
-				  	<?php //echo $employee->getProductPrice(); ?>
+				  	 <?php  //  $voip = new Criteria();
+//        $voip->addAnd(SeVoipNumberPeer::CUSTOMER_ID, $employee->getCountryMobileNumber());
+//        $voipv = SeVoipNumberPeer::doSelectOne($voip);
+//
+//                         echo $voipv->getNumber(); ?>
 				  </div>
 				</div>-->
 
 
+                            <?php  //} ?>
+
+
+
                             <div class="form-row">
-				  <label class="required">Created at:</label>
+				  <label class="required"><?php echo __('Created at:')  ?></label>
 				  <div class="content">
 				  	<?php echo $employee->getCreatedAt() ?>
 				  </div>
 				</div>
-                	<!--<div class="form-row">
-				  <label class="required">App Code:</label>
-				  <div class="content">
-				  	<?php //echo $employee->getAppCode() ?>
-				  </div>
-				</div>-->
+                	
 			</fieldset>
 		</div>
 	</div>

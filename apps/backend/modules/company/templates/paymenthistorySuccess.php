@@ -7,9 +7,9 @@
 <?php endif; ?>
 <?Php if($companyval!=''){?><div id="sf_admin_container">
 	<div id="sf_admin_content">
-            <a href="<?php echo url_for('employee/index').'?company_id='.$companyval."&filter=filter" ?>" class="external_link" target="_self">Employees</a>
-            <a href="<?php echo url_for('company/usage').'?company_id='.$companyval; ?>" class="external_link" target="_self">Usage</a>
-            <a href="<?php echo url_for('company/Paymenthistory').'?company_id='.$companyval.'&filter=filter' ?>" class="external_link" target="_self">Payment History</a>
+            <a href="<?php echo url_for('employee/index').'?company_id='.$companyval."&filter=filter" ?>" class="external_link" target="_self"><?php echo __('Employees') ?></a>
+            <a href="<?php echo url_for('company/usage').'?company_id='.$companyval; ?>" class="external_link" target="_self"><?php echo __('Usage') ?></a>
+            <a href="<?php echo url_for('company/Paymenthistory').'?company_id='.$companyval.'&filter=filter' ?>" class="external_link" target="_self"><?php echo __('Payment History') ?></a>
         </div>
     </div>
 <?php } ?>
@@ -17,7 +17,7 @@
 <table width="75%" cellspacing="0" cellpadding="0" class="callhistory" style="float: left;">
 
 <tr>
-    <th colspan="4"  style="text-align: left; height: 35px">Payment History</th>
+    <th colspan="4"  style="text-align: left; height: 35px"><?php echo __('Payment History') ?></th>
 </tr>
 
 <tr style="background-color: #CCCCFF;color: #000000;">
@@ -43,7 +43,7 @@ $incrment++;
     <td><?php echo  $transaction->getCreatedAt() ?></td>
     <td><?php echo ($transaction->getCompany()?$transaction->getCompany():'N/A')?></td>
     <td><?php echo $transaction->getDescription() ?></td>
-    <td><?php echo $transaction->getAmount(); $amount_total += $transaction->getAmount(); echo ('SEK'); ?></td>
+    <td><?php echo $transaction->getAmount(); $amount_total += $transaction->getAmount(); echo ('EURO'); ?></td>
 </tr>
 <?php endforeach; ?>
 <?php if(count($transactions)==0): ?>
@@ -52,7 +52,7 @@ $incrment++;
 </tr>
 <?php else: ?>
 <tr>
-    <td colspan="3" align="right"><strong>Total:&nbsp;&nbsp;</strong></td>
+    <td colspan="3" align="right"><strong><?php echo __('Total:') ?>&nbsp;&nbsp;</strong></td>
     <td><?php echo format_number($amount_total); echo ('EURO'); ?></td>
     <td>&nbsp;</td>
 </tr>	

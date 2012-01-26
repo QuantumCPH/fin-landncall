@@ -24,11 +24,11 @@
 
 
 <div  id="sf_admin_container">
-<h1>My employee List</h1>
+<h1><?php echo __('My employee List') ?></h1>
 </div>
 
 <div id="sf_admin_header">
-<a target="_self" class="external_link" href="<?php echo url_for('employee/add'); if(isset($companyval) && $companyval!=""){echo "?company_id=".$companyval;} ?>" style="text-decoration:none;">Create New</a>
+<a target="_self" class="external_link" href="<?php echo url_for('employee/add'); if(isset($companyval) && $companyval!=""){echo "?company_id=".$companyval;} ?>" style="text-decoration:none;"><?php echo __('Create New') ?></a>
 </div>
 <br>
 <?php if ($sf_user->hasFlash('message')): ?>
@@ -42,24 +42,24 @@
   <thead>
       <tr style="background-color:#CCCCFF;">
       
-      <th align="left"  id="sf_admin_list_th_name">Company</th>
-      <th align="left"  id="sf_admin_list_th_name">First name</th>
+      <th align="left"  id="sf_admin_list_th_name"><?php echo __('Company') ?></th>
+      <th align="left"  id="sf_admin_list_th_name"><?php echo __('First name') ?></th>
      
-      <th align="left"  id="sf_admin_list_th_name">product</th>
+      <th align="left"  id="sf_admin_list_th_name"><?php echo __('product') ?></th>
     
-      <th align="left" id="sf_admin_list_th_name">Mobile number</th>
-       <th align="left">Resenumber</th>
+      <th align="left" id="sf_admin_list_th_name"><?php echo __('Mobile number') ?></th>
+<!--       <th align="left"><?php echo __('Resenumber')  ?></th>-->
        <?php  if(isset($companyval) && $companyval!=""){  ?>
-        <th align="left"  id="sf_admin_list_th_name">Employee balance</th>
+        <th align="left"  id="sf_admin_list_th_name"><?php echo __('Employee balance') ?></th>
         <?php } ?>
 
         
-      <th align="left"  id="sf_admin_list_th_name">Created at</th>
+      <th align="left"  id="sf_admin_list_th_name"><?php echo __('Created at') ?></th>
    
  <!--         <th align="left">App code</th>
    
       <th align="left">Password</th>-->
-        <th align="left"  id="sf_admin_list_th_name">Action</th>
+        <th align="left"  id="sf_admin_list_th_name"><?php echo __('Action') ?></th>
     </tr>
   </thead>
   <tbody>
@@ -107,20 +107,20 @@
            <?php
 
 
-                            $empid=$employee->getRegistrationType();
-                          if(isset($empid) && $empid==1){ ?>
+//                            $empid=$employee->getRegistrationType();
+//                          if(isset($empid) && $empid==1){ ?>
 
 
-				  	<?php    $voip = new Criteria();
-        $voip->add(SeVoipNumberPeer::CUSTOMER_ID, $employee->getCountryMobileNumber());
-        $voip->addAnd(SeVoipNumberPeer::IS_ASSIGNED, 1);
-        $voipv = SeVoipNumberPeer::doSelectOne($voip);
+				  	<?php  //  $voip = new Criteria();
+//        $voip->add(SeVoipNumberPeer::CUSTOMER_ID, $employee->getCountryMobileNumber());
+//        $voip->addAnd(SeVoipNumberPeer::IS_ASSIGNED, 1);
+//        $voipv = SeVoipNumberPeer::doSelectOne($voip);
 
-                         if(isset ($voipv)){echo $voipv->getNumber();} ?>
+//                         if(isset ($voipv)){echo $voipv->getNumber();} ?>
 				 
 
 
-                            <?php  }else{echo "No";} ?>
+                            <?php   //}else{ echo __('No'); } ?>
 </td>
  <?php  if(isset($companyval) && $companyval!=""){  ?>
       <td> <?php  $mobileID= $employee->getCountryMobileNumber();
@@ -130,32 +130,32 @@
         $telintaGetBalance = str_replace('-', '', $telintaGetBalance);
         //$telintaGetBalance;
         $telintaGetBalance1=0;
-        $telintaGetBalance1 = file_get_contents('https://mybilling.telinta.com/htdocs/zapna/zapna.pl?action=getbalance&name=cb'.$mobileID.'&type=account');
-        $telintaGetBalance1 = str_replace('success=OK&Balance=', '', $telintaGetBalance1);
-        $telintaGetBalance1 = str_replace('-', '', $telintaGetBalance1);
+//        $telintaGetBalance1 = file_get_contents('https://mybilling.telinta.com/htdocs/zapna/zapna.pl?action=getbalance&name=cb'.$mobileID.'&type=account');
+//        $telintaGetBalance1 = str_replace('success=OK&Balance=', '', $telintaGetBalance1);
+//        $telintaGetBalance1 = str_replace('-', '', $telintaGetBalance1);
         //$telintaGetBalance;
 
-         $regtype=$employee->getRegistrationType();
+//         $regtype=$employee->getRegistrationType();
         $telintaGetBalancerese=0;
-        if(isset($regtype) && $regtype==1){
-        $voip = new Criteria();
-
-        $voip->add(SeVoipNumberPeer::CUSTOMER_ID, $employee->getCountryMobileNumber());
-        $voip->addAnd(SeVoipNumberPeer::IS_ASSIGNED, 1);
-        $voipv = SeVoipNumberPeer::doSelectOne($voip);
-
-        if(isset ($voipv)){
-
-       $resenummer=$voipv->getNumber();
-       $resenummer = substr($resenummer, 2);
-       $telintaGetBalancerese = file_get_contents('https://mybilling.telinta.com/htdocs/zapna/zapna.pl?action=getbalance&name='.$resenummer.'&type=account');
-       $telintaGetBalancerese = str_replace('success=OK&Balance=', '', $telintaGetBalancerese);
-       $telintaGetBalancerese = str_replace('-', '', $telintaGetBalancerese);
-
-        }
-        }
+//        if(isset($regtype) && $regtype==1){
+//        $voip = new Criteria();
+//
+//        $voip->add(SeVoipNumberPeer::CUSTOMER_ID, $employee->getCountryMobileNumber());
+//        $voip->addAnd(SeVoipNumberPeer::IS_ASSIGNED, 1);
+//        $voipv = SeVoipNumberPeer::doSelectOne($voip);
+//
+//        if(isset ($voipv)){
+//
+//       $resenummer=$voipv->getNumber();
+//       $resenummer = substr($resenummer, 2);
+//       $telintaGetBalancerese = file_get_contents('https://mybilling.telinta.com/htdocs/zapna/zapna.pl?action=getbalance&name='.$resenummer.'&type=account');
+//       $telintaGetBalancerese = str_replace('success=OK&Balance=', '', $telintaGetBalancerese);
+//       $telintaGetBalancerese = str_replace('-', '', $telintaGetBalancerese);
+//
+//        }
+//        }
       echo  $balnc=(float)$telintaGetBalance+(float)$telintaGetBalance1+($telintaGetBalancerese>0)?(float)$telintaGetBalancerese:0;
-          echo " Sek";
+          echo "EURO";
                                                 ?></td>
 
       <?php } ?>
@@ -174,7 +174,7 @@
 </table>
 <br/>
   <div id="sf_admin_header">
-<a target="_self" class="external_link" href="<?php echo url_for('employee/add'); if(isset($companyval) && $companyval!=""){echo "?company_id=".$companyval;} ?>" style="text-decoration:none;">Create New</a>
+<a target="_self" class="external_link" href="<?php echo url_for('employee/add'); if(isset($companyval) && $companyval!=""){echo "?company_id=".$companyval;} ?>" style="text-decoration:none;"><?php echo __('Create New') ?></a>
 
 </div>
 

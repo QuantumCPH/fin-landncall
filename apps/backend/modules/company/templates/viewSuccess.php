@@ -1,9 +1,9 @@
 <div id="sf_admin_container">
 	<div id="sf_admin_content">
 	<!-- employee/list?filters[company_id]=1 -->
-	<a href="<?php echo url_for('employee/index').'?company_id='.$company->getId()."&filter=filter" ?>" class="external_link" target="_self">Employees (<?php echo count($company->getEmployees()) ?>)</a>
-	<a href="<?php echo url_for('company/usage').'?company_id='.$company->getId(); ?>" class="external_link" target="_self">Usage</a>
-        <a href="<?php echo url_for('company/paymenthistory').'?company_id='.$company->getId().'&filter=filter' ?>" class="external_link" target="_self">Payment History</a>
+	<a href="<?php echo url_for('employee/index').'?company_id='.$company->getId()."&filter=filter" ?>" class="external_link" target="_self"><?php echo  __('Employees') ?> (<?php echo count($company->getEmployees()) ?>)</a>
+	<a href="<?php echo url_for('company/usage').'?company_id='.$company->getId(); ?>" class="external_link" target="_self"><?php echo  __('Usage') ?></a>
+        <a href="<?php echo url_for('company/paymenthistory').'?company_id='.$company->getId().'&filter=filter' ?>" class="external_link" target="_self"><?php echo  __('Payment History') ?></a>
 	<!--
 	<a onclick="companyShow();" style="cursor:pointer;">Company Info</a>
 	&nbsp; | &nbsp;
@@ -12,37 +12,37 @@
 	<a onclick="supportShow();" style="cursor:pointer;">Support Activity</a>
 	 -->
 		<div id="company-info">
-		    <h1>company details</h1>
+		    <h1><?php echo  __('company details') ?></h1>
 			<fieldset>
 				<div class="form-row">
-				  <label class="required">Company Name:</label>
+				  <label class="required"><?php echo  __('Company Name:') ?></label>
 				  <div class="content">
 				  	<?php echo $company->getName() ?> &nbsp; <?php echo link_to('edit info', 'company/edit?id='.$company->getId()) ?>
 				  </div>
 				</div>
 
 	<div class="form-row">
-				  <label class="required">Balance view: </label>
+				  <label class="required"><?php echo  __('Balance view:') ?> </label>
 				  <div class="content"><?php
                                  $uniqueId=$company->getVatNo();
                                  $telintaGetBalance = file_get_contents('https://mybilling.telinta.com/htdocs/zapna/zapna.pl?action=getbalance&name='.$uniqueId.'&type=customer');
         $telintaGetBalance = str_replace('success=OK&Balance=', '', $telintaGetBalance);
         $telintaGetBalance = str_replace('-', '', $telintaGetBalance);
         echo  $telintaGetBalance;
-          echo "Sek";
+          echo "EURO";
                            ?>
 				   
 				  </div>
 				</div>
 				<div class="form-row">
-				  <label class="required">Vat Number:</label>
+				  <label class="required"><?php echo  __('Vat Number:') ?></label>
 				  <div class="content">
 				  	<?php echo $company->getVatNo()?>
 				  </div>
 				</div>
 
 				<div class="form-row">
-				  <label class="required">Address:</label>
+				  <label class="required"><?php echo  __('Address:') ?></label>
 				  <div class="content">
 				  	<?php echo $company->getAddress() ?>
 				  </div>
@@ -56,14 +56,14 @@
 				</div>-->
 
 				<div class="form-row">
-				  <label class="required">Country:</label>
+				  <label class="required"><?php echo  __('Country:') ?></label>
 				  <div class="content">
 				  	<?php echo $company->getCountry()?$company->getCountry()->getName():'N/A' ?>
 				  </div>
 				</div>
 
 				<div class="form-row">
-				  <label class="required">City:</label>
+				  <label class="required"><?php echo  __('City:') ?></label>
 				  <div class="content">
 				  	<?php echo $company->getCity()?$company->getCity()->getName():'N/A' ?>
 				  </div>
@@ -71,21 +71,21 @@
 
 
 				<div class="form-row">
-				  <label class="required">Contact Name:</label>
+				  <label class="required"><?php echo  __('Contact Name:') ?></label>
 				  <div class="content">
 				  <?php echo $company->getContactName()?>
 				  </div>
 				</div>
 
                                 <div class="form-row">
-				  <label class="required">Contact e-mail:</label>
+				  <label class="required"><?php echo  __('Contact e-mail:') ?></label>
 				  <div class="content">
 				  <?php echo $company->getEmail()?>
 				  </div>
 				</div>
 
 				<div class="form-row">
-				  <label class="required">Head Phone Nr:</label>
+				  <label class="required"><?php echo  __('Head Phone No:') ?></label>
 				  <div class="content">
 				  	<?php echo $company->getHeadPhoneNumber() ?>
 				  </div>
@@ -93,42 +93,42 @@
 
 
 				<div class="form-row">
-				  <label class="required">Fax Number:</label>
+				  <label class="required"><?php echo  __('Fax Number:') ?></label>
 				  <div class="content">
 				  	<?php echo $company->getFaxNumber()?$company->getFaxNumber():'N/A' ?>
 				  </div>
 				</div>
 				
 				<div class="form-row">
-				  <label class="required">Webstie:</label>
+				  <label class="required"><?php echo  __('Webstie:') ?></label>
 				  <div class="content">
 				  	<?php echo $company->getWebsite()?$company->getWebsite():'N/A' ?>
 				  </div>
 				</div>
 
 				<div class="form-row">
-				  <label class="required">Company Size</label>
+				  <label class="required"><?php echo  __('Company Size') ?></label>
 				  <div class="content">
 				  	<?php echo $company->getCompanySize()?$company->getCompanySize():'N/A' ?>
 				  </div>
 				</div>
 
 				<div class="form-row">
-				  <label class="required">Company Type</label>
+				  <label class="required"><?php echo  __('Company Type') ?></label>
 				  <div class="content">
 				  	<?php echo $company->getCompanyType()?$company->getCompanyType():'N/A' ?>
 				  </div>
 				</div>
 							
 				<div class="form-row">
-				  <label class="required">Invoice Method:</label>
+				  <label class="required"><?php echo  __('Invoice Method:') ?></label>
 				  <div class="content">
 				  	<?php echo $company->getInvoiceMethod()?$company->getInvoiceMethod():'N/A' ?>
 				  </div>
 				</div>
 
 				<div class="form-row">
-				  <label class="required">Customer Type:</label>
+				  <label class="required"><?php echo  __('Customer Type:') ?></label>
 				  <div class="content">
 				  	<?php echo $company->getCustomerType()?$company->getCustomerType():'N/A' ?>
 				  </div>
@@ -142,21 +142,21 @@
 				</div>-->
 				
 				<div class="form-row">
-				  <label class="required">Agent Company:</label>
+				  <label class="required"><?php echo  __('Agent Company:') ?></label>
 				  <div class="content">
 				  	<?php echo $company->getAgentCompany()?$company->getAgentCompany():'N/A' ?>
 				  </div>
 				</div>
 				
 				<div class="form-row">
-				  <label class="required">Status:</label>
+				  <label class="required"><?php echo  __('Status:') ?></label>
 				  <div class="content">
 				  	<?php echo ''.$company->getStatus()?$company->getStatus():'N/A' ?>
 				  </div>
 				</div>
 
 				<div class="form-row">
-				  <label class="required">Registered at:</label>
+				  <label class="required"><?php echo  __('Registered at:') ?></label>
 				  <div class="content">
 				  	<?php echo $company->getRegistrationDate()?$company->getRegistrationDate():'N/A' ?>
 				  </div>
@@ -182,10 +182,10 @@
 
                             
 				<div class="form-row">
-				  <label class="required">Registration Doc:</label>
+				  <label class="required"><?php echo  __('Registration Doc:') ?></label>
 				  <div class="content">
 					<?php if($company->getFilePath()): ?>
-						<a href="<?php echo public_path('/uploads/'.$company->getFilePath()) ?>" target="_blank">Download attachement</a>
+						<a href="<?php echo public_path('/uploads/'.$company->getFilePath()) ?>" target="_blank"><?php echo  __('Download attachement') ?></a>
 					<?php else: ?>
 						none
 					<?php endif; ?>

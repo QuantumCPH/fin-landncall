@@ -485,12 +485,12 @@ class paymentsActions extends sfActions {
                     $commisionary = CustomerCommisionPeer::doSelectOne($sc);
                     $comsion = $commisionary->getCommision();
                     $products = new Criteria();
-                    $products->add(ProductPeer::ID, 11);
+                    $products->add(ProductPeer::ID, 2);
                     $products = ProductPeer::doSelectOne($products);
                     $extrarefill = $products->getInitialBalance();
                     //if the customer is invited, Give the invited customer a bonus of 10dkk
                     $inviteOrder = new CustomerOrder();
-                    $inviteOrder->setProductId(11);
+                    $inviteOrder->setProductId(2);
                     $inviteOrder->setQuantity(1);
                     $inviteOrder->setOrderStatusId(3);
                     $inviteOrder->setCustomerId($invite->getCustomerId());

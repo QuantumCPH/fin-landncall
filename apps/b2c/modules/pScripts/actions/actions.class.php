@@ -1165,9 +1165,9 @@ die;
         echo '<br/>';
         echo sfConfig::get('app_email_smtp_password');
         echo '<br/>';
-        echo sfConfig::get('app_email_sender_email', 'support@landncall.com');
+        echo sfConfig::get('app_email_sender_email', 'support@wls.com');
         echo '<br/>';
-        echo sfConfig::get('app_email_sender_name', 'LandNCall AB support');
+        echo sfConfig::get('app_email_sender_name', 'WLS2 support');
         
 
   	$connection = Swift_SmtpTransport::newInstance()
@@ -1179,8 +1179,8 @@ die;
 
 
 
-	$sender_email = sfConfig::get('app_email_sender_email', 'support@landncall.com');
-	$sender_name = sfConfig::get('app_email_sender_name', 'LandNCall AB support');
+	$sender_email = sfConfig::get('app_email_sender_email', 'support@wls.com');
+	$sender_name = sfConfig::get('app_email_sender_name', 'WLS support');
 
         echo '<br/>';
         echo $sender_email ;
@@ -2150,7 +2150,7 @@ public function executeSmsRegisterationwcb(sfWebrequest $request){
                   'UN'=>'zapna1',
                   'P'=>'Zapna2010',
                 'DA'=>$mtnumber,
-                 'SA' =>'LandNcall',
+                 'SA' =>'WLS',
                   'M'=>$sms_text,
                   'ST'=>'5'
             );
@@ -2188,7 +2188,7 @@ public function executeSmsRegisterationwcb(sfWebrequest $request){
                   'UN'=>'zapna1',
                   'P'=>'Zapna2010',
                 'DA'=>$mtnumber,
-                 'SA' =>'LandNcall',
+                 'SA' =>'WLS',
                   'M'=>$sms_text,
                   'ST'=>'5'
             );
@@ -2321,7 +2321,7 @@ LandNCall";
                   'UN'=>'zapna1',
                   'P'=>'Zapna2010',
                 'DA'=>$mtnumber,
-                 'SA' =>'LandNcall',
+                 'SA' =>'WLS',
                   'M'=>$sms_text,
                   'ST'=>'5'
             );
@@ -2402,7 +2402,7 @@ if(($caltype!="IC") && ($caltype!="hc")){
                   'UN'=>'zapna1',
                   'P'=>'Zapna2010',
                   'DA'=>$number,
-                  'SA' =>'LandNcall',
+                  'SA' =>'WLS',
                   'M'=>$sms_text,
                   'ST'=>'5'
             );
@@ -2421,7 +2421,7 @@ if(($caltype!="IC") && ($caltype!="hc")){
                   'UN'=>'zapna1',
                   'P'=>'Zapna2010',
                   'DA'=>$number,
-                  'SA' =>'LandNcall',
+                  'SA' =>'WLS',
                   'M'=>$sms_text,
                   'ST'=>'5'
             );

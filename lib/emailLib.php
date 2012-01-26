@@ -562,16 +562,16 @@ class emailLib{
     public static function sendCustomerConfirmRegistrationEmail($inviteuserid){
         $subject = 'Bonus Bekräftelse Smartsim';
 
-        $sender_email       = sfConfig::get('app_email_sender_email', 'support@landncall.com');
+        $sender_email       = sfConfig::get('app_email_sender_email', 'support@wls.com');
         $sender_name        = sfConfig::get('app_email_sender_name', 'WLS 2 support');
         $sender_emailcdu       = sfConfig::get('app_email_sender_email_cdu', 'rs@zapna.com');
         $sender_namecdu        = sfConfig::get('app_email_sender_name_cdu', 'WLS 2 support');
         $message_body   =   '
-Härmed bekräftas att du har fått provision insatt på ditt konto för att du har tipsat en vän om Smartsim från LandNCall.
+Härmed bekräftas att du har fått provision insatt på ditt konto för att du har tipsat en vän om Smartsim från wls.
 Gå in på ”Mina sidor” och gå till ”Övrig historik” under ”Samtalshistorik” så ser du vad du har tjänat.<br/>Med vänlig hälsning,
 <br/>
-LandNCall<br/>
-www.landncall.com';
+wls<br/>
+www.WLS2.zerocall.com';
 
         $c = new Criteria();
   	$c->add(CustomerPeer::ID, $inviteuserid);
@@ -966,7 +966,7 @@ public static function sendvoipemail(Customer $customer,$order,$transaction)
 
         //set vat
 	$vat = 0;
-	$subject = 'Bekräftelse - nytt resenummer frän LandNCall';
+	$subject = 'Bekräftelse - nytt resenummer frän wls';
         $recepient_email    = trim($customer->getEmail());
         $recepient_name     = sprintf('%s %s', $customer->getFirstName(), $customer->getLastName());
         $customer_id        = trim($customer->getId());
@@ -1092,7 +1092,7 @@ WLS2<br/><a href='http://www.wls2.zerocall.com.com'>www.wls2.zerocall.com.com</a
              $email->setReceipientEmail($recepient_email);
              $email->setCutomerId($customer_id);
              $email->setAgentId($referrer_id);
-             $email->setEmailType('LandnCall Customer Balance');
+             $email->setEmailType('wls Customer Balance');
              $email->setReceipientName($recepient_name);
              $email->save();
        endif;
@@ -1240,7 +1240,7 @@ wls2<br/><a href='http://www.wls2.zerocall.com.com'>www.wls2.zerocall.com.com</a
          $message_body = "<table width='600px'><tr style='border:0px solid #fff'><td colspan='4' align='right' style='text-align:right; border:0px solid #fff'></tr></table><table cellspacing='0' width='600px'><tr><td>
              ".$message." <br/><br/>
 Uniuqe Id ".$uniqueid." has issue while assigning on ".$customer->getMobileNumber()." in sms registration<br/><br/>
-WLS2<br/><a href='http://www.wls2.com'>www.wls2.com</a></td></tr></table>";
+WLS2<br/><a href='http://www.wls2.zerocall.com'>www.wls2.zerocall.com</a></td></tr></table>";
 
         //Support Informationt
         $sender_email = sfConfig::get('app_email_sender_email', 'okhan@zapna.com');
