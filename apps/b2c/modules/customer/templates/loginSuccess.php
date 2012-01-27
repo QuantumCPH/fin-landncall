@@ -9,7 +9,7 @@ header('P3P:CP="IDC DSP COR ADM DEVi TAIi PSA PSD IVAi IVDi CONi HIS OUR IND CNT
 		<?php echo $sf_user->getFlash('send_password_message') ?>
 	</div>
 	<?php endif;?>
-            <div style="width:500px; margin-top: 15px;"><?php echo $target; ?>Hej och välkommen till Smartsim - mina sidor. För att logga in använder du ditt kundnummer som är ditt mobilnummer och ditt lösenord. På mina sidor kan du se vilka samtal du gjort, fylla på potten och mycket mer.</div>
+            <div style="width:500px; margin-top: 15px;"><?php //echo $target; ?>Hej och välkommen till Smartsim - mina sidor. För att logga in använder du ditt kundnummer som är ditt mobilnummer och ditt lösenord. På mina sidor kan du se vilka samtal du gjort, fylla på potten och mycket mer.</div>
   <div class="left-col" style="padding-left:210px;text-align:left;">
     <?php //include_partial('customer/navigation', array('selected'=>'', 'customer_id'=>$customer->getId())) ?>
 	<div id="login-modal" style="background-repeat: repeat-x; width: 470px; margin-top: 16px; background: none;">
