@@ -4,7 +4,7 @@ use_helper('Number');
 ?>
 <style>
 	p {
-		margin: 8px auto;
+		margin: 8px auto;       
 	}
 	
 	table.receipt {
