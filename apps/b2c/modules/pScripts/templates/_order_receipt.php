@@ -53,20 +53,20 @@ $wrap_content  = isset($wrap)?$wrap:false;
 	<p><?php echo __('Hej') ?>&nbsp;<?php echo $customer->getFirstName();?></p>
 	
 	<p>
-	<?php echo __('Tack fÃ¶r din bestÃ¤llning av <b>%1%</b>.', array('%1%'=>$order->getProduct()->getName())) ?>
+	<?php echo __('Tack för din beställning av <b>%1%</b>.', array('%1%'=>$order->getProduct()->getName())) ?>
 	</p>
 	
 	<p>
-	<?php echo __('Dina varor kommer att skickas i dag. Du bÃ¶r ha leverans senast inom tvÃ¥ arbertsdagar.'); ?> Ditt kundnummer &auml;r  <?php echo $customer->getUniqueid();?>. Det kan du anv&auml;nda i din kontakt med kundservice</p>
+	<?php echo __('Dina varor kommer att skickas i dag. Du bör ha leverans senast inom två arbertsdagar.'); ?> Ditt kundnummer &auml;r  <?php echo $customer->getUniqueid();?>. Det kan du anv&auml;nda i din kontakt med kundservice</p>
 	
 	<p>
-	<?php echo __('Tveka inte att ta kontakt med oss om det Ã¤r nÃ¥got du undrar Ã¶ver.') ?>
+	<?php echo __('Tveka inte att ta kontakt med oss om det är något du undrar över.') ?>
 	</p>
         <p>
             <a href="mailto:Support@wls.com">Support@wls.com</a>
 	</p>
         <p>
-	<?php echo __('Med vÃ¤nlig hÃ¤lsning') ?>
+	<?php echo __('Med vänlig hälsning') ?>
 	</p>
         <p>
 	<?php echo __('Johanna') ?>
@@ -181,7 +181,7 @@ $wrap_content  = isset($wrap)?$wrap:false;
   </tr>
   <tr class="footer">
     <td class="payer_summary" colspan="4" style="font-weight:normal; white-space: nowrap;"> 
-    WLS2&nbsp;&nbsp;&nbsp;Box XXXXX, XX-XXX XX XXXXXXX&nbsp;&nbsp;&nbsp; Org.nr.XXXXXX-XXXX </td>
+    <?php echo __('WLS2&nbsp;&nbsp;&nbsp;Box XXXXX, XX-XXX XX XXXXXXX&nbsp;&nbsp;&nbsp; Org.nr.XXXXXX-XXXX')?> </td>
   </tr>
 </table>
         
