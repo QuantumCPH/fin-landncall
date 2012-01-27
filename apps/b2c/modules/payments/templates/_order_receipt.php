@@ -53,11 +53,8 @@ $wrap_content  = isset($wrap)?$wrap:false;
 	<p><?php echo __('Dear Customer') ?></p>
 	
 	<p>
-<<<<<<< HEAD
-	<?php echo __('Thank you for ordering <b>%1%</b> and becoming WLS2 Customer. We welcome you to a new and huge mobile world.', array('%1%'=>$order->getProduct()->getName())) ?> Ditt kundnummer &auml;r  <?php echo $customer->getUniqueid();?>. Det kan du anv&auml;nda i din kontakt med kundservice
-=======
 	<?php echo __('Thank you for ordering <b>%1%</b> and becoming wls2 Customer. We welcome you to a new and huge mobile world.', array('%1%'=>$order->getProduct()->getName())) ?> Ditt kundnummer &auml;r  <?php echo $customer->getUniqueid();?>. Det kan du anv&auml;nda i din kontakt med kundservice
->>>>>>> ff47ec6ef270debd99e74f808cf6a6559c19e205
+
 	</p>
 	
 	<p>
@@ -70,11 +67,9 @@ $wrap_content  = isset($wrap)?$wrap:false;
 <?php endif; ?>
 <table width="600px">
 <tr style="border:0px solid #fff">
-<<<<<<< HEAD
-		<td colspan="4" align="right" style="text-align:right; border:0px solid #fff"><?php echo image_tag('/images/logo.gif');?></td>
-=======
+
 		<td colspan="4" align="right" style="text-align:right; border:0px solid #fff"><?php echo image_tag('http://wls2.zerocall.com/images/logo.gif');?></td>
->>>>>>> ff47ec6ef270debd99e74f808cf6a6559c19e205
+
 	</tr>
 </table>
 <table class="receipt" cellspacing="0" width="600px">
@@ -198,9 +193,7 @@ $wrap_content  = isset($wrap)?$wrap:false;
 <p style="font-weight: bold;"><?php echo __('Cheers') ?></p>
 
 <p style="font-weight: bold;">
-<<<<<<< HEAD
+
 <?php echo __('Support') ?>&nbsp;WLS2
-=======
-<?php echo __('Support') ?>&nbsp;WLS
->>>>>>> ff47ec6ef270debd99e74f808cf6a6559c19e205
+
 </p>
