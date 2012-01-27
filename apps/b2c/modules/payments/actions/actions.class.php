@@ -466,13 +466,14 @@ class paymentsActions extends sfActions {
                 $emailId = $this->customer->getEmail();
                 $OpeningBalance = $order->getExtraRefill();
                 $customerPassword = $this->customer->getPlainText();
-
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
                 //Section For Telinta Add Cusomter
              
-                    Telienta::ResgiterCustomer($uniqueId, $OpeningBalance);
+             //       Telienta::ResgiterCustomer($uniqueId, $OpeningBalance);
                       // For Telinta Add Account
                
-                     Telienta::createAAccount($TelintaMobile,$uniqueId);
+            //         Telienta::createAAccount($TelintaMobile,$uniqueId);
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
                 //if the customer is invited, Give the invited customer a bonus of 10dkk
                 $invite_c = new Criteria();
                 $invite_c->add(InvitePeer::INVITE_NUMBER, $this->customer->getMobileNumber());

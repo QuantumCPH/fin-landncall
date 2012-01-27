@@ -152,6 +152,7 @@ $wrap_content  = isset($wrap)?$wrap:false;
     <td>&nbsp;</td>
     <td><?php echo format_number($postalcharge) ?></td>
   </tr>
+     
   <tr class="footer">
     <td>&nbsp;</td>
     <td><?php echo __('Total') ?></td>

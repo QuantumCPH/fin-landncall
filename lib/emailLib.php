@@ -660,7 +660,7 @@ www.WLS2.zerocall.com';
         }
 
           $lang = 'de';
-            $this->lang = $lang;
+           // $this->lang = $lang;
 
             $countrylng = new Criteria();
             $countrylng->add(EnableCountryPeer::LANGUAGE_SYMBOL, $lang);
