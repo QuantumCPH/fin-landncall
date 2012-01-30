@@ -115,9 +115,13 @@ width:232px;
 .dash-nav a.settings:hover{ background-position:-85px -229px}
 .dash-nav a.settings-s{ background-position:-85px -229px}
 
-.dash-nav a.logout{ background-position:0px -287px}
-.dash-nav a.logout:hover{ background-position:-85px -287px}
-.dash-nav a.logout-s{ background-position:-85px -287px}
+.dash-nav a.websms{ background-position:0px -287px}
+.dash-nav a.websms:hover{ background-position:-85px -287px}
+.dash-nav a.websms-s{ background-position:-85px -287px}
+
+.dash-nav a.logout{ background-position:0px -346px}
+.dash-nav a.logout:hover{ background-position:-85px -346px}
+.dash-nav a.logout-s{ background-position:-85px -346px}
 
 .split-form{padding-top:20px; float:left; clear:both; width:515px; padding-bottom:30px;}
 .col{width:250px; float: left; position: relative}
