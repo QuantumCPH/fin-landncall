@@ -103,7 +103,7 @@
 
       </td>
       <td><?php echo $employee->getMobileNumber() ?></td>
-      <td>
+<!--      <td>
            <?php
 
 
@@ -121,7 +121,7 @@
 
 
                             <?php   //}else{ echo __('No'); } ?>
-</td>
+</td>-->
  <?php  if(isset($companyval) && $companyval!=""){  ?>
       <td> <?php  $mobileID= $employee->getCountryMobileNumber();
         $telintaGetBalance=0;

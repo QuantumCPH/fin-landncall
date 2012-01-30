@@ -56,7 +56,7 @@ $wrap_content  = isset($wrap)?$wrap:false;
 	</p>
 	
 	<p>
-	<?php echo __('Dina varor kommer att skickas i dag. Du bör ha leverans senast inom två arbertsdagar.'); ?> Ditt kundnummer &auml;r  <?php echo $customer->getUniqueid();?>. Det kan du anv&auml;nda i din kontakt med kundservice</p>
+	<?php echo __('Dina varor kommer att levereras idag. Du bör ha leverans inom två dagar.'); ?> Ditt kundnummer &auml;r  <?php echo $customer->getUniqueid();?>. Det kan du anv&auml;nda i din kontakt med kundservice</p>
 	
 	<p>
 	<?php echo __('Tveka inte att ta kontakt med oss om det är något du undrar över.') ?>
@@ -68,7 +68,7 @@ $wrap_content  = isset($wrap)?$wrap:false;
 	<?php echo __('Med vänlig hälsning') ?>
 	</p>
         <p>
-	<?php echo __('Johanna') ?>
+	<?php echo __('XXXXXXX') ?>
 	</p>
 	<br />
 <?php endif; ?>
