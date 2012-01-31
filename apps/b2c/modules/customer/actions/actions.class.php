@@ -918,15 +918,8 @@ class customerActions extends sfActions {
 
         //get  transactions
         $c = new Criteria();
-        $searchingCr = "LandNCall AB Refill via agent";
         $c->add(TransactionPeer::CUSTOMER_ID, $this->customer->getId());
-        $c->add(TransactionPeer::DESCRIPTION, 'LandNCall AB Refill', Criteria::NOT_EQUAL);
-        $c->addAND(TransactionPeer::DESCRIPTION, 'Auto Refill', Criteria::NOT_EQUAL);
-        $c->addAND(TransactionPeer::DESCRIPTION, 'Registrering inkl. taletid', Criteria::NOT_EQUAL);
-        $c->addOR(TransactionPeer::DESCRIPTION, 'Resenummer bekräftelse');
-        $c->addAND(TransactionPeer::DESCRIPTION, '%' . $searchingCr . '%', Criteria::NOT_LIKE);
-        $c->add(TransactionPeer::TRANSACTION_STATUS_ID, sfConfig::get('app_status_completed', -1)
-        );
+        $c->add(TransactionPeer::TRANSACTION_STATUS_ID, sfConfig::get('app_status_completed'));
         /*
           if (isset($request->getParameter('filter')))
           {
