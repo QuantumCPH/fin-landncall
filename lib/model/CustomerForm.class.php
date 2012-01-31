@@ -156,23 +156,23 @@ class CustomerForm extends BaseCustomerForm
 	//pobox
 	//This Condtion for - Phone number is currently 8 digits but in Poland this is 10 digits - against New Feature - 02/28/11
         if($languageSymbol=='pl'){
-           $po_boxPattern = sfContext::getInstance()->getI18N()->__("Please enter a valid postal code. E.g. 334444");
+           $po_boxPattern = sfContext::getInstance()->getI18N()->__("Please enter a valid postal code. E.g. 33444");
            
         }else{
-            $po_boxPattern = sfContext::getInstance()->getI18N()->__("Please enter a valid postal code. E.g. 3344");
+            $po_boxPattern = sfContext::getInstance()->getI18N()->__("Please enter a valid postal code. E.g. 33444");
                    }
-		$poboxPattern = "/^[a-z-0-9\s]{6,6}$/";
+		$poboxPattern = "/^[0-9\s]{4,5}$/";
 	$this->validatorSchema['po_box_number'] = new sfValidatorAnd(
 		array(
 			 $this->validatorSchema['po_box_number'],
 			new sfValidatorRegex(
 				array(
 					'pattern'=>$poboxPattern,
-                                        'max_length'=>6,
-                                        'max_length' => null ,
+                                        'max_length'=>5,
+                                        'min_length' =>4 ,
 
 				),
-				array('invalid'=>sfContext::getInstance()->getI18N()->__('Please enter a valid postal code with 5 digits.'))
+				array('invalid'=>sfContext::getInstance()->getI18N()->__('Please enter a valid postal code with 4 or 5 digits.'))
 			)
 		)
 	);

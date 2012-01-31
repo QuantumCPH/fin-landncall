@@ -282,23 +282,7 @@
 	jq('form li em').remove();
 </script>
 <script type="text/javascript">
-    jq('#customer_po_box_number').blur(function(){
-        var poid=jq("#customer_po_box_number").val();
-        poid = poid.replace(/\s+/g, '');
-        var poidlenght=poid.length;
-        //alert(poidlenght);
-        var poida= poid.charAt(0);
-        var poidb= poid.charAt(1);
-        var poidc= poid.charAt(2);
-        var poidd= poid.charAt(3);
-        var poide= poid.charAt(4);
-        if(poidlenght>4){
-            var fulvalue=poida+poidb+poidc+" "+poidd+poide;
-        }
-       jQuery("#customer_po_box_number").val(fulvalue);
-      
 
-        });
 
         jq("#customer_manufacturer").change(function() {
 		var url = "<?php echo url_for('affiliate/getmobilemodel') ?>";

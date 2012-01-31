@@ -1068,6 +1068,7 @@ class affiliateActions extends sfActions {
         $this->agent = $agent;
         $c = new Criteria();
         $c->add(AgentOrderPeer::AGENT_COMPANY_ID, $agent->getId());
+        $c->add(AgentOrderPeer::STATUS, 3);
         $this->agentOrders = AgentOrderPeer::doSelect($c);
     }
 

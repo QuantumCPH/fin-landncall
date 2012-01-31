@@ -4,8 +4,16 @@
 
 <div id="sf_admin_container">
 
-<h1><?php echo __('Create/Edit Company', 
-array()) ?></h1>
+<h1>
+
+<?php
+if($company->isNew()) 
+        echo __('Create Company', array());
+      else
+        echo __('Edit Company', array());    
+?>
+
+</h1>
 
 <div id="sf_admin_header">
 <?php include_partial('company/edit_header', array('company' => $company)) ?>
