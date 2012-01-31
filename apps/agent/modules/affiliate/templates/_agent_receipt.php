@@ -56,16 +56,16 @@ $wrap_content  = isset($wrap)?$wrap:false;
   </tr>
   <tr>
   <td colspan="4" class="payer_summary">
-	Telefonv&atilde;gen 30
+	XXXX XX XXXXX
 	<br />
-	126 37 H&atilde;gersten
+	XXX XX XX XXX
 	<br />
 	
 	<br />
-	Tel:      +46 85 17 81 100
+	Tel:      +49 XXXXXXXXXX
 	<br />	
 	<br />
-	Cvr:     32068219
+	Cvr:     XXXXXXXXX
 	<br />
   </td>
   </tr>
@@ -148,12 +148,12 @@ $wrap_content  = isset($wrap)?$wrap:false;
 
 <p>
 	<?php echo __('If you have any questions please feel free to contact our customer support center at '); ?>
-	<a href="mailto:support@landncall.com">support@landncall.com</a>
+	<a href="mailto:support@wls.com">support@wls.com</a>
 </p>
 
 <p><?php echo __('Cheers') ?></p>
 
 <p>
 <?php echo __('Support') ?><br />
-LandNCall AB
+WLS
 </p>
