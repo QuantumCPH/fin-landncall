@@ -57,4 +57,10 @@ class userActions extends autouserActions
         $this->getUser()->setAuthenticated(false);
         $this->redirect('@homepage');
     }
+      public function executeChangeCulture(sfWebRequest $request){
+            $this->getUser()->setCulture($request->getParameter('new'));
+
+       	$this->redirect('customer/allRegisteredCustomer');
+
+    }
 }

@@ -200,6 +200,13 @@
 			<li>
                 <?php echo link_to(__('Logout'), 'user/logout'); ?>
             </li>
+          	<li>
+                     <?php if($sf_user->getCulture()=='en'): ?>
+                        <?php echo link_to(__('German'), 'user/changeCulture?new=de'); ?>
+                     <?php else: ?>
+                         <?php echo link_to(__('English'), 'user/changeCulture?new=en'); ?>
+                    <?php endif; ?>
+            </li>
         </ul>
       <?php endif; ?>
 

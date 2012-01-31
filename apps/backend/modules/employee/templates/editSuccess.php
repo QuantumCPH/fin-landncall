@@ -106,8 +106,8 @@
         <tr>
            <td colspan="2"><ul class="sf_admin_actions">
 
-  <li><input class="sf_admin_action_list" value="list" type="button" onclick="document.location.href='../../../employee';" />
-  </li><li><input type="submit" name="Update" value="Update" class="sf_admin_action_save" /></li></ul> </td>
+  <li><input class="sf_admin_action_list" value="<?php echo __('list') ?>" type="button" onclick="document.location.href='../../../employee';" />
+  </li><li><input type="submit" name="Update" value="<?php echo __('Update') ?>" class="sf_admin_action_save" /></li></ul> </td>
         </tr>
 
     </table>
