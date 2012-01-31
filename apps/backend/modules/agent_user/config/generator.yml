@@ -4,6 +4,6 @@ generator:
     model_class:      AgentUser
     theme:            default
     list:
-      display: [id, agent_company, username, password, status]
+      display: [id, username, password, agent_company, status]
       object_actions:
         _delete: ~
