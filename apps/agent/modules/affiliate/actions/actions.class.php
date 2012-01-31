@@ -214,7 +214,7 @@ class affiliateActions extends sfActions {
                     $this->registration_commission = $registration_commission;
                     $cc = new Criteria();
                     $cc->add(TransactionPeer::AGENT_COMPANY_ID, $agent_company_id);
-                    $cc->add(TransactionPeer::DESCRIPTION, 'LandNCall AB Refill');
+                    $cc->add(TransactionPeer::DESCRIPTION, 'Refill');
                     $cc->add(TransactionPeer::TRANSACTION_STATUS_ID, 3);
                     $cc->addDescendingOrderByColumn(TransactionPeer::CREATED_AT);
                     $refills = TransactionPeer::doSelect($cc);

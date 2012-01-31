@@ -36,10 +36,10 @@
                   <td><?php  echo $transaction->getOrderId() ?></td>
                   <td ><?php echo  $transaction->getCreatedAt() ?></td>
                   <td nowrap><?php 
-                  if($transaction->getDescription()=="Registrering inkl. taletid"){
+                  if($transaction->getDescription()=="Anmeldung inc. sprechen"){
                       echo "Smartsim inklusive pott";                      
                   }else{
-                        if($transaction->getDescription()=="LandNCall AB Refill"){
+                        if($transaction->getDescription()=="Refill"){
                           echo "Refill ".$transaction->getAmount();
                         }else{
                           echo $transaction->getDescription();  

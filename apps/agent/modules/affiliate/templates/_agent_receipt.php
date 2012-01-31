@@ -51,7 +51,7 @@ $wrap_content  = isset($wrap)?$wrap:false;
 
 <table class="receipt" cellspacing="0" width="600px">
 <tr bgcolor="#CCCCCC" class="receipt_header">
-    <td colspan="4"> LandNCall AB
+    <td colspan="4"> WLS
     </td>
   </tr>
   <tr>

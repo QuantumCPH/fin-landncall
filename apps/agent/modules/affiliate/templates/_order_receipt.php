@@ -144,7 +144,7 @@ $wrap_content  = isset($wrap)?$wrap:false;
     }
     else
     {
-	if($transaction->getDescription()=="LandNCall AB Refill"){
+	if($transaction->getDescription()=="Refill"){
           echo "Refill ".$transaction->getAmount();
         }else{
           echo $transaction->getDescription();

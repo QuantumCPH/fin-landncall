@@ -809,7 +809,7 @@ class customerActions extends sfActions {
         $transaction = new Transaction();
 
         $transaction->setAmount($this->order->getExtraRefill());
-        $transaction->setDescription($this->getContext()->getI18N()->__('LandNCall AB Refill'));
+        $transaction->setDescription($this->getContext()->getI18N()->__('Refill'));
         $transaction->setOrderId($this->order->getId());
         $transaction->setCustomerId($this->order->getCustomerId());
 
@@ -991,14 +991,9 @@ class customerActions extends sfActions {
 
         //get  transactions
         $c = new Criteria();
-        $searchingCr = "LandNCall AB Refill via agent";
+        
         $c->add(TransactionPeer::CUSTOMER_ID, $this->customer->getId());
-        $c->add(TransactionPeer::DESCRIPTION, 'LandNCall AB Refill');
-        $c->addOR(TransactionPeer::DESCRIPTION, 'Registrering inkl. taletid');
-        $c->addOR(TransactionPeer::DESCRIPTION, 'Auto Refill');
-        //$c->addOR(TransactionPeer::DESCRIPTION,'Resenummer bekräftelse');
-        $c->addOR(TransactionPeer::DESCRIPTION, '%' . $searchingCr . '%', Criteria::LIKE);
-        $c->add(TransactionPeer::TRANSACTION_STATUS_ID, sfConfig::get('app_status_completed', -1)
+        $c->add(TransactionPeer::TRANSACTION_STATUS_ID, sfConfig::get('app_status_completed')
         );
         // Here we can simple check the transaction stats and we can meet our requirements but here use the description value equel which is i dnt
         // Good approch but me not edit this i just pass one more "Resenummer bekräftelse" - ahtsham
@@ -1784,7 +1779,7 @@ public function executeSmsHistory(sfWebrequest $request){
 
                 $transaction->setAgentCompanyId($customer->getReferrerId());
                 $transaction->setAmount($order->getProduct()->getPrice() - $order->getProduct()->getInitialBalance() + $order->getExtraRefill());
-                $transaction->setDescription($this->getContext()->getI18N()->__('Registrering inkl. taletid'));
+                $transaction->setDescription($this->getContext()->getI18N()->__('Anmeldung inc. sprechen'));
                 $transaction->setOrderId($order->getId());
                 $transaction->setCustomerId($customer->getId());
                 $transaction->setTransactionStatusId(3);
