@@ -94,8 +94,8 @@
 
        <td colspan="2"><ul class="sf_admin_actions"><input type="hidden" value="" id="error" name="error">
 
-  <li>  <input class="sf_admin_action_list" value="list" type="button" onclick="document.location.href='../employee';" /></li>
-  <li><input type="submit" name="save" value="save" class="sf_admin_action_save" /> </li>
+  <li>  <input class="sf_admin_action_list" value="<?php echo __('list') ?>" type="button" onclick="document.location.href='../employee';" /></li>
+  <li><input type="submit" name="save" value="<?php echo __('save') ?>" class="sf_admin_action_save" /> </li>
 
 </ul>
            
