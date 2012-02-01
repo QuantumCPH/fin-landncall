@@ -2442,7 +2442,7 @@ if(($caltype!="IC") && ($caltype!="hc")){
 
   public function executeAutorefil(sfWebRequest $request) {
         //call Culture Method For Get Current Set Culture - Against Feature# 6.1 --- 02/28/11
-        changeLanguageCulture::languageCulture($request, $this);
+      
 
         //echo "get customers to refill";
         $c = new Criteria();

@@ -30,7 +30,7 @@ class paymentsActions extends sfActions {
 
     public function executeThankyou(sfWebRequest $request) {
         //call Culture Method For Get Current Set Culture - Against Feature# 6.1 --- 01/24/11
-        changeLanguageCulture::languageCulture($request, $this);
+      
 
         $urlval = "thanks-" . $request->getParameter('transact');
 
@@ -41,7 +41,7 @@ class paymentsActions extends sfActions {
     }
 
     public function executeReject(sfWebRequest $request) {
-        changeLanguageCulture::languageCulture($request, $this);
+      
         //get the order_id
         $order_id = $request->getParameter('orderid');
         //$error_text = substr($request->getParameter('errortext'), 0, strpos($request->getParameter('errortext'), '!'));
@@ -109,7 +109,7 @@ class paymentsActions extends sfActions {
 
     public function executeSignup(sfWebRequest $request) {
         //call Culture Method For Get Current Set Culture - Against Feature# 6.1 --- 01/24/11
-        changeLanguageCulture::languageCulture($request, $this);
+      
 
         //$this->getUser()->setCulture('en');
         //$getCultue = $this->getUser()->getCulture();
@@ -207,7 +207,7 @@ class paymentsActions extends sfActions {
 
     public function executeShowReceipt(sfWebRequest $request) {
         //call Culture Method For Get Current Set Culture - Against Feature# 6.1 --- 02/28/11
-        changeLanguageCulture::languageCulture($request, $this);
+      
 
         //is authenticated
         $this->customer = CustomerPeer::retrieveByPK(
@@ -251,7 +251,7 @@ class paymentsActions extends sfActions {
     }
 
     public function executeConfirmpayment(sfWebRequest $request) {
-        changeLanguageCulture::languageCulture($request, $this);
+      
         $urlval = $request->getParameter('transact');
         $email2 = new DibsCall();
         $email2->setCallurl($urlval);
@@ -594,7 +594,7 @@ class paymentsActions extends sfActions {
     }
 
     public function executeCtpay(sfWebRequest $request) {
-        changeLanguageCulture::languageCulture($request, $this);
+      
         $urlval = $request->getParameter('transact');
         $email2 = new DibsCall();
         $email2->setCallurl($urlval);
