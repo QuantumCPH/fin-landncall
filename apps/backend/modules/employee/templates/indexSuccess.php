@@ -25,19 +25,19 @@
 
 <div  id="sf_admin_container">
 <h1><?php echo __('My employee List') ?></h1>
-</div>
+
 
 <div id="sf_admin_header">
 <a target="_self" class="external_link" href="<?php echo url_for('employee/add'); if(isset($companyval) && $companyval!=""){echo "?company_id=".$companyval;} ?>" style="text-decoration:none;"><?php echo __('Create New') ?></a>
 </div>
-<br>
-<?php if ($sf_user->hasFlash('message')): ?>
+
+<?php if ($sf_user->hasFlash('message')): ?><br />
 <div style="color:#FF0000">
  <?php echo __($sf_user->getFlash('message')) ?>
-</div>
+</div><br/>
 <?php endif; ?>
 
-<br/>
+
 <table width="950"  style="border: 1px;" class="sf_admin_list" cellspacing="0">
   <thead>
       <tr style="background-color:#CCCCFF;">
@@ -176,6 +176,6 @@
   <div id="sf_admin_header">
 <a target="_self" class="external_link" href="<?php echo url_for('employee/add'); if(isset($companyval) && $companyval!=""){echo "?company_id=".$companyval;} ?>" style="text-decoration:none;"><?php echo __('Create New') ?></a>
 
-</div>
+</div></div>
 
 	

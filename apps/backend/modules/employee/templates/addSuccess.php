@@ -24,8 +24,8 @@
 <h1><?php echo  __('New My employee') ?></h1></div>
 <form id="sf_admin_form" name="sf_admin_edit_form" method="post" enctype="multipart/form-data" action="saveEmployee">
     <div id="sf_admin_content">
-    <fieldset id="sf_fieldset_none" class="">
-    <table style="padding: 0px;"  id="sf_admin_container" >
+  
+    <table id="sf_admin_container" cellspacing="0" cellpadding="2" class="tblAlign" >
         <tr>
         <td style="padding: 5px;"><?php echo  __('First name:') ?></td>
         <td style="padding: 5px;"><input type="text" name="first_name" id="employee_first_name"  class="required"  size="25" /></td>
@@ -89,19 +89,13 @@
 <?php   }  ?>
 </select></td>
                 </tr>
-              
-   <tr>
-
-       <td colspan="2"><ul class="sf_admin_actions"><input type="hidden" value="" id="error" name="error">
+    </table>
+        <div id="sf_admin_container">
+            <ul class="sf_admin_actions"><input type="hidden" value="" id="error" name="error">
 
   <li>  <input class="sf_admin_action_list" value="<?php echo __('list') ?>" type="button" onclick="document.location.href='../employee';" /></li>
   <li><input type="submit" name="save" value="<?php echo __('save') ?>" class="sf_admin_action_save" /> </li>
 
-</ul>
-           
-
-        </td>
-                </tr>
-    </table></fieldset>
+</ul> </div>
     </div>
 </form>
