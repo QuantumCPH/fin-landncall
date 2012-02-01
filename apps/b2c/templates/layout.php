@@ -35,9 +35,9 @@
 <body>
     <div style="vertical-align: top;float: right;">
 
-                        <?php echo link_to(__('<img src="../images/german.png"/>'), 'customer/changeCulture?new=de'); ?>
+                        <?php echo link_to(image_tag('/images/german.png'), 'customer/changeCulture?new=de'); ?>
 
-                         <?php echo link_to(__('<img src="../images/english.png"/>'), 'customer/changeCulture?new=en'); ?>
+                         <?php echo link_to(image_tag('/images/english.png'), 'customer/changeCulture?new=en'); ?>
 
              </div>
 <div id="wrap"><?php

@@ -32,7 +32,7 @@ class affiliateActions extends sfActions {
     public function executeReceipts(sfWebRequest $request) {
 
         //call Culture Method For Get Current Set Culture - Against Feature# 6.1 --- 01/24/11 - Ahtsham
-        changeLanguageCulture::languageCulture($request, $this);
+      
         $this->updateNews = NewupdatePeer::doSelect(new Criteria());
         $this->forward404Unless($this->getUser()->isAuthenticated());
 
@@ -154,7 +154,7 @@ class affiliateActions extends sfActions {
     }
      public function executeReport(sfWebRequest $request) {
                     //call Culture Method For Get Current Set Culture - Against Feature# 6.1 --- 01/24/11 - Ahtsham
-                    changeLanguageCulture::languageCulture($request, $this);
+                  
                     $this->forward404Unless($this->getUser()->isAuthenticated());
                     $nc = new Criteria();
                     $nc->addDescendingOrderByColumn(NewupdatePeer::STARTING_DATE);
@@ -281,7 +281,7 @@ class affiliateActions extends sfActions {
     public function executeRefill(sfWebRequest $request) {
 
         //call Culture Method For Get Current Set Culture - Against Feature# 6.1 --- 03/09/11 - Ahtsham
-        changeLanguageCulture::languageCulture($request, $this);
+      
 
         $this->browser = new Browser();
         $this->form = new AccountRefillAgent();
@@ -505,7 +505,7 @@ class affiliateActions extends sfActions {
 
 
         //call Culture Method For Get Current Set Culture - Against Feature# 6.1 --- 03/09/11 - Ahtsham
-        changeLanguageCulture::languageCulture($request, $this);
+      
 
         //set referrer id
 
@@ -914,7 +914,7 @@ class affiliateActions extends sfActions {
     public function executeFaq(sfWebRequest $request) {
 
         //call Culture Method For Get Current Set Culture - Against Feature# 6.1 --- 01/24/11 - Ahtsham
-        changeLanguageCulture::languageCulture($request, $this);
+      
 
         //----Query Get FAQs
         //get Agent
@@ -944,7 +944,7 @@ class affiliateActions extends sfActions {
     public function executeUserguide(sfWebRequest $request) {
 
         //call Culture Method For Get Current Set Culture - Against Feature# 6.1 --- 01/24/11 - Ahtsham
-        changeLanguageCulture::languageCulture($request, $this);
+      
 
         //----Query Get UserGuide
         //get Agent
@@ -974,7 +974,7 @@ class affiliateActions extends sfActions {
 
     public function executeSupportingHandset(sfWebRequest $request) {
         //call Culture Method For Get Current Set Culture - Against Feature# 6.1 --- 01/24/11 - Ahtsham
-        changeLanguageCulture::languageCulture($request, $this);
+      
 
         $this->updateNews = NewupdatePeer::doSelect(new Criteria());
         $this->browser = new Browser();
@@ -983,7 +983,7 @@ class affiliateActions extends sfActions {
     public function executeAccountRefill(sfWebRequest $request) {
 
         //call Culture Method For Get Current Set Culture - Against Feature# 6.1 --- 01/24/11 - Ahtsham
-        changeLanguageCulture::languageCulture($request, $this);
+      
 
 
         $ca = new Criteria();
@@ -1058,7 +1058,7 @@ class affiliateActions extends sfActions {
     public function executeAgentOrder(sfRequest $request) {
 
         //call Culture Method For Get Current Set Culture - Against Feature# 6.1 --- 01/24/11 - Ahtsham
-        changeLanguageCulture::languageCulture($request, $this);
+      
 
         $ca = new Criteria();
         $ca->add(AgentCompanyPeer::ID, $agent_company_id = $this->getUser()->getAttribute('agent_company_id', '', 'agentsession'));
@@ -1088,7 +1088,7 @@ class affiliateActions extends sfActions {
     }
 
     public function executePaymentHistory(sfWebrequest $request) {
-        changeLanguageCulture::languageCulture($request, $this);
+      
         $ca = new Criteria();
         $ca->add(AgentPaymentHistoryPeer::AGENT_ID, $agent_company_id = $this->getUser()->getAttribute('agent_company_id', '', 'agentsession'));
         $agent = AgentPaymentHistoryPeer::doSelect($ca);
@@ -1134,5 +1134,10 @@ class affiliateActions extends sfActions {
 
         return sfView::NONE;
     }
+  public function executeChangeCulture(sfWebRequest $request){
+     // var_dump($request->getParameter('new'));
+        $this->getUser()->setCulture($request->getParameter('new'));
+       	$this->redirect('affiliate/report?show_summary=1');
 
+    }
 }

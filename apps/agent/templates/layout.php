@@ -24,6 +24,13 @@ color:#F00000;
 </style>
 	  </head>
     <body>
+          <div style="vertical-align: top;float: right;">
+
+                        <?php echo link_to(image_tag('/images/german.png'), 'affiliate/changeCulture?new=de'); ?>
+
+                         <?php echo link_to(image_tag('/images/english.png'), 'affiliate/changeCulture?new=en'); ?>
+
+             </div>
         <div id="basic" class="container_12 mitform">
             <div id="header" class="grid_12">
                 <div id="logo" class="grid_3 alpha">
