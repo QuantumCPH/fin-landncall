@@ -1,18 +1,27 @@
-
+<div id="sf_admin_container">
 <form method="post" action="">
-    
+
+   <?php  if(isset($message)){
+   ?> 
     <div class="save-ok">
-  <h2><?php  if(isset($message)){ echo  $message;  } ?></h2>
-</div>
-
-    <table>
-
-        <tr bgcolor="#5970B2" style="color:#FFF;"><th  colspan="8" align="left" ><?php echo __('Product For Agent:') ?> <?php
+     <h2> <?php echo  $message; ?> </h2>
+    </div>
+  <?php } ?> 
+    <h1><?php echo __('Product For Agent:') ?> <?php
                  
              echo  $agenttdata->getName();
                 
-                  ?> </th></tr>
-        <tr bgcolor="#5970B2" style="color:#FFF;"><th width="20%" align="left"><?php echo __('Product Name') ?>  </th> <th  width="10%" align="left"><?php echo __('Action') ?></th><th  width="10%" align="left"><?php echo __('Reg share value') ?></th><th  width="10%" align="left"><?php echo __('Reg. share value %') ?></th><th  width="10%" align="left"><?php echo __('Reg share enable') ?></th><th  width="10%" align="left"><?php echo __('Extra payments share value') ?></th><th  width="10%" align="left"><?php echo __('extra refill share value %') ?></th><th  width="10%" align="left"><?php echo __('Extra payments share enable') ?></th></tr>
+                  ?> </h1>
+    <table cellspacing="0" cellpadding="2" class="tblAlign">
+        <tr class="headings"><th width="20%" align="left"><?php echo __('Product Name') ?>  </th>
+            <th  width="10%" align="left"><?php echo __('Action') ?></th>
+            <th  width="10%" align="left"><?php echo __('Reg share value') ?></th>
+            <th  width="10%" align="left"><?php echo __('Reg. share value %') ?></th>
+            <th  width="10%" align="left"><?php echo __('Reg share enable') ?></th>
+            <th  width="10%" align="left"><?php echo __('Extra payments share value') ?></th>
+            <th  width="10%" align="left"><?php echo __('extra refill share value %') ?></th>
+            <th  width="10%" align="left"><?php echo __('Extra payments share enable') ?></th>
+        </tr>
 
 <input type="hidden" name="agentid" value="<?php echo $agentid; ?>" />
  <?php    foreach($products as $product){?>
@@ -55,7 +64,7 @@
 <td><input name="epve['<?php echo  $product->getId() ?>']" value="1" type="checkbox"   <?php  if(isset($temp) && $temp>0){ ?>  <?php  if($tempv->getExtraPaymentsShareEnable()==1 ){  ?>  checked="checked"  <?php  } ?>   <?php  } ?>   />
 </td>
 </tr>
-    <?php } ?><tr><td colspan="2" align="center">&nbsp; </td></tr> <tr><td colspan="8" align="center">
-<input  type="submit" name="submit" value="<?php echo __('Update') ?>" />
-      </td></tr> </table>
+    <?php } ?></table>
+    <div class="submitBtn"><input  type="submit" name="submit" value="<?php echo __('Update') ?>" /></div>
 </form>
+</div>

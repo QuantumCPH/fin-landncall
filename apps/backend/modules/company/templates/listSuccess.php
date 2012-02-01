@@ -4,8 +4,7 @@
 
 <div id="sf_admin_container">
 
-<h1><?php echo __('B2B Company List', 
-array()) ?></h1>
+
 
 <div id="sf_admin_header">
 <?php include_partial('company/list_header', array('pager' => $pager)) ?>
@@ -15,7 +14,8 @@ array()) ?></h1>
 <div id="sf_admin_bar">
 <?php include_partial('filters', array('filters' => $filters)) ?>
 </div>
-
+<h1><?php echo __('B2B Company List', 
+array()) ?></h1>
 <div id="sf_admin_content">
 <?php if (!$pager->getNbResults()): ?>
 <?php echo __('no result') ?>
