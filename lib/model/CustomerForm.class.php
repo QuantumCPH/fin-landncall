@@ -16,41 +16,41 @@ class CustomerForm extends BaseCustomerForm
   {
   	parent::setup();
   	//mobile_number
-//        if(sfConfig::get('sf_app')=='agent'){
-//            //-----------------------------------
-//            $Ac = new Criteria();
-//            $Ac->add(AgentCompanyPeer::ID, sfContext::getInstance()->getUser()->getAttribute('agent_company_id', '', 'agentsession'));
-//            $country_id = AgentCompanyPeer::doSelectOne($Ac);//->getId();
-//            $country_id = $country_id->getCountryId();
-//            //------------Get The Country List For Customer Registration - From Agent
-//
-//            $enableCountry = new Criteria();
-//            $enableCountry->add(EnableCountryPeer::ID, $country_id);
-//            $countrylngs = EnableCountryPeer::doSelectOne($enableCountry);
-//            $languageSymbol = $countrylngs->getLanguageSymbol();
-//
-//        }elseif(sfConfig::get('sf_app')=='b2c'){
-//             //-----------------------------------
-//               $activelanguage = sfContext::getInstance()->getUser()->getAttribute('activelanguage', '');
-//               $lngSymbol = sfContext::getInstance()->getRequest()->getParameter('language');
-//               if($activelanguage!='' &&  ($lngSymbol=='')){
-//                   $lngSymbol = sfContext::getInstance()->getUser()->getAttribute('activelanguage', '');
-//               }
-//
-//               //Product / Country Change As Per Sub-Domain - dk/pl/intl - Against New Feature
-//                $mystring = @$_SERVER["HTTP_REFERER"];
-//               // Add As Per requirements - - - -
-//
-//
-//                $countrylng = new Criteria();
-//                $countrylng->add(EnableCountryPeer::LANGUAGE_SYMBOL, $lngSymbol);
-//                $countrylng = EnableCountryPeer::doSelectOne($countrylng);
-//                $countryName = $countrylng->getName();
-//                $languageSymbol = $countrylng->getLanguageSymbol();
-//                $lngId = $countrylng->getId();
-//                //-----------------------------------
-//
-//        }
+        if(sfConfig::get('sf_app')=='agent'){
+            //-----------------------------------
+            $Ac = new Criteria();
+            $Ac->add(AgentCompanyPeer::ID, sfContext::getInstance()->getUser()->getAttribute('agent_company_id', '', 'agentsession'));
+            $country_id = AgentCompanyPeer::doSelectOne($Ac);//->getId();
+            $country_id = $country_id->getCountryId();
+            //------------Get The Country List For Customer Registration - From Agent
+         
+            $enableCountry = new Criteria();
+            $enableCountry->add(EnableCountryPeer::ID, $country_id);
+            $countrylngs = EnableCountryPeer::doSelectOne($enableCountry);
+            $languageSymbol = $countrylngs->getLanguageSymbol();
+            
+        }elseif(sfConfig::get('sf_app')=='b2c'){
+             //-----------------------------------
+               $activelanguage = sfContext::getInstance()->getUser()->getAttribute('activelanguage', '');
+               $lngSymbol = sfContext::getInstance()->getRequest()->getParameter('language');
+               if($activelanguage!='' &&  ($lngSymbol=='')){
+                   $lngSymbol = sfContext::getInstance()->getUser()->getAttribute('activelanguage', '');
+               }
+
+               //Product / Country Change As Per Sub-Domain - dk/pl/intl - Against New Feature
+                $mystring = @$_SERVER["HTTP_REFERER"];
+               // Add As Per requirements - - - -
+
+
+                $countrylng = new Criteria();
+                $countrylng->add(EnableCountryPeer::LANGUAGE_SYMBOL, $lngSymbol);
+                $countrylng = EnableCountryPeer::doSelectOne($countrylng);
+                $countryName = $countrylng->getName();
+                $languageSymbol = $countrylng->getLanguageSymbol();
+                $lngId = $countrylng->getId();
+                //-----------------------------------
+                
+        }
         //echo $languageSymbol;
         //This Condtion for - Phone number is currently 8 digits but in Poland this is 10 digits - against New Feature - 02/28/11
 
@@ -168,7 +168,7 @@ class CustomerForm extends BaseCustomerForm
 			new sfValidatorRegex(
 				array(
 					'pattern'=>$poboxPattern,
-                                        'max_length'=>5,
+                                        'max_length'=>6,
                                         'min_length' =>4 ,
 
 				),
