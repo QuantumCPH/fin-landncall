@@ -5,11 +5,12 @@
  */
 
 ?>
-
+                <div class="tableHeading">
+                   <span><?php echo  __('All Registered Customer') ?></span>
+                </div>
 		<table width="75%" cellspacing="0" cellpadding="2" class="tblAlign">
                     <thead>
-                          <tr  ><th colspan="7">   <?php echo  __('All Registered Customer') ?></th>  </tr>
-                        <tr style="background-color: #CCCCFF;color: #000000;">
+                        <tr class="headings">
                      <th width="10%" style="text-align: left" ><?php echo  __('Id') ?></th>
                   <th  width="20%" style="text-align: left"  ><?php echo  __('Customer Number') ?></th>
                       <th  width="20%" style="text-align: left" ><?php echo  __('Mobile Number') ?></th>
@@ -18,7 +19,7 @@
                        <th  width="20%"  style="text-align: left" ><?php echo  __('Unique ID') ?></th>
 
 
-                    <th width="10%" style="text-align: left"  > <?php echo  __('Action') ?></th>
+                    <th width="10%" style="text-align: left" class='last'> <?php echo  __('Action') ?></th>
                         </tr>
 		                  </thead>
                   <tfoot>
@@ -32,23 +33,23 @@
                 <?php foreach($customers as $customer): ?>
 
                  <?php
-                  if($incrment%2==0){
-                  $colorvalue="#FFFFFF";
-                  }else{
-
-                      $colorvalue="#EEEEFF";
-                      }
-                  
+//                  if($incrment%2==0){
+//                  $colorvalue="#FFFFFF";
+//                  }else{
+//
+//                      $colorvalue="#EEEEFF";
+//                      }
+//                  
                   ?>
 
-                      <tr style="background-color:<?php echo $colorvalue;   ?>">
+                      <tr style="background-color:#EFEDED<?php //echo $colorvalue;   ?>">
                       <td><?php echo $incrment;  ?></td>
                   <td><?php  echo $customer->getId() ?></td>
                    <td><?php echo  $customer->getMobileNumber() ?></td>
                   <td><?php echo  $customer->getFirstName() ?></td>
                     <td><?php echo  $customer->getLastName() ?></td>
                        <td><?php echo  $customer->getUniqueid() ?></td>
-                 <td><a href="customerDetail?id=<?php  echo $customer->getId() ?>"><img alt="view Detail" title="view Detail" src="http://admin.zerocall.com/sf/sf_admin/images/default_icon.png" ></a>
+                 <td class='last'><a href="customerDetail?id=<?php  echo $customer->getId() ?>"><img alt="view Detail" title="view Detail" src="http://admin.zerocall.com/sf/sf_admin/images/default_icon.png" ></a>
                       </td>
              
                 </tr>

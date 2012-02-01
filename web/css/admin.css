@@ -4,14 +4,23 @@
         margin: 0 auto;
 }
 #header{
-    width:660px;
+    width:75%;
     margin:0 auto;
 }
 .logo{
+    border-bottom: 1px solid #EFEDED;
+    padding-bottom:3px;
+    margin-bottom:15px;
+    
     color:#000000;
     font-family:'Times New Roman', Times, serif;
     font-size: 54px;
     font-weight:bold;
+}
+.topNav{
+    width:660px;
+    margin:0 auto;
+    padding-bottom: 30px;
 }
 .clr{
     float:none;
@@ -51,8 +60,9 @@
 	visibility: hidden;
 	margin: 0;
 	padding: 0;
-	background: #EAEBD8;
-	border: 1px solid #929393}
+	background: #000000;
+	border: 1px solid #929393;
+}
 
 #sddm div a
 {	position: relative;
@@ -63,23 +73,63 @@
         white-space: nowrap;
         text-align: left;
         text-decoration: none;
-        background: #FFFFFF;
-        color: #000000;
-        font: 11px arial
+        background: #000000;
+        color: #FFFFFF;
+        font: 11px arial;
 }
-
 #sddm div a:hover
-{	background: #000000;
-        color: #FFF;
+{	background: #FFFFFF;
+        color: #000000;
 }
-
+#sddm div a.subSelect
+{	background: #FFFFFF;
+        color: #000000;
+}
 #sf_admin_container{
     margin:0 auto;
+    width:75%;
 }
 #sddm li a.current{
     background: #000000 !important;
     color: #FFFFFF !important;
 }
+a.label{
+   background: #FFFFFF !important;
+   color: #000000 !important; 
+}
+
+div.tableHeading{
+    width:75%;
+    margin: 0 auto;   
+}
+div.tableHeading span{
+    background-color: #000000;
+    color:#ffffff;
+    line-height: 18px;
+    padding-right:15px;
+    padding-left:5px;
+}
 table.tblAlign{
-    margin:0 auto;
+    margin:0 auto !important;
+    border: 1px solid #000000 !important;
+    width:75%  !important;
+}
+td{
+   border-bottom: 1px solid #000000 !important; 
+   border-right: 1px solid #000000 !important;
+   background-color: #EFEDED;
+}
+td.last{
+   border-right: 0px !important; 
+}
+tr.headings{
+   background-color: #ffffff !important;
+   color:#000000 !important; 
+}
+tr.headings th{
+   border-right: 1px solid #000000 !important; 
+   border-bottom: 1px solid #000000 !important;
+}
+tr.headings th.last{
+   border-right: 0px !important; 
 }
