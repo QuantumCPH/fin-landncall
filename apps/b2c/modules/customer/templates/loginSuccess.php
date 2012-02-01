@@ -1,6 +1,4 @@
-<?php 
-header('P3P:CP="IDC DSP COR ADM DEVi TAIi PSA PSD IVAi IVDi CONi HIS OUR IND CNT"');
-?>
+
 <?php use_helper('I18N') ?>
 <table><tr><td align="center">
 <?php include_partial('customer/dashboard_header', array('customer'=> null, 'section'=>__('Login to your account')) ) ?>

@@ -30,7 +30,7 @@ class customerActions extends sfActions {
     protected function processForm(sfWebRequest $request, sfForm $form, $id) {
 
         //call Culture Method For Get Current Set Culture - Against Feature# 6.1 --- 02/28/11
-        changeLanguageCulture::languageCulture($request, $this);
+        
 
         $customer = $request->getParameter($form->getName());
         $product = $customer['product'];
@@ -99,63 +99,7 @@ class customerActions extends sfActions {
                         $this->redirect($url.'payments/signup?cid='.$customer->getId().'&pid='.$product);
             }
     }
-       protected function processForms(sfWebRequest $request, sfForm $form, $id) {
-
-        //call Culture Method For Get Current Set Culture - Against Feature# 6.1 --- 02/28/11
-        changeLanguageCulture::languageCulture($request, $this);
-
-        $this->getUser()->setCulture('en');
-        $getCultue = $this->getUser()->getCulture();
-        // Store data in the user session
-        $this->getUser()->setAttribute('activelanguage', $getCultue);
-        //print_r($request->getParameter($form->getName()));
-        $customer = $request->getParameter($form->getName());
-        $product = $customer['product'];
-        $plainPws = $customer["password"];
-        $refVal = $customer["referrer_id"];
-
-        $form->bind($request->getParameter($form->getName()), $request->getFiles($form->getName()));
-
-        if ($form->isValid()) {
-
-            $customer = $form->save();
-
-            $customer->setPlainText($plainPws);
-            if (isset($refVal) && $refVal != '') {
-
-                $customer->setRegistrationTypeId('3');
-            } else {
-                $customer->setRegistrationTypeId('1');
-            }
-
-            $customer->save();
-            if ($id != NULL) {
-                $invite = InvitePeer::retrieveByPK($id);
-                if ($invite) {
-                    $invite->setInviteNumber($customer->getMobileNumber());
-                    $invite->save();
-                    /* if($invite->getInviteNumber())
-                      {
-                      $fonet=new Fonet();
-                      $cid=$invite->getCustomerId();
-                      // $customer=CustomerPeer::retrieveByPK($cid);
-                      // $fonet->recharge($customer,1,true);
-                      // $invite->setBonusPaid(1);
-                      // $invite->save();
-
-                      } */
-                }
-            }
-
-
-            //$this->getUser()->setAttribute('customer_id', $customer->getId(), 'usersignup');
-            //$this->getUser()->setAttribute('product_id', $product, 'usersignup');
-
-
-            $this->redirect('http://landncall.zerocall.com/b2c.php/customer/signupStep2?cid=' . $customer->getId() . '&pid=' . $product);
-            //$this->redirect(sfConfig::get('app_epay_relay_script_url').$this->getController()->genUrl('@signup_step2?customer_id='.$customer->getId().'&product_id='.$product, true));
-        }
-    }
+     
 
     public function executeSignupStep2(sfWebRequest $request) {
 
@@ -166,12 +110,9 @@ class customerActions extends sfActions {
             $this->callbackdibs = 'yes';
         } else {
             //call Culture Method For Get Current Set Culture - Against Feature# 6.1 --- 01/24/11
-            changeLanguageCulture::languageCulture($request, $this);
+            
 
-            $this->getUser()->setCulture('en');
-            $getCultue = $this->getUser()->getCulture();
-            // Store data in the user session
-            $this->getUser()->setAttribute('activelanguage', $getCultue);
+            
 
             $this->form = new PaymentForm();
             $this->callbackdibs = 'Yes';
@@ -218,78 +159,13 @@ class customerActions extends sfActions {
         }
     }
 
-    public function executeSignupTest(sfWebRequest $request) {
-
-        //call Culture Method For Get Current Set Culture - Against Feature# 6.1 --- 02/28/11
-        changeLanguageCulture::languageCulture($request, $this);
-
-        $this->getUser()->setCulture('en');
-        $getCultue = $this->getUser()->getCulture();
-        // Store data in the user session
-        $this->getUser()->setAttribute('activelanguage', $getCultue);
-
-        $lang = $this->getUser()->getAttribute('activelanguage');
-        $this->lang = $lang;
-
-
-        $this->form = new CustomerFormB2C();
-        $id = $request->getParameter('invite_id');
-        $visitor_id = $request->getParameter('visitor');
-        //$this->form->widgetSchema->setLabel('the_field_id', false);
-        if ($visitor_id != NULL) {
-            $c = new Criteria();
-            $c->add(VisitorsPeer::ID, $request->getParameter('visitor'));
-            $visitor = VisitorsPeer::doSelectOne($c);
-            $status = $visitor->getStatus();
-            $visitor->setStatus($status . "> B2C Signup Page ");
-            $visitor->save();
-        }
-
-        if ($id != NULL) {
-            $c = new Criteria();
-            //$c->add(InvitePeer::ID,$id);
-            //$c->add(InvitePeer::INVITE_STATUS,'2');
-            $invite = InvitePeer::retrieveByPK($id);
-            if ($invite) {
-                $invite->setInviteStatus('2');
-                $invite->save();
-            }
-        }
-
-        //set referrer id
-        if ($referrer_id = $request->getParameter('ref')) {
-            $c = new Criteria();
-            $c->add(AgentCompanyPeer::ID, $referrer_id);
-
-            if (AgentCompanyPeer::doSelectOne($c))
-                $this->form->setDefault('referrer_id', $referrer_id);
-        }
-
-
-
-
-        if ($request->isMethod('post')) {
-
-            unset($this->form['imsi']);
-            unset($this->form['uniqueid']);
-
-            $this->processForms($request, $this->form, $id);
-        }
-    }
+  
 
     public function executeSignup(sfWebRequest $request) {
 
 
         //call Culture Method For Get Current Set Culture - Against Feature# 6.1 --- 02/28/11
-        changeLanguageCulture::languageCulture($request, $this);
-
-        // $this->getUser()->setCulture('en');
-        // $getCultue = $this->getUser()->getCulture();
-        // Store data in the user session
-        //$this->getUser()->setAttribute('activelanguage', $getCultue);
-
-        $lang = $this->getUser()->getAttribute('activelanguage');
-        $this->lang = $lang;
+        
 
 
         $this->form = new CustomerFormB2C();
@@ -367,7 +243,7 @@ class customerActions extends sfActions {
 
     public function executeDashboard(sfWebRequest $request) {
         //call Culture Method For Get Current Set Culture - Against Feature# 6.1 --- 02/28/11
-        changeLanguageCulture::languageCulture($request, $this);
+        
         //-----------------------
 
 
@@ -447,7 +323,7 @@ class customerActions extends sfActions {
     //This Function add Again new Feature Landncall --
     public function executeSubscribevoip(sfWebRequest $request) {
         //call Culture Method For Get Current Set Culture - Against Feature# 6.1 --- 02/28/11
-        changeLanguageCulture::languageCulture($request, $this);
+        
         //-----------------------
 
 
@@ -687,7 +563,7 @@ class customerActions extends sfActions {
 
     public function executeVoiptermsandcondition(sfWebRequest $request) {
         //call Culture Method For Get Current Set Culture - Against Feature# 6.1 --- 02/28/11
-        changeLanguageCulture::languageCulture($request, $this);
+        
         //-----------------------
         //call Culture Method For Get Current Set Culture - Against Feature# 6.1 --- 02/28/11
         //-----------------------
@@ -700,7 +576,7 @@ class customerActions extends sfActions {
 
     public function executeVoippurchased(sfWebRequest $request) {
         //call Culture Method For Get Current Set Culture - Against Feature# 6.1 --- 02/28/11
-        changeLanguageCulture::languageCulture($request, $this);
+        
         //-----------------------
         //call Culture Method For Get Current Set Culture - Against Feature# 6.1 --- 02/28/11
         //-----------------------
@@ -713,7 +589,7 @@ class customerActions extends sfActions {
 
     public function executeUnsubscribevoip(sfWebRequest $request) {
         //call Culture Method For Get Current Set Culture - Against Feature# 6.1 --- 02/28/11
-        changeLanguageCulture::languageCulture($request, $this);
+        
         //$customerids =  $request->getParameter('cid');
         $customerids = $this->getUser()->getAttribute('customer_id', '', 'usersession');
         $this->customer = CustomerPeer::retrieveByPK($this->getUser()->getAttribute('customer_id', '', 'usersession'));
@@ -778,7 +654,7 @@ class customerActions extends sfActions {
     public function executeRefill(sfWebRequest $request) {
        $this->target = $this->getTargetUrl();
         //call Culture Method For Get Current Set Culture - Against Feature# 6.1 --- 02/28/11
-        changeLanguageCulture::languageCulture($request, $this);
+        
         //-----------------------
         //$this->redirectUnless($this->getUser()->isAuthenticated(),'@b2c_homepage');
         //$customer_id = $this->getUser()->getAttribute('customer_id',null, 'usersession');
@@ -825,7 +701,7 @@ class customerActions extends sfActions {
 
     public function executeRefillReject(sfWebRequest $request) {
         //call Culture Method For Get Current Set Culture - Against Feature# 6.1 --- 02/28/11
-        changeLanguageCulture::languageCulture($request, $this);
+        
 
 
         $order_id = $request->getParameter('orderid');
@@ -860,7 +736,7 @@ class customerActions extends sfActions {
     public function executeCallhistory(sfWebRequest $request) {
 
         //call Culture Method For Get Current Set Culture - Against Feature# 6.1 --- 02/28/11
-        changeLanguageCulture::languageCulture($request, $this);
+        
 
 
         //$this->customer = CustomerPeer::retrieveByPK(58);
@@ -906,7 +782,7 @@ class customerActions extends sfActions {
     public function executePaymenthistory(sfWebRequest $request) {
 
         //call Culture Method For Get Current Set Culture - Against Feature# 6.1 --- 02/28/11
-        changeLanguageCulture::languageCulture($request, $this);
+        
 
         //$this->customer = CustomerPeer::retrieveByPK(58);
 
@@ -986,7 +862,7 @@ class customerActions extends sfActions {
     public function executeRefillpaymenthistory(sfWebRequest $request) {
 
         //call Culture Method For Get Current Set Culture - Against Feature# 6.1 --- 02/28/11
-        changeLanguageCulture::languageCulture($request, $this);
+        
 
         //$this->customer = CustomerPeer::retrieveByPK(58);
 
@@ -1068,7 +944,7 @@ class customerActions extends sfActions {
     public function executePasswordchange(sfWebRequest $request) {
 
         //call Culture Method For Get Current Set Culture - Against Feature# 6.1 --- 02/28/11
-        changeLanguageCulture::languageCulture($request, $this);
+        
         //-----------------------
 
         $this->redirectUnless($this->getUser()->isAuthenticated(), "@homepage");
@@ -1173,7 +1049,7 @@ class customerActions extends sfActions {
 
 
         //call Culture Method For Get Current Set Culture - Against Feature# 6.1 --- 02/28/11
-        changeLanguageCulture::languageCulture($request, $this);
+        
         //-----------------------
 
         $this->redirectUnless($this->getUser()->isAuthenticated(), "@homepage");
@@ -1260,13 +1136,10 @@ class customerActions extends sfActions {
     }
 
     public function executeLogin(sfWebRequest $request) {
-        //call Culture Method For Get Current Set Culture - Against Feature# 6.1 --- 02/28/11
-        changeLanguageCulture::languageCulture($request, $this);
+        
         $this->target = $this->getTargetUrl();
         $this->getTargetUrl();
         
-        //-----------------------
-
         if ($request->isMethod('post') &&
                 $request->getParameter('mobile_number') != '' &&
                 $request->getParameter('password') != '') {
@@ -1331,7 +1204,7 @@ class customerActions extends sfActions {
     public function executeSendPassword(sfWebRequest $request) {
 
         //call Culture Method For Get Current Set Culture - Against Feature# 6.1 --- 02/28/11
-        changeLanguageCulture::languageCulture($request, $this);
+        
 
         //$this->forward404Unless($request->isMethod('post'));
         $this->redirectUnless($request->isMethod('post'), "@homepage");
@@ -1452,7 +1325,7 @@ class customerActions extends sfActions {
 
     public function executeGetHeader() {
         //call Culture Method For Get Current Set Culture - Against Feature# 6.1 --- 02/28/11
-        changeLanguageCulture::languageCulture($request, $this);
+        
 
         echo $this->getPartial("header", array('test_dir' => '/testwp'));
         sfConfig::set('sf_web_debug', false);
@@ -1462,7 +1335,7 @@ class customerActions extends sfActions {
     public function executeC9Callhistory(sfWebRequest $request) {
 
         //call Culture Method For Get Current Set Culture - Against Feature# 6.1 --- 02/28/11
-        changeLanguageCulture::languageCulture($request, $this);
+        
 
 //try to find customer in session (only possible if user already logged in.)
         $this->customer = CustomerPeer::retrieveByPK(
@@ -1497,7 +1370,7 @@ class customerActions extends sfActions {
     public function executeWebsms(sfWebRequest $request) {
 
         //call Culture Method For Get Current Set Culture - Against Feature# 6.1 --- 02/28/11
-        changeLanguageCulture::languageCulture($request, $this);
+        
         //-----------------------
 
 
@@ -1595,7 +1468,7 @@ public function executeSmsHistory(sfWebrequest $request){
 
 
         //call Culture Method For Get Current Set Culture - Against Feature# 6.1 --- 02/28/11
-        changeLanguageCulture::languageCulture($request, $this);
+        
         //-----------------------
 //         $this->getUser()->setCulture('en');
 //                $getCultue = $this->getUser()->getCulture();
@@ -1997,7 +1870,7 @@ public function executeSmsHistory(sfWebrequest $request){
 
 
         //call Culture Method For Get Current Set Culture - Against Feature# 6.1 --- 02/28/11
-        changeLanguageCulture::languageCulture($request, $this);
+        
         //-----------------------
 
      
@@ -2155,7 +2028,7 @@ public function executeSmsHistory(sfWebrequest $request){
 
 
         //call Culture Method For Get Current Set Culture - Against Feature# 6.1 --- 02/28/11
-        changeLanguageCulture::languageCulture($request, $this);
+        
         //-----------------------
         $customerid = $request->getParameter('customer_id');
         $ca = new Criteria();
@@ -2170,7 +2043,7 @@ public function executeSmsHistory(sfWebrequest $request){
         // return sfView::NONE;
     }
     public function executeActivateAutoRefill(sfWebRequest $request) {
-        changeLanguageCulture::languageCulture($request, $this);
+        
         $urlval = $request->getParameter('transact');
         $customerid = $request->getParameter('customerid');
         $user_attr_3 = $request->getParameter('user_attr_3');
@@ -2206,6 +2079,11 @@ public function executeSmsHistory(sfWebrequest $request){
     public function executeShortUniqueIds(sfWebRequest $request){
         
     }
+  public function executeChangeCulture(sfWebRequest $request){
+     // var_dump($request->getParameter('new'));
+        $this->getUser()->setCulture($request->getParameter('new'));
+       	$this->redirect('customer/dashboard');
 
+    }
 
 }
