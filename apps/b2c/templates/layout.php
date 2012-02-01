@@ -33,6 +33,13 @@
   <!--<![endif]-->
 </head>
 <body>
+    <div style="vertical-align: top;float: right;">
+
+                        <?php echo link_to(__('<img src="../images/german.png"/>'), 'customer/changeCulture?new=de'); ?>
+
+                         <?php echo link_to(__('<img src="../images/english.png"/>'), 'customer/changeCulture?new=en'); ?>
+
+             </div>
 <div id="wrap"><?php
 // set alert if customer is not yet registered with fonet
 
