@@ -75,7 +75,7 @@
                   <td><?php  echo $transaction->getOrderId() ?></td>
                   <td><?php echo  $transaction->getCreatedAt() ?></td>
                   <td><?php 
-                  if($transaction->getDescription()=="Registrering inkl. taletid"){
+                  if($transaction->getDescription()=="Anmeldung inc. sprechen"){
                       echo "Smartsim inklusive pott";
                       
                   }else{

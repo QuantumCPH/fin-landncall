@@ -118,7 +118,7 @@ $wrap_content  = isset($wrap)?$wrap:false;
     <?php if ($order->getIsFirstOrder())
     {
         echo $order->getProduct()->getName();
-        if($transaction->getDescription()=="Registrering inkl. taletid"){
+        if($transaction->getDescription()=="Anmeldung inc. sprechen"){
           echo "<br />[Smartsim inklusive pott]";
         }else{
             echo  '<br />['. $transaction->getDescription() .']';
@@ -126,7 +126,7 @@ $wrap_content  = isset($wrap)?$wrap:false;
     }
     else
     {
-        if($transaction->getDescription()=="LandNCall AB Refill"){
+        if($transaction->getDescription()=="Refill"){
           echo "Refill ".$transaction->getAmount();
         }else{
           echo $transaction->getDescription(); 

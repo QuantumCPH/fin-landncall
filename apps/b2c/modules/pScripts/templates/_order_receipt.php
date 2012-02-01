@@ -53,20 +53,20 @@ $wrap_content  = isset($wrap)?$wrap:false;
 	<p><?php echo __('Hej') ?>&nbsp;<?php echo $customer->getFirstName();?></p>
 	
 	<p>
-	<?php echo __('Tack för din beställning av <b>%1%</b>.', array('%1%'=>$order->getProduct()->getName())) ?>
+	<?php echo __('Tack fï¿½r din bestï¿½llning av <b>%1%</b>.', array('%1%'=>$order->getProduct()->getName())) ?>
 	</p>
 	
 	<p>
-	<?php echo __('Dina varor kommer att skickas i dag. Du bör ha leverans senast inom två arbertsdagar.'); ?> Ditt kundnummer &auml;r  <?php echo $customer->getUniqueid();?>. Det kan du anv&auml;nda i din kontakt med kundservice</p>
+	<?php echo __('Dina varor kommer att skickas i dag. Du bï¿½r ha leverans senast inom tvï¿½ arbertsdagar.'); ?> Ditt kundnummer &auml;r  <?php echo $customer->getUniqueid();?>. Det kan du anv&auml;nda i din kontakt med kundservice</p>
 	
 	<p>
-	<?php echo __('Tveka inte att ta kontakt med oss om det är något du undrar över.') ?>
+	<?php echo __('Tveka inte att ta kontakt med oss om det ï¿½r nï¿½got du undrar ï¿½ver.') ?>
 	</p>
         <p>
             <a href="mailto:Support@wls.com">Support@wls.com</a>
 	</p>
         <p>
-	<?php echo __('Med vänlig hälsning') ?>
+	<?php echo __('Med vï¿½nlig hï¿½lsning') ?>
 	</p>
         <p>
 	<?php echo __('Johanna') ?>
@@ -136,7 +136,7 @@ $wrap_content  = isset($wrap)?$wrap:false;
     <?php if ($order->getIsFirstOrder())
     {
         echo $order->getProduct()->getName(); 
-        if($transaction->getDescription()=="Registrering inkl. taletid"){
+        if($transaction->getDescription()=="Anmeldung inc. sprechen"){
           echo "<br />[Smartsim inklusive pott]";
         }else{
             echo  '<br />['. $transaction->getDescription() .']';
@@ -144,7 +144,7 @@ $wrap_content  = isset($wrap)?$wrap:false;
     }
     else
     {
-	if($transaction->getDescription()=="LandNCall AB Refill"){
+	if($transaction->getDescription()=="Refill"){
           echo "Refill ".$transaction->getAmount();
         }else{
           echo $transaction->getDescription();  
