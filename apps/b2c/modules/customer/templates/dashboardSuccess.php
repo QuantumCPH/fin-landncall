@@ -111,7 +111,7 @@ echo " ";   echo substr($Telintambs, 15,2);
 
 <?php } ?>
 
-	 <div class="fl cb dashboard-info-text"  ><span   style="padding-right:-10px"><?php echo __('Your status:') ?>:</span><span><?php echo __('active') ?>
+	 <div class="fl cb dashboard-info-text"  ><span   style="padding-right:-10px"><?php echo __('Your status:') ?></span><span><?php echo __('active') ?>
         </span></div>
         <p>&nbsp;</p>
         <br/><br/>
