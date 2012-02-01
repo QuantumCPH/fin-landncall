@@ -168,7 +168,7 @@ class CustomerForm extends BaseCustomerForm
 			new sfValidatorRegex(
 				array(
 					'pattern'=>$poboxPattern,
-                                        'max_length'=>6,
+                                        'max_length'=>5,
                                         'min_length' =>4 ,
 
 				),
