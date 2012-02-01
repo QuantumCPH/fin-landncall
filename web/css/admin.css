@@ -1,8 +1,22 @@
 .admin-navigation ul, li{
 	display:inline;
 	padding-right: 5px;
+        margin: 0 auto;
 }
-
+#header{
+    width:660px;
+    margin:0 auto;
+}
+.logo{
+    color:#000000;
+    font-family:'Times New Roman', Times, serif;
+    font-size: 54px;
+    font-weight:bold;
+}
+.clr{
+    float:none;
+    clear:both;
+}
 #sddm
 {	margin: 0;
 	padding: 0;
@@ -13,20 +27,24 @@
 	padding: 0;
 	list-style: none;
 	float: left;
-	font: bold 11px arial}
+	font: bold 11px arial;
+        border:1px solid #000000;
+}
 
 #sddm li a
 {	display: block;
-	margin: 0 1px 0 0;
+	margin: 0 0px 0 0;
 	padding: 4px 10px;
 	width: 60px;
-	background: #5970B2;
-	color: #FFF;
+	background: #FFF;
+	color: #000000;
 	text-align: center;
 	text-decoration: none}
 
 #sddm li a:hover
-{	background: #49A3FF}
+{	background: #000000;
+        color:#ffffff;
+}
 
 #sddm div
 {	position: absolute;
@@ -34,7 +52,7 @@
 	margin: 0;
 	padding: 0;
 	background: #EAEBD8;
-	border: 1px solid #5970B2}
+	border: 1px solid #929393}
 
 #sddm div a
 {	position: relative;
@@ -45,11 +63,23 @@
         white-space: nowrap;
         text-align: left;
         text-decoration: none;
-        background: #EAEBD8;
-        color: #2875DE;
-        font: 11px arial}
+        background: #FFFFFF;
+        color: #000000;
+        font: 11px arial
+}
 
 #sddm div a:hover
-{	background: #49A3FF;
-        color: #FFF}
+{	background: #000000;
+        color: #FFF;
+}
 
+#sf_admin_container{
+    margin:0 auto;
+}
+#sddm li a.current{
+    background: #000000 !important;
+    color: #FFFFFF !important;
+}
+table.tblAlign{
+    margin:0 auto;
+}

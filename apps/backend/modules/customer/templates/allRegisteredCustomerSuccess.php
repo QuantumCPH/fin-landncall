@@ -6,7 +6,7 @@
 
 ?>
 
-		<table width="75%" cellspacing="0" cellpadding="2" style="float:left;">
+		<table width="75%" cellspacing="0" cellpadding="2" class="tblAlign">
                     <thead>
                           <tr  ><th colspan="7">   <?php echo  __('All Registered Customer') ?></th>  </tr>
                         <tr style="background-color: #CCCCFF;color: #000000;">

@@ -5,6 +5,7 @@
     <?php include_metas() ?>
     <?php include_title() ?>
     <link rel="shortcut icon" href="/favicon.ico" />
+    
     <script type="text/javascript">
     <!--
         // Copyright 2006-2007 javascript-array.com
@@ -52,32 +53,48 @@
         // close layer when click-out
         document.onclick = mclose;
     -->
+
     </script>
   </head>
   <body>
+    <?php 
+    echo  $current = sfContext::getInstance()->getRouting()->getCurrentInternalUri();
+    $all = array('company/index','employee/index','company/paymenthistory','company/refill','customer/allRegisteredCustomer','agent_company/index','agent_user/index','agent_commission/selectCompany','agent_commission_package/index'
+       ,'newupdate/index','userguide/index','faqs/index','company/index','employee/index','sale_activity/index','sale_activity/index','support_activity/index'
+       ,'cdr/index','invoice/index','product_order/index','user/index','device/index','manufacturer/index','telecom_operator/index','postal_charges/index',
+       'product/index','enable_country/index','city/index','sms_text/index','usage_alert/index','usage_alert_sender/index','telecom_operator/index',
+       
+       );
+//   if(in_array($current, $all)){
+//       $class = "class = 'current'";
+//       echo $current;
+//   }else{
+//       $class ='';
+//   }
+      $modulName = $sf_context->getModuleName();
+      $actionName = $sf_context->getActionName();
+?>
   	<div id="wrapper">
-  	<div id="header">
-  		<p style="float: right">
-  		<?php echo image_tag('/images/zapna_logo_small.png') ?>
-  		</p>
-  	</div>
-    <?php if($sf_user->isAuthenticated()): ?>
+  	<div id="header">  
+            <div class="logo">
+                WLS
+  		<?php //echo image_tag('/images/zapna_logo_small.png') ?>
+            </div>    
+          <?php if($sf_user->isAuthenticated()): ?>
       <ul class="admin-navigation">
   		
       </ul>
       <ul id="sddm">
              <li><a href="#"
                 onmouseover="mopen('m2')"
-                onmouseout="mclosetime()"><?php echo __('B2B') ?></a>
+                onmouseout="mclosetime()" <?php echo $modulName==''? 'class = "current"':''?>><?php echo __('B2B') ?></a>
                 <div id="m2"
                     onmouseover="mcancelclosetime()"
                     onmouseout="mclosetime()">
-
                     <?php echo link_to(__('Companies list'), 'company/index') ?>
                     <?php echo link_to(__('Employee lists'), 'employee/index') ?>
-                    <?php  echo link_to(__('Payment History'), 'company/paymenthistory') ?>
+                    <?php echo link_to(__('Payment History'), 'company/paymenthistory') ?>
                     <?php echo link_to(__('Refill'), 'company/refill'); ?>
-                
                 </div>
             </li>
             <li>
@@ -108,7 +125,7 @@
                     <?php echo link_to(__('agent commission package'), 'agent_commission_package/index') ?>
                 </div>
             </li>
-<li>
+            <li>
                 <a href="#"
                 onmouseover="mopen('m7')"
                 onmouseout="mclosetime()"><?php echo __('Updates') ?></a>
@@ -122,17 +139,12 @@
 
                 </div>
             </li>
-
-
-
-          
             <li style="display:none"><a href="#"
                 onmouseover="mopen('m2')"
                 onmouseout="mclosetime()"><?php echo __('Company') ?></a>
                 <div id="m2"
                     onmouseover="mcancelclosetime()"
                     onmouseout="mclosetime()">
-
                     <?php echo link_to(__('companies list'), 'company/index') ?>
                     <?php echo link_to(__('employee lists'), 'employee/index') ?>
                     <?php echo link_to(__('sale activity'), 'sale_activity/index'); ?>
@@ -142,7 +154,6 @@
                     <?php echo link_to(__('product orders'), 'product_order/index') ?>
                 </div>
             </li>
-            
             <li>
                 <a href="#"
                 onmouseover="mopen('m4')"
@@ -154,24 +165,15 @@
 
                 </div>
             </li>
-            
-            
-			
-			
-          
 <li><a href="#"
                 onmouseover="mopen('m1')"
                 onmouseout="mclosetime()"><?php echo __('Settings') ?></a>
                 <div id="m1"
                     onmouseover="mcancelclosetime()"
                     onmouseout="mclosetime()">
-
                       <?php
                         // As per Omair Instruction - He need these changes - kmmalik - 08/17/2011
                         ?>
-
-
-
                         <?php
                         // As per Omair Instruction - He need these changes - kmmalik - 08/17/2011
                          //echo link_to('<b>Zerocall Setting</b>', '') ?>
@@ -189,10 +191,6 @@
                         <?php echo link_to(__('Usage Alert'), 'usage_alert/index') ?>
                         <?php echo link_to(__('Usage Alert Sender'), 'usage_alert_sender/index') ?>
                         <?php echo link_to(__('Telecom Operator'), 'telecom_operator/index') ?>
-                    
-
-
-                
                 </div>
             </li>
 
@@ -208,14 +206,21 @@
                     <?php endif; ?>
             </li>
         </ul>
-      <?php endif; ?>
+      <?php endif; ?>  
+            <div class="clr"></div>
+  	</div>
+    <br />
 
-      <div style="clear:both"></div>
+      <div class="clr"></div>
     <?php echo $sf_content ?>
     </div> <!--  end wrapper -->
 
 
     <script type="text/javascript">
+  jQuery('#sddm li a').click(function() {
+    $('li:last').addClass('current') ;
+   });
+ 
 jQuery(function(){
 
 	jQuery('#sf_admin_form').validate({
