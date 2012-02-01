@@ -168,7 +168,7 @@ $customer_form->unsetAllExcept(array('auto_refill_amount', 'auto_refill_min_bala
 <form action="https://payment.architrade.com/paymentweb/start.action"   method="post" id="payment" onsubmit="return checkForm()">
   <div class="left-col">
     <div class="split-form-sign-up">
-      <div class="step-details"> <strong><?php echo __('Become a Customer') ?> <span class="inactive">- <?php echo __('Step 1') ?>: <?php echo __('Registrera') ?> </span><span class="active">- <?php echo __('Step 2') ?>: <?php echo __('Payment') ?></span></strong> </div>
+      <div class="step-details"> <strong><?php echo __('Become a Customer') ?> <span class="inactive">- <?php echo __('Step 1') ?>: <?php echo __('Register') ?> </span><span class="active">- <?php echo __('Step 2') ?>: <?php echo __('Payment') ?></span></strong> </div>
       <div class="fl col">
           <ul>
 
@@ -225,7 +225,7 @@ $customer_form->unsetAllExcept(array('auto_refill_amount', 'auto_refill_min_bala
             </li>
             <li>
               <label><?php echo __('VAT') ?> (25%)<br />
-                  <?php echo __('Liefer-und Versandkosten') ?> <br />
+                  <?php echo __('Delivery and Returns') ?> <br />
               <?php echo __('Total amount') ?></label>
               <input type="hidden" id="vat" value="<?php $vat = .25 * ($product_price); echo $vat; ?>" />
                 <input type="hidden" id="postal" value="<?php  echo $postalcharge; ?>" />
@@ -284,7 +284,7 @@ $customer_form->unsetAllExcept(array('auto_refill_amount', 'auto_refill_min_bala
  				<label for="user_attr_1" style="padding-top:0; text-indent: 5px;"><?php echo __('I want to activate auto refill feature') ?></label>
             </li>
             <li id="user_attr_3_field">
-                <label for="user_attr_3" style="margin-right: 50px;"><?php echo __('Auto refill minimum balance:') ?>&nbsp;</label>
+                <label for="user_attr_3" style="margin-right: 90px;"><?php echo __('Auto refill minimum balance:') ?>&nbsp;</label>
 			  <?php echo $customer_form['auto_refill_min_balance']->render(array(
 			  										'name'=>'user_attr_3',
                                                                                                         'id'=>'user_attr_3',
@@ -293,7 +293,7 @@ $customer_form->unsetAllExcept(array('auto_refill_amount', 'auto_refill_min_bala
                                   ?>&euro;
             </li>
            <li id="user_attr_2_field">
-              <label for="user_attr_2" style="margin-right: 50px;"><?php echo __('Auto refill amount:') ?></label>
+              <label for="user_attr_2" style="margin-right: 90px;"><?php echo __('Auto refill amount:') ?></label>
      <?php echo $customer_form['auto_refill_amount']->render(array(
                                                             'name'=>'user_attr_2',
          'id'=>'user_attr_2',
@@ -303,13 +303,7 @@ $customer_form->unsetAllExcept(array('auto_refill_amount', 'auto_refill_min_bala
      ?>
             </li>
             <li id="" style="border-style:solid;border-width:3px;width: 295px; padding-left: 10px;">
-                <br /><b>Was ist die automatische Nachschub? </ B> <br />
-                 Land nennen empfohlen, diesen Service <br /> aktivieren
-                 so müssen Sie nicht ausfüllen manuell, <br /> wenn Ihr Guthaben zur Neige geht. <br />
-                 100 oder 200 Kronen einander,  <br />wenn der Kontostand erreicht <br />
-                 25 oder 50 Dollar. Füllmenge ist <br /> hinzugefügt
-                 Ihr Konto in Minuten. Ihre Füllung <br />
-                 Sie können dann sehen, der "Übersicht - Ihr Kredit".
+                <br /><b><?php echo __('What is auto-replenishment? <br/> WLS2 recommended to call this service, so you <br/>do not have to manually fill, When your balance <br/>runs low. 100 or 200 crowns each, when the <br/> balance reaches 25 or $ 50. Capacity added to <br/>your account in minutes. filling their you can<br/> then see the "Overview - Your Credit"')?></b>
                 
                 <br /><br />
                                 

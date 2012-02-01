@@ -50,35 +50,32 @@ if($is_auto_refill_activated){  ?>  <div class="left-col">
     
     
      <div  style="width:500px;clear:both;"> <br/> <br/>
-   <b>  Automatisk påfyllning är:<span style="text-decoration:underline"> aktiv</span>
+   <b>  <?php echo __("Automatic replenishment is")?>:<span style="text-decoration:underline"> <?php echo __('active')?></span>
    </b>
      
      <br/> <br/>
 
 
-Om ditt kreditkort som är registrerat för tjänsten av
-någon anledning inte längre är aktivt kan du avaktivera
-tjänsten och sedan aktivera den på nytt med ett annat
-kreditkort.
+<?php echo __('If your credit card that is registered for the service of any reason is no longer active, you can disable service and then activate it again with another credit card.');?>
  
      
       </div> <br/> 
                <br/>
      
     <div  style="width:500px;">
-    <div style="float:left;width:250px;font-weight:bold;"> Du har valt automatisk påfyllning när potten underskrider: </div>
+    <div style="float:left;width:250px;font-weight:bold;"> <?php echo __('You have selected automatic replenishment when the pot is below:');?> </div>
     <div  style="margin-left: 20px;float:left;width:100px;font-weight:bold;"> <?php echo   $customer_form->getObject()->getAutoRefillMinBalance() ?> &euro;</div>
     <div  style="float:left;width:150px;"></div> 
     </div>
   
     <div  style="width:500px;clear:both;">
                <br/>
-    <div  style="float:left;width:250px;font-weight:bold; ">Potten fylls då på med:</div>
+    <div  style="float:left;width:250px;font-weight:bold; "><?php echo __('The pot is filled in with:');?></div>
     <div  style="margin-left: 20px;float:left;width:100px;font-weight:bold;">  <?php echo   $customer_form->getObject()->getAutoRefillAmount() ?> &euro;</div>
     <div style="float: left; margin-top: 61px; text-align: left; width: 134px;">
     <form method="post" action="<?php echo $target; ?>customer/deActivateAutoRefill">
     <input type="hidden" name="customer_id" value="<?php echo   $customer_form->getObject()->getId() ?>" />
-                <input type="submit" class="butonsigninsmall" name="button" style="cursor: pointer;float: right; margin-left: 134px; margin-top: -10px;"  value="<?php echo __('Avaktivera') ?>" >
+                <input type="submit" class="butonsigninsmall" name="button" style="cursor: pointer;float: right; margin-left: 134px; margin-top: -10px;"  value="<?php echo __('disable') ?>" >
                 </form>			
           </div>
     </div>
@@ -94,13 +91,10 @@ kreditkort.
     <?php include_partial('navigation', array('selected'=>'refill', 'customer_id'=>$customer->getId())) ?>
 	<div class="split-form">
     <div style="width:500px;">
-              <div> Smidigaste sättet att fylla på samtalspotten är 
-                att aktivera automatisk <br />påfyllning (nedan). Då behöver
-                du inte oroa dig för att potten tar slut.<br /> 
-                Särskilt viktigt vid t.ex. utlandsresa då det kan vara svårt att fylla på på annat sätt.<br /><br /></div> 
-            <div>     <b style="text-decoration:underline;">Automatisk påfyllning</b> </div>
+              <div> <?php echo __('Most convenient way to fill the pot call is To enable automatic <br /> filling (below). then you need Do not worry about the pot runs out. <br /> Especially important in such trip abroad when it can be difficult to fill in any other way.');?><br /><br /></div>
+            <div>     <b style="text-decoration:underline;"><?php echo __('automatic replenishment');?></b> </div>
                  <br />
-              <div>   <b>Automatisk påfyllning är: ej aktiv</b></div>
+              <div>   <b><?php echo __('Automatic replenishment is: offline');?></b></div>
                 
       <div class="fl col">
       <div class="split-form">  
@@ -126,7 +120,7 @@ kreditkort.
            
            
             <li id="user_attr_3_field">
-                <label for="user_attr_3" style="margin-right: 50px;"><?php echo __('Fyll på automatiskt <br /> när potten understiger:') ?></label>
+                <label for="user_attr_3" style="margin-right: 50px;"><?php echo __('Load automatically <br /> when the pot is below:') ?></label>
                 &nbsp;
 			  <?php echo $customer_form['auto_refill_min_balance']->render(array(
 			  										'name'=>'user_attr_3',
@@ -145,7 +139,7 @@ kreditkort.
 			  ?>  &euro;&nbsp;
             </li> </ul>
             </div>
-          <div style="width:135px;float:left;padding-top:15px;">  <input type="submit" class="butonsigninsmall" name="button" style="cursor: pointer;float: right;width:132px"  value="<?php echo __('Aktivera') ?>" >	</div>
+          <div style="width:135px;float:left;padding-top:15px;">  <input type="submit" class="butonsigninsmall" name="button" style="cursor: pointer;float: right;width:132px"  value="<?php echo __('Enable') ?>" >	</div>
   </form>
   </div>
     
@@ -156,7 +150,7 @@ kreditkort.
      <div  style="width:340px;float:left;">    <ul>
          	<!-- customer product -->
  			  <li>
-              <label for="customer_product" style="text-decoration:underline;"><?php echo __('Manuell påfyllning:') ?></label>
+              <label for="customer_product" style="text-decoration:underline;"><?php echo __('Manual filling:') ?></label>
              
             </li>
           	<!-- extra_refill -->
@@ -171,7 +165,7 @@ kreditkort.
             </li>
             <?php } ?>
             <li>
-              <label for="extra_refill"><?php echo __('Välj belopp att fylla på med:') ?></label>
+              <label for="extra_refill"><?php echo __('Select amount to be loaded:') ?></label>
               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;<?php echo $form['extra_refill']?>  &euro;
             </li>
 
@@ -203,7 +197,7 @@ kreditkort.
             </div>
           <div style="width:140px;float:left;padding-top:30px;">   
        
-                <input type="submit" class="butonsigninsmall" name="button" style="cursor: pointer;float: right; margin-left: 134px; margin-top: -10px;"  value="<?php echo __('Fyll på') ?>" >			
+                <input type="submit" class="butonsigninsmall" name="button" style="cursor: pointer;float: right; margin-left: 134px; margin-top: -10px;"  value="<?php echo __('Load') ?>" >
         </div>
         </div></form> 
        </div>

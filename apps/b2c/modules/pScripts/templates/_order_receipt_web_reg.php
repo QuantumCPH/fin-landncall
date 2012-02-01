@@ -49,23 +49,23 @@ $wrap_content  = isset($wrap)?$wrap:false;
  ?>
  
 <?php if($wrap_content): ?>
-	<p><?php echo __('Hej') ?>&nbsp;<?php echo $customer->getFirstName();?></p>
+	<p><?php echo __('Hi') ?>&nbsp;<?php echo $customer->getFirstName();?></p>
 	
 	<p>
-	<?php echo __('Tack för din beställning av <b>%1%</b>.', array('%1%'=>$order->getProduct()->getName())) ?>
+	<?php echo __('Thank you for your order of <b>% 1% </ b>.', array('%1%'=>$order->getProduct()->getName())) ?>
 	</p>
 	
 	<p>
-	<?php echo __('Dina varor kommer att levereras idag. Du bör ha leverans inom två dagar.'); ?> Ditt kundnummer &auml;r  <?php echo $customer->getUniqueid();?>. Det kan du anv&auml;nda i din kontakt med kundservice</p>
+	<?php echo __('Your goods will be shipped today. You should have delivery within two days. Your customer number is'); echo $customer->getUniqueid(); echo __('There, you can use in your dealings with customer service'); ?></p>
 	
 	<p>
-	<?php echo __('Tveka inte att ta kontakt med oss om det är något du undrar över.') ?>
+	<?php echo __('Do not hesitate to contact us if you have any questions.') ?>
 	</p>
         <p>
             <a href="mailto:Support@wls.com">Support@wls.com</a>
 	</p>
         <p>
-	<?php echo __('Med vänlig hälsning') ?>
+	<?php echo __('Yours sincerely,') ?>
 	</p>
         <p>
 	<?php echo __('XXXXXXX') ?>
@@ -113,7 +113,7 @@ $wrap_content  = isset($wrap)?$wrap:false;
     {
         echo $order->getProduct()->getName(); 
         if($transaction->getDescription()=="Anmeldung inc. sprechen"){
-          echo "<br />[Smartsim inklusive pott]";
+          echo "<br />["; echo __('Smartsim including pot'); echo "]";
         }else{
             echo  '<br />['. $transaction->getDescription() .']';
         }
@@ -121,7 +121,7 @@ $wrap_content  = isset($wrap)?$wrap:false;
     else
     {
 	if($transaction->getDescription()=="Refill"){
-          echo "Refill ".$transaction->getAmount();
+          echo __("Refill "); echo $transaction->getAmount();
         }else{
           echo $transaction->getDescription();  
         }           	
@@ -148,7 +148,7 @@ $wrap_content  = isset($wrap)?$wrap:false;
   </tr>
     <tr class="footer">
     <td>&nbsp;</td>
-    <td><?php echo __('Liefer-und Versandkosten') ?>  </td>
+    <td><?php echo __('Delivery and Returns') ?>  </td>
     <td>&nbsp;</td>
     <td><?php echo format_number($postalcharge) ?></td>
   </tr>

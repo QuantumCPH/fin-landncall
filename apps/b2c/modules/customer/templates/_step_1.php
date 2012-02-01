@@ -4,8 +4,8 @@
 <form method="post" action="<?php url_for('@signup_step1') ?>" id="newCustomerForm" <?php $form->isMultipart() and print 'enctype="multipart/form-data" ' ?>>
   <div class="left-col">
     <div class="split-form-sign-up">
-        <div class="step-details"> <strong><?php echo __('Become a Customer') ?> <span class="active">- <?php echo __('Step 1') ?>: <?php echo __('Registrera') ?> </span><span class="inactive">- <?php echo __('Step 2') ?>: <?php echo __('Payment') ?></span></strong>
-            </br></br></br></br> * Pflichtfelder auszufüllen</div>
+        <div class="step-details"> <strong><?php echo __('Become a Customer') ?> <span class="active">- <?php echo __('Step 1') ?>: <?php echo __('Register') ?> </span><span class="inactive">- <?php echo __('Step 2') ?>: <?php echo __('Payment') ?></span></strong>
+            <br><br><br><br>* <?php echo __('Required to fill')?>  </div>
             <div class="fl col">
         <?php echo $form->renderHiddenFields() ?>
           <ul>   

@@ -7,7 +7,7 @@ header('P3P:CP="IDC DSP COR ADM DEVi TAIi PSA PSD IVAi IVDi CONi HIS OUR IND CNT
   <div class="left-col">
     <?php include_partial('navigation', array('selected'=>'dashboard', 'customer_id'=>$customer->getId())) ?>
     <div class="dashboard-info">
-        <div class="fl cb dashboard-info-text"><span><?php echo __('kundnummer') ?>:</span><span><?php echo $customer->getUniqueid(); ?></span></div>
+        <div class="fl cb dashboard-info-text"><span><?php echo __('Customer Number') ?>:</span><span><?php echo $customer->getUniqueid(); ?></span></div>
 	<div class="fl cb dashboard-info-text"><span><?php echo __('Your account balance is') ?>:</span><span>
 	<?php
 
@@ -40,7 +40,7 @@ echo '&nbsp;';
 
 ?> EUR <input type="button" class="butonsigninsmall" style="<?php if($voip_customer!=''){?> margin-left:63px;<?php }else{ ?>margin-left:43px;<?php }?>" name="button" onclick="window.location.href='<?php echo sfConfig::get('app_epay_relay_script_url').url_for('customer/refill?customer_id='.$customer->getId(), true) ?>'" style="cursor: pointer"  value="<?php echo __('Buy credit') ?>" ></span></div>
 
-        <div class="fl cb dashboard-info-text"  ><span   style="padding-right:-10px"><?php echo __('Aktivt mobil nr ') ?>:</span><span><?php
+        <div class="fl cb dashboard-info-text"  ><span   style="padding-right:-10px"><?php echo __('Active mobile number') ?>:</span><span><?php
         
         $unid   =  $customer->getUniqueid();
         if(isset($unid) && $unid!=""){
@@ -111,7 +111,7 @@ echo " ";   echo substr($Telintambs, 15,2);
 
 <?php } ?>
 
-	 <div class="fl cb dashboard-info-text"  ><span   style="padding-right:-10px"><?php echo __('Dina Status:') ?>:</span><span> Aktiva
+	 <div class="fl cb dashboard-info-text"  ><span   style="padding-right:-10px"><?php echo __('Your status:') ?>:</span><span><?php echo __('active') ?>
         </span></div>
         <p>&nbsp;</p>
         <br/><br/>

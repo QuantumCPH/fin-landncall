@@ -9,14 +9,14 @@ header('P3P:CP="IDC DSP COR ADM DEVi TAIi PSA PSD IVAi IVDi CONi HIS OUR IND CNT
 		<?php echo $sf_user->getFlash('send_password_message') ?>
 	</div>
 	<?php endif;?>
-            <div style="width:500px; margin-top: 15px;"><?php //echo $target; ?>Hej och välkommen till Smartsim - mina sidor. För att logga in använder du ditt kundnummer som är ditt mobilnummer och ditt lösenord. På mina sidor kan du se vilka samtal du gjort, fylla på potten och mycket mer.</div>
+            <div style="width:500px; margin-top: 15px;"><?php echo __('Hello and welcome to Smartsim - my pages. To log in, use your customer number which is your mobile number and password. On my pages you can see what calls you made, fill the pot, and more.'); //echo $target; ?></div>
   <div class="left-col" style="padding-left:210px;text-align:left;">
     <?php //include_partial('customer/navigation', array('selected'=>'', 'customer_id'=>$customer->getId())) ?>
 	<div id="login-modal" style="background-repeat: repeat-x; width: 470px; margin-top: 16px; background: none;">
 	<div class="login-left">
-	<h4  style="text-align:left;"><?php echo __('Logga in p&aacute; dina sidor') ?></h4>
+	<h4  style="text-align:left;"><?php echo __('Log into your pages') ?></h4>
 	<form method="post" id="login_form" action="<?php echo $target; ?>/customer/login">
-	<label  style="text-align:left;"><?php echo __('Ange mobilnummer') ?></label><br />
+	<label  style="text-align:left;"><?php echo __('Enter cell phone number') ?></label><br />
 	<input type="text"  class="input"  name="mobile_number" id="mobile_number" />
 	<p style="color: red; margin-bottom:1px; position: relative; top: -2px;">
 	<?php

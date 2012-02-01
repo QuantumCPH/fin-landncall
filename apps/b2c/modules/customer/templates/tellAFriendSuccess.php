@@ -60,7 +60,7 @@ chars.value = "Characters: "+str.length+"/434";
             {?>
 <div class="alert_bar">
 	
-              <?php echo __("Din inbjudan till ").$_POST['name'].__(" har skickats"); ?>
+              <?php echo __("the invitation to ").$_POST['name'].__(" has been sent"); ?>
 
             
 
@@ -84,7 +84,7 @@ chars.value = "Characters: "+str.length+"/434";
 
 <br/>
 <h3><?php echo __('Tell your friends about zer0call & earn extra balance!') ?></h3>
-<p style="align:justified;"><?php echo __('Tell your friends about zer0call and earn 10dkk as soon as your friends have made their first payment with zer0call! Spread the word about zer0call and let your friends know about LandNCall AB services.') ?></p>
+<p style="align:justified;"><?php echo __('Tell your friends about zer0call and earn 10dkk as soon as your friends have made their first payment with zer0call! Spread the word about zer0call and let your friends know about WLS2 services.') ?></p>
 <br/>
 <h3><?php echo __('How does it work?'); ?></h3>
 <p style="align:justified;"><?php echo __('You can tell your friends about zer0call in two simple ways:') ?><br />
@@ -122,7 +122,7 @@ chars.value = "Characters: "+str.length+"/434";
 
                     </tr>
                     <tr>
-                        <td  colspan="2" align="center"><textarea name="message" ><?php echo __("Smartsim använder du för att ringa otroligt billigt till utlandet (du spar upp till 90%) och för att kapa priserna när du är utomlands (du spar 30-80%). Just nu kostar Smartsim 99 kr och du kan ringa för hela beloppet. Smartsim har ingen månadsavgift eller dolda avgifter.") ?> </textarea></td>
+                        <td  colspan="2" align="center"><textarea name="message" ><?php echo __("Smartsim use to make extremely cheap international calls (save up to 90%) and to cut prices when you are abroad (you'll save 30-80%). Right now costing Smartsim 99 $ and you can call for the full amount. Smartsim has no monthly fee or hidden charges.") ?> </textarea></td>
 
                     </tr>
                 </table>

@@ -37,7 +37,7 @@
                     <td class="title"><?php echo __('Duration') ?></td>
                     <td class="title"><?php echo __('VAT') ?></td>
                     <td class="title"><?php echo __('Cost <small>(Incl. VAT)</small>') ?></td>
-                     <td class="title"><?php echo __('Samtalstyp') ?></td>
+                     <td class="title"><?php echo __('Call Type') ?></td>
                   </tr>
 
                 <?php 
@@ -104,7 +104,7 @@ foreach ($csv->data as $key => $row) {
         <td><?php echo  $CLD; ?></td>
         <td><?php echo number_format($charged_quantity/60 ,2);  ?></td>
          <td><?php echo  number_format($charged_amount/4,2); ?></td>
-        <td><?php echo number_format($charged_amount,2);      $amount_total+= number_format($charged_amount,2); ?> SEK</td>
+        <td><?php echo number_format($charged_amount,2);      $amount_total+= number_format($charged_amount,2); ?> &euro;</td>
          <td><?php $account_id;    $typecall=substr($account_id,0,1);
            if($typecall=='a'){ echo "Int.";  }
            if($typecall=='4'){ echo "R";  }
@@ -127,14 +127,14 @@ $callRecords=1;
                 	<!--
                 	<td><?php echo format_number($amount_total-$amount_total*.20) ?> SEK</td>
                 	 -->
-                	<td><?php echo number_format($amount_total, 2, ',', '') ?> SEK</td>
+                	<td><?php echo number_format($amount_total, 2, ',', '') ?> &euro;</td>
                          <td>&nbsp;</td>
                 </tr>	
                 <?php endif; ?>
-                <tr><td colspan="6" align="left">Samtalstyp  type detail <br/> Int. = Internationella samtal<br/>
-Cb M = Callback mottaga<br/>
+                <tr><td colspan="6" align="left"><?php echo __('Type of call detail');?> <br/> Int. = <?php echo __('International calls');?><br/>
+<!--Cb M = Callback mottaga<br/>
 	Cb S = Callback samtal<br/>
-	R = resenummer samtal<br/>
+	R = resenummer samtal<br/>-->
 </td></tr>
               </table>
 
