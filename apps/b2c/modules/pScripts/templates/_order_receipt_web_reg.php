@@ -52,11 +52,11 @@ $wrap_content  = isset($wrap)?$wrap:false;
 	<p><?php echo __('Hi') ?>&nbsp;<?php echo $customer->getFirstName();?></p>
 	
 	<p>
-	<?php echo __('Thank you for your order of <b>% 1% </ b>.', array('%1%'=>$order->getProduct()->getName())) ?>
+	<?php echo __('Thank you for your order of <b>%1%</b>.', array('%1%'=>$order->getProduct()->getName())) ?>
 	</p>
 	
 	<p>
-	<?php echo __('Your goods will be shipped today. You should have delivery within two days. Your customer number is'); echo $customer->getUniqueid(); echo __('There, you can use in your dealings with customer service'); ?></p>
+	<?php echo __('Your goods will be shipped today. You should have delivery within two days. Your customer number is '); echo $customer->getUniqueid();?>. <?php echo __(' There, you can use in your dealings with customer service'); ?></p>
 	
 	<p>
 	<?php echo __('Do not hesitate to contact us if you have any questions.') ?>

@@ -53,7 +53,7 @@ $wrap_content  = isset($wrap)?$wrap:false;
 	<p><?php echo __('Dear Customer') ?></p>
 	
 	<p>
-	<?php echo __('Thank you for ordering <b>%1%</b> and becoming wls   Customer. We welcome you to a new and huge mobile world.', array('%1%'=>$order->getProduct()->getName())) ?>
+	<?php echo __('Thank you for ordering <b>%1%</b> and becoming wls2 Customer. We welcome you to a new and huge mobile world.', array('%1%'=>$order->getProduct()->getName())) ?>
 	</p>
 	
 	<p>
@@ -71,16 +71,16 @@ $wrap_content  = isset($wrap)?$wrap:false;
   </tr>
   <tr>
   <td colspan="4" class="payer_summary">
-	Telefonv&atilde;gen 30
+	Telefonv&atilde;XXX XX
 	<br />
-	126 37 H&atilde;gersten
+	XXX XX X&atilde;XXXXXX
 	<br />
 	
 	<br />
-	Tel:      +46 85 17 81 100
+	Tel:      +XX XX XX XX XXX
 	<br />	
 	<br />
-	Cvr:     32068219
+	Cvr:     XXXXXXX
 	<br />
   </td>
   </tr>
@@ -166,7 +166,7 @@ $wrap_content  = isset($wrap)?$wrap:false;
 <?php endif; ?>
 
 <p>
-	<?php echo __('If you have any questions please feel free to contact our customer support center at '); ?>
+	<?php echo __('If you have any questions please feel free to contact our customer support center at'); ?> 
 	<a href="mailto:support@wls.com">support@wls.com</a>
 </p>
 

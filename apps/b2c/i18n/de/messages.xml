@@ -294,8 +294,8 @@
                 <target>andere Geschichte</target>
             </trans-unit>
             <trans-unit id="73" translate="yes" reformat="yes" xml:space="default">
-                <source>call History</source>
-                <target>Call History</target>
+                <source>Call History</source>
+                <target>rufen Geschichte</target>
             </trans-unit>
             <trans-unit id="74" translate="yes" reformat="yes" xml:space="default">
                 <source>Order Numer</source>
@@ -708,75 +708,75 @@
                 <target>Hallo</target>
             </trans-unit>
             <trans-unit id="174" translate="yes" reformat="yes" xml:space="default">
-                <source>Thank you for your order of &lt;b&gt;% 1% &lt;/ b&gt;.</source>
-                <target>Vielen Dank für Ihre Bestellung von &lt;b&gt;% 1% &lt;/ b&gt;.</target>
+                <source>Thank you for your order of &lt;b&gt;%1%&lt;/b&gt;.</source>
+                <target>Vielen Dank für Ihre Bestellung von &lt;b&gt;%1%&lt;/b&gt;.</target>
             </trans-unit>
             <trans-unit id="175" translate="yes" reformat="yes" xml:space="default">
-                <source>Your goods will be shipped today. You should have delivery within two days. Your customer number is</source>
-                <target>Ihre Ware wird ausgeliefert heute. Sie sollten über die Lieferung innerhalb von zwei Tagen. Ihre Kunden-Nummer ist</target>
+                <source>Your goods will be shipped today. You should have delivery within two days. Your customer number is </source>
+                <target>Ihre Ware wird ausgeliefert heute. Sie sollten über die Lieferung innerhalb von zwei Tagen. Ihre Kunden-Nummer ist </target>
             </trans-unit>
             <trans-unit id="176" translate="yes" reformat="yes" xml:space="default">
-                <source>Send</source>
-                <target>senden</target>
+                <source>SMS History</source>
+                <target>SMS Geschichte</target>
             </trans-unit>
             <trans-unit id="177" translate="yes" reformat="yes" xml:space="default">
-                <source>Send</source>
-                <target>senden</target>
+                <source> There, you can use in your dealings with customer service</source>
+                <target> Dort können Sie in Ihrem Umgang mit Kunden-Service nutzen</target>
             </trans-unit>
             <trans-unit id="178" translate="yes" reformat="yes" xml:space="default">
-                <source>Send</source>
-                <target>senden</target>
+                <source>Do not hesitate to contact us if you have any questions.</source>
+                <target>Zögern Sie nicht uns zu kontaktieren, wenn Sie irgendwelche Fragen haben.</target>
             </trans-unit>
             <trans-unit id="179" translate="yes" reformat="yes" xml:space="default">
-                <source>Send</source>
-                <target>senden</target>
+                <source>Yours sincerely,</source>
+                <target>YMit freundlichen Grüßen,</target>
             </trans-unit>
             <trans-unit id="180" translate="yes" reformat="yes" xml:space="default">
-                <source>Send</source>
-                <target>senden</target>
+                <source>Order Receipt</source>
+                <target>Auftragseingang</target>
             </trans-unit>
             <trans-unit id="181" translate="yes" reformat="yes" xml:space="default">
-                <source>Send</source>
-                <target>senden</target>
+                <source>Order No.</source>
+                <target>Bestell-Nr</target>
             </trans-unit><trans-unit id="176" translate="yes" reformat="yes" xml:space="default">
-                <source>Send</source>
-                <target>senden</target>
+                <source>Mobile Number</source>
+                <target>Mobile Anzahl</target>
             </trans-unit>
             <trans-unit id="182" translate="yes" reformat="yes" xml:space="default">
-                <source>Send</source>
-                <target>senden</target>
+                <source>Smartsim including pot</source>
+                <target>SmartSim mit Topf</target>
             </trans-unit>
             <trans-unit id="183" translate="yes" reformat="yes" xml:space="default">
-                <source>Send</source>
-                <target>senden</target>
+                <source>Thank you for ordering &lt;b&gt;%1%&lt;/b&gt; and becoming wls2 Customer. We welcome you to a new and huge mobile world. </source>
+                <target>Vielen Dank für Ihre Bestellung &lt;b&gt;%1%&lt;/b&gt; und immer wls2 Kunden. Wir begrüßen Sie zu einem neuen und riesigen mobilen Welt. </target>
             </trans-unit>
             <trans-unit id="184" translate="yes" reformat="yes" xml:space="default">
-                <source>Send</source>
-                <target>senden</target>
+                <source>Your customer number is </source>
+                <target>Ihre Kunden-Nummer ist</target>
             </trans-unit>
             <trans-unit id="185" translate="yes" reformat="yes" xml:space="default">
-                <source>Send</source>
-                <target>senden</target>
+                <source>You will receive your package within %1%.</source>
+                <target>Sie werden Ihr Paket innerhalb von erhalten %1%.</target>
             </trans-unit>
             <trans-unit id="186" translate="yes" reformat="yes" xml:space="default">
-                <source>Send</source>
-                <target>senden</target>
+                <source>Below is the receipt of the product indicated.</source>
+                <target>Unten ist der Eingang des Erzeugnisses angegeben.</target>
             </trans-unit>
             <trans-unit id="187" translate="yes" reformat="yes" xml:space="default">
-                <source>Send</source>
-                <target>senden</target>
+                <source>With &lt;b&gt;%1%&lt;/b&gt;, you can easily call your friends and family for free.</source>
+                <target>Mit &lt;b&gt;%1%&lt;/b&gt;, können Sie problemlos Ihre Freunde und Familie kostenlos.</target>
             </trans-unit>
             <trans-unit id="188" translate="yes" reformat="yes" xml:space="default">
-                <source>Send</source>
-                <target>senden</target>
+                <source>Thank you for purchasing zer0call %1% package, you will receive package in few days. For any questions please feel free to contact us at</source>
+                <target>Danke für den Kauf zer0call%1%-Paket erhalten Sie Paket in wenigen Tagen erhalten. Bei Fragen wenden Sie sich bitte mit uns in Verbindung</target>
             </trans-unit>
             <trans-unit id="189" translate="yes" reformat="yes" xml:space="default">
-                <source>Send</source>
-                <target>senden</target>
+                <source></source>
+                <target></target>
             </trans-unit>
             <trans-unit id="190" translate="yes" reformat="yes" xml:space="default">
-                <source>Send</source>
-                <target>senden</target>
+                <source>Thank you for ordering &lt;b&gt;%1%&lt;/b&gt; and becoming wls2 Customer. We welcome you to a new and huge mobile world.</source>
+                <target>Vielen Dank für Ihre Bestellung &lt;b&gt;%1%&lt;/b&gt; und immer wls2 Kunden. Wir begrüßen Sie zu einem neuen und riesigen mobilen Welt.</target>
             </trans-unit>
             <trans-unit id="191" translate="yes" reformat="yes" xml:space="default">
                 <source>Send</source>

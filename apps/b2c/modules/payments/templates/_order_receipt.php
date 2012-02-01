@@ -53,7 +53,7 @@ $wrap_content  = isset($wrap)?$wrap:false;
 	<p><?php echo __('Dear Customer') ?></p>
 	
 	<p>
-	<?php echo __('Thank you for ordering <b>%1%</b> and becoming wls2 Customer. We welcome you to a new and huge mobile world.', array('%1%'=>$order->getProduct()->getName())) ?> Ditt kundnummer &auml;r  <?php echo $customer->getUniqueid();?>. Det kan du anv&auml;nda i din kontakt med kundservice
+	<?php echo __('Thank you for ordering <b>%1%</b> and becoming wls2 Customer. We welcome you to a new and huge mobile world. ', array('%1%'=>$order->getProduct()->getName())); echo __('Your customer number is '); ?>  <?php echo $customer->getUniqueid();?>. <?php echo __(' There, you can use in your dealings with customer service')?>
 
 	</p>
 	
@@ -119,7 +119,7 @@ $wrap_content  = isset($wrap)?$wrap:false;
     {
         echo $order->getProduct()->getName();
         if($transaction->getDescription()=="Anmeldung inc. sprechen"){
-          echo "<br />[Smartsim inklusive pott]";
+          echo "<br />["; echo __('Smartsim including pot'); echo "]";
         }else{
             echo  '<br />['. $transaction->getDescription() .']';
         }		

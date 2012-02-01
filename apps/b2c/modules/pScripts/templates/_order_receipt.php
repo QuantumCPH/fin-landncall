@@ -50,26 +50,26 @@ $wrap_content  = isset($wrap)?$wrap:false;
  ?>
  
 <?php if($wrap_content): ?>
-	<p><?php echo __('Hej') ?>&nbsp;<?php echo $customer->getFirstName();?></p>
+	<p><?php echo __('Hi') ?>&nbsp;<?php echo $customer->getFirstName();?></p>
 	
 	<p>
-	<?php echo __('Tack f�r din best�llning av <b>%1%</b>.', array('%1%'=>$order->getProduct()->getName())) ?>
+	<?php echo __('Thank you for your order of <b>%1%</b>.', array('%1%'=>$order->getProduct()->getName())) ?>
 	</p>
 	
 	<p>
-	<?php echo __('Dina varor kommer att skickas i dag. Du b�r ha leverans senast inom tv� arbertsdagar.'); ?> Ditt kundnummer &auml;r  <?php echo $customer->getUniqueid();?>. Det kan du anv&auml;nda i din kontakt med kundservice</p>
+	<?php echo __('Your goods will be shipped today. You should have delivery within two days. Your customer number is '); echo $customer->getUniqueid();?>. <?php echo __(' There, you can use in your dealings with customer service'); ?></p>
 	
 	<p>
-	<?php echo __('Tveka inte att ta kontakt med oss om det �r n�got du undrar �ver.') ?>
+	<?php echo __('Do not hesitate to contact us if you have any questions.') ?>
 	</p>
         <p>
             <a href="mailto:Support@wls.com">Support@wls.com</a>
 	</p>
         <p>
-	<?php echo __('Med v�nlig h�lsning') ?>
+	<?php echo __('Yours sincerely,') ?>
 	</p>
         <p>
-	<?php echo __('Johanna') ?>
+	<?php echo __('XXXXXXX') ?>
 	</p>
 	<br />
 <?php endif; ?>
@@ -137,7 +137,7 @@ $wrap_content  = isset($wrap)?$wrap:false;
     {
         echo $order->getProduct()->getName(); 
         if($transaction->getDescription()=="Anmeldung inc. sprechen"){
-          echo "<br />[Smartsim inklusive pott]";
+          echo "<br />["; echo __('Smartsim including pot'); echo "]";
         }else{
             echo  '<br />['. $transaction->getDescription() .']';
         }
