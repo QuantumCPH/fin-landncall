@@ -5,21 +5,12 @@
  */
 
 ?>
-
-    <table width="50%"  cellspacing="0" cellpadding="2"  style="text-align: left;float: left;"  >
-         <tr >
-             <td colspan="2"> <table border="0" cellspacing="4" cellpadding="4" >  <tr  style="background-color: #838483;color:#FFFFFF;padding: 5px;">
-                                    <td align="left" ><a  style="background-color: #838483;color:#FFFFFF;text-decoration: none;" href="allRegisteredCustomer"><?php echo  __('View All Customer') ?></a></td>
-                                    <td align="left"><a style="background-color: #838483;color:#FFFFFF;text-decoration: none;" href="paymenthistory?id=<?php echo $_REQUEST['id'];  ?>"><?php echo  __('Payment History') ?></a></td>
-                                    <td align="left"><a style="background-color: #838483;color:#FFFFFF;text-decoration: none;" href="callhistory?id=<?php echo $_REQUEST['id'];  ?>"><?php echo  __('Call History') ?></a></td>
-
-                      </tr> </table></td>
-
-                      </tr>
-                       <tr>
-                            <th align="left" colspan="2">&nbsp;</th>
-
-                      </tr>
+<ul class="customerMenu">
+    <li><a style="background-color: #838483;color:#FFFFFF;text-decoration: none;" href="allRegisteredCustomer"><?php echo  __('View All Customer') ?></a></li>
+    <li><a style="background-color: #838483;color:#FFFFFF;text-decoration: none;" href="paymenthistory?id=<?php echo $_REQUEST['id'];  ?>"><?php echo  __('Payment History') ?></a></li>
+    <li><a style="background-color: #838483;color:#FFFFFF;text-decoration: none;" href="callhistory?id=<?php echo $_REQUEST['id'];  ?>"><?php echo  __('Call History') ?></a></li>
+</ul>
+    <table width="75%" cellspacing="0" cellpadding="2" class="tblAlign">
                        <tr  style="background-color: #CCCCFF;color: #000000;">
                           <th  width="50%"   style="text-align:left;" ><?php echo  __('Customer Detail') ?></th>
 							<td  width="50%" ></td>

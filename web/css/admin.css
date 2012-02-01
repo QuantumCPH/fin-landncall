@@ -5,10 +5,10 @@
 }
 #header{
     width:75%;
-    margin:0 auto;
+    margin:0 auto 51px;
 }
 .logo{
-    border-bottom: 1px solid #EFEDED;
+    border-bottom: 2px solid #000000;
     padding-bottom:3px;
     margin-bottom:15px;
     
@@ -19,7 +19,7 @@
 }
 .topNav{
     width:660px;
-    margin:0 auto;
+    margin:0 auto 23px;
     padding-bottom: 30px;
 }
 .clr{
@@ -111,13 +111,16 @@ div.tableHeading span{
 }
 table.tblAlign{
     margin:0 auto !important;
-    border: 1px solid #000000 !important;
-    width:75%  !important;
+    border-top: 1px solid #000000 !important;
+    border-left: 1px solid #000000 !important;
+    
+  
+    font-family: Arial,sans-serif;
+    font-size: 12px
 }
 td{
    border-bottom: 1px solid #000000 !important; 
    border-right: 1px solid #000000 !important;
-   background-color: #EFEDED;
 }
 td.last{
    border-right: 0px !important; 
@@ -132,4 +135,16 @@ tr.headings th{
 }
 tr.headings th.last{
    border-right: 0px !important; 
+}
+ul.customerMenu{
+   width:75%;
+   margin:0 auto 10px;
+   padding: 0;
+}
+ul.customerMenu li{
+   display:inline;
+   margin:0;
+}
+ul.customerMenu li a{
+   padding:0 5px;
 }

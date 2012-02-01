@@ -13,18 +13,15 @@
         </div>
     </div>
 <?php } ?>
-
-<table width="75%" cellspacing="0" cellpadding="0" class="callhistory" style="float: left;">
-
-<tr>
-    <th colspan="4"  style="text-align: left; height: 35px"><?php echo __('Payment History') ?></th>
-</tr>
-
-<tr style="background-color: #CCCCFF;color: #000000;">
-    <th align="left"><?php echo __('Date &amp; Time') ?></th>
-    <th align="left"><?php echo __('Company &amp; Name') ?></th>
-    <th align="left"><?php echo __('Description') ?></th>
-    <th align="left"><?php echo __('Amount') ?></th>
+<div class="tableHeading">
+                   <span><?php echo __('Payment History') ?></span>
+                </div>
+<table width="75%" cellspacing="0" cellpadding="2" class="tblAlign">
+<tr class="headings">
+    <th><?php echo __('Date &amp; Time') ?></th>
+    <th><?php echo __('Company &amp; Name') ?></th>
+    <th><?php echo __('Description') ?></th>
+    <th><?php echo __('Amount') ?></th>
 </tr>
 <?php 
 $amount_total = 0;
@@ -35,7 +32,7 @@ if($incrment%2==0){
 $colorvalue="#FFFFFF";
 }else{
 
-$colorvalue="#EEEEFF";
+$colorvalue="#C9C7C7";
 }
 $incrment++;
 ?>
@@ -48,13 +45,13 @@ $incrment++;
 <?php endforeach; ?>
 <?php if(count($transactions)==0): ?>
 <tr>
-    <td colspan="5"><p><?php echo __('There are currently no transactions to show.') ?></p></td>
+    <td colspan="4"><p><?php echo __('There are currently no transactions to show.') ?></p></td>
 </tr>
 <?php else: ?>
-<tr>
-    <td colspan="3" align="right"><strong><?php echo __('Total:') ?>&nbsp;&nbsp;</strong></td>
+<tr><td>&nbsp;</td>
+    <td colspan="2" align="right"><strong><?php echo __('Total:') ?>&nbsp;&nbsp;</strong></td>
     <td><?php echo format_number($amount_total); echo ('EURO'); ?></td>
-    <td>&nbsp;</td>
+    
 </tr>	
 <?php endif; ?>
 </table>

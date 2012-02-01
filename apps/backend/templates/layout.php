@@ -60,8 +60,11 @@
     <?php 
     
       $modulName = $sf_context->getModuleName();
-   //echo '<br />';
-      $actionName = $sf_context->getActionName();
+   
+     $actionName = $sf_context->getActionName();
+//     echo $modulName;
+//     echo '<br />';
+//     echo $actionName;
 ?>
   	<div id="wrapper">
   	<div id="header">  
@@ -89,7 +92,7 @@
                     }          
                     ?>                    
                     <?php 
-                      if($actionName=='list' && $modulName=="employee"){
+                      if($actionName=='index' && $modulName=="employee"){
                           echo link_to(__('Employee lists'), 'employee/index', array('class'=>'subSelect'));
                       }else{
                           echo link_to(__('Employee lists'), 'employee/index');
@@ -164,7 +167,7 @@
             <li>
                 <a href="#"
                 onmouseover="mopen('m7')"
-                onmouseout="mclosetime()"><?php echo __('Updates') ?></a>
+                onmouseout="mclosetime()" <?php echo $modulName=='newupdate' || $modulName=='faqs' || $modulName=='userguide'? 'class = "current"':''?>><?php echo __('Updates') ?></a>
                 <div id="m7"
                     onmouseover="mcancelclosetime()"
                     onmouseout="mclosetime()">
@@ -184,7 +187,7 @@
                     }
                     ?>
                     <?php 
-                    if($actionName=='list' && $modulName=="userguide"){
+                    if($actionName=='index' && $modulName=="userguide"){
                         echo link_to(__('User Guide'), 'userguide/index', array('class'=>'subSelect'));
                     }else{
                         echo link_to(__('User Guide'), 'userguide/index');
