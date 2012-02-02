@@ -4,7 +4,7 @@
 
     <?php echo $form->renderGlobalErrors() ?>
 
-    <table cellspacing="5px" >
+    <table cellpadding="3" cellspacing='0' class="tblLogin" >
         
         
         <tr>
@@ -16,10 +16,14 @@
             <?php echo $form['email'] ?>
             </td>
 
-            <td><?php
-			if(($sf_request->getMethod()=='POST'))
-	            	echo $form['email']->renderError() ?>
+            <?php
+	      if(($sf_request->getMethod()=='POST')){
+            ?><td>      
+             <?php   echo $form['email']->renderError();   ?>
             </td>
+            <?php
+              }
+	     ?>
         </tr>                             
         <tr>
             <td>
@@ -30,11 +34,13 @@
             <?php echo $form['password'] ?>
             <?php // echo input_hidden_tag('referer', $_SERVER["HTTP_REFERER"])  ?>
             </td>
-            <td>
+            
             <?php
-            if(($sf_request->getMethod()=='POST'))
-            	echo $form['password']->renderError() ?>
+            if(($sf_request->getMethod()=='POST')){ ?>
+            <td>
+            	<?php echo $form['password']->renderError() ?>                
                 </td>
+             <?php } ?>   
         </tr>
         <tr>
             <td>

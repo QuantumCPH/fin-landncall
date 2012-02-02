@@ -13,9 +13,8 @@
         </div>
     </div>
 <?php } ?>
-<div class="tableHeading">
-                   <span><?php echo __('Payment History') ?></span>
-                </div>
+
+<div id="sf_admin_container"><h1><?php echo __('Payment History') ?></h1></div>
 <table width="75%" cellspacing="0" cellpadding="2" class="tblAlign">
 <tr class="headings">
     <th><?php echo __('Date &amp; Time') ?></th>

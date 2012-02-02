@@ -327,7 +327,7 @@
 			<li>
                 <?php echo link_to(__('Logout'), 'user/logout'); ?>
             </li>
-          	<li>
+          	<li class="last">
                      <?php if($sf_user->getCulture()=='en'): ?>
                         <?php echo link_to(__('German'), 'user/changeCulture?new=de'); ?>
                      <?php else: ?>
