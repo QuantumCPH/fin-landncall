@@ -22,7 +22,7 @@
                     <h3></h3>
                     <p> <span style="margin-top:5px;font-weight:bold;text-align:left;color:#000;padding-top:9px;font-size:14px;"><?php echo __('Web SMS') ?></span></p><p style="color:#000;">
 <?php echo __('Send SMS worldwide at the best prices of market') ?></p>
-                    <a title="<?php echo __('Web SMS') ?>" rel="bookmark11" href="<?php echo url_for('customer/websms', true) ?>"><span style="color:#000000;"><?php echo __('Send SMS') ?></span></a>
+                    <a title="<?php echo __('Web SMS') ?>" rel="bookmark11" href="<?php echo url_for('customer/websms', true) ?>"><span style="color:#000000;table-layout: auto;" ><?php echo __('Send SMS') ?></span></a>
 		</div>
 
 	</div>

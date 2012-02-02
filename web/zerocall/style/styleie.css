@@ -90,8 +90,8 @@ width:232px;
 .right-col .box h3 span{ color:#000;}*/
 .right-col .box small{ font-size:11px;}
 .right-col .box p{ margin-top:5px; margin-bottom:20px; font-size:12px;}
-.right-col .box a{ background-image:url(../images/bg-greenbutton-.png); background-position:0px 0px; color:#fff; font-size:11px; background-repeat:no-repeat; display:block; text-decoration:none; padding-left:5px;width:75px;}
-.right-col .box a span{ background-image:url(../images/bg-greenbutton-.png); background-position:right top; background-repeat:no-repeat; display:block; padding:3px 5px 3px; width:75px;}
+.right-col .box a{ background-image:url(../images/bg-greenbutton-.png); background-position:0px 0px; color:#fff; font-size:11px; background-repeat:no-repeat; display:block; text-decoration:none; padding-left:5px;}
+.right-col .box a span{ background-image:url(../images/bg-greenbutton-.png); background-position:right top; background-repeat:no-repeat; display:block; padding:3px 5px 3px;  }
 .right-col .box-last{ margin:0px;}
 .dash-nav{ width:520px; float:left;}
 .dash-nav a{ width:72px; height:58px; float:left; overflow:hidden; display:block; text-indent:9000em; white-space:nowrap; background-image:url(../images/dash-nav-sprite.gif); background-repeat:no-repeat; margin-right:0px;}
@@ -301,7 +301,7 @@ font-size:11px;
 padding-left:5px;
 
 text-decoration:none;
-width:75px;
+ 
 }
 
 #sidebar {
