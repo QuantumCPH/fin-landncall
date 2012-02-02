@@ -75,7 +75,7 @@
          
             <div class="clr"></div>
   	</div>
-      <div class="topNav">  
+      <div class="topNav" align="center">  
       <?php if($sf_user->isAuthenticated()): ?>
       <ul id="sddm">
              <li><a href="#"
