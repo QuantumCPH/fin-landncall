@@ -531,3 +531,31 @@ margin-top:12px;
     padding-right: 0;
     width: 132px;
 }
+
+.dash-navg{ width:520px; float:left;}
+.dash-navg a{ width:78px; height:58px; float:left; overflow:hidden; display:block; text-indent:9000em; white-space:nowrap; background-image:url(../images/dash-nav-spriteg.gif); background-repeat:no-repeat; margin-right:7px;}
+.dash-navg a.dashboard{ background-position:0px 0px}
+.dash-navg a.dashboard:hover{ background-position:-85px 0px}
+.dash-navg a.dashboard-s{ background-position:-85px 0px}
+
+.dash-navg a.refil{ background-position:0px -57px}
+.dash-navg a.refil:hover{ background-position:-85px -57px}
+.dash-navg a.refil-s{ background-position:-85px -57px}
+
+.dash-navg a.callhistory{ background-position:0px -115px}
+.dash-navg a.callhistory:hover{ background-position:-85px -115px}
+.dash-navg a.callhistory-s{ background-position:-85px -115px}
+
+.dash-navg a.paymenthistory{ background-position:0px -172px}
+.dash-navg a.paymenthistory:hover{ background-position:-85px -172px}
+.dash-navg a.paymenthistory-s{ background-position:-85px -172px}
+
+.dash-navg a.settings{ background-position:0px -229px}
+.dash-navg a.settings:hover{ background-position:-85px -229px}
+.dash-navg a.settings-s{ background-position:-85px -229px}
+
+.dash-navg a.logout{ background-position:0px -287px}
+.dash-navg a.logout:hover{ background-position:-85px -287px}
+.dash-navg a.logout-s{ background-position:-85px -287px}
+
+
