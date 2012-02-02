@@ -729,7 +729,7 @@
             </trans-unit>
             <trans-unit id="179" translate="yes" reformat="yes" xml:space="default">
                 <source>Yours sincerely,</source>
-                <target>YMit freundlichen Grüßen,</target>
+                <target>Mit freundlichen Grüßen,</target>
             </trans-unit>
             <trans-unit id="180" translate="yes" reformat="yes" xml:space="default">
                 <source>Order Receipt</source>

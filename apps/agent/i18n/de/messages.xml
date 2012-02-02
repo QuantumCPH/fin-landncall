@@ -735,58 +735,187 @@
                 <source>Answer:</source>
                 <target>Antwort:</target>
             </trans-unit>
-            <trans-unit id="181" translate="yes" reformat="yes" xml:space="default">
-                <source>Brand name</source>
-                <target>Markenname</target>
+           <trans-unit id="181" translate="yes" reformat="yes" xml:space="default">
+                <source>Product </source>
+                <target>Produkt </target>
             </trans-unit>
             <trans-unit id="182" translate="yes" reformat="yes" xml:space="default">
-                <source>Callback Test result</source>
-                <target>Callback Testergebnis</target>
+                <source>Next</source>
+                <target>nächste</target>
             </trans-unit>
             <trans-unit id="183" translate="yes" reformat="yes" xml:space="default">
-                <source>Model</source>
-                <target>Modell</target>
+                <source>Step 1</source>
+                <target>Schritt 1</target>
             </trans-unit>
             <trans-unit id="184" translate="yes" reformat="yes" xml:space="default">
-                <source>Auto reboot</source>
-                <target>Auto Neustart</target>
+                <source>Register</source>
+                <target>Register</target>
             </trans-unit>
             <trans-unit id="185" translate="yes" reformat="yes" xml:space="default">
-                <source>News Box</source>
-                <target>Nachrichten Box</target>
+                <source>First name</source>
+                <target>Vorname</target>
             </trans-unit>
             <trans-unit id="186" translate="yes" reformat="yes" xml:space="default">
-                <source>News Box</source>
-                <target>Nachrichten Box</target>
+                <source>Last name</source>
+                <target>Nachname</target>
             </trans-unit>
             <trans-unit id="187" translate="yes" reformat="yes" xml:space="default">
-                <source>News Box</source>
+                <source>Adresse</source>
                 <target>Nachrichten Box</target>
             </trans-unit>
             <trans-unit id="188" translate="yes" reformat="yes" xml:space="default">
-                <source>News Box</source>
-                <target>Nachrichten Box</target>
+                <source>Country</source>
+                <target>Land</target>
             </trans-unit>
             <trans-unit id="189" translate="yes" reformat="yes" xml:space="default">
-                <source>News Box</source>
-                <target>Nachrichten Box</target>
+                <source>Telecom operator</source>
+                <target>Telecom-Operator</target>
             </trans-unit>
             <trans-unit id="190" translate="yes" reformat="yes" xml:space="default">
-                <source>News Box</source>
-                <target>Nachrichten Box</target>
+                <source>Retype password</source>
+                <target>Passwort wiederholen</target>
             </trans-unit>
             <trans-unit id="191" translate="yes" reformat="yes" xml:space="default">
-                <source>News Box</source>
-                <target>Nachrichten Box</target>
+                <source>Birth date &lt;br /&gt;(dd-mm-yyyy)</source>
+                <target>Geburtsdatum &lt;br /&gt;(dd-mm-jjjj)</target>
             </trans-unit>
             <trans-unit id="192" translate="yes" reformat="yes" xml:space="default">
-                <source>News Box</source>
-                <target>Nachrichten Box</target>
+                <source>Yes, subscribe me to newsletter</source>
+                <target>Ja, Sie mich in Newsletter</target>
             </trans-unit>
             <trans-unit id="193" translate="yes" reformat="yes" xml:space="default">
-                <source>News Box</source>
-                <target>Nachrichten Box</target>
+                <source>Customer name</source>
+                <target>Name des Kunden</target>
             </trans-unit>
+             <trans-unit id="194" translate="yes" reformat="yes" xml:space="default">
+                <source>Mobile Number</source>
+                <target>Mobile Number</target>
+            </trans-unit>
+             <trans-unit id="195" translate="yes" reformat="yes" xml:space="default">
+                <source>Amount Refilled</source>
+                <target>Höhe Refilled</target>
+            </trans-unit>
+             <trans-unit id="196" translate="yes" reformat="yes" xml:space="default">
+                <source>Show Receipt</source>
+                <target>Zeige Receipt</target>
+            </trans-unit>
+             <trans-unit id="197" translate="yes" reformat="yes" xml:space="default">
+                <source>Total Receipts for transactions:</source>
+                <target>Gesamteinnahmen für Transaktionen:</target>
+            </trans-unit>
+            <trans-unit id="198" translate="yes" reformat="yes" xml:space="default">
+                <source>Receipt</source>
+                <target>Empfang</target>
+            </trans-unit>
+            <trans-unit id="199" translate="yes" reformat="yes" xml:space="default">
+                <source>Registration Receipts</source>
+                <target>Anmeldung Receipts</target>
+            </trans-unit>
+            <trans-unit id="200" translate="yes" reformat="yes" xml:space="default">
+                <source> receipts</source>
+                <target> Einnahmen</target>
+            </trans-unit>
+            <trans-unit id="201" translate="yes" reformat="yes" xml:space="default">
+                <source>Refill Receipts</source>
+                <target>Refill Receipts</target>
+            </trans-unit>
+            <trans-unit id="202" translate="yes" reformat="yes" xml:space="default">
+                <source>Select refill amount</source>
+                <target>Wählen Sie füllen Menge</target>
+            </trans-unit>
+            <trans-unit id="203" translate="yes" reformat="yes" xml:space="default">
+                <source>Recharge</source>
+                <target>aufladen</target>
+            </trans-unit>
+            <trans-unit id="204" translate="yes" reformat="yes" xml:space="default">
+                <source>Please enter a valid 8 to 14 digit mobile number. </source>
+                <target>Bitte geben Sie eine gültige 8 bis 14-stellige Handynummer.</target>
+            </trans-unit>
+            <trans-unit id="205" translate="yes" reformat="yes" xml:space="default">
+                <source>Required.</source>
+                <target>Erforderlich.</target>
+            </trans-unit>
+            <trans-unit id="206" translate="yes" reformat="yes" xml:space="default">
+                <source>Please enter a valid postal code with 4 or 5 digits.</source>
+                <target>Bitte geben Sie eine gültige Postleitzahl mit 4 oder 5 Ziffern.</target>
+            </trans-unit>
+            <trans-unit id="207" translate="yes" reformat="yes" xml:space="default">
+                <source>The two passwords must be the same.</source>
+                <target>Die beiden Passwörter müssen gleich sein.</target>
+            </trans-unit>
+            <trans-unit id="208" translate="yes" reformat="yes" xml:space="default">
+                <source>Please enter a valid Email address.</source>
+                <target>Bitte geben Sie eine gültige E-Mail-Adresse.</target>
+            </trans-unit>
+            <trans-unit id="209" translate="yes" reformat="yes" xml:space="default">
+                <source>password "%value%" at least six characters.</source>
+                <target>password "%value%" mindestens sechs Zeichen lang sein.</target>
+            </trans-unit>
+            <trans-unit id="210" translate="yes" reformat="yes" xml:space="default">
+                <source>Recharge Receipts</source>
+                <target>aufladen Receipts</target>
+            </trans-unit>
+            <trans-unit id="211" translate="yes" reformat="yes" xml:space="default">
+                <source>Payment History</source>
+                <target>Zahlung Geschichte</target>
+            </trans-unit>
+            <trans-unit id="212" translate="yes" reformat="yes" xml:space="default">
+                <source>If you have any questions please feel free to contact our customer support center at </source>
+                <target>Wenn Sie Fragen haben wenden Sie sich bitte an unseren Customer Support Center in Verbindung setzen</target>
+            </trans-unit>
+            <trans-unit id="213" translate="yes" reformat="yes" xml:space="default">
+                <source>View All News &amp; Updates</source>
+                <target>Alle News &amp; Updates</target>
+            </trans-unit>
+            <trans-unit id="214" translate="yes" reformat="yes" xml:space="default">
+                <source>Your goods will be shipped today. You should have delivery within two days. Your customer number is </source>
+                <target>Ihre Ware wird ausgeliefert heute. Sie sollten über die Lieferung innerhalb von zwei Tagen. Ihre Kunden-Nummer ist </target>
+            </trans-unit>
+            <trans-unit id="215" translate="yes" reformat="yes" xml:space="default">
+                <source>Thank you for your order of &lt;b&gt;%1%&lt;/b&gt;.</source>
+                <target>Vielen Dank für Ihre Bestellung von &lt;b&gt;%1%&lt;/b&gt;.</target>
+            </trans-unit>
+            <trans-unit id="216" translate="yes" reformat="yes" xml:space="default">
+                <source>HI</source>
+                <target>Hallo</target>
+            </trans-unit>
+            <trans-unit id="217" translate="yes" reformat="yes" xml:space="default">
+                <source> There, you can use in your dealings with customer service</source>
+                <target> Dort können Sie in Ihrem Umgang mit Kunden-Service nutzen</target>
+            </trans-unit>
+            <trans-unit id="218" translate="yes" reformat="yes" xml:space="default">
+                <source>Yours sincerely,</source>
+                <target>Mit freundlichen Grüßen,</target>
+            </trans-unit>
+            <trans-unit id="219" translate="yes" reformat="yes" xml:space="default">
+                <source>Mobile Number</source>
+                <target>Mobile Nummer</target>
+            </trans-unit>
+
+
+
+           
+            <trans-unit id="214" translate="yes" reformat="yes" xml:space="default">
+                <source>Receipt</source>
+                <target>Empfang</target>
+            </trans-unit>
+            <trans-unit id="215" translate="yes" reformat="yes" xml:space="default">
+                <source>Receipt</source>
+                <target>Empfang</target>
+            </trans-unit>
+            <trans-unit id="216" translate="yes" reformat="yes" xml:space="default">
+                <source>Receipt</source>
+                <target>Empfang</target>
+            </trans-unit>
+            <trans-unit id="217" translate="yes" reformat="yes" xml:space="default">
+                <source>Receipt</source>
+                <target>Empfang</target>
+            </trans-unit>
+            <trans-unit id="218" translate="yes" reformat="yes" xml:space="default">
+                <source>Receipt</source>
+                <target>Empfang</target>
+            </trans-unit>
+
             
 
             

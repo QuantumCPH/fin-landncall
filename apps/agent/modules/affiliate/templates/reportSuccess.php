@@ -346,7 +346,7 @@
 
 					} ?>
 
-					<b><?php echo link_to('View All News & Updates','affiliate/newsListing'); ?> </b>
+					<b><?php echo link_to(__('View All News & Updates'),'affiliate/newsListing'); ?> </b>
 					</font>
 
 </p>

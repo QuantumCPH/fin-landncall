@@ -76,7 +76,7 @@
 
         <tr>
             <td>
-                <label for="amount">Select refill amount</label>
+                <label for="amount"><?php echo __('Select refill amount');?></label>
             </td>
             <td>
                 <select name="amount" id="amount">
@@ -100,7 +100,7 @@
                 <input type="hidden" name="cancelurl" value="<?php echo sfConfig::get('app_main_url') . "affiliate/" ?>thankyou/?accept=cancel" />
                 <input type="hidden" name="callbackurl" value="<?php echo sfConfig::get('app_main_url') . "affiliate/" ?>accountRefill" />
                 <input type="hidden" name="accepturl" id="accepturl"  value="<?php echo sfConfig::get('app_main_url') . "affiliate/" ?>thankyou?accept=yes&subscriptionid=&orderid=<?php echo $agent_order->getAgentOrderId(); ?>&amount=50000">
-                <input type="submit" value="Recharge" />
+                <input type="submit" value="<?php echo __('Recharge');?>" />
             </td>
         </tr>
     </table>
