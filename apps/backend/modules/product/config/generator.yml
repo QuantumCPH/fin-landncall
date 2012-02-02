@@ -3,7 +3,7 @@ generator:
   param:
     model_class:      Product
     theme:            default
-
+    css:             /sf/sf_admin/css/admin_main.css
     edit:
       title: Create/Edit Product
       display: [name, price, description, initial_balance , include_in_zerocall, is_in_store, country_id,sms_code, product_order]

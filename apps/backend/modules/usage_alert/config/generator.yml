@@ -3,7 +3,7 @@ generator:
   param:
     model_class:      UsageAlert
     theme:            default
-
+    css:             /sf/sf_admin/css/admin_main.css
     
     edit:
       title: Create/Edit UsageAlert
