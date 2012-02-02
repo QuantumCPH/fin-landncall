@@ -304,7 +304,7 @@
 <p>
 </p>
 
-<h2>News Box</h2>
+<h2><?php echo __('News Box');?></h2>
 <br/>
 <p>
 <font size="3">
