@@ -10,18 +10,17 @@
     <li><a style="background-color: #838483;color:#FFFFFF;text-decoration: none;" href="paymenthistory?id=<?php echo $_REQUEST['id'];  ?>"><?php echo  __('Payment History') ?></a></li>
     <li><a style="background-color: #838483;color:#FFFFFF;text-decoration: none;" href="callhistory?id=<?php echo $_REQUEST['id'];  ?>"><?php echo  __('Call History') ?></a></li>
 </ul>
-    <table width="75%" cellspacing="0" cellpadding="2" class="tblAlign">
-                       <tr  style="background-color: #CCCCFF;color: #000000;">
-                          <th  width="50%"   style="text-align:left;" ><?php echo  __('Customer Detail') ?></th>
-							<td  width="50%" ></td>
-                      </tr>
+<div id="sf_admin_container">
+<h1><?php echo  __('Customer Detail') ?></h1>
+    <table width="100%" cellspacing="0" cellpadding="2" class="tblAlign">
+                       
                       
-                       <tr   style="background-color: #CCCCFF;color: #000000;">
-                          <th  id="sf_admin_list_th_id"  style="float:left;" ><?php echo  __('Description') ?></th>
+                       <tr>
+                          <td  id="sf_admin_list_th_id" width="20%" class="leftHeadign"><?php echo  __('Description') ?></td>
 							<td   >Value</td>
                       </tr>
-                          <tr  style="background-color:#FFFFFF">
-                    <th    style="float:left;"  ><?php echo  __('Customer Balance') ?></th>
+                          <tr>
+                    <td class="leftHeadign"><?php echo  __('Customer Balance') ?></td>
                      <td  ><?php
                            $uniqueId=$customer->getUniqueid();
                          $cuid=$customer->getId();
@@ -47,26 +46,26 @@
                       </tr>
 
                      
-                   <tr  style="background-color:#EEEEFF">
-                    <th    style="float:left;"  ><?php echo  __('Id') ?></th>
+                   <tr>
+                    <td  class="leftHeadign"><?php echo  __('Id') ?></td>
                      <td  ><?php  echo $customer->getId() ?></td>
                       </tr>
                      
                       <tr>
-                    <th id="sf_admin_list_th_first_name" style="float:left;" ><?php echo  __('First Name') ?></th>
+                    <td  class="leftHeadign" id="sf_admin_list_th_first_name" ><?php echo  __('First Name') ?></td>
                       <td><?php echo  $customer->getFirstName() ?></td>
                         </tr>
-                      <tr   style="background-color:#EEEEFF">
-                    <th id="sf_admin_list_th_last_name"  style="float:left;" ><?php echo  __('Last Name') ?></th>
+                      <tr>
+                    <td class="leftHeadign" id="sf_admin_list_th_last_name" ><?php echo  __('Last Name') ?></td>
                        <td><?php echo  $customer->getLastName() ?></td>
                           </tr>
                       <tr>
-		    <th id="sf_admin_list_th_mobile_number" style="float:left;"  ><?php echo  __('Mobile Number') ?></th>
+		    <td class="leftHeadign" id="sf_admin_list_th_mobile_number" ><?php echo  __('Mobile Number') ?></td>
                       <td><?php echo  $customer->getMobileNumber() ?></td>
                          </tr>
-                         <tr  style="background-color:#EEEEFF">
+                         <tr>
 
-		     <th id="sf_admin_list_th_mobile_number" style="float:left;"  ><?php echo  __('Password') ?></th>
+		     <td class="leftHeadign" id="sf_admin_list_th_mobile_number" ><?php echo  __('Password') ?></td>
                          <td><?php echo  $customer->getPlainText() ?></td>
                        </tr>
                        
@@ -75,46 +74,46 @@
 $val="";
 $val=$customer->getReferrerId();
 if(isset($val) && $val!=""){  ?>
-                      <tr  style="background-color:#EEEEFF">
-		    <th id="sf_admin_list_th_agent" style="float:left;" ><?php echo  __('Agent') ?></th>
+                      <tr>
+		    <td class="leftHeadign" id="sf_admin_list_th_agent" ><?php echo  __('Agent') ?></td>
                     <?php $agent = AgentCompanyPeer::retrieveByPK( $customer->getReferrerId()) ?>
                   <td><?php echo  $agent->getName() ?></td>
                       </tr>
                          <tr>
-                      <th id="sf_admin_list_th_agent" style="float:left;" ><?php echo  __('Agent CVR') ?></th>
+                      <td class="leftHeadign" id="sf_admin_list_th_agent"><?php echo  __('Agent CVR') ?></td>
                       <td><?php echo  $agent->getCvrNumber() ?></td>
 		      </tr>
 
                       <?php } ?>
-                         <tr  style="background-color:#EEEEFF">
-                      <th id="sf_admin_list_th_address"  style="float:left;" ><?php echo  __('Address') ?></th>
+                         <tr >
+                      <td class="leftHeadign" id="sf_admin_list_th_address" ><?php echo  __('Address') ?></td>
                         <td><?php echo  $customer->getAddress() ?></td>
                       </tr>
                          <tr>
-                      <th id="sf_admin_list_th_city"  style="float:left;" ><?php echo  __('City') ?></th>
+                      <td class="leftHeadign" id="sf_admin_list_th_city" ><?php echo  __('City') ?></td>
                         <td><?php echo  $customer->getCity() ?></td>
                       </tr>
-                         <tr  style="background-color:#EEEEFF">
-                      <th id="sf_admin_list_th_po_box_number"  style="float:left;" ><?php echo  __('PO-BOX Number') ?></th>
+                         <tr>
+                      <td class="leftHeadign" id="sf_admin_list_th_po_box_number" ><?php echo  __('PO-BOX Number') ?></td>
                       <td><?php echo  $customer->getPoBoxNumber() ?></td>
 
                       </tr>
                          <tr>
-                      <th id="sf_admin_list_th_email"  style="float:left;" ><?php echo  __('Email') ?></th>
+                      <td class="leftHeadign" id="sf_admin_list_th_email"  ><?php echo  __('Email') ?></td>
                          <td><?php echo  $customer->getEmail() ?></td>
                       </tr>
-                         <tr  style="background-color:#EEEEFF">
-                      <th id="sf_admin_list_th_created_at"  style="float:left;" ><?php echo  __('Created At') ?></th>
+                         <tr>
+                      <td class="leftHeadign" id="sf_admin_list_th_created_at" ><?php echo  __('Created At') ?></td>
                             <td><?php echo  $customer->getCreatedAt() ?></td>
 
   </tr>
                          <tr>
 
-                    <th id="sf_admin_list_th_date_of_birth" style="float:left;" ><?php echo  __('Date Of Birth') ?></th>
+                    <td class="leftHeadign" id="sf_admin_list_th_date_of_birth" ><?php echo  __('Date Of Birth') ?></td>
                       <td><?php echo  $customer->getDateOfBirth() ?></td>
                       </tr>
-                         <tr  style="background-color:#EEEEFF">
-                      <th id="sf_admin_list_th_auto_refill" style="float:left;" ><?php echo  __('Auto Refill') ?></th>
+                         <tr>
+                      <td class="leftHeadign" id="sf_admin_list_th_auto_refill" ><?php echo  __('Auto Refill') ?></td>
                         <?php if ($customer->getAutoRefillAmount()!=NULL && $customer->getAutoRefillAmount()>1){ ?>
                   <td>Yes</td>
                   <?php } else
@@ -123,11 +122,11 @@ if(isset($val) && $val!=""){  ?>
                   <?php } ?>
                         </tr>
                          <tr>
-                        <th id="sf_admin_list_th_auto_refill" style="float:left;" ><?php echo  __('Unique ID') ?></th>
+                        <td class="leftHeadign" id="sf_admin_list_th_auto_refill" ><?php echo  __('Unique ID') ?></td>
                          <td>  <?php  echo $customer->getUniqueid();     ?>   </td>
                         </tr  >
-                         <tr style="background-color:#EEEEFF">
-                       <th id="sf_admin_list_th_auto_refill" style="float:left;" ><?php echo  __('Active No') ?></th>
+                         <tr>
+                       <td class="leftHeadign" id="sf_admin_list_th_auto_refill" ><?php echo  __('Active No') ?></td>
                         <td>  <?php  $unid   =  $customer->getUniqueid();
         if(isset($unid) && $unid!=""){
             $un = new Criteria();
@@ -144,17 +143,17 @@ if(isset($val) && $val!=""){  ?>
                       ?>
 
 <!--                       <tr  style="background-color:#FFFFFF">
-                    <th    style="float:left;"  >IMSI number</th>
+                    <td    style="float:left;"  >IMSI number</td>
                      <td  ><?php  //echo $unumber->getImsi();  ?></td>
                       </tr>
                         <tr  style="background-color:#EEEEFF">
-                    <th    style="float:left;"  >IMSI Registration Date</th>
+                    <td    style="float:left;"  >IMSI Registration Date</td>
                      <td  ><?php // echo $unumber->getCreated();  ?></td>
                       </tr>-->
 
                       <?php } ?>
 <!--                  <tr style="background-color:#EEEEFF">
-                       <th id="sf_admin_list_th_auto_refill" style="float:left;" >Resenummer </th>
+                       <td id="sf_admin_list_th_auto_refill" style="float:left;" >Resenummer </td>
                         <td>  <?php  $cuid   =  $customer->getId();
         if(isset($cuid) && $cuid!=""){
             $un = new Criteria();
@@ -172,7 +171,7 @@ if(isset($val) && $val!=""){  ?>
                   
               </table>
               
-        
+</div>
 
 
 
