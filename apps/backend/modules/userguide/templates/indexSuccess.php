@@ -1,8 +1,8 @@
-<h1><?php echo  __('Userguide List') ?></h1>
 
-<table>
+ <div id="sf_admin_container"><h1><?php echo  __('Userguide List') ?></h1>
+		<table width="75%" cellspacing="0" cellpadding="2" class="tblAlign">
   <thead>
-    <tr>
+    <tr class="headings">
       <th><?php echo  __('Id') ?></th>
       <th><?php echo  __('Title') ?></th>
       <th><?php echo  __('Description') ?></th>
@@ -26,5 +26,7 @@
     <?php endforeach; ?>
   </tbody>
 </table>
-
-  <a href="<?php echo url_for('userguide/new') ?>">New</a>
+ <div id="sf_admin_header">
+  <a  class="external_link" href="<?php echo url_for('userguide/new') ?>">New</a>
+ </div>  
+</div>

@@ -3,6 +3,7 @@ generator:
   param:
     model_class:      Userguide
     theme:            admin
+    css:             /sf/sf_admin/css/admin_main.css
     list:
       title: 'User Guide'
       display: [id, title, description, enablecountry, status]
