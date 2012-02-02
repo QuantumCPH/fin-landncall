@@ -1,12 +1,11 @@
 <?php use_helper('I18N') ?>
 <?php use_helper('Number') ?>
-
+<div id="sf_admin_container">
 <div class="alert_bar">
 	<?php echo __('Call history is updated after every 1 minutes.') ?>
 </div>
-  <div class="left-col">
-
-<?php if ($customer->getC9CustomerNumber() ):?>
+ 
+        <?php if ($customer->getC9CustomerNumber() ):?>
 	<div style="clear: both;"></div>
 <span style="margin: 20px;">
 	<center>
@@ -21,32 +20,18 @@
        
 <?php $unid=$customer->getUniqueid();  ?>
 
-
-         <table width="70%" cellspacing="0" cellpadding="0" class="callhistory" style="float: left;">
-                       <tr>
-                           <th align="left"colspan="6">&nbsp; </th>
-
-                      </tr>
-                      <tr>
-                            <th align="left" colspan="6">
-                     <table border="0" cellspacing="4" cellpadding="4" >  <tr  style="background-color: #838483;color:#FFFFFF;padding: 5px;">
-                                    <td align="left" ><a  style="background-color: #838483;color:#FFFFFF;text-decoration: none;" href="allRegisteredCustomer"><?php echo  __('View All Customer') ?></a></td>
-                                    <td align="left"><a style="background-color: #838483;color:#FFFFFF;text-decoration: none;" href="paymenthistory?id=<?php echo $_REQUEST['id'];  ?>"><?php echo  __('Payment History') ?></a></td>
-                                    <td align="left"><a style="background-color: #838483;color:#FFFFFF;text-decoration: none;" href="customerDetail?id=<?php echo $_REQUEST['id'];  ?>"><?php echo  __('Customer Detail') ?></a></td>
-
-
-                      </tr> </table></th>
-
-                      </tr>
-                        <tr>
-                            <th align="left" colspan="6">&nbsp;</th>
-
-                      </tr>
-                        <tr>
-                            <th align="left" colspan="6"  style="background-color: #CCCCFF;color: #000000;text-align: left;"><?php echo  __('Call History') ?></th>
-
-                      </tr>
-                    <tr  style="background-color: #CCCCFF;color: #000000;">
+          
+        
+        <ul class="customerMenu" style="margin:10px 0;">
+            <li><a  style="background-color: #838483;color:#FFFFFF;text-decoration: none;" href="allRegisteredCustomer"><?php echo  __('View All Customer') ?></a></li>
+            <li><a style="background-color: #838483;color:#FFFFFF;text-decoration: none;" href="paymenthistory?id=<?php echo $_REQUEST['id'];  ?>"><?php echo  __('Payment History') ?></a></li>
+            <li><a style="background-color: #838483;color:#FFFFFF;text-decoration: none;" href="customerDetail?id=<?php echo $_REQUEST['id'];  ?>"><?php echo  __('Customer Detail') ?></a></li>
+        </ul>
+       <h1><?php echo  __('Call History') ?></h1>        
+       <table width="100%" cellspacing="0" cellpadding="2" class="tblAlign" border='0'>
+                      
+                       
+                    <tr class="headings">
                     <th width="20%"   align="left"><?php echo __('Date &amp; time') ?></th>
                     <th  width="20%"  align="left"><?php echo __('Phone Number') ?></th>
                     <th width="10%"   align="left"><?php echo __('Duration') ?></th>
@@ -154,4 +139,6 @@ $callRecords=1;
 
 
      <!-- end split-form -->
-  </div> <!-- end left-col -->
+ 
+     
+</div>
