@@ -139,7 +139,7 @@ if($is_auto_refill_activated){  ?>  <div class="left-col">
 			  ?>  &euro;&nbsp;
             </li> </ul>
             </div>
-          <div style="width:135px;float:left;padding-top:15px;">  <input type="submit" class="butonsigninsmall" name="button" style="cursor: pointer;float: right;width:132px"  value="<?php echo __('Enable') ?>" >	</div>
+          <div style="float:left;">  <span class="butonsigninsmall-outer"><span class="butonsigninsmall-left"></span><input type="submit" class="butonsigninsmall" name="button" value="<?php echo __('Enable') ?>" ><span class="butonsigninsmall-right"></span></span>	</div>
   </form>
   </div>
     
