@@ -15,7 +15,7 @@
 
 
 <?php use_stylesheet('../zerocall/style/style.css', 'last', array('absolute'=>true)) ?>
-<?php use_stylesheet('admin.css', '', array('absolute'=>true)) ?>
+<?php //use_stylesheet('admin.css', '', array('absolute'=>true)) ?>
 <?php use_stylesheet('../sf/sf_admin/css/main.css', '', array('absolute'=>true)) ?>
 <!--[if IE 7]>
 <link href="<?php echo stylesheet_path('../zerocall/style/ie-7.css', true) ?>" rel="stylesheet" type="text/css" />
