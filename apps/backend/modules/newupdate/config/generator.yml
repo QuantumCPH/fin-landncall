@@ -3,6 +3,7 @@ generator:
   param:
     model_class:      Newupdate
     theme:            default
+    css:     /sf/sf_admin/css/admin_main.css
     list:
       title: New update List
       display: [  heading , message ,   starting_date ,  expire_date,created_at]
