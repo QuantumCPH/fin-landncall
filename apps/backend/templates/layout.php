@@ -69,14 +69,14 @@
   	<div id="wrapper">
   	<div id="header">  
          <div class="logo">
-                WLS
-  		<?php //echo image_tag('/images/zapna_logo_small.png') ?>
+  		<?php echo image_tag('/images/wls2-logo.png') ?>
             </div>       
          
             <div class="clr"></div>
   	</div>
-      <div class="topNav" align="center">  
+      
       <?php if($sf_user->isAuthenticated()): ?>
+     <div class="topNav" align="center">  
       <ul id="sddm">
              <li><a href="#"
                 onmouseover="mopen('m2')"
@@ -213,7 +213,7 @@
             <li>
                 <a href="#"
                 onmouseover="mopen('m4')"
-                onmouseout="mclosetime()"><?php echo __('Security') ?></a>
+                onmouseout="mclosetime()" <?php echo $modulName=='user'? 'class = "current"':''?>><?php echo __('Security') ?></a>
                 <div id="m4"
                     onmouseover="mcancelclosetime()"
                     onmouseout="mclosetime()">
@@ -335,9 +335,10 @@
                     <?php endif; ?>
             </li>
         </ul>
+             </div>
       <?php endif; ?> 
     <br />
-            </div>
+         
       <div class="clr"></div>
     <?php echo $sf_content ?>
     </div> <!--  end wrapper -->

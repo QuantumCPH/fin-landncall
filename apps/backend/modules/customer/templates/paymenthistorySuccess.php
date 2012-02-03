@@ -5,7 +5,7 @@
     <ul class="customerMenu" style="margin:10px 0;">
             <li><a class="external_link" href="allRegisteredCustomer"><?php echo  __('View All Customer') ?></a></li>
             <li><a class="external_link" href="customerDetail?id=<?php echo $_REQUEST['id'];  ?>"><?php echo  __('Customer Detail') ?></a></li>
-            <li><a class="external_link"  href=callhistory?id=<?php echo $_REQUEST['id'];  ?>"><?php echo  __('Call History') ?></a></li>
+            <li><a class="external_link"  href="callhistory?id=<?php echo $_REQUEST['id'];  ?>"><?php echo  __('Call History') ?></a></li>
         </ul>
 <h1><?php echo  __('Payment History') ?></h1>
               <!--Always use tables for tabular data-->
@@ -24,13 +24,15 @@
                  <?php
                   
                   if($incrment%2==0){
-                    $colorvalue="#FFFFFF";
-                  }else{
-                    $colorvalue="#C9C7C7";
-                  }
+                      $colorvalue="#FFFFFF";
+                      $class= 'class="even"';
+                      }else{
+                        $class= 'class="odd"';
+                        $colorvalue="#FCD9C9";
+                     }
                   $incrment++;
                   ?>
-                <tr style="background-color:<?php echo $colorvalue;   ?>">
+                <tr <?php echo $class;   ?>>
                   <td><?php  echo $transaction->getOrderId() ?></td>
                   <td><?php echo  $transaction->getCreatedAt() ?></td>
                   <td><?php echo $transaction->getDescription() ?></td>

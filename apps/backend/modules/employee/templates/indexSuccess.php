@@ -70,13 +70,14 @@
        <?php
                   if($incrment%2==0){
                   $colorvalue="#FFFFFF";
+                  $class= 'class="even"';
                   }else{
-
-                      $colorvalue="#EEEEFF";
+                    $class= 'class="odd"';
+                      $colorvalue="#FCD9C9";
                       }
  $incrment++;
                   ?>
-    <tr  style="background-color:<?php echo $colorvalue; ?>">
+    <tr <?php echo $class; ?>>
     
       <td><?php  $comid=$employee->getCompanyId();
       if(isset($comid) && $comid!=""){
