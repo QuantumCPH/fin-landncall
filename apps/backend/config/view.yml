@@ -9,7 +9,7 @@ default:
     #language:     en
     #robots:       index, follow
 
-  stylesheets:    [admin.css, ../sf/sf_admin/css/main.css, backend.css]
+  stylesheets:    [admin.css, ../sf/sf_admin/css/admin_main.css, backend.css]
 
   javascripts:    [/sf/prototype/js/prototype.js, jquery-1.4.2.min.js,jquery.validate1.js, main.js]
 

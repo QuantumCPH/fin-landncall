@@ -90,8 +90,8 @@ width:232px;
 .right-col .box h3 span{ color:#000;}*/
 .right-col .box small{ font-size:11px;}
 .right-col .box p{ margin-top:5px; margin-bottom:20px; font-size:12px;}
-.right-col .box a{ background-image:url(../images/bg-greenbutton-.png); background-position:0px 0px; color:#fff; font-size:11px; background-repeat:no-repeat; display:block; text-decoration:none; padding-left:5px;width:75px;}
-.right-col .box a span{ background-image:url(../images/bg-greenbutton-.png); background-position:right top; background-repeat:no-repeat; display:block; padding:3px 5px 3px; width:75px;}
+.right-col .box a{ background-image:url(../images/bg-greenbutton-.png); background-position:0px 0px; color:#fff; font-size:11px; background-repeat:no-repeat; display:block; text-decoration:none; padding-left:5px;}
+.right-col .box a span{ background-image:url(../images/bg-greenbutton-.png); background-position:right top; background-repeat:no-repeat; display:block; padding:3px 5px 3px;  }
 .right-col .box-last{ margin:0px;}
 .dash-nav{ width:520px; float:left;}
 .dash-nav a{ width:72px; height:58px; float:left; overflow:hidden; display:block; text-indent:9000em; white-space:nowrap; background-image:url(../images/dash-nav-sprite.gif); background-repeat:no-repeat; margin-right:0px;}
@@ -304,7 +304,7 @@ font-size:11px;
 padding-left:5px;
 
 text-decoration:none;
-width:75px;
+ 
 }
 
 #sidebar {
@@ -536,3 +536,33 @@ margin-top:12px;
     padding-right: 0;
     width: 132px;
 }
+
+.dash-navg{ width:520px; float:left;}
+.dash-navg a{ width:72px; height:58px; float:left; overflow:hidden; display:block; text-indent:9000em; white-space:nowrap; background-image:url(../images/dash-nav-spriteg.gif); background-repeat:no-repeat; margin-right:0px;}
+.dash-navg a.dashboard{ background-position:0px 0px}
+.dash-navg a.dashboard:hover{ background-position:-85px 0px}
+.dash-navg a.dashboard-s{ background-position:-85px 0px}
+
+.dash-navg a.refil{ background-position:0px -57px}
+.dash-navg a.refil:hover{ background-position:-85px -57px}
+.dash-navg a.refil-s{ background-position:-85px -57px}
+
+.dash-navg a.callhistory{ background-position:0px -115px}
+.dash-navg a.callhistory:hover{ background-position:-85px -115px}
+.dash-navg a.callhistory-s{ background-position:-85px -115px}
+
+.dash-navg a.paymenthistory{ background-position:0px -172px}
+.dash-navg a.paymenthistory:hover{ background-position:-85px -172px}
+.dash-navg a.paymenthistory-s{ background-position:-85px -172px}
+
+.dash-navg a.settings{ background-position:0px -229px}
+.dash-navg a.settings:hover{ background-position:-85px -229px}
+.dash-navg a.settings-s{ background-position:-85px -229px}
+
+.dash-navg a.websms{ background-position:0px -287px}
+.dash-navg a.websms:hover{ background-position:-85px -287px}
+.dash-navg a.websms-s{ background-position:-85px -287px}
+
+.dash-navg a.logout{ background-position:0px -346px}
+.dash-navg a.logout:hover{ background-position:-85px -346px}
+.dash-navg a.logout-s{ background-position:-85px -346px}

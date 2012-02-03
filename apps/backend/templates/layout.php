@@ -75,7 +75,7 @@
          
             <div class="clr"></div>
   	</div>
-      <div class="topNav">  
+      <div class="topNav" align="center">  
       <?php if($sf_user->isAuthenticated()): ?>
       <ul id="sddm">
              <li><a href="#"
@@ -327,7 +327,7 @@
 			<li>
                 <?php echo link_to(__('Logout'), 'user/logout'); ?>
             </li>
-          	<li>
+          	<li class="last">
                      <?php if($sf_user->getCulture()=='en'): ?>
                         <?php echo link_to(__('German'), 'user/changeCulture?new=de'); ?>
                      <?php else: ?>

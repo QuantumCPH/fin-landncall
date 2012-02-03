@@ -125,14 +125,14 @@ $customer_form->unsetAllExcept(array('auto_refill_amount', 'auto_refill_min_bala
 		$('#total').val(total*100);
                 att2= $('#user_attr_2').val();
                 att3= $('#user_attr_3').val();
-                var accepturlstr = "<?php echo $relay_script_url.url_for('@epay_accept_url', true);  ?>?user_attr_2="+att2+"&user_attr_3="+att3+"&accept=yes&subscriptionid=1&orderid=<?php echo $order_id; ?>&amount="+total*100;
-                 var callbackurlstr = "<?php echo $relay_script_url.url_for('@dibs_accept_url', true);  ?>?user_attr_2="+att2+"&user_attr_3="+att3+"&accept=yes&subscriptionid=3&orderid=<?php echo $order_id; ?>&amount="+total*100;
+                var accepturlstr = "<?php echo $relay_script_url.url_for('@epay_accept_url', true);  ?>?user_attr_2="+att2+"&user_attr_3="+att3+"&lng=<?php echo $sf_user->getCulture() ?>&accept=yes&subscriptionid=1&orderid=<?php echo $order_id; ?>&amount="+total*100;
+                 var callbackurlstr = "<?php echo $relay_script_url.url_for('@dibs_accept_url', true);  ?>?user_attr_2="+att2+"&user_attr_3="+att3+"&lng=<?php echo  $sf_user->getCulture() ?>&accept=yes&subscriptionid=3&orderid=<?php echo $order_id; ?>&amount="+total*100;
                 $('#idaccepturl').val(accepturlstr);
 
                  if(document.getElementById('user_attr_1').checked){
                 $('#idcallbackurl').val(callbackurlstr);
                  }else{
-                     var callbackurlstrs = "<?php echo $relay_script_url.url_for('@dibs_accept_url', true);  ?>?accept=yes&subscriptionid=1&orderid=<?php echo $order_id; ?>&amount="+total*100;
+                     var callbackurlstrs = "<?php echo $relay_script_url.url_for('@dibs_accept_url', true);  ?>?accept=yes&subscriptionid=1&lng=<?php echo  $sf_user->getCulture() ?>&orderid=<?php echo $order_id; ?>&amount="+total*100;
                     $('#idcallbackurl').val(callbackurlstrs);
                  }
 	}
@@ -267,9 +267,9 @@ $customer_form->unsetAllExcept(array('auto_refill_amount', 'auto_refill_min_bala
          <input type="hidden" name="lang" value="de" />
 	
      <input type="hidden" name="status" value="" />
-		<input type="hidden" name="cancelurl" value="<?php echo $relay_script_url.url_for('@epay_reject_url', true)  ?>?accept=cancel&subscriptionid=&orderid=<?php echo $order->getId(); ?>&amount=<?php echo $order->getExtraRefill(); ?>" />
-                <input type="hidden" name="callbackurl" id="idcallbackurl" value="<?php echo $relay_script_url.url_for('@dibs_accept_url', true);  ?>?accept=yes&subscriptionid=&orderid=<?php echo $order_id; ?>&amount=<?php echo $total; ?>" />
-		<input type="hidden" name="accepturl" id="idaccepturl"  value="<?php echo $relay_script_url.url_for('@epay_accept_url', true);  ?>?accept=yes&subscriptionid=&orderid=<?php echo $order_id; ?>&amount=<?php echo $total; ?>" />
+		<input type="hidden" name="cancelurl" value="<?php echo $relay_script_url.url_for('@epay_reject_url', true)  ?>?accept=cancel&subscriptionid=&lng=<?php echo  $sf_user->getCulture() ?>&orderid=<?php echo $order->getId(); ?>&amount=<?php echo $order->getExtraRefill(); ?>" />
+                <input type="hidden" name="callbackurl" id="idcallbackurl" value="<?php echo $relay_script_url.url_for('@dibs_accept_url', true);  ?>?accept=yes&lng=<?php echo  $sf_user->getCulture() ?>&subscriptionid=&orderid=<?php echo $order_id; ?>&amount=<?php echo $total; ?>" />
+		<input type="hidden" name="accepturl" id="idaccepturl"  value="<?php echo $relay_script_url.url_for('@epay_accept_url', true);  ?>?accept=yes&lng=<?php echo  $sf_user->getCulture() ?>&subscriptionid=&orderid=<?php echo $order_id; ?>&amount=<?php echo $total; ?>" />
 		      </div>
       <div class="fr col">
           

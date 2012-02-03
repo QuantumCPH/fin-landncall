@@ -110,9 +110,9 @@ if($is_auto_refill_activated){  ?>  <div class="left-col">
    <input type="hidden" name="account" value="YTIP" />
   <input type="hidden" name="lang" value="de" />
   <input type="hidden" name="preauth" value="true">
-  <input type="hidden" name="cancelurl" value="<?php echo $target; ?>customer/dashboard" />
-  <input type="hidden" name="callbackurl" id="idcallbackURLauto" value="<?php echo $target; ?>customer/activateAutoRefill?customerid=<?php echo   $customer_form->getObject()->getId() ?>" />
-  <input type="hidden" name="accepturl" value="<?php echo $target; ?>customer/dashboard" />
+  <input type="hidden" name="cancelurl" value="<?php echo $target; ?>customer/dashboard?lng=<?php echo  $sf_user->getCulture() ?>" />
+  <input type="hidden" name="callbackurl" id="idcallbackURLauto" value="<?php echo $target; ?>customer/activateAutoRefill?customerid=<?php echo   $customer_form->getObject()->getId() ?>&lng=<?php echo  $sf_user->getCulture() ?>v" />
+  <input type="hidden" name="accepturl" value="<?php echo $target; ?>customer/dashboard?lng=<?php echo  $sf_user->getCulture() ?>" />
  <div style="width:348px;float:left;">
         <ul>
             <!-- auto fill -->
@@ -190,10 +190,10 @@ if($is_auto_refill_activated){  ?>  <div class="left-col">
         <input type="hidden" name="account" value="YTIP" />
         <input type="hidden" name="addfee" value="0" />
         <input type="hidden" name="status" value="" />
-       <input type="hidden" name="cancelurl" value="<?php echo sfConfig::get('app_epay_relay_script_url').url_for('@epay_refill_reject', true)  ?>?accept=cancel&subscriptionid=&orderid=<?php echo $order->getId(); ?>&amount=<?php echo $order->getExtraRefill(); ?>" />
-        <input type="hidden" name="callbackurl" id="idcallbackurl" value="<?php echo sfConfig::get('app_epay_relay_script_url').url_for('@dibs_refill_accept', true)  ?>?accept=yes&subscriptionid=&orderid=<?php echo $order->getId(); ?>&amount=" />
-        <input type="hidden" name="accepturl" id="idaccepturl" value="<?php echo sfConfig::get('app_epay_relay_script_url').url_for('@epay_refill_accept', true)  ?>?accept=yes&subscriptionid=&orderid=<?php echo $order->getId(); ?>&amount=<?php echo $order->getExtraRefill(); ?>" />
-        <input type="hidden" id="callbackurlfixed" value="<?php echo sfConfig::get('app_epay_relay_script_url').url_for('@dibs_refill_accept', true)  ?>?accept=yes&subscriptionid=&orderid=<?php echo $order->getId(); ?>&amount=" />
+       <input type="hidden" name="cancelurl" value="<?php echo sfConfig::get('app_epay_relay_script_url').url_for('@epay_refill_reject', true)  ?>?accept=cancel&lng=<?php echo  $sf_user->getCulture() ?>&subscriptionid=&orderid=<?php echo $order->getId(); ?>&amount=<?php echo $order->getExtraRefill(); ?>" />
+        <input type="hidden" name="callbackurl" id="idcallbackurl" value="<?php echo sfConfig::get('app_epay_relay_script_url').url_for('@dibs_refill_accept', true)  ?>?accept=yes&lng=<?php echo  $sf_user->getCulture() ?>&subscriptionid=&orderid=<?php echo $order->getId(); ?>&amount=" />
+        <input type="hidden" name="accepturl" id="idaccepturl" value="<?php echo sfConfig::get('app_epay_relay_script_url').url_for('@epay_refill_accept', true)  ?>?accept=yes&lng=<?php echo  $sf_user->getCulture() ?>&subscriptionid=&orderid=<?php echo $order->getId(); ?>&amount=<?php echo $order->getExtraRefill(); ?>" />
+        <input type="hidden" id="callbackurlfixed" value="<?php echo sfConfig::get('app_epay_relay_script_url').url_for('@dibs_refill_accept', true)  ?>?accept=yes&lng=<?php echo  $sf_user->getCulture() ?>&subscriptionid=&orderid=<?php echo $order->getId(); ?>&amount=" />
             </div>
           <div style="width:140px;float:left;padding-top:30px;">   
        
