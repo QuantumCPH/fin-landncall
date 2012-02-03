@@ -533,7 +533,6 @@ margin-top:12px;
     padding-right: 0;
     width: 132px;
 }
-
 .dash-navg{ width:520px; float:left;}
 .dash-navg a{ width:72px; height:58px; float:left; overflow:hidden; display:block; text-indent:9000em; white-space:nowrap; background-image:url(../images/dash-nav-spriteg.gif); background-repeat:no-repeat; margin-right:0px;}
 .dash-navg a.dashboard{ background-position:0px 0px}
