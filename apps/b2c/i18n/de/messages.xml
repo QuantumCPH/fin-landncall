@@ -878,6 +878,10 @@
                 <source>balance issue</source>
                 <target>Balance Ausgabe</target>
             </trans-unit>
+             <trans-unit id="215" translate="yes" reformat="yes" xml:space="default">
+                <source>Please enter a valid Email address.</source>
+                <target>Bitte geben Sie eine gültige E-Mail-Adresse.</target>
+            </trans-unit>
             
         </body>
     </file>

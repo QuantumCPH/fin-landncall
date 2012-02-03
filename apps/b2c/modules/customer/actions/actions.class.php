@@ -2071,7 +2071,9 @@ public function executeSmsHistory(sfWebrequest $request){
   public function executeChangeCulture(sfWebRequest $request){
      // var_dump($request->getParameter('new'));
         $this->getUser()->setCulture($request->getParameter('new'));
-       	$this->redirect('customer/dashboard');
+       	//$this->redirect('customer/dashboard');
+        $pathArray = $request->getPathInfoArray();
+        $this->redirect($pathArray['HTTP_REFERER']);
 
     }
 
