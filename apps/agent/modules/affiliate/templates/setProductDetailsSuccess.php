@@ -264,7 +264,7 @@ echo $product_price;
                            </span>
                        </li>
                        <li>
-                           <label>VAT (25%)<br />
+                           <label><?php echo __('VAT')?> (25%)<br />
 <?php echo __('Total amount') ?></label>
                            <input type="hidden" id="vat" value="<?php $vat = .25 * ($product_price);
                                echo $vat; ?>" />

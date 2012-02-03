@@ -187,7 +187,7 @@
             </trans-unit>
             <trans-unit id="46" translate="yes" reformat="yes" xml:space="default">
                 <source>Mobile Number</source>
-                <target>Mobile Number</target>
+                <target>Mobile Nummer</target>
             </trans-unit>
             <trans-unit id="47" translate="yes" reformat="yes" xml:space="default">
                 <source>Agent Name</source>
@@ -789,7 +789,7 @@
             </trans-unit>
              <trans-unit id="194" translate="yes" reformat="yes" xml:space="default">
                 <source>Mobile Number</source>
-                <target>Mobile Number</target>
+                <target>Mobile Nummer</target>
             </trans-unit>
              <trans-unit id="195" translate="yes" reformat="yes" xml:space="default">
                 <source>Amount Refilled</source>
@@ -888,37 +888,42 @@
                 <target>Mit freundlichen Grüßen,</target>
             </trans-unit>
             <trans-unit id="219" translate="yes" reformat="yes" xml:space="default">
-                <source>Mobile Number</source>
-                <target>Mobile Nummer</target>
+                <source>Please enter the valid Unique ID with 6 digits</source>
+                <target>Bitte geben Sie die gültige, eindeutige ID mit 6-stellig</target>
             </trans-unit>
-
-
-
+            <trans-unit id="220" translate="yes" reformat="yes" xml:space="default">
+                <source>Step 2</source>
+                <target>Schritt 2</target>
+            </trans-unit>
+            <trans-unit id="221" translate="yes" reformat="yes" xml:space="default">
+                <source>Pay</source>
+                <target>zahlen</target>
+            </trans-unit>
+            <trans-unit id="222" translate="yes" reformat="yes" xml:space="default">
+                <source>Total amount</source>
+                <target>Gesamtbetrag</target>
+            </trans-unit>
+            <trans-unit id="223" translate="yes" reformat="yes" xml:space="default">
+                <source>Unique Id</source>
+                <target>Eindeutige ID</target>
+            </trans-unit>
+            <trans-unit id="224" translate="yes" reformat="yes" xml:space="default">
+                <source>Agent Refill</source>
+                <target>Refill-Agent</target>
+            </trans-unit>
+            <trans-unit id="225" translate="yes" reformat="yes" xml:space="default">
+                <source>Below is the receipt of the product indicated.</source>
+                <target>Im Folgenden wird der Erhalt der Ware angegeben.</target>
+            </trans-unit>
+            <trans-unit id="226" translate="yes" reformat="yes" xml:space="default">
+                <source>With &lt;b&gt;%1%&lt;/b&gt;, you can easily call your friends and family for free.</source>
+                <target>Mit &lt;b&gt;%1%&lt;/b&gt;, können Sie bequem Ihre Freunde und Familie kostenlos.</target>
+            </trans-unit>
+            <trans-unit id="227" translate="yes" reformat="yes" xml:space="default">
+                <source>Thank you for ordering &lt;b&gt;%1%&lt;/b&gt; and becoming wls2 Customer. We welcome you to a new and huge mobile world. </source>
+                <target>Vielen Dank für die Bestellung &lt;b&gt;%1%&lt;/b&gt; und immer wls2 Kunden. Wir begrüßen Sie zu einem neuen und riesigen mobilen Welt. </target>
+            </trans-unit>
            
-            <trans-unit id="214" translate="yes" reformat="yes" xml:space="default">
-                <source>Receipt</source>
-                <target>Empfang</target>
-            </trans-unit>
-            <trans-unit id="215" translate="yes" reformat="yes" xml:space="default">
-                <source>Receipt</source>
-                <target>Empfang</target>
-            </trans-unit>
-            <trans-unit id="216" translate="yes" reformat="yes" xml:space="default">
-                <source>Receipt</source>
-                <target>Empfang</target>
-            </trans-unit>
-            <trans-unit id="217" translate="yes" reformat="yes" xml:space="default">
-                <source>Receipt</source>
-                <target>Empfang</target>
-            </trans-unit>
-            <trans-unit id="218" translate="yes" reformat="yes" xml:space="default">
-                <source>Receipt</source>
-                <target>Empfang</target>
-            </trans-unit>
-
-            
-
-            
         </body>
     </file>
 </xliff>

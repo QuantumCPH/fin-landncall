@@ -53,7 +53,7 @@ $wrap_content  = isset($wrap)?$wrap:false;
 	<p><?php echo __('Dear Agent') ?></p>
 	
 	<p>
-	<?php echo 'Thank you for Payment'; ?>
+	<?php echo __('Thank you for Payment'); ?>
 	</p>
 	
 	
@@ -96,7 +96,7 @@ $wrap_content  = isset($wrap)?$wrap:false;
   <tr> 
     <td><?php echo $createddate ?></td>
     <td>
-   Agent Refil
+   <?php echo __('Agent Refill');?>
 	</td>
     <td>1</td>
     <td><?php echo format_number($subtotal=$transaction) //($order->getProduct()->getPrice() - $order->getProduct()->getPrice()*.2) * $order->getQuantity()) ?></td>

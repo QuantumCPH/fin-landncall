@@ -123,7 +123,7 @@ $wrap_content  = isset($wrap)?$wrap:false;
 	if($transaction->getDescription()=="Refill"){
           echo __("Refill "); echo $transaction->getAmount();
         }else{
-          echo $transaction->getDescription();  
+          echo __($transaction->getDescription());
         }           	
     }
     ?>

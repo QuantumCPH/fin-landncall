@@ -53,7 +53,7 @@ $wrap_content  = isset($wrap)?$wrap:false;
 	<p><?php echo __('Dear Customer') ?></p>
 	
 	<p>
-	<?php echo __('Thank you for ordering <b>%1%</b> and becoming LandNCall AB Customer. We welcome you to a new and huge mobile world.', array('%1%'=>$order->getProduct()->getName())) ?>
+	<?php echo __('Thank you for ordering <b>%1%</b> and becoming wls2 Customer. We welcome you to a new and huge mobile world. ', array('%1%'=>$order->getProduct()->getName())) ?>
 	</p>
 	
 	<p>
@@ -66,21 +66,21 @@ $wrap_content  = isset($wrap)?$wrap:false;
 <?php endif; ?>
 <table class="receipt" cellspacing="0" width="600px">
 <tr bgcolor="#CCCCCC" class="receipt_header"> 
-    <td colspan="4"> LandNCall AB
+    <td colspan="4"> WLS2
     </td>
   </tr>
   <tr>
   <td colspan="4" class="payer_summary">
-	Telefonv&atilde;gen 30
+	<?php echo __('XXXXXXXXXXXXXXXXXXXXXXXXXX');?>
 	<br />
-	126 37 H&atilde;gersten
+	<?php echo __('XXXXXXX XXXXXXXXX XXXXX');?>
 	<br />
 	
 	<br />
-	Tel:      +46 85 17 81 100
+	<?php echo __('Tel: XXXXX XXXXXXX XXXX');?>
 	<br />	
 	<br />
-	Cvr:     32068219
+	<?php echo __('CVR: XXXXX XXXXXXX XXXXX');?>
 	<br />
   </td>
   </tr>
@@ -112,11 +112,11 @@ $wrap_content  = isset($wrap)?$wrap:false;
     <?php if ($order->getIsFirstOrder())
     {
 		echo $order->getProduct()->getName() . 
-		'<br />['. $transaction->getDescription() .']';
+		'<br />['; echo __($transaction->getDescription());echo ']';
     }
     else
     {
-		echo $transaction->getDescription();    	
+		echo __($transaction->getDescription());
     }
     ?>
 	</td>

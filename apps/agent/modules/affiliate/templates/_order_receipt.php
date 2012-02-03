@@ -41,7 +41,7 @@ use_helper('Number');
 </style>
 
 <?php
-$wrap_content  = true;//$wrap_content  = isset($wrap)?$wrap:false;
+$wrap_content  = isset($wrap)?$wrap:false;
 
 //wrap_content also tells  wheather its a refill or
 //a product order. we wrap the receipt with extra
@@ -137,17 +137,17 @@ $wrap_content  = true;//$wrap_content  = isset($wrap)?$wrap:false;
     {
         echo $order->getProduct()->getName();
         if($transaction->getDescription()=="Anmeldung inc. sprechen"){
-          echo "<br />[Smartsim inklusive pott]";
+          echo "<br />["; echo __('Smartsim including pot'); echo "]";
         }else{
-            echo  '<br />['. $transaction->getDescription() .']';
+            echo  '<br />['; echo __($transaction->getDescription()); echo ']';
         }
     }
     else
     {
 	if($transaction->getDescription()=="Refill"){
-          echo "Refill ".$transaction->getAmount();
+          echo __("Refill "); echo $transaction->getAmount();
         }else{
-          echo $transaction->getDescription();
+          echo __($transaction->getDescription());
         }
     }
     ?>
@@ -181,7 +181,7 @@ $wrap_content  = true;//$wrap_content  = isset($wrap)?$wrap:false;
   </tr>
   <tr class="footer">
     <td class="payer_summary" colspan="4" style="font-weight:normal; white-space: nowrap;">
-    WLS2&nbsp;&nbsp;&nbsp;&nbsp;Box XXXXX, XX-XXX XX XXXXXXX&nbsp;&nbsp;&nbsp; Org.nr.XXXXXX-XXXX </td>
+    <?php echo __('WLS2&nbsp;&nbsp;&nbsp;&nbsp;Box XXXXX, XX-XXX XX XXXXXXX&nbsp;&nbsp;&nbsp; Org.nr.XXXXXX-XXXX');?> </td>
   </tr>
 </table>
         
