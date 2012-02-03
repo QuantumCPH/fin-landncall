@@ -1161,8 +1161,17 @@ class customerActions extends sfActions {
                     $this->renderText('ok');
                 else {
 
-                 
-                    $this->redirect($this->getTargetUrl().'customer/dashboard');
+
+                    if(isset($pathArray['HTTP_REFERER']) && $pathArray['HTTP_REFERER']!=''){
+        $this->redirect($pathArray['HTTP_REFERER']);
+
+}else{
+                      $this->redirect($this->getTargetUrl().'customer/dashboard');
+
+}
+
+
+                  
                 }
             } else {
                 //
