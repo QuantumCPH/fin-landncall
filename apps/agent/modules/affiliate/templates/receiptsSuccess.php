@@ -11,7 +11,7 @@
 	}
 </style>
 <div class="report_container">
-<h2><?php echo __('Registration Receipts') ?> (<?php echo (count($registrations))." receipts" ?>)</h2>
+<h2><?php echo __('Registration Receipts') ?> (<?php echo (count($registrations));echo __(" receipts"); ?>)</h2>
 <table cellspacing="0" width="100%" class="summary">	
 	<tr>
 		<th>&nbsp;</th>
@@ -46,7 +46,7 @@
 		<td>
 		<?php echo $registration->getDescription() ?>
 		</td>
-		<td><a href="#" class="receipt" onclick="javascript: window.open('<?php echo url_for('affiliate/printReceipt?tid='.$registration->getId(), true) ?>')"> Reciept</a>
+		<td><a href="#" class="receipt" onclick="javascript: window.open('<?php echo url_for('affiliate/printReceipt?tid='.$registration->getId(), true) ?>')"><?php echo __('Receipt') ?></a>
 		</td>
 		
 	</tr>
@@ -55,7 +55,7 @@
 </table>
 
 
-<h2><?php echo __('Refill Receipts') ?> (<?php echo (count($refills))." receipts" ?>)</h2>
+<h2><?php echo __('Refill Receipts') ?> (<?php echo (count($refills));echo __(" receipts"); ?>)</h2>
 <table cellspacing="0" width="100%" class="summary">
 	<tr>
 		<th>&nbsp;</th>

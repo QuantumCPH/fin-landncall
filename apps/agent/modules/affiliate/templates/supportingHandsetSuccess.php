@@ -1,14 +1,14 @@
 <table width="98%" cellspacing="0" cellpadding="3" align="center">
           <tbody>
             <tr style="background-color: #FF6600; color: #fff"> 
-              <td><strong>&nbsp;Brand name</strong></td>
-              <td><strong>&nbsp;Model</strong></td>
-              <td><strong>&nbsp;Callback Test result</strong></td>
-              <td><strong>&nbsp;Auto reboot</strong></td>
-              <td><strong>&nbsp;Dialer Mode</strong></td>
-              <td><strong>&nbsp;Tested by</strong></td>
-              <td><strong>&nbsp;Comments</strong></td>
-              <td><strong>&nbsp;Zapna out mode</strong></td>
+              <td><strong>&nbsp;<?php echo __('Brand name')?></strong></td>
+              <td><strong>&nbsp;<?php echo __('Model')?></strong></td>
+              <td><strong>&nbsp;<?php echo __('Callback Test result')?></strong></td>
+              <td><strong>&nbsp;<?php echo __('Auto reboot')?></strong></td>
+              <td><strong>&nbsp;<?php echo __('Dialer Mode')?></strong></td>
+              <td><strong>&nbsp;<?php echo __('Tested by')?></strong></td>
+              <td><strong>&nbsp;<?php echo __('Comments')?></strong></td>
+              <td><strong>&nbsp;<?php echo __('Zapna out mode')?></strong></td>
             </tr>
             <tr> 
               <td>&nbsp;Apple</td>

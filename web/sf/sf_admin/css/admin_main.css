@@ -51,7 +51,7 @@
   font-family: "Trebuchet MS", Arial, Verdana, sans-serif;
   font-size: 25px;
   color:#ffffff;
-  background-color: #000000;
+  background-color: #D44D05;
 }
 
 #sf_admin_container fieldset h2
@@ -171,7 +171,7 @@
 {
   margin-bottom: 3px;
   margin-top: 3px;
-  border: 1px solid #000;
+  border: 1px solid #D44D05;
   background-color: #F7F7F7;
 }
 
@@ -295,8 +295,8 @@
 #sf_admin_container .sf_admin_list
 {
   width: 100%;
-  border-top: 1px solid #000000 !important;
-  border-left: 1px solid #000000 !important;
+  border-top: 1px solid #D44D05 !important;
+  border-left: 1px solid #D44D05 !important;
   margin: 0 auto !important;
 }
 
@@ -305,15 +305,15 @@
   padding: 2px;
   /*background-color: #ccf;*/
   text-align: left;
-  border-bottom: 1px solid #000000 !important;
-  border-right: 1px solid #000000 !important; 
+  border-bottom: 1px solid #D44D05 !important;
+  border-right: 1px solid #D44D05 !important; 
 }
 #sf_admin_container .sf_admin_list th.last{
   border-right: 0px  !important;   
 }
 #sf_admin_container .sf_admin_list th a
 {
-  color: #333;
+  color: #D44D05;
 }
 
 #sf_admin_container .sf_admin_list td
@@ -332,9 +332,12 @@
 
 #sf_admin_container .sf_admin_row_0 td
 {
-  background-color:#EFEDED;
+  background-color:#FCD9C9;
 }
-
+#sf_admin_container .sf_admin_row_0 td a,#sf_admin_container .sf_admin_row_1 td a
+{
+  color:#D44D05 !important;   
+}
 #sf_admin_container .sf_admin_row_1 td
 {
   background-color: #ffffff;
@@ -377,8 +380,11 @@ div.submitBtn{
 	text-transform:capitalize;
 	font-family: arial;
 	font-size: .8em;
+        color:#D44D05;
 }
-
+#sf_fieldset_none{
+    border:1px solid #ffffff !important;
+}
 #sf_admin_container h1
 {
 	font-size: 0.9em;

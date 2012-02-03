@@ -1717,7 +1717,7 @@ public function executeSmsRegistration(sfWebrequest $request) {
     $availableUniqueId = UniqueIdsPeer::doSelectOne($uc);
 
     if ($availableUniqueCount == 0) {
-        echo " Unique Ids are not avaialable.  send email to the support.";
+        echo $this->getContext()->getI18N()->__("Unique Ids are not avaialable.  send email to the support.");
         $sm = new Criteria();
         $sm->add(SmsTextPeer::ID, 6);
         $smstext = SmsTextPeer::doSelectOne($sm);
@@ -1739,7 +1739,7 @@ public function executeSmsRegistration(sfWebrequest $request) {
     
     $massage = commissionLib::registrationCommission($agentid, $productid, $transactionid);
     if (isset($massage) && $massage == "balance_error") {
-        echo 'balance issue';
+        echo $this->getContext()->getI18N()->__('balance issue');
         $sm = new Criteria();
         $sm->add(SmsTextPeer::ID, 7);
         $smstext = SmsTextPeer::doSelectOne($sm);

@@ -1,5 +1,5 @@
-<div id="sf_admin_container"><h1><?php echo __('Edit Myemployee') ?></h1>
-</div>
+<div id="sf_admin_container"><h1><?php echo __('Edit Employee') ?></h1>
+
 <?php if (isset($_REQUEST['message']) && $_REQUEST['message']!= "") {
  ?>
 
@@ -14,8 +14,8 @@
 
     <input type="hidden" name="id"    value="<?php echo $employee->getId(); ?>"  size="25" />
  <div id="sf_admin_content">
-    <fieldset id="sf_fieldset_none" class="">
-    <table id="sf_admin_container">
+
+    <table width="100%" cellspacing="0" cellpadding="2" class="tblAlign" border='0'>
         <tr>
             <td style="padding: 5px;"><?php echo __('First name:') ?></td>
             <td style="padding: 5px;"><input type="text" name="first_name" id="employee_first_name"  value="<?php echo $employee->getFirstName(); ?>"   class="required"  size="25" /></td>
@@ -103,13 +103,11 @@
             <td style="padding: 5px;">Product Price:</td>
             <td style="padding: 5px;"> <input type="text" name="price" id="employee_password"   class="required"  value="<?php //echo $employee->getProductPrice(); ?>"  size="25" />  </td>
         </tr>-->
-        <tr>
-           <td colspan="2"><ul class="sf_admin_actions">
+        
+    </table><ul class="sf_admin_actions">
 
   <li><input class="sf_admin_action_list" value="<?php echo __('list') ?>" type="button" onclick="document.location.href='../../../employee';" />
-  </li><li><input type="submit" name="Update" value="<?php echo __('Update') ?>" class="sf_admin_action_save" /></li></ul> </td>
-        </tr>
-
-    </table>
- </div></div>
+  </li><li><input type="submit" name="Update" value="<?php echo __('Update') ?>" class="sf_admin_action_save" /></li></ul> 
+ </div>
 </form>
+</div>

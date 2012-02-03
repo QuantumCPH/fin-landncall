@@ -11,13 +11,13 @@
 	}
 </style>
 <div class="report_container">
-<h2>Reciepts For Agent Account Refills</h2>
+<h2><?php echo __('Reciepts For Agent Account Refills');?></h2>
 <table cellspacing="0" width="100%" class="summary">
 	<tr>
 		<th style="text-align:left">&nbsp;</th>
-		<th style="text-align:left">Date</th>
-		<th style="text-align:left">Amount</th>
-		<th style="text-align:left">Show Reciept</th>
+		<th style="text-align:left"><?php echo __('Date');?></th>
+		<th style="text-align:left"><?php echo __('Amount');?></th>
+		<th style="text-align:left"><?php echo __('Show Reciept');?></th>
 
 	</tr>
         <?php $i=0 ?>
@@ -26,7 +26,7 @@
             <td><?php echo ++$i ?>.</td>
             <td><?php echo $agentOrder->getCreatedAt() ?></td>
             <td><?php echo $agentOrder->getAmount() ?></td>
-            <td><a href="<?php echo url_for('affiliate/printAgentReceipt?aoid='.$agentOrder->getId(), true) ?>" > Reciept</a>
+            <td><a href="<?php echo url_for('affiliate/printAgentReceipt?aoid='.$agentOrder->getId(), true) ?>" ><?php echo __('Reciept');?> </a>
             </td>
             
         </tr>

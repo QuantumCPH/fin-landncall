@@ -121,15 +121,15 @@ $wrap_content  = isset($wrap)?$wrap:false;
         if($transaction->getDescription()=="Anmeldung inc. sprechen"){
           echo "<br />["; echo __('Smartsim including pot'); echo "]";
         }else{
-            echo  '<br />['. $transaction->getDescription() .']';
+            echo  '<br />['; echo __($transaction->getDescription()); echo ']';
         }		
     }
     else
     {
         if($transaction->getDescription()=="Refill"){
-          echo "Refill ".$transaction->getAmount();
+           echo __("Refill "); echo $transaction->getAmount();
         }else{
-          echo $transaction->getDescription(); 
+          echo __($transaction->getDescription());
         }		   	
     }
     ?>

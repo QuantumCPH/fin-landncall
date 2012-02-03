@@ -729,7 +729,7 @@
             </trans-unit>
             <trans-unit id="179" translate="yes" reformat="yes" xml:space="default">
                 <source>Yours sincerely,</source>
-                <target>YMit freundlichen Grüßen,</target>
+                <target>Mit freundlichen Grüßen,</target>
             </trans-unit>
             <trans-unit id="180" translate="yes" reformat="yes" xml:space="default">
                 <source>Order Receipt</source>
@@ -779,33 +779,106 @@
                 <target>Vielen Dank für Ihre Bestellung &lt;b&gt;%1%&lt;/b&gt; und immer wls2 Kunden. Wir begrüßen Sie zu einem neuen und riesigen mobilen Welt.</target>
             </trans-unit>
             <trans-unit id="191" translate="yes" reformat="yes" xml:space="default">
-                <source>Send</source>
-                <target>senden</target>
+                <source>Your Password have been saved.</source>
+                <target>Ihr Passwort gespeichert wurden.</target>
             </trans-unit>
             <trans-unit id="192" translate="yes" reformat="yes" xml:space="default">
-                <source>Send</source>
-                <target>senden</target>
+                <source>WLS2 invitation</source>
+                <target>WLS2 Einladung</target>
             </trans-unit>
             <trans-unit id="193" translate="yes" reformat="yes" xml:space="default">
-                <source>Send</source>
-                <target>senden</target>
+                <source>Hi </source>
+                <target>Hallo </target>
             </trans-unit>
             <trans-unit id="194" translate="yes" reformat="yes" xml:space="default">
-                <source>Send</source>
-                <target>senden</target>
+                <source>This invitation is sent to you with the reference of</source>
+                <target>Diese Einladung wird Ihnen mit der Referenz der gesendeten</target>
             </trans-unit>
             <trans-unit id="195" translate="yes" reformat="yes" xml:space="default">
-                <source>Send</source>
-                <target>senden</target>
+                <source>a user of Smartsim from the WLS2.</source>
+                <target>ein Benutzer des SmartSim aus dem WLS2.</target>
             </trans-unit>
             <trans-unit id="196" translate="yes" reformat="yes" xml:space="default">
-                <source>Send</source>
-                <target>senden</target>
+                <source>Please click accept to start saving money immediately with Smartsim.</source>
+                <target>Bitte klicken Sie akzeptieren, um mit dem Sparen beginnen Geld sofort mit SmartSim.</target>
             </trans-unit>
               <trans-unit id="197" translate="yes" reformat="yes" xml:space="default">
                 <source>dash-nav</source>
                 <target>dash-navg</target>
             </trans-unit>
+            <trans-unit id="198" translate="yes" reformat="yes" xml:space="default">
+                <source>Accept</source>
+                <target>akzeptieren</target>
+            </trans-unit>
+            <trans-unit id="199" translate="yes" reformat="yes" xml:space="default">
+                <source>Read more</source>
+                <target>Lesen Sie mehr</target>
+            </trans-unit>
+            <trans-unit id="200" translate="yes" reformat="yes" xml:space="default">
+                <source>Your password has been changed. Please use the following information to login to your WLS2 account.</source>
+                <target>Ihr Passwort wurde geändert. Bitte verwenden Sie die folgenden Informationen zu Ihrem WLS2 Account einloggen.</target>
+            </trans-unit>
+            <trans-unit id="201" translate="yes" reformat="yes" xml:space="default">
+                <source>Mobile Number: %s</source>
+                <target>Mobile Nummer: %s</target>
+            </trans-unit>
+            <trans-unit id="202" translate="yes" reformat="yes" xml:space="default">
+                <source>Invaild mobile number or password.</source>
+                <target>Invaild Handy-Nummer oder Passwort.</target>
+            </trans-unit>
+            <trans-unit id="203" translate="yes" reformat="yes" xml:space="default">
+                <source>Please enter a valid 8 to 14 digit mobile number.</source>
+                <target>Bitte geben Sie eine gültige 8 bis 14 stellige Handy-Nummer.</target>
+            </trans-unit>
+            <trans-unit id="204" translate="yes" reformat="yes" xml:space="default">
+                <source>Please accept the terms and conditions</source>
+                <target>Bitte akzeptieren Sie die Bedingungen und Konditionen</target>
+            </trans-unit>
+            <trans-unit id="205" translate="yes" reformat="yes" xml:space="default">
+                <source>password "%value%" at least six characters.</source>
+                <target>password "%value%" mindestens sechs Zeichen lang sein.</target>
+            </trans-unit>
+            <trans-unit id="206" translate="yes" reformat="yes" xml:space="default">
+                <source>Please enter a valid Email address. </source>
+                <target>Bitte geben Sie eine gültige E-Mail-Adresse.</target>
+            </trans-unit>
+               <trans-unit id="207" translate="yes" reformat="yes" xml:space="default">
+                <source>Please enter a valid postal code with 4 or 5 digits.</source>
+                <target>Bitte geben Sie eine gültige Postleitzahl mit 4 oder 5 Ziffern.</target>
+            </trans-unit>
+            <trans-unit id="208" translate="yes" reformat="yes" xml:space="default">
+                <source>Please enter a valid 8 to 14 digit mobile number.</source>
+                <target>Bitte geben Sie eine gültige 8 bis 14 stellige Handy-Nummer.</target>
+            </trans-unit>
+            <trans-unit id="209" translate="yes" reformat="yes" xml:space="default">
+                <source>Please complete the fields</source>
+                <target>Bitte füllen Sie die Felder</target>
+            </trans-unit>
+            <trans-unit id="210" translate="yes" reformat="yes" xml:space="default">
+                <source>The two passwords must be the same.</source>
+                <target>Die beiden Passwörter müssen gleich sein.</target>
+            </trans-unit>
+            <trans-unit id="211" translate="yes" reformat="yes" xml:space="default">
+                <source>Passwords don't match</source>
+                <target>Passwörter stimmen nicht überein</target>
+            </trans-unit>
+            <trans-unit id="212" translate="yes" reformat="yes" xml:space="default">
+                <source>Thank you for registeration your account at WLS. You will soon receive a delivery confirmation</source>
+                <target>Vielen Dank für Register tion Ihr Konto bei WLS. Sie Geschäfts-oder Firmenwert in Kürze eine Auslieferungsbestätigung</target>
+            </trans-unit>
+            <trans-unit id="213" translate="yes" reformat="yes" xml:space="default">
+                <source>print</source>
+                <target>drucken</target>
+            </trans-unit>
+            <trans-unit id="214" translate="yes" reformat="yes" xml:space="default">
+                <source>Unique Ids are not avaialable.  send email to the support.</source>
+                <target>Unique IDs sind nicht avaialable. schicken Sie diese an den Träger.</target>
+            </trans-unit>
+            <trans-unit id="215" translate="yes" reformat="yes" xml:space="default">
+                <source>balance issue</source>
+                <target>Balance Ausgabe</target>
+            </trans-unit>
+            
         </body>
     </file>
 </xliff>

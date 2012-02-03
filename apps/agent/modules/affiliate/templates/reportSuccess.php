@@ -304,7 +304,7 @@
 <p>
 </p>
 
-<h2>News Box</h2>
+<h2><?php echo __('News Box');?></h2>
 <br/>
 <p>
 <font size="3">
@@ -346,7 +346,7 @@
 
 					} ?>
 
-					<b><?php echo link_to('View All News & Updates','affiliate/newsListing'); ?> </b>
+					<b><?php echo link_to(__('View All News & Updates'),'affiliate/newsListing'); ?> </b>
 					</font>
 
 </p>

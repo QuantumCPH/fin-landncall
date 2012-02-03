@@ -28,11 +28,13 @@ $incrment=1;
 foreach($transactions as $transaction):
 
 if($incrment%2==0){
-$colorvalue="#FFFFFF";
-}else{
-
-$colorvalue="#C9C7C7";
-}
+  $colorvalue="#FFFFFF";
+  $class= 'class="even"';
+  }else{
+    $class= 'class="odd"';
+    $colorvalue="#FCD9C9";
+ }
+//                  
 $incrment++;
 ?>
 <tr  style="background-color:<?php echo $colorvalue;?>">
