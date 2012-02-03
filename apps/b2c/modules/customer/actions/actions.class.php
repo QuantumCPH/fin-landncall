@@ -1138,7 +1138,7 @@ class customerActions extends sfActions {
             $c = new Criteria();
             $c->add(CustomerPeer::MOBILE_NUMBER, $mobile_number);
             $c->add(CustomerPeer::PASSWORD, $password);
-            $c->add(CustomerPeer::CUSTOMER_STATUS_ID, sfConfig::get('app_status_completed'));
+            $c->add(CustomerPeer::CUSTOMER_STATUS_ID, 3);
 
             $customer = CustomerPeer::doSelectOne($c);
 
@@ -1215,9 +1215,9 @@ class customerActions extends sfActions {
             $message_body .= '<br /><br />';
             $message_body .= $this->getContext()->getI18N()->__('Your password has been changed. Please use the following information to login to your WLS2 account.');
             $message_body .= '<br /><br />';
-            $message_body .= sprintf('Mobilnummer: %s', $customer->getMobileNumber());
+            $message_body .= sprintf($this->getContext()->getI18N()->__('Mobile Number: %s'), $customer->getMobileNumber());
             $message_body .= '<br />';
-            $message_body .= $this->getContext()->getI18N()->__('Lösenord') . ': ' . $new_password;
+            $message_body .= $this->getContext()->getI18N()->__('password') . ': ' . $new_password;
 
             $customer->save();
 
@@ -1489,12 +1489,12 @@ public function executeSmsHistory(sfWebrequest $request){
             $invite->setMessage($message);
             $invite->save();
 
-            $subject = $this->getContext()->getI18N()->__("WLS inbjudan");
+            $subject = $this->getContext()->getI18N()->__("WLS2 invitation");
 
             $name = $this->customer->getFirstName() . ' ' . $this->customer->getLastName();
-            $message_body = 'Hej ' . $recepient_name . ',<br /> ' . $this->getContext()->getI18N()->__("This invitation is sent to you with the refrence of") . ' ' . $name . ', ' . $this->getContext()->getI18N()->__("en användare av Smartsim från WLS2.");
+            $message_body = $this->getContext()->getI18N()->__('Hi ') . $recepient_name . ',<br /> ' . $this->getContext()->getI18N()->__("This invitation is sent to you with the reference of") . ' ' . $name . ', ' . $this->getContext()->getI18N()->__("a user of Smartsim from the WLS2.");
 
-            $message_body_end = 'Vänligen klicka på acceptera för att börja spara pengar direkt med Smartsim du ocksåg' . '<a  href="http://wls2.zerocall.com/b2c.php/customer/signup?invite_id=' . $invite->getId() . '"> ' . $this->getContext()->getI18N()->__("Accept") . '</a><br/> Läs mer på <a href="www.zerocall.com">www.zerocall.com</a>';
+            $message_body_end = $this->getContext()->getI18N()->__('Please click accept to start saving money immediately with Smartsim.') . '<a  href="http://wls2.zerocall.com/b2c.php/customer/signup?invite_id=' . $invite->getId() . '"> ' . $this->getContext()->getI18N()->__("Accept") . '</a><br/>'. $this->getContext()->getI18N()->__('Read more').'<a href="www.zerocall.com">www.zerocall.com</a>';
 
             //send email
             if ($recepient_name != ''):

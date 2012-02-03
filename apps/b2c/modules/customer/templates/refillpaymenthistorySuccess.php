@@ -37,12 +37,12 @@
                   <td ><?php echo  $transaction->getCreatedAt() ?></td>
                   <td nowrap><?php 
                   if($transaction->getDescription()=="Anmeldung inc. sprechen"){
-                      echo "Smartsim inklusive pott";                      
+                      echo __('Smartsim including pot');
                   }else{
                         if($transaction->getDescription()=="Refill"){
-                          echo "Refill ".$transaction->getAmount();
+                          echo __("Refill ");echo $transaction->getAmount();
                         }else{
-                          echo $transaction->getDescription();  
+                          echo __($transaction->getDescription());
                         } 
                   }?></td>
                   <td><?php echo $transaction->getAmount(); $amount_total += $transaction->getAmount() ?>

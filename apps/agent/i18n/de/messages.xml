@@ -923,6 +923,11 @@
                 <source>Thank you for ordering &lt;b&gt;%1%&lt;/b&gt; and becoming wls2 Customer. We welcome you to a new and huge mobile world. </source>
                 <target>Vielen Dank für die Bestellung &lt;b&gt;%1%&lt;/b&gt; und immer wls2 Kunden. Wir begrüßen Sie zu einem neuen und riesigen mobilen Welt. </target>
             </trans-unit>
+            <trans-unit id="228" translate="yes" reformat="yes" xml:space="default">
+                <source>login</source>
+                <target>login</target>
+            </trans-unit>
+           
            
         </body>
     </file>

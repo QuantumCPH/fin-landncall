@@ -6,11 +6,11 @@
 	<div align="center" style="margin:20px auto">
 	<?php
 		echo "<p>";
-                echo __("wls tackar f&ouml;r din best&auml;llning.Du kommer strax att f&aring; en leveransbekr&auml;ftelse");
+                echo __("Thank you for registeration your account at WLS. You will soon receive a delivery confirmation");
                 echo "</p>";
                 echo "<p>";
-		echo __("skickat till den epostadress som du angav vid registreringen.Tveka inte att ta kontakt<br/> med oss p&aring; <a href='mailto:support@wls.com'>support@wls.com</a> om du har n&aring;gra fr&aring;gor");
-                echo "</p>";
+		echo __("If you have any questions please feel free to contact our customer support center at");
+                echo "<a href=wls2:support@landncall.com>support@wls2.com</a></p>";
                
 	?>
 	.
