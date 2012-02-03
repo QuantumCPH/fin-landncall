@@ -14,12 +14,13 @@
 #sf_admin_container td
 {
   margin: 0;
-  padding: 20px;
   font-family: Arial, sans-serif;
-  font-size: 11px;
+  font-size: 12px;
   background-color: #fff;
 }
-
+.leftHeadign{
+  font-weight: bold;    
+}
 #sf_admin_container p
 {
   margin-bottom: 5px;

@@ -694,7 +694,7 @@ class customerActions extends sfActions {
     }
 
     public function executeRefillAccept(sfWebRequest $request) {
-
+  $this->getUser()->setCulture($request->getParameter('lng'));
 
         $this->redirect('customer/dashboard');
     }
@@ -1848,7 +1848,8 @@ public function executeSmsHistory(sfWebrequest $request){
     }
 
     public function executeCalbackrefill(sfWebRequest $request) {
-   $order_id = $request->getParameter("orderid");
+    $this->getUser()->setCulture($request->getParameter('lng'));
+        $order_id = $request->getParameter("orderid");
         $urlval = $order_id." refill page-qqqqqqqqq" . $request->getParameter('transact');
 
         $email2 = new DibsCall();
@@ -2031,7 +2032,7 @@ public function executeSmsHistory(sfWebrequest $request){
         // return sfView::NONE;
     }
     public function executeActivateAutoRefill(sfWebRequest $request) {
-        
+          $this->getUser()->setCulture($request->getParameter('lng'));
         $urlval = $request->getParameter('transact');
         $customerid = $request->getParameter('customerid');
         $user_attr_3 = $request->getParameter('user_attr_3');
