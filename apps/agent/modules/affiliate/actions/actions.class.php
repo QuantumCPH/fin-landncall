@@ -1137,7 +1137,9 @@ class affiliateActions extends sfActions {
   public function executeChangeCulture(sfWebRequest $request){
      // var_dump($request->getParameter('new'));
         $this->getUser()->setCulture($request->getParameter('new'));
-       	$this->redirect('affiliate/report?show_summary=1');
+       	//$this->redirect('affiliate/report?show_summary=1');
+        $pathArray = $request->getPathInfoArray();
+        $this->redirect($pathArray['HTTP_REFERER']);
 
     }
 }
