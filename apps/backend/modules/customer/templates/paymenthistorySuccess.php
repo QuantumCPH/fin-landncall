@@ -1,11 +1,12 @@
 <?php use_helper('I18N') ?>
 <?php use_helper('Number') ?>
-<ul class="customerMenu">
-  <li><a style="background-color: #838483;color:#FFFFFF;text-decoration: none;" href="allRegisteredCustomer"><?php echo  __('View All Customer') ?></a></li>
-  <li><a style="background-color: #838483;color:#FFFFFF;text-decoration: none;" href="customerDetail?id=<?php echo $_REQUEST['id'];  ?>"><?php echo  __('Customer Detail') ?></a></li>
-  <li><a style="background-color: #838483;color:#FFFFFF;text-decoration: none;" href="callhistory?id=<?php echo $_REQUEST['id'];  ?>"><?php echo  __('Call History') ?></a></li>
-</ul>
+
 <div id="sf_admin_container">
+    <ul class="customerMenu" style="margin:10px 0;">
+            <li><a class="external_link" href="allRegisteredCustomer"><?php echo  __('View All Customer') ?></a></li>
+            <li><a class="external_link" href="customerDetail?id=<?php echo $_REQUEST['id'];  ?>"><?php echo  __('Customer Detail') ?></a></li>
+            <li><a class="external_link"  href=callhistory?id=<?php echo $_REQUEST['id'];  ?>"><?php echo  __('Call History') ?></a></li>
+        </ul>
 <h1><?php echo  __('Payment History') ?></h1>
               <!--Always use tables for tabular data-->
               <table width="100%" cellspacing="0" cellpadding="2" class="tblAlign">
