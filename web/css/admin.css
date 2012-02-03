@@ -19,6 +19,7 @@ h2{
 }
 .logo{
     padding-top: 13px;
+    padding-left: 25px;
   /*
     padding-bottom:3px;
     margin-bottom:15px;
@@ -194,4 +195,79 @@ tr.odd{
     color:#FFFFFF;
     border:1px solid #ffffff;
     line-height: 21px;
+}
+.tblLogin{
+    float:left;
+}
+.bg-img{
+   width: 507px;
+   height:431px;
+   margin:0 auto 40px;
+}
+.bg-img .left{
+   background: url('../images/left-login-page-box.png') no-repeat left;
+   float: left;
+   width: 42px;
+   height:327px;
+}
+.bg-img .right{
+   background: url('../images/right-login-page-box.png') no-repeat right;
+   float: left;
+   width: 42px;
+   height:327px;
+}
+.bg-img .centerImg{
+  background: url('../images/center-login-page-box.png') repeat-x; 
+  height:327px;
+  float:left;
+  width: 423px;
+}
+.bg-img h1{
+    color:#ffffff;
+    margin-top:18px;
+    font-size: 26px;
+}
+.bg-img h2{
+    color:#3d3d3d;
+    font-weight: normal;
+    margin-top:34px;
+    margin-left:44px;
+    margin-bottom: 14px;
+    text-align: left;
+    font-size: 14px;
+}
+.bg-img .fieldName{
+   color:#3d3d3d;
+   text-align: left;
+   margin-left: 44px;
+   font-size: 13px;
+   font-weight: bold;
+   margin-bottom:8px;
+}
+.bg-img .Inputfield{
+    text-align: left;
+    margin-left: 32px;
+    margin-bottom: 20px;
+}
+.bg-img .Inputfield #login_email,.bg-img .Inputfield #login_password{
+    background: url('../images/field-img.png') no-repeat top;
+    width: 331px;
+    height: 27px;
+    border:0px;
+    padding-left:18px;
+}
+.bg-img .submitButton{
+    text-align: left;
+} 
+.bg-img .submitButton button{
+    background:url('../images/login-button.png') no-repeat;
+    width:79px;
+    height:27px;
+    color:#ffffff;
+    border:0px;
+    margin-left: 44px;
+    font-weight: bold;
+}
+.bg-img .submitButton button:hover{
+    background:url('../images/login-button-hover.png') no-repeat;
 }

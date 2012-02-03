@@ -1,56 +1,51 @@
-<?php //if($request->getMethod() != 'post') $is_postback = true; ?>
+<?php use_helper('I18N', 'Date') ?><?php //if($request->getMethod() != 'post') $is_postback = true; ?>
 <div style="">
 <form id="form1" action="<?php echo url_for('user/login') ?>" method="post" <?php $form->isMultipart() and print 'enctype="multipart/form-data" ' ?>>  
 
     <?php echo $form->renderGlobalErrors() ?>
-
-    <table cellpadding="3" cellspacing='0' class="tblLogin" >
-        
-        
-        <tr>
-            <td>
-                 <?php echo $form['email']->renderLabel() ?>
-            </td>
-            <td >
-                
+    <div class="bg-img" >
+        <div class="left"></div>
+        <div class="centerImg">        
+            <h1>
+               <?php echo"Administrator Login ";?>
+            </h1>
+            <h2><?php echo"Provide your email and password ";?></h2>
+            
+            <div class="fieldName"> 
+           <?php echo $form['email']->renderLabel() ?>
+            </div>
+            <div class="Inputfield">
             <?php echo $form['email'] ?>
-            </td>
-
+            </div>
+             
             <?php
 	      if(($sf_request->getMethod()=='POST')){
-            ?><td>      
+            ?>
+            <div class="fieldError">    
              <?php   echo $form['email']->renderError();   ?>
-            </td>
+            </div>
             <?php
               }
 	     ?>
-        </tr>                             
-        <tr>
-            <td>
+            <div class="fieldName"> 
                   <?php echo $form['password']->renderLabel() ?>
-            </td>
-            <td>
-               
+            </div>
+            <div class="Inputfield">
             <?php echo $form['password'] ?>
             <?php // echo input_hidden_tag('referer', $_SERVER["HTTP_REFERER"])  ?>
-            </td>
-            
+            </div>
             <?php
             if(($sf_request->getMethod()=='POST')){ ?>
-            <td>
+            <div class="fieldError"> 
             	<?php echo $form['password']->renderError() ?>                
-                </td>
+            </div>  
              <?php } ?>   
-        </tr>
-        <tr>
-            <td>
-
-            </td>
-            <td>
+            <div class="submitButton">
                 <button  type="submit">Login</button>
-            </td>
-        </tr>
-    </table>                  
+            </div>    
+        </div>
+            <div class="right"></div>  
+    </div>
 </form>
 </div>
 <div class="clear"></div>
