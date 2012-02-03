@@ -3,6 +3,7 @@ generator:
   param:
     model_class:      CdrLog
     theme:            default
+    css:              /sf/sf_admin/css/admin_main.css
     list:
       sort:  [date, desc]
       display:  [date, from_no, to_no, _company_name, employee, description, dur_secs, price, purchase_price, sale_price, _profit]
