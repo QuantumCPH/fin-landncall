@@ -5,21 +5,19 @@
  */
 
 ?>
-                <div id="sf_admin_container"><h1><?php echo  __('All Registered Customer') ?></h1></div>
+                <div id="sf_admin_container"><h1 style="background-color:#D44D05;font-weight: bold;"><?php echo  __('All Registered Customer') ?></h1></div>
 		<table width="75%" cellspacing="0" cellpadding="2" class="tblAlign">
                     <thead>
-                        <tr class="headings">
-                     <th width="10%" style="text-align: left" ><?php echo  __('Id') ?></th>
-                  <th  width="20%" style="text-align: left"  ><?php echo  __('Customer Number') ?></th>
-                      <th  width="20%" style="text-align: left" ><?php echo  __('Mobile Number') ?></th>
-                       <th width="20%" style="text-align: left" ><?php echo  __('First Name') ?></th>
-                    <th  width="20%"  style="text-align: left" ><?php echo  __('Last Name') ?></th>
-                       <th  width="20%"  style="text-align: left" ><?php echo  __('Unique ID') ?></th>
-
-
-                    <th width="10%" style="text-align: left"> <?php echo  __('Action') ?></th>
-                        </tr>
-		                  </thead>
+                      <tr class="headings" style="color:#D44D05 !important;font-weight: bold;">
+                        <th width="10%" style="text-align: left" ><?php echo  __('Id') ?></th>
+                        <th  width="20%" style="text-align: left"  ><?php echo  __('Customer Number') ?></th>
+                        <th  width="20%" style="text-align: left" ><?php echo  __('Mobile Number') ?></th>
+                        <th width="20%" style="text-align: left" ><?php echo  __('First Name') ?></th>
+                        <th  width="20%"  style="text-align: left" ><?php echo  __('Last Name') ?></th>
+                        <th  width="20%"  style="text-align: left" ><?php echo  __('Unique ID') ?></th>
+                        <th width="10%" style="text-align: left"> <?php echo  __('Action') ?></th>
+                      </tr>
+		  </thead>
                   <tfoot>
                     <tr><td colspan="7" style="text-align:center;font-weight: bold;">
                     <?php echo count($customers)." - Results" ?></td></tr>
@@ -33,7 +31,7 @@
                   $colorvalue="#FFFFFF";
                   }else{
 
-                      $colorvalue="#D3D1D1";
+                      $colorvalue="#FCD9C9";
                       }
 //                  
                   ?>

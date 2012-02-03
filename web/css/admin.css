@@ -12,19 +12,18 @@ body{
     margin:0 auto 51px;
 }
 .logo{
-    border-bottom: 2px solid #000000;
+    border-bottom: 2px solid #D44D05;
     padding-bottom:3px;
     margin-bottom:15px;
     
-    color:#000000;
+    color:#D44D05;
     font-family:'Times New Roman', Times, serif;
     font-size: 54px;
     font-weight:bold;
 }
 .topNav{
     width:558px;
-    margin:0 auto 23px;
-    padding-bottom: 30px;
+    margin:0 auto 47px;
 }
 .clr{
     float:none;
@@ -45,25 +44,25 @@ body{
     float: left;
     font: bold 11px arial;
     
-    border-left: 1px solid #000000;
-    border-top: 1px solid #000000;
-    border-bottom: 1px solid #000000;
+    border-left: 1px solid #D44D05;
+    border-top: 1px solid #D44D05;
+    border-bottom: 1px solid #D44D05;
 }
 #sddm li.last
 {	
-    border-right:1px solid #000000;    
+    border-right:1px solid #F36621;    
 }    
 #sddm li a
 {	display: block;
 	margin: 0 0px 0 0;
 	padding: 4px 10px;
 	background: #FFF;
-	color: #000000;
+	color: #D44D05;
 	text-align: center;
 	text-decoration: none}
 
 #sddm li a:hover
-{	background: #000000;
+{	background: #D44D05;
         color:#ffffff;
 }
 
@@ -72,8 +71,8 @@ body{
 	visibility: hidden;
 	margin: 0;
 	padding: 0;
-	background: #000000;
-	border: 1px solid #929393;
+	background: #D44D05;
+	border: 1px solid #D44D05;
 }
 
 #sddm div a
@@ -85,24 +84,24 @@ body{
         white-space: nowrap;
         text-align: left;
         text-decoration: none;
-        background: #000000;
+        background: #D44D05;
         color: #FFFFFF;
         font: 11px arial;
 }
 #sddm div a:hover
 {	background: #FFFFFF;
-        color: #000000;
+        color: #F36621;
 }
 #sddm div a.subSelect
 {	background: #FFFFFF;
-        color: #000000;
+        color: #D44D05;
 }
 #sf_admin_container{
     margin:0 auto;
     width:75%;
 }
 #sddm li a.current{
-    background: #000000 !important;
+    background: #D44D05 !important;
     color: #FFFFFF !important;
 }
 a.label{
