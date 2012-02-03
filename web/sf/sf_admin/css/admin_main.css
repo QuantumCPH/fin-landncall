@@ -16,7 +16,6 @@
   margin: 0;
   font-family: Arial, sans-serif;
   font-size: 12px;
-  background-color: #fff;
 }
 .leftHeadign{
   font-weight: bold;    
@@ -172,7 +171,7 @@
   margin-bottom: 3px;
   margin-top: 3px;
   border: 1px solid #D44D05;
-  background-color: #F7F7F7;
+  background-color: #FCD9C9;
 }
 
 #sf_admin_container fieldset.collapsed * { display:none; }
