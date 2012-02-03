@@ -5,10 +5,10 @@
  */
 
 ?>
-                <div id="sf_admin_container"><h1 style="background-color:#D44D05;font-weight: bold;"><?php echo  __('All Registered Customer') ?></h1></div>
+                <div id="sf_admin_container"><h1><?php echo  __('All Registered Customer') ?></h1></div>
 		<table width="75%" cellspacing="0" cellpadding="2" class="tblAlign">
                     <thead>
-                      <tr class="headings" style="color:#D44D05 !important;font-weight: bold;">
+                      <tr class="headings">
                         <th width="10%" style="text-align: left" ><?php echo  __('Id') ?></th>
                         <th  width="20%" style="text-align: left"  ><?php echo  __('Customer Number') ?></th>
                         <th  width="20%" style="text-align: left" ><?php echo  __('Mobile Number') ?></th>
@@ -29,14 +29,15 @@
                  <?php
                   if($incrment%2==0){
                   $colorvalue="#FFFFFF";
+                  $class= 'class="even"';
                   }else{
-
+                    $class= 'class="odd"';
                       $colorvalue="#FCD9C9";
                       }
 //                  
                   ?>
 
-                      <tr style="background-color:<?php echo $colorvalue;   ?>">
+                      <tr <?php echo $class;   ?>>
                       <td><?php echo $incrment;  ?></td>
                   <td><?php  echo $customer->getId() ?></td>
                    <td><?php echo  $customer->getMobileNumber() ?></td>

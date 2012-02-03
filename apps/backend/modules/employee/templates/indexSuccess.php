@@ -40,7 +40,7 @@
 
 <table width="950"  style="border: 1px;" class="sf_admin_list" cellspacing="0">
   <thead>
-      <tr style="background-color:#CCCCFF;">
+      <tr>
       
       <th align="left"  id="sf_admin_list_th_name"><?php echo __('Company') ?></th>
       <th align="left"  id="sf_admin_list_th_name"><?php echo __('First name') ?></th>

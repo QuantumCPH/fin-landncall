@@ -23,9 +23,9 @@
           
       <div id="sf_admin_content">  
         <ul class="customerMenu" style="margin:10px 0;">
-            <li><a  style="background-color: #838483;color:#FFFFFF;text-decoration: none;" href="allRegisteredCustomer"><?php echo  __('View All Customer') ?></a></li>
-            <li><a style="background-color: #838483;color:#FFFFFF;text-decoration: none;" href="paymenthistory?id=<?php echo $_REQUEST['id'];  ?>"><?php echo  __('Payment History') ?></a></li>
-            <li><a style="background-color: #838483;color:#FFFFFF;text-decoration: none;" href="customerDetail?id=<?php echo $_REQUEST['id'];  ?>"><?php echo  __('Customer Detail') ?></a></li>
+            <li><a class="external_link" href="allRegisteredCustomer"><?php echo  __('View All Customer') ?></a></li>
+            <li><a class="external_link" href="paymenthistory?id=<?php echo $_REQUEST['id'];  ?>"><?php echo  __('Payment History') ?></a></li>
+            <li><a class="external_link"  href="customerDetail?id=<?php echo $_REQUEST['id'];  ?>"><?php echo  __('Customer Detail') ?></a></li>
         </ul></div>
        <h1><?php echo  __('Call History') ?></h1>        
        <table width="100%" cellspacing="0" cellpadding="2" class="tblAlign" border='0'>
