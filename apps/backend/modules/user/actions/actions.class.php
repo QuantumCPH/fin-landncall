@@ -43,7 +43,16 @@ class userActions extends autouserActions
                     //	$this->redirect($redirect_path);
                     //else
                     	//$this->redirect('@homepage');
+
+                     $pathArray = $request->getPathInfoArray();
+
+if(isset($pathArray['HTTP_REFERER']) && $pathArray['HTTP_REFERER']!=''){
+        $this->redirect($pathArray['HTTP_REFERER']);
+
+}else{
                     	$this->redirect('customer/allRegisteredCustomer');
+
+}
                 } else {
                     $this->getUser()->setFlash('message', 'You are not Authorized / or you have submitted incorrect e-mail and password');
                 }
@@ -60,7 +69,9 @@ class userActions extends autouserActions
       public function executeChangeCulture(sfWebRequest $request){
             $this->getUser()->setCulture($request->getParameter('new'));
 
-       	$this->redirect('customer/allRegisteredCustomer');
+        $pathArray = $request->getPathInfoArray();
+
+        $this->redirect($pathArray['HTTP_REFERER']);
 
     }
 }
