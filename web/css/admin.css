@@ -47,7 +47,7 @@ h2{
     list-style: none;
     float: left;
     font: bold 11px arial;
-    
+    background:url('../images/li-bg.png') repeat-x top left;
     border-left: 1px solid #D44D05;
     border-top: 1px solid #D44D05;
     border-bottom: 1px solid #D44D05;
@@ -60,7 +60,6 @@ h2{
 {	display: block;
 	margin: 0 0px 0 0;
 	padding: 4px 10px;
-	background: #FFF;
 	color: #D44D05;
 	text-align: center;
 	text-decoration: none}
@@ -94,7 +93,7 @@ h2{
 }
 #sddm div a:hover
 {	background: #FFFFFF;
-        color: #F36621;
+        color: #D44D05;
 }
 #sddm div a.subSelect
 {	background: #FFFFFF;
@@ -110,7 +109,7 @@ h2{
 }
 a.label{
    background: #FFFFFF !important;
-   color: #000000 !important; 
+   color: #D44D05 !important; 
 }
 
 div.tableHeading{
@@ -174,10 +173,10 @@ ul.customerMenu li a{
     border:0px !important;
 }
 tr.even{
-    background-color:#FFFFFF;
+    background-color:#FFFFFF !important;
 }
 tr.odd{
-    background-color:#FCD9C9;
+    background-color:#FCD9C9 !important;
 }
 .tblLogin label {
     color:#D44D05;
