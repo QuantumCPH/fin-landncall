@@ -2,6 +2,9 @@ body{
   font-family: Arial, Helvetica, sans-serif;  
   padding-top: 51px;
 }
+h2{
+    color:#D44D05;
+}
 .admin-navigation ul, li{
 	display:inline;
 	padding-right: 5px;
@@ -25,6 +28,7 @@ body{
     width:558px;
     margin:0 auto 47px;
 }
+
 .clr{
     float:none;
     clear:both;
@@ -72,7 +76,7 @@ body{
 	margin: 0;
 	padding: 0;
 	background: #D44D05;
-	border: 1px solid #D44D05;
+	border: 1px solid #ED8555;
 }
 
 #sddm div a
@@ -114,7 +118,7 @@ div.tableHeading{
     margin: 0 auto;   
 }
 div.tableHeading span{
-    background-color: #000000;
+    background-color: #D44D05;
     color:#ffffff;
     line-height: 18px;
     padding-right:15px;
@@ -122,30 +126,33 @@ div.tableHeading span{
 }
 table.tblAlign{
     margin:0 auto !important;
-    border-top: 1px solid #000000 !important;
-    border-left: 1px solid #000000 !important;
+    border-top: 1px solid #D44D05 !important;
+    border-left: 1px solid #D44D05 !important;
     
   
     font-family: Arial,sans-serif;
     font-size: 12px
 }
 td{
-   border-bottom: 1px solid #000000 !important; 
-   border-right: 1px solid #000000 !important;
+   border-bottom: 1px solid #D44D05 !important; 
+   border-right: 1px solid #D44D05 !important;
 }
 td.last{
    border-right: 0px !important; 
 }
 tr.headings{
    background-color: #ffffff !important;
-   color:#000000 !important; 
+   color:#D44D05 !important; 
 }
 tr.headings th{
-   border-right: 1px solid #000000 !important; 
-   border-bottom: 1px solid #000000 !important;
+   border-right: 1px solid #D44D05 !important; 
+   border-bottom: 1px solid #D44D05 !important;
 }
 tr.headings th.last{
    border-right: 0px !important; 
+}
+.alert_bar{
+    font-size: 12px;
 }
 ul.customerMenu{
    width:75%;
@@ -158,12 +165,20 @@ ul.customerMenu li{
    margin:0;
 }
 ul.customerMenu li a{
-   padding:0 5px;
-   line-height: 18px;
+   font-size: 11px;
 }
 .tblLogin{
     border:0px !important;
 }
 .tblLogin td{
     border:0px !important;
+}
+tr.even{
+    background-color:#FFFFFF;
+}
+tr.odd{
+    background-color:#FCD9C9;
+}
+.tblLogin label {
+    color:#D44D05;
 }
