@@ -213,7 +213,7 @@
             <li>
                 <a href="#"
                 onmouseover="mopen('m4')"
-                onmouseout="mclosetime()"><?php echo __('Security') ?></a>
+                onmouseout="mclosetime()" <?php echo $modulName=='user'? 'class = "current"':''?>><?php echo __('Security') ?></a>
                 <div id="m4"
                     onmouseover="mcancelclosetime()"
                     onmouseout="mclosetime()">
