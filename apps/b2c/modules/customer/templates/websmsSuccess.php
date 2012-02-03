@@ -79,7 +79,7 @@ return true;}
     <table cellspacing="0" class="summary">
         <tr bgcolor="#f0f0f0">
             <td>
-               <label for="country">Vælg land</label>
+               <label for="country"><?php echo __('Country')?></label>
             </td>
             <td>
                 <select name="country" id="country" >

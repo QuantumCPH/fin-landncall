@@ -10,7 +10,7 @@
                 echo "</p>";
                 echo "<p>";
 		echo __("If you have any questions please feel free to contact our customer support center at");
-                echo "<a href=wls2:support@landncall.com>support@wls2.com</a></p>";
+                echo " <a href=wls2:support@landncall.com>support@wls2.com</a></p>";
                
 	?>
 	.

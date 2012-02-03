@@ -927,6 +927,10 @@
                 <source>login</source>
                 <target>login</target>
             </trans-unit>
+            <trans-unit id="229" translate="yes" reformat="yes" xml:space="default">
+                <source>invalid mobile number</source>
+                <target>ungültige Handynummer</target>
+            </trans-unit>
            
            
         </body>

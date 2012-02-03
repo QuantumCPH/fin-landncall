@@ -327,7 +327,7 @@ class affiliateActions extends sfActions {
             } else {
                 $validated = false;
                 $is_recharged = false;
-                $this->error_mobile_number = 'invalid mobile number';
+                $this->error_mobile_number = $this->getContext()->getI18N()->__('invalid mobile number');
                 return;
             }
             if ($validated) {

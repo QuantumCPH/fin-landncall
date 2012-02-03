@@ -235,14 +235,14 @@ $.extend($.validator, {
 	},
 
 	messages: {
-		required: "<br/>Vänligen fyll i detta fält",
+		required: "Please fill in this field",
 		remote: "Please enter the Valid Unique ID with 6 digits",
-		email: "<br/>Ange en giltig epost adress.",
+		email: "Please enter a valid email address.",
 		url: "Please enter a valid URL.",
 		date: "Please enter a valid date.",
 		dateISO: "Please enter a valid date (ISO).",
 		dateDE: "Bitte geben Sie ein gültiges Datum ein.",
-		number: "Ange ett giltigt nummer.",
+		number: "Please enter a valid number.",
 		numberDE: "Bitte geben Sie eine Nummer ein.",
 		digits: "Please enter only digits",
 		creditcard: "Please enter a valid credit card number.",
