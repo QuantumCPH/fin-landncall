@@ -919,8 +919,12 @@
                 <target> wurde verschickt</target>
             </trans-unit>
             <trans-unit id="226" translate="yes" reformat="yes" xml:space="default">
-                <source>Your password has been changed. Please use the following information to login to your WLS2 account.</source>
-                <target>Ihr Passwort wurde geändert. Bitte verwenden Sie die folgenden Informationen zu Ihrem WLS2 Account einloggen.</target>
+                <source>Your account details have been sent to your email address.</source>
+                <target>Ihre Kontodaten haben, um Ihre E-Mail-Adresse gesendet.</target>
+            </trans-unit>
+            <trans-unit id="227" translate="yes" reformat="yes" xml:space="default">
+                <source>No customer is registered with this email.</source>
+                <target>Kein Kunde ist mit dieser E-Mail registriert.</target>
             </trans-unit>
             
         </body>
