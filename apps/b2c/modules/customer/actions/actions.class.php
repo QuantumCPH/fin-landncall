@@ -1463,16 +1463,6 @@ public function executeSmsHistory(sfWebrequest $request){
 
     public function executeTellAFriend(sfWebRequest $request) {
 
-
-        //call Culture Method For Get Current Set Culture - Against Feature# 6.1 --- 02/28/11
-        
-        //-----------------------
-//         $this->getUser()->setCulture('en');
-//                $getCultue = $this->getUser()->getCulture();
-//                // Store data in the user session
-//                $this->getUser()->setAttribute('activelanguage', $getCultue);
-        //call Culture Method For Get Current Set Culture - Against Feature# 6.1 --- 02/28/11
-        //-----------------------
         $this->customer = CustomerPeer::retrieveByPK(
                         $this->getUser()->getAttribute('customer_id', null, 'usersession')
         );
@@ -1503,7 +1493,7 @@ public function executeSmsHistory(sfWebrequest $request){
             $name = $this->customer->getFirstName() . ' ' . $this->customer->getLastName();
             $message_body = $this->getContext()->getI18N()->__('Hi ') . $recepient_name . ',<br /> ' . $this->getContext()->getI18N()->__("This invitation is sent to you with the reference of") . ' ' . $name . ', ' . $this->getContext()->getI18N()->__("a user of Smartsim from the WLS2.");
 
-            $message_body_end = $this->getContext()->getI18N()->__('Please click accept to start saving money immediately with Smartsim.') . ' <a  href="http://wls2.zerocall.com/b2c.php/customer/signup?invite_id=' . $invite->getId() . '"> ' . $this->getContext()->getI18N()->__("Accept") . '</a><br/>'. $this->getContext()->getI18N()->__('Read more').' <a href="www.zerocall.com">www.zerocall.com</a>';
+            $message_body_end = $this->getContext()->getI18N()->__('Please click accept to start saving money immediately with Smartsim.') . ' <a  href="http://wls2.zerocall.com/b2c.php/customer/signup?invite_id=' . $invite->getId() . '"> ' . $this->getContext()->getI18N()->__("Accept") . '</a><br/>'. $this->getContext()->getI18N()->__('Read more').' <a href="wls2.zerocall.com">wls2.zerocall.com</a>';
 
             //send email
             if ($recepient_name != ''):

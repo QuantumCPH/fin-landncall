@@ -566,13 +566,25 @@ class emailLib{
         $sender_name        = sfConfig::get('app_email_sender_name', 'WLS 2 support');
         $sender_emailcdu       = sfConfig::get('app_email_sender_email_cdu', 'rs@zapna.com');
         $sender_namecdu        = sfConfig::get('app_email_sender_name_cdu', 'WLS 2 support');
-        $message_body   =   '
-Härmed bekräftas att du har fått provision insatt på ditt konto för att du har tipsat en vän om Smartsim från wls.
-Gå in på ”Mina sidor” och gå till ”Övrig historik” under ”Samtalshistorik” så ser du vad du har tjänat.<br/>Med vänlig hälsning,
-<br/>
-wls<br/>
-www.WLS2.zerocall.com';
 
+          sfContext::getInstance()->getConfiguration()->loadHelpers('Partial');
+        $message_body = get_partial('pScripts/bonus_web_reg', array(
+                'customer'=>$customer,
+                'order'=>$order,
+                'transaction'=>$transaction,
+                'vat'=>$vat,
+                'agent_name'=>$recepient_agent_name,
+              'postalcharge'=>$postalcharge,
+                'wrap'=>true,
+        ));
+//        $message_body   ='
+//Härmed bekräftas att du har fått provision insatt på ditt konto för att du har tipsat en vän om Smartsim från wls.
+//Gå in på ”Mina sidor” och gå till ”Övrig historik” under ”Samtalshistorik” så ser du vad du har tjänat.<br/>Med vänlig hälsning,
+//<br/>
+//wls<br/>
+//www.WLS2.zerocall.com';
+
+        
         $c = new Criteria();
   	$c->add(CustomerPeer::ID, $inviteuserid);
         $customer = CustomerPeer::doSelectOne($c);

@@ -359,16 +359,16 @@
                 <target>Es liegen noch keine SMS Aufzeichnungen zu zeigen.</target>
             </trans-unit>
             <trans-unit id="88" translate="yes" reformat="yes" xml:space="default">
-                <source>Tell your friends about zer0call &amp; earn extra balance!</source>
-                <target>Erzähle deinen Freunden von zer0call &amp; verdienen Extra-Balance!</target>
+                <source>Tell your friends about Wls &amp; earn extra balance!</source>
+                <target>Erzähle deinen Freunden von Wls &amp; verdienen Extra-Balance!</target>
             </trans-unit>
             <trans-unit id="89" translate="yes" reformat="yes" xml:space="default">
-                <source>Tell your friends about zer0call and earn 10dkk as soon as your friends have made their first payment with zer0call! Spread the word about zer0call and let your friends know about WLS2 services.</source>
-                <target>Erzähle deinen Freunden von zer0call und verdienen 10dkk sobald Ihre Freunde ihre erste Zahlung mit zer0call gemacht! Spread the word über zer0call und lassen Sie Ihre Freunde über WLS2 Dienstleistungen.</target>
+                <source>Tell your friends about Wls and earn 10 euro as soon as your friends have made their first payment with Wls! Spread the word about Wls and let your friends know about WLS2 services.</source>
+                <target>Erzähle deinen Freunden von Wls und verdienen 10 euro sobald Ihre Freunde ihre erste Zahlung mit Wls gemacht! Spread the word über Wls und lassen Sie Ihre Freunde über WLS2 Dienstleistungen.</target>
             </trans-unit>
             <trans-unit id="90" translate="yes" reformat="yes" xml:space="default">
-                <source>You can tell your friends about zer0call in two simple ways:</source>
-                <target>Sie können Ihre Freunde über zer0call in zwei einfache Möglichkeiten, zu sagen:</target>
+                <source>You can tell your friends about Wls in two simple ways:</source>
+                <target>Sie können Ihre Freunde über Wls in zwei einfache Möglichkeiten, zu sagen:</target>
             </trans-unit>
             <trans-unit id="91" translate="yes" reformat="yes" xml:space="default">
                 <source>Fill out the fields below and click the Send Email button - your friend will receive an Email</source>
@@ -379,8 +379,8 @@
                 <target>Was Sie davon haben?</target>
             </trans-unit>
             <trans-unit id="93" translate="yes" reformat="yes" xml:space="default">
-                <source>As soon as your friends have made their first payment with zer0call, youll automatically receive 10dkk in your zer0call balance - so if 10 of your friends register on zer0call, youll gain 100dkk in your account. Just share the news and enjoy this great new treat from zer0call.</source>
-                <target>Sobald Ihre Freunde haben ihre erste Zahlung mit zer0call gemacht, youll erhalten automatisch 10dkk in Ihrem zer0call Gleichgewicht - so, wenn 10 Ihrer Freunde auf zer0call, youll gewinnen 100dkk in Ihrem Konto zu registrieren einfach teilen sich die Nachrichten und genießen Sie diese großartige neue zu behandeln. von zer0call.</target>
+                <source>As soon as your friends have made their first payment with Wls, youll automatically receive 10 euro in your Wls balance - so if 10 of your friends register on Wls, youll gain 100 euro in your account. Just share the news and enjoy this great new treat from Wls.</source>
+                <target>Sobald Ihre Freunde haben ihre erste Zahlung mit Wls, gemacht, youll erhalten automatisch 10 euro in Ihrem Wls Gleichgewicht - so, wenn 10 Ihrer Freunde auf Wls, youll gewinnen 100 euro in Ihrem Konto zu registrieren einfach teilen sich die Nachrichten und genießen Sie diese großartige neue zu behandeln. von Wls.</target>
             </trans-unit>
       
             <trans-unit id="94" translate="yes" reformat="yes" xml:space="default">
@@ -400,12 +400,12 @@
                 <target>Ihre Nachricht</target>
             </trans-unit>
             <trans-unit id="98" translate="yes" reformat="yes" xml:space="default">
-                <source>Smartsim use to make extremely cheap international calls (save up to 90%) and to cut prices when you are abroad (you'll save 30-80%). Right now costing Smartsim 99 $ and you can call for the full amount. Smartsim has no monthly fee or hidden charges.</source>
-                <target>SmartSim nutzen, um extrem günstige internationale Anrufe (bis zu 90%) machen und die Preise zu senken, wenn Sie im Ausland (du wirst 30-80% sparen) sind. Im Moment kostet SmartSim 99 $ und Sie können den vollen Betrag nennen. SmartSim hat keine monatliche Grundgebühr oder versteckte Kosten.</target>
+                <source>Smartsim use to make extremely cheap international calls (save up to 90%) and to cut prices when you are abroad (you'll save 30-80%). Right now costing Smartsim 99 euro and you can call for the full amount. Smartsim has no monthly fee or hidden charges.</source>
+                <target>SmartSim nutzen, um extrem günstige internationale Anrufe (bis zu 90%) machen und die Preise zu senken, wenn Sie im Ausland (du wirst 30-80% sparen) sind. Im Moment kostet SmartSim 99 euro und Sie können den vollen Betrag nennen. SmartSim hat keine monatliche Grundgebühr oder versteckte Kosten.</target>
             </trans-unit>
             <trans-unit id="99" translate="yes" reformat="yes" xml:space="default">
-                <source>Send Email to join Zero call</source>
-                <target>Send Email to Zero Gespräch teilnehmen</target>
+                <source>Send Email to join Smartsim</source>
+                <target>Senden Sie E-Mail an SmartSim beitreten</target>
             </trans-unit>
       
             <trans-unit id="100" translate="yes" reformat="yes" xml:space="default">
@@ -589,8 +589,8 @@
                 <target>Auto nachfüllen Menge:</target>
             </trans-unit>
              <trans-unit id="145" translate="yes" reformat="yes" xml:space="default">
-                <source>What is auto-replenishment? &lt;br/&gt; WLS2 recommended to call this service, so you &lt;br/&gt;do not have to manually fill, When your balance &lt;br/&gt;runs low. 100 or 200 crowns each, when the &lt;br/&gt; balance reaches 25 or $ 50. Capacity added to &lt;br/&gt;your account in minutes. filling their you can&lt;br/&gt; then see the "Overview - Your Credit"</source>
-                <target>Was ist die automatische Nachschub? &lt;br/&gt; WLS2 empfohlen, diesen Service aufrufen, &lt;br/&gt; damit müssen Sie nicht manuell zu füllen, &lt;br/&gt; Wenn Ihr Kontostand niedrig läuft. &lt;br/&gt; 100 oder 200 Kronen je, wenn das Gleichgewicht&lt;br/&gt;  25 oder 50 Dollar erreicht. Kapazität hinzugefügt,&lt;br/&gt;  um Ihr Konto in Minuten. ihre Füllung Sie können &lt;br/&gt; dann sehen, der "Übersicht - Your Credit"</target>
+                <source>Wls 2 recommends to activate this service so you &lt;br /&gt; do not have to manually  refill when your account&lt;br /&gt;  balance runs low. 100 or 200 Euros each  when the &lt;br /&gt; balances reaches 25 or 50 Euro. This facility is &lt;br /&gt; added to your account in minutes.</source>
+                <target>WLS 2 empfiehlt, diesen Dienst zu aktivieren, damit &lt;br /&gt;Sie müssen nicht manuell nachfüllen, wenn&lt;br /&gt;Ihr Kontostand Neige. 100 oder 200 Euro jeweils, &lt;br /&gt;wenn die Salden erreicht 25 oder 50 Euro. Diese&lt;br /&gt; Einrichtung ist auf Ihr Konto in Minuten zugegeben.</target>
             </trans-unit>
              <trans-unit id="146" translate="yes" reformat="yes" xml:space="default">
                 <source>Enter cell phone number</source>
@@ -613,8 +613,8 @@
                 <target>Nachfüllung</target>
             </trans-unit>
               <trans-unit id="151" translate="yes" reformat="yes" xml:space="default">
-                <source>Read and order</source>
-                <target>Lesen und bestellen</target>
+                <source>Send Invitation</source>
+                <target>Einladung senden</target>
             </trans-unit>
               <trans-unit id="152" translate="yes" reformat="yes" xml:space="default">
                 <source>Most convenient way to fill the pot call is To enable automatic &lt;br /&gt; filling (below). then you need Do not worry about the pot runs out. &lt;br /&gt; Especially important in such trip abroad when it can be difficult to fill in any other way.</source>
@@ -701,8 +701,8 @@
                 <target>gesendet wurde</target>
             </trans-unit>
             <trans-unit id="172" translate="yes" reformat="yes" xml:space="default">
-                <source>Tell a friend about zer0call!</source>
-                <target>sagen ein Freund über zer0call!</target>
+                <source>Tell a friend about Wls!</source>
+                <target>sagen ein Freund über Wls!</target>
             </trans-unit>
             <trans-unit id="173" translate="yes" reformat="yes" xml:space="default">
                 <source>HI</source>
