@@ -3,6 +3,8 @@
 body {
 	font-family:Arial, Helvetica, sans-serif;
 	font-size:12px;
+        padding:0px;
+        margin:0px;
 }
 p, h1, form, button {
 	border:0;
@@ -26,8 +28,7 @@ h3 {
 	padding:14px;
 }
 #basic {
-	border:solid 2px #DEDEDE;
-        margin: 6em auto;
+	
 }
 #basic h1 {
 	font-size:22px;
@@ -111,8 +112,10 @@ input#generic {
 }
 
 #header{
-    border-bottom:1px #DEDEDE solid;
-    height: 83px;
+    background: url("../images/top-ground.png") no-repeat scroll center  transparent;
+    height: 137px;
+    margin: 0 auto 5px;
+    width: 1010px;
 }
 
 #menu{
@@ -173,26 +176,47 @@ font-weight:bold;
 margin-bottom:10px;
 }
 
-
+.logo {
+    padding-left: 25px;
+    padding-top: 13px;
+}
 .action-links{
     padding: 10px 10px 10px 5px;
     clear:both;
 }
 
 #slogan{
-    color:#A5BB3F;
+    color:#A5BB3F;    
+    width:1010px;
+    margin: 0 auto;
 }
-
+#slogan h1{
+    float:left;
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+}
+#loggedInUser{
+    color:#A5BB3F;
+    float:right;
+    width: 136px;
+    white-space:nowrap;  
+}
+.clr{
+    clear:both;
+    float: none;
+}
+#menu{
+    text-align: center;
+}
 #menu ul{
     padding-left: 2px;
+    margin-top: 20px;
 }
 
 #menu li{
     list-style: none;
-    padding-bottom: 10px;
-    border-bottom:#DEDEDE 1px solid;
-    border-right:#DEDEDE 1px solid;
-    padding-top: 10px;
+    display: inline;
+    padding:10px 5px;
 }
 
 #menu li a{

@@ -24,24 +24,16 @@ color:#F00000;
 </style>
 	  </head>
     <body>
-          <div style="vertical-align: top;float: right;">
-
-                        <?php echo link_to(image_tag('/images/german.png'), 'affiliate/changeCulture?new=de'); ?>
-
-                         <?php echo link_to(image_tag('/images/english.png'), 'affiliate/changeCulture?new=en'); ?>
-
+        <div id="basic">
+            <div id="header">
+                <div class="logo">
+                    <?php echo image_tag('/images/wls2-logo.png');// link_to(image_tag('/images/logo.gif'), '@homepage'); ?>
+                </div>
              </div>
-        <div id="basic" class="container_12 mitform">
-            <div id="header" class="grid_12">
-                <div id="logo" class="grid_3 alpha">
-                    <?php echo image_tag('/images/logo.gif');// link_to(image_tag('/images/logo.gif'), '@homepage'); ?>
-                </div>
-                <div id="slogan" class="grid_6 omega">
-                    <h1 class="slogan">CRM/Billing/Agent Portal</h1>
-                </div>
-
-                <?php if($sf_user->getAttribute('username', '', 'agentsession')){?>
-                 <div id="slogan" style="position:absolute; left: 812px; top: -6px; width: 104px; white-space:nowrap;">
+            <div id="slogan">
+                    <h1>CRM/Billing/Agent Portal</h1>
+                     <?php if($sf_user->getAttribute('username', '', 'agentsession')){?>
+                 <div id="loggedInUser">
 <?php echo __('Logged in as:') ?><b>&nbsp;<?php echo $sf_user->getAttribute('username', '', 'agentsession')?></b><br />
                     <?php
                         if($agent_company){
@@ -51,7 +43,10 @@ color:#F00000;
                     ?>
                 <?php } ?>
                 </div>
-<?php } ?>
+                    <?php } ?>
+                    <div class="clr"></div>
+            </div>
+               
                 <?php
 
 //                $enableCountry = new Criteria();
@@ -75,14 +70,15 @@ color:#F00000;
                     <input type="hidden" value="<?php echo $sf_user->getAttribute('cusid') ?>" name="cid" />
                 </form>
                 </div>-->
-            </div>
-            <div id="menu" class="grid_2 alpha">
+           
+            <div class="clr"></div>
+            <div id="menu">
 <!--                <h1>menu</h1>-->
-            <ul class="menu-list">
-                <?php if($sf_user->isAuthenticated()){ ?>                                    
-                    
-                
-                
+            <?php if($sf_user->isAuthenticated()){ 
+                $modulName = $sf_context->getModuleName();
+                ?>
+                <ul class="menu-list">
+                                  
                     <li><?php echo link_to(__('Overview'), 'affiliate/report?show_summary=1');?></li>
                     <li><?php echo link_to(__('Register a Customer'), '@customer_registration_step1');?></li>
                     <li><?php echo link_to(__('Refill'), 'affiliate/refill') ?></li>
@@ -123,8 +119,8 @@ color:#F00000;
 
                 
                 <?php if($sf_user->isAuthenticated()): ?>
-                <div>&nbsp;</div>
-                <p ><br /><?php echo __('Provide this link to your customers while they signup with your reference.') ?>				
+                <div></div>
+                <p ><?php echo __('Provide this link to your customers while they signup with your reference.') ?>				
 				<a href="http://wls2.zerocall.com/b2c.php/signup/step1?ref=<?php echo $sf_user->getAttribute('agent_company_id', '', 'agentsession') ?>">
 				http://wls2.zerocall.com/b2c.php/signup/step1?ref=<?php echo $sf_user->getAttribute('agent_company_id', '', 'agentsession')?>
 				</a>			
