@@ -101,7 +101,7 @@
             <!-- end address -->
             <li>&nbsp;</br></br></li>
           </ul>
-                    <input type="submit" class="butonsigninsmall"  name="submit"  style="cursor: pointer; float: right;"  value="<?php echo __('Update') ?>"  >
+                    <div class="butonsigninsmall-outer" style="margin-top:283px; margin-left: 135px"><span class="butonsigninsmall-left"></span><input type="submit" class="butonsigninsmall"  name="submit" value="<?php echo __('Update') ?>"  ><span class="butonsigninsmall-right" style="right:13px"></span></div>
       </div>
       <div class="fr col">
         <ul>

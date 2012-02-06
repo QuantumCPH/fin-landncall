@@ -8,7 +8,8 @@ header('P3P:CP="IDC DSP COR ADM DEVi TAIi PSA PSD IVAi IVDi CONi HIS OUR IND CNT
     <?php include_partial('navigation', array('selected'=>'dashboard', 'customer_id'=>$customer->getId())) ?>
     <div class="dashboard-info">
         <div class="fl cb dashboard-info-text"><span><?php echo __('Customer Number') ?>:</span><span><?php echo $customer->getUniqueid(); ?></span></div>
-	<div class="fl cb dashboard-info-text"><span><?php echo __('Your account balance is') ?>:</span><span>
+	<div class="fl cb dashboard-info-text"><span><?php echo __('Your account balance is') ?>:</span>
+            <span>
 	<?php
 
             $cuid=$customer->getId();
@@ -38,7 +39,7 @@ header('P3P:CP="IDC DSP COR ADM DEVi TAIi PSA PSD IVAi IVDi CONi HIS OUR IND CNT
         
 echo '&nbsp;';
 
-?> EUR <input type="button" class="butonsigninsmall" style="<?php if($voip_customer!=''){?> margin-left:63px;<?php }else{ ?>margin-left:43px;<?php }?>" name="button" onclick="window.location.href='<?php echo sfConfig::get('app_epay_relay_script_url').url_for('customer/refill?customer_id='.$customer->getId(), true) ?>'" style="cursor: pointer"  value="<?php echo __('Buy credit') ?>" ></span></div>
+?> EUR <span class="butonsigninsmall-outer"><span class="butonsigninsmall-left"></span><input type="button" class="butonsigninsmall"  name="button" onclick="window.location.href='<?php echo sfConfig::get('app_epay_relay_script_url').url_for('customer/refill?customer_id='.$customer->getId(), true) ?>'" value="<?php echo __('Buy credit') ?>" ><span class="butonsigninsmall-right"></span></span></span></div>
 
         <div class="fl cb dashboard-info-text"  ><span   style="padding-right:-10px"><?php echo __('Active mobile number') ?>:</span><span><?php
         

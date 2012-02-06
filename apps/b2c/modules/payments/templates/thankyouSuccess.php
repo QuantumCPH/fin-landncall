@@ -1,6 +1,6 @@
 <?php use_helper('I18N') ?>
 
-<table width="100%">   <tr> <td align="center"><?php include_partial('customer/dashboard_header', array('customer'=> null, 'section'=>__('Betalningsbekräftelse')) ) ?> </td></tr>
+<table width="100%">   <tr> <td align="center"><?php include_partial('customer/dashboard_header', array('customer'=> null, 'section'=>__('Payment Confirmation')) ) ?> </td></tr>
 <tr><td align="center">
 
 	<div align="center" style="margin:20px auto">

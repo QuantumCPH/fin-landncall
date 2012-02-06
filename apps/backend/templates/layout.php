@@ -321,7 +321,7 @@
             </li>
 
     
-			<li>
+			<li class="last">
                 <?php echo link_to(__('Logout'), 'user/logout'); ?>
             </li>
           	
