@@ -7,9 +7,9 @@
         <div class="left"></div>
         <div class="centerImg">        
             <h1>
-               <?php echo __("Administrator Login ");?>
+               <?php echo __("Administrator Login");?>
             </h1>
-            <h2><?php echo __("Provide your email and password ");?></h2>
+            <h2><?php echo __("Provide your email and password");?></h2>
             
             <div class="fieldName"> 
            <?php echo $form['email']->renderLabel() ?>
