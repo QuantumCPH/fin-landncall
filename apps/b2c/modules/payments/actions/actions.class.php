@@ -531,7 +531,18 @@ class paymentsActions extends sfActions {
 
                     $invitevar = $invite->getCustomerId();
                     if (isset($invitevar)) {
-                        emailLib::sendCustomerConfirmRegistrationEmail($invite->getCustomerId(),$this->customer);
+
+                         if($this->getUser()->getCulture()=='en'){
+
+          $subject ='Bonus awarded';
+   }else{
+         $subject ='Bonus vergeben';
+   }
+
+  //email abou bonus
+    //   emailLib::sendCustomerConfirmRegistrationEmail(1,1,$subject);
+
+                        emailLib::sendCustomerConfirmRegistrationEmail($invite->getCustomerId(),$this->customer,$subject);
                     }
                 }
               $lang = 'de';
@@ -606,15 +617,7 @@ class paymentsActions extends sfActions {
   public function executeTest(sfWebRequest $request) {
 
 
-   if($this->getUser()->getCulture()=='en'){
-
-          $subject ='Bonus awarded';
-   }else{
-         $subject ='Bonus vergeben';
-   }
-
-
-       emailLib::sendCustomerConfirmRegistrationEmail(1,1,$subject);
+  
        return sfView::NONE;
     }
  
