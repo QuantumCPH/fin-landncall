@@ -85,7 +85,6 @@ class agentUserActions extends sfActions {
                     $this->getUser()->setAttribute('agent_company_id', $agent_user->getAgentCompanyId(), 'agentsession');
                     //$this->redirect('@homepage');
 
-
                     if(isset($pathArray['HTTP_REFERER']) && $pathArray['HTTP_REFERER']!=''){
         $this->redirect($pathArray['HTTP_REFERER']);
 
