@@ -903,9 +903,9 @@ class affiliateActions extends sfActions {
             Telienta::createAAccount($TelintaMobile, $this->customer->getUniqueid());
             //Telienta::createCBount($TelintaMobile, $this->customer->getUniqueid());
             //generate Email
-            $this->getUser()->setCulture('de');
+           // $this->getUser()->setCulture('de');
             emailLib::sendCustomerRegistrationViaAgentEmail($this->customer, $order);
-            $this->getUser()->setCulture('en');
+         //   $this->getUser()->setCulture('en');
             $this->getUser()->setFlash('message', 'Customer ' . $this->customer->getMobileNumber() . ' is registered successfully');
             $this->redirect('affiliate/receipts');
         }
