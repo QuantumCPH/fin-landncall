@@ -101,9 +101,10 @@
                 <target>Senden Sie eine SMS weltweit zu den besten Preisen des Marktes</target>
             </trans-unit>
             <trans-unit id="25" translate="yes" reformat="yes" xml:space="default">
-                <source>International calls from 0 cents * With Zero Call Out, you can call the whole world.</source>
-                <target>Internationale Anrufe von 0 Cent * Mit Zero Call Out, können Sie die ganze Welt.</target>
+                <source>International calls from 0 cents * With WLS, you can call the whole world.</source>
+                <target>Internationale Anrufe von 0 Cent * Mit WLS, können Sie die ganze Welt.</target>
             </trans-unit>
+            
             <trans-unit id="26" translate="yes" reformat="yes" xml:space="default">
                 <source>Tell a friend</source>
                 <target>sagen ein Freund</target>
@@ -345,12 +346,12 @@
                 <target>Der Topf wird in gefüllt mit:</target>
             </trans-unit>
             <trans-unit id="85" translate="yes" reformat="yes" xml:space="default">
-                <source>Most convenient way to fill the pot call is To enable automatic filling (below). then you need Do not worry about the pot runs out. Especially important in such trip abroad when it can be difficult to fill in any other way.</source>
+                <source>The most convenient way to fill the pot is to enable automatic refilling (below), then you do not need to worry about the pot running out. Especially important is such trip abroad where it can be difficult to fill in in any other way.</source>
                 <target>Die meisten bequemer Weg, um den Pot zu füllen Um das automatische Ausfüllen (unten) zu ermöglichen. dann brauchen Sie Mach dir keine Sorgen über die Topf leer ist. Besonders wichtig in solchen Reise ins Ausland, wenn es schwierig sein kann, in sonstiger Weise zu füllen.</target>
             </trans-unit>
             <trans-unit id="86" translate="yes" reformat="yes" xml:space="default">
-                <source>Automatic replenishment is: offline</source>
-                <target>Automatische Regenerierung ist: offline</target>
+                <source>Automatic Replenishment is: notactive</source>
+                <target>Automatische Regenerierung ist: notactive</target>
             </trans-unit>
 
             <trans-unit id="87" translate="yes" reformat="yes" xml:space="default">
