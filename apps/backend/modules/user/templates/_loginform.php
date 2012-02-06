@@ -1,4 +1,4 @@
-<?php use_helper('I18N', 'Date') ?><?php //if($request->getMethod() != 'post') $is_postback = true; ?>
+<?php //if($request->getMethod() != 'post') $is_postback = true; ?>
 <div style="">
 <form id="form1" action="<?php echo url_for('user/login') ?>" method="post" <?php $form->isMultipart() and print 'enctype="multipart/form-data" ' ?>>  
 
@@ -7,9 +7,9 @@
         <div class="left"></div>
         <div class="centerImg">        
             <h1>
-               <?php echo"Administrator Login ";?>
+               <?php echo __("Administrator Login ");?>
             </h1>
-            <h2><?php echo"Provide your email and password ";?></h2>
+            <h2><?php echo __("Provide your email and password ");?></h2>
             
             <div class="fieldName"> 
            <?php echo $form['email']->renderLabel() ?>
