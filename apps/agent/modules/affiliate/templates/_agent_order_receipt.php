@@ -69,13 +69,13 @@ $wrap_content  = isset($wrap)?$wrap:false;
   <td colspan="4" class="payer_summary">
 	<?php echo sprintf("%s", $agent->getName())?><br/>
       <?php echo $agent->getAddress() ?><br/>
-      <?php echo sprintf('%s', $customer->getPostCode()) ?><br/>
+      <?php echo sprintf('%s', $agent->getPostCode()) ?><br/>
 	<br />
-        <?php echo sprintf('%s', $customer->getCvrNumber()) ?><br/>
+        <?php echo sprintf('%s', $agent->getCvrNumber()) ?><br/>
 	<br />
-	<?php echo __("CVR Number") ?>: <?php echo sprintf('%s', $customer->getCvrNumber()) ?><br/>
+	<?php echo __("CVR Number") ?>: <?php echo sprintf('%s', $agent->getCvrNumber()) ?><br/>
 	<br />
-        <?php echo __("Contact Person") ?>: <?php echo sprintf('%s', $customer->getContactName()) ?><br/>
+        <?php echo __("Contact Person") ?>: <?php echo sprintf('%s', $agent->getContactName()) ?><br/>
   </td>
   </tr>
   <tr bgcolor="#CCCCCC" class="receipt_header"> 
