@@ -931,7 +931,27 @@
                 <source>Terms And Condition</source>
                 <target>Bedingungen und den Zustand</target>
             </trans-unit>
-            
+
+              <trans-unit id="229" translate="yes" reformat="yes" xml:space="default">
+                <source>Bonus awarded</source>
+                <target>Bonus vergeben</target>
+            </trans-unit>
+
+    <trans-unit id="230" translate="yes" reformat="yes" xml:space="default">
+                <source>We hereby confirm that you have received commissions deposited into your account that you have referred a friend about Smartsim from wls.Gå in to "My Pages" and go to "Other History" under the "Call History" to see what you have earned.</source>
+                <target>Wir bestätigen hiermit, dass Sie erhielt Aufträge hinterlegt auf Ihr Konto, dass Sie einen Freund über SmartSim aus wls.Gå in zu "Meine Favoriten" bezeichnet und gehen Sie auf "Andere Geschichte" unter dem "Call History" zu sehen, was Sie verdient haben.</target>
+            </trans-unit>
+
+    <trans-unit id="231" translate="yes" reformat="yes" xml:space="default">
+                <source>Bonus Receiver</source>
+                <target>bonus-Empfänger</target>
+            </trans-unit>
+  <trans-unit id="232" translate="yes" reformat="yes" xml:space="default">
+                <source>Registered Friend</source>
+                <target>Registrierte Freund</target>
+            </trans-unit>
+
+
         </body>
     </file>
 </xliff>

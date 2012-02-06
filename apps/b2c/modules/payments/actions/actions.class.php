@@ -1,5 +1,4 @@
 <?php
-
 require_once(sfConfig::get('sf_lib_dir') . '/changeLanguageCulture.php');
 require_once(sfConfig::get('sf_lib_dir') . '/emailLib.php');
 require_once(sfConfig::get('sf_lib_dir') . '/commissionLib.php');
@@ -532,7 +531,7 @@ class paymentsActions extends sfActions {
 
                     $invitevar = $invite->getCustomerId();
                     if (isset($invitevar)) {
-                        emailLib::sendCustomerConfirmRegistrationEmail($invite->getCustomerId());
+                        emailLib::sendCustomerConfirmRegistrationEmail($invite->getCustomerId(),$this->customer);
                     }
                 }
               $lang = 'de';
@@ -604,6 +603,19 @@ class paymentsActions extends sfActions {
         $email2->save();
     }
 
+  public function executeTest(sfWebRequest $request) {
 
+
+   if($this->getUser()->getCulture()=='en'){
+
+          $subject ='Bonus awarded';
+   }else{
+         $subject ='Bonus vergeben';
+   }
+
+
+       emailLib::sendCustomerConfirmRegistrationEmail(1,1,$subject);
+       return sfView::NONE;
+    }
  
 }

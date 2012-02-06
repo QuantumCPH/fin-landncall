@@ -1,4 +1,6 @@
 <?php
+
+require_once(sfConfig::get('sf_lib_dir') . '/changeLanguageCulture.php');
 class emailLib{
 
       public static function sendAgentRefilEmail(AgentCompany $agent,$agent_order)
@@ -559,9 +561,18 @@ class emailLib{
     }
 
 
-    public static function sendCustomerConfirmRegistrationEmail($inviteuserid){
-        $subject = 'Bonus Bekräftelse Smartsim';
+    public static function sendCustomerConfirmRegistrationEmail($inviteuserid,$customer,$subject){
 
+          $c = new Criteria();
+  	$c->add(CustomerPeer::ID, $inviteuserid);
+        $customer = CustomerPeer::doSelectOne($c);
+        $recepient_email = trim($customer->getEmail());
+        $recepient_name = sprintf('%s %s', $customer->getFirstName(), $customer->getLastName());
+        $customer_id        = trim($customer->getId());
+
+
+     $subject =$subject;
+  $subject=$subject;
         $sender_email       = sfConfig::get('app_email_sender_email', 'support@wls.com');
         $sender_name        = sfConfig::get('app_email_sender_name', 'WLS 2 support');
         $sender_emailcdu       = sfConfig::get('app_email_sender_email_cdu', 'rs@zapna.com');
@@ -570,11 +581,8 @@ class emailLib{
           sfContext::getInstance()->getConfiguration()->loadHelpers('Partial');
         $message_body = get_partial('pScripts/bonus_web_reg', array(
                 'customer'=>$customer,
-                'order'=>$order,
-                'transaction'=>$transaction,
-                'vat'=>$vat,
-                'agent_name'=>$recepient_agent_name,
-              'postalcharge'=>$postalcharge,
+                'recepient_name'=>$recepient_name,
+
                 'wrap'=>true,
         ));
 //        $message_body   ='
@@ -585,12 +593,7 @@ class emailLib{
 //www.WLS2.zerocall.com';
 
         
-        $c = new Criteria();
-  	$c->add(CustomerPeer::ID, $inviteuserid);
-        $customer = CustomerPeer::doSelectOne($c);
-        $recepient_email = trim($customer->getEmail());
-        $recepient_name = sprintf('%s %s', $customer->getFirstName(), $customer->getLastName());
-        $customer_id        = trim($customer->getId());
+      
         //$referrer_id        = trim($customer->getReferrerId());
 
         //send to user
