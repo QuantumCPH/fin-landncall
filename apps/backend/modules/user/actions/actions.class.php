@@ -18,6 +18,12 @@ class userActions extends autouserActions
     public function executeLogin($request){
 
         $this->loginForm = new LoginForm();
+
+        if($request->getParameter('new'))
+                $lang = $request->getParameter('new');
+        else
+                 $lang = 'de';
+         $this->getUser()->setCulture($lang);
         
         if($request->getMethod() != 'post'){
             $this->loginForm->bind($request->getParameter('login'), $request->getFiles('login'));
@@ -77,7 +83,7 @@ if(isset($pathArray['HTTP_REFERER']) && $pathArray['HTTP_REFERER']!=''){
             $this->getUser()->setCulture($request->getParameter('new'));
 
         $pathArray = $request->getPathInfoArray();
-         var_dump($pathArray);
+      //   var_dump($pathArray);
        //  die;
 
         if($pathArray['PATH_INFO']=='/user/changeCulture/new/de'){

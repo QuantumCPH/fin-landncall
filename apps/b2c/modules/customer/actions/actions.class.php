@@ -2086,5 +2086,9 @@ public function executeSmsHistory(sfWebrequest $request){
         $this->redirect($pathArray['HTTP_REFERER']);
 
     }
+ public function executeTermsAndCondition(sfWebRequest $request){
 
+    
+
+    }
 }

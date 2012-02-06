@@ -1,4 +1,5 @@
-<?php //if($request->getMethod() != 'post') $is_postback = true; ?>
+<?php use_helper('I18N') ?><?php //if($request->getMethod() != 'post') $is_postback = true; ?>
+
 <div style="">
 <form id="form1" action="<?php echo url_for('user/login') ?>" method="post" <?php $form->isMultipart() and print 'enctype="multipart/form-data" ' ?>>  
 
@@ -41,7 +42,7 @@
             </div>  
              <?php } ?>   
             <div class="submitButton">
-                <button  type="submit">Login</button>
+                <button  type="submit"><?php echo __('Login') ?></button>
             </div>    
         </div>
             <div class="right"></div>  
