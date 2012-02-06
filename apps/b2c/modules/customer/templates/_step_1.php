@@ -246,7 +246,7 @@
             <?php } ?>
             <li style=" width: 200px;">
              <?php echo $form['terms_conditions'] ?>
-             <span><a href="../customer/termAndCondition" target="_blank" style="outline:none"><?php echo $form['terms_conditions']->renderHelp() ?></a></span>
+             <span><a href="../customer/termsAndCondition" target="_blank" style="outline:none"><?php echo $form['terms_conditions']->renderHelp() ?></a></span>
              </li>
 			 <?php
             $error_is_newsletter_subscriber = false;;
