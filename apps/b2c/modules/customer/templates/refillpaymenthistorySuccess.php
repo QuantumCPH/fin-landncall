@@ -73,7 +73,7 @@
                 </tr>
                 <?php else: ?>
                 <tr>
-                	<td colspan="3" align="right"><strong><?php __('Total');?></strong></td>
+                	<td colspan="3" align="right"><strong><?php echo __('Total');?></strong></td>
                 	<td><?php echo format_number($amount_total) ?>
                             &euro;</td>
                 	<td>&nbsp;</td><td>&nbsp;</td>
