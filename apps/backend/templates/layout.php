@@ -71,10 +71,13 @@
          <div class="logo">
   		<?php echo image_tag('/images/wls2-logo.png') ?>
             </div>       
-         
             <div class="clr"></div>
   	</div>
-      
+        <div class="clr"></div>
+            <div style="width:75%;margin:0 auto;text-align: right;">
+               <?php echo link_to(image_tag('/images/german.png'), 'user/changeCulture?new=de'); ?>
+               <?php echo link_to(image_tag('/images/english.png'), 'user/changeCulture?new=en'); ?>
+            </div>
       <?php if($sf_user->isAuthenticated()): ?>
      <div class="topNav" align="center">  
       <ul id="sddm">
@@ -321,13 +324,7 @@
 			<li>
                 <?php echo link_to(__('Logout'), 'user/logout'); ?>
             </li>
-          	<li class="last">
-                     <?php if($sf_user->getCulture()=='en'): ?>
-                        <?php echo link_to(__('German'), 'user/changeCulture?new=de'); ?>
-                     <?php else: ?>
-                         <?php echo link_to(__('English'), 'user/changeCulture?new=en'); ?>
-                    <?php endif; ?>
-            </li>
+          	
         </ul>
              </div>
       <?php endif; ?> 
