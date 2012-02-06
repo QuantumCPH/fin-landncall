@@ -26,7 +26,7 @@
                 <target>Nachfüllung</target>
             </trans-unit>
 			
-		 	<trans-unit id="6" translate="yes" reformat="yes" xml:space="default">
+	    <trans-unit id="6" translate="yes" reformat="yes" xml:space="default">
                 <source>Wls2</source>
                 <target>Wls2</target>
             </trans-unit>
@@ -615,7 +615,7 @@
                 <target>Benutzername</target>
             </trans-unit>
             <trans-unit id="123" translate="yes" reformat="yes" xml:space="default">
-			    <source>Password</source>
+		<source>Password</source>
                 <target>Kennwort</target>
             </trans-unit>
             <trans-unit id="124" translate="yes" reformat="yes" xml:space="default">
@@ -1263,17 +1263,19 @@
                 <target>- Meldung über 432 Zeichen werden verworfen</target>
             </trans-unit>
             <trans-unit id="283" translate="yes" reformat="yes" xml:space="default">
-			    <source>Your Message Here</source>
+		<source>Your Message Here</source>
                 <target>Ihre Nachricht hier</target>
             </trans-unit>
            
-
-
-
-
-			
-		
-		
+            <trans-unit id="284" translate="yes" reformat="yes" xml:space="default">
+		<source>Provide your email and password</source>
+                <target>Geben Sie Ihre E-Mail und Passwort</target>
+            </trans-unit>
+            <trans-unit id="285" translate="yes" reformat="yes" xml:space="default">
+		<source>Administrator Login </source>
+                <target>Administrator Login </target>
+            </trans-unit>
+            
         </body>
     </file>
 </xliff>

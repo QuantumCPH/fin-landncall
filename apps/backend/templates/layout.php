@@ -71,10 +71,13 @@
          <div class="logo">
   		<?php echo image_tag('/images/wls2-logo.png') ?>
             </div>       
-         
             <div class="clr"></div>
   	</div>
-      
+        <div class="clr"></div>
+            <div style="width:75%;margin:0 auto;text-align: right;">
+               <?php echo link_to(image_tag('/images/german.png'), 'user/changeCulture?new=de'); ?>
+               <?php echo link_to(image_tag('/images/english.png'), 'user/changeCulture?new=en'); ?>
+            </div>
       <?php if($sf_user->isAuthenticated()): ?>
      <div class="topNav" align="center">  
       <ul id="sddm">
