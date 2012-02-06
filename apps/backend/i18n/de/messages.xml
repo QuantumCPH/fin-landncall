@@ -1272,8 +1272,8 @@
                 <target>Geben Sie Ihre E-Mail und Passwort</target>
             </trans-unit>
             <trans-unit id="285" translate="yes" reformat="yes" xml:space="default">
-		<source>Administrator Login </source>
-                <target>Administrator Login </target>
+		<source>Administrator Login</source>
+                <target>Administrator Login</target>
             </trans-unit>
             
         </body>
