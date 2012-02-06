@@ -22,6 +22,55 @@ color:#F00000;
 }
 
 </style>
+<script type="text/javascript">
+    <!--
+        // Copyright 2006-2007 javascript-array.com
+
+        var timeout	= 500;
+        var closetimer	= 0;
+        var ddmenuitem	= 0;
+
+        // open hidden layer
+        function mopen(id)
+        {
+                // cancel close timer
+                mcancelclosetime();
+
+                // close old layer
+                if(ddmenuitem) ddmenuitem.style.visibility = 'hidden';
+
+                // get new layer and show it
+                ddmenuitem = document.getElementById(id);
+                ddmenuitem.style.visibility = 'visible';
+
+        }
+        // close showed layer
+        function mclose()
+        {
+                if(ddmenuitem) ddmenuitem.style.visibility = 'hidden';
+        }
+
+        // go close timer
+        function mclosetime()
+        {
+                closetimer = window.setTimeout(mclose, timeout);
+        }
+
+        // cancel close timer
+        function mcancelclosetime()
+        {
+                if(closetimer)
+                {
+                        window.clearTimeout(closetimer);
+                        closetimer = null;
+                }
+        }
+
+        // close layer when click-out
+        document.onclick = mclose;
+    -->
+
+    </script>
 	  </head>
     <body>
         <div id="basic">
@@ -77,11 +126,14 @@ color:#F00000;
             <?php if($sf_user->isAuthenticated()){ 
                 $modulName = $sf_context->getModuleName();
                 ?>
-                <ul class="menu-list">
-                                  
+                <ul id="sddm"> 
                     <li><?php echo link_to(__('Overview'), 'affiliate/report?show_summary=1');?></li>
-                    <li><?php echo link_to(__('Register a Customer'), '@customer_registration_step1');?></li>
-                    <li><?php echo link_to(__('Refill'), 'affiliate/refill') ?></li>
+                    <li><a onmouseover="mopen('m2')" onmouseout="mclosetime()" href="#"><?php echo __('Services');?></a>
+                    <div id="m2" onmouseover="mcancelclosetime()" onmouseout="mclosetime()"> 
+                        <?php echo link_to(__('Register a Customer'), '@customer_registration_step1');?>
+                        <?php echo link_to(__('Refill'), 'affiliate/refill') ?>
+                    </div>
+                    </li>                    
                     <li><?php echo link_to(__('Receipts'), 'affiliate/receipts');?></li>
                     
                     <li><?php echo link_to(__('My Earnings'), 'affiliate/report?show_details=1');?></li>
@@ -91,13 +143,13 @@ color:#F00000;
                     <li><?php echo link_to(__('User Guide'), 'affiliate/userguide');?></li>
                     <li><?php echo link_to(__('FAQ'), 'affiliate/faq');?></li>
                     
-                    <li><?php echo link_to(__('Logout'), 'agentUser/logout');?></li>
+                    <li class="last"><?php echo link_to(__('Logout'), 'agentUser/logout');?></li>
                        
                 </ul>
                 <?php } ?>
+               <div class="clr"></div>
             </div>
-            <div id="content" class="grid_10 omega">
-
+            <div id="content">
                 <?php if($sf_user->hasFlash('message')): ?>
                     <div id="info-message" class="grid_9 save-ok">
                         <?php echo $sf_user->getFlash('message'); ?>                        
