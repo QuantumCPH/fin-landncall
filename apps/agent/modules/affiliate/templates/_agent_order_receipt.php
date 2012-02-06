@@ -9,8 +9,7 @@ use_helper('Number');
 	
 	table.receipt {
 		width: 600px;
-		//font-family: arial;
-		//font-size: .7em;
+		
 		
 		border: 2px solid #ccc;
 	}
@@ -54,7 +53,7 @@ $wrap_content  = isset($wrap)?$wrap:false;
 	
 	<p>
 	<?php echo __('Thank you for Payment'); ?>
-	</p>
+	
 	
 	
 	<?php echo __('Below is the receipt of the order indicated.') ?>
@@ -68,25 +67,22 @@ $wrap_content  = isset($wrap)?$wrap:false;
   </tr>
   <tr>
   <td colspan="4" class="payer_summary">
-	XXXX XXX XXX
+	<?php echo sprintf("%s", $agent->getName())?><br/>
+      <?php echo $agent->getAddress() ?><br/>
+      <?php echo sprintf('%s', $customer->getPostCode()) ?><br/>
 	<br />
-	XXX XX XX
+        <?php echo sprintf('%s', $customer->getCvrNumber()) ?><br/>
 	<br />
-	
+	<?php echo __("CVR Number") ?>: <?php echo sprintf('%s', $customer->getCvrNumber()) ?><br/>
 	<br />
-	Tel:      +49XXXXXXXXXXXXXX
-	<br />	
-	<br />
-	Cvr:     XXXXXXXXX
-	<br />  </td>
+        <?php echo __("Contact Person") ?>: <?php echo sprintf('%s', $customer->getContactName()) ?><br/>
+  </td>
   </tr>
   <tr bgcolor="#CCCCCC" class="receipt_header"> 
     <th colspan="3"><?php echo __('Order Receipt') ?></th>
     <th><?php echo __('Order No.') ?> <?php echo $order; ?></th>
   </tr>
-    <?php if($agent_name!=''){ echo __('Agent Name') ?>:  <?php echo $agent_name; } ?>
-    </td>
-  </tr>
+
   <tr class="order_summary_header" bgcolor="#CCCCCC"> 
     <td><?php echo __('Date') ?></td>
     <td><?php echo __('Description') ?></td>

@@ -1049,7 +1049,7 @@ class affiliateActions extends sfActions {
             $aph->setRemainingBalance($remainingbalance);
             $aph->save();
 
-            $this->getUser()->setFlash('message', 'Your Credit Card recharge of ' . $amount . 'SEK is approved');
+            $this->getUser()->setFlash('message', 'Your Credit Card recharge of ' . $amount . 'EURO is approved');
             emailLib::sendAgentRefilEmail($this->agent, $agent_order);
             $this->redirect('affiliate/agentOrder');
         }
