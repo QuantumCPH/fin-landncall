@@ -256,13 +256,7 @@
                           echo link_to(__('Mobile Brands'), 'manufacturer/index'); 
                         }
                         ?>
-                        <?php 
-                        if($actionName=='list' && $modulName=="telecom_operator"){
-                          echo link_to(__('Mobile Operator'), 'telecom_operator/index',array('class'=>'subSelect'));
-                        }else{
-                          echo link_to(__('Mobile Operator'), 'telecom_operator/index'); 
-                        }
-                        ?>
+                       
                         <?php 
                         if($actionName=='list' && $modulName=="postal_charges"){
                           echo link_to(__('Postal charges'), 'postal_charges/index',array('class'=>'subSelect'));
