@@ -37,6 +37,7 @@ class emailLib{
                 'vat'=>$vat,
                 'agent_name'=>$recepient_agent_name,
                 'wrap'=>false,
+                'agent' => $agent
         ));
 
         
