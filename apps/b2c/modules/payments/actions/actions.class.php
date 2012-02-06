@@ -30,8 +30,10 @@ class paymentsActions extends sfActions {
 
     public function executeThankyou(sfWebRequest $request) {
         //call Culture Method For Get Current Set Culture - Against Feature# 6.1 --- 01/24/11
+      $lnaugeval=$request->getParameter('lng');
+        if(isset($lnaugeval) && $lnaugeval!=''){
         $this->getUser()->setCulture($request->getParameter('lng'));
-
+        }
         $urlval = "thanks-" . $request->getParameter('transact');
 
         $email2 = new DibsCall();
