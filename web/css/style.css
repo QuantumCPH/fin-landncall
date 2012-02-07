@@ -3,6 +3,8 @@
 body {
 	font-family:Arial, Helvetica, sans-serif;
 	font-size:12px;
+        padding:0px;
+        margin:0px;
 }
 p, h1, form, button {
 	border:0;
@@ -19,6 +21,13 @@ h3 {
 	clear:both;
 	height:1px;
 }
+a{
+    color: #D44D05;
+    text-decoration: none;
+}
+a:hover{
+    text-decoration:underline;
+}
 /* ----------- MitForm ----------- */
 .mitform {
 	margin:0 auto;
@@ -26,8 +35,7 @@ h3 {
 	padding:14px;
 }
 #basic {
-	border:solid 2px #DEDEDE;
-        margin: 6em auto;
+	
 }
 #basic h1 {
 	font-size:22px;
@@ -35,7 +43,7 @@ h3 {
 	margin:20px 5px 20px 5px;
 }
 #basic p {
-	font-size:11px;
+	font-size:13px;
 	color:#666666;
 	margin-bottom:20px;
 	border-bottom:solid 1px #dedede;
@@ -64,7 +72,7 @@ h3 {
 	margin:2px 0px 30px 10px;
 }
 #basic button {
-	clear:both;
+	/*clear:both;
 	margin-left:230px;
         margin-right:10px;
 	background:#888888;
@@ -73,7 +81,15 @@ h3 {
 	font-size:11px;
 	font-weight:bold;
 	padding:4px 6px;
-	float:left;
+	float:left;*/
+    background:url('../images/login-button.png') no-repeat !important;
+    width:79px;
+    height:27px;
+    color:#ffffff;
+    border:0px !important;
+    margin-left:230px;
+    font-size:11px;
+    font-weight: bold;
 }
 input#generic {
 	height:13px;
@@ -111,8 +127,10 @@ input#generic {
 }
 
 #header{
-    border-bottom:1px #DEDEDE solid;
-    height: 83px;
+    background: url("../images/top-ground.png") no-repeat scroll center top  transparent;
+    height: 137px;
+    margin: 0 auto 5px;
+    width: 1010px;
 }
 
 #menu{
@@ -123,6 +141,8 @@ input#generic {
 #content{
     padding-top: 10px;
     padding-bottom: 10px;
+    margin: 0 auto;
+    width: 75%;
 }
 #footer{
     border-top: 1px #DEDEDE solid;
@@ -173,41 +193,118 @@ font-weight:bold;
 margin-bottom:10px;
 }
 
-
+.logo {
+    padding-left: 25px;
+    padding-top: 13px;
+}
 .action-links{
     padding: 10px 10px 10px 5px;
     clear:both;
 }
 
 #slogan{
-    color:#A5BB3F;
+    color:#D44D05;    
+    width:1010px;
+    margin: 0 auto;
+}
+#slogan h1{
+    float:left;
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+}
+#loggedInUser{
+    float:right;
+    width: 136px;
+    white-space:nowrap;  
+}
+.clr{
+    clear:both;
+    float: none;
+}
+#menu{
+    text-align: center;
+    width: 75%;
+    margin:0 auto;
+}
+#menu ul#sddm{
+    margin: 0 auto 41px;
+    padding: 0;
+    z-index: 30;
+    width: 90%;
 }
 
-#menu ul{
-    padding-left: 2px;
-}
-
-#menu li{
+#sddm li{
+    margin: 0;
+    padding: 0;
     list-style: none;
-    padding-bottom: 10px;
-    border-bottom:#DEDEDE 1px solid;
-    border-right:#DEDEDE 1px solid;
-    padding-top: 10px;
+    float: left;
+    font: bold 11px arial;
+    background:url('../images/li-bg.png') repeat-x top left;
+    border-left: 1px solid #D44D05;
+    border-top: 1px solid #D44D05;
+    border-bottom: 1px solid #D44D05;
 }
-
-#menu li a{
-    color:#000000;
-    font-weight: bold;
+#sddm li.last
+{	
+    border-right:1px solid #F36621;    
+}    
+#sddm li a{
+    display: block;
+    margin: 0 0px 0 0;
+    padding: 4px 10px;
+    color: #D44D05;
+    text-align: center;
     text-decoration: none;
 }
 
-#menu li a:hover{
-    text-decoration: underline;
+#sddm li a:hover{
+    text-decoration:none;
+    background: #D44D05;
+    color:#ffffff;
 }
 
+#sddm div
+{	position: absolute;
+	visibility: hidden;
+	margin: 0;
+	padding: 0;
+	background: #D44D05;
+	border: 1px solid #ED8555;
+}
+
+#sddm div a
+{	position: relative;
+        display: block;
+        margin: 0;
+        padding: 5px 10px;
+        width: auto;
+        white-space: nowrap;
+        text-align: left;
+        text-decoration: none;
+        background: #D44D05;
+        color: #FFFFFF;
+        font: 11px arial;
+}
+#sddm div a:hover
+{	background: #FFFFFF;
+        color: #D44D05;
+        text-decoration: none;
+}
+#sddm div a.subSelect
+{	background: #FFFFFF;
+        color: #D44D05;
+}
+#sddm li a.current{
+    background: #D44D05 !important;
+    color: #FFFFFF !important;
+}
+#sddm li a.currentR{
+    background: #D44D05 !important;
+    color: #FFFFFF !important;
+}
 .report_container
 {
-	margin: 20px auto;	
+	margin: 0 auto 20px;	
 }
 
 .report_container h2
@@ -223,9 +320,11 @@ margin-bottom:10px;
 
 .report_container table th
 {
-	background-color: #A5BB3F;
+	/*background-color: #A5BB3F;
 	color: #fff;
-	height: 30px;
+	height: 30px;*/
+        color:#D44D05;
+        text-align: left;
 }
 
 .split-form-sign-up{padding-top:20px; float:left; clear:both; width:750px; padding-bottom:30px; min-height:382px; background-repeat:no-repeat; padding-top:20px; padding-left:30px; margin-bottom:10px;}
@@ -241,7 +340,20 @@ margin-bottom:10px;
 .split-form-sign-up ul li input.radbx{width:20px; padding:0px; border:0px; float:left;}
 .split-form-sign-up ul li.fr {width:250px; text-align:right;}
 .split-form-sign-up ul li.buttonplacement{ position: relative; right:75px;}
-.split-form-sign-up ul li button{ ;border:0 none;bottom:-70px;color:#FFFFFF;font-size:22px;height:48px;margin-top:20px;padding-bottom:7px;padding-top:5px;position:absolute;right:-180px;width:132px;}
+.split-form-sign-up ul li button{ 
+    border:0 none;
+    bottom:-70px;
+    color:#FFFFFF;
+    font-size:22px;
+    height:48px;
+    margin-top:20px;
+    padding-bottom:7px;
+    padding-top:5px;
+    /*position:absolute;
+    right:-180px;*/
+    margin-left:0 !important;
+    width:132px;
+}
 .split-form-sign-up ul li.buttonplacement2{ position: relative; right:75px;}
 
 .alert{
@@ -309,3 +421,133 @@ margin-bottom:10px;
 	color: #666666 ;
 }
 
+.bg-img{
+   width: 507px;
+   height:327px;
+   margin:0 auto 40px;
+}
+.bg-img .left{
+   background: url('../images/left-login-page-box.png') no-repeat left;
+   float: left;
+   width: 42px;
+   height:327px;
+}
+.bg-img .right{
+   background: url('../images/right-login-page-box.png') no-repeat right;
+   float: left;
+   width: 42px;
+   height:327px;
+}
+.bg-img .centerImg{
+  background: url('../images/center-login-page-box.png') repeat-x; 
+  height:327px;
+  float:left;
+  width: 423px;
+}
+.bg-img h1{
+    color:#ffffff;
+    margin-top:18px !important;
+    font-size: 26px !important;
+    text-align: center;
+}
+.bg-img h2{
+    color:#3d3d3d;
+    font-weight: normal;
+    margin-top:34px;
+    margin-left:44px;
+    margin-bottom: 14px;
+    text-align: left;
+    font-size: 14px;
+}
+.bg-img .fieldName{
+   color:#3d3d3d;
+   text-align: left;
+   margin-left: 44px;
+   font-size: 13px;
+   font-weight: bold;
+   margin-bottom:8px;
+   float:none !important;
+   clear: both !important;
+   text-align: left !important;
+   padding:0px !important;
+}
+.bg-img .fieldName .fieldError{
+   float:right;
+   font-size: 11px;
+}
+.bg-img .Inputfield{
+    text-align: left;
+    margin-left: 32px;
+    margin-bottom: 20px;    
+}
+.bg-img .fieldName label{
+    text-align: left !important;
+    padding:0px !important;
+    margin-bottom: 0px !important;
+    float:left !important;
+    display: inline !important;
+}
+.bg-img .Inputfield #login_username,.bg-img .Inputfield #login_password{
+    background: url('../images/field-img.png') no-repeat top;
+    width: 331px;
+    height: 27px;
+    border:0px;
+    padding-left:18px;
+    margin-left: 0px !important;
+}
+.bg-img .submitButton{
+    text-align: left;
+} 
+.bg-img .submitButton button{
+    background:url('../images/login-button.png') no-repeat !important;
+    width:79px;
+    height:27px;
+    color:#ffffff;
+    border:0px !important;
+    margin-left: 44px !important;
+    font-weight: bold;
+}
+.bg-img .submitButton button:hover{
+    background:url('../images/login-button-hover.png') no-repeat !important;
+}
+#sf_admin_container h1{
+  margin: 8px 0 0 0;
+  padding: 3px;
+  padding-left: 3px;
+  color: #555;
+  font-family: "Trebuchet MS", Arial, Verdana, sans-serif;
+  font-size: 17px;
+  color:#ffffff;
+  background-color: #D44D05;
+}
+.borderDiv{
+  border:1px solid #D1D1D1;
+  padding:5px;  
+}
+tr.even{
+    background-color:#FFFFFF !important;
+}
+tr.odd{
+    background-color:#FCD9C9 !important;
+}
+p.pTotal{    
+    font-weight: bold;
+    margin-top:3px;
+    text-align: right;
+    margin-right: 5px;
+    padding-top:5px;
+}
+th{
+    color: #D44D05;
+    text-align: left;
+}
+a.external_link {
+    background: url("../zerocall/images/b.png") repeat-x scroll left center transparent;
+    color: #FFFFFF;
+    font-family: arial;
+    font-size: 11px;
+    font-weight: bold;
+    line-height: 27px;
+    margin-right: 5px;
+    padding: 5px;
+}

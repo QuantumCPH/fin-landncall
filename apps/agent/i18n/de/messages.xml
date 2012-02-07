@@ -10,7 +10,7 @@
             </trans-unit>
             <trans-unit id="2" translate="yes" reformat="yes" xml:space="default">
                 <source>Register a Customer</source>
-                <target>Registrieren Sie unseren Kundenservice</target>
+                <target>Registrieren ein Kunde</target>
             </trans-unit>
             <trans-unit id="3" translate="yes" reformat="yes" xml:space="default">
                 <source>Refill</source>
@@ -925,14 +925,20 @@
             </trans-unit>
             <trans-unit id="228" translate="yes" reformat="yes" xml:space="default">
                 <source>login</source>
-                <target>login</target>
+                <target>einloggen</target>
             </trans-unit>
             <trans-unit id="229" translate="yes" reformat="yes" xml:space="default">
                 <source>invalid mobile number</source>
                 <target>ungültige Handynummer</target>
             </trans-unit>
-           
-           
+            <trans-unit id="230" translate="yes" reformat="yes" xml:space="default">
+                <source>Registration</source>
+                <target>Anmeldung</target>
+            </trans-unit>
+           <trans-unit id="231" translate="yes" reformat="yes" xml:space="default">
+                <source>Services</source>
+                <target>Dienstleistungen</target>
+            </trans-unit>            
         </body>
     </file>
 </xliff>

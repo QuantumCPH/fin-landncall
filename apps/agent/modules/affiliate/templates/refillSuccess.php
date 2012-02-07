@@ -1,11 +1,11 @@
+ <div id="sf_admin_container"><h1><?php echo __('Refill') ?></h1></div>
+        
+  <div class="borderDiv"> 
 <form method="post"  class="split-form-sign-up" id="refill_form" action="<?php url_for('affiliate/refill') ?>">
-
         <?php if($error_msg){?>
             <strong><?php echo $error_msg ?></strong>
         <?php } ?>
 	<ul class="fl col">
-	
-	      
             <li>
              <?php echo $form['mobile_number']->renderLabel() ?>
              <?php echo $form['mobile_number'] ?>
@@ -47,3 +47,5 @@
 			  
 	</ul>
 </form>
+      <div class="clr"></div>
+  </div>

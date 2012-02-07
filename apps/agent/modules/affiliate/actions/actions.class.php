@@ -75,7 +75,7 @@ class affiliateActions extends sfActions {
         //echo count($registrations);
         $ar = new Criteria();
         $ar->add(TransactionPeer::AGENT_COMPANY_ID, $agent_company_id);
-        $ar->add(TransactionPeer::DESCRIPTION, 'Anmeldung inc. sprechen', Criteria::NOT_EQUAL);
+        $ar->add(TransactionPeer::DESCRIPTION, 'Registration', Criteria::NOT_EQUAL);
         $ar->addDescendingOrderByColumn(TransactionPeer::CREATED_AT);
         $ar->addAnd(TransactionPeer::TRANSACTION_STATUS_ID, 3);
         $refills = TransactionPeer::doSelect($ar);
@@ -183,7 +183,7 @@ class affiliateActions extends sfActions {
                     //echo $customer->getId();
                     $tc->add(TransactionPeer::CUSTOMER_ID, $customer->getId());
                     $tc->add(TransactionPeer::TRANSACTION_STATUS_ID, 3);
-                    $tc->add(TransactionPeer::DESCRIPTION, 'Anmeldung inc. sprechen');
+                    $tc->add(TransactionPeer::DESCRIPTION, 'Registration');
                     if (TransactionPeer::doSelectOne($tc)) {
                     $registrations[$i] = TransactionPeer::doSelectOne($tc);
                     }
@@ -261,7 +261,7 @@ class affiliateActions extends sfActions {
                     $tc = new Criteria();
                     $tc->add(TransactionPeer::CUSTOMER_ID, $sms_customer->getId());
                     $tc->add(TransactionPeer::TRANSACTION_STATUS_ID, 3);
-                    $tc->add(TransactionPeer::DESCRIPTION, 'Anmeldung inc. sprechen');
+                    $tc->add(TransactionPeer::DESCRIPTION, 'Registration');
                     $sms_registrations[$i] = TransactionPeer::doSelectOne($tc);
                     if (count($sms_registrations) >= 1) {
                     $sms_registration_earnings = $sms_registration_earnings + $sms_registrations[$i]->getAmount();
@@ -347,7 +347,8 @@ class affiliateActions extends sfActions {
                 $transaction->setAmount($extra_refill);
 
                 //get agent name
-                $transaction->setDescription($this->getContext()->getI18N()->__('Refill via agent') . '(' . $agent->getName() . ')');
+                //$transaction->setDescription($this->getContext()->getI18N()->__('Refill via agent') . '(' . $agent->getName() . ')');
+                $transaction->setDescription('Refill');
                 $transaction->setAgentCompanyId($agent->getId());
 
                 $order->setAgentCommissionPackageId($agent->getAgentCommissionPackageId());
@@ -416,9 +417,9 @@ class affiliateActions extends sfActions {
                     $order->save();
                     $transaction->save();
                     $this->customer = $order->getCustomer();
-                    $this->getUser()->setCulture('de');
+                  //  $this->getUser()->setCulture('de');
                     emailLib::sendRefillEmail($this->customer, $order);
-                    $this->getUser()->setCulture('en');
+                 //   $this->getUser()->setCulture('en');
                     $this->getUser()->setFlash('message', $this->getContext()->getI18N()->__('%1% account is successfully refilled with %2% EURO.', array("%1%" => $customer->getMobileNumber(), "%2%" => $transaction->getAmount())));
 //                                      echo 'rehcarged, redirecting';
                     $this->redirect('affiliate/receipts');
@@ -652,8 +653,10 @@ class affiliateActions extends sfActions {
 
         $transaction->setAgentCompanyId($customer->getReferrerId());
 
+
         $transaction->setAmount($order->getProduct()->getPrice() + $order->getProduct()->getRegistrationFee()+ ($order->getProduct()->getRegistrationFee()*.25));
-        $transaction->setDescription($this->getContext()->getI18N()->__('Anmeldung inc. sprechen'));
+        $transaction->setDescription('Registration');
+
         $transaction->setOrderId($order->getId());
         $transaction->setCustomerId($customer_id);
 
@@ -903,9 +906,9 @@ class affiliateActions extends sfActions {
             Telienta::createAAccount($TelintaMobile, $this->customer->getUniqueid());
             //Telienta::createCBount($TelintaMobile, $this->customer->getUniqueid());
             //generate Email
-            $this->getUser()->setCulture('de');
+           // $this->getUser()->setCulture('de');
             emailLib::sendCustomerRegistrationViaAgentEmail($this->customer, $order);
-            $this->getUser()->setCulture('en');
+         //   $this->getUser()->setCulture('en');
             $this->getUser()->setFlash('message', 'Customer ' . $this->customer->getMobileNumber() . ' is registered successfully');
             $this->redirect('affiliate/receipts');
         }

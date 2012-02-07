@@ -32,7 +32,7 @@
                       
                        
                     <tr class="headings">
-                    <th width="20%"   align="left"><?php echo __('Date &amp; time') ?></th>
+                    <th width="20%"   align="left"><?php echo __('Date & time') ?></th>
                     <th  width="20%"  align="left"><?php echo __('Phone Number') ?></th>
                     <th width="10%"   align="left"><?php echo __('Duration') ?></th>
                     <th  width="10%"  align="left"><?php echo __('VAT') ?></th>

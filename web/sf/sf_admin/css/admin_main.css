@@ -96,16 +96,16 @@
 #sf_admin_container .save-ok
 {
   margin-bottom: 10px;
-  border: 1px solid #73B65A;
+  
 }
 
 #sf_admin_container .save-ok h2
 {
   margin: 0 !important;
-  padding: 5px 20px 5px 25px;
+  padding: 6px 20px 4px 25px;
   font-size: 11px;
   color: #fff;
-  background: #73B65A url(../images/ok.png) no-repeat 5px 2px;
+  background: #E0550F url(../images/ok.png) no-repeat 5px 2px;
 }
 
 #sf_admin_container .form-row
@@ -234,25 +234,25 @@
 #sf_admin_container .sf_admin_action_create
 {
   background: url(../images/add.png) no-repeat 3px 2px;
-  border-right: 4px solid #73B65A !important;
+  border-right: 4px solid #D44D05 !important;
 }
 
 #sf_admin_container .sf_admin_action_save
 {
   background: url(../images/save.png) no-repeat 3px 2px;
-  border-right: 4px solid #73B65A !important;
+  border-right: 4px solid #D44D05 !important;
 }
 
 #sf_admin_container .sf_admin_action_save_and_add
 {
   background: url(../images/save.png) no-repeat 3px 2px;
-  border-right: 4px solid #73B65A !important;
+  border-right: 4px solid #D44D05 !important;
 }
 
 #sf_admin_container .sf_admin_action_save_and_list
 {
   background: url(../images/save.png) no-repeat 3px 2px;
-  border-right: 4px solid #73B65A !important;
+  border-right: 4px solid #D44D05 !important;
 }
 
 #sf_admin_container .sf_admin_action_delete
@@ -270,7 +270,7 @@
 #sf_admin_container .sf_admin_action_filter
 {
   background: url(../images/filter.png) no-repeat 3px 2px;
-  border-right: 4px solid #66f !important;
+  border-right: 4px solid #D44D05 !important;  
 }
 
 #sf_admin_container .sf_admin_action_reset_filter
@@ -282,7 +282,7 @@
 #sf_admin_container .sf_admin_action_list
 {
   background: url(../images/list.png) no-repeat 3px 2px;
-  border-right: 4px solid #66f !important;
+  border-right: 4px solid #D44D05 !important;
 }
 
 #sf_admin_container .sf_admin_default_action

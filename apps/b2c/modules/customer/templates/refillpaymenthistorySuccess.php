@@ -23,7 +23,7 @@
 			  <table width="100%" border="0" cellspacing="0" cellpadding="0" class="callhistory">
                 <tr>
                   <td class="title"><?php echo __('Order Numer') ?></td>
-                  <td class="title" nowrap><?php echo __('Date &amp; Time') ?></td>
+                  <td class="title" nowrap><?php echo __('Date & time') ?></td>
                   <td class="title"><?php echo __('Description') ?></td>
                   <td class="title"><?php echo __('Amount') ?></td>
                   <td class="title"><?php echo __('Type') ?></td>
@@ -36,14 +36,12 @@
                   <td><?php  echo $transaction->getOrderId() ?></td>
                   <td ><?php echo  $transaction->getCreatedAt() ?></td>
                   <td nowrap><?php 
-                  if($transaction->getDescription()=="Anmeldung inc. sprechen"){
-                      echo __('Smartsim including pot');
-                  }else{
+
                         if($transaction->getDescription()=="Refill"){
                           echo __("Refill ");echo $transaction->getAmount();
                         }else{
                           echo __($transaction->getDescription());
-                        } 
+
                   }?></td>
                   <td><?php echo $transaction->getAmount(); $amount_total += $transaction->getAmount() ?>
                             &euro;</td>

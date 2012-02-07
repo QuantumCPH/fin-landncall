@@ -5,8 +5,8 @@
         <header />
         <body>
             <trans-unit id="1" translate="yes" reformat="yes" xml:space="default">
-                <source>Login in</source>
-                <target>einloggen in</target>
+                <source>Login</source>
+                <target>einloggen</target>
             </trans-unit>
             <trans-unit id="2" translate="yes" reformat="yes" xml:space="default">
                 <source>Log on on my side</source>
@@ -228,7 +228,7 @@
             </trans-unit>
             <trans-unit id="56" translate="yes" reformat="yes" xml:space="default">
                 <source>Login to your account</source>
-                <target>Login auf Ihr Konto</target>
+                <target>Einloggen auf Ihr Konto</target>
             </trans-unit>
             <trans-unit id="57" translate="yes" reformat="yes" xml:space="default">
                 <source>send password message</source>
@@ -534,7 +534,7 @@
             </trans-unit>
                <trans-unit id="131" translate="yes" reformat="yes" xml:space="default">
                 <source>City</source>
-                <target>City</target>
+                <target>Stadt</target>
             </trans-unit>
                <trans-unit id="132" translate="yes" reformat="yes" xml:space="default">
                 <source>Birth date &lt;br /&gt;(dd-mm-yyyy)</source>
@@ -637,8 +637,8 @@
                 <target>Last automatisch &lt;br /&gt; wenn der Topf unten:</target>
             </trans-unit>
               <trans-unit id="156" translate="yes" reformat="yes" xml:space="default">
-                <source>automatic replenishment</source>
-                <target>automatischer Nachschub</target>
+                <source>Automatic replenishment</source>
+                <target>Automatischer Nachschub</target>
             </trans-unit>
               <trans-unit id="157" translate="yes" reformat="yes" xml:space="default">
                 <source>If your credit card that is registered for the service of any reason is no longer active, you can disable service and then activate it again with another credit card.</source>
@@ -931,7 +931,43 @@
                 <source>Terms And Condition</source>
                 <target>Bedingungen und den Zustand</target>
             </trans-unit>
-            
+
+              <trans-unit id="229" translate="yes" reformat="yes" xml:space="default">
+                <source>Bonus awarded</source>
+                <target>Bonus vergeben</target>
+            </trans-unit>
+
+    <trans-unit id="230" translate="yes" reformat="yes" xml:space="default">
+                <source>We hereby confirm that you have received commissions deposited into your account that you have referred a friend about Smartsim from wls.Gå in to "My Pages" and go to "Other History" under the "Call History" to see what you have earned.</source>
+                <target>Wir bestätigen hiermit, dass Sie erhielt Aufträge hinterlegt auf Ihr Konto, dass Sie einen Freund über SmartSim aus wls.Gå in zu "Meine Favoriten" bezeichnet und gehen Sie auf "Andere Geschichte" unter dem "Call History" zu sehen, was Sie verdient haben.</target>
+            </trans-unit>
+
+    <trans-unit id="231" translate="yes" reformat="yes" xml:space="default">
+                <source>Bonus Receiver</source>
+                <target>bonus-Empfänger</target>
+            </trans-unit>
+  <trans-unit id="232" translate="yes" reformat="yes" xml:space="default">
+                <source>Registered Friend</source>
+                <target>Registrierte Freund</target>
+            </trans-unit>
+
+ <trans-unit id="233" translate="yes" reformat="yes" xml:space="default">
+                <source>Registration</source>
+                <target>Anmeldung</target>
+            </trans-unit>
+
+ <trans-unit id="234" translate="yes" reformat="yes" xml:space="default">
+                <source>Auto Refill</source>
+                <target>Auto Refill</target>
+            </trans-unit>
+
+ <trans-unit id="235" translate="yes" reformat="yes" xml:space="default">
+                <source>Invitation Bonus</source>
+                <target>Einladung Bonus</target>
+            </trans-unit>
+
+
+
         </body>
     </file>
 </xliff>

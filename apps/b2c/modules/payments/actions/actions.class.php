@@ -1,5 +1,4 @@
 <?php
-
 require_once(sfConfig::get('sf_lib_dir') . '/changeLanguageCulture.php');
 require_once(sfConfig::get('sf_lib_dir') . '/emailLib.php');
 require_once(sfConfig::get('sf_lib_dir') . '/commissionLib.php');
@@ -175,7 +174,7 @@ class paymentsActions extends sfActions {
         //$transaction->setAmount($order->getProduct()->getPrice() - $order->getProduct()->getInitialBalance() + $order->getExtraRefill());
         $transaction->setAmount($order->getProduct()->getPrice() + $this->postalcharge + $order->getProduct()->getRegistrationFee());
         //TODO: $transaction->setAmount($order->getProduct()->getPrice());
-        $transaction->setDescription($this->getContext()->getI18N()->__('Anmeldung inc. sprechen'));
+        $transaction->setDescription('Registration');
         $transaction->setOrderId($order->getId());
         $transaction->setCustomerId($customer_id);
         //$transaction->setTransactionStatusId() // default value 1
@@ -504,7 +503,7 @@ class paymentsActions extends sfActions {
                     // make a new transaction to show in payment history
                     $transaction_i = new Transaction();
                     $transaction_i->setAmount($comsion);
-                    $transaction_i->setDescription("Invitation Bonus for Mobile Number: " . $invite->getInviteNumber());
+                    $transaction_i->setDescription('Invitation Bonus');
                     $transaction_i->setCustomerId($invite->getCustomerId());
                     $transaction_i->setOrderId($OrderId);
                     $transaction_i->setTransactionStatusId(3);
@@ -532,7 +531,18 @@ class paymentsActions extends sfActions {
 
                     $invitevar = $invite->getCustomerId();
                     if (isset($invitevar)) {
-                        emailLib::sendCustomerConfirmRegistrationEmail($invite->getCustomerId());
+
+                         if($this->getUser()->getCulture()=='en'){
+
+          $subject ='Bonus awarded';
+   }else{
+         $subject ='Bonus vergeben';
+   }
+
+  //email abou bonus
+    //   emailLib::sendCustomerConfirmRegistrationEmail(1,1,$subject);
+
+                        emailLib::sendCustomerConfirmRegistrationEmail($invite->getCustomerId(),$this->customer,$subject);
                     }
                 }
               $lang = 'de';
@@ -604,6 +614,11 @@ class paymentsActions extends sfActions {
         $email2->save();
     }
 
+  public function executeTest(sfWebRequest $request) {
 
+
+  
+       return sfView::NONE;
+    }
  
 }

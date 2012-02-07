@@ -97,15 +97,15 @@
 </script>
 
 <form action="<?php echo url_for('@customer_registraion_complete') ?>"  method="post" id="payment" onsubmit="return checkForm()">
+   <div id="sf_admin_container"><h1><?php echo __('Create a customer') ?> <span class="active">- <?php echo __('Step 2') ?></span></h1></div>
+        
+  <div class="borderDiv">   
     <div class="left-col">
         <div class="split-form-sign-up">
-            <div class="step-details"> <strong><?php echo __('Create a customer') ?> <span class="active">- <?php echo __('Step 2') ?></span></strong> </div>
+            <div class="step-details"></div>
             <div class="fl col">
                 <ul>
                     <!-- payment details -->
-
-
-
                     <li>
                         <label><?php echo $order->getProduct()->getName() ?> <?php echo __('details') ?>:</label>
                     </li>
@@ -128,6 +128,7 @@
                             <?php echo format_number($order->getProduct()->getPrice()) ?> &euro;
                         </label>
 
+
                         <?php
                             $product_price_vat = $order->getProduct()->getRegistrationFee() * .25;
                             $product_price = ($order->getProduct()->getPrice() + $order->getProduct()->getRegistrationFee());
@@ -140,6 +141,7 @@
                                 $error_quantity = true;
 ?>
                     <?php if ($error_quantity) {
+
                     ?>
                                 <li class="error">
 <?php echo $form['quantity']->renderError() ?>
@@ -181,6 +183,7 @@
                         </ul>
                         <!-- hidden fields -->
 <?php echo $form->renderHiddenFields() ?>
+
                             <input type="hidden" name="orderid" value="<?php echo $order_id ?>"/>
                                 <input type="hidden" name="amount" id="total" value="<?php echo $total ?>"/>
 
@@ -192,8 +195,11 @@
                                     </li>
                 </ul>
             </div>
+
         </div>
     </div>
+      <div class="clr"></div>
+  </div>    
 </form>
 <script type="text/javascript">
     jq('#quantity_error').hide();

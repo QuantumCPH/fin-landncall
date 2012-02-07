@@ -16,10 +16,7 @@
     <table width="100%" cellspacing="0" cellpadding="2" class="tblAlign">
                        
                       
-                       <tr>
-                          <td  id="sf_admin_list_th_id" width="20%" class="leftHeadign"><?php echo  __('Description') ?></td>
-							<td   >Value</td>
-                      </tr>
+                      
                           <tr>
                     <td class="leftHeadign"><?php echo  __('Customer Balance') ?></td>
                      <td  ><?php
@@ -171,7 +168,7 @@ if(isset($val) && $val!=""){  ?>
 
                   
               </table>
-              
+      <br />        
 </div>
 
 

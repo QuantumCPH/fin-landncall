@@ -35,7 +35,7 @@
                 <tr <?php echo $class;   ?>>
                   <td><?php  echo $transaction->getOrderId() ?></td>
                   <td><?php echo  $transaction->getCreatedAt() ?></td>
-                  <td><?php echo $transaction->getDescription() ?></td>
+                  <td><?php echo __($transaction->getDescription()) ?></td>
                   <td><?php echo $transaction->getAmount(); $amount_total += $transaction->getAmount() ?>
                               &nbsp;&euro;</td>
                 
