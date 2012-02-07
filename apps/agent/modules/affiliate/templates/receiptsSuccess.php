@@ -44,7 +44,7 @@
 			<?php echo BaseUtil::format_number($registration->getAmount()) ?>
 		</td>
 		<td>
-		<?php echo $registration->getDescription() ?>
+		<?php echo __($registration->getDescription()) ?>
 		</td>
 		<td><a href="#" class="receipt" onclick="javascript: window.open('<?php echo url_for('affiliate/printReceipt?tid='.$registration->getId(), true) ?>')"><?php echo __('Receipt') ?></a>
 		</td>
@@ -88,7 +88,7 @@
 			<?php echo BaseUtil::format_number($refill->getAmount()) ?>
 		</td>
 		<td>
-		<?php echo $refill->getDescription() ?>
+		<?php echo __($refill->getDescription()) ?>
 		</td>
 		<td><a href="#" class="receipt" onclick="javascript: window.open('<?php echo url_for('affiliate/printReceipt?tid='.$refill->getId(), true) ?>')"> <?php echo __('Receipt') ?></a>
 		</td>
