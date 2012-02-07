@@ -6,4 +6,8 @@ class Product extends BaseProduct
 	{
 		return $this->getName();
 	}
+
+         function getTotalAmount(){
+            return $this->getPrice()+$this->getRegistrationFee();
+        }
 }

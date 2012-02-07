@@ -173,7 +173,7 @@ class paymentsActions extends sfActions {
         $order->setIsFirstOrder(1);
         $order->save();
         //$transaction->setAmount($order->getProduct()->getPrice() - $order->getProduct()->getInitialBalance() + $order->getExtraRefill());
-        $transaction->setAmount($order->getProduct()->getPrice() + $this->postalcharge);
+        $transaction->setAmount($order->getProduct()->getPrice() + $this->postalcharge + $order->getProduct()->getRegistrationFee());
         //TODO: $transaction->setAmount($order->getProduct()->getPrice());
         $transaction->setDescription($this->getContext()->getI18N()->__('Anmeldung inc. sprechen'));
         $transaction->setOrderId($order->getId());

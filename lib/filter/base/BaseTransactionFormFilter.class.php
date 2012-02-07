@@ -25,7 +25,7 @@ class BaseTransactionFormFilter extends BaseFormFilterPropel
     ));
 
     $this->setValidators(array(
-      'amount'                => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
+      'amount'                => new sfValidatorSchemaFilter('text', new sfValidatorNumber(array('required' => false))),
       'description'           => new sfValidatorPass(array('required' => false)),
       'order_id'              => new sfValidatorPropelChoice(array('required' => false, 'model' => 'CustomerOrder', 'column' => 'id')),
       'customer_id'           => new sfValidatorPropelChoice(array('required' => false, 'model' => 'Customer', 'column' => 'id')),
