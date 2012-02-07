@@ -118,11 +118,8 @@ $wrap_content  = isset($wrap)?$wrap:false;
     <?php if ($order->getIsFirstOrder())
     {
         echo $order->getProduct()->getName();
-        if($transaction->getDescription()=="Anmeldung inc. sprechen"){
-          echo "<br />["; echo __('Smartsim including pot'); echo "]";
-        }else{
-            echo  '<br />['; echo __($transaction->getDescription()); echo ']';
-        }		
+        echo  '<br />['; echo __($transaction->getDescription()); echo ']';
+		
     }
     else
     {
