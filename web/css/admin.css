@@ -15,7 +15,7 @@ h2{
     width:1010px;
     height: 137px;
     background: url('../images/top-ground.png') no-repeat top;
-    margin:0 auto 51px;
+    margin:0 auto 26px;
 }
 .logo{
     padding-top: 13px;
@@ -32,7 +32,7 @@ h2{
 }
 .topNav{
     width:558px;
-    margin: 0 auto 98px;
+    margin: 0 auto 52px;
 }
 
 .clr{
@@ -152,6 +152,7 @@ tr.headings{
 tr.headings th{
    border-right: 1px solid #D44D05 !important; 
    border-bottom: 1px solid #D44D05 !important;
+   text-align: left;
 }
 tr.headings th.last{
    border-right: 0px !important; 
