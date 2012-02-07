@@ -31,8 +31,8 @@ class BaseGetrefferredtransactionsplittedFormFilter extends BaseFormFilterPropel
     $this->setValidators(array(
       'transaction_id'    => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
       'customer_order_id' => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
-      'amount'            => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
-      'amount_cur_month'  => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
+      'amount'            => new sfValidatorSchemaFilter('text', new sfValidatorNumber(array('required' => false))),
+      'amount_cur_month'  => new sfValidatorSchemaFilter('text', new sfValidatorNumber(array('required' => false))),
       'customer_id'       => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
       'is_first_order'    => new sfValidatorChoice(array('required' => false, 'choices' => array('', 1, 0))),
       'referrer_id'       => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),

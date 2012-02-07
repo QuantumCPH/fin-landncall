@@ -29,7 +29,7 @@ class BaseGetrefferredtransactionsForm extends BaseFormPropel
     $this->setValidators(array(
       'transaction_id'        => new sfValidatorInteger(),
       'customer_order_id'     => new sfValidatorInteger(),
-      'amount'                => new sfValidatorInteger(),
+      'amount'                => new sfValidatorNumber(),
       'customer_id'           => new sfValidatorInteger(array('required' => false)),
       'is_first_order'        => new sfValidatorBoolean(),
       'registration_earning'  => new sfValidatorNumber(array('required' => false)),

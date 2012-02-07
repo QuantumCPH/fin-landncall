@@ -653,8 +653,10 @@ class affiliateActions extends sfActions {
 
         $transaction->setAgentCompanyId($customer->getReferrerId());
 
-        $transaction->setAmount(($order->getProduct()->getPrice() - $order->getProduct()->getInitialBalance() + $order->getExtraRefill()) / 100);
+
+        $transaction->setAmount($order->getProduct()->getPrice() + $order->getProduct()->getRegistrationFee()+ ($order->getProduct()->getRegistrationFee()*.25));
         $transaction->setDescription('Registration');
+
         $transaction->setOrderId($order->getId());
         $transaction->setCustomerId($customer_id);
 
@@ -728,15 +730,15 @@ class affiliateActions extends sfActions {
             $transaction->setTransactionStatusId(sfConfig::get('app_status_error', 5)); //error in amount
             $order->getCustomer()->setCustomerStatusId(sfConfig::get('app_status_error', 5)); //error in amount
         } else if ($transaction->getAmount() < $order_amount) {
-            $transaction->setAmount($order_amount / 100);
+            $transaction->setAmount($order_amount);
         }
 
         $is_transaction_completed = $transaction->getTransactionStatusId() == sfConfig::get('app_status_completed', 3);
         $agentcomession = Null;
         // if transaction ok
         if ($is_transaction_completed) {
-            $product_price = $order->getProduct()->getPrice() - $order->getExtraRefill();
-            $product_price_vat = .20 * $product_price;
+            $product_price = $order->getProduct()->getPrice() + $order->getProduct()->getRegistrationFee();
+            $product_price_vat = .25 * $order->getProduct()->getRegistrationFee();
             $order->setAgentCommissionPackageId($order->getCustomer()->getAgentCompany()->getAgentCommissionPackageId());
             ///////////////////////////commision calculation by agent product ///////////////////////////////////////
             $cp = new Criteria;

@@ -30,8 +30,8 @@ class BaseGetrefferredtransactionsplittedForm extends BaseFormPropel
     $this->setValidators(array(
       'transaction_id'    => new sfValidatorInteger(),
       'customer_order_id' => new sfValidatorInteger(),
-      'amount'            => new sfValidatorInteger(),
-      'amount_cur_month'  => new sfValidatorInteger(),
+      'amount'            => new sfValidatorNumber(),
+      'amount_cur_month'  => new sfValidatorNumber(),
       'customer_id'       => new sfValidatorInteger(array('required' => false)),
       'is_first_order'    => new sfValidatorBoolean(),
       'referrer_id'       => new sfValidatorInteger(array('required' => false)),

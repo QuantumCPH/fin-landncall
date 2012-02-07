@@ -93,40 +93,12 @@ $customer_form->unsetAllExcept(array('auto_refill_amount', 'auto_refill_min_bala
 	
 	function calc()
 	{
-		var product_price = $('#product_price').val();
-		var quantity = $('#quantity').val();
-			var postal=  $('#postal').val();
-		var extra_refill = $('#extra_refill').val();
 		
-		var cf_options = {
-		  decimalSymbol: ',',
-		  digitGroupSymbol: '.',
-		  dropDecimals: true,
-		  groupDigits: true,
-		  symbol: '',
-		  roundToDecimalPlace: 2
-		};
-		
-		
-		$('#extra_refill_span').text(extra_refill); //update the vat span
-		
-		//var vat = .20 * (parseFloat(product_price) * parseFloat(quantity));
-		var vat = .25 * (parseFloat(product_price) * parseFloat(quantity));
-	
-		$('#vat').val(vat);
-
-
-		$('#vat_span').text(vat);
-		$('#vat_span').formatCurrency(cf_options);
-		
-		var total = Math.ceil(parseFloat(product_price) * parseFloat(quantity) + parseFloat(extra_refill) + parseFloat(vat)+ parseFloat(postal));
-		$('#total_span').text(total);
-		$('#total_span').formatCurrency(cf_options);
-		$('#total').val(total*100);
+                var total = $('#total').val();
                 att2= $('#user_attr_2').val();
                 att3= $('#user_attr_3').val();
-                var accepturlstr = "<?php echo $relay_script_url.url_for('@epay_accept_url', true);  ?>?user_attr_2="+att2+"&user_attr_3="+att3+"&lng=<?php echo $sf_user->getCulture() ?>&accept=yes&subscriptionid=1&orderid=<?php echo $order_id; ?>&amount="+total*100;
-                 var callbackurlstr = "<?php echo $relay_script_url.url_for('@dibs_accept_url', true);  ?>?user_attr_2="+att2+"&user_attr_3="+att3+"&lng=<?php echo  $sf_user->getCulture() ?>&accept=yes&subscriptionid=3&orderid=<?php echo $order_id; ?>&amount="+total*100;
+                var accepturlstr = "<?php echo $relay_script_url.url_for('@epay_accept_url', true);  ?>?user_attr_2="+att2+"&user_attr_3="+att3+"&lng=<?php echo $sf_user->getCulture() ?>&accept=yes&subscriptionid=1&orderid=<?php echo $order_id; ?>&amount="+total;
+                 var callbackurlstr = "<?php echo $relay_script_url.url_for('@dibs_accept_url', true);  ?>?user_attr_2="+att2+"&user_attr_3="+att3+"&lng=<?php echo  $sf_user->getCulture() ?>&accept=yes&subscriptionid=3&orderid=<?php echo $order_id; ?>&amount="+total;
                 $('#idaccepturl').val(accepturlstr);
 
                  if(document.getElementById('user_attr_1').checked){
@@ -175,18 +147,19 @@ $customer_form->unsetAllExcept(array('auto_refill_amount', 'auto_refill_min_bala
             
             <!-- payment details -->
             <li>
-              <label><?php echo __('Payment details') ?>:</label>
+              <label><?php echo $order->getProduct()->getName() ?> <?php echo __('Payment details') ?>:</label>
             </li>
             <li>
-              <label><?php echo $order->getProduct()->getName() ?>
+              <label>
+                                <?php echo __('Registration Fee') ?>
               	<br />
-				<?php echo __('Extra refill amount') ?>
+				<?php echo __('Product Price') ?>
 			  </label>
 
               <input type="hidden" id="product_price" value="<?php 
-              	$product_price_vat = ($order->getProduct()->getPrice()-$order->getProduct()->getInitialBalance())*.20;
+              	$product_price_vat = ($order->getProduct()->getRegistrationFee())*.20;
 
-              	$product_price = ($order->getProduct()->getPrice()-$order->getProduct()->getInitialBalance()) - $product_price_vat;
+              	$product_price = ($order->getProduct()->getPrice()+$order->getProduct()->getRegistrationFee());
               	
               	echo $product_price;
               	?>" />
@@ -194,10 +167,10 @@ $customer_form->unsetAllExcept(array('auto_refill_amount', 'auto_refill_min_bala
               
               
               <label class="fr ac">
-              	<span class="product_price_span"> <?php echo format_number($product_price) ?> </span>&euro;
+              	<span class="product_price_span"><?php echo $order->getProduct()->getRegistrationFee() ?> </span>&euro;
               	<br />
               	<span id="extra_refill_span">
-					<?php echo format_number($extra_refill) ?>
+					<?php echo $order->getProduct()->getPrice() ?>
 				</span>&euro;
 			  </label>
 
@@ -224,19 +197,27 @@ $customer_form->unsetAllExcept(array('auto_refill_amount', 'auto_refill_min_bala
 			  </span>
             </li>
             <li>
-              <label><?php echo __('VAT') ?> (25%)<br />
-                  <?php echo __('Delivery and Returns') ?> <br />
-              <?php echo __('Total amount') ?></label>
-              <input type="hidden" id="vat" value="<?php $vat = .25 * ($product_price); echo $vat; ?>" />
+              <label>
+
+              
+              <?php echo __('Delivery and Returns') ?> <br />
+              <?php echo __('VAT') ?> (25%)<br />
+              <?php echo __('Total amount') ?>
+
+
+
+              </label>
+              <input type="hidden" id="vat" value="<?php echo $product_price_vat+$postalcharge*.25; ?>" />
                 <input type="hidden" id="postal" value="<?php  echo $postalcharge; ?>" />
               <label class="fr ac" >
+                  <?php echo $postalcharge;  ?>&nbsp; &euro;
+                <br />
               	<span id="vat_span">
-              	<?php echo format_number($vat) ?>
+                    <?php echo format_number($product_price_vat+$postalcharge*.25) ?>
               	</span>&euro;
-                <br /><?php echo $postalcharge;  ?>&nbsp; &euro;
-   <br />
+                <br />
               	<?php //$total = $product_price + $extra_refill + $vat ?>
-                <?php $total = $product_price + $extra_refill + $vat+ $postalcharge ?>
+                <?php $total = $product_price + $postalcharge + ($product_price_vat+$postalcharge*.25) ?>
               	<span id="total_span">
               	<?php echo format_number($total) ?>
               	</span>&euro;
@@ -248,7 +229,7 @@ $customer_form->unsetAllExcept(array('auto_refill_amount', 'auto_refill_min_bala
 		<?php echo $form->renderHiddenFields() ?>
 		
 		<input type="hidden" name="merchant" value="90049676" />
-		<input type="hidden" name="amount" id="total" value="<?php echo $total;?>" />
+		<input type="hidden" name="amount" id="total" value="<?php echo $total*100;?>" />
 		<input type="hidden" name="currency" value="978" />
 		<input type="hidden" name="orderid" value="<?php echo $order_id;?>" />
 		<input type="hidden" name="account" value="YTIP" />

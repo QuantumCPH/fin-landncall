@@ -25,7 +25,7 @@ class BaseTransactionForm extends BaseFormPropel
 
     $this->setValidators(array(
       'id'                    => new sfValidatorPropelChoice(array('model' => 'Transaction', 'column' => 'id', 'required' => false)),
-      'amount'                => new sfValidatorInteger(),
+      'amount'                => new sfValidatorNumber(),
       'description'           => new sfValidatorString(array('max_length' => 255, 'required' => false)),
       'order_id'              => new sfValidatorPropelChoice(array('model' => 'CustomerOrder', 'column' => 'id', 'required' => false)),
       'customer_id'           => new sfValidatorPropelChoice(array('model' => 'Customer', 'column' => 'id', 'required' => false)),
