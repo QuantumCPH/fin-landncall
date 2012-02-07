@@ -51,7 +51,7 @@ class BaseAgentCompanyForm extends BaseFormPropel
       'contact_name'                => new sfValidatorString(array('max_length' => 150)),
       'email'                       => new sfValidatorString(array('max_length' => 255)),
       'mobile_number'               => new sfValidatorString(array('max_length' => 255)),
-      'head_phone_number'           => new sfValidatorInteger(),
+      'head_phone_number'           => new sfValidatorString(array('max_length' => 255)),
       'fax_number'                  => new sfValidatorInteger(),
       'website'                     => new sfValidatorString(array('max_length' => 255, 'required' => false)),
       'status_id'                   => new sfValidatorPropelChoice(array('model' => 'Status', 'column' => 'id', 'required' => false)),
@@ -66,6 +66,10 @@ class BaseAgentCompanyForm extends BaseFormPropel
       'balance'                     => new sfValidatorNumber(array('required' => false)),
       'invoice_method_id'           => new sfValidatorPropelChoice(array('model' => 'InvoiceMethod', 'column' => 'id')),
     ));
+
+    $this->validatorSchema->setPostValidator(
+      new sfValidatorPropelUnique(array('model' => 'AgentCompany', 'column' => array('cvr_number')))
+    );
 
     $this->widgetSchema->setNameFormat('agent_company[%s]');
 
