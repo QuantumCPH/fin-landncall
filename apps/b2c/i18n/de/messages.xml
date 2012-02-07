@@ -637,8 +637,8 @@
                 <target>Last automatisch &lt;br /&gt; wenn der Topf unten:</target>
             </trans-unit>
               <trans-unit id="156" translate="yes" reformat="yes" xml:space="default">
-                <source>automatic replenishment</source>
-                <target>automatischer Nachschub</target>
+                <source>Automatic replenishment</source>
+                <target>Automatischer Nachschub</target>
             </trans-unit>
               <trans-unit id="157" translate="yes" reformat="yes" xml:space="default">
                 <source>If your credit card that is registered for the service of any reason is no longer active, you can disable service and then activate it again with another credit card.</source>

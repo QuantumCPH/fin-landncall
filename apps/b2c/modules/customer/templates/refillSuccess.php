@@ -92,7 +92,7 @@ if($is_auto_refill_activated){  ?>  <div class="left-col">
 	<div class="split-form">
     <div style="width:500px;">
               <div> <?php echo __('The most convenient way to fill the pot is to enable automatic refilling (below), then you do not need to worry about the pot running out. Especially important is such trip abroad where it can be difficult to fill in in any other way.');?><br /><br /></div>
-            <div>     <b style="text-decoration:underline;"><?php echo __('automatic replenishment');?></b> </div>
+            <div>     <b style="text-decoration:underline;"><?php echo __('Automatic replenishment');?></b> </div>
                  <br />
               <div>   <b><?php echo __('Automatic Replenishment is: notactive');?></b></div>
                 
