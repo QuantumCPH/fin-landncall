@@ -503,7 +503,7 @@ class paymentsActions extends sfActions {
                     // make a new transaction to show in payment history
                     $transaction_i = new Transaction();
                     $transaction_i->setAmount($comsion);
-                    $transaction_i->setDescription("Invitation Bonus for Mobile Number: " . $invite->getInviteNumber());
+                    $transaction_i->setDescription('Invitation Bonus');
                     $transaction_i->setCustomerId($invite->getCustomerId());
                     $transaction_i->setOrderId($OrderId);
                     $transaction_i->setTransactionStatusId(3);

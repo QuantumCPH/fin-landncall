@@ -1698,7 +1698,7 @@ public function executeSmsRegistration(sfWebrequest $request) {
     $transaction = new Transaction();
     $transaction->setAgentCompanyId($customer->getReferrerId());
     $transaction->setAmount($order->getProduct()->getPrice() - $order->getProduct()->getInitialBalance() + $order->getExtraRefill());
-    $transaction->setDescription($this->getContext()->getI18N()->__('Anmeldung inc. sprechen'));
+    $transaction->setDescription('Registration');
     $transaction->setOrderId($order->getId());
     $transaction->setCustomerId($customer->getId());
     $transaction->setTransactionStatusId(1);

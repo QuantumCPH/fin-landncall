@@ -951,6 +951,22 @@
                 <target>Registrierte Freund</target>
             </trans-unit>
 
+ <trans-unit id="233" translate="yes" reformat="yes" xml:space="default">
+                <source>Registration</source>
+                <target>Anmeldung</target>
+            </trans-unit>
+
+ <trans-unit id="234" translate="yes" reformat="yes" xml:space="default">
+                <source>Auto Refill</source>
+                <target>Auto Refill</target>
+            </trans-unit>
+
+ <trans-unit id="235" translate="yes" reformat="yes" xml:space="default">
+                <source>Invitation Bonus</source>
+                <target>Einladung Bonus</target>
+            </trans-unit>
+
+
 
         </body>
     </file>

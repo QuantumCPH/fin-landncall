@@ -144,7 +144,8 @@ class customerActions extends sfActions {
 
             $transaction->setAmount($order->getProduct()->getPrice() - $order->getProduct()->getInitialBalance() + $order->getExtraRefill());
             //TODO: $transaction->setAmount($order->getProduct()->getPrice());
-            $transaction->setDescription($this->getContext()->getI18N()->__('Registration and first product order'));
+           // $this->getContext()->getI18N()->__('Registration and first product order')
+            $transaction->setDescription('Registration');
             $transaction->setOrderId($order->getId());
             $transaction->setCustomerId($customer_id);
             //$transaction->setTransactionStatusId() // default value 1
@@ -411,7 +412,8 @@ class customerActions extends sfActions {
                 $this->customer = $customerids;
                 $transaction = new Transaction();
                 $transaction->setAmount($voipcharges);
-                $transaction->setDescription($this->getContext()->getI18N()->__('Transation for VoIP Purchase'));
+                //$this->getContext()->getI18N()->__('
+                $transaction->setDescription('Transation for VoIP Purchase');
                 $transaction->setOrderId($order->getId());
                 $transaction->setCustomerId($customerids);
                 $transaction->setTransactionStatusId(3);
@@ -685,7 +687,7 @@ class customerActions extends sfActions {
         $transaction = new Transaction();
 
         $transaction->setAmount($this->order->getExtraRefill());
-        $transaction->setDescription($this->getContext()->getI18N()->__('Refill'));
+        $transaction->setDescription('Refill');
         $transaction->setOrderId($this->order->getId());
         $transaction->setCustomerId($this->order->getCustomerId());
 

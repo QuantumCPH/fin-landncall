@@ -347,7 +347,8 @@ class affiliateActions extends sfActions {
                 $transaction->setAmount($extra_refill);
 
                 //get agent name
-                $transaction->setDescription($this->getContext()->getI18N()->__('Refill via agent') . '(' . $agent->getName() . ')');
+                //$transaction->setDescription($this->getContext()->getI18N()->__('Refill via agent') . '(' . $agent->getName() . ')');
+                $transaction->setDescription('Refill');
                 $transaction->setAgentCompanyId($agent->getId());
 
                 $order->setAgentCommissionPackageId($agent->getAgentCommissionPackageId());
@@ -653,7 +654,7 @@ class affiliateActions extends sfActions {
         $transaction->setAgentCompanyId($customer->getReferrerId());
 
         $transaction->setAmount(($order->getProduct()->getPrice() - $order->getProduct()->getInitialBalance() + $order->getExtraRefill()) / 100);
-        $transaction->setDescription($this->getContext()->getI18N()->__('Anmeldung inc. sprechen'));
+        $transaction->setDescription('Registration');
         $transaction->setOrderId($order->getId());
         $transaction->setCustomerId($customer_id);
 
