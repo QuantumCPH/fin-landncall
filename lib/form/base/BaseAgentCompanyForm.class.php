@@ -43,7 +43,7 @@ class BaseAgentCompanyForm extends BaseFormPropel
       'id'                          => new sfValidatorPropelChoice(array('model' => 'AgentCompany', 'column' => 'id', 'required' => false)),
       'name'                        => new sfValidatorString(array('max_length' => 255)),
       'cvr_number'                  => new sfValidatorInteger(),
-      'ean_number'                  => new sfValidatorInteger(array('required' => false)),
+      'ean_number'                  => new sfValidatorInteger(),
       'address'                     => new sfValidatorString(array('max_length' => 255)),
       'post_code'                   => new sfValidatorInteger(),
       'country_id'                  => new sfValidatorPropelChoice(array('model' => 'EnableCountry', 'column' => 'id', 'required' => false)),
