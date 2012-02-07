@@ -416,7 +416,7 @@
             </trans-unit>
 			
 			<trans-unit id="82" translate="yes" reformat="yes" xml:space="default">
-			    <source>Date and Time</source>
+			    <source>Date &amp; Time</source>
                 <target>Datum &amp; Zeit</target>
             </trans-unit>
 			
@@ -1275,7 +1275,12 @@
 		<source>Administrator Login</source>
                 <target>Administrator einloggen</target>
             </trans-unit>
-            
+
+            	<trans-unit id="82" translate="yes" reformat="yes" xml:space="default">
+			    <source>Date &amp; time</source>
+                <target>Datum &amp; Zeit</target>
+            </trans-unit>
+			
         </body>
     </file>
 </xliff>
