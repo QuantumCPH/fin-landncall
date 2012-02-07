@@ -935,7 +935,10 @@
                 <source>Registration</source>
                 <target>Anmeldung</target>
             </trans-unit>
-           
+           <trans-unit id="231" translate="yes" reformat="yes" xml:space="default">
+                <source>Services</source>
+                <target>Dienstleistungen</target>
+            </trans-unit>            
         </body>
     </file>
 </xliff>
