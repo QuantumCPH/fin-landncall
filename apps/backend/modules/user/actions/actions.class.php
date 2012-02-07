@@ -94,7 +94,7 @@ if(isset($pathArray['HTTP_REFERER']) && $pathArray['HTTP_REFERER']!=''){
                 $this->redirect($pathArray['HTTP_REFERER']);  
             }
      
-      
+          
         }
           $this->redirect('customer/allRegisteredCustomer');
     }
