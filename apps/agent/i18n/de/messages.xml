@@ -925,7 +925,7 @@
             </trans-unit>
             <trans-unit id="228" translate="yes" reformat="yes" xml:space="default">
                 <source>login</source>
-                <target>login</target>
+                <target>einloggen</target>
             </trans-unit>
             <trans-unit id="229" translate="yes" reformat="yes" xml:space="default">
                 <source>invalid mobile number</source>
