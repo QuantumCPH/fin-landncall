@@ -32,7 +32,7 @@ class AgentCompany extends BaseAgentCompany
         
        $c = new Criteria();
        $c->add(TransactionPeer::AGENT_COMPANY_ID,$this->getId());
-       $c->add(TransactionPeer::DESCRIPTION,'Registrering inkl. taletid' );
+       $c->add(TransactionPeer::DESCRIPTION,'Registration' );
        $transactions=TransactionPeer::doSelect($c);       
        $sum=0.00;
        $per=0.00;
@@ -51,7 +51,7 @@ class AgentCompany extends BaseAgentCompany
 
        $c = new Criteria();
        $c->add(TransactionPeer::AGENT_COMPANY_ID,$this->getId());
-       $c->add(TransactionPeer::DESCRIPTION,'Zerocall tank-op' );
+       $c->add(TransactionPeer::DESCRIPTION,'Refill' );
        $transactions=TransactionPeer::doSelect($c);
        //$agent
        //$str=array();
@@ -80,7 +80,7 @@ class AgentCompany extends BaseAgentCompany
        foreach($transactions as $transaction)
        {
            $description=substr($transaction->getDescription(),0 ,26);
-           if($description== 'Zerocall refill via agent ')
+           if($description== 'Refill')
            {
               // echo $description;
                $name=substr($transaction->getDescription(),27,-1 );
@@ -103,7 +103,7 @@ class AgentCompany extends BaseAgentCompany
 
        $c = new Criteria();
        $c->add(TransactionPeer::AGENT_COMPANY_ID,$this->getId());
-       $c->add(TransactionPeer::DESCRIPTION,'Registrering inkl. taletid' );
+       $c->add(TransactionPeer::DESCRIPTION,'Registration' );
        $transactions=TransactionPeer::doSelect($c);
        $sum=0.00;
        $per=0.00;
@@ -122,7 +122,7 @@ class AgentCompany extends BaseAgentCompany
 
        $c = new Criteria();
        $c->add(TransactionPeer::AGENT_COMPANY_ID,$this->getId());
-       $c->add(TransactionPeer::DESCRIPTION,'Zerocall tank-op' );
+       $c->add(TransactionPeer::DESCRIPTION,'Refill' );
        $transactions=TransactionPeer::doSelect($c);
        //$agent
        //$str=array();
@@ -149,7 +149,7 @@ class AgentCompany extends BaseAgentCompany
        foreach($transactions as $transaction)
        {
            $description=substr($transaction->getDescription(),0 ,26);
-           if($description== 'Zerocall refill via agent ')
+           if($description== 'Refill')
            {
               // echo $description;
                $name=substr($transaction->getDescription(),27,-1 );
