@@ -93,6 +93,14 @@ color:#F00000;
                 <?php } ?>
                 </div>
                     <?php } ?>
+                    
+                    <div style="vertical-align: top;float: right;margin-right: 10px;">
+
+                        <?php echo link_to(image_tag('/images/german.png'), 'affiliate/changeCulture?new=de'); ?>
+
+                         <?php echo link_to(image_tag('/images/english.png'), 'affiliate/changeCulture?new=en'); ?>
+
+                    </div>
                     <div class="clr"></div>
             </div>
                
@@ -113,8 +121,7 @@ color:#F00000;
                 ?>
 <!--                <div style="position:absolute; left: 846px; top: 54px;">
                   <form action="">
-                    <?php   echo $form ;
-                    ?>
+                    <?php   echo $form ;  ?>
                     <input type="hidden" value="<?php echo $sf_user->getAttribute('product_ids') ?>" name="pid" />
                     <input type="hidden" value="<?php echo $sf_user->getAttribute('cusid') ?>" name="cid" />
                 </form>
@@ -125,23 +132,91 @@ color:#F00000;
 <!--                <h1>menu</h1>-->
             <?php if($sf_user->isAuthenticated()){ 
                 $modulName = $sf_context->getModuleName();
+                $actionName = $sf_context->getActionName();
+               // print_r($request->getPathInfoArray());
+     echo 'M '.$modulName;
+     echo '<br />';
+     echo 'A '.$actionName;
+                //var_dump($sf_context);
+                //die;
+                //$routing = $sf_context->getInstance()->getRouting();
+                //echo $routing;
                 ?>
                 <ul id="sddm"> 
-                    <li><?php echo link_to(__('Overview'), 'affiliate/report?show_summary=1');?></li>
-                    <li><a onmouseover="mopen('m2')" onmouseout="mclosetime()" href="#"><?php echo __('Services');?></a>
+                    <li>
+                      <?php 
+                      if($actionName=='report' && $modulName=="affiliate" && $sf_request->getParameter('show_summary')==1){
+                          echo link_to(__('Overview'), 'affiliate/report?show_summary=1', array('class'=>'current'));
+                      }else{
+                          echo link_to(__('Overview'), 'affiliate/report?show_summary=1');
+                      }?>
+                    </li>
+                    <li><a onmouseover="mopen('m2')" onmouseout="mclosetime()" href="#" onclick="return false;"
+                       <?php echo $actionName=='registerCustomer' || $actionName=='refill'?'class="current"':'';?>><?php echo __('Services');?></a>
                     <div id="m2" onmouseover="mcancelclosetime()" onmouseout="mclosetime()"> 
-                        <?php echo link_to(__('Register a Customer'), '@customer_registration_step1');?>
-                        <?php echo link_to(__('Refill'), 'affiliate/refill') ?>
+                     <?php 
+                      if($modulName=="affiliate" && $actionName=='registerCustomer' ){
+                          echo link_to(__('Register a Customer'), '@customer_registration_step1', array('class'=>'subSelect'));
+                      }else{
+                          echo link_to(__('Register a Customer'), '@customer_registration_step1');
+                      }
+                      
+                      if($modulName=="affiliate" && $actionName=='refill' ){
+                          echo link_to(__('Refill'), 'affiliate/refill', array('class'=>'subSelect'));
+                      }else{
+                          echo link_to(__('Refill'), 'affiliate/refill');
+                      }
+                     ?>
                     </div>
                     </li>                    
-                    <li><?php echo link_to(__('Receipts'), 'affiliate/receipts');?></li>
+                    <li><?php 
+                      if($modulName=="affiliate" && $actionName=='receipts' ){
+                          echo link_to(__('Receipts'), 'affiliate/receipts', array('class'=>'current'));
+                      }else{
+                          echo link_to(__('Receipts'), 'affiliate/receipts');
+                      }
+                       
+                     ?></li>
                     
-                    <li><?php echo link_to(__('My Earnings'), 'affiliate/report?show_details=1');?></li>
-                    <li><?php echo link_to(__('My Company Info'), 'agentcompany/view');?></li>
+                    <li><?php 
+                      //echo ');
+                      if($modulName=="affiliate" && $actionName=='report' &&  $sf_request->getParameter('show_details')==1 ){
+                          echo link_to(__('My Earnings'), 'affiliate/report?show_details=1', array('class'=>'current'));
+                      }else{
+                          echo link_to(__('My Earnings'), 'affiliate/report?show_details=1');
+                      }
+                      ?></li>
+                    <li><?php 
+                      
+                      if($modulName=="agentcompany" && $actionName=='view' ){
+                          echo link_to(__('My Company Info'), 'agentcompany/view', array('class'=>'current'));
+                      }else{
+                          echo link_to(__('My Company Info'), 'agentcompany/view');
+                      }
+                      ?></li>
 <!--                    <li><?php //echo link_to(__('Package Conversion'), 'affiliate/conversionform');?></li>-->
-                    <li><?php echo link_to(__('Supporting Handsets'), 'affiliate/supportingHandset');?></li>
-                    <li><?php echo link_to(__('User Guide'), 'affiliate/userguide');?></li>
-                    <li><?php echo link_to(__('FAQ'), 'affiliate/faq');?></li>
+                    <li><?php 
+                      if($modulName=="affiliate" && $actionName=='supportingHandset' ){
+                          echo link_to(__('Supporting Handsets'), 'affiliate/supportingHandset', array('class'=>'current'));
+                      }else{
+                          echo link_to(__('Supporting Handsets'), 'affiliate/supportingHandset');
+                      }
+                      ?></li>
+                    <li><?php 
+                      if($modulName=="affiliate" && $actionName=='userguide' ){
+                          echo link_to(__('User Guide'), 'affiliate/userguide', array('class'=>'current'));
+                      }else{
+                          echo link_to(__('User Guide'), 'affiliate/userguide');
+                      }
+                    ?></li>
+                    <li><?php 
+                      if($modulName=="affiliate" && $actionName=='faq' ){
+                          echo link_to(__('FAQ'), 'affiliate/faq', array('class'=>'current'));
+                      }else{
+                          echo link_to(__('FAQ'), 'affiliate/faq');
+                      }
+                      
+                      ?></li>
                     
                     <li class="last"><?php echo link_to(__('Logout'), 'agentUser/logout');?></li>
                        
