@@ -931,6 +931,11 @@
                 <source>invalid mobile number</source>
                 <target>ungültige Handynummer</target>
             </trans-unit>
+            <trans-unit id="230" translate="yes" reformat="yes" xml:space="default">
+                <source>Registration</source>
+                <target>Anmeldung</target>
+            </trans-unit>
+           
            
            
         </body>
