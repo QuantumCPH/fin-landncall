@@ -83,10 +83,13 @@ if(isset($pathArray['HTTP_REFERER']) && $pathArray['HTTP_REFERER']!=''){
             $this->getUser()->setCulture($request->getParameter('new'));
 
         $pathArray = $request->getPathInfoArray();
-      //   var_dump($pathArray);
+        var_dump($pathArray);
        //  die;
 
         if($pathArray['PATH_INFO']=='/user/changeCulture/new/de'){
+
+      echo $pathArray['PATH_INFO'];
+die;
 	$this->redirect('customer/allRegisteredCustomer');
 
         }elseif($pathArray['PATH_INFO']=='/user/login'){
