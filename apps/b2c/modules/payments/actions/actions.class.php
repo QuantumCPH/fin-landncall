@@ -174,7 +174,7 @@ class paymentsActions extends sfActions {
         //$transaction->setAmount($order->getProduct()->getPrice() - $order->getProduct()->getInitialBalance() + $order->getExtraRefill());
         $transaction->setAmount($order->getProduct()->getPrice() + $this->postalcharge);
         //TODO: $transaction->setAmount($order->getProduct()->getPrice());
-        $transaction->setDescription($this->getContext()->getI18N()->__('Anmeldung inc. sprechen'));
+        $transaction->setDescription('Registration');
         $transaction->setOrderId($order->getId());
         $transaction->setCustomerId($customer_id);
         //$transaction->setTransactionStatusId() // default value 1

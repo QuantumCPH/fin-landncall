@@ -75,7 +75,7 @@ class affiliateActions extends sfActions {
         //echo count($registrations);
         $ar = new Criteria();
         $ar->add(TransactionPeer::AGENT_COMPANY_ID, $agent_company_id);
-        $ar->add(TransactionPeer::DESCRIPTION, 'Anmeldung inc. sprechen', Criteria::NOT_EQUAL);
+        $ar->add(TransactionPeer::DESCRIPTION, 'Registration', Criteria::NOT_EQUAL);
         $ar->addDescendingOrderByColumn(TransactionPeer::CREATED_AT);
         $ar->addAnd(TransactionPeer::TRANSACTION_STATUS_ID, 3);
         $refills = TransactionPeer::doSelect($ar);
@@ -183,7 +183,7 @@ class affiliateActions extends sfActions {
                     //echo $customer->getId();
                     $tc->add(TransactionPeer::CUSTOMER_ID, $customer->getId());
                     $tc->add(TransactionPeer::TRANSACTION_STATUS_ID, 3);
-                    $tc->add(TransactionPeer::DESCRIPTION, 'Anmeldung inc. sprechen');
+                    $tc->add(TransactionPeer::DESCRIPTION, 'Registration');
                     if (TransactionPeer::doSelectOne($tc)) {
                     $registrations[$i] = TransactionPeer::doSelectOne($tc);
                     }
@@ -261,7 +261,7 @@ class affiliateActions extends sfActions {
                     $tc = new Criteria();
                     $tc->add(TransactionPeer::CUSTOMER_ID, $sms_customer->getId());
                     $tc->add(TransactionPeer::TRANSACTION_STATUS_ID, 3);
-                    $tc->add(TransactionPeer::DESCRIPTION, 'Anmeldung inc. sprechen');
+                    $tc->add(TransactionPeer::DESCRIPTION, 'Registration');
                     $sms_registrations[$i] = TransactionPeer::doSelectOne($tc);
                     if (count($sms_registrations) >= 1) {
                     $sms_registration_earnings = $sms_registration_earnings + $sms_registrations[$i]->getAmount();
