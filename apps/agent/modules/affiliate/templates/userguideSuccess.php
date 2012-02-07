@@ -79,3 +79,9 @@ operator og Zapna global.</p>
 </p>
  <img src="http://customer.zerocall.com/zerocall/images/userguides/iphone/call.png" alt="" style="margin-left: 40px" /> 
    -->
+<div id="sf_admin_container"><h1><?php echo __('User Guide') ?></h1></div>
+        
+ <div class="borderDiv"> 
+     User Guide
+     <div class="clr"></div>
+ </div>

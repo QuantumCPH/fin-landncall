@@ -6,10 +6,11 @@
 	}
 	
 	table.summary td {
-		font-size: 1.3em;
+		font-size: 1.2em;
 		font-weight: normal;
 	}
 </style>
+
 <div class="report_container">
    
 <?php if($sf_request->getParameter('show_summary')): ?>
@@ -22,8 +23,10 @@
                    
 
 <?php if (count($registrations)>0): ?>
-	<h2><?php echo __('Registration Earnings') ?>  </h2>
-	<table cellspacing="0" width="100%">
+        <div id="sf_admin_container"><h1><?php echo __('Registration Earnings') ?></h1></div>
+        
+        <div class="borderDiv">	
+	  <table cellspacing="0" cellpadding="2" width="100%">
 		<tr>
 
 			<th>&nbsp;</th>
@@ -36,7 +39,7 @@
 		$i = 0;
 		foreach($registrations as $registration):
 		?>
-		<tr <?php echo 'bgcolor="'.($i%2 == 0?'#f0f0f0':'#ffffff').'"' ?>>
+		<tr <?php echo 'class="'.($i%2 == 0?'odd':'even').'"' ?>>
 			<td><?php echo ++$i ?>.</td>
                         <td><?php echo $registration->getCreatedAt() ?></td>
 			<td><?php
@@ -46,9 +49,6 @@
 				echo sprintf("%s %s", $customer->getFirstName(), $customer->getLastName());
 				?>
 			</td>
-
-
-
 			<td >
 			<?php echo BaseUtil::format_number($registration->getAmount()) ?>
 			</td>
@@ -57,11 +57,14 @@
 		</tr>
 		<?php endforeach; ?>
 	</table>
+        </div>
 	<?php endif; ?>
 
 <?php if (count($sms_registrations)>0): ?>
-	<h2><?php echo __('SMS Registration Earnings') ?></h2>
-	<table cellspacing="0" width="100%">
+        <div id="sf_admin_container"><h1><?php echo __('SMS Registration Earnings') ?></h1></div>
+        
+        <div class="borderDiv">	
+	  <table cellspacing="0" width="100%">
 		<tr>
 
 			<th>&nbsp;</th>
@@ -74,7 +77,7 @@
 		$i = 0;
 		foreach($sms_registrations as $sms_registration):
 		?>
-		<tr <?php echo 'bgcolor="'.($i%2 == 0?'#f0f0f0':'#ffffff').'"' ?>>
+		<tr <?php echo 'class="'.($i%2 == 0?'odd':'even').'"' ?>>
 			<td><?php echo ++$i ?>.</td>
                         <td><?php echo $sms_registration->getCreatedAt() ?></td>
 			<td><?php
@@ -102,12 +105,15 @@
 		</tr>
 		<?php endforeach; ?>
 	</table>
+        </div>    
 	<?php endif; ?>
 
 
-	<?php if (count($refills)>0): ?>
-	<h2><?php echo __('Refills Earnings') ?></h2>
-	<table cellspacing="0" width="100%">
+	<?php if (count($refills)>0): ?>	
+        <div id="sf_admin_container"><h1><?php echo __('Refills Earnings') ?></h1></div>
+        
+        <div class="borderDiv">	
+	 <table cellspacing="0" width="100%">
 		<tr>
 			
 			<th>&nbsp;</th>
@@ -120,7 +126,7 @@
 		$i = 0;
 		foreach($refills as $refill):
 		?>
-		<tr <?php echo 'bgcolor="'.($i%2 == 0?'#f0f0f0':'#ffffff').'"' ?>>
+		<tr <?php echo 'class="'.($i%2 == 0?'odd':'even').'"' ?>>
 			<td><?php echo ++$i ?>.</td>
                         <td><?php echo $refill->getCreatedAt() ?></td>
 			<td><?php
@@ -141,12 +147,15 @@
 		</tr>
 		<?php endforeach; ?>
 	</table>
+        </div>
 	<?php endif; ?>
 
 
 <?php if (count($ef)>0): ?>
-	<h2><?php echo __('Refill from Shop Earnings') ?></h2>
-	<table cellspacing="0" width="100%" >
+        <div id="sf_admin_container"><h1><?php echo __('Refill from Shop Earnings') ?></h1></div>
+        
+        <div class="borderDiv">	
+	 <table cellspacing="0" width="100%" >
 		<tr>
 			<th>&nbsp;</th>
 			<th><?php echo __('Date') ?> </th>
@@ -171,7 +180,7 @@
                     // because the position of 'a' was the 0th (first) character.
                        
                         if(strstr($efo->getDescription(),$stringfind)){  ?>
-		<tr <?php echo 'bgcolor="'.($i%2 == 0?'#f0f0f0':'#ffffff').'"' ?> align="center">
+		<tr <?php echo 'class="'.($i%2 == 0?'odd':'even').'"' ?>>
 
 			<td><?php echo ++$i ?>.</td>
 			<td><?php echo $efo->getCreatedAt() ?></td>
@@ -191,24 +200,27 @@
 
 			<?php $earnings= $earnings + $efo->getAmount()?>
 			<?php $commission = $commission + ($efo->getCommissionAmount())?>
+                </tr>
 		<?php } ?>
 		<?php endforeach;?>
 		<tr>
-		<td colspan="3" align="right"><?php echo __('Total Refills From The Shop:') ?></td><td colspan="2"> <?php echo $i ?></td>
+                    <td>&nbsp;</td><td colspan="2" align="right"><strong><?php echo __('Total Refills From The Shop:') ?></strong></td><td colspan="2"> <?php echo $i ?></td>
 		</tr>
 		<tr>
-		<td colspan="3" align="right"><?php echo __('Total Earnings:') ?></td><td colspan="2"> <?php echo $earnings ?></td>
+		 <td>&nbsp;</td><td colspan="2" align="right"><strong><?php echo __('Total Earnings:') ?></strong></td><td colspan="2"> <?php echo $earnings ?></td>
 		</tr>
 		<tr>
-		<td colspan="3" align="right"><?php echo __('Total Commission Earned:') ?> </td><td colspan="2"> <?php echo $commission ?></td>
+		 <td>&nbsp;</td><td colspan="2" align="right"><strong><?php echo __('Total Commission Earned:') ?></strong></td><td colspan="2"> <?php echo $commission ?></td>
 		</tr>
 	</table>
+        </div>
 <?php endif; ?>
 
         <?php else: ?>
-        <h2><?php echo __('Earning Summary') ?></h2>
-<table cellspacing="0" width="60%" class="summary">
-
+        <div id="sf_admin_container"><h1><?php echo __('Earning Summary') ?></h1></div>
+        
+        <div class="borderDiv">
+          <table cellspacing="0" width="60%" class="summary">
         <?php
             if($agent->getIsPrepaid()){
         ?>
@@ -300,55 +312,46 @@
 
 
 </table>
-
+        </div>
 <p>
 </p>
+<div id="sf_admin_container"><h1><?php echo __('News Box') ?></h1></div>
+        
+        <div class="borderDiv">
 
-<h2><?php echo __('News Box');?></h2>
 <br/>
 <p>
-<font size="3">
-				<?php
+<?php
+$currentDate = date('Y-m-d');
+?>
+<?php
+foreach($updateNews as $updateNew)
+{
+   $sDate=$updateNew->getStartingDate();
+   $eDate=$updateNew->getExpireDate();
 
-					$currentDate = date('Y-m-d');
-					?>
-
-
-
-
-
-
-					<?php
-					foreach($updateNews as $updateNew)
-					{
-							   $sDate=$updateNew->getStartingDate();
-							   $eDate=$updateNew->getExpireDate();
-
-							   if($currentDate>=$sDate)
-							   {
-								   ?>
+   if($currentDate>=$sDate)
+   {
+           ?>
 
 
-								  <b><?php echo $sDate?></b><br/>
-								  <?php echo $updateNew->getHeading();?> :
-								  <?php if (strlen($updateNew->getMessage()) > 100 ) {
-									  echo substr($updateNew->getMessage(),0,100);
-									  echo link_to('....read more','affiliate/newsListing');
-								  }
-								  else{
-								  echo $updateNew->getMessage();
-								  }
-								  ?>
-								  <br/><br/>
+          <b><?php echo $sDate?></b><br/>
+          <?php echo $updateNew->getHeading();?> :
+          <?php if (strlen($updateNew->getMessage()) > 100 ) {
+                  echo substr($updateNew->getMessage(),0,100);
+                  echo link_to('....read more','affiliate/newsListing');
+          }
+          else{
+          echo $updateNew->getMessage();
+          }
+          ?>
+          <br/><br/>
 
-					<?php
-							   }
+<?php
+   }
 
-					} ?>
-
-					<b><?php echo link_to(__('View All News & Updates'),'affiliate/newsListing'); ?> </b>
-					</font>
-
+} ?>
+<b><?php echo link_to(__('View All News & Updates'),'affiliate/newsListing'); ?> </b>
 </p>
 
 

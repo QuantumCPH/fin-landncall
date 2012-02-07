@@ -1,14 +1,17 @@
-<table width="98%" cellspacing="0" cellpadding="3" align="center">
+<div id="sf_admin_container"><h1><?php echo __('Supporting Handset') ?></h1></div>
+        
+ <div class="borderDiv"> 
+     <table width="98%" cellspacing="0" cellpadding="3" align="center">
           <tbody>
-            <tr style="background-color: #FF6600; color: #fff"> 
-              <td><strong>&nbsp;<?php echo __('Brand name')?></strong></td>
-              <td><strong>&nbsp;<?php echo __('Model')?></strong></td>
-              <td><strong>&nbsp;<?php echo __('Callback Test result')?></strong></td>
-              <td><strong>&nbsp;<?php echo __('Auto reboot')?></strong></td>
-              <td><strong>&nbsp;<?php echo __('Dialer Mode')?></strong></td>
-              <td><strong>&nbsp;<?php echo __('Tested by')?></strong></td>
-              <td><strong>&nbsp;<?php echo __('Comments')?></strong></td>
-              <td><strong>&nbsp;<?php echo __('Zapna out mode')?></strong></td>
+            <tr> 
+              <th><?php echo __('Brand name')?></th>
+              <th><?php echo __('Model')?></th>
+              <th><?php echo __('Callback Test result')?></th>
+              <th><?php echo __('Auto reboot')?></th>
+              <th><?php echo __('Dialer Mode')?></th>
+              <th><?php echo __('Tested by')?></th>
+              <th><?php echo __('Comments')?></th>
+              <th><?php echo __('Zapna out mode')?></th>
             </tr>
             <tr> 
               <td>&nbsp;Apple</td>
@@ -202,7 +205,8 @@
             </tr>
           </tbody>
         </table>
+ </div>    
 <script language="javascript" type="text/javascript">
 	jq = jQuery.noConflict();
-	jq('table tr:not(:first-child):even').css('background-color', '#f0f0f0');
+	jq('table tr:not(:first-child):even').css('background-color', '#FCD9C9');
 </script>

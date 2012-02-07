@@ -10,7 +10,7 @@
             </trans-unit>
             <trans-unit id="2" translate="yes" reformat="yes" xml:space="default">
                 <source>Register a Customer</source>
-                <target>Registrieren Sie unseren Kundenservice</target>
+                <target>Registrieren ein Kunde</target>
             </trans-unit>
             <trans-unit id="3" translate="yes" reformat="yes" xml:space="default">
                 <source>Refill</source>
@@ -935,8 +935,6 @@
                 <source>Registration</source>
                 <target>Anmeldung</target>
             </trans-unit>
-           
-           
            
         </body>
     </file>
