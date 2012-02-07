@@ -2,7 +2,7 @@
 <div class="bg-img" >
         <div class="left"></div>
         <div class="centerImg"> 
-            <h1><?php echo __('login to account') ?></h1>
+            <h1><?php echo __('Log in to account') ?></h1>
             <h2><?php echo __("provide your email and password");?></h2>
             <?php echo $form->renderGlobalErrors() ?>
             <div class="fieldName"> 

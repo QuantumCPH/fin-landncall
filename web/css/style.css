@@ -127,7 +127,7 @@ input#generic {
 }
 
 #header{
-    background: url("../images/top-ground.png") no-repeat scroll center  transparent;
+    background: url("../images/top-ground.png") no-repeat scroll center top  transparent;
     height: 137px;
     margin: 0 auto 5px;
     width: 1010px;
@@ -529,4 +529,15 @@ tr.even{
 }
 tr.odd{
     background-color:#FCD9C9 !important;
+}
+p.pTotal{    
+    font-weight: bold;
+    margin-top:3px;
+    text-align: right;
+    margin-right: 5px;
+    padding-top:5px;
+}
+th{
+    color: #D44D05;
+    text-align: left;
 }

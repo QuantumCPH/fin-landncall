@@ -6,12 +6,14 @@
 	}
 
 	table.summary td {
-		font-size: 1.3em;
+		font-size: 1.2em;
 		font-weight: normal;
 	}
 </style>
 <div class="report_container">
-<h2><?php echo __('Reciepts For Agent Account Refills');?></h2>
+<div id="sf_admin_container"><h1><?php echo __('Reciepts For Agent Account Refills') ?></h1></div>
+        
+  <div class="borderDiv">
 <table cellspacing="0" width="100%" class="summary">
 	<tr>
 		<th style="text-align:left">&nbsp;</th>
@@ -22,7 +24,7 @@
 	</tr>
         <?php $i=0 ?>
         <?php foreach($agentOrders as $agentOrder){ ?>
-        <tr <?php echo 'bgcolor="'.($i%2 == 0?'#f0f0f0':'#ffffff').'"' ?>>
+        <tr <?php echo 'class="'.($i%2 == 0?'odd':'even').'"' ?>>
             <td><?php echo ++$i ?>.</td>
             <td><?php echo $agentOrder->getCreatedAt() ?></td>
             <td><?php echo $agentOrder->getAmount() ?></td>
@@ -33,4 +35,5 @@
 
         <?php } ?>
 </table>
+  </div>
 </div>

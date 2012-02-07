@@ -134,9 +134,9 @@ color:#F00000;
                 $modulName = $sf_context->getModuleName();
                 $actionName = $sf_context->getActionName();
                // print_r($request->getPathInfoArray());
-     echo 'M '.$modulName;
-     echo '<br />';
-     echo 'A '.$actionName;
+//     echo 'M '.$modulName;
+//     echo '<br />';
+//     echo 'A '.$actionName;
                 //var_dump($sf_context);
                 //die;
                 //$routing = $sf_context->getInstance()->getRouting();
@@ -152,10 +152,10 @@ color:#F00000;
                       }?>
                     </li>
                     <li><a onmouseover="mopen('m2')" onmouseout="mclosetime()" href="#" onclick="return false;"
-                       <?php echo $actionName=='registerCustomer' || $actionName=='refill'?'class="current"':'';?>><?php echo __('Services');?></a>
+                       <?php echo $actionName=='registerCustomer' || $actionName=='setProductDetails' || $actionName=='refill'?'class="current"':'';?>><?php echo __('Services');?></a>
                     <div id="m2" onmouseover="mcancelclosetime()" onmouseout="mclosetime()"> 
                      <?php 
-                      if($modulName=="affiliate" && $actionName=='registerCustomer' ){
+                      if($modulName=="affiliate" && $actionName=='registerCustomer' || $actionName=='setProductDetails' ){
                           echo link_to(__('Register a Customer'), '@customer_registration_step1', array('class'=>'subSelect'));
                       }else{
                           echo link_to(__('Register a Customer'), '@customer_registration_step1');
@@ -188,7 +188,7 @@ color:#F00000;
                       ?></li>
                     <li><?php 
                       
-                      if($modulName=="agentcompany" && $actionName=='view' ){
+                      if($modulName=="agentcompany" && $actionName=='view' || $actionName=='accountRefill' || $actionName=='agentOrder' || $actionName=='paymentHistory' ){
                           echo link_to(__('My Company Info'), 'agentcompany/view', array('class'=>'current'));
                       }else{
                           echo link_to(__('My Company Info'), 'agentcompany/view');
@@ -246,7 +246,7 @@ color:#F00000;
 
                 
                 <?php if($sf_user->isAuthenticated()): ?>
-                <div></div>
+                <div class="clr"></div>
                 <p ><?php echo __('Provide this link to your customers while they signup with your reference.') ?>				
 				<a href="http://wls2.zerocall.com/b2c.php/signup/step1?ref=<?php echo $sf_user->getAttribute('agent_company_id', '', 'agentsession') ?>">
 				http://wls2.zerocall.com/b2c.php/signup/step1?ref=<?php echo $sf_user->getAttribute('agent_company_id', '', 'agentsession')?>

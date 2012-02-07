@@ -6,13 +6,15 @@
 	}
 	
 	table.summary td {
-		font-size: 1.3em;
+		font-size: 1.2em;
 		font-weight: normal;
 	}
 </style>
 <div class="report_container">
-<h2><?php echo __('Registration Receipts') ?> (<?php echo (count($registrations));echo __(" receipts"); ?>)</h2>
-<table cellspacing="0" width="100%" class="summary">	
+  <div id="sf_admin_container"><h1><?php echo __('Registration Receipts') ?> (<?php echo (count($registrations));echo __(" receipts"); ?>)</h1></div>
+        
+  <div class="borderDiv"> 
+   <table cellspacing="0" width="100%" class="summary">	
 	<tr>
 		<th>&nbsp;</th>
 		<th><?php echo __('Date') ?></th>
@@ -27,7 +29,7 @@
 	$i = 0;
 	foreach($registrations as $registration):
 	?>
-	<tr <?php echo 'bgcolor="'.($i%2 == 0?'#f0f0f0':'#ffffff').'"' ?>>
+	<tr <?php echo 'class="'.($i%2 == 0?'odd':'even').'"' ?>>
 		<td><?php echo ++$i ?>.</td>
              
 		<td><?php echo $registration->getCreatedAt(); ?>
@@ -54,9 +56,12 @@
         
 </table>
 
+  </div>
+  <div id="sf_admin_container"><h1><?php echo __('Refill Receipts') ?> (<?php echo (count($refills));echo __(" receipts"); ?>)</h1></div>
+        
+  <div class="borderDiv"> 
 
-<h2><?php echo __('Refill Receipts') ?> (<?php echo (count($refills));echo __(" receipts"); ?>)</h2>
-<table cellspacing="0" width="100%" class="summary">
+   <table cellspacing="0" width="100%" class="summary">
 	<tr>
 		<th>&nbsp;</th>
 		<th><?php echo __('Date') ?></th>
@@ -71,7 +76,7 @@
 	$i = 0;
 	foreach($refills as $refill):
 	?>
-	<tr <?php echo 'bgcolor="'.($i%2 == 0?'#f0f0f0':'#ffffff').'"' ?>>
+	<tr <?php echo 'class="'.($i%2 == 0?'odd':'even').'"' ?>>
 		<td><?php echo ++$i ?>.</td>
 
 		<td><?php echo $refill->getCreatedAt(); ?>
@@ -97,5 +102,7 @@
 	<?php endforeach; ?>
 
 </table>
-        <?php echo __('Total Receipts for transactions:') ?> <?php echo (count($registrations)+count($refills)) ?>
+        
+  </div>
+  <p class="pTotal"><?php echo __('Total Receipts for transactions:') ?> <?php echo (count($registrations)+count($refills)) ?></p>
 </div>

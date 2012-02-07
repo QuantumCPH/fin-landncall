@@ -31,8 +31,9 @@
 <?php endif; ?>
 <br/>
 <div id="company-info" style="display:block">
-    <h1><?php echo __('Company info') ?></h1>
-
+<div id="sf_admin_container"><h1><?php echo __('Company info') ?></h1></div>
+        
+  <div class="borderDiv"> 
 
       <label class="grid_2 required"><?php echo __('Company Name:') ?></label>
       <div class="grid_2 content">
@@ -122,9 +123,10 @@
       <div class="grid_2 content">
             <?php echo $agent_company->getCreatedAt() ?>
       </div>
-
+      <div class="clr"></div>
 </div>
 
+</div>
 <div id="bank-info" style="display:none">
     <h1>Bank info</h1>
 
