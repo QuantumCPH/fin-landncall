@@ -1,10 +1,6 @@
 <?php use_helper('I18N') ?>
 <?php use_helper('Number') ?>
-<?php if ($sf_user->hasFlash('message')): ?>
-<div style="color:#FF0000">
- <?php echo __($sf_user->getFlash('message')) ?>
-</div>
-<?php endif; ?>
+
 <?Php if($companyval!=''){?><div id="sf_admin_container">
 	<div id="sf_admin_content">
             <a href="<?php echo url_for('employee/index').'?company_id='.$companyval."&filter=filter" ?>" class="external_link" target="_self"><?php echo __('Employees') ?></a>
@@ -14,7 +10,13 @@
     </div>
 <?php } ?>
 
-<div id="sf_admin_container"><h1><?php echo __('Payment History') ?></h1></div>
+<div id="sf_admin_container"><h1><?php echo __('Payment History') ?></h1>
+<?php if ($sf_user->hasFlash('message')): ?>
+<div class="save-ok">
+  <h2><?php echo __($sf_user->getFlash('message')) ?></h2>
+</div>
+<?php endif; ?>
+</div>
 <table width="75%" cellspacing="0" cellpadding="2" class="tblAlign">
 <tr class="headings">
     <th><?php echo __('Date &amp; Time') ?></th>

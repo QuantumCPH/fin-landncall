@@ -1,3 +1,4 @@
+<div id="sf_admin_content">
 <?php if(isset($_REQUEST['message']) && $_REQUEST['message']!=""){ 
     
     if($_REQUEST['message']=="error"){ ?>
@@ -12,12 +13,12 @@
 
 
 <div class="save-ok">
-<h2><?php echo  __('Employee is added successfully') ?></h2>
+  <h2><?php echo  __('Employee is added successfully') ?></h2>
 </div>
 <?php  }  }   ?>
 <?php if ($sf_user->hasFlash('messageError')): ?>
 <div style="color:#FF0000">
- <?php echo __($sf_user->getFlash('messageError')) ?>
+ <?php //echo __($sf_user->getFlash('messageError')) ?>
 </div>
 <?php endif; ?>
 <div id="sf_admin_container">
@@ -99,3 +100,4 @@
 </ul> </div>
     </div>
 </form>
+</div>
