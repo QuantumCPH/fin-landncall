@@ -172,7 +172,7 @@ class paymentsActions extends sfActions {
         $order->setIsFirstOrder(1);
         $order->save();
         //$transaction->setAmount($order->getProduct()->getPrice() - $order->getProduct()->getInitialBalance() + $order->getExtraRefill());
-        $transaction->setAmount($order->getProduct()->getPrice() + $this->postalcharge + $order->getProduct()->getRegistrationFee());
+        $transaction->setAmount($order->getProduct()->getPrice() + $this->postalcharge + $order->getProduct()->getRegistrationFee()+(($this->postalcharge + $order->getProduct()->getRegistrationFee())*.25));
         //TODO: $transaction->setAmount($order->getProduct()->getPrice());
         $transaction->setDescription('Registration');
         $transaction->setOrderId($order->getId());
