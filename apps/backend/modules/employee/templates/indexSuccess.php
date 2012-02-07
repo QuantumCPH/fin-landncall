@@ -1,30 +1,21 @@
-
+<div  id="sf_admin_container">
+<h1><?php echo __('My employee List') ?></h1><br />
 <?php if(isset($_REQUEST['message']) && $_REQUEST['message']=="edit"){  ?>
 
 <?php if ($sf_user->hasFlash('messageEdit')): ?>
-<div style="color:#FF0000">
- <?php echo __($sf_user->getFlash('messageEdit')) ?>
+<div class="save-ok">
+ <h2><?php echo __($sf_user->getFlash('messageEdit')) ?></h2>
 </div>
 <?php endif; ?>
 <?php  }   ?>
 
 <?php if(isset($_REQUEST['message']) && $_REQUEST['message']=="add"){  ?>
 <?php if ($sf_user->hasFlash('messageAdd')): ?>
-<div style="color:#FF0000">
- <?php echo __($sf_user->getFlash('messageAdd')) ?>
+<div class="save-ok">
+ <h2><?php echo __($sf_user->getFlash('messageAdd')) ?></h2>
 </div>
 <?php endif; ?>
 <?php  }   ?>
-
-
-
-
-
-
-
-
-<div  id="sf_admin_container">
-<h1><?php echo __('My employee List') ?></h1>
 
 
 <div id="sf_admin_header">
@@ -32,8 +23,8 @@
 </div>
 
 <?php if ($sf_user->hasFlash('message')): ?><br />
-<div style="color:#FF0000">
- <?php echo __($sf_user->getFlash('message')) ?>
+<div class="save-ok">
+ <h2><?php echo __($sf_user->getFlash('message')) ?></h2>
 </div><br/>
 <?php endif; ?>
 
@@ -178,5 +169,3 @@
 <a target="_self" class="external_link" href="<?php echo url_for('employee/add'); if(isset($companyval) && $companyval!=""){echo "?company_id=".$companyval;} ?>" style="text-decoration:none;"><?php echo __('Create New') ?></a>
 
 </div></div>
-
-	

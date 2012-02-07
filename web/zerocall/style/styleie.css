@@ -2,7 +2,7 @@
 /* CSS Document */
 * {margin:0px;padding:0px;}
 body {font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#000;background-color:FFFFFF;}
-#wrap {width:780px;margin:0px auto;background-color:#F7F7F7;}
+#wrap {width:780px;margin:0px auto;background-color:#FFFFFF;}
 #header {width:780px;height:119px;}
 #logo {width:168px; height:79px; float:left;}
 #logo h1 {width:168px; height:79px;float:left;padding-top:25px;}
@@ -153,7 +153,7 @@ width:232px;
 
 a.receipt{ background-image:url(../images/green-bullet.jpg); background-repeat:no-repeat; padding-left:15px; float:left; display:block; text-decoration:none; color:#000;}
 
-.split-form-sign-up{padding-top:20px; float:left; clear:both; width:750px; padding-bottom:30px; min-height:412px; background-image:url(../images/bg-map-sign-up.jpg); background-repeat:no-repeat; background-color:#F7F7F7; padding-top:20px; padding-left:30px; margin-bottom:10px;}
+.split-form-sign-up{padding-top:20px; float:left; clear:both; width:750px; padding-bottom:30px; min-height:412px; background-image:url(../images/bg-map-sign-up.jpg); background-repeat:no-repeat; background-color:FFFFFF; padding-top:20px; padding-left:30px; margin-bottom:10px;}
 .split-form-sign-up .col{width:314px; float: left; position: relative;height: 250px;}
 .split-form-sign-up ul{list-style:none;}
 .split-form-sign-up ul li{list-style:none; margin-bottom:10px; float:left; clear:both;width:350px; white-space:nowrap; z-index:100; position:relative; color:#000;}

@@ -56,7 +56,7 @@ class BaseCompanyForm extends BaseFormPropel
       'city_id'                => new sfValidatorPropelChoice(array('model' => 'City', 'column' => 'id', 'required' => false)),
       'contact_name'           => new sfValidatorString(array('max_length' => 150)),
       'email'                  => new sfValidatorString(array('max_length' => 255)),
-      'head_phone_number'      => new sfValidatorString(array('max_length' => 255)),
+      'head_phone_number'      => new sfValidatorInteger(),
       'fax_number'             => new sfValidatorInteger(array('required' => false)),
       'website'                => new sfValidatorString(array('max_length' => 255, 'required' => false)),
       'status_id'              => new sfValidatorPropelChoice(array('model' => 'Status', 'column' => 'id', 'required' => false)),
