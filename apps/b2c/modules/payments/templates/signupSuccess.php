@@ -157,7 +157,7 @@ $customer_form->unsetAllExcept(array('auto_refill_amount', 'auto_refill_min_bala
 			  </label>
 
               <input type="hidden" id="product_price" value="<?php 
-              	$product_price_vat = ($order->getProduct()->getRegistrationFee())*.20;
+              	$product_price_vat = ($order->getProduct()->getRegistrationFee())*.25;
 
               	$product_price = ($order->getProduct()->getPrice()+$order->getProduct()->getRegistrationFee());
               	

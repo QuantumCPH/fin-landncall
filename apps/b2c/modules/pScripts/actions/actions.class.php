@@ -1697,7 +1697,7 @@ public function executeSmsRegistration(sfWebrequest $request) {
     $this->customer = $customer;
     $transaction = new Transaction();
     $transaction->setAgentCompanyId($customer->getReferrerId());
-    $transaction->setAmount($order->getProduct()->getPrice() - $order->getProduct()->getInitialBalance() + $order->getExtraRefill());
+    $transaction->setAmount($order->getProduct()->getPrice() +$order->getProduct()->getRegistrationFee()+($order->getProduct()->getRegistrationFee()*.25));
     $transaction->setDescription('Registration');
     $transaction->setOrderId($order->getId());
     $transaction->setCustomerId($customer->getId());
