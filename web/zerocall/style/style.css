@@ -144,7 +144,7 @@ width:232px;
 .callhistory{ width:515px;}
 .callhistory tr{ border-bottom:1px solid #999999;}
 .callhistory td.title{ font-size:15px;}
-.callhistory td{ padding:10px;border-bottom:1px solid #999999; font-size:12px;}
+.callhistory td{ padding:8px;border-bottom:1px solid #999999; font-size:12px;}
 .callhistory td small{ font-size:11px;}
 
 a.receipt{ background-image:url(../images/green-bullet.jpg); background-repeat:no-repeat; padding-left:15px; float:left; display:block; text-decoration:none; color:#000;}
