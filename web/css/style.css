@@ -541,3 +541,13 @@ th{
     color: #D44D05;
     text-align: left;
 }
+a.external_link {
+    background: url("../zerocall/images/b.png") repeat-x scroll left center transparent;
+    color: #FFFFFF;
+    font-family: arial;
+    font-size: 11px;
+    font-weight: bold;
+    line-height: 27px;
+    margin-right: 5px;
+    padding: 5px;
+}
