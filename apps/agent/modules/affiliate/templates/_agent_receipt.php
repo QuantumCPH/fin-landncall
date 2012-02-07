@@ -62,7 +62,7 @@ $wrap_content  = isset($wrap)?$wrap:false;
 	<br />
 	
 	<br />
-	Tel:      +49 XXXXXXXXXX
+	Tel:      +XX XXXXXXXXXX
 	<br />	
 	<br />
 	Cvr:     XXXXXXXXX
