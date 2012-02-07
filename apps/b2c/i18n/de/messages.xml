@@ -228,7 +228,7 @@
             </trans-unit>
             <trans-unit id="56" translate="yes" reformat="yes" xml:space="default">
                 <source>Login to your account</source>
-                <target>einloggen auf Ihr Konto</target>
+                <target>Einloggen auf Ihr Konto</target>
             </trans-unit>
             <trans-unit id="57" translate="yes" reformat="yes" xml:space="default">
                 <source>send password message</source>
