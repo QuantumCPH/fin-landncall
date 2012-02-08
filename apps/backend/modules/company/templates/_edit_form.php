@@ -193,7 +193,7 @@
   <?php $value = object_select_tag($company, 'getStatusId', array (
   'related_class' => 'Status',
   'control_name' => 'company[status_id]',
- 
+     'include_custom' => ' ',
 )); echo $value ? $value : '&nbsp;' ?>
     </div>
 </div>
@@ -208,7 +208,7 @@
   <?php $value = object_select_tag($company, 'getCompanySizeId', array (
   'related_class' => 'CompanySize',
   'control_name' => 'company[company_size_id]',
-
+  'include_custom' => ' ',
 )); echo $value ? $value : '&nbsp;' ?>
     </div>
 </div>
@@ -223,7 +223,7 @@
   <?php $value = object_select_tag($company, 'getCompanyTypeId', array (
   'related_class' => 'CompanyType',
   'control_name' => 'company[company_type_id]',
-
+  'include_custom' => ' ',
 )); echo $value ? $value : '&nbsp;' ?>
     </div>
 </div>
@@ -238,7 +238,7 @@
   <?php $value = object_select_tag($company, 'getCustomerTypeId', array (
   'related_class' => 'CustomerType',
   'control_name' => 'company[customer_type_id]',
-
+    'include_custom' => ' ',
 )); echo $value ? $value : '&nbsp;' ?>
     </div>
 </div>
@@ -253,6 +253,7 @@
   <?php $value = object_select_tag($company, 'getInvoiceMethodId', array (
   'related_class' => 'InvoiceMethod',
   'control_name' => 'company[invoice_method_id]',
+       'include_custom' => ' ',
 )); echo $value ? $value : '&nbsp;' ?>
     </div>
 </div>
@@ -267,7 +268,7 @@
   <?php $value = object_select_tag($company, 'getAgentCompanyId', array (
   'related_class' => 'AgentCompany',
   'control_name' => 'company[agent_company_id]',
- 
+   'include_custom' => ' ',
 )); echo $value ? $value : '&nbsp;' ?>
     </div>
 </div>
