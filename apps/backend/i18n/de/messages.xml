@@ -1275,7 +1275,14 @@
 		<source>Administrator Login</source>
                 <target>Administrator einloggen</target>
             </trans-unit>
-            
+            <trans-unit id="286" translate="yes" reformat="yes" xml:space="default">
+		<source>Employee has been added successfully</source>
+                <target>Mitarbeiter wurde erfolgreich hinzugefügt</target>
+            </trans-unit>
+            <trans-unit id="287" translate="yes" reformat="yes" xml:space="default">
+		<source>Employee has been edited successfully</source>
+                <target>Mitarbeiter wurde erfolgreich bearbeitet</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

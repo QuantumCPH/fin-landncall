@@ -139,97 +139,6 @@ class employeeActions extends sfActions {
                 $this->redirect('employee/add');
 die;
         }
-
-     
-   //  $rtype=$request->getParameter('registration_type');
-//      if($rtype==1){
-//      ////////////////////////////////////////////////
-//
-//        $telintaGetBalance = file_get_contents('https://mybilling.telinta.com/htdocs/zapna/zapna.pl?action=getbalance&name='.$companyCVRNumber.'&type=customer');
-//        $telintaGetBalance = str_replace('success=OK&Balance=', '', $telintaGetBalance);
-//        $telintaGetBalance = str_replace('-', '', $telintaGetBalance);
-//        if($telintaGetBalance>40){
-//        $c = new Criteria();
-//                $c->setLimit(1);
-//                $c->add(SeVoipNumberPeer::IS_ASSIGNED, 0);
-//
-//                if (!$voip_customer = SeVoipNumberPeer::doSelectOne($c)){
-//                     $msg= "Resenummer is not activate";
-//                    //return false;
-//                }else{
-//                $voip_customer->setUpdatedAt(date('Y-m-d H:i:s'));
-//                $voip_customer->setCustomerId($contrymobilenumber);
-//                $voip_customer->setIsAssigned(1);
-//                $voip_customer->save();
-//
-//
-//                //--------------------------Telinta------------------/
-//                $getvoipInfo = new Criteria();
-//                $getvoipInfo->add(SeVoipNumberPeer::CUSTOMER_ID, $contrymobilenumber);
-//                $getvoipInfos = SeVoipNumberPeer::doSelectOne($getvoipInfo); //->getId();
-//                if (isset($getvoipInfos)) {
-//                    $voipnumbers = $getvoipInfos->getNumber();
-//                    $voipnumbers = substr($voipnumbers, 2);
-//                    $voip_customer = $getvoipInfos->getCustomerId();
-//
-//
-//                    //$TelintaMobile = '46'.$this->customer->getMobileNumber();
-//
-//
-//                    //This Condtion for if IC Active
-//
-//                    //------------------------------
-//
-//
-//                     $getFirstnumberofMobile = substr($contrymobilenumber, 0, 1);     // bcdef
-//                    if ($getFirstnumberofMobile == 0) {
-//                        $TelintaMobile = substr($contrymobilenumber, 1);
-//                    }else{
-//                      $TelintaMobile= $contrymobilenumber;
-//                    }
-//
-//
-//                    $telintaAddAccount = file_get_contents('https://mybilling.telinta.com/htdocs/zapna/zapna.pl?type=account&action=activate&name=' . $voipnumbers . '&customer=' . $companyCVR . '&opening_balance=0&credit_limit=&product=YYYLandncall_Forwarding&outgoing_default_r_r=2034&activate_follow_me=Yes&follow_me_number=' . $TelintaMobile . '&billing_model=1&password=asdf1asd');
-//
-//                    if(!$telintaAddAccount){
-//                       emailLib::sendErrorInTelinta("Error in B2b employee  Resenmuber registration", "We have faced an issue in employee Resenmuber registrtion on telinta. this is the error on the following url https://mybilling.telinta.com/htdocs/zapna/zapna.pl?type=account&action=activate&name=". $voipnumbers ."&customer=". $companyCVR ."&opening_balance=0&credit_limit=&product=YYYLandncall_Forwarding&outgoing_default_r_r=2034&activate_follow_me=Yes&follow_me_number=". $TelintaMobile ."&billing_model=1&password=asdf1asd. <br/> Please Investigate.");
-//
-//                    }
-//                    parse_str($telintaAddAccount, $success);
-//                    if(isset($success['success']) && $success['success']!="OK"){
-//                        emailLib::sendErrorInTelinta("Error in B2b employee  Resenmuber registration", "We have faced an issue in employee Resenmuber registrtion on telinta. this is the error on the following url https://mybilling.telinta.com/htdocs/zapna/zapna.pl?type=account&action=activate&name=". $voipnumbers ."&customer=". $companyCVR ."&opening_balance=0&credit_limit=&product=YYYLandncall_Forwarding&outgoing_default_r_r=2034&activate_follow_me=Yes&follow_me_number=". $TelintaMobile ."&billing_model=1&password=asdf1asd. <br/> Please Investigate.");
-//
-//                    }
-//                    if(!$telintaAddAccount || isset($success['success']) && $success['success']!="OK"){
-//
-//                        $getvoipInfos->setUpdatedAt(Null);
-//                        $getvoipInfos->setCustomerId(Null);
-//                        $getvoipInfos->setIsAssigned(0);
-//                        $getvoipInfos->save();
-//                        $employee->setRegistrationType(0);
-//                        $msg= "Resenummer is not activate";
-//
-//                    }
-//                    else{
-//
-//                        $employee->setRegistrationType($request->getParameter('registration_type'));
-//                        $resenummerCharge=file_get_contents('https://mybilling.telinta.com/htdocs/zapna/zapna.pl?type=account&action=manual_charge&name=' . $voipnumbers . '&amount=40&customer='.$companyCVR);
-//                        $transaction = new CompanyTransaction();
-//                        $transaction->setAmount(-40);
-//                        $transaction->setCompanyId($request->getParameter('company_id'));
-//                        $transaction->setExtraRefill(-40);
-//                        $transaction->setTransactionStatusId(3);
-//                        $transaction->setPaymenttype(3);//Resenummer Charge
-//                        $transaction->setDescription('Resenummer Charge');
-//                        $transaction->save();
-//                    }
-//
-//                }}
-//      }else{
-//
-//          $msg= "To activate Resenummer Refill account";
-//      }
-//      }
         
         $employee->setCompanyId($request->getParameter('company_id'));
         $employee->setFirstName($request->getParameter('first_name'));
@@ -242,18 +151,12 @@ die;
         $employee->setProductId($request->getParameter('productid'));
        // $employee->setProductPrice($request->getParameter('price'));
         $employee->save();
-        $this->getUser()->setFlash('messageAdd', 'Employee has been Add Sucessfully '.(isset($msg)?"and ".$msg:''));
+        $this->getUser()->setFlash('messageAdd', 'Employee has been added successfully '.(isset($msg)?"and ".$msg:''));
         $this->redirect('employee/index?message=add');
     }
 
     public function executeUpdateEmployee(sfWebRequest $request) {
-
-
-  //$contrymobilenumber = $request->getParameter('country_code') . $request->getParameter('mobile_number');
-  //$employeMobileNumber=$contrymobilenumber;
-
-
-   $c = new Criteria();
+    $c = new Criteria();
 
                 $c->add(CompanyPeer::ID,$request->getParameter('company_id'));
 
@@ -270,110 +173,6 @@ $companyCVR=$compny->getVatNo();
       $companyCVR=$this->companys->getVatNo();
       $companyCVRNumber=$companyCVR;
   
-//            if($rtype==1){
-//      ////////////////////////////////////////////////
-//        $telintaGetBalance = file_get_contents('https://mybilling.telinta.com/htdocs/zapna/zapna.pl?action=getbalance&name='.$companyCVRNumber.'&type=customer');
-//        $telintaGetBalance = str_replace('success=OK&Balance=', '', $telintaGetBalance);
-//        $telintaGetBalance = str_replace('-', '', $telintaGetBalance);
-//        if($telintaGetBalance>40){
-//        $c = new Criteria();
-//                $c->setLimit(1);
-//                $c->add(SeVoipNumberPeer::IS_ASSIGNED, 0);
-//
-//                if (!$voip_customer = SeVoipNumberPeer::doSelectOne($c)){
-//                   // return false;
-//                     $msg= "Resenummer is not activate";
-//                }else{
-//                $voip_customer->setUpdatedAt(date('Y-m-d H:i:s'));
-//                $voip_customer->setCustomerId($contrymobilenumber);
-//                $voip_customer->setIsAssigned(1);
-//                $voip_customer->save();
-//                 $voip_customer->getNumber();
-//
-//
-//                //--------------------------Telinta------------------/
-//                $getvoipInfo = new Criteria();
-//                $getvoipInfo->add(SeVoipNumberPeer::CUSTOMER_ID, $contrymobilenumber);
-//                $getvoipInfos = SeVoipNumberPeer::doSelectOne($getvoipInfo); //->getId();
-//
-//                  $getvoipInfos->getNumber();
-//
-//                if (isset($getvoipInfos)) {
-//                    $voipnumbers = $getvoipInfos->getNumber();
-//                    $voipnumbers = substr($voipnumbers, 2);
-//                    $voip_customer = $getvoipInfos->getCustomerId();
-//
-//
-//                    //$TelintaMobile = '46'.$this->customer->getMobileNumber();
-//
-//
-//                    //This Condtion for if IC Active
-//
-//                    //------------------------------
-//
-//
-//                     $getFirstnumberofMobile = substr($contrymobilenumber, 0, 1);     // bcdef
-//                    if ($getFirstnumberofMobile == 0) {
-//                        $TelintaMobile = substr($contrymobilenumber, 1);
-//                    }else{
-//                      $TelintaMobile= $contrymobilenumber;
-//                    }
-//
-//
-//                    $telintaAddAccount = file_get_contents('https://mybilling.telinta.com/htdocs/zapna/zapna.pl?type=account&action=activate&name=' . $voipnumbers . '&customer=' . $companyCVR . '&opening_balance=0&credit_limit=&product=YYYLandncall_Forwarding&outgoing_default_r_r=2034&activate_follow_me=Yes&follow_me_number=' . $TelintaMobile . '&billing_model=1&password=asdf1asd');
-//
-//                       if(!$telintaAddAccount){
-//                       emailLib::sendErrorInTelinta("Error in B2b employee  Resenmuber registration", "We have faced an issue in employee Resenmuber registrtion on telinta. this is the error on the following url https://mybilling.telinta.com/htdocs/zapna/zapna.pl?type=account&action=activate&name=". $voipnumbers ."&customer=". $companyCVR ."&opening_balance=0&credit_limit=&product=YYYLandncall_Forwarding&outgoing_default_r_r=2034&activate_follow_me=Yes&follow_me_number=". $TelintaMobile ."&billing_model=1&password=asdf1asd. <br/> Please Investigate.");
-//                         $rtype=0;
-//                    }
-//                    parse_str($telintaAddAccount, $success);
-//                    if(isset($success['success']) && $success['success']!="OK"){
-//                        emailLib::sendErrorInTelinta("Error in B2b employee  Resenmuber registration", "We have faced an issue in employee Resenmuber registrtion on telinta. this is the error on the following url https://mybilling.telinta.com/htdocs/zapna/zapna.pl?type=account&action=activate&name=". $voipnumbers ."&customer=". $companyCVR ."&opening_balance=0&credit_limit=&product=YYYLandncall_Forwarding&outgoing_default_r_r=2034&activate_follow_me=Yes&follow_me_number=". $TelintaMobile ."&billing_model=1&password=asdf1asd. <br/> Please Investigate.");
-//                             $rtype=0;
-//                    }
-//
-//                    if(!$telintaAddAccount || isset($success['success']) && $success['success']!="OK"){
-//
-//                        $getvoipInfos->setUpdatedAt(Null);
-//                        $getvoipInfos->setCustomerId(Null);
-//                        $getvoipInfos->setIsAssigned(0);
-//                        $getvoipInfos->save();
-//                        $employee->setRegistrationType(0);
-//                        $msg= "Resenummer is not activate";
-//
-//                    }
-//                    else{
-//
-//                        $employee->setRegistrationType($rtype);
-//                        $resenummerCharge=file_get_contents('https://mybilling.telinta.com/htdocs/zapna/zapna.pl?type=account&action=manual_charge&name=' . $voipnumbers . '&amount=40&customer='.$companyCVR);
-//
-//                            $transaction = new CompanyTransaction();
-//                            $transaction->setAmount(-40);
-//                            $transaction->setCompanyId($employee->getCompanyId());
-//                            $transaction->setExtraRefill(-40);
-//                            $transaction->setTransactionStatusId(3);
-//                            $transaction->setPaymenttype(3);//Resenummer Charge
-//                            $transaction->setDescription('Resenummer Charge');
-//                            $transaction->save();
-//                    }
-//
-//                }
-//                }
-//                 }else{
-//
-//                    $msg= "To activate Resenummer Refill account";
-//      }
-//      }
-
-
-
-
-//       if($rtype==3){
-//         $rtype=1;
-//       }
-       // $contrymobilenumber = $request->getParameter('country_code') . $request->getParameter('mobile_number');
-        
-      //  $employee->setCompanyId($request->getParameter('company_id'));
         $employee->setFirstName($request->getParameter('first_name'));
         $employee->setLastName($request->getParameter('last_name'));
        // $employee->setCountryCode($request->getParameter('country_code'));
@@ -388,7 +187,7 @@ $companyCVR=$compny->getVatNo();
       //  $employee->setProductPrice($request->getParameter('price'));
         $employee->setDeleted($request->getParameter('deleted'));
         $employee->save();
-         $this->getUser()->setFlash('messageEdit', 'Employee has been edit Sucessfully '.(isset($msg)?"and ".$msg:''));
+         $this->getUser()->setFlash('messageEdit', 'Employee has been edited successfully '.(isset($msg)?"and ".$msg:''));
         //$this->message = "employee added successfully";
         $this->redirect('employee/index?message=edit');
        // return sfView::NONE;
