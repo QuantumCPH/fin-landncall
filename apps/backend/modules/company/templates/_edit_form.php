@@ -1,4 +1,3 @@
-
 <?php echo form_tag('company/save', array(
   'id'        => 'sf_admin_edit_form',
   'name'      => 'sf_admin_edit_form',
@@ -7,7 +6,7 @@
 
 <?php echo object_input_hidden_tag($company, 'getId') ?>
 
-
+<fieldset>
 <div class="form-row">
   <?php echo label_for('company[name]', __($labels['company{name}']), 'class="required" ') ?>
   <div class="content<?php if ($sf_request->hasError('company{name}')): ?> form-error<?php endif; ?>">
@@ -326,16 +325,9 @@
 <input type="hidden" value="" id="error" name="error">
 <?php }?>
 
-
+</fieldset>
 
 
 <?php include_partial('edit_actions', array('company' => $company)) ?>
 
 </form>
-
-<!--<ul class="sf_admin_actions">
-      <li class="float-left"> <?php //if ($company->getId()): ?>
-        <?php //echo button_to(__('delete'), 'company/delete?id='.$company->getId(), array (  'post' => true,  'confirm' => __('Are you sure?'),  'class' => 'sf_admin_action_delete',)) ?><?php //endif; ?>
-</li>
-  </ul>
--->

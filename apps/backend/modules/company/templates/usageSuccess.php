@@ -8,8 +8,10 @@
 <h1><?php echo __('Call History'); ?></h1>
 	 <table width="100%" cellspacing="0" cellpadding="2" class="tblAlign" border='0'>
                     
+
                     <tr>
                     <th width="20%"   align="left"><?php echo __('Date & Time') ?></th>
+
                     <th  width="20%"  align="left"><?php echo __('Phone Number') ?></th>
                     <th width="10%"   align="left"><?php echo __('Duration') ?></th>
                     <th  width="10%"  align="left"><?php echo __('VAT') ?></th>
