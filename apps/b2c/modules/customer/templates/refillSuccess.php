@@ -197,7 +197,7 @@ if($is_auto_refill_activated){  ?>  <div class="left-col">
             </div>
           <div style="width:140px;float:left;padding-top:30px;">   
        
-                <input type="submit" class="butonsigninsmall" name="button" style="cursor: pointer;float: right; margin-left: 134px; margin-top: -10px;"  value="<?php echo __('Load') ?>" >
+                <input type="submit" class="butonsigninsmall" name="button" style="cursor: pointer;float: left; margin-left: 40px; margin-top: -5px;"  value="<?php echo __('Load') ?>" >
         </div>
         </div></form> 
        </div>
