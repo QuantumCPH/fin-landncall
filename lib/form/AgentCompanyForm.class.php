@@ -12,5 +12,7 @@ class AgentCompanyForm extends BaseAgentCompanyForm
 {
   public function configure()
   {
+
+
   }
 }
