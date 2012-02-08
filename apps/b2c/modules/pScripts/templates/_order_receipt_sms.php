@@ -9,8 +9,7 @@ use_helper('Number');
 	
 	table.receipt {
 		width: 600px;
-		//font-family: arial;
-		//font-size: .7em;
+		
 		
 		border: 2px solid #ccc;
 	}
@@ -107,33 +106,39 @@ $wrap_content  = isset($wrap)?$wrap:false;
     <td><?php echo __('Quantity') ?></td>
     <td><?php echo __('Amount') ?></td>
   </tr>
-  <tr> 
+  <tr>
     <td><?php echo $order->getCreatedAt('m-d-Y') ?></td>
     <td>
-    <?php if ($order->getIsFirstOrder())
-    {
-		echo $order->getProduct()->getName() . 
-		'<br />['. $transaction->getDescription() .']';
-    }
-    else
-    {
-		echo $transaction->getDescription();    	
-    }
+    <?php
+         echo __("Registration Fee");
+
     ?>
 	</td>
     <td><?php echo $order->getQuantity() ?></td>
-    <td><?php echo format_number($subtotal = $transaction->getAmount()-$vat) //($order->getProduct()->getPrice() - $order->getProduct()->getPrice()*.2) * $order->getQuantity()) ?></td>
+    <td><?php echo format_number($order->getProduct()->getRegistrationFee()); ?></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>
+    <?php
+         echo __("Product Price");
+
+    ?>
+	</td>
+    <td><?php echo $order->getQuantity() ?></td>
+    <td><?php echo format_number($order->getProduct()->getPrice()); ?></td>
   </tr>
   <tr>
   	<td colspan="4" style="border-bottom: 2px solid #c0c0c0;">&nbsp;</td>
   </tr>
-  <tr class="footer"> 
+  <tr class="footer">
     <td>&nbsp;</td>
     <td><?php echo __('Subtotal') ?></td>
     <td>&nbsp;</td>
-    <td><?php echo format_number($subtotal) ?></td>
+    <td><?php echo format_number($subTotal = $order->getProduct()->getPrice()+$order->getProduct()->getRegistrationFee()) ?></td>
   </tr>
-  <tr class="footer"> 
+
+  <tr class="footer">
     <td>&nbsp;</td>
     <td><?php echo __('VAT') ?> (<?php echo $vat==0?'0%':'25%' ?>)</td>
     <td>&nbsp;</td>
@@ -143,7 +148,7 @@ $wrap_content  = isset($wrap)?$wrap:false;
     <td>&nbsp;</td>
     <td><?php echo __('Total') ?></td>
     <td>&nbsp;</td>
-    <td><?php echo format_number($transaction->getAmount()) ?></td>
+    <td><?php echo format_number($subTotal+$vat) ?></td>
   </tr>
 </table>
 <?php if($wrap_content): ?>
