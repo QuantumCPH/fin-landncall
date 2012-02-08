@@ -8,7 +8,7 @@
 <h1><?php echo __('Call History'); ?></h1>
 	 <table width="100%" cellspacing="0" cellpadding="2" class="tblAlign" border='0'>
                     
-                    <tr>
+                    <tr class="headings">
                     <th width="20%"   align="left"><?php echo __('Date &amp; time') ?></th>
                     <th  width="20%"  align="left"><?php echo __('Phone Number') ?></th>
                     <th width="10%"   align="left"><?php echo __('Duration') ?></th>
