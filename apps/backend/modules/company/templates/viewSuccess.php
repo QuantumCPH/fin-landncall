@@ -17,7 +17,7 @@
 				<div class="form-row">
 				  <label class="required"><?php echo  __('Company Name:') ?></label>
 				  <div class="content">
-				  	<?php echo $company->getName() ?> &nbsp; <?php echo link_to('edit info', 'company/edit?id='.$company->getId()) ?>
+				  	<?php echo $company->getName() ?> &nbsp; <?php echo link_to(__('edit info'), 'company/edit?id='.$company->getId()) ?>
 				  </div>
 				</div>
 

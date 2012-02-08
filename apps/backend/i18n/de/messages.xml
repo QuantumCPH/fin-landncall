@@ -1549,6 +1549,10 @@
 	<source>Create/Edit UsageAlert</source>
                 <target>schaffen/bearbeiten Aufruf-Alarm</target>
             </trans-unit>
+<trans-unit id="338" translate="yes" reformat="yes" xml:space="default">
+	<source>edit info</source>
+                <target>info bearbeiten</target>
+            </trans-unit>
 
 
 
