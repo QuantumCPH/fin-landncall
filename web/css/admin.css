@@ -12,9 +12,9 @@ h2{
         margin: 0 auto;
 }
 #header{
-    width:1010px;
-    height: 137px;
-    background: url('../images/top-ground.png') no-repeat top;
+    width:75%;
+    height: 133px;
+    background: url('../images/header.png') repeat-x top;
     margin:0 auto 26px;
 }
 .logo{
@@ -153,6 +153,7 @@ tr.headings th{
    border-right: 1px solid #D44D05 !important; 
    border-bottom: 1px solid #D44D05 !important;
    text-align: left;
+   color:#D44D05;
 }
 tr.headings th.last{
    border-right: 0px !important; 
