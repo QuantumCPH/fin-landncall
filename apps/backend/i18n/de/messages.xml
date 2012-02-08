@@ -1283,6 +1283,7 @@
 		<source>Employee has been edited successfully</source>
                 <target>Mitarbeiter wurde erfolgreich bearbeitet</target>
             </trans-unit>
+
             <trans-unit id="83" translate="yes" reformat="yes" xml:space="default">
 			    <source>The form is not valid because it contains some errors.</source>
                 <target>Die Form ist nicht gültig, weil es einige Fehler enthält.</target>
@@ -1292,6 +1293,12 @@
                 <target>Der Device-Name darf nicht leer sein.</target>
             </trans-unit>
 			
+
+
+            <trans-unit id="288" translate="yes" reformat="yes" xml:space="default">
+		<source>Company Details</source>
+                <target>Firma Details</target>
+            </trans-unit>
 
         </body>
     </file>
