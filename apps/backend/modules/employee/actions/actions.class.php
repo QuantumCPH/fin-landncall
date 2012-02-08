@@ -151,7 +151,7 @@ die;
         $employee->setProductId($request->getParameter('productid'));
        // $employee->setProductPrice($request->getParameter('price'));
         $employee->save();
-        $this->getUser()->setFlash('messageAdd', 'Employee has been added successfully '.(isset($msg)?"and ".$msg:''));
+        $this->getUser()->setFlash('messageAdd', 'Employee has been added successfully'.(isset($msg)?"and ".$msg:''));
         $this->redirect('employee/index?message=add');
     }
 
@@ -187,7 +187,7 @@ $companyCVR=$compny->getVatNo();
       //  $employee->setProductPrice($request->getParameter('price'));
         $employee->setDeleted($request->getParameter('deleted'));
         $employee->save();
-         $this->getUser()->setFlash('messageEdit', 'Employee has been edited successfully '.(isset($msg)?"and ".$msg:''));
+         $this->getUser()->setFlash('messageEdit', 'Employee has been edited successfully'.(isset($msg)?"and ".$msg:''));
         //$this->message = "employee added successfully";
         $this->redirect('employee/index?message=edit');
        // return sfView::NONE;
@@ -208,9 +208,9 @@ $companyCVR=$compny->getVatNo();
             parse_str($telintaRegisterCus);
             if(isset($success) && $success!="OK"){
                 emailLib::sendErrorInTelinta("Error in employee  delete account", 'We have faced an issue in employee deletion on telinta. this is the error on the following url https://mybilling.telinta.com/htdocs/zapna/zapna.pl?action=delete&name=a'.$contrymobilenumber.'&type=account');
-                $this->getUser()->setFlash('message', 'Employee has not been deleted Sucessfully! Error in Callthrough Account');
+                $this->getUser()->setFlash('messageEdit', 'Employee has not been deleted Sucessfully Error in Callthrough Account');
                 if(isset($companyid) && $companyid!=""){$this->redirect('employee/index?company_id='.$companyid.'&filter=filter');}
-                else{$this->redirect('employee/index');}
+                else{$this->redirect('employee/index?message=edit');}
                 return false;
             }
 //        $telintaRegisterCus1 = file_get_contents('https://mybilling.telinta.com/htdocs/zapna/zapna.pl?action=delete&name=cb'.$contrymobilenumber.'&type=account');
@@ -260,9 +260,9 @@ $companyCVR=$compny->getVatNo();
 
                 
         $employee->delete();
-        $this->getUser()->setFlash('message', 'Employee has been deleted Sucessfully');
+        $this->getUser()->setFlash('messageEdit', 'Employee has been deleted Sucessfully');
         if(isset($companyid) && $companyid!=""){$this->redirect('employee/index?company_id='.$companyid.'&filter=filter');}
-        else{$this->redirect('employee/index');}
+        else{$this->redirect('employee/index?message=edit');}
     }
 
     public function executeUsage($request) {

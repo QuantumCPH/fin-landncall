@@ -107,7 +107,7 @@
       'related_class' => 'City',
       'control_name' => 'company[city_id]',
          'peer_method'=>'getSortedSweedishCities',
-      'include_custom' => 'Select City',
+  
     )); echo $value ? $value : '&nbsp;' ?>
      </div>
         </div>
@@ -194,11 +194,11 @@
   <?php $value = object_select_tag($company, 'getStatusId', array (
   'related_class' => 'Status',
   'control_name' => 'company[status_id]',
-  'include_custom' => 'Select Status',
+ 
 )); echo $value ? $value : '&nbsp;' ?>
     </div>
 </div>
-
+<?php   // 'include_custom' => 'Select Status',   ?>
 <div class="form-row">
   <?php echo label_for('company[company_size_id]', __($labels['company{company_size_id}']), '') ?>
   <div class="content<?php if ($sf_request->hasError('company{company_size_id}')): ?> form-error<?php endif; ?>">
@@ -209,7 +209,7 @@
   <?php $value = object_select_tag($company, 'getCompanySizeId', array (
   'related_class' => 'CompanySize',
   'control_name' => 'company[company_size_id]',
-  'include_custom' => 'Select Company Size',
+
 )); echo $value ? $value : '&nbsp;' ?>
     </div>
 </div>
@@ -224,7 +224,7 @@
   <?php $value = object_select_tag($company, 'getCompanyTypeId', array (
   'related_class' => 'CompanyType',
   'control_name' => 'company[company_type_id]',
-  'include_custom' => 'Select Company Type',
+
 )); echo $value ? $value : '&nbsp;' ?>
     </div>
 </div>
@@ -239,7 +239,7 @@
   <?php $value = object_select_tag($company, 'getCustomerTypeId', array (
   'related_class' => 'CustomerType',
   'control_name' => 'company[customer_type_id]',
-  'include_custom' => 'Select Customer Type',
+
 )); echo $value ? $value : '&nbsp;' ?>
     </div>
 </div>
@@ -268,7 +268,7 @@
   <?php $value = object_select_tag($company, 'getAgentCompanyId', array (
   'related_class' => 'AgentCompany',
   'control_name' => 'company[agent_company_id]',
-  'include_custom' => 'Select Agent Company',
+ 
 )); echo $value ? $value : '&nbsp;' ?>
     </div>
 </div>

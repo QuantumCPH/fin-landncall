@@ -1,4 +1,4 @@
-<div id="sf_admin_container">
+<?php use_helper('I18N') ?><div id="sf_admin_container">
 	<div id="sf_admin_content">
 	<!-- employee/list?filters[company_id]=1 -->
 	<a href="<?php echo url_for('employee/index').'?company_id='.$company->getId()."&filter=filter" ?>" class="external_link" target="_self"><?php echo  __('Employees') ?> (<?php echo count($company->getEmployees()) ?>)</a>

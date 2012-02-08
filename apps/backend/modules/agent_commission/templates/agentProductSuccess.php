@@ -4,7 +4,7 @@
    <?php  if(isset($message)){
    ?> 
     <div class="save-ok">
-     <h2> <?php echo  $message; ?> </h2>
+     <h2> <?php echo  __($message); ?> </h2>
     </div>
   <?php } ?> 
     <h1><?php echo __('Product For Agent:') ?> <?php

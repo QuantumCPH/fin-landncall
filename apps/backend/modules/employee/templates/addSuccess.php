@@ -1,4 +1,5 @@
-<div id="sf_admin_content">
+<?php use_helper('I18N') ?>
+<?php use_helper('Number') ?><div id="sf_admin_content">
 
 
 <div id="sf_admin_container">
@@ -24,7 +25,7 @@
         <td style="padding: 5px;"><?php echo  __('Company:') ?></td>
         <td style="padding: 5px;">
   <select name="company_id" id="employee_company_id"    class="required"  style="width:190px;">
-      <option value=""><?php echo  __('Select Company') ?></option>
+   
       <?php foreach($companys as $company){  ?>
 <option value="<?php echo $company->getId(); ?>"<?php echo ($companyval==$company->getId())?"selected='selected'":''?>><?php echo $company->getName()   ?></option>
 <?php   }  ?>
