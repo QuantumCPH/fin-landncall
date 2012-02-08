@@ -5,9 +5,10 @@
 <script type="text/javascript">
 function countChar(str)
 {
-var chars = document.getElementById('chars');
-chars.value = "Characters: "+str.length+"/434";
+  var chars = document.getElementById('chars');
+  chars.value = "Characters: "+str.length+"/434";
 }
+
 </script>
 
 	  <script type="text/javascript">
@@ -125,7 +126,7 @@ chars.value = "Characters: "+str.length+"/434";
                         <td  colspan="2" align="center"><textarea name="message" ><?php echo __("Smartsim use to make extremely cheap international calls (save up to 90%) and to cut prices when you are abroad (you'll save 30-80%). Right now costing Smartsim 99 euro and you can call for the full amount. Smartsim has no monthly fee or hidden charges.") ?> </textarea></td>
 
                     </tr>
-                </table>
+                </table><br />
                 <input type="submit" class="butonsigninsmall" name="submit" value="<?php echo __('Send Email to join Smartsim') ?>">
 	     
 	    </form>
