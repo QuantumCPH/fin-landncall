@@ -1,18 +1,18 @@
 <div id="sf_admin_container">
 	<div id="sf_admin_content">
 	<!-- employee/list?filters[company_id]=1 -->
-	<a href="<?php echo url_for('employee/usage').'?employee_id='.$employee->getId(); ?>" class="external_link" target="_self">Usage</a>
+	<a href="<?php echo url_for('employee/usage').'?employee_id='.$employee->getId(); ?>" class="external_link" target="_self"><?php echo __('Usage') ?></a>
       
         </div></div>
 <div id="sf_admin_container">
 	<div id="sf_admin_content">
 		<div id="company-info">
-		    <h1>Employee Details</h1>
+		    <h1><?php echo __('Employee Details') ?></h1>
 			<fieldset>
 				<div class="form-row">
 				  <label class="required"><?php echo __('Employee Name:')  ?></label>
 				  <div class="content">
-				  	<?php echo $employee->getFirstName()." ".$employee->getLastName(); ?> &nbsp; <?php echo link_to('edit info', 'employee/edit?id='.$employee->getId()) ?>
+				  	<?php echo $employee->getFirstName()." ".$employee->getLastName(); ?> &nbsp; <?php echo link_to(__('edit info'), 'employee/edit?id='.$employee->getId()) ?>
 				  </div>
 				</div>
 

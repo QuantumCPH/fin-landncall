@@ -1554,6 +1554,15 @@
                 <target>info bearbeiten</target>
             </trans-unit>
 
+<trans-unit id="339" translate="yes" reformat="yes" xml:space="default">
+	<source>Employee Details</source>
+                <target>Ausführliche Mitarbeiterdaten</target>
+            </trans-unit>
+
+<trans-unit id="340" translate="yes" reformat="yes" xml:space="default">
+	<source>Employee Name:</source>
+                <target>Name des Mitarbeiters:</target>
+            </trans-unit>
 
 
         </body>
