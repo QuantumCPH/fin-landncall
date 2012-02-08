@@ -94,15 +94,17 @@ width:232px;
     background-image: url("../images/bg-greenbutton-.png");
     background-position: 0 0;
     background-repeat: no-repeat;
-    border-radius: 6px 6px 6px 6px;
     color: #000000;
     display: block;
     font-size: 11px;
     height: 16px;
+    width:auto !important;
     padding-bottom: 0px;
-    padding-left: 3px;
+    padding-left: 10px;
+    padding-right: 10px;
     padding-top: 2px;
     text-decoration: none;
+    white-space: nowrap;
 }
 .right-col .box a span{
     background-image: url("../images/bg-greenbutton-.png");
@@ -149,8 +151,8 @@ width:232px;
 .col{width:250px; float: left; position: relative}
 .split-form ul{list-style:none;}
 .split-form ul li{list-style:none; margin-bottom:10px;  clear:both;width:260px; white-space:nowrap; z-index:100; position:relative; }
-.split-form ul li label{width:171px; float:left; padding-top:3px; font-weight:bold; }
-.split-form ul li input{width:110px; border:1px solid #999999; font-size:11px; padding:3px;}
+.split-form ul li label{width:129px; float:left; padding-top:3px; font-weight:bold; }
+.split-form ul li input{width:110px; border:1px solid #999999; font-size:12px; padding:3px;}
 .split-form ul li select{width:110px; border:1px solid #999999;font-size:11px; padding:3px; }
 .split-form ul li select.strselect{width:37px;font-size:9px; padding:0px; }
 .split-form ul li select.quater{width:55px; border:1px solid #999999;font-size:11px; padding:3px; margin-right:3px; }
@@ -158,21 +160,19 @@ width:232px;
 .split-form ul li.fr {float:right;width:250px; text-align:right;}
 .buton{ 
     background:url('../images/b.png') repeat-x left;
-    border:0px;
     color:#ffffff;
     font-size:22px; 
     margin-top:20px;
     float:left;
     font-weight:bold;
-    -moz-border-radius: 5px;
-    border-radius: 5px;
-    height: auto !important;
+    height: 27px !important;
+    padding-bottom:6px !important;
     width: auto !important;
-    border:1px solid #ffffff !important;
+    border:1px solid #D44D05 !important;
 }
 .butonsignin{ background-image:url("../images/button-orange-big.png");border:0 none;color:#333333;font-size:22px;height:48px;width:132px;float:right;margin-right:40px;}
 .butonsigninsmall{
-background-image:url(../images/b.png);
+    background-image:url(../images/b.png);
     background-repeat:repeat-x;
     height:27px;
     font-size:13px;
@@ -181,9 +181,7 @@ background-image:url(../images/b.png);
     outline:none;
     font-weight:bold;
     cursor:pointer;
-    -moz-border-radius: 5px;
-    border-radius: 5px;
-    margin-left: 30px;
+    margin-left: 35px;
     padding-left: 5px;
     padding-right:5px;
 }
@@ -616,3 +614,9 @@ margin-top:12px;
 .dash-navg a.logout{ background-position:0px -344px}
 .dash-navg a.logout:hover{ background-position:-85px -344px}
 .dash-navg a.logout-s{ background-position:-85px -344px}
+label.extra_refill{
+    width:174px !important;
+}
+#chars{
+    margin-left:3px;
+}
