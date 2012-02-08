@@ -2,4 +2,7 @@
 
 class AgentCompanyPeer extends BaseAgentCompanyPeer
 {
+
+  
+
 }
