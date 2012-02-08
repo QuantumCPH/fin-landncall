@@ -1040,8 +1040,16 @@
                 <target>nicht unterstützt</target>
             </trans-unit>
             <trans-unit id="257" translate="yes" reformat="yes" xml:space="default">
-                <source>Customer </source>
-                <target>Kunde </target>
+                <source>details</source>
+                <target>Nähere</target>
+            </trans-unit>
+            <trans-unit id="258" translate="yes" reformat="yes" xml:space="default">
+                <source>Registration Fee</source>
+                <target>Anmeldegebühr</target>
+            </trans-unit>
+            <trans-unit id="259" translate="yes" reformat="yes" xml:space="default">
+                <source>Product Price</source>
+                <target>Produkt Preis</target>
             </trans-unit>
 
         </body>

@@ -46,7 +46,7 @@
         unique =  jQuery("#uniqueid").val();
         //alert(unique[0]);
         if(unique == "" || unique.length != 6 || unique[0] !='1'){
-            alert("Please enter the valid Unique ID with 6 digits");
+            alert("<?php echo __('Please enter the valid Unique ID with 6 digits')?>");
             return false;
         }
 
@@ -177,7 +177,7 @@
                     </li>
 <?php if ($sf_user->hasFlash('error_message')): ?>
                     <li class="error">
-<?php echo $sf_user->getFlash('error_message'); ?>
+<?php echo __($sf_user->getFlash('error_message')); ?>
                                 </li>
 <?php endif; ?>
                         </ul>
