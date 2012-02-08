@@ -1,5 +1,6 @@
 
  <div id="sf_admin_container"><h1><?php echo  __('Userguide List') ?></h1>
+      
 <?php if($userguide_list){?>
      <table width="100%" cellspacing="0" cellpadding="2" class="tblAlign">
   <thead>
@@ -29,7 +30,7 @@
 </table>
  <div id="sf_admin_header">
   <a  class="external_link" href="<?php echo url_for('userguide/new') ?>">New</a>
- </div> 
+ </div>
      <?php }else{
       ?>
      <p style="font-size: 12px;">No Result Found</p>
