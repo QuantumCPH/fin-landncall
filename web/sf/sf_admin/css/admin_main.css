@@ -225,43 +225,53 @@
 
 #sf_admin_container ul.sf_admin_actions input
 {
-  padding: 3px 3px 3px 20px;
-  color: #333;
+  padding: 3px 3px 3px 3px;
+  color: #ffffff;
   font-size: 11px;
   font-family: Arial, sans-serif;
-  border: 0px;
+  /*border: 0px;
   border-right: 4px solid #999;
-  background-color: #ffc;  
+  background-color: #ffc;  */
   cursor: pointer;
 }
 #sf_admin_container .sf_admin_action_create
 {
-  background: url(../images/add.png) no-repeat 3px 2px;
-  border-right: 4px solid #D44D05 !important;
+  /*background: url(../images/add.png) no-repeat 3px 2px;
+  border-right: 4px solid #D44D05 !important;*/
+  background: url(../images/b.png) repeat-x left;
+  border: 1px solid #D44D05 !important;
 }
 
 #sf_admin_container .sf_admin_action_save
 {
-  background: url(../images/save.png) no-repeat 3px 2px;
-  border-right: 4px solid #D44D05 !important;
+  /*background: url(../images/save.png) no-repeat 3px 2px;
+  border-right: 4px solid #D44D05 !important;*/
+  background: url(../images/b.png) repeat-x left;
+  border: 1px solid #D44D05 !important;
 }
 
 #sf_admin_container .sf_admin_action_save_and_add
 {
-  background: url(../images/save.png) no-repeat 3px 2px;
-  border-right: 4px solid #D44D05 !important;
+  /*background: url(../images/save.png) no-repeat 3px 2px;
+  border-right: 4px solid #D44D05 !important;*/
+  background: url(../images/b.png) repeat-x left;
+  border: 1px solid #D44D05 !important;
 }
 
 #sf_admin_container .sf_admin_action_save_and_list
 {
-  background: url(../images/save.png) no-repeat 3px 2px;
-  border-right: 4px solid #D44D05 !important;
+  /*background: url(../images/save.png) no-repeat 3px 2px;
+  border-right: 4px solid #D44D05 !important;*/
+  background: url(../images/b.png) repeat-x left;
+  border: 1px solid #D44D05 !important;
 }
 
 #sf_admin_container .sf_admin_action_delete
 {
-  background: url(../images/delete.png) no-repeat 3px 2px;
-  border-right: 4px solid #E75C58 !important;
+  /*background: url(../images/delete.png) no-repeat 3px 2px;
+  border-right: 4px solid #E75C58 !important;*/
+  background: url(../images/b.png) repeat-x left;
+  border: 1px solid #D44D05 !important;
 }
 
 #sf_admin_container .sf_admin_action_cancel
@@ -272,20 +282,26 @@
 
 #sf_admin_container .sf_admin_action_filter
 {
-  background: url(../images/filter.png) no-repeat 3px 2px;
-  border-right: 4px solid #D44D05 !important;  
+  /*background: url(../images/filter.png) no-repeat 3px 2px;
+  border-right: 4px solid #D44D05 !important;  */
+  background: url(../images/b.png) repeat-x left;
+  border: 1px solid #D44D05 !important;
 }
 
 #sf_admin_container .sf_admin_action_reset_filter
 {
-  background: url(../images/reset.png) no-repeat 3px 2px;
-  border-right: 4px solid #E75C58 !important;
+  /*background: url(../images/reset.png) no-repeat 3px 2px;
+  border-right: 4px solid #E75C58 !important;*/
+  background: url(../images/b.png) repeat-x left;
+  border:1px solid #D44D05 !important;
 }
 
 #sf_admin_container .sf_admin_action_list
 {
-  background: url(../images/list.png) no-repeat 3px 2px;
-  border-right: 4px solid #D44D05 !important;
+  /*background: url(../images/list.png) no-repeat 3px 2px;
+  border-right: 4px solid #D44D05 !important;*/
+  background: url(../images/b.png) repeat-x left;
+  border: 1px solid #D44D05 !important;
 }
 
 #sf_admin_container .sf_admin_default_action
@@ -410,5 +426,5 @@ div.sf_admin_filters form fieldset h2
 div .sf_admin_action_delete
 {
 	position: relative;
-	top: -32px;
+	top: -34px;
 }
