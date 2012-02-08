@@ -969,6 +969,14 @@
                 <source>Logout</source>
                 <target>Ausloggen</target>
             </trans-unit>
+            <trans-unit id="237" translate="yes" reformat="yes" xml:space="default">
+                <source>Registration Fee</source>
+                <target>Anmeldegebühr</target>
+            </trans-unit>
+            <trans-unit id="238" translate="yes" reformat="yes" xml:space="default">
+                <source>Product Price</source>
+                <target>Produkt Preis</target>
+            </trans-unit>
 
 
         </body>
