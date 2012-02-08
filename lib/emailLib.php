@@ -212,20 +212,6 @@ class emailLib{
     public static function sendCustomerRegistrationViaAgentEmail(Customer $customer,$order)
     {
 
-        echo 'sending email';
-        echo '<br/>';
-        $product_price = $order->getProduct()->getPrice() - $order->getExtraRefill();
-        echo $product_price;
-        echo '<br/>';
-	$vat = .20 * $product_price;
-        echo $vat;
-        echo '<br/>';
-        
-//        //create transaction
-//        $transaction = new Transaction();
-//        $transaction->setOrderId($order->getId());
-//        $transaction->setCustomer($customer);
-//        $transaction->setAmount($form['extra_refill']);
 
         $tc  =new Criteria();
         $tc->add(TransactionPeer::CUSTOMER_ID, $customer->getId() );
@@ -244,6 +230,7 @@ class emailLib{
             $recepient_agent_email  = '';
             $recepient_agent_name = '';
         }
+        $vat = $order->getProduct()->getRegistrationFee()*.25;
         //$this->renderPartial('affiliate/order_receipt', array(
         sfContext::getInstance()->getConfiguration()->loadHelpers('Partial');
         $message_body = get_partial('affiliate/order_receipt', array(
@@ -642,20 +629,6 @@ class emailLib{
     public static function sendCustomerRegistrationViaWebEmail(Customer $customer,$order)
     {
 
-    //echo 'sending email';
-        echo '<br/>';
-        $product_price = $order->getProduct()->getPrice() - $order->getExtraRefill();
-       // echo $product_price;
-        echo '<br/>';
-	$vat = .20 * $product_price;
-       // echo $vat;
-        echo '<br/>';
-
-//        //create transaction
-//        $transaction = new Transaction();
-//        $transaction->setOrderId($order->getId());
-//        $transaction->setCustomer($customer);
-//        $transaction->setAmount($form['extra_refill']);
 
         $tc  =new Criteria();
         $tc->add(TransactionPeer::CUSTOMER_ID, $customer->getId() );
@@ -696,6 +669,8 @@ class emailLib{
                     $postalcharge = '';
                 }
             }
+
+            $vat = ($order->getProduct()->getRegistrationFee()+$postalcharge)*.25;
             
         //$this->renderPartial('affiliate/order_receipt', array(
         sfContext::getInstance()->getConfiguration()->loadHelpers('Partial');
@@ -705,7 +680,7 @@ class emailLib{
                 'transaction'=>$transaction,
                 'vat'=>$vat,
                 'agent_name'=>$recepient_agent_name,
-              'postalcharge'=>$postalcharge,
+                'postalcharge'=>$postalcharge,
                 'wrap'=>true,
         ));
 
@@ -785,7 +760,7 @@ class emailLib{
             $recepient_agent_email  = '';
             $recepient_agent_name = '';
         }
-
+         $vat = ($order->getProduct()->getRegistrationFee())*.25;
       sfContext::getInstance()->getConfiguration()->loadHelpers('Partial');
         $message_body = get_partial('pScripts/order_receipt_sms', array(
                 'customer'=>$customer,
