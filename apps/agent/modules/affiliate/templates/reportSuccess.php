@@ -286,7 +286,7 @@
 		</td>
 	</tr>
         <tr>
-		<td><?php echo __('Total') ?> <strong>commission earned </strong><?php echo __('on refill from shop:') ?></td>
+		<td><?php echo __('Total') ?> <strong><?php echo __('commission earned')?> </strong><?php echo __('on refill from shop:') ?></td>
 		<td align="right">
 		<?php echo $ef_com;?>
                 </td>

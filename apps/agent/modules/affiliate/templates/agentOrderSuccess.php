@@ -28,7 +28,7 @@
             <td><?php echo ++$i ?>.</td>
             <td><?php echo $agentOrder->getCreatedAt() ?></td>
             <td><?php echo $agentOrder->getAmount() ?></td>
-            <td><a href="<?php echo url_for('affiliate/printAgentReceipt?aoid='.$agentOrder->getId(), true) ?>" ><?php echo __('Reciept');?> </a>
+            <td><a href="<?php echo url_for('affiliate/printAgentReceipt?aoid='.$agentOrder->getId(), true) ?>" ><?php echo __('Receipt');?> </a>
             </td>
             
         </tr>

@@ -30,7 +30,7 @@
             </trans-unit>
             <trans-unit id="7" translate="yes" reformat="yes" xml:space="default">
                 <source>Supporting Handsets</source>
-                <target>Unterstützung Handsets</target>
+                <target>Unterstützung Mobilteilen</target>
             </trans-unit>
             <trans-unit id="8" translate="yes" reformat="yes" xml:space="default">
                 <source>User Guide</source>
@@ -50,7 +50,7 @@
             </trans-unit>
             <trans-unit id="12" translate="yes" reformat="yes" xml:space="default">
                 <source>Dear Agent</source>
-                <target>Lieber Agenten</target>
+                <target>Lieber AVertreter</target>
             </trans-unit>
             <trans-unit id="13" translate="yes" reformat="yes" xml:space="default">
                 <source>Thank you for Payment</source>
@@ -66,7 +66,7 @@
             </trans-unit>
             <trans-unit id="16" translate="yes" reformat="yes" xml:space="default">
                 <source>Agent Name</source>
-                <target>Agent Name</target>
+                <target>Vertreter Namen</target>
             </trans-unit>
             <trans-unit id="17" translate="yes" reformat="yes" xml:space="default">
                 <source>Date</source>
@@ -102,7 +102,7 @@
             </trans-unit>
             <trans-unit id="25" translate="yes" reformat="yes" xml:space="default">
                 <source>If you have any questions please feel free to contact our customer support center at</source>
-                <target>Wenn Sie Fragen haben wenden Sie sich bitte an unseren Customer Support Center in Verbindung setzen</target>
+                <target>Wenn Sie Fragen haben, wenden Sie sich bitte an unser Kundendienst-Center in Verbindung setzen</target>
             </trans-unit>
             <trans-unit id="26" translate="yes" reformat="yes" xml:space="default">
                 <source>Cheers</source>
@@ -155,7 +155,7 @@
             </trans-unit>
             <trans-unit id="38" translate="yes" reformat="yes" xml:space="default">
                 <source>expected delivery time agent order</source>
-                <target>voraussichtliche Lieferzeit Agenten um</target>
+                <target>voraussichtliche Lieferzeit Vertreter um</target>
             </trans-unit>
             <trans-unit id="39" translate="yes" reformat="yes" xml:space="default">
                 <source>You will receive your package within %1%</source>
@@ -187,11 +187,11 @@
             </trans-unit>
             <trans-unit id="46" translate="yes" reformat="yes" xml:space="default">
                 <source>Mobile Number</source>
-                <target>Mobile Nummer</target>
+                <target>Handy-Nummer</target>
             </trans-unit>
             <trans-unit id="47" translate="yes" reformat="yes" xml:space="default">
                 <source>Agent Name</source>
-                <target>Agent Name</target>
+                <target>Vertreter Namen</target>
             </trans-unit>
             <trans-unit id="48" translate="yes" reformat="yes" xml:space="default">
                 <source>Smartsim including pot</source>
@@ -203,11 +203,11 @@
             </trans-unit>
             <trans-unit id="50" translate="yes" reformat="yes" xml:space="default">
                 <source>Reciepts For Agent Account Refills</source>
-                <target>Quittungen für Agent-Konto Refills</target>
+                <target>Quittungen für Vertreter-Konto Nachfüllungen</target>
             </trans-unit>
             <trans-unit id="51" translate="yes" reformat="yes" xml:space="default">
                 <source>Show Reciept</source>
-                <target>Zeige Receipt</target>
+                <target>Zeige Quittung</target>
             </trans-unit>
             <trans-unit id="52" translate="yes" reformat="yes" xml:space="default">
                 <source>Customer is registered successfully.</source>
@@ -227,11 +227,11 @@
             </trans-unit>
             <trans-unit id="56" translate="yes" reformat="yes" xml:space="default">
                 <source>Customer Refill</source>
-                <target>Kunden Refill</target>
+                <target>Kunden Nachfüllung</target>
             </trans-unit>
             <trans-unit id="57" translate="yes" reformat="yes" xml:space="default">
                 <source>Agent Account Refill</source>
-                <target>Agent-Konto Refill</target>
+                <target>Vertreter-Konto Nachfüllung</target>
             </trans-unit>
             <trans-unit id="58" translate="yes" reformat="yes" xml:space="default">
                 <source>mobile number</source>
@@ -277,7 +277,7 @@
             </trans-unit>
             <trans-unit id="68" translate="yes" reformat="yes" xml:space="default">
                 <source>password confirm</source>
-                <target>Passwort bestätigen</target>
+                <target>Kennwort bestätigen</target>
             </trans-unit>
             <trans-unit id="69" translate="yes" reformat="yes" xml:space="default">
                 <source>email</source>
@@ -297,27 +297,27 @@
             </trans-unit>
             <trans-unit id="73" translate="yes" reformat="yes" xml:space="default">
                 <source>Refill Amount</source>
-                <target>Refill Menge</target>
+                <target>Nachfüllung Betrag</target>
             </trans-unit>
             <trans-unit id="74" translate="yes" reformat="yes" xml:space="default">
                 <source>Commission Earned</source>
-                <target>Provision</target>
+                <target>verdiente Provision</target>
             </trans-unit>
             <trans-unit id="75" translate="yes" reformat="yes" xml:space="default">
-                <source>SMS Registration Earningsr</source>
-                <target>SMS Registration Ergebnis</target>
+                <source>SMS Registration Earnings</source>
+                <target>SMS-Registrierung Ergebnis</target>
             </trans-unit>
             <trans-unit id="76" translate="yes" reformat="yes" xml:space="default">
                 <source>Refills Earnings</source>
-                <target>Refills Ergebnis</target>
+                <target>Nachfüllungen Ergebnis</target>
             </trans-unit>
             <trans-unit id="77" translate="yes" reformat="yes" xml:space="default">
                 <source>Refill from Shop Earnings</source>
-                <target>Refill Geschäft aus Gewinn</target>
+                <target>Nachfüllung Geschäft aus Gewinn</target>
             </trans-unit>
             <trans-unit id="78" translate="yes" reformat="yes" xml:space="default">
                 <source>Total Refills From The Shop:</source>
-                <target>Insgesamt Refills From The Geschäft:</target>
+                <target>Insgesamt Nachfüllungen zum Einkauf:</target>
             </trans-unit>
 
             <trans-unit id="79" translate="yes" reformat="yes" xml:space="default">
@@ -331,12 +331,12 @@
             </trans-unit>
             <trans-unit id="81" translate="yes" reformat="yes" xml:space="default">
                 <source>Earning Summary</source>
-                <target>Earning Zusammenfassung</target>
+                <target>verdienen Zusammenfassung</target>
             </trans-unit>
 
             <trans-unit id="82" translate="yes" reformat="yes" xml:space="default">
                 <source>Your Balance is:</source>
-                <target>Ihre Balance ist:</target>
+                <target>Ihre Waage ist:</target>
             </trans-unit>
             <trans-unit id="83" translate="yes" reformat="yes" xml:space="default">
                 <source>registered with you:</source>
@@ -352,16 +352,16 @@
             </trans-unit>
             <trans-unit id="86" translate="yes" reformat="yes" xml:space="default">
                 <source>revenue on refill</source>
-                <target>Umsatz auf Refill</target>
+                <target>Umsatz auf Nachfüllung</target>
             </trans-unit>
 
             <trans-unit id="87" translate="yes" reformat="yes" xml:space="default">
                 <source>Total commission earned on refill:</source>
-                <target>Insgesamt verdiente Provision auf nachfüllen:</target>
+                <target>Insgesamt verdiente Provision auf Nachfüllung:</target>
             </trans-unit>
             <trans-unit id="88" translate="yes" reformat="yes" xml:space="default">
                 <source>on refill from shop:</source>
-                <target>auf Refill von Laden:</target>
+                <target>auf Nachfüllung von Laden:</target>
             </trans-unit>
             <trans-unit id="89" translate="yes" reformat="yes" xml:space="default">
                 <source>Total</source>
@@ -369,11 +369,11 @@
             </trans-unit>
             <trans-unit id="90" translate="yes" reformat="yes" xml:space="default">
                 <source>on refill from shop:</source>
-                <target>auf Refill von Laden:</target>
+                <target>auf Nachfüllung von Laden:</target>
             </trans-unit>
             <trans-unit id="91" translate="yes" reformat="yes" xml:space="default">
                 <source>on SMS Registeration:</source>
-                <target>auf SMS Registeration:</target>
+                <target>auf SMS Anmeldung:</target>
             </trans-unit>
             <trans-unit id="92" translate="yes" reformat="yes" xml:space="default">
                 <source>Commission earned</source>
@@ -381,7 +381,7 @@
             </trans-unit>
             <trans-unit id="93" translate="yes" reformat="yes" xml:space="default">
                 <source>on SMS Registeration:</source>
-                <target>auf SMS Registeration:</target>
+                <target>auf SMS Anmeldung:</target>
             </trans-unit>
 
             <trans-unit id="94" translate="yes" reformat="yes" xml:space="default">
@@ -394,7 +394,7 @@
             </trans-unit>
             <trans-unit id="96" translate="yes" reformat="yes" xml:space="default">
                 <source>Extra refill amount</source>
-                <target>Extra Refill Menge</target>
+                <target>extra Nachfüllung Menge</target>
             </trans-unit>
             <trans-unit id="97" translate="yes" reformat="yes" xml:space="default">
                 <source>Quanity must be 1 or more</source>
@@ -402,7 +402,7 @@
             </trans-unit>
             <trans-unit id="98" translate="yes" reformat="yes" xml:space="default">
                 <source>Brand name</source>
-                <target>Marken Nummer</target>
+                <target>Markenname</target>
             </trans-unit>
             <trans-unit id="99" translate="yes" reformat="yes" xml:space="default">
                 <source>Model</source>
@@ -411,7 +411,7 @@
       <!-- form labels -->
             <trans-unit id="100" translate="yes" reformat="yes" xml:space="default">
                 <source>Callback Test result</source>
-                <target>Callback Testergebnis</target>
+                <target>Rückruf Testergebnis</target>
             </trans-unit>
             <trans-unit id="101" translate="yes" reformat="yes" xml:space="default">
                 <source>Auto reboot</source>
@@ -479,7 +479,7 @@
             </trans-unit>
             <trans-unit id="117" translate="yes" reformat="yes" xml:space="default">
                 <source>Company Name:</source>
-                <target>Name des Unternehmens:</target>
+                <target>Firmen Namen:</target>
             </trans-unit>
             <trans-unit id="118" translate="yes" reformat="yes" xml:space="default">
                 <source>CVR Number:</source>
@@ -553,11 +553,11 @@
             </trans-unit>
             <trans-unit id="135" translate="yes" reformat="yes" xml:space="default">
                 <source>Edit AgentUser</source>
-                <target>Bearbeiten Agent Benutzer</target>
+                <target>Bearbeiten Vertreter Benutzer</target>
             </trans-unit>
             <trans-unit id="136" translate="yes" reformat="yes" xml:space="default">
                 <source>Agent User List</source>
-                <target>Agent Benutzer Liste</target>
+                <target>Vertreter Benutzer Liste</target>
             </trans-unit>
             <trans-unit id="137" translate="yes" reformat="yes" xml:space="default">
                 <source>Id</source>
@@ -565,7 +565,7 @@
             </trans-unit>
             <trans-unit id="138" translate="yes" reformat="yes" xml:space="default">
                 <source>Agent company</source>
-                <target>Agenten Unternehmen</target>
+                <target>Vertreter-Unternehmen</target>
             </trans-unit>
             <trans-unit id="139" translate="yes" reformat="yes" xml:space="default">
                 <source>Username</source>
@@ -589,7 +589,7 @@
             </trans-unit>
             <trans-unit id="144" translate="yes" reformat="yes" xml:space="default">
                 <source>New Agent User</source>
-                <target>Neu Agent Benutzer</target>
+                <target>Neu Vertreter Benutzer</target>
             </trans-unit>
             <trans-unit id="145" translate="yes" reformat="yes" xml:space="default">
                 <source>Edit Company</source>
@@ -621,7 +621,7 @@
             </trans-unit>
             <trans-unit id="152" translate="yes" reformat="yes" xml:space="default">
                 <source>Contact name</source>
-                <target>Name des Ansprechpartners</target>
+                <target>Namen des Ansprechpartners</target>
             </trans-unit>
             <trans-unit id="153" translate="yes" reformat="yes" xml:space="default">
                 <source>Email</source>
@@ -721,7 +721,7 @@
             </trans-unit>
             <trans-unit id="177" translate="yes" reformat="yes" xml:space="default">
                 <source>Extra refill</source>
-                <target>Extra-Refill</target>
+                <target>Extra Nachfüllung</target>
             </trans-unit>
             <trans-unit id="178" translate="yes" reformat="yes" xml:space="default">
                 <source>Zapna Global – FAQ</source>
@@ -749,7 +749,7 @@
             </trans-unit>
             <trans-unit id="184" translate="yes" reformat="yes" xml:space="default">
                 <source>Register</source>
-                <target>Register</target>
+                <target>registrieren</target>
             </trans-unit>
             <trans-unit id="185" translate="yes" reformat="yes" xml:space="default">
                 <source>First name</source>
@@ -769,7 +769,7 @@
             </trans-unit>
             <trans-unit id="189" translate="yes" reformat="yes" xml:space="default">
                 <source>Telecom operator</source>
-                <target>Telecom-Operator</target>
+                <target>Telekom-Betreiber</target>
             </trans-unit>
             <trans-unit id="190" translate="yes" reformat="yes" xml:space="default">
                 <source>Retype password</source>
@@ -785,19 +785,19 @@
             </trans-unit>
             <trans-unit id="193" translate="yes" reformat="yes" xml:space="default">
                 <source>Customer name</source>
-                <target>Name des Kunden</target>
+                <target>Namen des Kunden</target>
             </trans-unit>
              <trans-unit id="194" translate="yes" reformat="yes" xml:space="default">
                 <source>Mobile Number</source>
-                <target>Mobile Nummer</target>
+                <target>Handy-Nummer</target>
             </trans-unit>
              <trans-unit id="195" translate="yes" reformat="yes" xml:space="default">
                 <source>Amount Refilled</source>
-                <target>Höhe Refilled</target>
+                <target>Höhe wiederbefüllte</target>
             </trans-unit>
              <trans-unit id="196" translate="yes" reformat="yes" xml:space="default">
                 <source>Show Receipt</source>
-                <target>Zeige Receipt</target>
+                <target>Zeige Empfang</target>
             </trans-unit>
              <trans-unit id="197" translate="yes" reformat="yes" xml:space="default">
                 <source>Total Receipts for transactions:</source>
@@ -809,7 +809,7 @@
             </trans-unit>
             <trans-unit id="199" translate="yes" reformat="yes" xml:space="default">
                 <source>Registration Receipts</source>
-                <target>Anmeldung Receipts</target>
+                <target>Anmeldung Quittungen</target>
             </trans-unit>
             <trans-unit id="200" translate="yes" reformat="yes" xml:space="default">
                 <source> receipts</source>
@@ -817,18 +817,18 @@
             </trans-unit>
             <trans-unit id="201" translate="yes" reformat="yes" xml:space="default">
                 <source>Refill Receipts</source>
-                <target>Refill Receipts</target>
+                <target>Nachfüllung Quittungen</target>
             </trans-unit>
             <trans-unit id="202" translate="yes" reformat="yes" xml:space="default">
                 <source>Select refill amount</source>
-                <target>Wählen Sie füllen Menge</target>
+                <target>Wählen Nachfüllung Betrag</target>
             </trans-unit>
             <trans-unit id="203" translate="yes" reformat="yes" xml:space="default">
                 <source>Recharge</source>
                 <target>aufladen</target>
             </trans-unit>
             <trans-unit id="204" translate="yes" reformat="yes" xml:space="default">
-                <source>Please enter a valid 8 to 14 digit mobile number. </source>
+                <source>Please enter a valid 8 to 14 digit mobile number.</source>
                 <target>Bitte geben Sie eine gültige 8 bis 14-stellige Handynummer.</target>
             </trans-unit>
             <trans-unit id="205" translate="yes" reformat="yes" xml:space="default">
@@ -861,11 +861,11 @@
             </trans-unit>
             <trans-unit id="212" translate="yes" reformat="yes" xml:space="default">
                 <source>If you have any questions please feel free to contact our customer support center at </source>
-                <target>Wenn Sie Fragen haben wenden Sie sich bitte an unseren Customer Support Center in Verbindung setzen</target>
+                <target>Wenn Sie Fragen haben, wenden Sie sich bitte an unser Kundendienst-Center in Verbindung setzen </target>
             </trans-unit>
             <trans-unit id="213" translate="yes" reformat="yes" xml:space="default">
                 <source>View All News &amp; Updates</source>
-                <target>Alle News &amp; Updates</target>
+                <target>Alle News &amp; Aktuelles</target>
             </trans-unit>
             <trans-unit id="214" translate="yes" reformat="yes" xml:space="default">
                 <source>Your goods will be shipped today. You should have delivery within two days. Your customer number is </source>
@@ -909,7 +909,7 @@
             </trans-unit>
             <trans-unit id="224" translate="yes" reformat="yes" xml:space="default">
                 <source>Agent Refill</source>
-                <target>Refill-Agent</target>
+                <target>Vertreter Nachfüllung</target>
             </trans-unit>
             <trans-unit id="225" translate="yes" reformat="yes" xml:space="default">
                 <source>Below is the receipt of the product indicated.</source>
@@ -938,7 +938,112 @@
            <trans-unit id="231" translate="yes" reformat="yes" xml:space="default">
                 <source>Services</source>
                 <target>Dienstleistungen</target>
-            </trans-unit>            
+            </trans-unit>
+            <trans-unit id="232" translate="yes" reformat="yes" xml:space="default">
+                <source>Log in to account</source>
+                <target>Einloggen zur Rechenschaft</target>
+            </trans-unit>
+            <trans-unit id="233" translate="yes" reformat="yes" xml:space="default">
+                <source>provide your email and password</source>
+                <target>Ihre E-Mail und Passwort</target>
+            </trans-unit>
+            <trans-unit id="234" translate="yes" reformat="yes" xml:space="default">
+                <source>Invalid username</source>
+                <target>Ungültiger Benutzername</target>
+            </trans-unit>
+            <trans-unit id="235" translate="yes" reformat="yes" xml:space="default">
+                <source>Invalid password</source>
+                <target>ungültiges Passwort</target>
+            </trans-unit>
+            <trans-unit id="236" translate="yes" reformat="yes" xml:space="default">
+                <source>CRM/Billing/Agent Portal</source>
+                <target>CRM/Abrechnung/Vertreter Portal</target>
+            </trans-unit>
+            <trans-unit id="237" translate="yes" reformat="yes" xml:space="default">
+                <source>Customers</source>
+                <target>Kunden</target>
+            </trans-unit>
+            <trans-unit id="238" translate="yes" reformat="yes" xml:space="default">
+                <source>revenue earned</source>
+                <target>erzielten Einnahmen</target>
+            </trans-unit>
+            <trans-unit id="239" translate="yes" reformat="yes" xml:space="default">
+                <source>commission earned</source>
+                <target>verdiente Provision</target>
+            </trans-unit>
+            <trans-unit id="240" translate="yes" reformat="yes" xml:space="default">
+                <source>News &amp; Updates Listing</source>
+                <target>Nachrichten &amp; Aktuelles Angebot</target>
+            </trans-unit>
+            <trans-unit id="241" translate="yes" reformat="yes" xml:space="default">
+                <source>City</source>
+                <target>Stadt</target>
+            </trans-unit>
+            <trans-unit id="242" translate="yes" reformat="yes" xml:space="default">
+                <source>Product</source>
+                <target>Produkt</target>
+            </trans-unit>
+            <trans-unit id="243" translate="yes" reformat="yes" xml:space="default">
+                <source>User Guide</source>
+                <target>Benutzer Leitfaden</target>
+            </trans-unit>
+            <trans-unit id="244" translate="yes" reformat="yes" xml:space="default">
+                <source>Account Refill</source>
+                <target>Konto Nachfüllung</target>
+            </trans-unit>
+            <trans-unit id="245" translate="yes" reformat="yes" xml:space="default">
+                <source>%1% account is successfully refilled with %2% EURO.</source>
+                <target>%1% Konto ist erfolgreich mit nachgefüllt %2% EURO.</target>
+            </trans-unit>
+            <trans-unit id="246" translate="yes" reformat="yes" xml:space="default">
+                <source>Customer </source>
+                <target>Kunde </target>
+            </trans-unit>
+            <trans-unit id="247" translate="yes" reformat="yes" xml:space="default">
+                <source> is registered successfully</source>
+                <target> erfolgreich registriert</target>
+            </trans-unit>
+            <trans-unit id="248" translate="yes" reformat="yes" xml:space="default">
+                <source>Payment Confirmation</source>
+                <target>Zahlungsbestätigung</target>
+            </trans-unit>
+            <trans-unit id="249" translate="yes" reformat="yes" xml:space="default">
+                <source>Your Credit Card Information was not approved</source>
+                <target>Ihre Kreditkarten-Informationen wurde nicht genehmigt</target>
+            </trans-unit>
+            <trans-unit id="250" translate="yes" reformat="yes" xml:space="default">
+                <source>Your Credit Card recharge of </source>
+                <target>Ihre Kreditkarten-neubildung</target>
+            </trans-unit>
+            <trans-unit id="251" translate="yes" reformat="yes" xml:space="default">
+                <source> EURO is approved</source>
+                <target> EURO wird genehmigt</target>
+            </trans-unit>
+            <trans-unit id="252" translate="yes" reformat="yes" xml:space="default">
+                <source>Supporting Handset</source>
+                <target>Unterstützung Hörer</target>
+            </trans-unit>
+            <trans-unit id="253" translate="yes" reformat="yes" xml:space="default">
+                <source>Deactivation take around 4-5 min before its activated</source>
+                <target>Deaktivierung dauert etwa 4-5 min vor seinem aktiviert</target>
+            </trans-unit>
+            <trans-unit id="254" translate="yes" reformat="yes" xml:space="default">
+                <source>The phone is not supported</source>
+                <target>Das Telefon wird nicht unterstützt</target>
+            </trans-unit>
+            <trans-unit id="255" translate="yes" reformat="yes" xml:space="default">
+                <source>Auto Reboot</source>
+                <target>Auto Neustart</target>
+            </trans-unit>
+            <trans-unit id="256" translate="yes" reformat="yes" xml:space="default">
+                <source>Not Supported</source>
+                <target>nicht unterstützt</target>
+            </trans-unit>
+            <trans-unit id="257" translate="yes" reformat="yes" xml:space="default">
+                <source>Customer </source>
+                <target>Kunde </target>
+            </trans-unit>
+
         </body>
     </file>
 </xliff>
