@@ -1216,7 +1216,7 @@
             </trans-unit>
             <trans-unit id="271" translate="yes" reformat="yes" xml:space="default">
 			    <source>Invalid password</source>
-                <target>Invalid password</target>
+                <target>Ungültiges Passwort</target>
             </trans-unit>
             <trans-unit id="272" translate="yes" reformat="yes" xml:space="default">
 			    <source>Are you Sure</source>
@@ -1283,6 +1283,16 @@
 		<source>Employee has been edited successfully</source>
                 <target>Mitarbeiter wurde erfolgreich bearbeitet</target>
             </trans-unit>
+            <trans-unit id="83" translate="yes" reformat="yes" xml:space="default">
+			    <source>The form is not valid because it contains some errors.</source>
+                <target>Die Form ist nicht gültig, weil es einige Fehler enthält.</target>
+            </trans-unit>
+            <trans-unit id="84" translate="yes" reformat="yes" xml:space="default">
+			    <source>The Device name cannot be left blank.</source>
+                <target>Der Device-Name darf nicht leer sein.</target>
+            </trans-unit>
+			
+
         </body>
     </file>
 </xliff>
