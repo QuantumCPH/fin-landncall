@@ -26,8 +26,8 @@
                   <td class="title" nowrap><?php echo __('Date & time') ?></td>
                   <td class="title"><?php echo __('Description') ?></td>
                   <td class="title"><?php echo __('Amount') ?></td>
-                  <td class="title"><?php echo __('Type') ?></td>
-                  <td class="title"></td>
+              <!--    <td class="title"><?php //echo __('Type') ?></td>
+                  <td class="title"></td> -->
                 </tr>
                 <?php 
                 $amount_total = 0;
@@ -45,20 +45,25 @@
                   }?></td>
                   <td><?php echo $transaction->getAmount(); $amount_total += $transaction->getAmount() ?>
                             &euro;</td>
-                  <td><a href="#" class="receipt" onclick="javascript: window.open('<?php echo url_for('payments/showReceipt?tid='.$transaction->getId(), true) ?>')"><?php echo $transaction->getAmount()>=0?__('Paid'):__('Refund') ?></a></td>
-                  <td nowrap="nowrap"><a href="#" style=" white-space: nowrap" class="receipt" onclick="iprint(preview_<?php echo $transaction->getId();?>);return false;"><?php echo __('print'); ?>
+                 <!-- <td>
+                      <a href="#" class="receipt" onclick="javascript: window.open('<?php //echo url_for('payments/showReceipt?tid='.$transaction->getId(), true) ?>')"><?php //echo $transaction->getAmount()>=0?__('Paid'):__('Refund') ?></a></td>
+                     
+
+                  <td nowrap="nowrap">
+                      <!--
+                      <a href="#" style=" white-space: nowrap" class="receipt" onclick="iprint(preview_<?php //echo $transaction->getId();?>);return false;"><?php //echo __('print'); ?>
                   </a>
-                      <iframe id="preview_<?php echo $transaction->getId();?>" name="preview_<?php echo $transaction->getId();?>" src="<?php echo url_for('payments/showReceipt?tid='.$transaction->getId(), true) ?>"  style="display:none">
+                      <iframe id="preview_<?php //echo $transaction->getId();?>" name="preview_<?php //echo $transaction->getId();?>" src="<?php //echo url_for('payments/showReceipt?tid='.$transaction->getId(), true) ?>"  style="display:none">
                      </iframe>
                         <script>
-                            function printForm() { window.focus(); window.print(); }
-                            function iprint(ptarget)
-                            {
-                                ptarget.focus();
-                                window.print();
-                            } 
-                        </script>
-                      </td>
+                          //  function printForm() { window.focus(); window.print(); }
+                          //  function iprint(ptarget)
+                           // {
+                           //     ptarget.focus();
+                          //      window.print();
+                          //  }
+                        </script> 
+                      </td>-->
                  
                      
                  
