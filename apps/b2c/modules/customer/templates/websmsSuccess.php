@@ -128,8 +128,13 @@ return true;}
         </tr> </li>
     </ul>
         <tr>
-            <td>
-                     <input type="submit" class="buton" name="submit"  value="<?php echo __("Send SMS") ?>" onclick="
+            <td colspan="2">
+                     
+            </td>
+        </tr>
+    </table>
+            <br />
+            <input type="submit" class="buton" name="submit"  value="<?php echo __("Send SMS") ?>" onclick="
                             if(document.getElementById('number').value==''){
                                 alert('Please Enter The Destination Number');
                                 document.getElementById('number').focus();
@@ -140,11 +145,7 @@ return true;}
                                 return false;
                             }else{
                                 return true;
-                            }" >
-            </td>
-        </tr>
-    </table>
-            <br />
+                            }" />
             <br />
    
        
