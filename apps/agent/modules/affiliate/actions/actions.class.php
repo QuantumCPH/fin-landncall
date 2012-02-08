@@ -434,7 +434,7 @@ class affiliateActions extends sfActions {
                 //$this->getUser()->setFlash('message', 'Invalid mobile number');
                 //$this->getUser()->setFlash('error_message', 'Customer Not Found.');
                 $is_recharged = false;
-                $this->error_mobile_number = 'invalid mobile number';
+                $this->error_mobile_number = $this->getContext()->getI18N()->__('invalid mobile number');
             }
         }
     }
@@ -909,7 +909,7 @@ class affiliateActions extends sfActions {
            // $this->getUser()->setCulture('de');
             emailLib::sendCustomerRegistrationViaAgentEmail($this->customer, $order);
          //   $this->getUser()->setCulture('en');
-            $this->getUser()->setFlash('message', 'Customer ' . $this->customer->getMobileNumber() . ' is registered successfully');
+            $this->getUser()->setFlash('message', $this->getContext()->getI18N()->__('Customer ') . $this->customer->getMobileNumber() . $this->getContext()->getI18N()->__(' is registered successfully'));
             $this->redirect('affiliate/receipts');
         }
     }
@@ -1004,7 +1004,7 @@ class affiliateActions extends sfActions {
             $aoc->add(AgentOrderPeer::AGENT_ORDER_ID, $agent_order_id);
             $agent_order = AgentOrderPeer::doSelectOne($aoc);
 
-            $this->getUser()->setFlash('message', 'Your Credit Card Information was not approved');
+            $this->getUser()->setFlash('message', $this->getContext()->getI18N()->__('Your Credit Card Information was not approved'));
             $this->agent_order_id = $agent_order_id;
             $this->agent_order = $agent_order;
         } else {
@@ -1052,7 +1052,7 @@ class affiliateActions extends sfActions {
             $aph->setRemainingBalance($remainingbalance);
             $aph->save();
 
-            $this->getUser()->setFlash('message', 'Your Credit Card recharge of ' . $amount . 'EURO is approved');
+            $this->getUser()->setFlash('message', $this->getContext()->getI18N()->__('Your Credit Card recharge of ') . $amount . $this->getContext()->getI18N()->__(' EURO is approved'));
             emailLib::sendAgentRefilEmail($this->agent, $agent_order);
             $this->redirect('affiliate/agentOrder');
         }

@@ -1,5 +1,5 @@
 <div id="sf_admin_container">
-    <h1>Select Company</h1><br />
+    <h1><?php echo __('Select Company') ?></h1><br />
 <form method="post" action="agentProduct">
 
   <?php echo $form['agent_company_id']->renderLabel() ?>

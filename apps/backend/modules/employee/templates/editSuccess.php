@@ -1,4 +1,5 @@
-<div id="sf_admin_container"><h1><?php echo __('Edit Employee') ?></h1>
+<?php use_helper('I18N') ?>
+<?php use_helper('Number') ?><div id="sf_admin_container"><h1><?php echo __('Edit Employee') ?></h1>
 
 <?php if (isset($_REQUEST['message']) && $_REQUEST['message']!= "") {
  ?>

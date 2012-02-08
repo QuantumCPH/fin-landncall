@@ -1,4 +1,5 @@
-<?php /*if($sf_user->hasFlash('message')){ ?>
+<?php use_helper('I18N') ?>
+<?php use_helper('Number') ?><?php /*if($sf_user->hasFlash('message')){ ?>
 
 
 <div class="save-ok">
@@ -16,7 +17,7 @@
         <td style="padding: 5px;"><?php echo __('Company:') ?></td>
         <td style="padding: 5px;">
             <select name="company_id" id="employee_company_id"    class="required"  style="width:190px;">
-            <option value="" selected="selected"><?php echo __('Select Company') ?></option>
+           
             <?php foreach($companys as $company){  ?>
             <option value="<?php echo $company->getId();   ?>"><?php echo $company->getName()   ?></option>
             <?php   }  ?>
@@ -38,7 +39,7 @@
     </table>
         <div id="sf_admin_container">
           <ul class="sf_admin_actions">
-           <li><input type="submit" name="save" value="save" class="sf_admin_action_save" /></li>
+           <li><input type="submit" name="save" value="<?php echo __('save') ?>" class="sf_admin_action_save" /></li>
            </ul>
         </div>
     </div>

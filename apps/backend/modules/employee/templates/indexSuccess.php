@@ -1,4 +1,4 @@
-<div  id="sf_admin_container">
+<?php use_helper('I18N') ?><?php use_helper('Number') ?><div  id="sf_admin_container">
 <h1><?php echo __('My employee List') ?></h1><br />
 <?php if(isset($_REQUEST['message']) && $_REQUEST['message']=="edit"){  ?>
 
@@ -157,7 +157,7 @@
        <td><?php //echo $employee->getAppCode() ?></td>
        <td><?php //echo $employee->getPassword() ?></td>-->
        <td><a href="<?php echo url_for('employee/edit?id='.$employee->getId()) ?>"><img src="/sf/sf_admin/images/edit_icon.png" title="edit" alt="edit"></a>
-           <a href="employee/del?id=<?php echo $employee->getId(); if(isset($companyval) && $companyval!=""){echo "&company_id=".$companyval;} ?>"  onclick="if (confirm('Are you sure?')) { var f = document.createElement('form'); f.style.display = 'none'; this.parentNode.appendChild(f); f.method = 'post'; f.action = this.href;f.submit(); };return false;"> <img src="/sf/sf_admin/images/delete_icon.png" title="delete" alt="delete"></a>
+           <a href="employee/del?id=<?php echo $employee->getId(); if(isset($companyval) && $companyval!=""){echo "&company_id=".$companyval;} ?>"  onclick="if (confirm('<?php echo __('Are you sure?') ?>')) { var f = document.createElement('form'); f.style.display = 'none'; this.parentNode.appendChild(f); f.method = 'post'; f.action = this.href;f.submit(); };return false;"> <img src="/sf/sf_admin/images/delete_icon.png" title="delete" alt="delete"></a>
        <a href="<?php echo url_for('employee/view?id='.$employee->getId()) ?>"><img src="/sf/sf_admin/images/default_icon.png" title="view" alt="view"></a>
         <!--    <a href="<?php echo url_for('employee/view?id='.$employee->getId()) ?>"><img src="/sf/sf_admin/images/default_icon.png" title="view" alt="call history"></a>
      -->  </td>

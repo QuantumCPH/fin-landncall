@@ -10,7 +10,9 @@
 {
   text-decoration: underline;
 }
-
+#sf_admin_container .form-errors{
+    font-size:12px;
+}
 #sf_admin_container td
 {
   margin: 0;
@@ -79,6 +81,7 @@
   width: 12em;
   color: #666;
   font-weight: normal !important;
+  white-space: nowrap;
 }
 
 #sf_admin_container label.required
@@ -97,7 +100,7 @@
 #sf_admin_container .save-ok
 {
   margin-bottom: 10px;
-  
+  margin-top:5px;
 }
 
 #sf_admin_container .save-ok h2
@@ -114,7 +117,6 @@
   clear: both;
   padding: 10px;
   /*border-bottom: 1px solid #ddd;*/
-  background-color: #ffffff !important;
   font-family: arial;
   font-size: 11px;
 }
@@ -379,11 +381,11 @@ div.submitBtn{
 {
 	text-transform:capitalize;
 	font-family: arial;
-	font-size: .8em;
+	font-size: 11px;
         color:#D44D05;
 }
 #sf_fieldset_none{
-    border:1px solid #ffffff !important;
+    /*border:1px solid #ffffff !important;*/
 }
 #sf_admin_container h1
 {

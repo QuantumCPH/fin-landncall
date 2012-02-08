@@ -1,4 +1,4 @@
-<div id="sf_admin_container">
+<?php use_helper('I18N') ?><div id="sf_admin_container">
 	<div id="sf_admin_content">
 	<!-- employee/list?filters[company_id]=1 -->
 	<a href="<?php echo url_for('employee/index').'?company_id='.$company->getId()."&filter=filter" ?>" class="external_link" target="_self"><?php echo  __('Employees') ?> (<?php echo count($company->getEmployees()) ?>)</a>
@@ -17,7 +17,7 @@
 				<div class="form-row">
 				  <label class="required"><?php echo  __('Company Name:') ?></label>
 				  <div class="content">
-				  	<?php echo $company->getName() ?> &nbsp; <?php echo link_to('edit info', 'company/edit?id='.$company->getId()) ?>
+				  	<?php echo $company->getName() ?> &nbsp; <?php echo link_to(__('edit info'), 'company/edit?id='.$company->getId()) ?>
 				  </div>
 				</div>
 

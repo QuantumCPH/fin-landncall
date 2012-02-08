@@ -23,7 +23,7 @@
  
             
               <li>
-             <label for="customer_password" class="required"><?php echo __('Old Password') ?> *</label>
+             <label for="customer_password" class="required"><?php echo __('Old Password') ?> </label><em class="required">*</em>
                 <input type="password" id="customer_old_password" name="customer[oldpassword]" value="<?php if ($oldpassword){}?>">
                
                 <?php if ($oldpasswordError): ?>

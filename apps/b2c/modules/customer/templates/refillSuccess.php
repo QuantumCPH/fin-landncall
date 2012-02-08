@@ -165,7 +165,7 @@ if($is_auto_refill_activated){  ?>  <div class="left-col">
             </li>
             <?php } ?>
             <li>
-              <label for="extra_refill"><?php echo __('Select amount to be loaded:') ?></label>
+              <label for="extra_refill" class="extra_refill"><?php echo __('Select amount to be loaded:') ?></label>
               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;<?php echo $form['extra_refill']?>  &euro;
             </li>
 

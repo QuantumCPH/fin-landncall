@@ -19,8 +19,8 @@
 </div>
 <table width="75%" cellspacing="0" cellpadding="2" class="tblAlign">
 <tr class="headings">
-    <th><?php echo __('Date &amp; Time') ?></th>
-    <th><?php echo __('Company &amp; Name') ?></th>
+    <th><?php echo __('Date & Time') ?></th>
+    <th><?php echo __('Company & Name') ?></th>
     <th><?php echo __('Description') ?></th>
     <th><?php echo __('Amount') ?></th>
 </tr>

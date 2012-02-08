@@ -28,7 +28,7 @@
 <?php $value = object_select_tag($company, 'getCityId', array (
   'related_class' => 'City',
   'control_name' => 'company[city_id]',
-  'include_blank' => true,
+  'include_blank' => false,
 )); echo $value ? $value : '&nbsp;' ?>
   <?php $value = object_input_tag($company, 'getContactName', array (
   'size' => 80,

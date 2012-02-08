@@ -1,4 +1,3 @@
-
 <?php echo form_tag('company/save', array(
   'id'        => 'sf_admin_edit_form',
   'name'      => 'sf_admin_edit_form',
@@ -7,7 +6,7 @@
 
 <?php echo object_input_hidden_tag($company, 'getId') ?>
 
-
+<fieldset>
 <div class="form-row">
   <?php echo label_for('company[name]', __($labels['company{name}']), 'class="required" ') ?>
   <div class="content<?php if ($sf_request->hasError('company{name}')): ?> form-error<?php endif; ?>">
@@ -107,7 +106,7 @@
       'related_class' => 'City',
       'control_name' => 'company[city_id]',
          'peer_method'=>'getSortedSweedishCities',
-      'include_custom' => 'Select City',
+  
     )); echo $value ? $value : '&nbsp;' ?>
      </div>
         </div>
@@ -194,11 +193,11 @@
   <?php $value = object_select_tag($company, 'getStatusId', array (
   'related_class' => 'Status',
   'control_name' => 'company[status_id]',
-  'include_custom' => 'Select Status',
+ 
 )); echo $value ? $value : '&nbsp;' ?>
     </div>
 </div>
-
+<?php   // 'include_custom' => 'Select Status',   ?>
 <div class="form-row">
   <?php echo label_for('company[company_size_id]', __($labels['company{company_size_id}']), '') ?>
   <div class="content<?php if ($sf_request->hasError('company{company_size_id}')): ?> form-error<?php endif; ?>">
@@ -209,7 +208,7 @@
   <?php $value = object_select_tag($company, 'getCompanySizeId', array (
   'related_class' => 'CompanySize',
   'control_name' => 'company[company_size_id]',
-  'include_custom' => 'Select Company Size',
+
 )); echo $value ? $value : '&nbsp;' ?>
     </div>
 </div>
@@ -224,7 +223,7 @@
   <?php $value = object_select_tag($company, 'getCompanyTypeId', array (
   'related_class' => 'CompanyType',
   'control_name' => 'company[company_type_id]',
-  'include_custom' => 'Select Company Type',
+
 )); echo $value ? $value : '&nbsp;' ?>
     </div>
 </div>
@@ -239,7 +238,7 @@
   <?php $value = object_select_tag($company, 'getCustomerTypeId', array (
   'related_class' => 'CustomerType',
   'control_name' => 'company[customer_type_id]',
-  'include_custom' => 'Select Customer Type',
+
 )); echo $value ? $value : '&nbsp;' ?>
     </div>
 </div>
@@ -268,7 +267,7 @@
   <?php $value = object_select_tag($company, 'getAgentCompanyId', array (
   'related_class' => 'AgentCompany',
   'control_name' => 'company[agent_company_id]',
-  'include_custom' => 'Select Agent Company',
+ 
 )); echo $value ? $value : '&nbsp;' ?>
     </div>
 </div>
@@ -326,16 +325,9 @@
 <input type="hidden" value="" id="error" name="error">
 <?php }?>
 
-
+</fieldset>
 
 
 <?php include_partial('edit_actions', array('company' => $company)) ?>
 
 </form>
-
-<!--<ul class="sf_admin_actions">
-      <li class="float-left"> <?php //if ($company->getId()): ?>
-        <?php //echo button_to(__('delete'), 'company/delete?id='.$company->getId(), array (  'post' => true,  'confirm' => __('Are you sure?'),  'class' => 'sf_admin_action_delete',)) ?><?php //endif; ?>
-</li>
-  </ul>
--->

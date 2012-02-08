@@ -12,7 +12,7 @@
               <table width="100%" cellspacing="0" cellpadding="2" class="tblAlign">
                    <tr class="headings">
                        <th width="15%"  align="left"><?php echo __('Order Numer') ?></th>
-                       <th width="25%"  align="left"><?php echo __('Date &amp; Time') ?></th>
+                       <th width="25%"  align="left"><?php echo __('Date & Time') ?></th>
                        <th width="50%"  align="left"><?php echo __('Description') ?></th>
                        <th width="10%" align="left"><?php echo __('Amount') ?></th>
                    </tr>
