@@ -1,27 +1,12 @@
 <div id="sf_admin_content">
-<?php if(isset($_REQUEST['message']) && $_REQUEST['message']!=""){ 
-    
-    if($_REQUEST['message']=="error"){ ?>
-        
-        
-<div class="save-ok">
-<h2><?php echo  __('Employee is not added and  registered on tilinta please check email') ?> </h2>
-</div>
-        
-  <?php }else{  ?>
 
 
-
-<div class="save-ok">
-  <h2><?php echo  __('Employee is added successfully') ?></h2>
-</div>
-<?php  }  }   ?>
-<?php if ($sf_user->hasFlash('messageError')): ?>
-<div style="color:#FF0000">
- <?php //echo __($sf_user->getFlash('messageError')) ?>
-</div>
-<?php endif; ?>
 <div id="sf_admin_container">
+    <?php if ($sf_user->hasFlash('messageError')): ?>
+        <div class="form-errors">
+          <h2><?php echo __($sf_user->getFlash('messageError')) ?></h2>
+        </div>
+    <?php endif; ?>
 <h1><?php echo  __('New My employee') ?></h1></div>
 <form id="sf_admin_form" name="sf_admin_edit_form" method="post" enctype="multipart/form-data" action="saveEmployee">
     <div id="sf_admin_content">
