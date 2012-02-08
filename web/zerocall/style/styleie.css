@@ -39,7 +39,7 @@ body {font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#000;backg
 #homepage-box-row .box-last{ margin:0px;}
 #footer{ width:100%; background-image: url(../images/bg-footer.png); padding-top:26px; padding-bottom:26px; float:left;}
 .fl{ float:left;}
-.fr{ float:right;}
+.fr{ float:right;margin-left: 10px;}
 .cb{ clear:both;}
 .footer{ width:780px; margin:0px auto;}
 .footer ul{ margin:0px; list-style:none;}
@@ -148,7 +148,7 @@ width:232px;
 .dash-nav a.logout-s{ background-position:-85px -346px}
 
 .split-form{padding-top:20px; float:left; clear:both; width:515px; padding-bottom:30px;}
-.col{width:250px; float: left; position: relative}
+.col{width:250px; float: left !important; position: relative}
 .split-form ul{list-style:none;}
 .split-form ul li{list-style:none; margin-bottom:10px;  clear:both;width:260px; white-space:nowrap; z-index:100; position:relative; }
 .split-form ul li label{width:129px; float:left; padding-top:3px; font-weight:bold; }
@@ -619,4 +619,7 @@ label.extra_refill{
 }
 #chars{
     margin-left:3px;
+}
+a.changePass{
+    color:#D44D05;
 }
