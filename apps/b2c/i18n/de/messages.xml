@@ -350,8 +350,8 @@
                 <target>Die meisten bequemer Weg, um den Pot zu füllen Um das automatische Ausfüllen (unten) zu ermöglichen. dann brauchen Sie Mach dir keine Sorgen über die Topf leer ist. Besonders wichtig in solchen Reise ins Ausland, wenn es schwierig sein kann, in sonstiger Weise zu füllen.</target>
             </trans-unit>
             <trans-unit id="86" translate="yes" reformat="yes" xml:space="default">
-                <source>Automatic Replenishment is: notactive</source>
-                <target>Automatische Regenerierung ist: notactive</target>
+                <source>Automatic Replenishment is: Inactive</source>
+                <target>Automatische Regenerierung ist: Inaktiv</target>
             </trans-unit>
 
             <trans-unit id="87" translate="yes" reformat="yes" xml:space="default">
@@ -457,8 +457,8 @@
                 <target>Ihre Nachricht leider nicht gesendet werden, versuchen Sie es erneut</target>
             </trans-unit>
             <trans-unit id="112" translate="yes" reformat="yes" xml:space="default">
-                <source>Destination Number&lt;br /&gt;(without trailing 0)</source>
-                <target>Destination Nummer &lt;br /&gt; (ohne abschließende 0)</target>
+                <source>Destination Number&lt;br /&gt;(without leading 0)</source>
+                <target>Destination Nummer &lt;br /&gt; (ohne führenden 0)</target>
             </trans-unit>
             <trans-unit id="113" translate="yes" reformat="yes" xml:space="default">
                 <source>Characters: 0/432</source>
@@ -546,7 +546,7 @@
             </trans-unit>
                <trans-unit id="134" translate="yes" reformat="yes" xml:space="default">
                 <source>Telecom operator</source>
-                <target>Telecom-Operator</target>
+                <target>Telekom-Betreiber</target>
             </trans-unit>
                <trans-unit id="135" translate="yes" reformat="yes" xml:space="default">
                 <source>I accept all terms and conditions</source>
@@ -965,7 +965,10 @@
                 <source>Invitation Bonus</source>
                 <target>Einladung Bonus</target>
             </trans-unit>
-
+            <trans-unit id="236" translate="yes" reformat="yes" xml:space="default">
+                <source>Logout</source>
+                <target>Ausloggen</target>
+            </trans-unit>
 
 
         </body>

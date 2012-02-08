@@ -133,7 +133,10 @@ class Telienta {
             emailLib::sendErrorInTelinta("Error in getBalance", "We have faced an issue on Success in getBalnace on telinta. this is the error on the following url:" . $url . " <br/> and error is: " . $bal . "  <br/> Please Investigate.");
             return false;
         }
-        return -1*($Balance);
+        if($Balance==0)
+            return $Balance;
+        else
+            return -1*$Balance;
     }
 
 
