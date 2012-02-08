@@ -90,8 +90,31 @@ width:232px;
 .right-col .box h3 span{ color:#000;}*/
 .right-col .box small{ font-size:11px;}
 .right-col .box p{ margin-top:5px; margin-bottom:20px; font-size:12px;}
-.right-col .box a{ background-image:url(../images/bg-greenbutton-.png); background-position:0px 0px; color:#fff; font-size:11px; background-repeat:no-repeat; display:block; text-decoration:none; padding-left:5px;}
-.right-col .box a span{ background-image:url(../images/bg-greenbutton-.png); background-position:right top; background-repeat:no-repeat; display:block; padding:3px 5px 3px;  }
+.right-col .box a{
+    -moz-border-radius: 6px;
+    height:16px;
+    border-radius: 6px;
+    background-image:url(../images/bg-greenbutton-.png);
+    background-position:0px 0px;
+    color:#fff;
+    font-size:11px;
+    background-repeat:no-repeat;
+    display:block;
+    text-decoration:none;
+    padding-left: 3px;
+    padding-bottom: 3px;
+}
+.right-col .box a span{
+    background-image: url("../images/bg-greenbutton-.png");
+    background-position: right top;
+    background-repeat: no-repeat;
+    display: block;
+    width: 75px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+    text-align: center;
+    padding-right: 5px;
+}
 .right-col .box-last{ margin:0px;}
 .dash-nav{ width:520px; float:left;}
 .dash-nav a{ width:72px; height:58px; float:left; overflow:hidden; display:block; text-indent:9000em; white-space:nowrap; background-image:url(../images/dash-nav-sprite.gif); background-repeat:no-repeat; margin-right:0px;}
@@ -127,7 +150,7 @@ width:232px;
 .col{width:250px; float: left; position: relative}
 .split-form ul{list-style:none;}
 .split-form ul li{list-style:none; margin-bottom:10px;  clear:both;width:260px; white-space:nowrap; z-index:100; position:relative; }
-.split-form ul li label{width:125px; float:left; padding-top:3px; font-weight:bold; }
+.split-form ul li label{width:171px; float:left; padding-top:3px; font-weight:bold; }
 .split-form ul li input{width:110px; border:1px solid #999999; font-size:11px; padding:3px;}
 .split-form ul li select{width:110px; border:1px solid #999999;font-size:11px; padding:3px; }
 .split-form ul li select.strselect{width:37px;font-size:9px; padding:0px; }
@@ -136,7 +159,22 @@ width:232px;
 .split-form ul li.fr {float:right;width:250px; text-align:right;}
 .buton{ background-image:url(../images/btn-dashboard.jpg);border:0px;color:#000;font-size:22px;width:133px; height:36px; margin-top:20px;float:left;font-weight:bold;}
 .butonsignin{ background-image:url("../images/button-orange-big.png");border:0 none;color:#333333;font-size:22px;height:48px;width:132px;float:right;margin-right:40px;}
-.butonsigninsmall{padding: 0px !important;background-image:url("../images/center-btn-dashboard.jpg");border:0 none;color:#333333;font-size:14px;font-weight:bold;outline:none; cursor:pointer; margin-left: 30px; height: 36px;}
+.butonsigninsmall{
+background-image:url(../images/b.png);
+    background-repeat:repeat-x;
+    height:27px;
+    font-size:13px;
+    border:0px;
+    color:#ffffff;
+    outline:none;
+    font-weight:bold;
+    cursor:pointer;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    margin-left: 30px;
+    padding-left: 5px;
+    padding-right:5px;
+}
 .butonsigninsmall-right{padding: 0px !important;background-image:url("../images/left-btn-dashboard.jpg"); background-repeat: no-repeat;border:0 none; position: absolute; width: 9px; height: 36px;right:-9px }
 .butonsigninsmall-left{padding: 0px !important;background-image:url("../images/right-btn-dashboard.jpg");border:0 none; background-repeat: no-repeat; position: absolute; width: 9px; height: 36px; left: 22px }
 .butonsigninsmall-outer{position: relative; padding: 0px !important}
@@ -165,7 +203,21 @@ a.receipt{ background-image:url(../images/green-bullet.jpg); background-repeat:n
 .split-form-sign-up ul li input.chkbx{width:20px; padding:0px; border:0px; float:left;}
 .split-form-sign-up ul li input.radbx{width:20px; padding:0px; border:0px; float:left;}
 .split-form-sign-up ul li.fr {width:285px; text-align:right;}
-.loginbuttun{ background-image:url(../images/bg-login-btn.jpg);background-repeat:no-repeat; width:77px; height:28px;  font-size:13px; border:0px; color:#333333;outline:none;font-weight:bold; cursor:pointer;}
+.loginbuttun{ 
+    background-image:url(../images/b.png);
+    background-repeat:repeat-x;
+    height:27px;
+    font-size:13px;
+    border:0px;
+    color:#ffffff;
+    outline:none;
+    font-weight:bold;
+    cursor:pointer;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    padding-left:3px;
+    padding-right:3px;
+}
 .loginbuttun{ width:77:!important; }
 .split-form-sign-up ul li.buttonplacement{ position: relative; right:14px;}
 .split-form-sign-up ul li button{ background-image:url("../images/button-orange-big.png");border:0 none;color:#FFFFFF;font-size:22px;height:48px;margin-top:20px;padding-bottom:7px;padding-top:5px; width:132px;}
@@ -292,20 +344,7 @@ margin-top:5px;
 width:135px;
 }
 
-.right-col .box a {
-background-image:url("../images/bg-greenbutton-.png");
-background-position:0 0;
-background-repeat:no-repeat;
-clear:both;
-color:#FFFFFF;
-display:block;
-float:left;
-font-size:11px;
-padding-left:5px;
 
-text-decoration:none;
- 
-}
 
 #sidebar {
 float:right;
