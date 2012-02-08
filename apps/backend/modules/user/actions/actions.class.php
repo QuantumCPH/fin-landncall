@@ -20,10 +20,10 @@ class userActions extends autouserActions
         $this->loginForm = new LoginForm();
 
         if($request->getParameter('new'))
-                $lang = $request->getParameter('new');
-        else
-                 $lang = 'de';
-         $this->getUser()->setCulture($lang);
+                $this->getUser()->setCulture($request->getParameter('new'));
+        else 
+            $this->getUser()->setCulture($this->getUser()->getCulture());
+
         
         if($request->getMethod() != 'post'){
             $this->loginForm->bind($request->getParameter('login'), $request->getFiles('login'));
