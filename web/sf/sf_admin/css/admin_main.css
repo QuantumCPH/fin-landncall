@@ -85,6 +85,7 @@
 {
   color: #333 !important;
   font-weight: bold !important;
+  white-space: nowrap;
 }
 
 #sf_admin_container .sf_admin_filters input[type="checkbox"] + label
@@ -112,8 +113,8 @@
 {
   clear: both;
   padding: 10px;
-  /*border-bottom: 1px solid #ddd;*/
-  background-color: #ffffff !important;
+  /*border-bottom: 1px solid #ddd;
+  background-color: #ffffff !important;*/
   font-family: arial;
   font-size: 11px;
 }
@@ -121,7 +122,7 @@
 
 #sf_admin_container .form-row .content
 {
-  padding-left: 9em;
+  padding-left: 21em;
 }
 
 #sf_admin_container .form-errors

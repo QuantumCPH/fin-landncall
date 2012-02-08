@@ -1283,6 +1283,10 @@
 		<source>Employee has been edited successfully</source>
                 <target>Mitarbeiter wurde erfolgreich bearbeitet</target>
             </trans-unit>
+            <trans-unit id="288" translate="yes" reformat="yes" xml:space="default">
+		<source>Company Details</source>
+                <target>Firma Details</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>
