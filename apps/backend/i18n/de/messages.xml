@@ -1581,8 +1581,24 @@
 	<source>Enter Mobile Number</source>
                 <target>Geben Sie Mobile Number</target>
             </trans-unit>
+<trans-unit id="345" translate="yes" reformat="yes" xml:space="default">
+	<source>Checking...</source>
+                <target>Überprüfen ...</target>
+            </trans-unit>
+<trans-unit id="346" translate="yes" reformat="yes" xml:space="default">
+	<source>Vat No is available</source>
+                <target>Kein Vat ist verfügbar</target>
+            </trans-unit>
 
+<trans-unit id="347" translate="yes" reformat="yes" xml:space="default">
+	<source>This Vat No Already exists</source>
+                <target>Diese Mehrwertsteuer Kein Bereits vorhanden</target>
+            </trans-unit>
 
+            <trans-unit id="348" translate="yes" reformat="yes" xml:space="default">
+	<source>Enter Vat Number</source>
+                <target>Geben Sie Vat Number</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

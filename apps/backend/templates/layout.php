@@ -395,7 +395,7 @@ jQuery('#sf_admin_edit_form').validate({
 
 	jQuery('#company_vat_no').blur(function(){
 		//remove all the class add the messagebox classes and start fading
-		jQuery("#msgbox").removeClass().addClass('messagebox').text('Checking...').fadeIn("slow");
+		jQuery("#msgbox").removeClass().addClass('messagebox').text('<?php echo __('Checking...') ?>').fadeIn("slow");
 
                  var val=jQuery(this).val();
 
@@ -415,7 +415,7 @@ jQuery('#sf_admin_edit_form').validate({
 		  	jQuery("#msgbox").fadeTo(200,0.1,function() //start fading the messagebox
 			{
 			  //add message and change the class of the box and start fading
-			  jQuery(this).html('This Vat No Already exists').addClass('messageboxerror').fadeTo(900,1);
+			  jQuery(this).html('<?php echo __('This Vat No Already exists') ?>').addClass('messageboxerror').fadeTo(900,1);
 			});jQuery('#error').val("error");
           }
 		  else
@@ -423,7 +423,7 @@ jQuery('#sf_admin_edit_form').validate({
 		  	jQuery("#msgbox").fadeTo(200,0.1,function()  //start fading the messagebox
 			{
 			  //add message and change the class of the box and start fading
-			  jQuery(this).html('Vat No is available').addClass('messageboxok').fadeTo(900,1);
+			  jQuery(this).html('<?php echo __('Vat No is available') ?>').addClass('messageboxok').fadeTo(900,1);
 			});jQuery('#error').val("");
 		  }
 
@@ -433,7 +433,7 @@ jQuery('#sf_admin_edit_form').validate({
 
         	jQuery('#employee_mobile_number').blur(function(){
 		//remove all the class add the messagebox classes and start fading
-		jQuery("#msgbox").removeClass().addClass('messagebox').text('Checking...').fadeIn("slow");
+		jQuery("#msgbox").removeClass().addClass('messagebox').text('<?php echo __('Checking...') ?>').fadeIn("slow");
 		//check the username exists or not from ajax
                 var val=jQuery(this).val();
 
