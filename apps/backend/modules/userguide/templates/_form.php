@@ -10,11 +10,11 @@
       <tr>
         <td colspan="2">
           <?php echo $form->renderHiddenFields() ?>
-          &nbsp;<a href="<?php echo url_for('userguide/index') ?>">Cancel</a>
+          &nbsp;<a href="<?php echo url_for('userguide/index') ?>"><?php echo __('Cancel') ?></a>
           <?php if (!$form->getObject()->isNew()): ?>
-            &nbsp;<?php echo link_to('Delete', 'userguide/delete?id='.$form->getObject()->getId(), array('method' => 'delete', 'confirm' => 'Are you sure?')) ?>
+            &nbsp;<?php echo link_to(__('Delete'), 'userguide/delete?id='.$form->getObject()->getId(), array('method' => 'delete', 'confirm' => __('Are you sure?'))) ?>
           <?php endif; ?>
-          <input type="submit" value="Save" />
+          <input type="submit" value="<?php echo __('Save') ?>" />
         </td>
       </tr>
     </tfoot>
