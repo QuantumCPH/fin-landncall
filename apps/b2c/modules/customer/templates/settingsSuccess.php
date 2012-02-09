@@ -35,7 +35,7 @@
        
 
             <li>
-            <label class="required"><?php echo __("Aktivt mobil nr") ?></label>
+            <label class="required"><?php echo __("Active Mobile No") ?></label>
            
             <input type="text" value="<?php
 
