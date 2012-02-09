@@ -419,7 +419,7 @@ width:252px;
 
 #customer_date_of_birth_year
 {
-	width: 51px!important;
+	width: 41px!important;
 }
 
 .alert_bar {
@@ -592,30 +592,38 @@ margin-top:12px;
 .dash-navg a.dashboard-s{ background-position:-84px 0px}
 
 .dash-navg a.refil{ background-position:0px -57px}
-.dash-navg a.refil:hover{ background-position:-85px -57px}
-.dash-navg a.refil-s{ background-position:-85px -57px}
+.dash-navg a.refil:hover{ background-position:-84px -57px}
+.dash-navg a.refil-s{ background-position:-84px -57px}
 
-.dash-navg a.callhistory{ background-position:0px -112px}
-.dash-navg a.callhistory:hover{ background-position:-85px -112px}
-.dash-navg a.callhistory-s{ background-position:-85px -112px}
+.dash-navg a.callhistory{ background-position:0px -113px}
+.dash-navg a.callhistory:hover{ background-position:-84px -113px}
+.dash-navg a.callhistory-s{ background-position:-84px -113px}
 
 .dash-navg a.paymenthistory{ background-position:0px -168px}
-.dash-navg a.paymenthistory:hover{ background-position:-85px -168px}
-.dash-navg a.paymenthistory-s{ background-position:-85px -168px}
+.dash-navg a.paymenthistory:hover{ background-position:-84px -168px}
+.dash-navg a.paymenthistory-s{ background-position:-84px -168px}
 
 .dash-navg a.settings{ background-position:0px -226px}
-.dash-navg a.settings:hover{ background-position:-85px -226px}
-.dash-navg a.settings-s{ background-position:-85px -226px}
+.dash-navg a.settings:hover{ background-position:-84px -226px}
+.dash-navg a.settings-s{ background-position:-84px -226px}
 
 .dash-navg a.websms{ background-position:0px -283px}
-.dash-navg a.websms:hover{ background-position:-86px -283px}
-.dash-navg a.websms-s{ background-position:-86px -282px}
+.dash-navg a.websms:hover{ background-position:-84px -283px}
+.dash-navg a.websms-s{ background-position:-84px -282px}
 
 .dash-navg a.logout{ background-position:0px -344px}
-.dash-navg a.logout:hover{ background-position:-85px -344px}
-.dash-navg a.logout-s{ background-position:-85px -344px}
+.dash-navg a.logout:hover{ background-position:-84px -344px}
+.dash-navg a.logout-s{ background-position:-84px -344px}
 label.extra_refill{
-    width:174px !important;
+    display: block;
+    white-space: normal;
+    width: 129px !important;
+    float:left;
+    
+}
+select#extra_refill{
+    width:80px;
+    margin-left: -3px !important;
 }
 #chars{
     margin-left:3px;
