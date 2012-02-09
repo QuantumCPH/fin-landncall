@@ -273,3 +273,14 @@ tr.odd{
 .bg-img .submitButton button:hover{
     background:url('../images/login-button-hover.png') no-repeat;
 }
+.bg-img .fieldName .fieldError {
+    float: right;
+    font-size: 11px;
+}
+.error_list {
+    color: red !important;
+    float: left;
+    list-style: none outside none;
+    margin: 0;
+    padding: 2px 50px 5px 9px;
+}
