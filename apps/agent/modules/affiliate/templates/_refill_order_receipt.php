@@ -38,39 +38,7 @@ use_helper('Number');
 
 </style>
 
-<?php
-$wrap_content  = isset($wrap)?$wrap:false;
 
-//wrap_content also tells  wheather its a refill or
-//a product order. we wrap the receipt with extra
-// text only if its a product order.
-
- ?>
-
-<?php if($wrap_content): ?>
-	<p><?php echo __('Hi') ?>&nbsp;<?php echo $customer->getFirstName();?></p>
-
-	<p>
-	<?php echo __('Thank you for your order of <b>%1%</b>.', array('%1%'=>$order->getProduct()->getName())) ?>
-	</p>
-
-	<p>
-	<?php echo __('Your goods will be shipped today. You should have delivery within two days. Your customer number is ');  echo $customer->getUniqueid();?>. <?php echo __(' There, you can use in your dealings with customer service'); ?></p>
-
-	<p>
-	<?php echo __('Do not hesitate to contact us if you have any questions.') ?>
-	</p>
-        <p>
-            <a href="mailto:support@wls2.com">support@wls2.com</a>
-	</p>
-        <p>
-	<?php echo __('Yours sincerely,') ?>
-	</p>
-        <p>
-	<?php echo __('XXXXXXX') ?>
-	</p>
-	<br />
-<?php endif; ?>
 <table width="600px">
 	<tr style="border:0px solid #fff">
 		<td colspan="4" align="right" style="text-align:right; border:0px solid #fff"><?php echo image_tag('http://wls2.zerocall.com/images/logo.gif');?></td>
@@ -78,7 +46,7 @@ $wrap_content  = isset($wrap)?$wrap:false;
 </table>
 <table class="receipt" cellspacing="0" width="600px">
   <tr bgcolor="#CCCCCC" class="receipt_header">
-    <th colspan="3"><?php echo __('Order Receipt')." (".$order->getProduct()->getName().")" ?></th>
+    <th colspan="3"><?php echo __('Order Receipt') ?></th>
     <th><?php echo __('Order No.') ?> <?php echo $order->getId() ?></th>
   </tr>
 
@@ -113,23 +81,12 @@ $wrap_content  = isset($wrap)?$wrap:false;
     <td><?php echo $order->getCreatedAt('m-d-Y') ?></td>
     <td>
     <?php
-         echo __("Registration Fee");
+         echo __("Refill");
 
     ?>
 	</td>
     <td><?php echo $order->getQuantity() ?></td>
-    <td><?php echo format_number($order->getProduct()->getRegistrationFee()); ?></td>
-  </tr>
-  <tr>
-    <td></td>
-    <td>
-    <?php
-         echo __("Product Price");
-
-    ?>
-	</td>
-    <td><?php echo $order->getQuantity() ?></td>
-    <td><?php echo format_number($order->getProduct()->getPrice()); ?></td>
+    <td><?php echo format_number($transaction->getAmount()); ?></td>
   </tr>
   <tr>
   	<td colspan="4" style="border-bottom: 2px solid #c0c0c0;">&nbsp;</td>
@@ -138,7 +95,7 @@ $wrap_content  = isset($wrap)?$wrap:false;
     <td>&nbsp;</td>
     <td><?php echo __('Subtotal') ?></td>
     <td>&nbsp;</td>
-    <td><?php echo format_number($subTotal = $order->getProduct()->getPrice()+$order->getProduct()->getRegistrationFee()) ?></td>
+    <td><?php echo format_number($subTotal = $transaction->getAmount()) ?></td>
   </tr>
 
   <tr class="footer">
