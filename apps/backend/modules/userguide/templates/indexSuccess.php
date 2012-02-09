@@ -31,10 +31,10 @@
  
      <?php }else{
       ?>
-     <p style="font-size: 12px;">No Result Found</p>
+     <p style="font-size: 12px;"><?php echo __('No Result Found') ?></p>
      <?php   
      } ?>
  <div id="sf_admin_header">
-  <a  class="external_link" href="<?php echo url_for('userguide/new') ?>">New</a>
+  <a  class="external_link" href="<?php echo url_for('userguide/new') ?>"><?php echo __('New') ?></a>
  </div>
 </div>
