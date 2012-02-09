@@ -1013,7 +1013,7 @@
             </trans-unit>
             <trans-unit id="250" translate="yes" reformat="yes" xml:space="default">
                 <source>Your Credit Card recharge of </source>
-                <target>Ihre Kreditkarten-neubildung</target>
+                <target>Ihre Kreditkarten-neubildung </target>
             </trans-unit>
             <trans-unit id="251" translate="yes" reformat="yes" xml:space="default">
                 <source> EURO is approved</source>
