@@ -403,7 +403,7 @@ jQuery('#sf_admin_edit_form').validate({
                     jQuery("#msgbox").fadeTo(200,0.1,function() //start fading the messagebox
 			{
 			  //add message and change the class of the box and start fading
-			  jQuery(this).html('Enter Vat Number').addClass('messageboxerror').fadeTo(900,1);
+			  jQuery(this).html('<?php echo __('Enter Vat Number') ?>').addClass('messageboxerror').fadeTo(900,1);
 			});
                         jQuery('#error').val("error");
                 }else{
