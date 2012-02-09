@@ -1069,7 +1069,7 @@
             </trans-unit>
              <trans-unit id="264" translate="yes" reformat="yes" xml:space="default">
                 <source>Mobile Number already existing.</source>
-                <target>Mobile Number bereits bestehenden.</target>
+                <target>Handy-Nummer bereits bestehenden.</target>
             </trans-unit>
             <trans-unit id="265" translate="yes" reformat="yes" xml:space="default">
                 <source>Invalid.</source>
@@ -1089,7 +1089,11 @@
             </trans-unit>
              <trans-unit id="270" translate="yes" reformat="yes" xml:space="default">
                 <source>Agent Payment Confirmation</source>
-                <target>Agent-Zahlungsbestätigung</target>
+                <target>Vertreter-Zahlungsbestätigung</target>
+            </trans-unit>
+            <trans-unit id="271" translate="yes" reformat="yes" xml:space="default">
+                <source>Contact Person</source>
+                <target>Ansprechpartner</target>
             </trans-unit>
 
         </body>

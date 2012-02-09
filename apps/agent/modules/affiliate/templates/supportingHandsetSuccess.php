@@ -191,7 +191,7 @@
               <td>&nbsp;<?php echo __('Not Supported')?></td>
               <td>&nbsp;OKH</td>
               <td>&nbsp;<?php echo __('Not Supported')?></td>
-              <td>&nbsp;1</td>
+<!--              <td>&nbsp;1</td>-->
             </tr>
             <tr> 
               <td>&nbsp;SE</td>
