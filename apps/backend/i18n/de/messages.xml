@@ -1913,7 +1913,10 @@
                 <target>Die Hersteller-Name darf nicht leer sein.</target>
             </trans-unit>
 
-
+   <trans-unit id="410" translate="yes" reformat="yes" xml:space="default">
+		<source>Website:</source>
+                <target>Webseite:</target>
+            </trans-unit>
 
 
         </body>

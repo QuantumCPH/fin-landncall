@@ -100,7 +100,7 @@
 				</div>
 				
 				<div class="form-row">
-				  <label class="required"><?php echo  __('Webstie:') ?></label>
+				  <label class="required"><?php echo  __('Website:') ?></label>
 				  <div class="content">
 				  	<?php echo $company->getWebsite()?$company->getWebsite():'N/A' ?>
 				  </div>
