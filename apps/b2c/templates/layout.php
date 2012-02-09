@@ -50,9 +50,12 @@
 
 <script type="text/javascript"> 
 	Cufon.now(); 
+     $(document).ready(function()
+     {
         $('.sidebar_button').corner('round 5px');
         $('.butonsigninsmall').corner('round 5px');
         $('.buton').corner('round 5px');
+     }); 
 </script>
 
 <script type="text/javascript">
