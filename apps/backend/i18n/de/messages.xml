@@ -1931,6 +1931,11 @@
 		<source>[show file]</source>
                 <target>[zeigen Datei]</target>
             </trans-unit>
+ <trans-unit id="414" translate="yes" reformat="yes" xml:space="default">
+		<source>Employee Balance:</source>
+                <target>Mitarbeiter-Balance:</target>
+            </trans-unit>
+
 
         </body>
     </file>
