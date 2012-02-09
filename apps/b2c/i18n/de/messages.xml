@@ -985,6 +985,10 @@
                 <source>"%value%" is too long 5 characters max.</source>
                 <target>"%value%" ist zu lang 5 Zeichen max.</target>
             </trans-unit>
+            <trans-unit id="241" translate="yes" reformat="yes" xml:space="default">
+                <source>Active Mobile No</source>
+                <target>Aktiv Handy No</target>
+            </trans-unit>
 
 
         </body>
