@@ -12,12 +12,7 @@
                 
         ?>
 
-<?php if($sf_user->getCulture()=='en'){    ?>
-   <script type="text/javascript" src="http://wls2.zerocall.com/js/jquery.validate1.js"></script>
 
-   <?php }else{  ?>
-      <script type="text/javascript" src="http://wls2.zerocall.com/js/jquery.validatede.js"></script>
- <?php  } ?>
         <link rel="shortcut icon" href="/favicon.ico" />
         <style>
 .error{
@@ -77,6 +72,12 @@ color:#F00000;
     -->
 
     </script>
+        <?php if($sf_user->getCulture()=='en'){    ?>
+   <script type="text/javascript" src="http://wls2.zerocall.com/js/jquery.validate1.js"></script>
+
+   <?php }else{  ?>
+      <script type="text/javascript" src="http://wls2.zerocall.com/js/jquery.validatede.js"></script>
+ <?php  } ?>
 	  </head>
     <body>
         <div id="basic">
