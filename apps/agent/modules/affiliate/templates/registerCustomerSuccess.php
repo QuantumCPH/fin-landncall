@@ -11,13 +11,7 @@
       <div class="fl col">
         <?php echo $form->renderHiddenFields() ?>
           <ul>
-              <tr>
-        <div class='inline-error'>
-          <li> <?php // echo $form->renderGlobalErrors() ?></li>
-        </div>
-        
-
-               <?php
+           <?php
             $error_mobile_number = false;
             if($form['mobile_number']->hasError())
             	$error_mobile_number = true;
@@ -27,8 +21,8 @@
              <?php echo $form['mobile_number'] ?>
              <?php if ($error_mobile_number): ?>
              <span id="cardno_decl" class="alertstep1">
-			  	<?php echo image_tag('../zerocall/images/decl.png', array('absolute'=>true)) ?>
-			 </span>
+	         <?php echo image_tag('../zerocall/images/decl.png', array('absolute'=>true)) ?>
+	     </span>
 			 <?php endif; ?>
              <div class='inline-error'><?php echo $error_mobile_number?$form['mobile_number']->renderError():'&nbsp;'?></div>
             </li>
