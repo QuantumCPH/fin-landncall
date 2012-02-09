@@ -7,9 +7,14 @@ header('P3P:CP="IDC DSP COR ADM DEVi TAIi PSA PSD IVAi IVDi CONi HIS OUR IND CNT
   <div class="left-col">
     <?php include_partial('navigation', array('selected'=>'dashboard', 'customer_id'=>$customer->getId())) ?>
     <div class="dashboard-info">
-        <div class="fl cb dashboard-info-text"><span><?php echo __('Customer Number') ?>:</span><span><?php echo $customer->getUniqueid(); ?></span></div>
-	<div class="fl cb dashboard-info-text"><span><?php echo __('Your account balance is') ?>:</span>
-            <span>
+        <table cellspacing="0" cellpadding="2">
+           <tr>
+               <td><div class="fl cb dashboard-info-text"><span><?php echo __('Customer Number') ?>:</span></div></td>
+               <td><div class="fl cb dashboard-info-text"><span><?php echo $customer->getUniqueid(); ?></span></div></td>
+           </tr>
+           <tr>
+               <td><div class="fl cb dashboard-info-text"><span><?php echo __('Your account balance is') ?>:</span></div></td>
+               <td><div class="fl cb dashboard-info-text"><span>
 	<?php
 
             $cuid=$customer->getId();
@@ -39,9 +44,23 @@ header('P3P:CP="IDC DSP COR ADM DEVi TAIi PSA PSD IVAi IVDi CONi HIS OUR IND CNT
         
 echo '&nbsp;';
 
-?> EUR <span class="butonsigninsmall-outer"><span class="butonsigninsmall-left"></span><input type="button" class="butonsigninsmall"  name="button" onclick="window.location.href='<?php echo sfConfig::get('app_epay_relay_script_url').url_for('customer/refill?customer_id='.$customer->getId(), true) ?>'" value="<?php echo __('Buy credit') ?>" ><span class="butonsigninsmall-right"></span></span></span></div>
-
-        <div class="fl cb dashboard-info-text"  ><span   style="padding-right:-10px"><?php echo __('Active mobile number') ?>:</span><span><?php
+?> EUR</span></div></td>
+           </tr>
+           <tr><td>&nbsp;</td>
+          <td style="text-align: left;">
+                   <div class="fl cb dashboard-info-text"><span><input type="button" class="butonsigninsmall"  name="button" style="margin-left:4px !important;" onclick="window.location.href='<?php echo sfConfig::get('app_epay_relay_script_url').url_for('customer/refill?customer_id='.$customer->getId(), true) ?>'" value="<?php echo __('Buy credit') ?>" /></span></div>
+          </td> 
+       </tr>    
+        <tr>
+            <td>
+               <div class="fl cb dashboard-info-text"  >
+                   <span   style="padding-right:-10px"><?php echo __('Active mobile number') ?>:</span>
+               </div>
+            </td>
+            <td>
+                <div class="fl cb dashboard-info-text">
+                  <span>
+                   <?php
         
         $unid   =  $customer->getUniqueid();
         if(isset($unid) && $unid!=""){
@@ -108,12 +127,25 @@ echo " ";   echo substr($Telintambs, 15,2);
                 }
      
           
-          ?></span></div>
+          ?>
+            
 
 <?php } ?>
-
-	 <div class="fl cb dashboard-info-text"  ><span   style="padding-right:-10px"><?php echo __('Your status:') ?></span><span><?php echo __('active') ?>
-        </span></div>
+</span></div>
+            </td></tr>
+        <tr>
+          <td>
+	   <div class="fl cb dashboard-info-text">
+               <span   style="padding-right:-10px"><?php echo __('Your status:') ?></span>
+           </div>
+          </td>
+          <td style="padding-left:6px;">
+              <div class="fl cb dashboard-info-text">
+                  <span><?php echo __('active') ?></span>
+              </div>
+          </td>
+        </tr>
+        </table>
         <p>&nbsp;</p>
         <br/><br/>
 	<table cellspacing="0" cellpadding="0" style="width: 100%; margin-top: 30px; margin-bottom: 10px;display:none; ">	

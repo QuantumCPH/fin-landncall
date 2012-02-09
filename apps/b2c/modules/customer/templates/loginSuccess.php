@@ -58,7 +58,14 @@
 	</div>
 	<div class="login-right"><h4><?php echo __('Forgot password?') ?></h4>
 	<form id="forgot_password_form" method="post" action="<?php echo url_for('customer/sendPassword') ?>">
-	<p><?php echo __('Write e-mail address you used for registration.<br />Your password will be sent to you via this email.') ?></p>
+        <?php
+          if($sf_user->getCulture()=='en'){
+              $class = '';
+          }else{
+              $class = 'class="text1"';
+          }
+        ?>    
+	<p <?php echo $class;?>><?php echo __('Write e-mail address you used for registration.<br />Your password will be sent to you via this email.') ?></p>
 	<input   class="input"  type="text" name="email" id="forgot_password_email" /><br />
 	<?php if ($sf_user->hasFlash('send_password_error_message')): ?>
 	<p style="color: red; margin:6px auto;"><?php echo $sf_user->getFlash('send_password_error_message') ?></p>
