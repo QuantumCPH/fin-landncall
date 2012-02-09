@@ -75,7 +75,7 @@ if($is_auto_refill_activated){  ?>  <div class="left-col">
     <div style="float: left; margin-top: 61px; text-align: left; width: 134px;">
     <form method="post" action="<?php echo $target; ?>customer/deActivateAutoRefill">
     <input type="hidden" name="customer_id" value="<?php echo   $customer_form->getObject()->getId() ?>" />
-                <input type="submit" class="butonsigninsmall" name="button" style="cursor: pointer;float: right; margin-left: 134px; margin-top: -10px;"  value="<?php echo __('disable') ?>" >
+                <input type="submit" class="butonsigninsmall" name="button" style="cursor: pointer;float: right; margin-left: 130px; margin-top: -10px;"  value="<?php echo __('disable') ?>" >
                 </form>			
           </div>
     </div>
@@ -139,7 +139,7 @@ if($is_auto_refill_activated){  ?>  <div class="left-col">
 			  ?>  &euro;&nbsp;
             </li> </ul>
             </div>
-          <div style="float:left;">  <span class="butonsigninsmall-outer"><span class="butonsigninsmall-left"></span><input type="submit" class="butonsigninsmall" name="button" value="<?php echo __('Enable') ?>" ><span class="butonsigninsmall-right"></span></span>	</div>
+          <div style="float:left;"><input type="submit" class="butonsigninsmall" style="margin-left:30px !important;" name="button" value="<?php echo __('Enable') ?>" /></div>
   </form>
   </div>
     
