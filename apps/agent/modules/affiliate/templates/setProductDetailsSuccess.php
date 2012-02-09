@@ -249,10 +249,11 @@ echo $product_price;
                                <li class="error">
 <?php echo $form['quantity']->renderError() ?>
                                    </li>
-<?php } ?>  
-                           <li class="error" id="quantity_error">
+                                      <li class="error" id="quantity_error">
                         <?php echo __('Quanity must be 1 or more') ?>
                            </li>
+<?php } ?>  
+                        
                            <li style="display: none;">
                             <?php echo $form['quantity']->renderLabel() ?>
 <?php echo $form['quantity'] ?>
