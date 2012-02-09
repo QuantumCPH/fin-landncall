@@ -35,14 +35,9 @@
                 <tr>
                   <td><?php  echo $transaction->getOrderId() ?></td>
                   <td ><?php echo  $transaction->getCreatedAt() ?></td>
-                  <td nowrap><?php 
-
-                        if($transaction->getDescription()=="Refill"){
-                          echo __("Refill ");echo $transaction->getAmount();
-                        }else{
+                  <td nowrap><?php                       
                           echo __($transaction->getDescription());
-
-                  }?></td>
+                  ?></td>
                   <td><?php echo $transaction->getAmount(); $amount_total += $transaction->getAmount() ?>
                             &euro;</td>
                  <!-- <td>
