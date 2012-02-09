@@ -601,7 +601,7 @@
           
             <trans-unit id="120" translate="yes" reformat="yes" xml:space="default">
 			    <source>Vat Number:</source>
-                <target>Umsatzsteuer-Identifikationsnummer:</target>
+                <target>Mehrwertsteuer Nummer</target>
             </trans-unit>
             <trans-unit id="121" translate="yes" reformat="yes" xml:space="default">
 			    <source>Agent company</source>
@@ -1597,7 +1597,7 @@
 
             <trans-unit id="348" translate="yes" reformat="yes" xml:space="default">
 	<source>Enter Vat Number</source>
-                <target>Geben Sie Vat Number</target>
+                <target>Geben Sie Mehrwertsteuer Nummer</target>
             </trans-unit>
 
        <trans-unit id="349" translate="yes" reformat="yes" xml:space="default">
