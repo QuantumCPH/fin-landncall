@@ -1944,6 +1944,11 @@
 		<source>Products</source>
                 <target>Produkte</target>
             </trans-unit>
+<trans-unit id="417" translate="yes" reformat="yes" xml:space="default">
+		<source>No Result Found</source>
+                <target>Kein Ergebnis</target>
+            </trans-unit>
+
 
         </body>
     </file>
