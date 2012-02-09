@@ -1592,6 +1592,20 @@
 	<source>Auto Refill</source>
                 <target>Auto nachfüllen</target>
             </trans-unit>
+
+             <trans-unit id="351" translate="yes" reformat="yes" xml:space="default">
+	<source>Company Registered</source>
+                <target>Unternehmen registriert</target>
+            </trans-unit>
+
+           <trans-unit id="352" translate="yes" reformat="yes" xml:space="default">
+	<source>Company Refill</source>
+                <target>Unternehmen nachfüllen</target>
+            </trans-unit>
+
+
+
+
         </body>
     </file>
 </xliff>
