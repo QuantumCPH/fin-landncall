@@ -1953,6 +1953,12 @@
 		<source>Registration fee:</source>
                 <target>Anmeldegebühr:</target>
             </trans-unit>
+
+        <trans-unit id="419" translate="yes" reformat="yes" xml:space="default">
+		<source>Required.</source>
+                <target>Erforderlich.</target>
+            </trans-unit>
+
         </body>
     </file>
 </xliff>
