@@ -14,33 +14,35 @@
             
             <div class="fieldName"> 
            <?php echo $form['email']->renderLabel() ?>
+                <?php
+	      if(($sf_request->getMethod()=='POST')){
+            ?>
+            <span class="fieldError">    
+             <?php   echo $form['email']->renderError();   ?>
+            </span>
+            <?php
+              }
+	     ?>
             </div>
             <div class="Inputfield">
             <?php echo $form['email'] ?>
             </div>
              
-            <?php
-	      if(($sf_request->getMethod()=='POST')){
-            ?>
-            <div class="fieldError">    
-             <?php   echo $form['email']->renderError();   ?>
-            </div>
-            <?php
-              }
-	     ?>
+            
             <div class="fieldName"> 
                   <?php echo $form['password']->renderLabel() ?>
+           <?php
+            if(($sf_request->getMethod()=='POST')){ ?>
+            <span class="fieldError"> 
+            	<?php echo $form['password']->renderError() ?>                
+            </span>  
+             <?php } ?> 
             </div>
             <div class="Inputfield">
             <?php echo $form['password'] ?>
             <?php // echo input_hidden_tag('referer', $_SERVER["HTTP_REFERER"])  ?>
             </div>
-            <?php
-            if(($sf_request->getMethod()=='POST')){ ?>
-            <div class="fieldError"> 
-            	<?php echo $form['password']->renderError() ?>                
-            </div>  
-             <?php } ?>   
+              
             <div class="submitButton">
                 <button  type="submit"><?php echo __('Login') ?></button>
             </div>    
