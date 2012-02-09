@@ -136,7 +136,7 @@
                         </li>
 <?php
                             $error_quantity = false;
-                            ;
+                            
                             if ($form['quantity']->hasError())
                                 $error_quantity = true;
 ?>
@@ -145,18 +145,22 @@
                     ?>
                                 <li class="error">
 <?php echo $form['quantity']->renderError() ?>
+
                                 </li>
-<?php } ?>  
-                        <li class="error" id="quantity_error">
-<?php echo __('Quanity must be 1 or more') ?>
-                            </li>
-                            <li style="display: none;">
-<?php echo $form['quantity']->renderLabel() ?>
-                        <?php echo $form['quantity'] ?>
-                            <span id="quantity_ok" class="alert">
-<?php echo image_tag('../zerocall/images/ok.png', array('absolute' => true)) ?>
-                            </span>
-                            <span id="quantity_decline" class="alert">
+<?php } ?>        
+                   <li class="error" id="quantity_error">
+                        <?php echo __('Quanity must be 1 or more') ?>
+                           </li>
+
+                        
+                           <li style="display: none;">
+                            <?php echo $form['quantity']->renderLabel() ?>
+<?php echo $form['quantity'] ?>
+                           <span id="quantity_ok" class="alert">
+                            <?php echo image_tag('../zerocall/images/ok.png', array('absolute' => true)) ?>
+                           </span>
+                           <span id="quantity_decline" class="alert">
+
 <?php echo image_tag('../zerocall/images/decl.gif', array('absolute' => true)) ?>
                         </span>
                     </li>
