@@ -123,7 +123,7 @@ input#generic {
     list-style-type:none;
     margin:0px;
     padding:2px 50px 5px 9px;
-    color:red;
+    color:red !important;
 }
 
 #header{
