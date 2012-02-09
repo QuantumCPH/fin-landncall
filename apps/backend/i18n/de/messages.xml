@@ -1940,6 +1940,10 @@
 		<source>The faqs status cannot be left blank.</source>
                 <target>Die FAQs Status darf nicht leer sein.</target>
             </trans-unit>
+<trans-unit id="416" translate="yes" reformat="yes" xml:space="default">
+		<source>Products</source>
+                <target>Produkte</target>
+            </trans-unit>
 
         </body>
     </file>
