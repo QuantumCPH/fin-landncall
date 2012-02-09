@@ -1401,7 +1401,7 @@
 
              <trans-unit id="311" translate="yes" reformat="yes" xml:space="default">
 		<source>Total:</source>
-                <target>Total:</target>
+                <target>Gesamt:</target>
             </trans-unit>
 
              <trans-unit id="312" translate="yes" reformat="yes" xml:space="default">
