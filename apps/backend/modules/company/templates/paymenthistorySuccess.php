@@ -42,7 +42,7 @@ $incrment++;
 <tr  style="background-color:<?php echo $colorvalue;?>">
     <td><?php echo  $transaction->getCreatedAt() ?></td>
     <td><?php echo ($transaction->getCompany()?$transaction->getCompany():'N/A')?></td>
-    <td><?php echo $transaction->getDescription() ?></td>
+    <td><?php echo __($transaction->getDescription()) ?></td>
     <td><?php echo $transaction->getAmount(); $amount_total += $transaction->getAmount(); echo ('EURO'); ?></td>
 </tr>
 <?php endforeach; ?>
