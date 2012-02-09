@@ -509,3 +509,27 @@ clear:both;
 input.butonsigninsmall{
     margin-left:50px !important;
 }
+select#extra_refill{
+    width:80px;
+    margin-left: -10px !important;
+}
+li#user_attr_3_field{ 
+    width:285px !important;
+}
+li#user_attr_2_field{
+    width:285px !important;
+}
+li#selectAmt{
+    width:290px !important;
+}
+select#extra_refill{
+    width:80px;
+    margin-left: -3px !important;
+}
+label.extra_refill{
+    display: block;
+    white-space: normal;
+    width: 129px !important;
+    float:left;
+    
+}

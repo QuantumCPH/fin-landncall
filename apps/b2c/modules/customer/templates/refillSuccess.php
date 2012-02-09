@@ -114,7 +114,7 @@ if($is_auto_refill_activated){  ?>  <div class="left-col">
   <input type="hidden" name="callbackurl" id="idcallbackURLauto" value="<?php echo $target; ?>customer/activateAutoRefill?customerid=<?php echo   $customer_form->getObject()->getId() ?>&lng=<?php echo  $sf_user->getCulture() ?>v" />
   <input type="hidden" name="accepturl" value="<?php echo $target; ?>customer/dashboard?lng=<?php echo  $sf_user->getCulture() ?>" />
  <div style="width:348px;float:left;">
-        <ul>
+        <ul style="width: 285px;float:none;clear:both;">
             <!-- auto fill -->
                        
            
@@ -137,9 +137,11 @@ if($is_auto_refill_activated){  ?>  <div class="left-col">
                                                                                                                                 'style'=>'width: 80px;'
 			  												)); 
 			  ?>  &euro;&nbsp;
-            </li> </ul>
+            </li> 
+        </ul>
             </div>
-          <div style="float:left;"><input type="submit" class="butonsigninsmall" style="margin-left:30px !important;" name="button" value="<?php echo __('Enable') ?>" /></div>
+ 
+          <div style="float:left;"><input type="submit" class="butonsigninsmall" style="width:101px;margin-left:-13px !important;" name="button" value="<?php echo __('Enable') ?>" /></div>
   </form>
   </div>
     
@@ -164,7 +166,7 @@ if($is_auto_refill_activated){  ?>  <div class="left-col">
             	<?php echo $form['extra_refill']->renderError() ?>
             </li>
             <?php } ?>
-            <li>
+            <li id="selectAmt">
               <label for="extra_refill" class="extra_refill"><?php echo __('Select amount to be loaded:') ?></label>
               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;<?php echo $form['extra_refill']?>  &euro;
             </li>
@@ -195,9 +197,9 @@ if($is_auto_refill_activated){  ?>  <div class="left-col">
         <input type="hidden" name="accepturl" id="idaccepturl" value="<?php echo sfConfig::get('app_epay_relay_script_url').url_for('@epay_refill_accept', true)  ?>?accept=yes&lng=<?php echo  $sf_user->getCulture() ?>&subscriptionid=&orderid=<?php echo $order->getId(); ?>&amount=<?php echo $order->getExtraRefill(); ?>" />
         <input type="hidden" id="callbackurlfixed" value="<?php echo sfConfig::get('app_epay_relay_script_url').url_for('@dibs_refill_accept', true)  ?>?accept=yes&lng=<?php echo  $sf_user->getCulture() ?>&subscriptionid=&orderid=<?php echo $order->getId(); ?>&amount=" />
             </div>
-          <div style="width:140px;float:left;padding-top:30px;">   
+          <div style="float:left;margin-top:30px;">   
        
-                <input type="submit" class="butonsigninsmall" name="button" style="cursor: pointer;float: left; margin-left: 40px; margin-top: -5px;"  value="<?php echo __('Load') ?>" >
+                <input type="submit" class="butonsigninsmall" name="button" style="width:101px;cursor: pointer;float: left; margin-left: -5px !important; margin-top: -5px;"  value="<?php echo __('Load') ?>" />
         </div>
         </div></form> 
        </div>
