@@ -30,12 +30,7 @@
 <?php use_stylesheet('../sf/sf_admin/css/main.css', '', array('absolute'=>true)) ?>
   <?php use_stylesheet('js/jquery-ui-1.8.16.custom.min.js', '', array('absolute'=>true)) ?>
   <!--<![endif]-->
-  <?php if($sf_user->getCulture()=='en'){    ?>
-   <script type="text/javascript" src="http://wls2.zerocall.com/js/jquery.validate1.js"></script>
-
-   <?php }else{  ?>
-      <script type="text/javascript" src="http://wls2.zerocall.com/js/jquery.validatede.js"></script>
- <?php  } ?>
+  
 </head>
 <body>
     <div style="vertical-align: top;float: right;">
@@ -91,6 +86,11 @@
 
 
 </script>
+<?php if($sf_user->getCulture()=='en'){    ?>
+   <script type="text/javascript" src="http://wls2.zerocall.com/js/jquery.validate1.js"></script>
 
+   <?php }else{  ?>
+      <script type="text/javascript" src="http://wls2.zerocall.com/js/jquery.validatede.js"></script>
+ <?php  } ?>
 </body>
 </html>
