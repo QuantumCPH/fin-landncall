@@ -544,7 +544,7 @@
 			
 			<trans-unit id="109" translate="yes" reformat="yes" xml:space="default">
 			    <source>Sms code</source>
-                <target>SMS Code</target>
+                <target>SMS Kode</target>
             </trans-unit>
 			
 			<trans-unit id="110" translate="yes" reformat="yes" xml:space="default">
@@ -913,7 +913,7 @@
             </trans-unit>
             <trans-unit id="201" translate="yes" reformat="yes" xml:space="default">
 			    <source>SMS Code</source>
-                <target>SMS-Code</target>
+                <target>SMS-Kode</target>
             </trans-unit>
             <trans-unit id="202" translate="yes" reformat="yes" xml:space="default">
 			    <source>Product order</source>
@@ -949,7 +949,7 @@
             </trans-unit>
             <trans-unit id="210" translate="yes" reformat="yes" xml:space="default">
 			    <source>Sms code:</source>
-                <target>SMS-Code:</target>
+                <target>SMS-Kode:</target>
             </trans-unit>
             <trans-unit id="211" translate="yes" reformat="yes" xml:space="default">
 			    <source>Create/Edit Country</source>
