@@ -54,7 +54,7 @@
             </trans-unit>
             <trans-unit id="13" translate="yes" reformat="yes" xml:space="default">
                 <source>US Mobile Number</source>
-                <target>US-Mobile Number</target>
+                <target>US Handy-Nummer</target>
             </trans-unit>
             <trans-unit id="14" translate="yes" reformat="yes" xml:space="default">
                 <source>Date</source>
@@ -82,7 +82,7 @@
             </trans-unit>
             <trans-unit id="20" translate="yes" reformat="yes" xml:space="default">
                 <source>Total</source>
-                <target>gesamt</target>
+                <target>Gesamt</target>
             </trans-unit>
             <trans-unit id="21" translate="yes" reformat="yes" xml:space="default">
                 <source>If you have any questions please feel free to contact our customer support center at</source>
@@ -107,7 +107,7 @@
             
             <trans-unit id="26" translate="yes" reformat="yes" xml:space="default">
                 <source>Tell a friend</source>
-                <target>sagen ein Freund</target>
+                <target>Sagen ein Freund</target>
             </trans-unit>
       
             <trans-unit id="27" translate="yes" reformat="yes" xml:space="default">
@@ -216,7 +216,7 @@
             </trans-unit>
             <trans-unit id="53" translate="yes" reformat="yes" xml:space="default">
                 <source>Choose</source>
-                <target>wählen</target>
+                <target>Wählen</target>
             </trans-unit>
             <trans-unit id="54" translate="yes" reformat="yes" xml:space="default">
                 <source>Resenumber</source>
@@ -224,7 +224,7 @@
             </trans-unit>
             <trans-unit id="55" translate="yes" reformat="yes" xml:space="default">
                 <source>Enable</source>
-                <target>ermöglichen</target>
+                <target>Ermöglichen</target>
             </trans-unit>
             <trans-unit id="56" translate="yes" reformat="yes" xml:space="default">
                 <source>Login to your account</source>
@@ -292,11 +292,11 @@
             </trans-unit>
             <trans-unit id="72" translate="yes" reformat="yes" xml:space="default">
                 <source>other history</source>
-                <target>andere Geschichte</target>
+                <target>Andere Geschichte</target>
             </trans-unit>
             <trans-unit id="73" translate="yes" reformat="yes" xml:space="default">
                 <source>Call History</source>
-                <target>rufen Geschichte</target>
+                <target>Rufen Geschichte</target>
             </trans-unit>
             <trans-unit id="74" translate="yes" reformat="yes" xml:space="default">
                 <source>Order Numer</source>
@@ -410,7 +410,7 @@
       
             <trans-unit id="100" translate="yes" reformat="yes" xml:space="default">
                 <source>Enable Resenummer</source>
-                <target>aktivieren Resenummer</target>
+                <target>Aktivieren Resenummer</target>
             </trans-unit>
             <trans-unit id="101" translate="yes" reformat="yes" xml:space="default">
                 <source>Payment Confirmation</source>
@@ -470,7 +470,7 @@
             </trans-unit>
             <trans-unit id="115" translate="yes" reformat="yes" xml:space="default">
                 <source>Send SMS</source>
-                <target>senden Sie eine SMS</target>
+                <target>Senden Sie eine SMS</target>
             </trans-unit>
             <trans-unit id="116" translate="yes" reformat="yes" xml:space="default">
                 <source>Dashboard</source>
@@ -482,11 +482,11 @@
             </trans-unit>
             <trans-unit id="118" translate="yes" reformat="yes" xml:space="default">
                 <source>Register</source>
-                <target>Register</target>
+                <target>Registrieren</target>
             </trans-unit>
             <trans-unit id="119" translate="yes" reformat="yes" xml:space="default">
                 <source>Required to fill</source>
-                <target>Pflichtfelder auszufüllen</target>
+                <target>Müssen ausgefüllt werden</target>
             </trans-unit>
             <trans-unit id="120" translate="yes" reformat="yes" xml:space="default">
                 <source>Payment details:</source>
@@ -506,7 +506,7 @@
             </trans-unit>
             <trans-unit id="124" translate="yes" reformat="yes" xml:space="default">
                 <source>Extra refill amount</source>
-                <target>Extra-Refill Menge</target>
+                <target>Zugabe Nachfüllung Menge</target>
             </trans-unit>
             <trans-unit id="125" translate="yes" reformat="yes" xml:space="default">
                 <source>Mobile number</source>
@@ -566,7 +566,7 @@
             </trans-unit>
                <trans-unit id="139" translate="yes" reformat="yes" xml:space="default">
                 <source>Pay</source>
-                <target>zahlen</target>
+                <target>Zahlen</target>
             </trans-unit>
             <trans-unit id="140" translate="yes" reformat="yes" xml:space="default">
                 <source>Delivery and Returns</source>
@@ -574,7 +574,7 @@
             </trans-unit>
              <trans-unit id="141" translate="yes" reformat="yes" xml:space="default">
                 <source>Auto refill details:</source>
-                <target>Auto nachfüllen Details:</target>
+                <target>Auto nachfüllen Nähere:</target>
             </trans-unit>
              <trans-unit id="142" translate="yes" reformat="yes" xml:space="default">
                 <source>I want to activate auto refill feature</source>
@@ -598,11 +598,11 @@
             </trans-unit>
              <trans-unit id="147" translate="yes" reformat="yes" xml:space="default">
                 <source>Send</source>
-                <target>senden</target>
+                <target>Senden</target>
             </trans-unit>
               <trans-unit id="148" translate="yes" reformat="yes" xml:space="default">
                 <source>active</source>
-                <target>aktiv</target>
+                <target>Aktiv</target>
             </trans-unit>
               <trans-unit id="149" translate="yes" reformat="yes" xml:space="default">
                 <source>Your status:</source>
@@ -614,7 +614,7 @@
             </trans-unit>
               <trans-unit id="151" translate="yes" reformat="yes" xml:space="default">
                 <source>Send Invitation</source>
-                <target>Einladung senden</target>
+                <target>Einladung Senden</target>
             </trans-unit>
               <trans-unit id="152" translate="yes" reformat="yes" xml:space="default">
                 <source>Most convenient way to fill the pot call is To enable automatic &lt;br /&gt; filling (below). then you need Do not worry about the pot runs out. &lt;br /&gt; Especially important in such trip abroad when it can be difficult to fill in any other way.</source>
@@ -654,11 +654,11 @@
             </trans-unit>
             <trans-unit id="160" translate="yes" reformat="yes" xml:space="default">
                 <source>disable</source>
-                <target>deaktivieren</target>
+                <target>Deaktivieren</target>
             </trans-unit>
             <trans-unit id="161" translate="yes" reformat="yes" xml:space="default">
                 <source>Enable</source>
-                <target>ermöglichen</target>
+                <target>Ermöglichen</target>
             </trans-unit>
             <trans-unit id="162" translate="yes" reformat="yes" xml:space="default">
                 <source>Cost &lt;small&gt;(Incl. VAT)&lt;/small&gt;</source>
@@ -702,7 +702,7 @@
             </trans-unit>
             <trans-unit id="172" translate="yes" reformat="yes" xml:space="default">
                 <source>Tell a friend about Wls!</source>
-                <target>sagen ein Freund über Wls!</target>
+                <target>Sagen ein Freund über Wls!</target>
             </trans-unit>
             <trans-unit id="173" translate="yes" reformat="yes" xml:space="default">
                 <source>HI</source>
@@ -741,7 +741,7 @@
                 <target>Bestell-Nr</target>
             </trans-unit><trans-unit id="176" translate="yes" reformat="yes" xml:space="default">
                 <source>Mobile Number</source>
-                <target>Mobile Anzahl</target>
+                <target>Handy-Nummer</target>
             </trans-unit>
             <trans-unit id="182" translate="yes" reformat="yes" xml:space="default">
                 <source>Smartsim including pot</source>
@@ -809,7 +809,7 @@
             </trans-unit>
             <trans-unit id="198" translate="yes" reformat="yes" xml:space="default">
                 <source>Accept</source>
-                <target>akzeptieren</target>
+                <target>Akzeptieren</target>
             </trans-unit>
             <trans-unit id="199" translate="yes" reformat="yes" xml:space="default">
                 <source>Read more</source>
@@ -821,7 +821,7 @@
             </trans-unit>
             <trans-unit id="201" translate="yes" reformat="yes" xml:space="default">
                 <source>Mobile Number: %s</source>
-                <target>Mobile Nummer: %s</target>
+                <target>Handy-Nummer: %s</target>
             </trans-unit>
             <trans-unit id="202" translate="yes" reformat="yes" xml:space="default">
                 <source>Invaild mobile number or password.</source>
@@ -889,7 +889,7 @@
             </trans-unit>
             <trans-unit id="218" translate="yes" reformat="yes" xml:space="default">
                 <source>Paid</source>
-                <target>bezahlt</target>
+                <target>Bezahlt</target>
             </trans-unit>
             <trans-unit id="219" translate="yes" reformat="yes" xml:space="default">
                 <source>Country</source>
@@ -944,7 +944,7 @@
 
     <trans-unit id="231" translate="yes" reformat="yes" xml:space="default">
                 <source>Bonus Receiver</source>
-                <target>bonus-Empfänger</target>
+                <target>Bonus-Empfänger</target>
             </trans-unit>
   <trans-unit id="232" translate="yes" reformat="yes" xml:space="default">
                 <source>Registered Friend</source>
@@ -958,7 +958,7 @@
 
  <trans-unit id="234" translate="yes" reformat="yes" xml:space="default">
                 <source>Auto Refill</source>
-                <target>Auto Refill</target>
+                <target>Automatische Nachfüllung</target>
             </trans-unit>
 
  <trans-unit id="235" translate="yes" reformat="yes" xml:space="default">
@@ -976,6 +976,18 @@
             <trans-unit id="238" translate="yes" reformat="yes" xml:space="default">
                 <source>Product Price</source>
                 <target>Produkt Preis</target>
+            </trans-unit>
+            <trans-unit id="239" translate="yes" reformat="yes" xml:space="default">
+                <source>"%value%" is too short 4 characters min.</source>
+                <target>"%value%" ist zu kurz, 4 Zeichen min.</target>
+            </trans-unit>
+            <trans-unit id="240" translate="yes" reformat="yes" xml:space="default">
+                <source>"%value%" is too long 5 characters max.</source>
+                <target>"%value%" ist zu lang 5 Zeichen max.</target>
+            </trans-unit>
+            <trans-unit id="241" translate="yes" reformat="yes" xml:space="default">
+                <source>Active Mobile No</source>
+                <target>Aktiv Handy No</target>
             </trans-unit>
 
 

@@ -941,11 +941,11 @@
             </trans-unit>
             <trans-unit id="208" translate="yes" reformat="yes" xml:space="default">
 			    <source>Customer Module:</source>
-                <target>Customer-Modul:</target>
+                <target>Kunden-Modul:</target>
             </trans-unit>
             <trans-unit id="209" translate="yes" reformat="yes" xml:space="default">
 			    <source>Agent Module:</source>
-                <target>Agent-Module:</target>
+                <target>Agenten-Modul:</target>
             </trans-unit>
             <trans-unit id="210" translate="yes" reformat="yes" xml:space="default">
 			    <source>Sms code:</source>
@@ -1949,7 +1949,15 @@
                 <target>Kein Ergebnis</target>
             </trans-unit>
 
+<trans-unit id="418" translate="yes" reformat="yes" xml:space="default">
+		<source>Registration fee:</source>
+                <target>Anmeldegebühr:</target>
+            </trans-unit>
 
+        <trans-unit id="419" translate="yes" reformat="yes" xml:space="default">
+		<source>Required.</source>
+                <target>Erforderlich.</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

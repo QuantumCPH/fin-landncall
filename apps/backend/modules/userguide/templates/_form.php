@@ -11,6 +11,7 @@
       <tr>
         <td>
           <?php echo $form->renderHiddenFields() ?>
+
           <!--<a href="<?php echo url_for('userguide/index') ?>" class="userCancel">Cancel</a>-->
           <?php if (!$form->getObject()->isNew()): ?>
             &nbsp;<?php echo link_to('Delete', 'userguide/delete?id='.$form->getObject()->getId(), array('class'=>'userDelete','method' => 'delete', 'confirm' => 'Are you sure?')) ?>
