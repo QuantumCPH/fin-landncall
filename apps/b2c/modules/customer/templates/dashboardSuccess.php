@@ -181,5 +181,5 @@ echo " ";   echo substr($Telintambs, 15,2);
 	</table>
     </div>
   </div>
-</div>
+
   <?php include_partial('sidebar') ?>
