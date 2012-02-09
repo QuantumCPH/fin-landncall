@@ -821,7 +821,7 @@
             </trans-unit>
             <trans-unit id="201" translate="yes" reformat="yes" xml:space="default">
                 <source>Mobile Number: %s</source>
-                <target>Mobile Nummer: %s</target>
+                <target>Handy-Nummer: %s</target>
             </trans-unit>
             <trans-unit id="202" translate="yes" reformat="yes" xml:space="default">
                 <source>Invaild mobile number or password.</source>
@@ -889,7 +889,7 @@
             </trans-unit>
             <trans-unit id="218" translate="yes" reformat="yes" xml:space="default">
                 <source>Paid</source>
-                <target>bezahlt</target>
+                <target>Bezahlt</target>
             </trans-unit>
             <trans-unit id="219" translate="yes" reformat="yes" xml:space="default">
                 <source>Country</source>
@@ -944,7 +944,7 @@
 
     <trans-unit id="231" translate="yes" reformat="yes" xml:space="default">
                 <source>Bonus Receiver</source>
-                <target>bonus-Empfänger</target>
+                <target>Bonus-Empfänger</target>
             </trans-unit>
   <trans-unit id="232" translate="yes" reformat="yes" xml:space="default">
                 <source>Registered Friend</source>
@@ -958,7 +958,7 @@
 
  <trans-unit id="234" translate="yes" reformat="yes" xml:space="default">
                 <source>Auto Refill</source>
-                <target>Auto Refill</target>
+                <target>Automatische Nachfüllung</target>
             </trans-unit>
 
  <trans-unit id="235" translate="yes" reformat="yes" xml:space="default">
@@ -976,6 +976,14 @@
             <trans-unit id="238" translate="yes" reformat="yes" xml:space="default">
                 <source>Product Price</source>
                 <target>Produkt Preis</target>
+            </trans-unit>
+            <trans-unit id="239" translate="yes" reformat="yes" xml:space="default">
+                <source>"%value%" is too short 4 characters min.</source>
+                <target>"%value%" ist zu kurz, 4 Zeichen min.</target>
+            </trans-unit>
+            <trans-unit id="240" translate="yes" reformat="yes" xml:space="default">
+                <source>"%value%" is too long 5 characters max.</source>
+                <target>"%value%" ist zu lang 5 Zeichen max.</target>
             </trans-unit>
 
 
