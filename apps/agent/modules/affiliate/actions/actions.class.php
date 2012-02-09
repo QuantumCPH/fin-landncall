@@ -98,48 +98,54 @@ class affiliateActions extends sfActions {
         //check to see if transaction id is there
 
         $transaction_id = $request->getParameter('tid');
-
         $this->forward404Unless($transaction_id);
-
         //is this receipt really belongs to authenticated user
 
         $transaction = TransactionPeer::retrieveByPK($transaction_id);
-
         $c = new Criteria();
         $c->add(CustomerPeer::ID, $transaction->getCustomerId());
         $this->customer = CustomerPeer::doSelectOne($c);
 
-
         $this->forward404Unless($transaction->getCustomerId() == $this->customer->getId(), 'Not allowed');
-
         //set customer order
         $customer_order = CustomerOrderPeer::retrieveByPK($transaction->getOrderId());
 
         if ($customer_order) {
             $vat = $customer_order->getIsFirstOrder() ?
-                    ($customer_order->getProduct()->getPrice() * $customer_order->getQuantity() -
-                    $customer_order->getProduct()->getInitialBalance()) * .20 :
+                    $customer_order->getProduct()->getRegistrationFee()  * .25 :
                     0;
         }
         else
             die('Error retreiving');
 
 
-        //This Query For Get Agent Informatiion again Issue#xxxx - 01/13/11
-//        $c = new Criteria();
-//        $c->add(AgentCompanyPeer::ID, $agent_company_id = $this->getUser()->getAttribute('agent_company_id', '', 'agentsession'));
-//
-//        $recepient_agent_email  = AgentCompanyPeer::doSelectOne($c)->getEmail();
-//        $recepient_agent_name = AgentCompanyPeer::doSelectOne($c)->getName();
+        $agent_company_id = $this->customer->getReferrerId();
+        if($agent_company_id!=''){
+            $c = new Criteria();
+            $c->add(AgentCompanyPeer::ID, $agent_company_id);
+            $recepient_agent_name = AgentCompanyPeer::doSelectOne($c)->getName();
+        }else{
+            $recepient_agent_name = '';
+        }
 
-        $this->renderPartial('affiliate/order_receipt', array(
-            'customer' => $this->customer,
-            'order' => CustomerOrderPeer::retrieveByPK($transaction->getOrderId()),
-            'transaction' => $transaction,
-            'agent_name' => '',
-            'vat' => $vat,
-        ));
-
+        if ($customer_order->getIsFirstOrder()) {
+            $this->renderPartial('affiliate/order_receipt', array(
+                'customer' => $this->customer,
+                'order' => CustomerOrderPeer::retrieveByPK($transaction->getOrderId()),
+                'transaction' => $transaction,
+                'agent_name' => $recepient_agent_name,
+                'vat' => $vat,
+            ));
+        } else {
+            $this->renderPartial('affiliate/refill_order_receipt', array(
+                 'customer' => $this->customer,
+                'order' => CustomerOrderPeer::retrieveByPK($transaction->getOrderId()),
+                'transaction' => $transaction,
+                'agent_name' => $recepient_agent_name,
+                'vat' => $vat,
+                'wrap'=>false,
+            ));
+        }
         return sfView::NONE;
     }
 
