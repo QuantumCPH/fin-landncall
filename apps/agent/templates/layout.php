@@ -11,7 +11,13 @@
 		$agent_company = AgentCompanyPeer::doSelectOne($va);
                 
         ?>
-       
+
+<?php if($sf_user->getCulture()=='en'){    ?>
+   <script type="text/javascript" src="http://wls2.zerocall.com/js/jquery.validate1.js"></script>
+
+   <?php }else{  ?>
+      <script type="text/javascript" src="http://wls2.zerocall.com/js/jquery.validatede.js"></script>
+ <?php  } ?>
         <link rel="shortcut icon" href="/favicon.ico" />
         <style>
 .error{

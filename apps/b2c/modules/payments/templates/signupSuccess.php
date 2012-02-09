@@ -14,10 +14,7 @@ $customer_form->unsetAllExcept(array('auto_refill_amount', 'auto_refill_min_bala
 		$("#quantity").blur(function(){
 			if(isNaN($("#quantity").val()) || $("#quantity").val()<1)
 			{
-				//$('#quantity_ok').hide();
-				//$('#quantity_decline').show();
 				
-				//$('#quantity_error').show();
 				$('#quantity').val(1);
 				calc();
 				
@@ -26,8 +23,6 @@ $customer_form->unsetAllExcept(array('auto_refill_amount', 'auto_refill_min_bala
 			{
 				$('#quantity_decline').hide();
 				$('#quantity_ok').show();
-				
-				//$('#quantity_error').hide();
 			}
 		});
 	
@@ -104,7 +99,7 @@ $customer_form->unsetAllExcept(array('auto_refill_amount', 'auto_refill_min_bala
                  if(document.getElementById('user_attr_1').checked){
                 $('#idcallbackurl').val(callbackurlstr);
                  }else{
-                     var callbackurlstrs = "<?php echo $relay_script_url.url_for('@dibs_accept_url', true);  ?>?accept=yes&subscriptionid=1&lng=<?php echo  $sf_user->getCulture() ?>&orderid=<?php echo $order_id; ?>&amount="+total*100;
+                     var callbackurlstrs = "<?php echo $relay_script_url.url_for('@dibs_accept_url', true);  ?>?accept=yes&subscriptionid=1&lng=<?php echo  $sf_user->getCulture() ?>&orderid=<?php echo $order_id; ?>&amount="+total;
                     $('#idcallbackurl').val(callbackurlstrs);
                  }
 	}
