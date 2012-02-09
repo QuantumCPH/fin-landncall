@@ -524,7 +524,7 @@
 				
 			<trans-unit id="105" translate="yes" reformat="yes" xml:space="default">
 			    <source>Refill revenue commissision</source>
-                <target>Refill Umsatz commissision</target>
+                <target>Nachfüllung Umsatz commissision</target>
             </trans-unit>
 			
 			<trans-unit id="106" translate="yes" reformat="yes" xml:space="default">
@@ -539,7 +539,7 @@
 			
 			<trans-unit id="108" translate="yes" reformat="yes" xml:space="default">
 			    <source>Refill revenue</source>
-                <target>Refill Umsatz</target>
+                <target>Nachfüllung Umsatz</target>
             </trans-unit>
 			
 			<trans-unit id="109" translate="yes" reformat="yes" xml:space="default">
@@ -645,7 +645,7 @@
             </trans-unit>
              <trans-unit id="135" translate="yes" reformat="yes" xml:space="default">
 			    <source>extra refill share value %</source>
-                <target>Extra-Refill Anteilswert %</target>
+                <target>Extra-Nachfüllung Anteilswert %</target>
             </trans-unit>
              <trans-unit id="136" translate="yes" reformat="yes" xml:space="default">
 			    <source>Extra payments share enable</source>
@@ -661,7 +661,7 @@
             </trans-unit>
             <trans-unit id="139" translate="yes" reformat="yes" xml:space="default">
 			    <source>Is extra refill share value %</source>
-                <target>Ist extra Refill Anteilswert</target>
+                <target>Ist extra Nachfüllung Anteilswert</target>
             </trans-unit>
                <trans-unit id="140" translate="yes" reformat="yes" xml:space="default">
 			    <source>Heading</source>
@@ -790,7 +790,7 @@
             </trans-unit>
             <trans-unit id="171" translate="yes" reformat="yes" xml:space="default">
 			    <source>Is extra refill share value %:</source>
-                <target>Ist extra Refill Anteilswert%:</target>
+                <target>Ist extra Nachfüllung Anteilswert%:</target>
             </trans-unit>
             <trans-unit id="172" translate="yes" reformat="yes" xml:space="default">
 			    <source>create/edit agent commission package</source>
@@ -1420,12 +1420,12 @@
             </trans-unit>
    <trans-unit id="315" translate="yes" reformat="yes" xml:space="default">
 		<source>B2B Company Refill Successfully</source>
-                <target>B2B-Unternehmen erfolgreich Refill</target>
+                <target>B2B-Unternehmen erfolgreich Nachfüllung</target>
             </trans-unit>
 
 <trans-unit id="316" translate="yes" reformat="yes" xml:space="default">
 		<source>Error in B2B Company Refill</source>
-                <target>Fehler in der B2B-Unternehmen Refill</target>
+                <target>Fehler in der B2B-Unternehmen Nachfüllung</target>
             </trans-unit>
 
 <trans-unit id="317" translate="yes" reformat="yes" xml:space="default">
