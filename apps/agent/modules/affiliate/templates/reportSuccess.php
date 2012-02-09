@@ -203,17 +203,20 @@
                 </tr>
 		<?php } ?>
 		<?php endforeach;?>
-		<tr>
-                    <td>&nbsp;</td><td colspan="2" align="right"><strong><?php echo __('Total Refills From The Shop:') ?></strong></td><td colspan="2"> <?php echo $i ?></td>
-		</tr>
-		<tr>
-		 <td>&nbsp;</td><td colspan="2" align="right"><strong><?php echo __('Total Earnings:') ?></strong></td><td colspan="2"> <?php echo $earnings ?></td>
-		</tr>
-		<tr>
-		 <td>&nbsp;</td><td colspan="2" align="right"><strong><?php echo __('Total Commission Earned:') ?></strong></td><td colspan="2"> <?php echo $commission ?></td>
-		</tr>
-	</table>
+		
+	</table>       
         </div>
+        <table width="100%" cellspacing="0" cellpadding="2">
+                <tr>
+                    <td align="right"><strong><?php echo __('Total Refills From The Shop:') ?></strong></td><td align="right"> <?php echo $i ?></td>
+		</tr>
+		<tr>
+		 <td align="right"><strong><?php echo __('Total Earnings:') ?></strong></td><td align="right"> <?php echo $earnings ?></td>
+		</tr>
+		<tr>
+		 <td align="right"><strong><?php echo __('Total Commission Earned:') ?></strong></td><td align="right"> <?php echo $commission ?></td>
+		</tr>
+        </table>
 <?php endif; ?>
 
         <?php else: ?>
