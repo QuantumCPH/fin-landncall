@@ -79,9 +79,9 @@ body {font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#000;backg
 /*.right-col .box{ width:232px; height:106px; padding:10px; float:left; margin-right:11px;}*/
 .right-col .box  {
 float:left;
-height:156px;
+height:100px;
 margin-right:8px;
-padding:30px 10px 20px;
+padding:56px 10px 20px;
 width:232px;
 }
 .right-col .box-a{background-image:url(../images/bg-box-a.png); background-repeat:no-repeat;}
@@ -89,7 +89,7 @@ width:232px;
 /*.right-col .box h3{ color:#d86327; font-size:18px;}
 .right-col .box h3 span{ color:#000;}*/
 .right-col .box small{ font-size:11px;}
-.right-col .box p{ margin-top:5px; margin-bottom:20px; font-size:12px;}
+.right-col .box p{ margin-top:5px; margin-bottom:20px; font-size:12px;padding:0px;}
 .right-col .box a{
     background-image: url("../images/bg-greenbutton-.png");
     background-position: 0 0;
