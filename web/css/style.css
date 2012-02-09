@@ -56,7 +56,7 @@ a:hover{
 	display:block;
 	font-weight:bold;
 	text-align:right;
-	width:120px;
+	width:125px;
 	float:left;
         padding:5px;
         margin-bottom: 15px;
@@ -72,7 +72,7 @@ a:hover{
 #basic input {
 	float:left;
 	width:150px;
-	margin:2px 0px 30px 10px;
+	margin:2px 0px 30px 26px;
    
 }
 #basic input[type=submit]{
@@ -81,7 +81,7 @@ a:hover{
     height:27px;
     color:#ffffff;
     border:0px !important;
-    margin-left:230px;
+    margin-left:0px;
     font-size:11px;
     font-weight: bold;
 }
@@ -115,7 +115,7 @@ input#generic {
 	float:left;
 	width:165px;
         height: 22px;
-	margin:2px 0px 30px 10px;
+	margin:2px 0px 30px 26px;
 }
 #basic select#educationfromdate2, #basic select#educationfromdate1 {
 	float:left;
@@ -348,7 +348,7 @@ margin-bottom:10px;
 .split-form-sign-up{padding-top:20px; float:left; clear:both; width:750px; padding-bottom:30px; min-height:382px; background-repeat:no-repeat; padding-top:20px; padding-left:30px; margin-bottom:10px;}
 .split-form-sign-up .col{width:351px; float: left; position: relative}
 .split-form-sign-up ul{list-style:none;}
-.split-form-sign-up ul li{list-style:none; margin-bottom:10px; clear:both;width:350px; white-space:nowrap; z-index:100; position:relative; color:#000;}
+.split-form-sign-up ul li{list-style:none; margin-bottom:10px; clear:both;width:350px; white-space:nowrap;color:#000;}
 .split-form-sign-up ul li label{width:130px; float:left; padding-top:3px; font-weight:bold; }
 .split-form-sign-up ul li input{width:130px; border:1px solid #999999; font-size:11px; padding:3px;}
 .split-form-sign-up ul li select{width:137px; border:1px solid #999999;font-size:11px; padding:3px; }
@@ -357,7 +357,13 @@ margin-bottom:10px;
 .split-form-sign-up ul li input.chkbx{width:20px; padding:0px; border:0px; float:left;}
 .split-form-sign-up ul li input.radbx{width:20px; padding:0px; border:0px; float:left;}
 .split-form-sign-up ul li.fr {width:250px; text-align:right;}
-.split-form-sign-up ul li.buttonplacement{ /*position: relative; right:75px;*/ text-align: left !important;}
+.split-form-sign-up ul li.buttonplacement{ /*position: relative; right:75px;*/ margin-left: 36px;text-align: left !important;}
+#customer_date_of_birth_month{
+    margin-left:10px !important;
+}
+#customer_date_of_birth_year{
+    margin-left:10px !important;
+}
 .split-form-sign-up ul li button{ 
     border:0 none;
     bottom:-70px;
