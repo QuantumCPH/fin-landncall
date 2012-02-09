@@ -64,11 +64,10 @@ class agentUserActions extends sfActions {
 
         //call Culture Method For Get Current Set Culture - Against Feature# 6.1 --- 01/24/11 - Ahtsham
          changeLanguageCulture::languageCulture($request,$this);
-            if($request->getParameter('new'))
-                $lang = $request->getParameter('new');
+  if($request->getParameter('new'))
+                $this->getUser()->setCulture($request->getParameter('new'));
         else
-                 $lang = 'de';
-         $this->getUser()->setCulture($lang);
+            $this->getUser()->setCulture($this->getUser()->getCulture());
         $this->form = new AgentLoginForm();
 
         if($request->isMethod('post')){

@@ -37,7 +37,7 @@
 			
 		<trans-unit id="8" translate="yes" reformat="yes" xml:space="default">
                 <source>Agents</source>
-                <target>Agents</target>
+                <target>Agenten</target>
             </trans-unit>
 			
 			
@@ -80,10 +80,7 @@
                 <target>Benutzer Leitfaden</target>
             </trans-unit>
 			
-			<trans-unit id="17" translate="yes" reformat="yes" xml:space="default">
-                <source>User Guide</source>
-                <target>Benutzer Leitfaden</target>
-            </trans-unit>
+	
 			
 			<trans-unit id="18" translate="yes" reformat="yes" xml:space="default">
                 <source>Security</source>
@@ -177,22 +174,22 @@
 			
 			<trans-unit id="36" translate="yes" reformat="yes" xml:space="default">
 			    <source>no result</source>
-                <target>kein Ergebnis</target>
+                <target>Kein Ergebnis</target>
             </trans-unit>
 			
 			<trans-unit id="37" translate="yes" reformat="yes" xml:space="default">
 			    <source>reset</source>
-                <target>zurücksetzen</target>
+                <target>Zurücksetzen</target>
             </trans-unit>
 			
 			<trans-unit id="38" translate="yes" reformat="yes" xml:space="default">
 			    <source>filter</source>
-                <target>filtern</target>
+                <target>Filtern</target>
             </trans-unit>
 			
 			<trans-unit id="39" translate="yes" reformat="yes" xml:space="default">
 			    <source>create</source>
-                <target>schaffen</target>
+                <target>Cchaffen</target>
             </trans-unit>
 			
 			<trans-unit id="40" translate="yes" reformat="yes" xml:space="default">
@@ -297,7 +294,7 @@
 			
 			<trans-unit id="60" translate="yes" reformat="yes" xml:space="default">
 			    <source>save</source>
-                <target>sparen</target>
+                <target>Sparen</target>
             </trans-unit>
 			
 			<trans-unit id="61" translate="yes" reformat="yes" xml:space="default">
@@ -340,11 +337,6 @@
                 <target>E-Mail</target>
             </trans-unit>
 			
-			<trans-unit id="69" translate="yes" reformat="yes" xml:space="default">
-			    <source>Email</source>
-                <target>E-Mail</target>
-            </trans-unit>
-			
 			<trans-unit id="70" translate="yes" reformat="yes" xml:space="default">
 			    <source>My employee List</source>
                 <target>Meine Mitarbeiter Liste</target>
@@ -377,7 +369,7 @@
 			
 			<trans-unit id="76" translate="yes" reformat="yes" xml:space="default">
 			    <source>Created at</source>
-                <target>erstellt am</target>
+                <target>Erstellt am</target>
             </trans-unit>
 			
 			<trans-unit id="77" translate="yes" reformat="yes" xml:space="default">
@@ -447,7 +439,7 @@
 			
 			<trans-unit id="88" translate="yes" reformat="yes" xml:space="default">
 			    <source>Id</source>
-                <target>Id</target>
+                <target>Identifikation</target>
             </trans-unit>
 			
 			<trans-unit id="89" translate="yes" reformat="yes" xml:space="default">
@@ -492,7 +484,7 @@
 			
 			<trans-unit id="97" translate="yes" reformat="yes" xml:space="default">
 			    <source>Id:</source>
-                <target>Id:</target>
+                <target>Identifikation:</target>
             </trans-unit>
 			
 			<trans-unit id="98" translate="yes" reformat="yes" xml:space="default">
@@ -570,10 +562,6 @@
                 <target>CVR Nummer:</target>
             </trans-unit>
 			
-			<trans-unit id="113" translate="yes" reformat="yes" xml:space="default">
-			    <source>Ean number:</source>
-                <target>Ean Nummer:</target>
-            </trans-unit>
 			
 			<trans-unit id="114" translate="yes" reformat="yes" xml:space="default">
 			    <source>Ean number:</source>
@@ -589,19 +577,15 @@
 			    <source>Is prepaid:</source>
                 <target>Prepaid ist:</target>
             </trans-unit>
-			
-			<trans-unit id="117" translate="yes" reformat="yes" xml:space="default">
-			    <source>Is prepaid:</source>
-                <target>Ist Prepaid:</target>
-            </trans-unit>
+
             <trans-unit id="118" translate="yes" reformat="yes" xml:space="default">
 			    <source>delete</source>
-                <target>löschen</target>
+                <target>Löschen</target>
             </trans-unit>
           
             <trans-unit id="120" translate="yes" reformat="yes" xml:space="default">
 			    <source>Vat Number:</source>
-                <target>Umsatzsteuer-Identifikationsnummer:</target>
+                <target>Mehrwertsteuer Nummer:</target>
             </trans-unit>
             <trans-unit id="121" translate="yes" reformat="yes" xml:space="default">
 			    <source>Agent company</source>
@@ -713,7 +697,7 @@
             </trans-unit>
             <trans-unit id="148" translate="yes" reformat="yes" xml:space="default">
 			    <source>create/edit New update</source>
-                <target>erstellen / bearbeiten Neues Update</target>
+                <target>Erstellen / bearbeiten Neues Update</target>
             </trans-unit>
             <trans-unit id="149" translate="yes" reformat="yes" xml:space="default">
 			    <source>New update List</source>
@@ -778,7 +762,7 @@
             </trans-unit>
             <trans-unit id="164" translate="yes" reformat="yes" xml:space="default">
 			    <source>For text</source>
-                <target>für Text</target>
+                <target>Für Text</target>
             </trans-unit>
             <trans-unit id="165" translate="yes" reformat="yes" xml:space="default">
 			    <source>Message text</source>
@@ -786,11 +770,11 @@
             </trans-unit>
             <trans-unit id="166" translate="yes" reformat="yes" xml:space="default">
 			    <source>agent_user list</source>
-                <target>agent_user Liste</target>
+                <target>Agent_user Liste</target>
             </trans-unit>
             <trans-unit id="167" translate="yes" reformat="yes" xml:space="default">
 			    <source>edit agent_user</source>
-                <target>bearbeiten agent_user</target>
+                <target>Bearbeiten agent_user</target>
             </trans-unit>
             <trans-unit id="168" translate="yes" reformat="yes" xml:space="default">
 			    <source>Reg share value:</source>
@@ -810,7 +794,7 @@
             </trans-unit>
             <trans-unit id="172" translate="yes" reformat="yes" xml:space="default">
 			    <source>create/edit agent commission package</source>
-                <target>erstellen / bearbeiten Maklergebühren Paket</target>
+                <target>Erstellen / bearbeiten Maklergebühren Paket</target>
             </trans-unit>
             <trans-unit id="173" translate="yes" reformat="yes" xml:space="default">
 			    <source>Agent Commission Package List</source>
@@ -826,11 +810,11 @@
             </trans-unit>
             <trans-unit id="176" translate="yes" reformat="yes" xml:space="default">
 			    <source>faqs list</source>
-                <target>faq-Liste</target>
+                <target>Faq-Liste</target>
             </trans-unit>
             <trans-unit id="177" translate="yes" reformat="yes" xml:space="default">
 			    <source>Edit Faqs</source>
-                <target>bearbeiten Faqs</target>
+                <target>Bearbeiten Faqs</target>
             </trans-unit>
             <trans-unit id="178" translate="yes" reformat="yes" xml:space="default">
 			    <source>Question:</source>
@@ -862,11 +846,11 @@
             </trans-unit>
             <trans-unit id="185" translate="yes" reformat="yes" xml:space="default">
 			    <source>Save</source>
-                <target>sparen</target>
+                <target>Sparen</target>
             </trans-unit>
             <trans-unit id="186" translate="yes" reformat="yes" xml:space="default">
 			    <source>New</source>
-                <target>neu</target>
+                <target>Neu</target>
             </trans-unit>
             <trans-unit id="187" translate="yes" reformat="yes" xml:space="default">
 			    <source>user list</source>
@@ -889,15 +873,15 @@
             </trans-unit>
             <trans-unit id="191" translate="yes" reformat="yes" xml:space="default">
 			    <source>edit manufacturer</source>
-                <target>edit Hersteller</target>
+                <target>Edit Hersteller</target>
             </trans-unit>
             <trans-unit id="192" translate="yes" reformat="yes" xml:space="default">
 			    <source>Create/Edit Telecom Operator</source>
-                <target>schaffen/bearbeiten Telecom Operator</target>
+                <target>Schaffen/bearbeiten Telecom Operator</target>
             </trans-unit>
             <trans-unit id="193" translate="yes" reformat="yes" xml:space="default">
 			    <source>edit postal_charges</source>
-                <target>bearbeiten postal_charges</target>
+                <target>Bearbeiten postal_charges</target>
             </trans-unit>
             <trans-unit id="194" translate="yes" reformat="yes" xml:space="default">
 			    <source>Charges:</source>
@@ -937,7 +921,7 @@
             </trans-unit>
             <trans-unit id="203" translate="yes" reformat="yes" xml:space="default">
 			    <source>Create/Edit Product</source>
-                <target>Create / Edit Produkt</target>
+                <target>Schaffen/bearbeiten Produkt</target>
             </trans-unit>
             <trans-unit id="204" translate="yes" reformat="yes" xml:space="default">
 			    <source>Product Name:</source>
@@ -969,7 +953,7 @@
             </trans-unit>
             <trans-unit id="211" translate="yes" reformat="yes" xml:space="default">
 			    <source>Create/Edit Country</source>
-                <target>Create / Edit Land</target>
+                <target>Schaffen/bearbeiten Land</target>
             </trans-unit>
             <trans-unit id="212" translate="yes" reformat="yes" xml:space="default">
 			    <source>Language:</source>
@@ -1025,7 +1009,7 @@
             </trans-unit>
             <trans-unit id="225" translate="yes" reformat="yes" xml:space="default">
 			    <source>Refill Amount Must be Comma Separate</source>
-                <target>Refill Betrag muss Komma getrennt</target>
+                <target>Nachfüllung Betrag muss Komma getrennt</target>
             </trans-unit>
             <trans-unit id="226" translate="yes" reformat="yes" xml:space="default">
 			    <source>Base url:</source>
@@ -1037,7 +1021,7 @@
             </trans-unit>
             <trans-unit id="228" translate="yes" reformat="yes" xml:space="default">
 			    <source>Create/Edit City</source>
-                <target>Create / Edit Stadt</target>
+                <target>Schaffen/bearbeiten Stadt</target>
             </trans-unit>
             <trans-unit id="229" translate="yes" reformat="yes" xml:space="default">
 			    <source>edit sms_text</source>
@@ -1090,7 +1074,7 @@
             </trans-unit>
              <trans-unit id="242" translate="yes" reformat="yes" xml:space="default">
 			    <source>Create/Edit device</source>
-                <target>Create / Edit Gerät</target>
+                <target>Schaffen/bearbeitent Gerät</target>
             </trans-unit>
              <trans-unit id="243" translate="yes" reformat="yes" xml:space="default">
 			    <source>enable_country list</source>
@@ -1597,7 +1581,16 @@
 
             <trans-unit id="348" translate="yes" reformat="yes" xml:space="default">
 	<source>Enter Vat Number</source>
-                <target>Geben Sie Vat Number</target>
+                <target>Geben Sie Mehrwertsteuer Nummer</target>
+            </trans-unit>
+
+       <trans-unit id="349" translate="yes" reformat="yes" xml:space="default">
+	<source>Employee Detail</source>
+                <target>Mitarbeiter-Detailansicht</target>
+            </trans-unit>
+             <trans-unit id="350" translate="yes" reformat="yes" xml:space="default">
+	<source>Auto Refill</source>
+                <target>Auto nachfüllen</target>
             </trans-unit>
         </body>
     </file>
