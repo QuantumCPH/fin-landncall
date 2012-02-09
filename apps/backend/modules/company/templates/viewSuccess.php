@@ -187,7 +187,7 @@
 					<?php if($company->getFilePath()): ?>
 						<a href="<?php echo public_path('/uploads/'.$company->getFilePath()) ?>" target="_blank"><?php echo  __('Download attachement') ?></a>
 					<?php else: ?>
-						none
+				<?php		echo __('None');   ?>
 					<?php endif; ?>
 				  </div>
 				</div>

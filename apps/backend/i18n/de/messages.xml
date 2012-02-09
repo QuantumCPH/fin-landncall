@@ -1918,6 +1918,19 @@
                 <target>Webseite:</target>
             </trans-unit>
 
+   <trans-unit id="411" translate="yes" reformat="yes" xml:space="default">
+		<source>None</source>
+                <target>keiner</target>
+            </trans-unit>
+
+ <trans-unit id="412" translate="yes" reformat="yes" xml:space="default">
+		<source>remove file</source>
+                <target>Datei entfernen</target>
+            </trans-unit>
+ <trans-unit id="413" translate="yes" reformat="yes" xml:space="default">
+		<source>[show file]</source>
+                <target>[zeigen Datei]</target>
+            </trans-unit>
 
         </body>
     </file>
