@@ -13,7 +13,7 @@
 <?php use_javascript('../zerocall/js/cufon-replace.js', '', array('absolute'=>true)) ?>
 <?php use_javascript('../zerocall/js/jquery.jcarousel.min.js', '', array('absolute'=>true)) ?>
 <?php use_javascript('../zerocall/js/carousel.js', '', array('absolute'=>true)) ?>
-<?php use_javascript('../zerocall/js/jquery.validate.js', '', array('absolute'=>true)) ?>
+
 <?php use_javascript('jquery.formatCurrency-1.3.0.min.js', '', array('absolute'=>true)) ?>
 <?php use_javascript('i18n/jquery.formatCurrency.all.js', '', array('absolute'=>true)) ?>
     <?php use_javascript('jquery-ui-1.8.16.custom.min.js', '', array('absolute'=>true)) ?>
@@ -30,6 +30,12 @@
 <?php use_stylesheet('../sf/sf_admin/css/main.css', '', array('absolute'=>true)) ?>
   <?php use_stylesheet('js/jquery-ui-1.8.16.custom.min.js', '', array('absolute'=>true)) ?>
   <!--<![endif]-->
+  <?php if($sf_user->getCulture()=='en'){    ?>
+   <script type="text/javascript" src="http://wls2.zerocall.com/js/jquery.validate1.js"></script>
+
+   <?php }else{  ?>
+      <script type="text/javascript" src="http://wls2.zerocall.com/js/jquery.validatede.js"></script>
+ <?php  } ?>
 </head>
 <body>
     <div style="vertical-align: top;float: right;">

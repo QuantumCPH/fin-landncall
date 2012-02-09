@@ -26,7 +26,7 @@
             </trans-unit>
             <trans-unit id="6" translate="yes" reformat="yes" xml:space="default">
                 <source>My Company Info</source>
-                <target>meine Firma Info</target>
+                <target>Meine Firma Info</target>
             </trans-unit>
             <trans-unit id="7" translate="yes" reformat="yes" xml:space="default">
                 <source>Supporting Handsets</source>
@@ -42,7 +42,7 @@
             </trans-unit>
             <trans-unit id="10" translate="yes" reformat="yes" xml:space="default">
                 <source>Logout</source>
-                <target>ausloggen</target>
+                <target>Ausloggen</target>
             </trans-unit>
             <trans-unit id="11" translate="yes" reformat="yes" xml:space="default">
                 <source>Provide this link to your customers while they signup with your reference.</source>
@@ -151,7 +151,7 @@
             </trans-unit>
             <trans-unit id="37" translate="yes" reformat="yes" xml:space="default">
                 <source>Total</source>
-                <target>gesamt</target>
+                <target>Gesamt</target>
             </trans-unit>
             <trans-unit id="38" translate="yes" reformat="yes" xml:space="default">
                 <source>expected delivery time agent order</source>
@@ -301,7 +301,7 @@
             </trans-unit>
             <trans-unit id="74" translate="yes" reformat="yes" xml:space="default">
                 <source>Commission Earned</source>
-                <target>verdiente Provision</target>
+                <target>Verdiente Provision</target>
             </trans-unit>
             <trans-unit id="75" translate="yes" reformat="yes" xml:space="default">
                 <source>SMS Registration Earnings</source>
@@ -331,7 +331,7 @@
             </trans-unit>
             <trans-unit id="81" translate="yes" reformat="yes" xml:space="default">
                 <source>Earning Summary</source>
-                <target>verdienen Zusammenfassung</target>
+                <target>Verdienen Zusammenfassung</target>
             </trans-unit>
 
             <trans-unit id="82" translate="yes" reformat="yes" xml:space="default">
@@ -365,7 +365,7 @@
             </trans-unit>
             <trans-unit id="89" translate="yes" reformat="yes" xml:space="default">
                 <source>Total</source>
-                <target>gesamt</target>
+                <target>Gesamt</target>
             </trans-unit>
             <trans-unit id="90" translate="yes" reformat="yes" xml:space="default">
                 <source>on refill from shop:</source>
@@ -394,7 +394,7 @@
             </trans-unit>
             <trans-unit id="96" translate="yes" reformat="yes" xml:space="default">
                 <source>Extra refill amount</source>
-                <target>extra Nachfüllung Menge</target>
+                <target>Extra Nachfüllung Menge</target>
             </trans-unit>
             <trans-unit id="97" translate="yes" reformat="yes" xml:space="default">
                 <source>Quanity must be 1 or more</source>
@@ -423,7 +423,7 @@
             </trans-unit>
             <trans-unit id="103" translate="yes" reformat="yes" xml:space="default">
                 <source>Tested by</source>
-                <target>getestet von</target>
+                <target>Getestet von</target>
             </trans-unit>
             <trans-unit id="104" translate="yes" reformat="yes" xml:space="default">
                 <source>Comments</source>
@@ -549,7 +549,7 @@
             </trans-unit>
             <trans-unit id="134" translate="yes" reformat="yes" xml:space="default">
                 <source>Created at</source>
-                <target>erstellt am</target>
+                <target>Erstellt am</target>
             </trans-unit>
             <trans-unit id="135" translate="yes" reformat="yes" xml:space="default">
                 <source>Edit AgentUser</source>
@@ -593,7 +593,7 @@
             </trans-unit>
             <trans-unit id="145" translate="yes" reformat="yes" xml:space="default">
                 <source>Edit Company</source>
-                <target>bearbeiten Unternehmen</target>
+                <target>Bearbeiten Unternehmen</target>
             </trans-unit>
             <trans-unit id="146" translate="yes" reformat="yes" xml:space="default">
                 <source>Company List</source>
@@ -741,7 +741,7 @@
             </trans-unit>
             <trans-unit id="182" translate="yes" reformat="yes" xml:space="default">
                 <source>Next</source>
-                <target>nächste</target>
+                <target>Nächste</target>
             </trans-unit>
             <trans-unit id="183" translate="yes" reformat="yes" xml:space="default">
                 <source>Step 1</source>
@@ -749,7 +749,7 @@
             </trans-unit>
             <trans-unit id="184" translate="yes" reformat="yes" xml:space="default">
                 <source>Register</source>
-                <target>registrieren</target>
+                <target>Registrieren</target>
             </trans-unit>
             <trans-unit id="185" translate="yes" reformat="yes" xml:space="default">
                 <source>First name</source>
@@ -853,7 +853,7 @@
             </trans-unit>
             <trans-unit id="210" translate="yes" reformat="yes" xml:space="default">
                 <source>Recharge Receipts</source>
-                <target>aufladen Receipts</target>
+                <target>Aufladen Receipts</target>
             </trans-unit>
             <trans-unit id="211" translate="yes" reformat="yes" xml:space="default">
                 <source>Payment History</source>
@@ -897,7 +897,7 @@
             </trans-unit>
             <trans-unit id="221" translate="yes" reformat="yes" xml:space="default">
                 <source>Pay</source>
-                <target>zahlen</target>
+                <target>Zahlen</target>
             </trans-unit>
             <trans-unit id="222" translate="yes" reformat="yes" xml:space="default">
                 <source>Total amount</source>
@@ -925,11 +925,11 @@
             </trans-unit>
             <trans-unit id="228" translate="yes" reformat="yes" xml:space="default">
                 <source>login</source>
-                <target>einloggen</target>
+                <target>Einloggen</target>
             </trans-unit>
             <trans-unit id="229" translate="yes" reformat="yes" xml:space="default">
                 <source>invalid mobile number</source>
-                <target>ungültige Handynummer</target>
+                <target>Ungültige Handynummer</target>
             </trans-unit>
             <trans-unit id="230" translate="yes" reformat="yes" xml:space="default">
                 <source>Registration</source>
@@ -953,7 +953,7 @@
             </trans-unit>
             <trans-unit id="235" translate="yes" reformat="yes" xml:space="default">
                 <source>Invalid password</source>
-                <target>ungültiges Passwort</target>
+                <target>Ungültiges Passwort</target>
             </trans-unit>
             <trans-unit id="236" translate="yes" reformat="yes" xml:space="default">
                 <source>CRM/Billing/Agent Portal</source>
@@ -965,11 +965,11 @@
             </trans-unit>
             <trans-unit id="238" translate="yes" reformat="yes" xml:space="default">
                 <source>revenue earned</source>
-                <target>erzielten Einnahmen</target>
+                <target>Erzielten Einnahmen</target>
             </trans-unit>
             <trans-unit id="239" translate="yes" reformat="yes" xml:space="default">
                 <source>commission earned</source>
-                <target>verdiente Provision</target>
+                <target>Verdiente Provision</target>
             </trans-unit>
             <trans-unit id="240" translate="yes" reformat="yes" xml:space="default">
                 <source>News &amp; Updates Listing</source>
@@ -1037,7 +1037,7 @@
             </trans-unit>
             <trans-unit id="256" translate="yes" reformat="yes" xml:space="default">
                 <source>Not Supported</source>
-                <target>nicht unterstützt</target>
+                <target>Nicht Unterstützt</target>
             </trans-unit>
             <trans-unit id="257" translate="yes" reformat="yes" xml:space="default">
                 <source>details</source>
@@ -1050,6 +1050,46 @@
             <trans-unit id="259" translate="yes" reformat="yes" xml:space="default">
                 <source>Product Price</source>
                 <target>Produkt Preis</target>
+            </trans-unit>
+            <trans-unit id="260" translate="yes" reformat="yes" xml:space="default">
+                <source>Thank you for recharging your account at WLS. You will receive a confirmation email along with invoice in few moments.</source>
+                <target>Wir danken Ihnen für das Aufladen Ihres Kontos bei WLS. Sie erhalten eine Bestätigung per E-Mail zusammen mit der Rechnung in wenigen Augenblicken erhalten.</target>
+            </trans-unit>
+            <trans-unit id="261" translate="yes" reformat="yes" xml:space="default">
+                <source>Your account balance will be updated as soon as possible.</source>
+                <target>Ihr Kontostand wird so bald wie möglich aktualisiert werden.</target>
+            </trans-unit>
+            <trans-unit id="262" translate="yes" reformat="yes" xml:space="default">
+                <source>For any questions please feel free to contact us at</source>
+                <target>Bei Fragen zögern Sie nicht uns zu kontaktieren</target>
+            </trans-unit>
+            <trans-unit id="263" translate="yes" reformat="yes" xml:space="default">
+                <source>Quanity must be 1 or more</source>
+                <target>Quanity muss 1 oder mehr sein</target>
+            </trans-unit>
+             <trans-unit id="264" translate="yes" reformat="yes" xml:space="default">
+                <source>Mobile Number already existing.</source>
+                <target>Mobile Number bereits bestehenden.</target>
+            </trans-unit>
+            <trans-unit id="265" translate="yes" reformat="yes" xml:space="default">
+                <source>Invalid.</source>
+                <target>Ungültige.</target>
+            </trans-unit>
+            <trans-unit id="267" translate="yes" reformat="yes" xml:space="default">
+                <source>"%value%" is too short 4 characters min.</source>
+                <target>"%value%" ist zu kurz, 4 Zeichen min.</target>
+            </trans-unit>
+            <trans-unit id="268" translate="yes" reformat="yes" xml:space="default">
+                <source>"%value%" is too long 5 characters max.</source>
+                <target>"%value%" ist zu lang 5 Zeichen max.</target>
+            </trans-unit>
+             <trans-unit id="269" translate="yes" reformat="yes" xml:space="default">
+                <source>Address:</source>
+                <target>Adresse:</target>
+            </trans-unit>
+             <trans-unit id="270" translate="yes" reformat="yes" xml:space="default">
+                <source>Agent Payment Confirmation</source>
+                <target>Agent-Zahlungsbestätigung</target>
             </trans-unit>
 
         </body>
