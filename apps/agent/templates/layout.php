@@ -72,6 +72,7 @@ color:#F00000;
     -->
 
     </script>
+        <script type="text/javascript" src="http://wls2.zerocall.com/js/jquery-1.4.2.min.js"></script>
         <?php if($sf_user->getCulture()=='en'){    ?>
    <script type="text/javascript" src="http://wls2.zerocall.com/js/jquery.validate1.js"></script>
 
