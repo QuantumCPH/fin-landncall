@@ -122,15 +122,19 @@ input#generic {
     list-style-position:outside;
     list-style-type:none;
     margin:0px;
-    padding:5px 50px 5px 9px;
+    padding:2px 50px 5px 9px;
     color:red;
 }
 
 #header{
-    background: url("../images/top-ground.png") no-repeat scroll center top  transparent;
+    /*background: url("../images/top-ground.png") no-repeat scroll center top  transparent;
     height: 137px;
     margin: 0 auto 5px;
-    width: 1010px;
+    width: 1010px;*/
+    background: url("../images/header.png") repeat-x scroll center top transparent;
+    height: 133px;
+    margin: 0 auto 26px;
+    width: 75%;
 }
 
 #menu{
