@@ -191,7 +191,7 @@ width:232px;
 .settingbutton{ background-image:url(../images/btn-dashboard.jpg);border:0 none;color:#333333;font-size:22px;width:133px; height:36px; margin-top:20px; float:right;}
 .dashboard-info{min-height:400px; float:left; width:100%;}
 .dashboard-info-text{ width:100%; padding-top:20px; font-size:15px;}
-.dashboard-info-text span{ padding-right:20px;}
+.dashboard-info-text span{ padding-right:6px;}
 .dashboard-info button{ background-image:url(../images/btn-dashboard.jpg);border:0 none;color:#333333; font-weight:normal !important; font-size:16px;padding-bottom:7px;padding-top:5px;width:132px; float:right; height:36px; margin-top:10px;}
 .callhistory{ width:515px;}
 .callhistory tr{ border-bottom:1px solid #999999;}
@@ -622,4 +622,8 @@ label.extra_refill{
 }
 a.changePass{
     color:#D44D05;
+}
+#forgot_password_form p.text1{
+    margin-bottom: 32px !important;
+    padding-top: 14px !important;
 }

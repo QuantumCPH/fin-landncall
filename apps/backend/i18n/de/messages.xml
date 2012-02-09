@@ -1563,8 +1563,42 @@
 	<source>Employee Name:</source>
                 <target>Name des Mitarbeiters:</target>
             </trans-unit>
+<trans-unit id="341" translate="yes" reformat="yes" xml:space="default">
+	<source>Mobile No is available</source>
+                <target>Kein Handy ist verfügbar</target>
+            </trans-unit>
+<trans-unit id="342" translate="yes" reformat="yes" xml:space="default">
+	<source>This Mobile No Already exists</source>
+                <target>Dieses Handy Kein Bereits vorhanden</target>
+            </trans-unit>
 
+<trans-unit id="343" translate="yes" reformat="yes" xml:space="default">
+	<source>Please enter a valid mobile number not starting with 0</source>
+                <target>Bitte geben Sie eine gültige Handy-Nummer nicht mit 0 beginnt</target>
+            </trans-unit>
 
+<trans-unit id="344" translate="yes" reformat="yes" xml:space="default">
+	<source>Enter Mobile Number</source>
+                <target>Geben Sie Mobile Number</target>
+            </trans-unit>
+<trans-unit id="345" translate="yes" reformat="yes" xml:space="default">
+	<source>Checking...</source>
+                <target>Überprüfen ...</target>
+            </trans-unit>
+<trans-unit id="346" translate="yes" reformat="yes" xml:space="default">
+	<source>Vat No is available</source>
+                <target>Kein Vat ist verfügbar</target>
+            </trans-unit>
+
+<trans-unit id="347" translate="yes" reformat="yes" xml:space="default">
+	<source>This Vat No Already exists</source>
+                <target>Diese Mehrwertsteuer Kein Bereits vorhanden</target>
+            </trans-unit>
+
+            <trans-unit id="348" translate="yes" reformat="yes" xml:space="default">
+	<source>Enter Vat Number</source>
+                <target>Geben Sie Vat Number</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>
