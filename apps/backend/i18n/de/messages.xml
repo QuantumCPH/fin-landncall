@@ -1936,6 +1936,10 @@
                 <target>Mitarbeiter-Balance:</target>
             </trans-unit>
 
+<trans-unit id="415" translate="yes" reformat="yes" xml:space="default">
+		<source>The faqs status cannot be left blank.</source>
+                <target>Die FAQs Status darf nicht leer sein.</target>
+            </trans-unit>
 
         </body>
     </file>
