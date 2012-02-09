@@ -1599,6 +1599,15 @@
 	<source>Enter Vat Number</source>
                 <target>Geben Sie Vat Number</target>
             </trans-unit>
+
+       <trans-unit id="349" translate="yes" reformat="yes" xml:space="default">
+	<source>Employee Detail</source>
+                <target>Mitarbeiter-Detailansicht</target>
+            </trans-unit>
+             <trans-unit id="350" translate="yes" reformat="yes" xml:space="default">
+	<source>Auto Refill</source>
+                <target>Auto nachfüllen</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>
