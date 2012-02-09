@@ -131,9 +131,9 @@ $callRecords=1;
                 </tr>
                 <?php endif; ?>
                 <tr><td colspan="6" align="left"><?php echo  __('Samtalstyp  type detail') ?> <br/> <?php echo  __('Int. = Internationella samtal') ?><br/>
-        <?php echo  __('Cb M = Callback mottaga') ?><br/>
-	<?php echo  __('Cb S = Callback samtal') ?><br/>
-	<?php echo  __('R = resenummer samtal') ?><br/>
+        <?php //echo  __('Cb M = Callback mottaga') ?><br/>
+	<?php // echo  __('Cb S = Callback samtal') ?><br/>
+	<?php //echo  __('R = resenummer samtal') ?><br/>
 </td></tr>
               </table>
 
