@@ -6,6 +6,6 @@
 		echo __("<p>Your account balance will be updated as soon as possible.</p>");
 		echo __("<p>For any questions please feel free to contact us at");
 	?>
-	<a href="mailto:support@landncall.com">support@landncall.com</a>.
+	<a href="mailto:support@wls2.com">wls2.com</a>.
 	</div>
   </div> <!-- end left-col -->
