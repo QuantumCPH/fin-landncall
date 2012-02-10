@@ -86,7 +86,7 @@
             </trans-unit>
             <trans-unit id="21" translate="yes" reformat="yes" xml:space="default">
                 <source>If you have any questions please feel free to contact our customer support center at</source>
-                <target>Wenn Sie Fragen haben wenden Sie sich bitte an unseren Customer Support Center in Verbindung setzen</target>
+                <target>Wenn Sie Fragen haben, wenden Sie sich bitte an unser Kundendienst-Center in Verbindung setzen</target>
             </trans-unit>
             <trans-unit id="22" translate="yes" reformat="yes" xml:space="default">
                 <source>Cheers</source>
@@ -458,7 +458,7 @@
             </trans-unit>
             <trans-unit id="112" translate="yes" reformat="yes" xml:space="default">
                 <source>Destination Number&lt;br /&gt;(without leading 0)</source>
-                <target>Destination Nummer &lt;br /&gt; (ohne führenden 0)</target>
+                <target>Zielnummer &lt;br /&gt; (ohne führenden 0)</target>
             </trans-unit>
             <trans-unit id="113" translate="yes" reformat="yes" xml:space="default">
                 <source>Characters</source>
@@ -662,7 +662,7 @@
             </trans-unit>
             <trans-unit id="162" translate="yes" reformat="yes" xml:space="default">
                 <source>Cost &lt;small&gt;(Incl. VAT)&lt;/small&gt;</source>
-                <target>Cost &lt;small&gt;(Incl. Mehrwertsteuer)&lt;/small&gt;</target>
+                <target>Kosten &lt;small&gt;(Incl. Mehrwertsteuer)&lt;/small&gt;</target>
             </trans-unit>
             <trans-unit id="163" translate="yes" reformat="yes" xml:space="default">
                 <source>Call Type</source>
@@ -674,7 +674,7 @@
             </trans-unit>
             <trans-unit id="165" translate="yes" reformat="yes" xml:space="default">
                 <source>Type of call detail</source>
-                <target>Art der Call Detail</target>
+                <target>Art der rufen Einzelheit</target>
             </trans-unit>
             <trans-unit id="166" translate="yes" reformat="yes" xml:space="default">
                 <source>Change password</source>
@@ -938,8 +938,8 @@
             </trans-unit>
 
     <trans-unit id="230" translate="yes" reformat="yes" xml:space="default">
-                <source>We hereby confirm that you have received commissions deposited into your account that you have referred a friend about Smartsim from wls.Gå in to "My Pages" and go to "Other History" under the "Call History" to see what you have earned.</source>
-                <target>Wir bestätigen hiermit, dass Sie erhielt Aufträge hinterlegt auf Ihr Konto, dass Sie einen Freund über SmartSim aus wls.Gå in zu "Meine Favoriten" bezeichnet und gehen Sie auf "Andere Geschichte" unter dem "Call History" zu sehen, was Sie verdient haben.</target>
+                <source>We hereby confirm that you have received commissions deposited into your account that you have referred a friend about Smartsim from wls.Go in to "Payment History" to see what you have earned.</source>
+                <target>Wir bestätigen hiermit, dass Sie erhielt Aufträge hinterlegt auf Ihr Konto, dass Sie einen Freund über SmartSim aus wls.Go in die auf "Zahlungsprotokoll" bezeichnet zu sehen, was Sie verdient haben.</target>
             </trans-unit>
 
     <trans-unit id="231" translate="yes" reformat="yes" xml:space="default">
@@ -988,6 +988,30 @@
             <trans-unit id="241" translate="yes" reformat="yes" xml:space="default">
                 <source>Active Mobile No</source>
                 <target>Aktiv Handy No</target>
+            </trans-unit>
+            <trans-unit id="242" translate="yes" reformat="yes" xml:space="default">
+                <source>Automatic Replenishment is: Inavtice</source>
+                <target>Automatische Replenishment ist: Inaktiv</target>
+            </trans-unit>
+            <trans-unit id="243" translate="yes" reformat="yes" xml:space="default">
+                <source>Request for password</source>
+                <target>Passwort anfordern</target>
+            </trans-unit>
+            <trans-unit id="244" translate="yes" reformat="yes" xml:space="default">
+                <source>Payment is unfortunately not accepted because your information is incorrect, please try again by entering correct credit card information</source>
+                <target>Zahlung leider nicht akzeptiert wird, weil Ihre Daten nicht korrekt, bitte versuchen Sie es erneut durch die Eingabe korrekt Kreditkarten-Informationen</target>
+            </trans-unit>
+            <trans-unit id="245" translate="yes" reformat="yes" xml:space="default">
+                <source>Your Password have been saved.</source>
+                <target>Ihr Passwort gespeichert wurden.</target>
+            </trans-unit>
+            <trans-unit id="246" translate="yes" reformat="yes" xml:space="default">
+                <source>Invalid.</source>
+                <target>Ungültige.</target>
+            </trans-unit>
+            <trans-unit id="247" translate="yes" reformat="yes" xml:space="default">
+                <source>Payment details</source>
+                <target>Einzelheiten zur Bezahlung</target>
             </trans-unit>
 
 

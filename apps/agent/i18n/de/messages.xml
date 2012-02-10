@@ -506,8 +506,8 @@
                 <target>Kontakt E-Mail:</target>
             </trans-unit>
             <trans-unit id="124" translate="yes" reformat="yes" xml:space="default">
-                <source>Head Phone Nr:</source>
-                <target>Leiter Telefon Nr.:</target>
+                <source>Head Phone No:</source>
+                <target>Leiter Telefon No:</target>
             </trans-unit>
             <trans-unit id="125" translate="yes" reformat="yes" xml:space="default">
                 <source>Fax Number:</source>
