@@ -67,7 +67,7 @@
             <!-- end confirm password -->
             
            <div>
-               <input type="submit" class="butonsigninsmall"  name="submit"  style="cursor: pointer"  value="<?php echo __('Update') ?>" >
+               <input type="submit" class="butonsigninsmall"  name="submit"  style="cursor: pointer;margin-left:0px !important;margin-top: 10px !important;"  value="<?php echo __('Update') ?>" >
 
 
           </div>
