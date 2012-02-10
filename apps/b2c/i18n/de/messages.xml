@@ -994,7 +994,7 @@
                 <target>Automatische Replenishment ist: Inaktiv</target>
             </trans-unit>
             <trans-unit id="243" translate="yes" reformat="yes" xml:space="default">
-                <source>Request for password</source>
+                <source>Password Request</source>
                 <target>Passwort anfordern</target>
             </trans-unit>
             <trans-unit id="244" translate="yes" reformat="yes" xml:space="default">

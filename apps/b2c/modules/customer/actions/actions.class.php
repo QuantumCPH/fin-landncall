@@ -1257,7 +1257,7 @@ class customerActions extends sfActions {
             file_put_contents($invite_data_file, $invite2, FILE_APPEND);
 
             //Send Email to User --- when Forget Password Request Come --- 01/15/11
-            emailLib::sendForgetPasswordEmail($customer, $message);
+            emailLib::sendForgetPasswordEmail($customer, $message, $subject);
 
             $this->getUser()->setFlash('send_password_message', $this->getContext()->getI18N()->__('Your account details have been sent to your email address.'));
         }
