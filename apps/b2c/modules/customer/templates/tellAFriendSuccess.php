@@ -41,7 +41,15 @@ function countChar(str)
             
 	  </script>
            <style type="text/css">
+            
 
+	    .submit { margin-left: 125px; margin-top: 10px;}
+	    .label { display: block; float: left; width: 90px; text-align: right; margin-right: 5px; }
+	    .form-row { padding: 5px 0; clear: both; width: 700px; }
+	    label.error { width: 250px; display: block; float: left; color: red; padding-left: 10px; }
+	    input[type=text], text { width: 200px;  }
+            input[type=textarea], textarea { width: 400px;  }
+	    textarea { height: 80px; }
           
 	  </style>
 
