@@ -1099,6 +1099,18 @@
                 <source>Vat Number:</source>
                 <target>Mehrwertsteuer Nummer:</target>
             </trans-unit>
+
+             <trans-unit id="272" translate="yes" reformat="yes" xml:space="default">
+                <source>Total Registration Earnings:</source>
+                <target>Gesamt Registrierung Ertrag:</target>
+            </trans-unit>
+
+             <trans-unit id="273" translate="yes" reformat="yes" xml:space="default">
+                <source>Total Refills:</source>
+                <target>Insgesamt Nachfüllset:</target>
+            </trans-unit>
+              
+
         </body>
     </file>
 </xliff>
