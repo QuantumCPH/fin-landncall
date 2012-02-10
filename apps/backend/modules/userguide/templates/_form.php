@@ -9,57 +9,59 @@
   <table cellspacing="0" cellpadding="2" class="tblUserguide">
     <tfoot>
       <tr>
-        <td>
-          <?php echo $form->renderHiddenFields() ?>
-
-          <!--<a href="<?php echo url_for('userguide/index') ?>" class="userCancel">Cancel</a>-->
-          <?php if (!$form->getObject()->isNew()): ?>
-            &nbsp;<?php echo link_to('Delete', 'userguide/delete?id='.$form->getObject()->getId(), array('class'=>'userDelete','method' => 'delete', 'confirm' => 'Are you sure?')) ?>
-          <?php endif; ?>
+        <td class="noBorder">
           
-        </td><td><input type="submit" value="Save" class="saveUserGuide" /></td>
+          
+        </td><td class="noBorder" align="right">
+            <?php echo $form->renderHiddenFields() ?>
+
+          <a href="<?php echo url_for('userguide/index') ?>" class="user_external_link">Cancel</a>
+          <?php if (!$form->getObject()->isNew()): ?>
+            &nbsp;<?php echo link_to('Delete', 'userguide/delete?id='.$form->getObject()->getId(), array('class'=>'user_external_link','method' => 'delete', 'confirm' => 'Are you sure?')) ?>
+          <?php endif; ?> &nbsp;
+            <input type="submit" value="Save" class="saveUserGuide" /></td>
       </tr>
     </tfoot>
     <tbody>
       <?php echo $form->renderGlobalErrors() ?>
       <tr>
-        <th><?php echo $form['title']->renderLabel() ?></th>
-        <td>
+        <th class="noBorder"><?php echo $form['title']->renderLabel() ?></th>
+        <td class="noBorder">
           <?php echo $form['title']->renderError() ?>
           <?php echo $form['title'] ?>
         </td>
       </tr>
       <tr>
-        <th><?php echo $form['description']->renderLabel() ?></th>
-        <td>
+        <th class="noBorder"><?php echo $form['description']->renderLabel() ?></th>
+        <td class="noBorder">
           <?php echo $form['description']->renderError() ?>
           <?php echo $form['description'] ?>
         </td>
       </tr>
       <tr>
-        <th><?php echo $form['country_id']->renderLabel() ?></th>
-        <td>
+        <th class="noBorder"><?php echo $form['country_id']->renderLabel() ?></th>
+        <td class="noBorder">
           <?php echo $form['country_id']->renderError() ?>
           <?php echo $form['country_id'] ?>
         </td>
       </tr>
       <tr>
-        <th><?php echo $form['status_id']->renderLabel() ?></th>
-        <td>
+        <th class="noBorder"><?php echo $form['status_id']->renderLabel() ?></th>
+        <td class="noBorder">
           <?php echo $form['status_id']->renderError() ?>
           <?php echo $form['status_id'] ?>
         </td>
       </tr>
       <tr>
-        <th><?php echo $form['image']->renderLabel() ?></th>
-        <td>
+        <th class="noBorder"><?php echo $form['image']->renderLabel() ?></th>
+        <td class="noBorder">
           <?php echo $form['image']->renderError() ?>
           <?php echo $form['image'] ?>
         </td>
       </tr>
       <tr>
-        <th><?php echo $form['create_at']->renderLabel() ?></th>
-        <td>
+        <th class="noBorder"><?php echo $form['create_at']->renderLabel() ?></th>
+        <td class="noBorder">
           <?php echo $form['create_at']->renderError() ?>
           <?php echo $form['create_at'] ?>
         </td>
