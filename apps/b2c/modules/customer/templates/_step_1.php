@@ -232,45 +232,41 @@
           <li class="fr"><img src="<?php echo image_path('../zerocall/images/moto-flipout.png') ?>" alt=" " /></li>
            -->
           <!-- end device -->
-		  <div id="container" style="width:400px;">
-		  <div id="navbar" style="float: left;  width: 40%;">
-            <?php
+          <li>
+              <?php
             $error_terms_conditions = false;;
             if($form['terms_conditions']->hasError())
             	$error_terms_conditions = true;
             ?>
             <?php if($error_terms_conditions) { ?>
-            <li class="error">
+            <span class="error">
             	<?php echo $form['terms_conditions']->renderError() ?>
-            </li>
+            </span>
             <?php } ?>
-            <li style=" width: 200px;">
              <?php echo $form['terms_conditions'] ?>
-             <span><a href="../customer/termsAndCondition" target="_blank" style="outline:none"><?php echo $form['terms_conditions']->renderHelp() ?></a></span>
-             </li>
-			 <?php
+             <span><a href="../customer/termsAndCondition" target="_blank" style="outline:none"><?php echo $form['terms_conditions']->renderHelp() ?></a></span>             
+          </li>
+          <li>
+             <?php
             $error_is_newsletter_subscriber = false;;
             if($form['is_newsletter_subscriber']->hasError())
             	$error_is_newsletter_subscriber = true;
             ?>
             <?php if($error_is_newsletter_subscriber) { ?>
-            <li class="error">
+            <span class="error">
             	<?php echo $form['is_newsletter_subscriber']->renderError() ?>
-            </li>
+            </span>
             <?php } ?>
-            <li style="display:none">
-             <?php echo $form['is_newsletter_subscriber'] ?>
-             <span><?php echo $form['is_newsletter_subscriber']->renderHelp() ?></span>
-            </li>  
-			</div>
-          <!-- end newsletter --><br/>
+            <span style="display:none">
+              <?php echo $form['is_newsletter_subscriber'] ?>
+              <span><?php echo $form['is_newsletter_subscriber']->renderHelp() ?></span>
+            </span>   
+          </li>
           <li>
-		 <div id="content" >
-			 	<input type="submit" class="butonsigninsmall" name="submit" style="cursor: pointer; margin-left: 70px;"  value="<?php echo __('Next') ?>" ></div>
-					</div>     </li>
+              <input type="submit" class="butonsigninsmall" name="submit" style="cursor: pointer; margin-left: 0px !important;"  value="<?php echo __('Next') ?>" />
+          </li>
+          </ul>
           <!-- end terms and conditions -->
-         <li class="fr buttonplacement">     </li>
-        </ul>   
                  
      
       </div>
