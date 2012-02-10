@@ -118,13 +118,13 @@
 	</table>
               <table width="100%" cellspacing="0" cellpadding="2">
                 <tr>
-                    <td align="right"><strong><?php echo __('Total Refills From The Shop:') ?></strong></td><td align="right"> <?php echo $i ?></td>
+                    <td align="right"><strong><?php echo __('Total SMS Registration:') ?></strong></td><td align="right"> <?php echo $i ?></td>
 		</tr>
 		<tr>
-		 <td align="right"><strong><?php echo __('Total Earnings:') ?></strong></td><td align="right"> <?php echo $earnings ?></td>
+		 <td align="right"><strong><?php echo __('Total Earnings:') ?></strong></td><td align="right"> <?php echo $sms_registration_earnings ?></td>
 		</tr>
 		<tr>
-		 <td align="right"><strong><?php echo __('Total Commission Earned:') ?></strong></td><td align="right"> <?php echo $commission ?></td>
+		 <td align="right"><strong><?php echo __('Total Commission Earned:') ?></strong></td><td align="right"> <?php echo $sms_commission_earnings ?></td>
 		</tr>
         </table>
         </div>    

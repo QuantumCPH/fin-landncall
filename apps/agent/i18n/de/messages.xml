@@ -1109,7 +1109,10 @@
                 <source>Total Refills:</source>
                 <target>Insgesamt Nachfüllset:</target>
             </trans-unit>
-              
+               <trans-unit id="274" translate="yes" reformat="yes" xml:space="default">
+                <source>Total SMS Registration:</source>
+                <target>Insgesamt SMS Registrierung:</target>
+            </trans-unit>
 
         </body>
     </file>
