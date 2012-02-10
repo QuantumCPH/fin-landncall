@@ -71,7 +71,7 @@
             -->
 
         </script>
-<?php use_javascript('../zerocall/js/jquery-1.4.2.min.js', '', array('absolute' => true)) ?>
+<?php use_javascript('jquery-1.4.2.min.js', '', array('absolute' => true)) ?>
         <?php if ($sf_user->getCulture() == 'en') {
  ?>
         <?php use_javascript('jquery.validate1.js', '', array('absolute' => true)) ?>
