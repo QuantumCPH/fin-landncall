@@ -289,7 +289,7 @@ tr.odd{
     border:0px !important;
 }
 .tblUserguide th,td{
-   border:0px !important; 
+   border:0px; 
 }
 input[type=submit].saveUserGuide{
   background:url('../images/login-button.png') no-repeat;
