@@ -189,6 +189,10 @@
 <?php echo __($sf_user->getFlash('error_message')); ?>
                                 </li>
 <?php endif; ?>
+                                
+                                <li class="fr buttonplacement">
+                                        <input type ="submit" value ="<?php echo __('Pay') ?>"  style="cursor: pointer">
+                                    </li>
                         </ul>
                         <!-- hidden fields -->
 <?php echo $form->renderHiddenFields() ?>
@@ -199,9 +203,7 @@
                             </div>
                             <div class="fr col">
                                 <ul>
-                                   <li class="fr buttonplacement">
-                                        <input type ="submit" value ="<?php echo __('Pay') ?>"  style="cursor: pointer">
-                                    </li>
+                                   
                 </ul>
             </div>
 
