@@ -1994,8 +1994,28 @@
 		<source>Unique Ids are not available</source>
                 <target>Einzigartig ids nicht verfügbar</target>
             </trans-unit>
-            
+           <trans-unit id="429" translate="yes" reformat="yes" xml:space="default">
+                <source>Company List</source>
+                <target>Unternehmens liste</target>
+            </trans-unit>
 
+<trans-unit id="430" translate="yes" reformat="yes" xml:space="default">
+                <source>User List</source>
+                <target>Benutzer Listen</target>
+            </trans-unit>
+
+<trans-unit id="431" translate="yes" reformat="yes" xml:space="default">
+                <source>Agent Commission Package</source>
+                <target>Agent Provision Paket</target>
+            </trans-unit>
+<trans-unit id="432" translate="yes" reformat="yes" xml:space="default">
+                <source>User</source>
+                <target>Benutzer</target>
+            </trans-unit>
+   <trans-unit id="31" translate="yes" reformat="yes" xml:space="default">
+			    <source>Telecom Operator</source>
+                <target>Telekom Betreibert</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

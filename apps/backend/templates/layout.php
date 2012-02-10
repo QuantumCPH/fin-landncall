@@ -138,16 +138,16 @@
                 <div id="m3" onmouseover="mcancelclosetime()" onmouseout="mclosetime()">
                     <?php 
                      if($actionName=="list" && $modulName=="agent_company"){
-                       echo link_to(__('company list'), 'agent_company/index', array('class'=>'subSelect'));
+                       echo link_to(__('Company List'), 'agent_company/index', array('class'=>'subSelect'));
                      }else{
-                       echo link_to(__('company list'), 'agent_company/index');  
+                       echo link_to(__('Company List'), 'agent_company/index');
                      }  
                      ?>
                     <?php 
                       if($actionName=="list" && $modulName=="agent_user"){
-                       echo link_to(__('user lists'), 'agent_user/index', array('class'=>'subSelect'));
+                       echo link_to(__('User List'), 'agent_user/index', array('class'=>'subSelect'));
                       }else{
-                       echo link_to(__('user lists'), 'agent_user/index');   
+                       echo link_to(__('User List'), 'agent_user/index');
                       } 
                     ?>
 
@@ -161,9 +161,9 @@
 
                     <?php 
                       if($actionName=="list" && $modulName=="agent_commission_package"){
-                        echo link_to(__('agent commission package'), 'agent_commission_package/index', array('class'=>'subSelect'));
+                        echo link_to(__('Agent Commission Package'), 'agent_commission_package/index', array('class'=>'subSelect'));
                       }else{
-                        echo link_to(__('agent commission package'), 'agent_commission_package/index');  
+                        echo link_to(__('Agent Commission Package'), 'agent_commission_package/index');
                       }?>
                 </div>
             </li>
@@ -222,9 +222,9 @@
                     onmouseout="mclosetime()">
                     <?php 
                      if($actionName=='list' && $modulName=="user"){
-                        echo link_to(__('user'), 'user/index', array('class'=>'subSelect'));
+                        echo link_to(__('User'), 'user/index', array('class'=>'subSelect'));
                      }else{
-                        echo link_to(__('user'), 'user/index');
+                        echo link_to(__('User'), 'user/index');
                      }
                      ?>
 
@@ -314,7 +314,7 @@
                         if($actionName=='list' && $modulName=="telecom_operator"){
                           echo link_to(__('Telecom Operator'), 'telecom_operator/index',array('class'=>'subSelect'));
                         }else{
-                          echo link_to(__('Telecom Operator'), 'telecom_operator/index'); 
+                          echo link_to(__('Telecom Operator'), 'telecom_operator/index');
                         }
                         ?>
                 </div>
