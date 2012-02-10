@@ -255,7 +255,7 @@
           if( $browser->getBrowser() == Browser::BROWSER_IE  )
           {  ?>
           <li class="fr buttonplacement" style="margin-left:20px ">
-               <input type="submit" value="Next" style="margin-left:115px;">
+               <input type="submit" value="Next" style="margin-left:0px !important;">
           </li>
          
           <?php } else{ ?>

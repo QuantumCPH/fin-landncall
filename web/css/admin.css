@@ -285,3 +285,65 @@ tr.odd{
     margin: 0;
     padding: 2px 50px 5px 9px;
 }
+.tblUserguide{
+    border:1px solid #D44D05 !important;
+}
+.tblUserguide th.noBorder label{
+    color:#D44D05 !important;
+    font-weight: bold !important;
+    float: right !important;
+    width: auto !important;
+    padding-right: 3px !important;
+}
+.tblUserguide th.noBorder,td.noBorder{
+   border:0px !important; 
+}
+input[type=submit].saveUserGuide{
+  background:url('../images/login-button.png') no-repeat;
+    width:81px;
+    height:29px;
+    color:#ffffff;
+    border:0px !important;
+    margin-left: 44px;
+    font-weight: bold;  
+}
+a.userDelete, a.userCancel{
+    background:url('../images/login-button.png') no-repeat;
+    width:79px;
+    height:27px;
+    color:#ffffff;
+    border:0px;
+    margin-left: 44px;
+    font-weight: bold;  
+    padding: 10px 15px 5px 15px;
+}
+#userguide_create_at_month{
+    margin-right:3px; 
+}
+#userguide_create_at_day{
+    margin-right:3px; 
+    margin-left:3px;
+}
+#userguide_create_at_year{
+    margin-right:3px; 
+    margin-left:3px; 
+}
+#userguide_create_at_hour{
+    margin-right:3px; 
+    margin-left:3px;
+}
+#userguide_create_at_minute{
+    margin-left:3px;
+}
+.user_external_link{
+    background: url("../images/b.png") repeat-x scroll left center transparent;
+    color: #FFFFFF;
+    font-family: arial;
+    font-size: 0.9em;
+    font-weight: bold;
+    height: 28px;
+    line-height: 28px;
+    margin-right: 0;
+    padding: 6px 5px;
+    text-decoration: none !important;
+}

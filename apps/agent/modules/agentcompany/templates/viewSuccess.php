@@ -40,7 +40,7 @@
             <?php echo $agent_company->getName() ?>
       </div>
 
-      <label class="grid_2 required"><?php echo __('CVR Number:') ?></label>
+      <label class="grid_2 required"><?php echo __('Vat Number:') ?></label>
       <div class="grid_2 content">
             <?php echo $agent_company->getCVRNumber() ?>
       </div>
@@ -100,22 +100,15 @@
             <?php echo ''.$agent_company->getCompanyType() ?>
       </div>
 
-      <label class="grid_2 required"><?php echo __('Product Details:') ?></label>
-      <div class="grid_2 content">
-            <?php echo ''.$agent_company->getProductDetail() ?>
-      </div>
-
-      <div class="clear"></div>
-
-      <label class="grid_2 required"><?php echo __('Commission period:') ?></label>
-      <div class="grid_2 content">
-            <?php echo ''.$agent_company->getCommissionPeriod() ?>
-      </div>
 
       <label class="grid_2 required"><?php echo __('Account Manager:') ?></label>
       <div class="grid_2 content">
             <?php echo ''.$agent_company->getAccountManager() ?>
       </div>
+
+      <div class="clear"></div>
+
+
 
       <div class="clear"></div>
 

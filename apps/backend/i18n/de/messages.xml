@@ -189,7 +189,7 @@
 			
 			<trans-unit id="39" translate="yes" reformat="yes" xml:space="default">
 			    <source>create</source>
-                <target>Cchaffen</target>
+                <target>Schaffen</target>
             </trans-unit>
 			
 			<trans-unit id="40" translate="yes" reformat="yes" xml:space="default">
@@ -1186,7 +1186,7 @@
             </trans-unit>
             <trans-unit id="269" translate="yes" reformat="yes" xml:space="default">
 			    <source>Login</source>
-                <target>einloggen</target>
+                <target>Einloggen</target>
             </trans-unit>
             <trans-unit id="270" translate="yes" reformat="yes" xml:space="default">
 			    <source>Invalid email</source>
@@ -1952,6 +1952,11 @@
 <trans-unit id="418" translate="yes" reformat="yes" xml:space="default">
 		<source>Registration fee:</source>
                 <target>Anmeldegebühr:</target>
+            </trans-unit>
+
+        <trans-unit id="419" translate="yes" reformat="yes" xml:space="default">
+		<source>Required.</source>
+                <target>Erforderlich.</target>
             </trans-unit>
         </body>
     </file>

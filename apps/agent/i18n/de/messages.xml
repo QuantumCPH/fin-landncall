@@ -487,7 +487,7 @@
             </trans-unit>
             <trans-unit id="119" translate="yes" reformat="yes" xml:space="default">
                 <source>Post Code:</source>
-                <target>Postleitzahl:</target>
+                <target>Code posten:</target>
             </trans-unit>
             <trans-unit id="120" translate="yes" reformat="yes" xml:space="default">
                 <source>Country:</source>
@@ -1094,6 +1094,24 @@
             <trans-unit id="271" translate="yes" reformat="yes" xml:space="default">
                 <source>Contact Person</source>
                 <target>Ansprechpartner</target>
+            </trans-unit>
+ <trans-unit id="271" translate="yes" reformat="yes" xml:space="default">
+                <source>Vat Number:</source>
+                <target>Mehrwertsteuer Nummer:</target>
+            </trans-unit>
+
+             <trans-unit id="272" translate="yes" reformat="yes" xml:space="default">
+                <source>Total Registration Earnings:</source>
+                <target>Gesamt Registrierung Ertrag:</target>
+            </trans-unit>
+
+             <trans-unit id="273" translate="yes" reformat="yes" xml:space="default">
+                <source>Total Refills:</source>
+                <target>Insgesamt Nachfüllset:</target>
+            </trans-unit>
+               <trans-unit id="274" translate="yes" reformat="yes" xml:space="default">
+                <source>Total SMS Registration:</source>
+                <target>Insgesamt SMS Registrierung:</target>
             </trans-unit>
 
         </body>

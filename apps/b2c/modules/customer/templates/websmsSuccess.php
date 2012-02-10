@@ -8,7 +8,7 @@ function countChar(str)
 var chars = document.getElementById('chars');
 var message = document.getElementById('message');
 
-chars.value = "Characters: "+str.length+"/434";
+chars.innerHTML = str.length+"/434";
 
 if(str.length > 433){
         //alert(message.value);
@@ -104,9 +104,9 @@ return true;}
                 <input type="text" name="number" id="number" size="15" maxlength="13" onkeydown="isHex(this.value)">
  
             </td>
-            <td align="left">
+            <td align="left" style="margin-left:15px;">
+               <?php echo __("Characters") ?> <span id="chars">0/432</span>
                 
-                 <input type="text" name="chars" id="chars" value="<?php echo __("Characters: 0/432") ?>" disabled size="8">
             </td>
 
         </tr>

@@ -385,12 +385,13 @@ jQuery('#sf_admin_edit_form').validate({
 
 </script>
 
-<?php if($sf_user->getCulture()=='en'){    ?>
-   <script type="text/javascript" src="http://wls2.zerocall.com/js/jquery.validate1.js"></script>
-
-   <?php }else{  ?>
-      <script type="text/javascript" src="http://wls2.zerocall.com/js/jquery.validatede.js"></script>
- <?php  } ?>
+   <?php if ($sf_user->getCulture() == 'en') {
+ ?>
+        <?php use_javascript('jquery.validate1.js', '', array('absolute' => true)) ?>
+        <?php } else {
+ ?>
+        <?php use_javascript('jquery.validatede.js', '', array('absolute' => true)) ?>
+<?php } ?>
     <script language="javascript" type="text/javascript">
 
 	jQuery('#company_vat_no').blur(function(){

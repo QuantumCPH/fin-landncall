@@ -1421,14 +1421,15 @@ class customerActions extends sfActions {
                 $cbf->setCountryId($country->getId());
                 $cbf->setMobileNumber($this->customer->getMobileNumber());
                 $cbf->save();
-                $cc = CurrencyConversionPeer::retrieveByPK(1);
-                $amt = $cc->getBppDkk() * $country->getCbfRate();
+                
+                $amt = $country->getCbfRate();
                 $amt = number_format($amt, 2);
 
 
                 if (CARBORDFISH_SMS::Send($destination, $sms_text, $this->customer->getMobileNumber())) {
                     Telienta::charge($this->customer->getUniqueid(), $amt);
                     $this->msgSent = "Yes";
+                    $this->balance = (double) Telienta::getBalance($this->customer->getUniqueid());
                 }
             }
         }
