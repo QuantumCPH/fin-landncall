@@ -279,12 +279,8 @@
     <?php echo form_error('company{registration_date}', array('class' => 'form-error-msg')) ?>
   <?php endif; ?>
 
-  <?php $value = object_input_date_tag($company, 'getRegistrationDate', array (
-  'rich' => true,
-  'withtime' => true,
-  'calendar_button_img' => '/sf/sf_admin/images/date.png',
-  'control_name' => 'company[registration_date]',
-  'readonly' => 'true',
+  <?php $value = object_input_tag($company, 'getRegistrationDate', array (
+  
 )); echo $value ? $value : '&nbsp;' ?>
     </div>
 </div>
@@ -296,12 +292,8 @@
     <?php echo form_error('company{created_at}', array('class' => 'form-error-msg')) ?>
   <?php endif; ?>
 
-  <?php $value = object_input_date_tag($company, 'getCreatedAt', array (
-  'rich' => true,
-  'withtime' => true,
-  'calendar_button_img' => '/sf/sf_admin/images/date.png',
-  'control_name' => 'company[created_at]',
-  'readonly' => 'true',
+  <?php $value = object_input_tag($company, 'getCreatedAt', array (
+  
 )); echo $value ? $value : '&nbsp;' ?>
     </div>
 </div>
