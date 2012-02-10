@@ -444,10 +444,12 @@ public function executePaymenthistory(sfWebRequest $request)
         $companyid=$request->getParameter('company_id');
         $this->companyval=$companyid;
         $c->add(CompanyTransactionPeer::TRANSACTION_STATUS_ID,  3);
+
         if (isset($companyid) && $companyid != '') {
         $c->addAnd(CompanyTransactionPeer::COMPANY_ID,  $companyid);
 
         }
+        $c->addDescendingOrderByColumn(CompanyTransactionPeer::CREATED_AT);
         $this->transactions = CompanyTransactionPeer::doSelect($c);
 
 	}
