@@ -601,7 +601,7 @@
                 <target>Senden</target>
             </trans-unit>
               <trans-unit id="148" translate="yes" reformat="yes" xml:space="default">
-                <source>active</source>
+                <source>Active</source>
                 <target>Aktiv</target>
             </trans-unit>
               <trans-unit id="149" translate="yes" reformat="yes" xml:space="default">
@@ -653,7 +653,7 @@
                 <target>Der Topf wird in gefüllt mit:</target>
             </trans-unit>
             <trans-unit id="160" translate="yes" reformat="yes" xml:space="default">
-                <source>disable</source>
+                <source>Disable</source>
                 <target>Deaktivieren</target>
             </trans-unit>
             <trans-unit id="161" translate="yes" reformat="yes" xml:space="default">
