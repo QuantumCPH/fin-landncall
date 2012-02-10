@@ -83,7 +83,7 @@
 
       <div class="clear"></div>
 
-      <label class="grid_2 required"><?php echo __('Head Phone Nr:') ?></label>
+      <label class="grid_2 required"><?php echo __('Head Phone No:') ?></label>
       <div class="grid_2 content">
             <?php echo $agent_company->getHeadPhoneNumber() ?>
       </div>

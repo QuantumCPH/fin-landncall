@@ -55,7 +55,7 @@ $wrap_content  = isset($wrap)?$wrap:false;
 	
 	
 	<p>
-	<?php echo __('We hereby confirm that you have received commissions deposited into your account that you have referred a friend about Smartsim from wls.Gå in to "My Pages" and go to "Other History" under the "Call History" to see what you have earned.') ?>
+	<?php echo __('We hereby confirm that you have received commissions deposited into your account that you have referred a friend about Smartsim from wls.Go in to "Payment History" to see what you have earned.') ?>
 	</p>
         <p>
             <a href="mailto:Support@wls.com">Support@wls.com</a>
@@ -64,7 +64,7 @@ $wrap_content  = isset($wrap)?$wrap:false;
 	<?php echo __('Yours sincerely,') ?>
 	</p>
         <p>
-	<?php echo __('www.WLS2.zerocall.com') ?>
+	<?php echo __('wls2.zerocall.com') ?>
 	</p>
 	<br />
 <?php endif; ?>
@@ -80,11 +80,10 @@ $wrap_content  = isset($wrap)?$wrap:false;
   
   </tr>
  <tr>
-  <th><?php echo __('Bonus Receiver') ?> <?php echo $recepient_name; ?></th>
+  <td><b><?php echo __('Bonus Receiver') ?>:</b> <?php echo $recepient_name; ?></td>
     </tr>
    <tr>
-  <th><?php echo __('Registered Friend') ?> <?php echo sprintf("%s %s", $customer->getFirstName(), $customer->getLastName())?></th>
+  <td><b><?php echo __('Registered Friend') ?>:</b> <?php echo sprintf("%s %s", $customer->getFirstName(), $customer->getLastName())?></td>
    </tr>
 </table>
-</table>
-        
+    

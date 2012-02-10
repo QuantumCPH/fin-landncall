@@ -69,15 +69,17 @@ if($is_auto_refill_activated){  ?>  <div class="left-col">
     </div>
   
     <div  style="width:500px;clear:both;">
-               <br/>
+               <br />
     <div  style="float:left;width:250px;font-weight:bold; "><?php echo __('The pot is filled in with:');?></div>
     <div  style="margin-left: 20px;float:left;width:100px;font-weight:bold;">  <?php echo   $customer_form->getObject()->getAutoRefillAmount() ?> &euro;</div>
-    <div style="float: left; margin-top: 61px; text-align: left; width: 134px;">
+    <div class="clr"></div><br />
+    <div style="margin-top: 61px; text-align: left; width: 134px;">
     <form method="post" action="<?php echo $target; ?>customer/deActivateAutoRefill">
     <input type="hidden" name="customer_id" value="<?php echo   $customer_form->getObject()->getId() ?>" />
-                <input type="submit" class="butonsigninsmall" name="button" style="cursor: pointer;float: right; margin-left: 130px; margin-top: -10px;"  value="<?php echo __('disable') ?>" >
+    <div class="clr"></div><br />
+                <input type="submit" class="butonsigninsmall" name="button" style="cursor: pointer;float: right; margin-left: 0px; margin-top: -10px;"  value="<?php echo __('disable') ?>" />
                 </form>			
-          </div>
+    </div>
     </div>
      
 </div>
@@ -94,7 +96,7 @@ if($is_auto_refill_activated){  ?>  <div class="left-col">
               <div> <?php echo __('The most convenient way to fill the pot is to enable automatic refilling (below), then you do not need to worry about the pot running out. Especially important is such trip abroad where it can be difficult to fill in in any other way.');?><br /><br /></div>
             <div>     <b style="text-decoration:underline;"><?php echo __('Automatic replenishment');?></b> </div>
                  <br />
-              <div>   <b><?php echo __('Automatic Replenishment is: Inavtice');?></b></div>
+              <div>   <b><?php echo __('Automatic Replenishment is: Inactive');?></b></div>
                 
       <div class="fl col">
       <div class="split-form">  
@@ -172,7 +174,7 @@ if($is_auto_refill_activated){  ?>  <div class="left-col">
             </li>
 
             <?php if($sf_user->hasFlash('error_message')): ?>
-            <li class="error">
+            <li class="error" style="white-space: normal;">
             	<?php echo $sf_user->getFlash('error_message'); ?>
             </li>
             <?php endif; ?>

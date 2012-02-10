@@ -35,13 +35,13 @@
           if( $browser->getBrowser() == Browser::BROWSER_IE  )
           {
                    ?>
-          <li class="fr buttonplacement" style="margin-left:20px ">
-               <input type="submit" value="Next" style="margin-left:115px;">
+          <li class="">
+               <input type="submit" value="<?php echo __('Refill') ?>" style="margin-left:50px !important;float:none !important;" />
           </li>
 
           <?php } else{ ?>
 	          <li class="fr buttonplacement">
-	            <button onclick="$('#refill_form').submit();" style="cursor: pointer; left: -115px"><?php echo __('Refill') ?></button>
+	            <button onclick="$('#refill_form').submit();" style="cursor: pointer;margin-left: 15px !important;"><?php echo __('Refill') ?></button>
 	          </li>
 	<?php }?>
 			  

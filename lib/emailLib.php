@@ -313,11 +313,11 @@ class emailLib{
 
     }
     
-    public static function sendForgetPasswordEmail(Customer $customer,$message_body)
+    public static function sendForgetPasswordEmail(Customer $customer,$message_body, $subject)
     {
         sfContext::getInstance()->getConfiguration()->loadHelpers('Partial');
 
-        $subject = "Begäran om lösenord";
+       // $subject = __("Request for password");
         $recepient_email    = trim($customer->getEmail());
         $recepient_name     = sprintf('%s %s', $customer->getFirstName(), $customer->getLastName());
         $customer_id        = trim($customer->getId());
