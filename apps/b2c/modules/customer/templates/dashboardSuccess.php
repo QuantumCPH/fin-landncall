@@ -141,7 +141,7 @@ echo " ";   echo substr($Telintambs, 15,2);
           </td>
           <td style="padding-left:6px;">
               <div class="fl cb dashboard-info-text">
-                  <span><?php echo __('active') ?></span>
+                  <span><?php echo __('Active') ?></span>
               </div>
           </td>
         </tr>
@@ -174,7 +174,7 @@ echo " ";   echo substr($Telintambs, 15,2);
     text-decoration: none;"><?php
         
     if($voip_customer!=''){ echo 'Avaktivera'; }else{echo 'Aktivera';
-                    
+                   
     } ?></a></b>
 			</td>
 		<td></td></tr>
