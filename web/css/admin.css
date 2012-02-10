@@ -285,3 +285,28 @@ tr.odd{
     margin: 0;
     padding: 2px 50px 5px 9px;
 }
+.tblUserguide{
+    border:0px !important;
+}
+.tblUserguide th,td{
+   border:0px !important; 
+}
+input[type=submit].saveUserGuide{
+  background:url('../images/login-button.png') no-repeat;
+    width:79px;
+    height:27px;
+    color:#ffffff;
+    border:0px;
+    margin-left: 44px;
+    font-weight: bold;  
+}
+a.userDelete, a.userCancel{
+    background:url('../images/login-button.png') no-repeat;
+    width:79px;
+    height:27px;
+    color:#ffffff;
+    border:0px;
+    margin-left: 44px;
+    font-weight: bold;  
+    padding: 10px 15px 5px 15px;
+}

@@ -47,7 +47,7 @@
                 </tr>
                 <?php else: ?>
                 <tr>
-                  <td>&nbsp;</td><td colspan="2" align="right"><strong>Total</strong></td>
+                  <td>&nbsp;</td><td colspan="2" align="right"><strong><?php echo __('Total:') ?></strong></td>
                   <td><?php echo format_number($amount_total) ?>  &nbsp;&euro;</td>
                 </tr>	
                 <?php endif; ?>

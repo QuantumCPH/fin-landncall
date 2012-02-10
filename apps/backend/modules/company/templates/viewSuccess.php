@@ -100,7 +100,7 @@
 				</div>
 				
 				<div class="form-row">
-				  <label class="required"><?php echo  __('Webstie:') ?></label>
+				  <label class="required"><?php echo  __('Website:') ?></label>
 				  <div class="content">
 				  	<?php echo $company->getWebsite()?$company->getWebsite():'N/A' ?>
 				  </div>
@@ -187,7 +187,7 @@
 					<?php if($company->getFilePath()): ?>
 						<a href="<?php echo public_path('/uploads/'.$company->getFilePath()) ?>" target="_blank"><?php echo  __('Download attachement') ?></a>
 					<?php else: ?>
-						none
+				<?php		echo __('None');   ?>
 					<?php endif; ?>
 				  </div>
 				</div>

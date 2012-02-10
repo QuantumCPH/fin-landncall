@@ -10,18 +10,21 @@
               <span class="fieldError">        
                 <?php echo $form['username']->renderError() ?>
               </span>
+                <div class="clr"></div>
             </div>
             <div class="Inputfield">    
                <?php echo $form['username'] ?>
+                <div class="clr"></div> 
             </div>
             <div class="fieldName"> 
               <?php echo $form['password']->renderLabel() ?>
               <span class="fieldError">        
                 <?php echo $form['password']->renderError() ?>
-              </span>  
+              </span> <div class="clr"></div> 
             </div>
             <div class="Inputfield">    
                <?php echo $form['password'] ?>
+                <div class="clr"></div> 
             </div>
             <div class="submitButton">
                  <button  type="submit"><?php echo __('login') ?></button>

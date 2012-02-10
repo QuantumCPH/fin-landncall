@@ -10,7 +10,7 @@ fields:
       msg:              The starting_date cannot be left blank.
   newupdate{expire_date}:
     required:
-      msg:              The expire_date cannot be left blank.
+      msg:              The expire date cannot be left blank.
 
 
 
