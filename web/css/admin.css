@@ -286,7 +286,14 @@ tr.odd{
     padding: 2px 50px 5px 9px;
 }
 .tblUserguide{
-    border:0px !important;
+    border:1px solid #D44D05 !important;
+}
+.tblUserguide th.noBorder label{
+    color:#D44D05 !important;
+    font-weight: bold !important;
+    float: right !important;
+    width: auto !important;
+    padding-right: 3px !important;
 }
 .tblUserguide th.noBorder,td.noBorder{
    border:0px !important; 
@@ -328,6 +335,15 @@ a.userDelete, a.userCancel{
 #userguide_create_at_minute{
     margin-left:3px;
 }
-#user_external_link{
-    
+.user_external_link{
+    background: url("../images/b.png") repeat-x scroll left center transparent;
+    color: #FFFFFF;
+    font-family: arial;
+    font-size: 0.9em;
+    font-weight: bold;
+    height: 28px;
+    line-height: 28px;
+    margin-right: 0;
+    padding: 6px 5px;
+    text-decoration: none !important;
 }

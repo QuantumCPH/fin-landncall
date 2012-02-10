@@ -43,6 +43,11 @@
 	
     function checkForm()
     {
+
+        jq(document).ready(function(){ alert('rola');
+        return false;
+        });
+
         unique =  jQuery("#uniqueid").val();
         //alert(unique[0]);
         if(unique == "" || unique.length != 6 || unique[0] !='1'){
@@ -96,7 +101,7 @@
 	
 </script>
 
-<form action="<?php echo url_for('@customer_registraion_complete') ?>"  method="post" id="payment" onsubmit="return checkForm()">
+<form action="<?php echo url_for('@customer_registraion_complete') ?>"  method="post" id="payment" onsubmit="return(checkForm())">
    <div id="sf_admin_container"><h1><?php echo __('Create a customer') ?> <span class="active">- <?php echo __('Step 2') ?></span></h1></div>
         
   <div class="borderDiv">   
