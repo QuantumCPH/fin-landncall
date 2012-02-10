@@ -288,15 +288,15 @@ tr.odd{
 .tblUserguide{
     border:0px !important;
 }
-.tblUserguide th,td{
-   border:0px; 
+.tblUserguide th.noBorder,td.noBorder{
+   border:0px !important; 
 }
 input[type=submit].saveUserGuide{
   background:url('../images/login-button.png') no-repeat;
-    width:79px;
-    height:27px;
+    width:81px;
+    height:29px;
     color:#ffffff;
-    border:0px;
+    border:0px !important;
     margin-left: 44px;
     font-weight: bold;  
 }
@@ -309,4 +309,25 @@ a.userDelete, a.userCancel{
     margin-left: 44px;
     font-weight: bold;  
     padding: 10px 15px 5px 15px;
+}
+#userguide_create_at_month{
+    margin-right:3px; 
+}
+#userguide_create_at_day{
+    margin-right:3px; 
+    margin-left:3px;
+}
+#userguide_create_at_year{
+    margin-right:3px; 
+    margin-left:3px; 
+}
+#userguide_create_at_hour{
+    margin-right:3px; 
+    margin-left:3px;
+}
+#userguide_create_at_minute{
+    margin-left:3px;
+}
+#user_external_link{
+    
 }
