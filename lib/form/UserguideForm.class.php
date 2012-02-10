@@ -19,5 +19,14 @@ class UserguideForm extends BaseUserguideForm
         'config'=> 'myfckconfig'  // points to web/js/myfckconfig.js
       ));
 
+      $this->widgetSchema->setLabels(
+		array(
+			'country_id'=>'Country',
+			'status_id'=>'Status',
+			
+
+		)
+	);
+
   }
 }
