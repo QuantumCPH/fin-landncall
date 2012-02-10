@@ -105,7 +105,7 @@ return true;}
  
             </td>
             <td align="left">
-               <?php echo __("Characters") ?> <span id="chars" >0/432</span>
+               <?php echo __("Characters") ?> <div id="chars">0/432</div>
                 
             </td>
 
