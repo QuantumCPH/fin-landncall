@@ -65,6 +65,6 @@
 </td>
 </tr>
     <?php } ?></table>
-    <div class="submitBtn"><input  type="submit" name="submit" value="<?php echo __('Update') ?>" /></div>
+    <div class="submitBtn"><input  type="submit" name="submit" class="UpdateBtn" style="float:right;" value="<?php echo __('Update') ?>" /></div>
 </form>
 </div>
