@@ -22,7 +22,7 @@
             </trans-unit>
             <trans-unit id="5" translate="yes" reformat="yes" xml:space="default">
                 <source>Log in</source>
-                <target>einloggen</target>
+                <target>Einloggen</target>
             </trans-unit>
             <trans-unit id="6" translate="yes" reformat="yes" xml:space="default">
                 <source>Forgot password?</source>
@@ -530,7 +530,7 @@
             </trans-unit>
                <trans-unit id="130" translate="yes" reformat="yes" xml:space="default">
                 <source>Post code</source>
-                <target>Postleitzahl</target>
+                <target>Code posten</target>
             </trans-unit>
                <trans-unit id="131" translate="yes" reformat="yes" xml:space="default">
                 <source>City</source>
@@ -554,7 +554,7 @@
             </trans-unit>
                <trans-unit id="136" translate="yes" reformat="yes" xml:space="default">
                 <source>Next</source>
-                <target>nächste</target>
+                <target>Nächste</target>
             </trans-unit>
                <trans-unit id="137" translate="yes" reformat="yes" xml:space="default">
                 <source>We are sorry we have difficulties in our database, please try again in 2 hours</source>
@@ -694,11 +694,11 @@
             </trans-unit>
             <trans-unit id="170" translate="yes" reformat="yes" xml:space="default">
                 <source>the invitation to</source>
-                <target>der Einladung zur</target>
+                <target>Der Einladung zur</target>
             </trans-unit>
             <trans-unit id="171" translate="yes" reformat="yes" xml:space="default">
                 <source>has been sent</source>
-                <target>gesendet wurde</target>
+                <target>Gesendet wurde</target>
             </trans-unit>
             <trans-unit id="172" translate="yes" reformat="yes" xml:space="default">
                 <source>Tell a friend about Wls!</source>
@@ -797,7 +797,7 @@
             </trans-unit>
             <trans-unit id="195" translate="yes" reformat="yes" xml:space="default">
                 <source>a user of Smartsim from the WLS2.</source>
-                <target>ein Benutzer des SmartSim aus dem WLS2.</target>
+                <target>Ein Benutzer des SmartSim aus dem WLS2.</target>
             </trans-unit>
             <trans-unit id="196" translate="yes" reformat="yes" xml:space="default">
                 <source>Please click accept to start saving money immediately with Smartsim.</source>
@@ -869,7 +869,7 @@
             </trans-unit>
             <trans-unit id="213" translate="yes" reformat="yes" xml:space="default">
                 <source>print</source>
-                <target>drucken</target>
+                <target>Drucken</target>
             </trans-unit>
             <trans-unit id="214" translate="yes" reformat="yes" xml:space="default">
                 <source>Unique Ids are not avaialable.  send email to the support.</source>
