@@ -1186,7 +1186,7 @@
             </trans-unit>
             <trans-unit id="269" translate="yes" reformat="yes" xml:space="default">
 			    <source>Login</source>
-                <target>einloggen</target>
+                <target>Einloggen</target>
             </trans-unit>
             <trans-unit id="270" translate="yes" reformat="yes" xml:space="default">
 			    <source>Invalid email</source>
