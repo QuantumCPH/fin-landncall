@@ -2020,12 +2020,18 @@
             </trans-unit>
             <trans-unit id="434" translate="yes" reformat="yes" xml:space="default">
                 <source>News Updates</source>
-                <target>neus Aktuelles</target>
+                <target>Neus Aktuelles</target>
             </trans-unit>
             <trans-unit id="435" translate="yes" reformat="yes" xml:space="default">
                 <source>Invalid input</source>
                 <target>Ungültige Eingabe</target>
             </trans-unit>
+
+<trans-unit id="28" translate="yes" reformat="yes" xml:space="default">
+                <source>SMS Text</source>
+                <target>SMS TEXT</target>
+            </trans-unit>
+
 
         </body>
     </file>

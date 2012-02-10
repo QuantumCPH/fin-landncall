@@ -291,9 +291,9 @@
                         ?>
                         <?php 
                         if($actionName=='list' && $modulName=="sms_text"){
-                          echo link_to(__('SMS TEXT'), 'sms_text/index',array('class'=>'subSelect'));
+                          echo link_to(__('SMS Text'), 'sms_text/index',array('class'=>'subSelect'));
                         }else{
-                          echo link_to(__('SMS TEXT'), 'sms_text/index'); 
+                          echo link_to(__('SMS Text'), 'sms_text/index');
                         }
                         ?>
                         <?php 
