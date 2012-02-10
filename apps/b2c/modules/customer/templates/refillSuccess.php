@@ -77,7 +77,7 @@ if($is_auto_refill_activated){  ?>  <div class="left-col">
     <form method="post" action="<?php echo $target; ?>customer/deActivateAutoRefill">
     <input type="hidden" name="customer_id" value="<?php echo   $customer_form->getObject()->getId() ?>" />
     <div class="clr"></div><br />
-                <input type="submit" class="butonsigninsmall" name="button" style="cursor: pointer; margin-left: 0px; margin-top: -10px;"  value="<?php echo __('disable') ?>" />
+                <input type="submit" class="butonsigninsmall" name="button" style="cursor: pointer; margin-left: 0px !important; margin-top: -10px;"  value="<?php echo __('disable') ?>" />
                 </form>			
     </div>
     </div>
