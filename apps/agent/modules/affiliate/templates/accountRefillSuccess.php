@@ -93,7 +93,7 @@
             <td >
 
             </td>
-            <td>
+            <td align="right">
                 <input type="hidden" name="merchant" value="90049676" />
                 <input type="hidden" name="currency" value="978" />
                 <input type="hidden" name="orderid" id="orderid" value="<?php echo $agent_order->getAgentOrderId() ?>" />
@@ -103,7 +103,7 @@
                 <input type="hidden" name="cancelurl" value="<?php echo sfConfig::get('app_main_url') . "affiliate/" ?>thankyou/?accept=cancel" />
                 <input type="hidden" name="callbackurl" value="<?php echo sfConfig::get('app_main_url') . "affiliate/" ?>accountRefill" />
                 <input type="hidden" name="accepturl" id="accepturl"  value="<?php echo sfConfig::get('app_main_url') . "affiliate/" ?>thankyou?accept=yes&subscriptionid=&orderid=<?php echo $agent_order->getAgentOrderId(); ?>&amount=50000">
-                <input type="submit" value="<?php echo __('Recharge');?>" />
+                <input type="submit" value="<?php echo __('Recharge');?>" style="margin-left:26px !important;margin-top:10px;" />
             </td>
         </tr>
     </table>
