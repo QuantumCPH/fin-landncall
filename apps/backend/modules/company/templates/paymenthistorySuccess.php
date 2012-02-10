@@ -43,7 +43,7 @@ $incrment++;
     <td><?php echo  $transaction->getCreatedAt() ?></td>
     <td><?php echo ($transaction->getCompany()?$transaction->getCompany():'N/A')?></td>
     <td><?php echo __($transaction->getDescription()) ?></td>
-    <td><?php echo format_number($transaction->getAmount()); $amount_total += $transaction->getAmount(); ?></td>
+    <td align="right"><?php echo format_number($transaction->getAmount()); $amount_total += $transaction->getAmount(); ?></td>
 </tr>
 <?php endforeach; ?>
 <?php if(count($transactions)==0): ?>
@@ -53,7 +53,7 @@ $incrment++;
 <?php else: ?>
 <tr><td>&nbsp;</td>
     <td colspan="2" align="right"><strong><?php echo __('Total:') ?>&nbsp;&nbsp;</strong></td>
-    <td><?php echo format_number($amount_total);  ?> &euro;</td>
+    <td ><?php echo format_number($amount_total);  ?> &euro;</td>
     
 </tr>	
 <?php endif; ?>
