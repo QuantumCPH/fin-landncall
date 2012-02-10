@@ -2012,10 +2012,15 @@
                 <source>User</source>
                 <target>Benutzer</target>
             </trans-unit>
-   <trans-unit id="31" translate="yes" reformat="yes" xml:space="default">
+   <trans-unit id="433" translate="yes" reformat="yes" xml:space="default">
 			    <source>Telecom Operator</source>
                 <target>Telekom Betreibert</target>
             </trans-unit>
+            <trans-unit id="434" translate="yes" reformat="yes" xml:space="default">
+                <source>News Updates</source>
+                <target>neus Aktuelles</target>
+            </trans-unit>
+
         </body>
     </file>
 </xliff>

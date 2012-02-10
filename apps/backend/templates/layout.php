@@ -177,9 +177,9 @@
 
                     <?php 
                     if($actionName=='list' && $modulName=="newupdate"){  
-                      echo link_to(__('New Updates'), 'newupdate/index', array('class'=>'subSelect'));
+                      echo link_to(__('News Updates'), 'newupdate/index', array('class'=>'subSelect'));
                     }else{
-                      echo link_to(__('New Updates'), 'newupdate/index');  
+                      echo link_to(__('News Updates'), 'newupdate/index');
                     }
                     ?>
                     <?php 
