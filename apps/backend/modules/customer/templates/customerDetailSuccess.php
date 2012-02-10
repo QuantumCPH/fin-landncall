@@ -18,8 +18,8 @@
                       
                       
                           <tr>
-                    <td class="leftHeadign"><?php echo  __('Customer Balance') ?></td>
-                    <td  >&nbsp;<?php
+                    <td width="11%" class="leftHeadign"><?php echo  __('Customer Balance') ?></td>
+                    <td width="53%"  >&nbsp;<?php
                            $uniqueId=$customer->getUniqueid();
                          $cuid=$customer->getId();
 
@@ -41,7 +41,7 @@
                          
                           
                      ?> </td>
-                      </tr>
+      </tr>
 
                      
                    <tr>
@@ -116,7 +116,7 @@ if(isset($val) && $val!=""){  ?>
                   <td>Yes</td>
                   <?php } else
                       { ?>
-                  <td>&nbsp;No</td>
+                  <td width="36%">&nbsp;No</td>
                   <?php } ?>
                         </tr>
                          <tr>

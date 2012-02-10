@@ -50,7 +50,7 @@ if($is_auto_refill_activated){  ?>  <div class="left-col">
     
     
      <div  style="width:500px;clear:both;"> <br/> <br/>
-   <b>  <?php echo __("Automatic replenishment is")?>:<span style="text-decoration:underline"> <?php echo __('active')?></span>
+   <b>  <?php echo __("Automatic replenishment is")?>:<span style="text-decoration:underline"> <?php echo __('Active')?></span>
    </b>
      
      <br/> <br/>
@@ -77,7 +77,7 @@ if($is_auto_refill_activated){  ?>  <div class="left-col">
     <form method="post" action="<?php echo $target; ?>customer/deActivateAutoRefill">
     <input type="hidden" name="customer_id" value="<?php echo   $customer_form->getObject()->getId() ?>" />
     <div class="clr"></div><br />
-                <input type="submit" class="butonsigninsmall" name="button" style="cursor: pointer; margin-left: 0px !important; margin-top: -10px;"  value="<?php echo __('disable') ?>" />
+                <input type="submit" class="butonsigninsmall" name="button" style="cursor: pointer; margin-left: 0px !important; margin-top: -10px;"  value="<?php echo __('Disable') ?>" />
                 </form>			
     </div>
     </div>
