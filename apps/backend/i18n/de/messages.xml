@@ -1980,7 +1980,7 @@
             </trans-unit>
             <trans-unit id="425" translate="yes" reformat="yes" xml:space="default">
 		<source>Sms Reg Uniuqe id issue</source>
-                <target>Sms Reg uniuqe id Ausgabe</target>
+                <target>Sms Reg Einzigartig id Ausgabe</target>
             </trans-unit>
             <trans-unit id="426" translate="yes" reformat="yes" xml:space="default">
 		<source>Agent balance is low</source>
