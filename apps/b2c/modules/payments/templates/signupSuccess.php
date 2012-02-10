@@ -286,9 +286,8 @@ $customer_form->unsetAllExcept(array('auto_refill_amount', 'auto_refill_min_bala
                 <br /><br />
                                 
             </li>
-        </ul>
-            <input type="submit"  class="butonsigninsmall"  name="paybutan"  style="cursor: pointer;margin-left: 185px;" value="<?php echo __('Pay') ?>">
-			
+            <li><input type="submit"  class="butonsigninsmall"  name="paybutan"  style="cursor: pointer;margin-left: 0px !important;" value="<?php echo __('Pay') ?>" /></li>
+        </ul>	
        
       </div>
     </div>
