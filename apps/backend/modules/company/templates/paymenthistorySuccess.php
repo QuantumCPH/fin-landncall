@@ -53,7 +53,7 @@ $incrment++;
 <?php else: ?>
 <tr><td>&nbsp;</td>
     <td colspan="2" align="right"><strong><?php echo __('Total:') ?>&nbsp;&nbsp;</strong></td>
-    <td ><?php echo format_number($amount_total);  ?> &euro;</td>
+    <td align="right"><?php echo format_number($amount_total);  ?> &euro;</td>
     
 </tr>	
 <?php endif; ?>
