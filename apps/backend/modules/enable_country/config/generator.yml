@@ -13,6 +13,7 @@ generator:
       display: [name, language, language_symbol, currency , currency_symbol, status, base_url,refill,calling_code,cbf_rate]
 
     list:
+      title: Enable Country List
       display: [name, language, language_symbol, currency , currency_symbol, status, base_url,refill,calling_code,cbf_rate]
       max_per_page: 100
       object_actions:

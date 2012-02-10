@@ -1078,8 +1078,8 @@
                 <target>Schaffen/bearbeitent Gerät</target>
             </trans-unit>
             <trans-unit id="243" translate="yes" reformat="yes" xml:space="default">
-                <source>enable_country list</source>
-                <target>enable_country Liste</target>
+                <source>Enable Country List</source>
+                <target>Aktivieren Länderliste</target>
             </trans-unit>
             <trans-unit id="244" translate="yes" reformat="yes" xml:space="default">
                 <source>City</source>
@@ -2027,9 +2027,9 @@
                 <target>Ungültige Eingabe</target>
             </trans-unit>
 
-<trans-unit id="28" translate="yes" reformat="yes" xml:space="default">
+<trans-unit id="436" translate="yes" reformat="yes" xml:space="default">
                 <source>SMS Text</source>
-                <target>SMS TEXT</target>
+                <target>SMS Text</target>
             </trans-unit>
 
 
