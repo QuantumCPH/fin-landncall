@@ -172,7 +172,7 @@ if($is_auto_refill_activated){  ?>  <div class="left-col">
             </li>
 
             <?php if($sf_user->hasFlash('error_message')): ?>
-            <li class="error">
+            <li class="error" style="white-space: normal;">
             	<?php echo $sf_user->getFlash('error_message'); ?>
             </li>
             <?php endif; ?>
