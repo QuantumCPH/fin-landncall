@@ -1021,7 +1021,10 @@
                 <source>Your settings have been saved.</source>
                 <target>Ihre Einstellungen wurden gespeichert.</target>
             </trans-unit>
-
+ <trans-unit id="148" translate="yes" reformat="yes" xml:space="default">
+                <source>Active</source>
+                <target>Aktiv</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>
