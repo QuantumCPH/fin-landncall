@@ -1910,7 +1910,12 @@ public function executeSmsHistory(sfWebrequest $request){
         if (isset($agentid) && $agentid != "") {
             echo "getagentid";
             commissionLib::refilCustomer($agentid, $productid, $transactionid);
+              $transaction->setAgentCompanyId($agentid);
+           $transaction->save();
+            
         }
+
+
 
         //TODO ask if recharge to be done is same as the transaction amount
         //die;
