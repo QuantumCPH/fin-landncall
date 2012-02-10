@@ -8,7 +8,7 @@ function countChar(str)
 var chars = document.getElementById('chars');
 var message = document.getElementById('message');
 
-chars.value = str.length+"/434";
+chars.innerHTML = str.length+"/434";
 
 if(str.length > 433){
         //alert(message.value);
