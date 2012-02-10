@@ -630,11 +630,11 @@
             </trans-unit>
               <trans-unit id="147" translate="yes" reformat="yes" xml:space="default">
                 <source>Load</source>
-                <target>Last</target>
+                <target>Laden</target>
             </trans-unit>
               <trans-unit id="155" translate="yes" reformat="yes" xml:space="default">
                 <source>Load automatically &lt;br /&gt; when the pot is below:</source>
-                <target>Last automatisch &lt;br /&gt; wenn der Topf unten:</target>
+                <target>Laden automatisch &lt;br /&gt; wenn der Topf unten:</target>
             </trans-unit>
               <trans-unit id="156" translate="yes" reformat="yes" xml:space="default">
                 <source>Automatic replenishment</source>
