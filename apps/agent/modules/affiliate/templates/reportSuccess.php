@@ -57,6 +57,17 @@
 		</tr>
 		<?php endforeach; ?>
 	</table>
+              <table width="100%" cellspacing="0" cellpadding="2">
+                <tr>
+                    <td align="right"><strong><?php echo __('Total Registration Earnings:') ?></strong></td><td align="right"> <?php echo $i ?></td>
+		</tr>
+		<tr>
+		 <td align="right"><strong><?php echo __('Total Earnings:') ?></strong></td><td align="right"> <?php echo $registration_revenue; ?></td>
+		</tr>
+		<tr>
+		 <td align="right"><strong><?php echo __('Total Commission Earned:') ?></strong></td><td align="right"> <?php echo $registration_commission; ?></td>
+		</tr>
+        </table>
         </div>
 	<?php endif; ?>
 
@@ -105,6 +116,17 @@
 		</tr>
 		<?php endforeach; ?>
 	</table>
+              <table width="100%" cellspacing="0" cellpadding="2">
+                <tr>
+                    <td align="right"><strong><?php echo __('Total Refills From The Shop:') ?></strong></td><td align="right"> <?php echo $i ?></td>
+		</tr>
+		<tr>
+		 <td align="right"><strong><?php echo __('Total Earnings:') ?></strong></td><td align="right"> <?php echo $earnings ?></td>
+		</tr>
+		<tr>
+		 <td align="right"><strong><?php echo __('Total Commission Earned:') ?></strong></td><td align="right"> <?php echo $commission ?></td>
+		</tr>
+        </table>
         </div>    
 	<?php endif; ?>
 
@@ -147,77 +169,21 @@
 		</tr>
 		<?php endforeach; ?>
 	</table>
+              <table width="100%" cellspacing="0" cellpadding="2">
+                <tr>
+                    <td align="right"><strong><?php echo __('Total Refills:') ?></strong></td><td align="right"> <?php echo $i ?></td>
+		</tr>
+		<tr>
+		 <td align="right"><strong><?php echo __('Total Earnings:') ?></strong></td><td align="right"> <?php echo $refill_revenue ?></td>
+		</tr>
+		<tr>
+		 <td align="right"><strong><?php echo __('Total Commission Earned:') ?></strong></td><td align="right"> <?php echo $refill_com ?></td>
+		</tr>
+        </table>
         </div>
 	<?php endif; ?>
 
 
-<?php if (count($ef)>0): ?>
-        <div id="sf_admin_container"><h1><?php echo __('Refill from Shop Earnings') ?></h1></div>
-        
-        <div class="borderDiv">	
-	 <table cellspacing="0" width="100%" >
-		<tr>
-			<th>&nbsp;</th>
-			<th><?php echo __('Date') ?> </th>
-			<th><?php echo __('Customer name') ?></th>
-			<th><?php echo __('Refill Amount') ?></th>
-			<th><?php echo __('Commission Earned') ?></th>
-
-		</tr>
-		<?php
-		$i = 0;
-		$earnings = 0;
-		$commission = 0;
-		foreach($ef as $efo):
-		?>
-		<?php
-                     // echo  $description=substr($efo->getDescription(),0 ,26).'<br>';                      
-                        $stringfind  = 'Refill via agent';
-                        // echo $efo->getDescription().'<br>';    
-                        //$description = strpos($efo->getDescription(), $findme);
-
-                    // Note the use of ===.  Simply == would not work as expected
-                    // because the position of 'a' was the 0th (first) character.
-                       
-                        if(strstr($efo->getDescription(),$stringfind)){  ?>
-		<tr <?php echo 'class="'.($i%2 == 0?'odd':'even').'"' ?>>
-
-			<td><?php echo ++$i ?>.</td>
-			<td><?php echo $efo->getCreatedAt() ?></td>
-			<td><?php
-				$customer = CustomerPeer::retrieveByPK($efo->getCustomerId());
-				//$customer2 = CustomerPeer::retrieveByPK(72);
-				//echo $customer2->getFirstName();
-				echo sprintf("%s %s", $customer->getFirstName(), $customer->getLastName());
-				?>
-			</td>
-
-			<td >
-			<?php echo BaseUtil::format_number($efo->getAmount()) ?>
-			</td>
-			<td ><?php echo BaseUtil::format_number($efo->getCommissionAmount())?>
-			</td>
-
-			<?php $earnings= $earnings + $efo->getAmount()?>
-			<?php $commission = $commission + ($efo->getCommissionAmount())?>
-                </tr>
-		<?php } ?>
-		<?php endforeach;?>
-		
-	</table>       
-        </div>
-        <table width="100%" cellspacing="0" cellpadding="2">
-                <tr>
-                    <td align="right"><strong><?php echo __('Total Refills From The Shop:') ?></strong></td><td align="right"> <?php echo $i ?></td>
-		</tr>
-		<tr>
-		 <td align="right"><strong><?php echo __('Total Earnings:') ?></strong></td><td align="right"> <?php echo $earnings ?></td>
-		</tr>
-		<tr>
-		 <td align="right"><strong><?php echo __('Total Commission Earned:') ?></strong></td><td align="right"> <?php echo $commission ?></td>
-		</tr>
-        </table>
-<?php endif; ?>
 
         <?php else: ?>
         <div id="sf_admin_container"><h1><?php echo __('Earning Summary') ?></h1></div>

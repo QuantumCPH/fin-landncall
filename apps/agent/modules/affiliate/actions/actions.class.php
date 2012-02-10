@@ -176,7 +176,7 @@ class affiliateActions extends sfActions {
                     $c = new Criteria();
                     $c->add(CustomerPeer::REFERRER_ID, $agent_company_id);
                     $c->add(CustomerPeer::CUSTOMER_STATUS_ID, 3);
-                    $c->add(CustomerPeer::REGISTRATION_TYPE_ID, 4, Criteria::NOT_EQUAL);
+                   // $c->add(CustomerPeer::REGISTRATION_TYPE_ID, 4, Criteria::NOT_EQUAL);
                     $c->addDescendingOrderByColumn(CustomerPeer::CREATED_AT);
                     $customers = CustomerPeer::doSelect($c);
                     $registration_sum = 0.00;

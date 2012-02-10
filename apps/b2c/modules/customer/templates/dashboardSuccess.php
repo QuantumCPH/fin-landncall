@@ -44,7 +44,7 @@ header('P3P:CP="IDC DSP COR ADM DEVi TAIi PSA PSD IVAi IVDi CONi HIS OUR IND CNT
         
 echo '&nbsp;';
 
-?> EUR</span></div></td>
+?> EURO</span></div></td>
            </tr>
            <tr><td>&nbsp;</td>
           <td style="text-align: left;">
