@@ -12,11 +12,11 @@
         <td class="noBorder"></td><td class="noBorder" align="left"><br />
             <?php echo $form->renderHiddenFields() ?>
 
-          <a href="<?php echo url_for('userguide/index') ?>" class="user_external_link">Cancel</a>
+          <a href="<?php echo url_for('userguide/index') ?>" class="user_external_link"><?php echo __('Cancel');?></a>
           <?php if (!$form->getObject()->isNew()): ?>
             &nbsp;<?php echo link_to('Delete', 'userguide/delete?id='.$form->getObject()->getId(), array('class'=>'user_external_link','method' => 'delete', 'confirm' => 'Are you sure?')) ?>
           <?php endif; ?> &nbsp;
-            <input type="submit" value="Save" class="saveUserGuide" />
+            <input type="submit" value="<?php echo __('Save');?>" class="saveUserGuide" />
             <p>&nbsp;</p>
         </td>
       </tr>
