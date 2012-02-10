@@ -22,7 +22,7 @@
     <th><?php echo __('Date & Time') ?></th>
     <th><?php echo __('Company & Name') ?></th>
     <th><?php echo __('Description') ?></th>
-    <th><?php echo __('Amount') ?></th>
+    <th><?php echo __('Amount') ?> (&euro;)</th>
 </tr>
 <?php 
 $amount_total = 0;
@@ -53,7 +53,7 @@ $incrment++;
 <?php else: ?>
 <tr><td>&nbsp;</td>
     <td colspan="2" align="right"><strong><?php echo __('Total:') ?>&nbsp;&nbsp;</strong></td>
-    <td><?php echo format_number($amount_total); echo ('EURO'); ?></td>
+    <td><?php echo format_number($amount_total);  ?> &euro;</td>
     
 </tr>	
 <?php endif; ?>
