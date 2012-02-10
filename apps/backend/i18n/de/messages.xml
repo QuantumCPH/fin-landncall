@@ -1958,6 +1958,44 @@
 		<source>Required.</source>
                 <target>Erforderlich.</target>
             </trans-unit>
+            <trans-unit id="420" translate="yes" reformat="yes" xml:space="default">
+		<source>Registered successfully</source>
+                <target>Erfolgreich registriert</target>
+            </trans-unit>
+            <trans-unit id="421" translate="yes" reformat="yes" xml:space="default">
+		<source>Invalid mobile number</source>
+                <target>Ungültige Handynummer</target>
+            </trans-unit>
+            <trans-unit id="422" translate="yes" reformat="yes" xml:space="default">
+		<source>Agent not found</source>
+                <target>Vertreter nicht gefunden</target>
+            </trans-unit>
+            <trans-unit id="423" translate="yes" reformat="yes" xml:space="default">
+		<source>Product code that you provided is not valid</source>
+                <target>Produkt-Kode, den Sie ist ungültig</target>
+            </trans-unit>
+            <trans-unit id="424" translate="yes" reformat="yes" xml:space="default">
+		<source>customer not registered, please retry</source>
+                <target>Kunde nicht registriert, bitte wiederholen</target>
+            </trans-unit>
+            <trans-unit id="425" translate="yes" reformat="yes" xml:space="default">
+		<source>Sms Reg Uniuqe id issue</source>
+                <target>Sms Reg uniuqe id Ausgabe</target>
+            </trans-unit>
+            <trans-unit id="426" translate="yes" reformat="yes" xml:space="default">
+		<source>Agent balance is low</source>
+                <target>Vertreter Gleichgewicht ist gering</target>
+            </trans-unit>
+            <trans-unit id="427" translate="yes" reformat="yes" xml:space="default">
+		<source>Registered successfully</source>
+                <target>Erfolgreich registriert</target>
+            </trans-unit>
+            <trans-unit id="428" translate="yes" reformat="yes" xml:space="default">
+		<source>Unique Ids are not available</source>
+                <target>Einzigartig ids nicht verfügbar</target>
+            </trans-unit>
+            
+
         </body>
     </file>
 </xliff>

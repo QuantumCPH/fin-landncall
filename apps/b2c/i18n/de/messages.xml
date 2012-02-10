@@ -990,8 +990,8 @@
                 <target>Aktiv Handy No</target>
             </trans-unit>
             <trans-unit id="242" translate="yes" reformat="yes" xml:space="default">
-                <source>Automatic Replenishment is: Inavtice</source>
-                <target>Automatische Replenishment ist: Inaktiv</target>
+                <source>Automatic Replenishment is: Inactive</source>
+                <target>Automatische Regenerierung ist: Inaktiv</target>
             </trans-unit>
             <trans-unit id="243" translate="yes" reformat="yes" xml:space="default">
                 <source>Password Request</source>
@@ -1013,7 +1013,14 @@
                 <source>Payment details</source>
                 <target>Einzelheiten zur Bezahlung</target>
             </trans-unit>
-
+            <trans-unit id="248" translate="yes" reformat="yes" xml:space="default">
+                <source>Automatic replenishment is</source>
+                <target>Automatische Regenerierung ist</target>
+            </trans-unit>
+            <trans-unit id="249" translate="yes" reformat="yes" xml:space="default">
+                <source>Your settings have been saved.</source>
+                <target>Ihre Einstellungen wurden gespeichert.</target>
+            </trans-unit>
 
         </body>
     </file>
