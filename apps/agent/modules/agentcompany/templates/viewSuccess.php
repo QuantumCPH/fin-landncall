@@ -100,15 +100,15 @@
             <?php echo ''.$agent_company->getCompanyType() ?>
       </div>
 
-    
-
-      <div class="clear"></div>
-
 
       <label class="grid_2 required"><?php echo __('Account Manager:') ?></label>
       <div class="grid_2 content">
             <?php echo ''.$agent_company->getAccountManager() ?>
       </div>
+
+      <div class="clear"></div>
+
+
 
       <div class="clear"></div>
 
