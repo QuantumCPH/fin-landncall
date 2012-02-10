@@ -69,16 +69,17 @@ if($is_auto_refill_activated){  ?>  <div class="left-col">
     </div>
   
     <div  style="width:500px;clear:both;">
-               <br/>
+               <br />
     <div  style="float:left;width:250px;font-weight:bold; "><?php echo __('The pot is filled in with:');?></div>
     <div  style="margin-left: 20px;float:left;width:100px;font-weight:bold;">  <?php echo   $customer_form->getObject()->getAutoRefillAmount() ?> &euro;</div>
-    <div style="float: left; margin-top: 61px; text-align: left; width: 134px;">
+    <div class="clr"></div><br />
+    <div style="margin-top: 61px; text-align: left; width: 134px;">
     <form method="post" action="<?php echo $target; ?>customer/deActivateAutoRefill">
     <input type="hidden" name="customer_id" value="<?php echo   $customer_form->getObject()->getId() ?>" />
     <div class="clr"></div><br />
                 <input type="submit" class="butonsigninsmall" name="button" style="cursor: pointer;float: right; margin-left: 0px; margin-top: -10px;"  value="<?php echo __('disable') ?>" />
                 </form>			
-          </div>
+    </div>
     </div>
      
 </div>
