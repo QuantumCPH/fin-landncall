@@ -40,7 +40,7 @@
             <?php echo $agent_company->getName() ?>
       </div>
 
-      <label class="grid_2 required"><?php echo __('CVR Number:') ?></label>
+      <label class="grid_2 required"><?php echo __('Vat Number:') ?></label>
       <div class="grid_2 content">
             <?php echo $agent_company->getCVRNumber() ?>
       </div>
