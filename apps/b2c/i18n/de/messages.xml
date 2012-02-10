@@ -461,8 +461,8 @@
                 <target>Destination Nummer &lt;br /&gt; (ohne führenden 0)</target>
             </trans-unit>
             <trans-unit id="113" translate="yes" reformat="yes" xml:space="default">
-                <source>Characters: 0/432</source>
-                <target>Characters: 0 / 432</target>
+                <source>Characters</source>
+                <target>Charaktere</target>
             </trans-unit>
             <trans-unit id="114" translate="yes" reformat="yes" xml:space="default">
                 <source>Message:</source>
