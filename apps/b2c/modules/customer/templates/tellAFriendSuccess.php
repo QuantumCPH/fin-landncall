@@ -105,7 +105,7 @@ function countChar(str)
                     <tr>
                         <td><input type="text" name="name" />&nbsp;
                         </td>
-                        <td><input type="text" name="phone" />ex. 0701234567
+                        <td><input type="text" name="phone" /><br />ex. 0701234567
                         </td>
                     </tr>
                     <tr> 
