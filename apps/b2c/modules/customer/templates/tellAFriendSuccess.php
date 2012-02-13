@@ -41,8 +41,7 @@ function countChar(str)
             
 	  </script>
            <style type="text/css">
-
-            * { font-family: Verdana; font-size: 11px; line-height: 14px; align:center;}
+            
 
 	    .submit { margin-left: 125px; margin-top: 10px;}
 	    .label { display: block; float: left; width: 90px; text-align: right; margin-right: 5px; }
@@ -51,6 +50,7 @@ function countChar(str)
 	    input[type=text], text { width: 200px;  }
             input[type=textarea], textarea { width: 400px;  }
 	    textarea { height: 80px; }
+          
 	  </style>
 
 
@@ -105,7 +105,7 @@ function countChar(str)
                     <tr>
                         <td><input type="text" name="name" />&nbsp;
                         </td>
-                        <td><input type="text" name="phone" />ex. 0701234567
+                        <td><input type="text" name="phone" /><br />ex. 0701234567
                         </td>
                     </tr>
                     <tr> 
@@ -127,7 +127,7 @@ function countChar(str)
 
                     </tr>
                 </table><br />
-                <input type="submit" class="butonsigninsmall" name="submit" value="<?php echo __('Send Email to join Smartsim') ?>">
+                <input type="submit" class="butonsigninsmall" style="margin-left: 0px !important;" name="submit" value="<?php echo __('Send Email to join Smartsim') ?>" />
 	     
 	    </form>
 	  

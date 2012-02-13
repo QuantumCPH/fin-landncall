@@ -56,6 +56,8 @@
         $('.sidebar_button').corner('round 5px');
         $('.butonsigninsmall').corner('round 5px');
         $('.buton').corner('round 5px');
+        $('.loginbuttun').corner('round 5px');
+        
      }); 
 </script>
 

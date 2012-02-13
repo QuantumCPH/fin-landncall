@@ -32,6 +32,7 @@
 <?php echo __('International calls from 0 cents * With WLS, you can call the whole world.') ?></p>
                     <a title="<?php echo __('Tell a friend') ?>" class="sidebar_button" rel="bookmark" href="<?php echo url_for('customer/tellAFriend', true) ?>"><?php echo __('Send Invitation') ?></a>
 		</div>
-	
+	<br />
 	</div>
+  <br />  
 </div>

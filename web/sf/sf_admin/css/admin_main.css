@@ -233,6 +233,7 @@
   border-right: 4px solid #999;
   background-color: #ffc;  */
   cursor: pointer;
+  text-transform: capitalize;
 }
 #sf_admin_container .sf_admin_action_create
 {

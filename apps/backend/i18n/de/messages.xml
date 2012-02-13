@@ -1078,8 +1078,8 @@
                 <target>Schaffen/bearbeitent Gerät</target>
             </trans-unit>
             <trans-unit id="243" translate="yes" reformat="yes" xml:space="default">
-                <source>enable_country list</source>
-                <target>enable_country Liste</target>
+                <source>Enable Country List</source>
+                <target>Aktivieren Länderliste</target>
             </trans-unit>
             <trans-unit id="244" translate="yes" reformat="yes" xml:space="default">
                 <source>City</source>
@@ -2020,12 +2020,18 @@
             </trans-unit>
             <trans-unit id="434" translate="yes" reformat="yes" xml:space="default">
                 <source>News Updates</source>
-                <target>neus Aktuelles</target>
+                <target>Neus Aktuelles</target>
             </trans-unit>
             <trans-unit id="435" translate="yes" reformat="yes" xml:space="default">
                 <source>Invalid input</source>
                 <target>Ungültige Eingabe</target>
             </trans-unit>
+
+<trans-unit id="436" translate="yes" reformat="yes" xml:space="default">
+                <source>SMS Text</source>
+                <target>SMS Text</target>
+            </trans-unit>
+
 
         </body>
     </file>
