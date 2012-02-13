@@ -1,5 +1,5 @@
 <?php
-
+require_once(sfConfig::get('sf_lib_dir') . '/telintaSoap.class.php');
 /*
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
@@ -20,6 +20,9 @@ class Telienta {
     private static $AProduct = 'WLS2_CT';
     private static $CBProduct = '';
     private static $VoipProduct = '';
+    private static $telintaSOAPUrl              = "https://mybilling.telinta.com";
+    private static $telintaSOAPUser             = 'API_login';
+    private static $telintaSOAPPassword         = 'ee4eriny';
 
     public static function ResgiterCustomer($uniqueId, $OpeningBalance,$company=false) {
 
@@ -121,16 +124,17 @@ class Telienta {
 
      public static function getBalance($uniqueId){
 
-        $url = "https://mybilling.telinta.com/htdocs/zapna/zapna.pl?action=getbalance&name=" . $uniqueId . "&type=customer";
-        $bal = file_get_contents($url);
-        sleep(0.5);
-        if (!$bal) {
-            emailLib::sendErrorInTelinta("Error in delAccount", "Unable to call. We have faced an issue in delAccount on telinta. this is the error on the following url: " . $url . "  <br/> Please Investigate.");
-            return false;
-        }
-        parse_str($bal);
-        if (isset($success) && $success != "OK") {
-            emailLib::sendErrorInTelinta("Error in getBalance", "We have faced an issue on Success in getBalnace on telinta. this is the error on the following url:" . $url . " <br/> and error is: " . $bal . "  <br/> Please Investigate.");
+       $pb = new PortaBillingSoapClient(self::$telintaSOAPUrl, 'Admin', 'Customer');
+        $session = $pb->_login(self::$telintaSOAPUser,self::$telintaSOAPPassword );
+
+         $cInfo = $pb->get_customer_info(array(
+                'name' => $uniqueId ,
+        ));
+        $Balance = $cInfo->customer_info->balance;
+        $pb->_logout();
+
+        if ($Balance == "") {
+            emailLib::sendErrorInTelinta("Error in getBalance", "We have faced an issue on Success in getBalnace on telinta.  <br/> Please Investigate.");
             return false;
         }
         if($Balance==0)
