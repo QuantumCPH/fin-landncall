@@ -44,10 +44,7 @@
     function checkForm()
     {
 
-        jq(document).ready(function(){ alert('rola');
-        return false;
-        });
-
+    
         unique =  jQuery("#uniqueid").val();
         //alert(unique[0]);
         if(unique == "" || unique.length != 6 || unique[0] !='1'){
