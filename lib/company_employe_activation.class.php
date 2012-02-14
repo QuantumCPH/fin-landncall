@@ -28,12 +28,12 @@ class CompanyEmployeActivation {
     sleep(0.5);
    
                     if(!$telintaRegisterCus){
-                       emailLib::sendErrorInTelinta("Error in B2b company registration", "Unable to call. We have faced an issue in company registrtion on telinta. this is the error on the following url https://mybilling.telinta.com/htdocs/zapna/zapna.pl?reseller=R_landNcall_B2b&action=add&name=".$companyCVR."&currency=SEK&enable_dialingrules=Yes&int_dial_pre=00&email=okh@zapna.com&customer_class=3332&type=customer&credit_limit=&opening_balance=-5000. <br/> Please Investigate.");
+                       emailLib::sendErrorInTelinta("Error in WLS2 B2b company registration", "Unable to call. We have faced an issue in company registrtion on telinta. this is the error on the following url https://mybilling.telinta.com/htdocs/zapna/zapna.pl?reseller=R_Partner_WLS2_B2B1&action=add&name=".$companyCVR."&currency=EUR&enable_dialingrules=Yes&int_dial_pre=00&email=okh@zapna.com&customer_class=3332&type=customer&credit_limit=&opening_balance=-5000. <br/> Please Investigate.");
                         return false;
                     }
                     parse_str($telintaRegisterCus);
                     if(isset($success) && $success!="OK"){
-                        emailLib::sendErrorInTelinta("Error in B2b company registration", "We have faced an issue on Success in company registrtion on telinta. this is the error on the following url https://mybilling.telinta.com/htdocs/zapna/zapna.pl?reseller=R_landNcall_B2b&action=add&name=".$companyCVR."&currency=SEK&enable_dialingrules=Yes&int_dial_pre=00&email=okh@zapna.com&customer_class=3332&type=customer&credit_limit=&opening_balance=-5000. <br/> Please Investigate.");
+                        emailLib::sendErrorInTelinta("Error in WLS2  B2b company registration", "We have faced an issue on Success in company registrtion on telinta. this is the error on the following url https://mybilling.telinta.com/htdocs/zapna/zapna.pl?reseller=R_Partner_WLS2_B2B1&action=add&name=".$companyCVR."&currency=EUR&enable_dialingrules=Yes&int_dial_pre=00&email=okh@zapna.com&customer_class=3332&type=customer&credit_limit=&opening_balance=-5000. <br/> Please Investigate.");
                         return false;
                     }
 
@@ -47,12 +47,12 @@ class CompanyEmployeActivation {
         $telintaAddAccountA = file_get_contents("https://mybilling.telinta.com/htdocs/zapna/zapna.pl?type=account&action=activate&name=a".$employeMobileNumber."&customer=".$companyCVRNumber."&opening_balance=0&credit_limit=&product=WLS2_CT_B2B&outgoing_default_r_r=2034&billing_model=1&password=asdf1asd");
         
              if(!$telintaAddAccountA){
-                       emailLib::sendErrorInTelinta("Error in B2b employee  a account registration", "We have faced an issue in employee registrtion on telinta. this is the error on the following url https://mybilling.telinta.com/htdocs/zapna/zapna.pl?type=account&action=activate&name=a".$employeMobileNumber."&customer=".$companyCVRNumber."&opening_balance=0&credit_limit=&product=WLS2_CT_B2B&outgoing_default_r_r=2034&billing_model=1&password=asdf1asd. <br/> Please Investigate.");
+                       emailLib::sendErrorInTelinta("Error in WLS2  B2b employee  a account registration", "We have faced an issue in employee registrtion on telinta. this is the error on the following url https://mybilling.telinta.com/htdocs/zapna/zapna.pl?type=account&action=activate&name=a".$employeMobileNumber."&customer=".$companyCVRNumber."&opening_balance=0&credit_limit=&product=WLS2_CT_B2B&outgoing_default_r_r=2034&billing_model=1&password=asdf1asd. <br/> Please Investigate.");
                         return false;
                     }
                     parse_str($telintaAddAccountA);
                     if(isset($success) && $success!="OK"){
-                        emailLib::sendErrorInTelinta("Error in employee  a account   registration", "We have faced an issue in employee registrtion on telinta. this is the error on the following url https://mybilling.telinta.com/htdocs/zapna/zapna.pl?type=account&action=activate&name=a".$employeMobileNumber."&customer=".$companyCVRNumber."&opening_balance=0&credit_limit=&product=WLS2_CT_B2B&outgoing_default_r_r=2034&billing_model=1&password=asdf1asd. <br/> Please Investigate.");
+                        emailLib::sendErrorInTelinta("Error in WLS2  employee  a account   registration", "We have faced an issue in employee registrtion on telinta. this is the error on the following url https://mybilling.telinta.com/htdocs/zapna/zapna.pl?type=account&action=activate&name=a".$employeMobileNumber."&customer=".$companyCVRNumber."&opening_balance=0&credit_limit=&product=WLS2_CT_B2B&outgoing_default_r_r=2034&billing_model=1&password=asdf1asd. <br/> Please Investigate.");
                         return false;
                     }
   //  sleep(0.25);
