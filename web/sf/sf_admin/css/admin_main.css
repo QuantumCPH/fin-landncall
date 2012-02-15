@@ -84,7 +84,7 @@
   white-space: nowrap;
 }
 
-#sf_admin_container label .error
+#sf_admin_container label.error
 {
   margin-right: 350px;
   float: right;
