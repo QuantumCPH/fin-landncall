@@ -10,14 +10,13 @@
 <div class="form-row">
   <?php echo label_for('company[name]', __($labels['company{name}']), 'class="required" ') ?>
   <div class="content<?php if ($sf_request->hasError('company{name}')): ?> form-error<?php endif; ?>">
-  <?php if ($sf_request->hasError('company{name}')): ?>
-    <?php echo form_error('company{name}', array('class' => 'form-error-msg')) ?>
-  <?php endif; ?>
-
   <?php $value = object_input_tag($company, 'getName', array (
   'size' => 80,
   'control_name' => 'company[name]',
 )); echo $value ? $value : '&nbsp;' ?>
+    <?php if ($sf_request->hasError('company{name}')): ?>
+    <?php echo form_error('company{name}', array('class' => 'form-error-msg')) ?>
+    <?php endif; ?>
     </div>
 </div>
 
