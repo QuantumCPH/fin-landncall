@@ -84,6 +84,12 @@
   white-space: nowrap;
 }
 
+#sf_admin_container label .error
+{
+  margin-right: 350px;
+  float: right;
+}
+
 #sf_admin_container label.required
 {
   color: #333 !important;
