@@ -9,7 +9,7 @@
 	 <table width="100%" cellspacing="0" cellpadding="2" class="tblAlign" border='0'>
                     
 
-                    <tr>
+                    <tr class="headings">
                     <th width="20%"   align="left"><?php echo __('Date & Time') ?></th>
 
                     <th  width="20%"  align="left"><?php echo __('Phone Number') ?></th>

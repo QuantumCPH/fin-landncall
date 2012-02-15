@@ -47,7 +47,7 @@
         </tr>
         <tr>
             <td style="padding: 5px;"><?php echo __('Email:') ?></td>
-            <td style="padding: 5px;"> <input type="text" name="email" id="employee_email"   class="required"   value="<?php echo $employee->getEmail(); ?>"  size="25" /> </td>
+            <td style="padding: 5px;"> <input type="text" name="email" id="employee_email"   class="required email"   value="<?php echo $employee->getEmail(); ?>"  size="25" /> </td>
         </tr>
        <?php  //$varval = $employee->getRegistrationType();
               //  if (isset($varval) && $varval == "1") { ?>
