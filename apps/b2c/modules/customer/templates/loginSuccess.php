@@ -24,7 +24,7 @@
 	&nbsp;
 	</p>
 	<label style="text-align:left;"><?php echo __('Password') ?></label><br />
-        <input  style="cursor: pointer;" class="input" type="password" name="password" id="password" /><br />
+        <input  class="input" type="password" name="password" id="password" /><br />
         <span>
         <input type="submit" class="loginbuttun" name="submit" value="<?php echo __('Log in') ?>"></span>
 		<!--	<button style="cursor: pointer;" ><?php //echo __('Log in') ?></button>-->
