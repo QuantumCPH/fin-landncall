@@ -549,7 +549,7 @@ class emailLib{
     }
 
 
-    public static function sendCustomerConfirmRegistrationEmail($inviteuserid,$customer,$subject){
+    public static function sendCustomerConfirmRegistrationEmail($inviteuserid,$customerr,$subject){
 
           $c = new Criteria();
   	$c->add(CustomerPeer::ID, $inviteuserid);
@@ -561,14 +561,14 @@ class emailLib{
 
      $subject =$subject;
   $subject=$subject;
-        $sender_email       = sfConfig::get('app_email_sender_email', 'support@wls.com');
+       /* $sender_email       = sfConfig::get('app_email_sender_email', 'support@wls.com');
         $sender_name        = sfConfig::get('app_email_sender_name', 'WLS 2 support');
         $sender_emailcdu       = sfConfig::get('app_email_sender_email_cdu', 'rs@zapna.com');
-        $sender_namecdu        = sfConfig::get('app_email_sender_name_cdu', 'WLS 2 support');
+        $sender_namecdu        = sfConfig::get('app_email_sender_name_cdu', 'WLS 2 support');*/
 
           sfContext::getInstance()->getConfiguration()->loadHelpers('Partial');
         $message_body = get_partial('pScripts/bonus_web_reg', array(
-                'customer'=>$customer,
+                'customer'=>$customerr,
                 'recepient_name'=>$recepient_name,
 
                 'wrap'=>true,
@@ -599,7 +599,7 @@ class emailLib{
         endif;
 
         //send to okhan
-        if($sender_email!=''):
+      /*  if($sender_email!=''):
             $email2 = new EmailQueue();
             $email2->setSubject($subject);
             $email2->setMessage($message_body);
@@ -622,7 +622,7 @@ class emailLib{
             $email3->setEmailType('WLS 2 Customer Confirm Bonus');
             $email3->save();
         endif;
-
+*/
     }
 //////////////////////////////////////////////////////////////
 
