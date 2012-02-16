@@ -2051,7 +2051,8 @@
                 <source>edit</source>
                 <target>bearbeiten</target>
             </trans-unit>
-            <trans-unit id="442" translate="yes" reformat="yes" xml:space="default">
+
+           <trans-unit id="442" translate="yes" reformat="yes" xml:space="default">
                 <source>Could not delete the selected Agent company</source>
                 <target>Konnte nicht gelöscht werden den ausgewählten Agenten Unternehmen</target>
             </trans-unit>
