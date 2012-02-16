@@ -37,8 +37,9 @@ class AgentCompany extends BaseAgentCompany
        $sum=0.00;
        $per=0.00;
        foreach($transactions as $transaction){
-        $sum = $sum+ $transaction->getAmount();
-        $per=($sum*8)/100;
+        $sum = $sum+ $transaction->getCommissionAmount();
+        //$per=($sum*8)/100;
+        $per=$sum;
        }
 
        return $per;
@@ -59,8 +60,9 @@ class AgentCompany extends BaseAgentCompany
        $sum=0.00;
        $per=0.00;
        foreach($transactions as $transaction){
-        $sum = $sum+ $transaction->getAmount();
-        $per=($sum*10)/100;
+        $sum = $sum+ $transaction->getCommissionAmount();
+        //$per=($sum*10)/100;
+        $per=$sum;
        }
 
        return $per;
