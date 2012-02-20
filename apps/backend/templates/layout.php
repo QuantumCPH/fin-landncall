@@ -246,18 +246,18 @@
                          //echo link_to('<b>Zerocall Setting</b>', '') ?>
                         <a href="javascript:;" class="label"><b><?php echo __('WLS2 Setting') ?></b></a>
                         <?php 
-                        if($actionName=='list' && $modulName=="device"){
-                          echo link_to(__('Mobile Models'), 'device/index',array('class'=>'subSelect'));
-                        }else{
-                          echo link_to(__('Mobile Models'), 'device/index');  
-                        }
+//                        if($actionName=='list' && $modulName=="device"){
+//                          echo link_to(__('Mobile Models'), 'device/index',array('class'=>'subSelect'));
+//                        }else{
+//                          echo link_to(__('Mobile Models'), 'device/index');
+//                        }
                         ?>
                         <?php 
-                        if($actionName=='list' && $modulName=="manufacturer"){
-                          echo link_to(__('Mobile Brands'), 'manufacturer/index',array('class'=>'subSelect'));
-                        }else{
-                          echo link_to(__('Mobile Brands'), 'manufacturer/index'); 
-                        }
+//                        if($actionName=='list' && $modulName=="manufacturer"){
+//                          echo link_to(__('Mobile Brands'), 'manufacturer/index',array('class'=>'subSelect'));
+//                        }else{
+//                          echo link_to(__('Mobile Brands'), 'manufacturer/index');
+//                        }
                         ?>
                        
                         <?php 
@@ -277,9 +277,9 @@
                         ?>
                         <?php 
                         if($actionName=='list' && $modulName=="enable_country"){
-                          echo link_to(__('Language Type'), 'enable_country/index',array('class'=>'subSelect'));
+                          echo link_to(__('Country List'), 'enable_country/index',array('class'=>'subSelect'));
                         }else{
-                          echo link_to(__('Language Type'), 'enable_country/index'); 
+                          echo link_to(__('Country List'), 'enable_country/index');
                         }
                         ?>
                         <?php 
@@ -297,11 +297,11 @@
                         }
                         ?>
                         <?php 
-                        if($actionName=='list' && $modulName=="usage_alert"){
-                          echo link_to(__('Usage Alert'), 'usage_alert/index',array('class'=>'subSelect'));
-                        }else{
-                          echo link_to(__('Usage Alert'), 'usage_alert/index'); 
-                        }
+//                        if($actionName=='list' && $modulName=="usage_alert"){
+//                          echo link_to(__('Usage Alert'), 'usage_alert/index',array('class'=>'subSelect'));
+//                        }else{
+//                          echo link_to(__('Usage Alert'), 'usage_alert/index');
+//                        }
                         ?>
                         <?php 
                         if($actionName=='list' && $modulName=="usage_alert_sender"){
