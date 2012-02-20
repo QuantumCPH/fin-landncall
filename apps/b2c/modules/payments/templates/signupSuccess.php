@@ -278,7 +278,7 @@ $customer_form->unsetAllExcept(array('auto_refill_amount', 'auto_refill_min_bala
                  ));  
      ?>
             </li>
-            <li id="" style="border-style:solid;border-width:3px;width: 295px; padding-left: 10px;">
+            <li id="" style="border-style:solid;border-width:3px;width: 320px; padding-left: 10px;">
                 <br /><b align="justfy">  <?php echo __('Wls 2 recommends to activate this service so you <br /> do not have to manually  refill when your account<br />  balance runs low. 100 or 200 Euros each  when the <br /> balances reaches 25 or 50 Euro. This facility is <br /> added to your account in minutes.')?></b>
 
 
