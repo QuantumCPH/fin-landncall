@@ -1773,8 +1773,8 @@ public function executeSmsRegistration(sfWebrequest $request) {
     $customer->setCustomerStatusId(3);
     $customer->save();
 
-    Telienta::ResgiterCustomer($this->customer->getUniqueid(), $order->getExtraRefill());
-    Telienta::createAAccount($calingcode.$this->customer->getMobileNumber(), $this->customer->getUniqueid());
+    Telienta::ResgiterCustomer($this->customer, $order->getExtraRefill());
+    Telienta::createAAccount($calingcode.$this->customer->getMobileNumber(), $this->customer);
 
     emailLib::sendCustomerRegistrationViaAgentSMSEmail($this->customer, $order);
     return sfView::NONE;

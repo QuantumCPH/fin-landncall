@@ -34,7 +34,7 @@
                                    $pus = 0;
                                  
 
-                        $telintaGetBalance=Telienta::getBalance($uniqueId);
+                        $telintaGetBalance=Telienta::getBalance($customer);
 
         echo  $telintaGetBalance;
           echo "&euro;";

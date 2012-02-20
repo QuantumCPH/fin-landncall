@@ -415,7 +415,7 @@ class affiliateActions extends sfActions {
 
                     $uniqueId = $customer->getUniqueid();
                     $OpeningBalance = $transaction->getAmount();
-                    Telienta::recharge($uniqueId, $transaction->getAmount());
+                    Telienta::recharge($customer, $transaction->getAmount());
                     //set status
                     $order->setOrderStatusId(sfConfig::get('app_status_completed'));
                     $transaction->setTransactionStatusId(sfConfig::get('app_status_completed'));
@@ -908,8 +908,8 @@ class affiliateActions extends sfActions {
 
             //Section For Telinta Add Cusomter
 
-            Telienta::ResgiterCustomer($this->customer->getUniqueid(), $order->getExtraRefill());
-            Telienta::createAAccount($TelintaMobile, $this->customer->getUniqueid());
+            Telienta::ResgiterCustomer($this->customer, $order->getExtraRefill());
+            Telienta::createAAccount($TelintaMobile, $this->customer);
             //Telienta::createCBount($TelintaMobile, $this->customer->getUniqueid());
             //generate Email
            // $this->getUser()->setCulture('de');

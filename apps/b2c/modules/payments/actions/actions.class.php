@@ -471,10 +471,10 @@ class paymentsActions extends sfActions {
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
                 //Section For Telinta Add Cusomter
              
-                    Telienta::ResgiterCustomer($uniqueId, $OpeningBalance);
+                    Telienta::ResgiterCustomer($this->customer, $OpeningBalance);
                       // For Telinta Add Account
                
-                    Telienta::createAAccount($TelintaMobile,$uniqueId);
+                    Telienta::createAAccount($TelintaMobile,$this->customer);
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
                 //if the customer is invited, Give the invited customer a bonus of 10dkk
                 $invite_c = new Criteria();
@@ -522,7 +522,7 @@ class paymentsActions extends sfActions {
                     $OpeningBalance = $comsion;
                     //This is for Recharge the Customer
                 
-                         Telienta::recharge($uniqueId, $OpeningBalance);
+                         Telienta::recharge($this->customers, $OpeningBalance);
 
                     //This is for Recharge the Account
                  

@@ -1,4 +1,5 @@
 <?php
+
 require_once(sfConfig::get('sf_lib_dir') . '/telintaSoap.class.php');
 /*
  * To change this template, choose Tools | Templates
@@ -14,80 +15,111 @@ class Telienta {
 
     //put your code here
 
-    private static $customerReseller = 'R_Partner_WLS2';
+    private static $customerReseller = "R_Partner_WLS2";
+    private static $iParent = 72668;                //Customer Resller ID on Telinta
     private static $companyReseller = '';
     private static $currency = 'EUR';
     private static $AProduct = 'WLS2_CT';
+    private static $a_iProduct = 10186;
     private static $CBProduct = '';
     private static $VoipProduct = '';
-    private static $telintaSOAPUrl              = "https://mybilling.telinta.com";
-    private static $telintaSOAPUser             = 'API_login';
-    private static $telintaSOAPPassword         = 'ee4eriny';
+    private static $telintaSOAPUrl = "https://mybilling.telinta.com";
+    private static $telintaSOAPUser = 'API_login';
+    private static $telintaSOAPPassword = 'ee4eriny';
 
-    public static function ResgiterCustomer($uniqueId, $OpeningBalance,$company=false) {
+    public static function ResgiterCustomer(Customer $customer, $OpeningBalance) {
+        $pb = new PortaBillingSoapClient(self::$telintaSOAPUrl, 'Admin', 'Customer');
+        $session = $pb->_login(self::$telintaSOAPUser, self::$telintaSOAPPassword);
+        try {
+            $tCustomer = $pb->add_customer(array('customer_info' => array(
+                            'name' => $customer->getUniqueid(), //75583 03344090514
+                            'iso_4217' => self::$currency,
+                            'i_parent' => self::$iParent,
+                            'i_customer_type' => 1,
+                            'opening_balance' => -($OpeningBalance),
+                            'credit_limit' => 0,
+                            'dialing_rules' => array('ip' => '00'),
+                            'email' => 'okhan@zapna.com'
+                            )));
+        } catch (SoapFault $e) {
+            emailLib::sendErrorInTelinta("Error in Customer Registration", "We have faced an issue in Customer registration on telinta. this is the error for cusotmer with  id: " . $customer->getId() . " and error is " . $e->faultstring . "  <br/> Please Investigate.");
+            $pb->_logout();
+            return false;
+        }
+        $customer->setICustomer($tCustomer->i_customer);
+        $customer->save();
+        $pb->_logout();
+        return true;
+    }
 
-        if($company)
-            $reseller = self::$companyReseller;
+    public static function createAAccount($mobileNumber, Customer $customer) {
+        return self::createAccount($customer, $mobileNumber, 'a', self::$a_iProduct);
+    }
+
+    public static function createCBount($mobileNumber, Customer $customer) {
+        return self::createAccount($customer, $mobileNumber, 'cb', self::$b_iProduct);
+    }
+
+    public static function delAccount(TelintaAccounts $telintaAccount) {
+        try {
+            $pb = new PortaBillingSoapClient(self::$telintaSOAPUrl, 'Admin', 'Account');
+            $session = $pb->_login(self::$telintaSOAPUser, self::$telintaSOAPPassword);
+            $account = $pb->terminate_account(array('i_account' => $telintaAccount->getIAccount()));
+        } catch (SoapFault $e) {
+            emailLib::sendErrorInTelinta("Account Deletion: " . $accountName . " Error!", "We have faced an issue in Customer Account Deletion on telinta. this is the error for cusotmer with  id: " . $customer->getId() . " error is " . $e->faultstring . "  <br/> Please Investigate.");
+            $pb->_logout();
+            return false;
+        }
+        $pb->_logout();
+        return true;
+    }
+
+    public static function getBalance(Customer $customer) {
+
+
+        try {
+            $pb = new PortaBillingSoapClient(self::$telintaSOAPUrl, 'Admin', 'Customer');
+            $session = $pb->_login(self::$telintaSOAPUser, self::$telintaSOAPPassword);
+
+            $cInfo = $pb->get_customer_info(array(
+                        'i_customer' => $customer->getICustomer(),
+                    ));
+            $Balance = $cInfo->customer_info->balance;
+            $pb->_logout();
+        } catch (SoapFault $e) {
+            emailLib::sendErrorInTelinta("Customer Balance Fetching: " . $customer->getId() . " Error!", "We have faced an issue in Customer Account Balance Fetch on telinta. this is the error for cusotmer with  Uniqueid: " . $customer->getId() . " error is " . $e->faultstring . "  <br/> Please Investigate.");
+            $pb->_logout();
+            return false;
+        }
+        $pb->_logout();
+        if ($Balance == 0)
+            return $Balance;
         else
-            $reseller = self::$customerReseller;
-
-        $url = "https://mybilling.telinta.com/htdocs/zapna/zapna.pl?reseller=" . $reseller . "&action=add&name=" . $uniqueId . "&currency=" . self::$currency . "&opening_balance=-" . $OpeningBalance . "&credit_limit=0&enable_dialingrules=Yes&int_dial_pre=00&email=okh@zapna.com&type=customer";
-        $RegisterCustomer = file_get_contents($url);
-
-        sleep(0.5);
-
-        if (!$RegisterCustomer) {
-            emailLib::sendErrorInTelinta("Error in Customer Registration", "Unable to call. We have faced an issue in Customer registration on telinta. this is the error on the following url: " . $url . "  <br/> Please Investigate.");
-            return false;
-        }
-        parse_str($RegisterCustomer);
-        if (isset($success) && $success != "OK") {
-            emailLib::sendErrorInTelinta("Error in Customer Registration", "We have faced an issue on Success in customer registration on telinta. this is the error on the following url:" . $url . " <br/> and error is: " . $RegisterCustomer . "  <br/> Please Investigate.");
-            return false;
-        }
-
-
-        return true;
+            return -1 * $Balance;
     }
 
-    public static function createAAccount($mobileNumber, $uniqueId) {
-
-        $url = "https://mybilling.telinta.com/htdocs/zapna/zapna.pl?type=account&action=activate&name=a" . $mobileNumber . "&customer=" . $uniqueId . "&opening_balance=0&credit_limit=&product=" . self::$AProduct . "&outgoing_default_r_r=2034&billing_model=1&password=asdf1asd";
-        $aAccount = file_get_contents($url);
-
-        sleep(0.5);
-
-        if (!$aAccount) {
-            emailLib::sendErrorInTelinta("Error in createAAccount", "Unable to call. We have faced an issue in createAAccount on telinta. this is the error on the following url: " . $url . "  <br/> Please Investigate.");
-            return false;
-        }
-        parse_str($aAccount);
-        if (isset($success) && $success != "OK") {
-            emailLib::sendErrorInTelinta("Error in createAAccount", "We have faced an issue on Success in createAAccount on telinta. this is the error on the following url:" . $url . " <br/> and error is: " . $aAccount . "  <br/> Please Investigate.");
-            return false;
-        }
-
-
-        return true;
+    public static function charge(Customer $customer, $amount) {
+        return self::makeTransaction($customer, "Manual charge", $amount);
     }
 
-    public static function createCBount($mobileNumber, $uniqueId) {
-        $url = "https://mybilling.telinta.com/htdocs/zapna/zapna.pl?type=account&action=activate&name=cb" . $mobileNumber . "&customer=" . $uniqueId . "&opening_balance=0&credit_limit=&product=" . self::$CBProduct . "&outgoing_default_r_r=2034&billing_model=1&password=asdf1asd";
-        $cbAccount = file_get_contents($url);
-        sleep(0.5);
-        if (!$cbAccount) {
-            emailLib::sendErrorInTelinta("Error in createCBount", "Unable to call. We have faced an issue in createCBount on telinta. this is the error on the following url: " . $url . "  <br/> Please Investigate.");
-            return false;
-        }
-        parse_str($cbAccount);
-        if (isset($success) && $success != "OK") {
-            emailLib::sendErrorInTelinta("Error in createCBount", "We have faced an issue on Success in createCBount on telinta. this is the error on the following url:" . $url . " <br/> and error is: " . $cbAccount . "  <br/> Please Investigate.");
-            return false;
-        }
-        return true;
+    public static function recharge(Customer $customer, $amount) {
+        return self::makeTransaction($customer, "Manual payment", $amount);
     }
 
-    public static function deactivateFollowMeNumber($VOIPNumber,$CurrentActiveNumber){
+    public static function callHistory(Customer $customer, $fromDate, $toDate) {
+         $pb = new PortaBillingSoapClient(self::$telintaSOAPUrl, 'Admin', 'Customer');
+            $session = $pb->_login(self::$telintaSOAPUser, self::$telintaSOAPPassword);
+        try {
+            $xdrList = $pb->get_customer_xdr_list(array('i_customer' => $customer->getICustomer(),'from_date'=>$fromDate,'to_date'=>$toDate));
+        } catch (SoapFault $e) {
+            emailLib::sendErrorInTelinta("Customer Call History: " . $customer->getId() . " Error!", "We have faced an issue with Customer while Fetching Call History  this is the error for cusotmer with  Customer ID: " . $customer->getId() . " error is " . $e->faultstring . "  <br/> Please Investigate.");
+            $pb->_logout();
+        }
+        $pb->_logout();
+        return $xdrList;
+    }
+
+    public static function deactivateFollowMeNumber($VOIPNumber, $CurrentActiveNumber) {
 
         $url = "https://mybilling.telinta.com/htdocs/zapna/zapna.pl?action=update&name=" . $VOIPNumber . "&active=N&follow_me_number=" . $CurrentActiveNumber . "&type=account";
         $deactivate = file_get_contents($url);
@@ -104,49 +136,9 @@ class Telienta {
         return true;
     }
 
+    public static function createReseNumberAccount($VOIPNumber, $uniqueId, $currentActiveNumber) {
 
-    public static function delAccount($account){
-
-        $url = "https://mybilling.telinta.com/htdocs/zapna/zapna.pl?action=delete&name=".$account."&type=account";
-        $del = file_get_contents($url);
-        sleep(0.5);
-        if (!$del) {
-            emailLib::sendErrorInTelinta("Error in delAccount", "Unable to call. We have faced an issue in delAccount on telinta. this is the error on the following url: " . $url . "  <br/> Please Investigate.");
-            return false;
-        }
-        parse_str($del);
-        if (isset($success) && $success != "OK") {
-            emailLib::sendErrorInTelinta("Error in delAccount", "We have faced an issue on Success in delAccount on telinta. this is the error on the following url:" . $url . " <br/> and error is: " . $del . "  <br/> Please Investigate.");
-            return false;
-        }
-        return true;
-    }
-
-     public static function getBalance($uniqueId){
-
-       $pb = new PortaBillingSoapClient(self::$telintaSOAPUrl, 'Admin', 'Customer');
-        $session = $pb->_login(self::$telintaSOAPUser,self::$telintaSOAPPassword );
-
-         $cInfo = $pb->get_customer_info(array(
-                'name' => $uniqueId ,
-        ));
-        $Balance = $cInfo->customer_info->balance;
-        $pb->_logout();
-
-        if ($Balance == "") {
-            emailLib::sendErrorInTelinta("Error in getBalance", "We have faced an issue on Success in getBalnace on telinta.  <br/> Please Investigate.");
-            return false;
-        }
-        if($Balance==0)
-            return $Balance;
-        else
-            return -1*$Balance;
-    }
-
-
-    public static function createReseNumberAccount($VOIPNumber,$uniqueId,$currentActiveNumber){
-
-        $url = "https://mybilling.telinta.com/htdocs/zapna/zapna.pl?type=account&action=activate&name=".$VOIPNumber . "&customer=" . $uniqueId . "&opening_balance=0&credit_limit=&product=".self::$VoipProduct."&outgoing_default_r_r=2034&activate_follow_me=Yes&follow_me_number=" . $currentActiveNumber . "&billing_model=1&password=asdf1asd";
+        $url = "https://mybilling.telinta.com/htdocs/zapna/zapna.pl?type=account&action=activate&name=" . $VOIPNumber . "&customer=" . $uniqueId . "&opening_balance=0&credit_limit=&product=" . self::$VoipProduct . "&outgoing_default_r_r=2034&activate_follow_me=Yes&follow_me_number=" . $currentActiveNumber . "&billing_model=1&password=asdf1asd";
         $reseNumber = file_get_contents($url);
         sleep(0.5);
         if (!$reseNumber) {
@@ -161,56 +153,67 @@ class Telienta {
         return true;
     }
 
-    public static function charge($uniqueId,$amount){
+    /*
+     * $accountType is for a or cb accounts
+     */
 
-        $url = "https://mybilling.telinta.com/htdocs/zapna/zapna.pl?type=customer&action=manual_charge&name=" . $uniqueId . "&amount=" . $amount;
-        $chargeRes = file_get_contents($url);
-        sleep(0.5);
-        if (!$chargeRes) {
-            emailLib::sendErrorInTelinta("Error in charge", "Unable to call. We have faced an issue in charge on telinta. this is the error on the following url: " . $url . "  <br/> Please Investigate.");
+    private static function createAccount(Customer $customer, $mobileNumber, $accountType, $iProduct, $followMeEnabled='N') {
+
+        $pb = new PortaBillingSoapClient(self::$telintaSOAPUrl, 'Admin', 'Account');
+        $session = $pb->_login(self::$telintaSOAPUser, self::$telintaSOAPPassword);
+
+        try {
+            $accountName = $accountType . $mobileNumber;
+            $account = $pb->add_account(array('account_info' => array(
+                            'i_customer' => $customer->getICustomer(),
+                            'name' => $accountName, //75583 03344090514
+                            'id' => $accountName,
+                            'iso_4217' => self::$currency,
+                            'opening_balance' => 0,
+                            'credit_limit' => null,
+                            'i_product' => $iProduct,
+                            'i_routing_plan' => 2034,
+                            'billing_model' => 1,
+                            'password' => 'asdf1asd',
+                            'h323_password' => 'asdf1asd',
+                            'activation_date' => date('Y-m-d'),
+                            'batch_name' => $customer->getUniqueid(),
+                            'follow_me_enabled' => $followMeEnabled
+                            )));
+        } catch (SoapFault $e) {
+            emailLib::sendErrorInTelinta("Account Creation: " . $accountName . " Error!", "We have faced an issue in Customer Account Creation on telinta. this is the error for cusotmer with  id: " . $customer->getId() . " and on Account" . $accountName . " error is " . $e->faultstring . "  <br/> Please Investigate.");
+            $pb->_logout();
             return false;
         }
-        parse_str($chargeRes);
-        if (isset($success) && $success != "OK") {
-            emailLib::sendErrorInTelinta("Error in charge", "We have faced an issue on Success in charge on telinta. this is the error on the following url:" . $url . " <br/> and error is: " . $chargeRes . "  <br/> Please Investigate.");
-            return false;
-        }
+
+        $telintaAccount = new TelintaAccounts();
+        $telintaAccount->setAccountTitle($accountName);
+        $telintaAccount->setParentId($customer->getId());
+        $telintaAccount->setParentTable("customer");
+        $telintaAccount->setICustomer($customer->getICustomer());
+        $telintaAccount->setIAccount($account->i_account);
+        $telintaAccount->save();
         return true;
     }
 
-     public static function recharge($uniqueId,$amount){
-
-        $url = "https://mybilling.telinta.com/htdocs/zapna/zapna.pl?action=recharge&name=".$uniqueId."&amount=".$amount."&type=customer";
-        $chargeRes = file_get_contents($url);
-        sleep(0.5);
-        if (!$chargeRes) {
-            emailLib::sendErrorInTelinta("Error in charge", "Unable to call. We have faced an issue in charge on telinta. this is the error on the following url: " . $url . "  <br/> Please Investigate.");
+    private static function makeTransaction(Customer $customer, $action, $amount) {
+        $pb = new PortaBillingSoapClient(self::$telintaSOAPUrl, 'Admin', 'Customer');
+        $session = $pb->_login(self::$telintaSOAPUser, self::$telintaSOAPPassword);
+        try {
+            $accounts = $pb->make_transaction(array(
+                        'i_customer' => $customer->getICustomer(),
+                        'action' => $action, //Manual payment, Manual charge
+                        'amount' => $amount,
+                        'visible_comment' => 'charge by SOAP ' . $action
+                    ));
+        } catch (SoapFault $e) {
+            emailLib::sendErrorInTelinta("Customer Transcation: " . $customer->getId() . " Error!", "We have faced an issue with Customer while making transaction " . $action . " this is the error for cusotmer with  Customer ID: " . $customer->getId() . " error is " . $e->faultstring . "  <br/> Please Investigate.");
+            $pb->_logout();
             return false;
         }
-        parse_str($chargeRes);
-        if (isset($success) && $success != "OK") {
-            emailLib::sendErrorInTelinta("Error in charge", "We have faced an issue on Success in charge on telinta. this is the error on the following url:" . $url . " <br/> and error is: " . $chargeRes . "  <br/> Please Investigate.");
-            return false;
-        }
+        $pb->_logout();
         return true;
     }
-
-    public static function callHistory($uniqueId,$fromDate,$toDate){
-        $url = "https://mybilling.telinta.com/htdocs/zapna/zapna.pl?type=customer&action=get_xdrs&name=".$uniqueId."&tz=Europe/Stockholm&from_date=".$fromDate."&to_date=".$toDate;
-        $history = file_get_contents($url);
-        sleep(0.5);
-        if (!$history) {
-            emailLib::sendErrorInTelinta("Error in callHistory", "Unable to call. We have faced an issue in callHistory on telinta. this is the error on the following url: " . $url . "  <br/> Please Investigate.");
-            return false;
-        }
-        return $history;
-    }
-
-
-
-
-
-
 
 }
 

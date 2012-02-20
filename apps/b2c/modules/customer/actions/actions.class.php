@@ -309,7 +309,7 @@ class customerActions extends sfActions {
         }
         //This is for Retrieve balance From Telinta
        // $telintaGetBalance = file_get_contents('https://mybilling.telinta.com/htdocs/zapna/zapna.pl?action=getbalance&name=' . $uniqueId . '&type=customer');
-  $telintaGetBalance=Telienta::getBalance($uniqueId);
+  $telintaGetBalance=Telienta::getBalance($this->customer);
        
 
       
@@ -1385,7 +1385,7 @@ class customerActions extends sfActions {
         $this->msgSent = "";
         $this->countries = $countries;
         $this->res_cbf = "";
-        $this->balance = (double) Telienta::getBalance($this->customer->getUniqueid());
+        $this->balance = (double) Telienta::getBalance($this->customer);
 
         $message = $request->getParameter('message');
 
@@ -1427,9 +1427,9 @@ class customerActions extends sfActions {
 
 
                 if (CARBORDFISH_SMS::Send($destination, $sms_text, $this->customer->getMobileNumber())) {
-                    Telienta::charge($this->customer->getUniqueid(), $amt);
+                    Telienta::charge($this->customer, $amt);
                     $this->msgSent = "Yes";
-                    $this->balance = (double) Telienta::getBalance($this->customer->getUniqueid());
+                    $this->balance = (double) Telienta::getBalance($this->customer);
                 }
             }
         }
@@ -1950,7 +1950,7 @@ public function executeSmsHistory(sfWebrequest $request){
     
             //This is for Recharge the Customer
           //  $MinuesOpeningBalance = $OpeningBalance * 3;
-            Telienta::recharge($unidc, $OpeningBalance);
+            Telienta::recharge($this->customer, $OpeningBalance);
           
                          
             //This is for Recharge the Account
