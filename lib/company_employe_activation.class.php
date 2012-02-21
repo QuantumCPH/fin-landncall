@@ -120,7 +120,7 @@ class CompanyEmployeActivation {
         $session = $pb->_login(self::$telintaSOAPUser, self::$telintaSOAPPassword);
 
         try {
-            $aInfo = $pb->get_customer_info(array(
+            $aInfo = $pb->get_account_info(array(
                         'i_account' => $iAccount,
                     ));
             $pb->_logout();
