@@ -125,7 +125,7 @@ class employeeActions extends sfActions {
         } else {
             $mobileNo = $request->getParameter('mobile_number');
         }
-echo $request->getParameter('company_id');
+echo "hr".$request->getParameter('company_id');exit;
         $c = new Criteria();
         $c->addAnd(CompanyPeer::ID, $request->getParameter('company_id'));
         $this->companys = CompanyPeer::doSelectOne($c);
