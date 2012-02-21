@@ -59,7 +59,7 @@ class employeeActions extends sfActions {
         $this->employee = EmployeePeer::retrieveByPK($request->getParameter('id'));
         $ct = new Criteria();
         $ct->add(TelintaAccountsPeer::ACCOUNT_TITLE, $this->employee->getCountryMobileNumber());
-        $ct->andAdd(TelintaAccountsPeer::STATUS, 3);
+        $ct->addAnd(TelintaAccountsPeer::STATUS, 3);
         $telintaAccount = TelintaAccountsPeer::doSelectOne($ct);
         $account_info = CompanyEmployeActivation::getAccountInfo($telintaAccount->getIAccount());
         $this->balance = $account_info->account_info->balance;
