@@ -2060,7 +2060,10 @@
                 <source>Could not delete the selected Agent company. Make sure it does not have any associated items.</source>
                 <target>Konnte nicht gelöscht werden den ausgewählten Agenten Unternehmens. Stellen Sie sicher, es hat keine zugehörigen Elemente.</target>
             </trans-unit>
-
+  <trans-unit id="444" translate="yes" reformat="yes" xml:space="default">
+                <source>Country List</source>
+                <target>Länderliste</target>
+            </trans-unit>
 
         </body>
     </file>
