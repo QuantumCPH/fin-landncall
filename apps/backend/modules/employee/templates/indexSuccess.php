@@ -115,12 +115,20 @@
                             <?php   //}else{ echo __('No'); } ?>
 </td>-->
  <?php  if(isset($companyval) && $companyval!=""){  ?>
-      <td> <?php  $mobileID= $employee->getCountryMobileNumber();
-        $telintaGetBalance=0;
-        $telintaGetBalance = file_get_contents('https://mybilling.telinta.com/htdocs/zapna/zapna.pl?action=getbalance&name=a'.$mobileID.'&type=account');
-        $telintaGetBalance = str_replace('success=OK&Balance=', '', $telintaGetBalance);
-        $telintaGetBalance = str_replace('-', '', $telintaGetBalance);
-        //$telintaGetBalance;
+      <td> <?php
+
+        $mobileID= $employee->getCountryMobileNumber();
+        $telintaGetBalance = 0;
+
+        $ct = new Criteria();
+        $ct->add(TelintaAccountsPeer::ACCOUNT_TITLE, 'a'.$mobileID);
+        $ct->andAdd(TelintaAccountsPeer::STATUS, 3);
+        $telintaAccount = TelintaAccountsPeer::doSelectOne($ct);
+
+        $accountInfo = CompanyEmployeActivation::getAccountInfo($telintaAccount->getIAccount());
+        $telintaGetBalance = $accountInfo->account_info->balance;
+
+//$telintaGetBalance;
         $telintaGetBalance1=0;
 //        $telintaGetBalance1 = file_get_contents('https://mybilling.telinta.com/htdocs/zapna/zapna.pl?action=getbalance&name=cb'.$mobileID.'&type=account');
 //        $telintaGetBalance1 = str_replace('success=OK&Balance=', '', $telintaGetBalance1);
@@ -147,7 +155,7 @@
 //        }
 //        }
       echo  $balnc=(float)$telintaGetBalance+(float)$telintaGetBalance1+($telintaGetBalancerese>0)?(float)$telintaGetBalancerese:0;
-          echo "EURO";
+          echo "&euro;";
                                                 ?></td>
 
       <?php } ?>

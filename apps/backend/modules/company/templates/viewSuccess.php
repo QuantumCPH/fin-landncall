@@ -24,12 +24,8 @@
 	<div class="form-row">
 				  <label class="required"><?php echo  __('Balance view:') ?> </label>
 				  <div class="content"><?php
-                                 $uniqueId=$company->getVatNo();
-                                 $telintaGetBalance = file_get_contents('https://mybilling.telinta.com/htdocs/zapna/zapna.pl?action=getbalance&name='.$uniqueId.'&type=customer');
-        $telintaGetBalance = str_replace('success=OK&Balance=', '', $telintaGetBalance);
-        $telintaGetBalance = str_replace('-', '', $telintaGetBalance);
-        echo  $telintaGetBalance;
-          echo "EURO";
+                                 echo $balance;
+          echo "&euro;";
                            ?>
 				   
 				  </div>
