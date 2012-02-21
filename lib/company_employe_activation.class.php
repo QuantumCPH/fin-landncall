@@ -31,7 +31,7 @@ class CompanyEmployeActivation {
         $session = $pb->_login(self::$telintaSOAPUser, self::$telintaSOAPPassword);
         try {
             $tCustomer = $pb->add_customer(array('customer_info' => array(
-                            'name' => $company->getCvrNumber(), //75583 03344090514
+                            'name' => $company->getVatNo(), //75583 03344090514
                             'iso_4217' => self::$currency,
                             'i_parent' => self::$iParent,
                             'i_customer_type' => 1,
