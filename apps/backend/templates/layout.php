@@ -304,11 +304,11 @@
 //                        }
                         ?>
                         <?php 
-                        if($actionName=='list' && $modulName=="usage_alert_sender"){
-                          echo link_to(__('Usage Alert Sender'), 'usage_alert_sender/index',array('class'=>'subSelect'));
-                        }else{
-                          echo link_to(__('Usage Alert Sender'), 'usage_alert_sender/index'); 
-                        }
+//                        if($actionName=='list' && $modulName=="usage_alert_sender"){
+//                          echo link_to(__('Usage Alert Sender'), 'usage_alert_sender/index',array('class'=>'subSelect'));
+//                        }else{
+//                          echo link_to(__('Usage Alert Sender'), 'usage_alert_sender/index');
+//                        }
                         ?>
                         <?php 
                         if($actionName=='list' && $modulName=="telecom_operator"){
