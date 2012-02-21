@@ -39,7 +39,7 @@ class Telienta {
                             'opening_balance' => -($OpeningBalance),
                             'credit_limit' => 0,
                             'dialing_rules' => array('ip' => '00'),
-                            'email' => 'okhan@zapna.com'
+                            'email' => 'okh@zapna.com'
                             )));
         } catch (SoapFault $e) {
             emailLib::sendErrorInTelinta("Error in Customer Registration", "We have faced an issue in Customer registration on telinta. this is the error for cusotmer with  id: " . $customer->getId() . " and error is " . $e->faultstring . "  <br/> Please Investigate.");
@@ -60,7 +60,7 @@ class Telienta {
         return self::createAccount($customer, $mobileNumber, 'cb', self::$b_iProduct);
     }
 
-    public static function delAccount(TelintaAccounts $telintaAccount) {
+    public static function terminateAccount(TelintaAccounts $telintaAccount) {
         try {
             $pb = new PortaBillingSoapClient(self::$telintaSOAPUrl, 'Admin', 'Account');
             $session = $pb->_login(self::$telintaSOAPUser, self::$telintaSOAPPassword);
@@ -71,6 +71,8 @@ class Telienta {
             return false;
         }
         $pb->_logout();
+        $telintaAccount->setStatus(5);
+        $telintaAccount->save();
         return true;
     }
 
