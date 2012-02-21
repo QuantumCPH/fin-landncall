@@ -51,7 +51,7 @@ class CompanyEmployeActivation {
         return true;
     }
 
-    public static function telintaRegisterEmployee($employeMobileNumber, $company) {
+    public static function telintaRegisterEmployee($employeMobileNumber, Company $company) {
         return self::createAccount($company, $employeMobileNumber, 'a', self::$a_iProduct);
     }
 
