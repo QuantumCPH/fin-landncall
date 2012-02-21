@@ -139,14 +139,14 @@ class employeeActions extends sfActions {
         $contrymobilenumber = $this->country->getCallingCode() . $mobileNo;
         $employeMobileNumber = $contrymobilenumber;
 
-       /* if (!CompanyEmployeActivation::telintaRegisterEmployee($employeMobileNumber, $this->companys)) {
+        if (!CompanyEmployeActivation::telintaRegisterEmployee($employeMobileNumber, $companyCVRNumber)) {
             //$this->message = "employee added successfully";
             $this->getUser()->setFlash('messageError', 'Employee is not added and  registered on Telinta please check email');
             //$this->redirect('employee/add?message=error');
             $this->redirect('employee/add');
             die;
         }
-*/
+
         $employee->setCompanyId($request->getParameter('company_id'));
         $employee->setFirstName($request->getParameter('first_name'));
         $employee->setLastName($request->getParameter('last_name'));
