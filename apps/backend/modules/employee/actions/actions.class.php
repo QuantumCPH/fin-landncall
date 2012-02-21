@@ -125,11 +125,11 @@ class employeeActions extends sfActions {
         } else {
             $mobileNo = $request->getParameter('mobile_number');
         }
-echo "hr".$request->getParameter('company_id');exit;
+echo "hr".$request->getParameter('company_id');
         $c = new Criteria();
         $c->addAnd(CompanyPeer::ID, $request->getParameter('company_id'));
         $this->companys = CompanyPeer::doSelectOne($c);
-        $companyCVR = $this->companys->getVatNo();
+        echo $companyCVR = $this->companys->getVatNo();exit;
         $countryID = $this->companys->getCountryId();
         $companyCVRNumber = $companyCVR;
         $employee = new Employee();
