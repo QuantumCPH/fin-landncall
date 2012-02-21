@@ -125,11 +125,11 @@ class employeeActions extends sfActions {
         } else {
             $mobileNo = $request->getParameter('mobile_number');
         }
-//echo "hr".$request->getParameter('company_id');
+
         $c = new Criteria();
         $c->addAnd(CompanyPeer::ID, $request->getParameter('company_id'));
         $this->companys = CompanyPeer::doSelectOne($c);
-        $companyCVR = $this->companys->getVatNo();//exit;
+        $companyCVR = $this->companys->getVatNo();
         $countryID = $this->companys->getCountryId();
         $companyCVRNumber = $companyCVR;
         $employee = new Employee();
@@ -139,14 +139,14 @@ class employeeActions extends sfActions {
         $contrymobilenumber = $this->country->getCallingCode() . $mobileNo;
         $employeMobileNumber = $contrymobilenumber;
 
-        if (!CompanyEmployeActivation::telintaRegisterEmployee($employeMobileNumber, $companyCVR)) {
+       /* if (!CompanyEmployeActivation::telintaRegisterEmployee($employeMobileNumber, $this->companys)) {
             //$this->message = "employee added successfully";
             $this->getUser()->setFlash('messageError', 'Employee is not added and  registered on Telinta please check email');
             //$this->redirect('employee/add?message=error');
             $this->redirect('employee/add');
             die;
         }
-
+*/
         $employee->setCompanyId($request->getParameter('company_id'));
         $employee->setFirstName($request->getParameter('first_name'));
         $employee->setLastName($request->getParameter('last_name'));
