@@ -40,8 +40,8 @@
   'control_name' => 'company[vat_no]',
 )); echo $value ? $value : '&nbsp;' ;
 
-      }?><br>Prefix will be 'test' before enter any Vat No.
- <span id="msgbox" style="display:none"></span>
+      }?><span id="msgbox" style="display:none"></span><br>Prefix will be 'test' of any Vat No.
+ 
     </div>
 </div>
 
