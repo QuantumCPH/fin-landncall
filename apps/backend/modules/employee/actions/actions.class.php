@@ -215,7 +215,7 @@ class employeeActions extends sfActions {
         $ct->add(TelintaAccountsPeer::ACCOUNT_TITLE, 'a' . $contrymobilenumber);
         $ct->addAnd(TelintaAccountsPeer::STATUS, 3);
         $telintaAccount = TelintaAccountsPeer::doSelectOne($ct);
-        if (CompanyEmployeActivation::terminateAccount($telintaAccount)) {
+        if (!CompanyEmployeActivation::terminateAccount($telintaAccount)) {
             $this->getUser()->setFlash('messageEdit', 'Employee has not been deleted Sucessfully Error in Callthrough Account');
             if (isset($companyid) && $companyid != "") {
                 $this->redirect('employee/index?company_id=' . $companyid . '&filter=filter');
