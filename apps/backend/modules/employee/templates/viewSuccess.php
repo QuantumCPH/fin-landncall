@@ -9,6 +9,12 @@
         <div id="company-info">
             <h1><?php echo __('Employee Details') ?></h1>
             <fieldset>
+                 <div class="form-row">
+                    <label class="required"><?php echo __('Company:') ?></label>
+                    <div class="content">
+                        <?php echo ($employee->getCompany() ? $employee->getCompany() : 'N/A') ?>
+                    </div>
+                </div>
                 <div class="form-row">
                     <label class="required"><?php echo __('Employee Name:') ?></label>
                     <div class="content">
@@ -16,12 +22,7 @@
                     </div>
                 </div>
 
-                <div class="form-row">
-                    <label class="required"><?php echo __('Company:') ?></label>
-                    <div class="content">
-                        <?php echo ($employee->getCompany() ? $employee->getCompany() : 'N/A') ?>
-                    </div>
-                </div>
+               
 
                 <div class="form-row">
                     <label class="required"><?php echo __('Employee Balance:') ?></label>

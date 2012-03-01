@@ -188,7 +188,7 @@
 <?php endif; ?>
                                 
                                 <li class="fr buttonplacement">
-                                        <input type ="submit" value ="<?php echo __('Pay') ?>"  style="cursor: pointer">
+                                        <input type ="submit" value ="<?php echo __('Pay') ?>"  style="cursor: pointer; margin-left: 115px">
                                     </li>
                         </ul>
                         <!-- hidden fields -->

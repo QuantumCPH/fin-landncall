@@ -69,6 +69,8 @@
 
   <?php $value = object_input_tag($company, 'getPostCode', array (
   'size' => 80,
+   'minlength'=>4,
+   'maxlength'=>5,
   'control_name' => 'company[post_code]',
 )); echo $value ? $value : '&nbsp;' ?><br><label id="companyPost"></label>
     </div>
@@ -324,7 +326,7 @@
 </div>
 
 <?php if($company->isNew()){ ?>
-<input type="hidden" value="" id="error" name="error">
+<input type="text" value="" id="error" name="error">
 <?php }?>
 
 </fieldset>

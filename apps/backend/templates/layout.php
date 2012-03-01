@@ -349,7 +349,7 @@ jQuery('#sf_admin_edit_form').validate({
      rules: {
         "company[name]": "required",
         "company[vat_no]": "required",
-        "company[post_code]": "required",
+        "company[post_code]": "required digits",
         "company[address]": "required",
         "company[contact_name]": "required",
         "company[head_phone_number]": "required",
@@ -361,7 +361,7 @@ jQuery('#sf_admin_edit_form').validate({
 </script>
 
     <script type="text/javascript">
-     /*jQuery('#company_post_code').blur(function(){
+    /* jQuery('#company_post_code').blur(function(){
         var poid=jQuery("#company_post_code").val();
        // poid = poid.replace(/\s+/g, '');
         var poidlenght=poid.length;
@@ -374,19 +374,19 @@ jQuery('#sf_admin_edit_form').validate({
         if(poidlenght>5){
             jQuery("#companyPost").html('"'+poid+'" is too long 5 characters max.');
            
-            return false;
+            jQuery('#error').val("error");
            // var fulvalue=poida+poidb+poidc+" "+poidd+poide;
         }else if(poidlenght<4){
             jQuery("#companyPost").html('"'+poid+'" is too short 4 characters min');//
-           return false;
+          jQuery('#error').val("error");
            //var fulvalue=poida+poidb+poidc;
-        }else{jQuery("#companyPost").html('');return true;}
+        }else{jQuery("#companyPost").html('');jQuery('#error').val("");}
       // jQuery("#company_post_code").val(fulvalue);
        //  alert(fulvalue);
 
-        });
+        });*/
 
-*/
+
 
 </script>
 
