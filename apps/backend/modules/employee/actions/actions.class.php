@@ -141,7 +141,7 @@ class employeeActions extends sfActions {
 
         if (!CompanyEmployeActivation::telintaRegisterEmployee($employeMobileNumber, $this->companys)) {
             //$this->message = "employee added successfully";
-            $this->getUser()->setFlash('messageError', 'Employee is not added and  registered on Telinta please check email');
+            $this->getUser()->setFlash('messageError', 'Employee is not registered due to duplicate account please check email.');
             //$this->redirect('employee/add?message=error');
             $this->redirect('employee/add');
             die;

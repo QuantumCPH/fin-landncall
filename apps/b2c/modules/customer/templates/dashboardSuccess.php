@@ -86,7 +86,7 @@ echo "    ";   echo substr($Telintambs, 7,2);
 echo " ";   echo substr($Telintambs, 9,2);
 echo " ";   echo substr($Telintambs, 11,2);
 echo " ";   echo substr($Telintambs, 13,2);
-echo " ";   echo substr($Telintambs, 15,2);
+echo " ";   echo substr($Telintambs, 15);
             }else{
                $TelintaMobile="00".$unumber->getMobileNumber();
 
@@ -99,7 +99,7 @@ echo " ";   echo substr($Telintambs, 7,2);
 echo " ";   echo substr($Telintambs, 9,2);
 echo " ";   echo substr($Telintambs, 11,2);
 echo " ";   echo substr($Telintambs, 13,2);
-echo " ";   echo substr($Telintambs, 15,2);
+echo " ";   echo substr($Telintambs, 15);
             }
          }else{
                 $getFirstnumberofMobile = substr($customer->getMobileNumber(), 0,1);     // bcdef
@@ -113,7 +113,7 @@ echo " ";   echo substr($Telintambs, 7,2);
 echo " ";   echo substr($Telintambs, 9,2);
 echo " ";   echo substr($Telintambs, 11,2);
 echo " ";   echo substr($Telintambs, 13,2);
-echo " ";   echo substr($Telintambs, 15,2);
+echo " ";   echo substr($Telintambs, 15);
                 }else{
                   $TelintaMobile = '0049'.$customer->getMobileNumber();
 
@@ -123,7 +123,7 @@ echo " ";   echo substr($Telintambs, 7,2);
 echo " ";   echo substr($Telintambs, 9,2);
 echo " ";   echo substr($Telintambs, 11,2);
 echo " ";   echo substr($Telintambs, 13,2);
-echo " ";   echo substr($Telintambs, 15,2);
+echo " ";   echo substr($Telintambs, 15);
                 }
      
           

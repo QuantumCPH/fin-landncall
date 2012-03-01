@@ -2065,6 +2065,11 @@
                 <target>Länderliste</target>
             </trans-unit>
 
+            <trans-unit id="445" translate="yes" reformat="yes" xml:space="default">
+                <source>Employee is not registered due to duplicate account please check email.</source>
+                <target>Mitarbeiter ist nicht registriert aufgrund Konto duplizieren überprüfen Sie bitte per E-Mail.</target>
+            </trans-unit>
+
         </body>
     </file>
 </xliff>

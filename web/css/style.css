@@ -357,7 +357,7 @@ margin-bottom:10px;
 .split-form-sign-up ul li input.chkbx{width:20px; padding:0px; border:0px; float:left;}
 .split-form-sign-up ul li input.radbx{width:20px; padding:0px; border:0px; float:left;}
 .split-form-sign-up ul li.fr {width:250px; text-align:right;}
-.split-form-sign-up ul li.buttonplacement{ /*position: relative; right:75px;*/ margin-left: 36px;text-align: left !important;}
+.split-form-sign-up ul li.buttonplacement{ /*position: relative; right:75px; margin-left: 36px;*/text-align: right !important;}
 #customer_date_of_birth_month{
     margin-left:10px !important;
 }
