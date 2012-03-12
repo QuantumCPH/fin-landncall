@@ -73,7 +73,7 @@ echo '&nbsp;';
                 $getFirstnumberofMobile = substr($unumber->getMobileNumber(), 0,1);     // bcdef
                 if($getFirstnumberofMobile==0){
                   $TelintaMobile = substr($unumber->getMobileNumber(), 1);
-                  $TelintaMobile =  '49'.$TelintaMobile ;
+                  $TelintaMobile =  sfConfig::get('app_country_code').$TelintaMobile ;
                 }else{
                   $TelintaMobile = ''.$unumber->getMobileNumber();
                 }

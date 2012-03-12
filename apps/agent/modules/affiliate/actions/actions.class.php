@@ -895,9 +895,9 @@ class affiliateActions extends sfActions {
             $getFirstnumberofMobile = substr($this->customer->getMobileNumber(), 0, 1);     // bcdef
             if ($getFirstnumberofMobile == 0) {
                 $TelintaMobile = substr($this->customer->getMobileNumber(), 1);
-                $TelintaMobile = '49' . $TelintaMobile;
+                $TelintaMobile = sfConfig::get('app_country_code') . $TelintaMobile;
             } else {
-                $TelintaMobile = '49' . $this->customer->getMobileNumber();
+                $TelintaMobile = sfConfig::get('app_country_code') . $this->customer->getMobileNumber();
             }
 
             $callbacklog = new CallbackLog();

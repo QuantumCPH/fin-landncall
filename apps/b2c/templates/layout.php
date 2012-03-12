@@ -46,7 +46,7 @@
 //$alert_fonet_customer = CustomerPeer::
 ?>
 
-<!-- end header --> <?php echo $sf_content; ?></div>
+<!-- end header --> <?php  echo $sf_content; ?></div>
 <!-- end wrap -->
 
 <script type="text/javascript"> 

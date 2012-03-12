@@ -15,11 +15,11 @@ class Telienta {
 
     //put your code here
 
-    private static $customerReseller = "R_Partner_WLS2";
-    private static $iParent = 72668;                //Customer Resller ID on Telinta
+    private static $customerReseller = "R_LandNcall_FIN";
+    private static $iParent = 77222;                //Customer Resller ID on Telinta
     private static $companyReseller = '';
     private static $currency = 'EUR';
-    private static $AProduct = 'WLS2_CT';
+    private static $AProduct = 'LNC_FIN_CT';
     private static $a_iProduct = 10186;
     private static $CBProduct = '';
     private static $VoipProduct = '';
