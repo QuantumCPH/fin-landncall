@@ -67,7 +67,7 @@ $wrap_content  = isset($wrap)?$wrap:false;
 	<?php echo __('Yours sincerely,') ?>
 	</p>
         <p>
-	<?php echo __('XXXXXXX') ?>
+	<?php echo __('LandnCall Support') ?>
 	</p>
 	<br />
 <?php endif; ?>
@@ -156,7 +156,7 @@ $wrap_content  = isset($wrap)?$wrap:false;
   </tr>
   <tr class="footer">
     <td class="payer_summary" colspan="4" style="font-weight:normal; white-space: nowrap;">
-    <?php echo __('LandNCall AB&nbsp;&nbsp;&nbsp;&nbsp;Box XXXXX, XX-XXX XX XXXXXXX&nbsp;&nbsp;&nbsp; XXX.XX.XXXXXX-XXXX');?> </td>
+    <?php echo __('Al malik call center & gift shop<br />Hämeentie 10 A<br />00530 Helsinki<br />FINLAND');?> </td>
   </tr>
 </table>
         

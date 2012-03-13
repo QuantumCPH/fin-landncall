@@ -248,11 +248,11 @@
 
 <?php if ($sf_user->isAuthenticated()): ?>
                                         <div class="clr"></div>
-                                        <p ><?php echo __('Provide this link to your customers while they signup with your reference.') ?>
+<!--                                        <p ><?php echo __('Provide this link to your customers while they signup with your reference.') ?>
                                             <a href="http://landncall.zerocall.com/b2c.php/signup/step1?ref=<?php echo $sf_user->getAttribute('agent_company_id', '', 'agentsession') ?>">
                         				http://landncall.zerocall.com/b2c.php/signup/step1?ref=<?php echo $sf_user->getAttribute('agent_company_id', '', 'agentsession') ?>
                                             </a>
-                                        </p>
+                                        </p>-->
 <?php endif; ?>
 
 <?php echo $sf_content ?>

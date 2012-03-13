@@ -33,38 +33,16 @@ use_helper('Number');
 	{
 		font-weight: bold;
 	}
-
-
 </style>
-
 <?php
-$wrap_content  = isset($wrap)?$wrap:false;
-
-//wrap_content also tells  wheather its a refill or
-//a product order. we wrap the receipt with extra
-// text only if its a product order.
-
- ?>
-
+    $wrap_content  = isset($wrap)?$wrap:false;
+    //wrap_content also tells  wheather its a refill or a product order. we wrap the receipt with extra text only if its a product order.
+?>
 <table class="receipt" cellspacing="0" width="600px">
-<tr bgcolor="#CCCCCC" class="receipt_header">
-    <td colspan="4"> LandNCall AB
-    </td>
-  </tr>
   <tr>
-  <td colspan="4" class="payer_summary">
-	XXXX XX XXXXX
-	<br />
-	XXX XX XX XXX
-	<br />
-	
-	<br />
-	Tel:      +XX XXXXXXXXXX
-	<br />	
-	<br />
-	Cvr:     XXXXXXXXX
-	<br />
-  </td>
+      <td colspan="4" class="payer_summary">
+        Al malik call center & gift shop<br />Hämeentie 10 A<br />00530 Helsinki<br />FINLAND
+      </td>
   </tr>
   <tr bgcolor="#CCCCCC" class="receipt_header">
     <th colspan="3"><?php echo __('Order Receipt') ?></th>

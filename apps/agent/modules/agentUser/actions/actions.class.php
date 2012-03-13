@@ -63,11 +63,11 @@ class agentUserActions extends sfActions {
     public function executeLogin($request){
 
         //call Culture Method For Get Current Set Culture - Against Feature# 6.1 --- 01/24/11 - Ahtsham
-         changeLanguageCulture::languageCulture($request,$this);
-  if($request->getParameter('new'))
-                $this->getUser()->setCulture($request->getParameter('new'));
-        else
-            $this->getUser()->setCulture($this->getUser()->getCulture());
+         //changeLanguageCulture::languageCulture($request,$this);
+  //if($request->getParameter('new'))
+                //$this->getUser()->setCulture($request->getParameter('new'));
+        //else
+            //$this->getUser()->setCulture($this->getUser()->getCulture());
         $this->form = new AgentLoginForm();
 
         if($request->isMethod('post')){

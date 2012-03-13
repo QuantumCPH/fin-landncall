@@ -19,10 +19,10 @@ class userActions extends autouserActions
 
         $this->loginForm = new LoginForm();
 
-        if($request->getParameter('new'))
-                $this->getUser()->setCulture($request->getParameter('new'));
-        else 
-            $this->getUser()->setCulture($this->getUser()->getCulture());
+        //if($request->getParameter('new'))
+                //$this->getUser()->setCulture($request->getParameter('new'));
+        //else
+            //$this->getUser()->setCulture($this->getUser()->getCulture());
 
         
         if($request->getMethod() != 'post'){
