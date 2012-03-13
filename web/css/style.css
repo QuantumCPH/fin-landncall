@@ -581,3 +581,8 @@ a.external_link {
     margin-right: 5px;
     padding: 5px;
 }
+.powered{
+    font-size: 11px;
+    float: right;
+    margin-top:10px;
+}
