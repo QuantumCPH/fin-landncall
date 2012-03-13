@@ -69,15 +69,11 @@
   	<div id="wrapper">
   	<div id="header">  
          <div class="logo">
-  		<?php echo image_tag('/images/wls2-logo.png') ?>
+  		<?php echo image_tag('/images/zapna_logo_small.png') ?>
             </div>       
             <div class="clr"></div>
   	</div>
         <div class="clr"></div>
-            <div style="width:75%;margin:0 auto;text-align: right;">
-               <?php echo link_to(image_tag('/images/german.png'), 'user/changeCulture?new=de'); ?>
-               <?php echo link_to(image_tag('/images/english.png'), 'user/changeCulture?new=en'); ?>
-            </div>
       <?php if($sf_user->isAuthenticated()): ?>
      <div class="topNav" align="center">  
       <ul id="sddm">
@@ -118,7 +114,7 @@
             <li>
                 <a href="#"
                 onmouseover="mopen('m5')"
-                onmouseout="mclosetime()" <?php echo $modulName=='customer'? 'class = "current"':''?>><?php echo __('Wls2') ?></a>
+                onmouseout="mclosetime()" <?php echo $modulName=='customer'? 'class = "current"':''?>><?php echo __('LandNCall AB') ?></a>
                 <div id="m5"
                     onmouseover="mcancelclosetime()"
                     onmouseout="mclosetime()">
@@ -244,7 +240,7 @@
                         <?php
                         // As per Omair Instruction - He need these changes - kmmalik - 08/17/2011
                          //echo link_to('<b>Zerocall Setting</b>', '') ?>
-                        <a href="javascript:;" class="label"><b><?php echo __('WLS2 Setting') ?></b></a>
+                        <a href="javascript:;" class="label"><b><?php echo __('LandNCall AB Setting') ?></b></a>
                         <?php 
 //                        if($actionName=='list' && $modulName=="device"){
 //                          echo link_to(__('Mobile Models'), 'device/index',array('class'=>'subSelect'));
@@ -414,7 +410,7 @@ jQuery('#sf_admin_edit_form').validate({
                         jQuery('#error').val("error");
                 }else{
 		//check the username exists or not from ajax
-		jQuery.post("https://wls2.zerocall.com/backend.php/company/vat",{ vat_no:val } ,function(data)
+		jQuery.post("https://landncall.zerocall.com/backend.php/company/vat",{ vat_no:val } ,function(data)
         {//alert(data);
 		  if(data=='no') //if username not avaiable
 		  {
@@ -462,7 +458,7 @@ jQuery('#sf_admin_edit_form').validate({
                         jQuery('#error').val("error");
                 }else{
 
-		jQuery.post("https://wls2.zerocall.com/backend.php/employee/mobile",{ mobile_no: val} ,function(data)
+		jQuery.post("https://landncall.zerocall.com/backend.php/employee/mobile",{ mobile_no: val} ,function(data)
         {
 		  if(data=='no') //if username not avaiable
 		  {

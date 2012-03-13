@@ -86,7 +86,7 @@
         <div id="basic">
             <div id="header">
                 <div class="logo">
-<?php echo image_tag('/images/wls2-logo.png'); // link_to(image_tag('/images/logo.gif'), '@homepage');  ?>
+<?php echo image_tag('/images/zapna_logo_small.png'); // link_to(image_tag('/images/logo.gif'), '@homepage');  ?>
                 </div>
             </div>
             <div id="slogan">
@@ -104,13 +104,6 @@
                 </div>
 <?php } ?>
 
-                <div style="vertical-align: top;float: right;margin-right: 10px;">
-
-<?php echo link_to(image_tag('/images/german.png'), 'affiliate/changeCulture?new=de'); ?>
-
-<?php echo link_to(image_tag('/images/english.png'), 'affiliate/changeCulture?new=en'); ?>
-
-                </div>
                 <div class="clr"></div>
             </div>
 
@@ -256,8 +249,8 @@
 <?php if ($sf_user->isAuthenticated()): ?>
                                         <div class="clr"></div>
                                         <p ><?php echo __('Provide this link to your customers while they signup with your reference.') ?>
-                                            <a href="http://wls2.zerocall.com/b2c.php/signup/step1?ref=<?php echo $sf_user->getAttribute('agent_company_id', '', 'agentsession') ?>">
-                        				http://wls2.zerocall.com/b2c.php/signup/step1?ref=<?php echo $sf_user->getAttribute('agent_company_id', '', 'agentsession') ?>
+                                            <a href="http://landncall.zerocall.com/b2c.php/signup/step1?ref=<?php echo $sf_user->getAttribute('agent_company_id', '', 'agentsession') ?>">
+                        				http://landncall.zerocall.com/b2c.php/signup/step1?ref=<?php echo $sf_user->getAttribute('agent_company_id', '', 'agentsession') ?>
                                             </a>
                                         </p>
 <?php endif; ?>

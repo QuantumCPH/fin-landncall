@@ -5,6 +5,7 @@ body {
 	font-size:12px;
         padding:0px;
         margin:0px;
+        background-color: #F7F7F7;
 }
 img{
     border: 0px;
@@ -25,7 +26,7 @@ h3 {
 	height:1px;
 }
 a{
-    color: #D44D05;
+    color: #71880f;
     text-decoration: none;
 }
 a:hover{
@@ -141,12 +142,7 @@ input#generic {
 }
 
 #header{
-    /*background: url("../images/top-ground.png") no-repeat scroll center top  transparent;
-    height: 137px;
-    margin: 0 auto 5px;
-    width: 1010px;*/
-    background: url("../images/header.png") repeat-x scroll center top transparent;
-    height: 133px;
+    height: 107px;
     margin: 0 auto 26px;
     width: 75%;
 }
@@ -212,7 +208,7 @@ margin-bottom:10px;
 }
 
 .logo {
-    padding-left: 25px;
+    
     padding-top: 13px;
 }
 .action-links{
@@ -221,7 +217,7 @@ margin-bottom:10px;
 }
 
 #slogan{
-    color:#D44D05;    
+    color:#ADCA30;    
     width:1010px;
     margin: 0 auto;
 }
@@ -264,13 +260,17 @@ margin-bottom:10px;
 }
 #sddm li.last
 {	
+
     border-right:1px solid #7F9910;
+
 }    
 #sddm li a{
     display: block;
     margin: 0 0px 0 0;
     padding: 4px 10px;
+
     color: #000;
+
     text-align: center;
     text-decoration: none;
 }
@@ -286,8 +286,8 @@ margin-bottom:10px;
 	visibility: hidden;
 	margin: 0;
 	padding: 0;
-	background: #D44D05;
-	border: 1px solid #ED8555;
+	background: #ADCA30;
+	border: 1px solid #7F9910;
 }
 
 #sddm div a
@@ -305,20 +305,22 @@ margin-bottom:10px;
 }
 #sddm div a:hover
 {	background: #FFFFFF;
-        color: #000;
+
+        color: #ADCA30;
+
         text-decoration: none;
 }
 #sddm div a.subSelect
 {	background: #FFFFFF;
-        color: #D44D05;
+        color: #ADCA30;
 }
 #sddm li a.current{
     background: #ADCA30 !important;
     color: #FFFFFF !important;
 }
 #sddm li a.currentR{
-    background: #D44D05 !important;
-    color: #FFFFFF !important;
+    background: #ADCA30 !important;
+    color: #000000 !important;
 }
 .report_container
 {
@@ -338,10 +340,8 @@ margin-bottom:10px;
 
 .report_container table th
 {
-	/*background-color: #A5BB3F;
-	color: #fff;
-	height: 30px;*/
-        color:#D44D05;
+	background-color: #FFFFFF;
+        color:#716F70;
         text-align: left;
 }
 
@@ -549,11 +549,14 @@ margin-bottom:10px;
   border:1px solid #D1D1D1;
   padding:5px;  
 }
+table{
+    background: #FFFFFF !important;
+}
 tr.even{
     background-color:#FFFFFF !important;
 }
 tr.odd{
-    background-color:#FCD9C9 !important;
+    background-color:#E8E7E8 !important;
 }
 p.pTotal{    
     font-weight: bold;
@@ -563,7 +566,7 @@ p.pTotal{
     padding-top:5px;
 }
 th{
-    color: #D44D05;
+    color: #716F70;
     text-align: left;
 }
 a.external_link {

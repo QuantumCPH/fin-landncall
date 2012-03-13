@@ -1165,9 +1165,9 @@ die;
         echo '<br/>';
         echo sfConfig::get('app_email_smtp_password');
         echo '<br/>';
-        echo sfConfig::get('app_email_sender_email', 'support@wls.com');
+        echo sfConfig::get('app_email_sender_email', 'support@landncall.com');
         echo '<br/>';
-        echo sfConfig::get('app_email_sender_name', 'WLS2 support');
+        echo sfConfig::get('app_email_sender_name', 'LandNCall AB support');
         
 
   	$connection = Swift_SmtpTransport::newInstance()
@@ -1179,8 +1179,8 @@ die;
 
 
 
-	$sender_email = sfConfig::get('app_email_sender_email', 'support@wls.com');
-	$sender_name = sfConfig::get('app_email_sender_name', 'WLS support');
+	$sender_email = sfConfig::get('app_email_sender_email', 'support@landncall.com');
+	$sender_name = sfConfig::get('app_email_sender_name', 'LandNCall AB support');
 
         echo '<br/>';
         echo $sender_email ;
@@ -1667,7 +1667,7 @@ public function executeSmsRegistration(sfWebrequest $request) {
     $product = ProductPeer::doSelectOne($pc);
     $mobile = substr($number, 2);
     //This Function For Get the Enable Country Id =
-    $calingcode = '49';
+    $calingcode = sfConfig::get('app_country_code');
     $customer = new Customer();
     $customer->setFirstName($mobile);
     $customer->setLastName($mobile);
@@ -2150,7 +2150,7 @@ public function executeSmsRegisterationwcb(sfWebrequest $request){
                   'UN'=>'zapna1',
                   'P'=>'Zapna2010',
                 'DA'=>$mtnumber,
-                 'SA' =>'WLS',
+                 'SA' =>'LandNCall',
                   'M'=>$sms_text,
                   'ST'=>'5'
             );
@@ -2188,7 +2188,7 @@ public function executeSmsRegisterationwcb(sfWebrequest $request){
                   'UN'=>'zapna1',
                   'P'=>'Zapna2010',
                 'DA'=>$mtnumber,
-                 'SA' =>'WLS',
+                 'SA' =>'LandNCall',
                   'M'=>$sms_text,
                   'ST'=>'5'
             );
@@ -2321,7 +2321,7 @@ LandNCall";
                   'UN'=>'zapna1',
                   'P'=>'Zapna2010',
                 'DA'=>$mtnumber,
-                 'SA' =>'WLS',
+                 'SA' =>'LandNCall',
                   'M'=>$sms_text,
                   'ST'=>'5'
             );
@@ -2402,7 +2402,7 @@ if(($caltype!="IC") && ($caltype!="hc")){
                   'UN'=>'zapna1',
                   'P'=>'Zapna2010',
                   'DA'=>$number,
-                  'SA' =>'WLS',
+                  'SA' =>'LandNCall',
                   'M'=>$sms_text,
                   'ST'=>'5'
             );
@@ -2421,7 +2421,7 @@ if(($caltype!="IC") && ($caltype!="hc")){
                   'UN'=>'zapna1',
                   'P'=>'Zapna2010',
                   'DA'=>$number,
-                  'SA' =>'WLS',
+                  'SA' =>'LandNCall',
                   'M'=>$sms_text,
                   'ST'=>'5'
             );

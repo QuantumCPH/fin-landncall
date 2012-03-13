@@ -416,9 +416,9 @@ class paymentsActions extends sfActions {
                 $getFirstnumberofMobile = substr($this->customer->getMobileNumber(), 0, 1);     // bcdef
                 if ($getFirstnumberofMobile == 0) {
                     $TelintaMobile = substr($this->customer->getMobileNumber(), 1);
-                    $TelintaMobile = '49' . $TelintaMobile;
+                    $TelintaMobile = sfConfig::get('app_country_code') . $TelintaMobile;
                 } else {
-                    $TelintaMobile = '49' . $this->customer->getMobileNumber();
+                    $TelintaMobile = sfConfig::get('app_country_code') . $this->customer->getMobileNumber();
                 }
 
                 
@@ -514,9 +514,9 @@ class paymentsActions extends sfActions {
                     $getFirstnumberofMobile = substr($this->customers->getMobileNumber(), 0, 1);     // bcdef
                     if ($getFirstnumberofMobile == 0) {
                         $TelintaMobile = substr($this->customers->getMobileNumber(), 1);
-                        $TelintaMobile = '49' . $TelintaMobile;
+                        $TelintaMobile = sfConfig::get('app_country_code') . $TelintaMobile;
                     } else {
-                        $TelintaMobile = '49' . $this->customers->getMobileNumber();
+                        $TelintaMobile = sfConfig::get('app_country_code') . $this->customers->getMobileNumber();
                     }
                     $uniqueId = $this->customers->getUniqueid();
                     $OpeningBalance = $comsion;
@@ -576,8 +576,8 @@ class paymentsActions extends sfActions {
                         ));
 
                 $subject = $this->getContext()->getI18N()->__('Payment Confirmation');
-                $sender_email = sfConfig::get('app_email_sender_email', 'support@wls2.com');
-                $sender_name = sfConfig::get('app_email_sender_name', 'WLS2 support');
+                $sender_email = sfConfig::get('app_email_sender_email', 'support@landncall.com');
+                $sender_name = sfConfig::get('app_email_sender_name', 'landncall support');
 
                 $recepient_email = trim($this->customer->getEmail());
                 $recepient_name = sprintf('%s %s', $this->customer->getFirstName(), $this->customer->getLastName());

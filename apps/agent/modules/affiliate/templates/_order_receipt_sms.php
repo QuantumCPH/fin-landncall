@@ -9,9 +9,6 @@ use_helper('Number');
 	
 	table.receipt {
 		width: 600px;
-		//font-family: arial;
-		//font-size: .7em;
-		
 		border: 2px solid #ccc;
 	}
 	
@@ -53,7 +50,7 @@ $wrap_content  = isset($wrap)?$wrap:false;
 	<p><?php echo __('Dear Customer') ?></p>
 	
 	<p>
-	<?php echo __('Thank you for ordering <b>%1%</b> and becoming wls2 Customer. We welcome you to a new and huge mobile world. ', array('%1%'=>$order->getProduct()->getName())) ?>
+	<?php echo __('Thank you for ordering <b>%1%</b> and becoming LandNCall AB Customer. We welcome you to a new and huge mobile world. ', array('%1%'=>$order->getProduct()->getName())) ?>
 	</p>
 	
 	<p>
@@ -66,7 +63,7 @@ $wrap_content  = isset($wrap)?$wrap:false;
 <?php endif; ?>
 <table class="receipt" cellspacing="0" width="600px">
 <tr bgcolor="#CCCCCC" class="receipt_header"> 
-    <td colspan="4"> WLS2
+    <td colspan="4"> LandNCall AB
     </td>
   </tr>
   <tr>
@@ -130,19 +127,19 @@ $wrap_content  = isset($wrap)?$wrap:false;
     <td>&nbsp;</td>
     <td><?php echo __('Subtotal') ?></td>
     <td>&nbsp;</td>
-    <td><?php echo format_number($subtotal) ?></td>
+    <td><?php echo format_number($subtotal) ?> &euro;</td>
   </tr>
   <tr class="footer"> 
     <td>&nbsp;</td>
     <td><?php echo __('VAT') ?> (<?php echo $vat==0?'0%':'25%' ?>)</td>
     <td>&nbsp;</td>
-    <td><?php echo format_number($vat) ?></td>
+    <td><?php echo format_number($vat) ?> &euro;</td>
   </tr>
   <tr class="footer">
     <td>&nbsp;</td>
     <td><?php echo __('Total') ?></td>
     <td>&nbsp;</td>
-    <td><?php echo format_number($transaction->getAmount()) ?></td>
+    <td><?php echo format_number($transaction->getAmount()) ?> &euro;</td>
   </tr>
 </table>
 <?php if($wrap_content): ?>
@@ -166,7 +163,7 @@ $wrap_content  = isset($wrap)?$wrap:false;
 
 <p>
 	<?php echo __('If you have any questions please feel free to contact our customer support center at '); ?>
-	<a href="mailto:support@wls2.com">support@wls2.com</a>
+	<a href="mailto:support@landncall.com">support@landncall.com</a>
 </p>
 
 <p><?php echo __('Cheers') ?></p>

@@ -55,22 +55,22 @@ $wrap_content  = isset($wrap)?$wrap:false;
 	
 	
 	<p>
-	<?php echo __('We hereby confirm that you have received commissions deposited into your account that you have referred a friend about Smartsim from wls.Go in to "Payment History" to see what you have earned.') ?>
+	<?php echo __('We hereby confirm that you have received commissions deposited into your account that you have referred a friend about Smartsim from landncall.Go in to "Payment History" to see what you have earned.') ?>
 	</p>
         <p>
-            <a href="mailto:Support@wls.com">Support@wls.com</a>
+            <a href="mailto:Support@landncall.com">Support@landncall.com</a>
 	</p>
         <p>
 	<?php echo __('Yours sincerely,') ?>
 	</p>
         <p>
-	<?php echo __('wls2.zerocall.com') ?>
+	<?php echo __('landncall.zerocall.com') ?>
 	</p>
 	<br />
 <?php endif; ?>
 <table width="600px">
 	<tr style="border:0px solid #fff">
-		<td colspan="4" align="right" style="text-align:right; border:0px solid #fff"><?php echo image_tag('http://wls2.zerocall.com/images/logo.gif');?></td>
+		<td colspan="4" align="right" style="text-align:right; border:0px solid #fff"><?php echo image_tag('http://landncall.zerocall.com/images/logo.gif');?></td>
 	</tr>
 </table>
 

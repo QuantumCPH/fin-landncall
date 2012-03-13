@@ -39,7 +39,7 @@ if($incrment%2==0){
 //                  
 $incrment++;
 ?>
-<tr  style="background-color:<?php echo $colorvalue;?>">
+<tr <?php echo $class;?> >
     <td><?php echo  $transaction->getCreatedAt() ?></td>
     <td><?php echo ($transaction->getCompany()?$transaction->getCompany():'N/A')?></td>
     <td><?php echo __($transaction->getDescription()) ?></td>

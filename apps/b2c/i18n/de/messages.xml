@@ -101,8 +101,8 @@
                 <target>Senden Sie eine SMS weltweit zu den besten Preisen des Marktes</target>
             </trans-unit>
             <trans-unit id="25" translate="yes" reformat="yes" xml:space="default">
-                <source>International calls from 0 cents * With WLS, you can call the whole world.</source>
-                <target>Internationale Anrufe von 0 Cent * Mit WLS, können Sie die ganze Welt.</target>
+                <source>International calls from 0 cents * With LandNCall AB, you can call the whole world.</source>
+                <target>Internationale Anrufe von 0 Cent * Mit LandNCall AB, können Sie die ganze Welt.</target>
             </trans-unit>
             
             <trans-unit id="26" translate="yes" reformat="yes" xml:space="default">
@@ -359,16 +359,16 @@
                 <target>Es liegen noch keine SMS Aufzeichnungen zu zeigen.</target>
             </trans-unit>
             <trans-unit id="88" translate="yes" reformat="yes" xml:space="default">
-                <source>Tell your friends about Wls &amp; earn extra balance!</source>
-                <target>Erzähle deinen Freunden von Wls &amp; verdienen Extra-Balance!</target>
+                <source>Tell your friends about LandNCall AB &amp; earn extra balance!</source>
+                <target>Erzähle deinen Freunden von LandNCall AB &amp; verdienen Extra-Balance!</target>
             </trans-unit>
             <trans-unit id="89" translate="yes" reformat="yes" xml:space="default">
-                <source>Tell your friends about Wls and earn 10 euro as soon as your friends have made their first payment with Wls! Spread the word about Wls and let your friends know about WLS2 services.</source>
-                <target>Erzähle deinen Freunden von Wls und verdienen 10 euro sobald Ihre Freunde ihre erste Zahlung mit Wls gemacht! Spread the word über Wls und lassen Sie Ihre Freunde über WLS2 Dienstleistungen.</target>
+                <source>Tell your friends about LandNCall AB and earn 10 euro as soon as your friends have made their first payment with LandNCall AB! Spread the word about LandNCall AB and let your friends know about LandNCall AB services.</source>
+                <target>Erzähle deinen Freunden von LandNCall AB und verdienen 10 euro sobald Ihre Freunde ihre erste Zahlung mit LandNCall AB gemacht! Spread the word über LandNCall AB und lassen Sie Ihre Freunde über LandNCall AB Dienstleistungen.</target>
             </trans-unit>
             <trans-unit id="90" translate="yes" reformat="yes" xml:space="default">
-                <source>You can tell your friends about Wls in two simple ways:</source>
-                <target>Sie können Ihre Freunde über Wls in zwei einfache Möglichkeiten, zu sagen:</target>
+                <source>You can tell your friends about LandNCall AB in two simple ways:</source>
+                <target>Sie können Ihre Freunde über LandNCall AB in zwei einfache Möglichkeiten, zu sagen:</target>
             </trans-unit>
             <trans-unit id="91" translate="yes" reformat="yes" xml:space="default">
                 <source>Fill out the fields below and click the Send Email button - your friend will receive an Email</source>
@@ -379,8 +379,8 @@
                 <target>Was Sie davon haben?</target>
             </trans-unit>
             <trans-unit id="93" translate="yes" reformat="yes" xml:space="default">
-                <source>As soon as your friends have made their first payment with Wls, youll automatically receive 10 euro in your Wls balance - so if 10 of your friends register on Wls, youll gain 100 euro in your account. Just share the news and enjoy this great new treat from Wls.</source>
-                <target>Sobald Ihre Freunde haben ihre erste Zahlung mit Wls, gemacht, youll erhalten automatisch 10 euro in Ihrem Wls Gleichgewicht - so, wenn 10 Ihrer Freunde auf Wls, youll gewinnen 100 euro in Ihrem Konto zu registrieren einfach teilen sich die Nachrichten und genießen Sie diese großartige neue zu behandeln. von Wls.</target>
+                <source>As soon as your friends have made their first payment with LandNCall AB, youll automatically receive 10 euro in your LandNCall AB balance - so if 10 of your friends register on LandNCall AB, youll gain 100 euro in your account. Just share the news and enjoy this great new treat from LandNCall AB.</source>
+                <target>Sobald Ihre Freunde haben ihre erste Zahlung mit LandNCall AB, gemacht, youll erhalten automatisch 10 euro in Ihrem LandNCall AB Gleichgewicht - so, wenn 10 Ihrer Freunde auf LandNCall AB, youll gewinnen 100 euro in Ihrem Konto zu registrieren einfach teilen sich die Nachrichten und genießen Sie diese großartige neue zu behandeln. von LandNCall AB.</target>
             </trans-unit>
       
             <trans-unit id="94" translate="yes" reformat="yes" xml:space="default">
@@ -589,8 +589,8 @@
                 <target>Auto nachfüllen Menge:</target>
             </trans-unit>
              <trans-unit id="145" translate="yes" reformat="yes" xml:space="default">
-                <source>Wls 2 recommends to activate this service so you &lt;br /&gt; do not have to manually  refill when your account&lt;br /&gt;  balance runs low. 100 or 200 Euros each  when the &lt;br /&gt; balances reaches 25 or 50 Euro. This facility is &lt;br /&gt; added to your account in minutes.</source>
-                <target>WLS 2 empfiehlt, diesen Dienst zu aktivieren, damit &lt;br /&gt;Sie müssen nicht manuell nachfüllen, wenn&lt;br /&gt;Ihr Kontostand Neige. 100 oder 200 Euro jeweils, &lt;br /&gt;wenn die Salden erreicht 25 oder 50 Euro. Diese&lt;br /&gt; Einrichtung ist auf Ihr Konto in Minuten zugegeben.</target>
+                <source>LandNCall AB recommends to activate this service so you &lt;br /&gt; do not have to manually  refill when your account&lt;br /&gt;  balance runs low. 100 or 200 Euros each  when the &lt;br /&gt; balances reaches 25 or 50 Euro. This facility is &lt;br /&gt; added to your account in minutes.</source>
+                <target>LandNCall AB empfiehlt, diesen Dienst zu aktivieren, damit &lt;br /&gt;Sie müssen nicht manuell nachfüllen, wenn&lt;br /&gt;Ihr Kontostand Neige. 100 oder 200 Euro jeweils, &lt;br /&gt;wenn die Salden erreicht 25 oder 50 Euro. Diese&lt;br /&gt; Einrichtung ist auf Ihr Konto in Minuten zugegeben.</target>
             </trans-unit>
              <trans-unit id="146" translate="yes" reformat="yes" xml:space="default">
                 <source>Enter cell phone number</source>
@@ -701,8 +701,8 @@
                 <target>Gesendet wurde</target>
             </trans-unit>
             <trans-unit id="172" translate="yes" reformat="yes" xml:space="default">
-                <source>Tell a friend about Wls!</source>
-                <target>Sagen ein Freund über Wls!</target>
+                <source>Tell a friend about LandNCall AB!</source>
+                <target>Sagen ein Freund über LandNCall AB!</target>
             </trans-unit>
             <trans-unit id="173" translate="yes" reformat="yes" xml:space="default">
                 <source>HI</source>
@@ -748,8 +748,8 @@
                 <target>SmartSim mit Topf</target>
             </trans-unit>
             <trans-unit id="183" translate="yes" reformat="yes" xml:space="default">
-                <source>Thank you for ordering &lt;b&gt;%1%&lt;/b&gt; and becoming wls2 Customer. We welcome you to a new and huge mobile world. </source>
-                <target>Vielen Dank für Ihre Bestellung &lt;b&gt;%1%&lt;/b&gt; und immer wls2 Kunden. Wir begrüßen Sie zu einem neuen und riesigen mobilen Welt. </target>
+                <source>Thank you for ordering &lt;b&gt;%1%&lt;/b&gt; and becoming LandNCall AB Customer. We welcome you to a new and huge mobile world. </source>
+                <target>Vielen Dank für Ihre Bestellung &lt;b&gt;%1%&lt;/b&gt; und immer LandNCall AB Kunden. Wir begrüßen Sie zu einem neuen und riesigen mobilen Welt. </target>
             </trans-unit>
             <trans-unit id="184" translate="yes" reformat="yes" xml:space="default">
                 <source>Your customer number is </source>
@@ -776,16 +776,16 @@
                 <target></target>
             </trans-unit>
             <trans-unit id="190" translate="yes" reformat="yes" xml:space="default">
-                <source>Thank you for ordering &lt;b&gt;%1%&lt;/b&gt; and becoming wls2 Customer. We welcome you to a new and huge mobile world.</source>
-                <target>Vielen Dank für Ihre Bestellung &lt;b&gt;%1%&lt;/b&gt; und immer wls2 Kunden. Wir begrüßen Sie zu einem neuen und riesigen mobilen Welt.</target>
+                <source>Thank you for ordering &lt;b&gt;%1%&lt;/b&gt; and becoming LandNCall AB Customer. We welcome you to a new and huge mobile world.</source>
+                <target>Vielen Dank für Ihre Bestellung &lt;b&gt;%1%&lt;/b&gt; und immer LandNCall AB Kunden. Wir begrüßen Sie zu einem neuen und riesigen mobilen Welt.</target>
             </trans-unit>
             <trans-unit id="191" translate="yes" reformat="yes" xml:space="default">
                 <source>Your Password have been saved.</source>
                 <target>Ihr Passwort gespeichert wurden.</target>
             </trans-unit>
             <trans-unit id="192" translate="yes" reformat="yes" xml:space="default">
-                <source>WLS2 invitation</source>
-                <target>WLS2 Einladung</target>
+                <source>LandNCall AB invitation</source>
+                <target>LandNCall AB Einladung</target>
             </trans-unit>
             <trans-unit id="193" translate="yes" reformat="yes" xml:space="default">
                 <source>Hi </source>
@@ -796,8 +796,8 @@
                 <target>Diese Einladung wird Ihnen mit der Referenz der gesendeten</target>
             </trans-unit>
             <trans-unit id="195" translate="yes" reformat="yes" xml:space="default">
-                <source>a user of Smartsim from the WLS2.</source>
-                <target>Ein Benutzer des SmartSim aus dem WLS2.</target>
+                <source>a user of Smartsim from the LandNCall AB.</source>
+                <target>Ein Benutzer des SmartSim aus dem LandNCall AB.</target>
             </trans-unit>
             <trans-unit id="196" translate="yes" reformat="yes" xml:space="default">
                 <source>Please click accept to start saving money immediately with Smartsim.</source>
@@ -816,8 +816,8 @@
                 <target>Lesen Sie mehr</target>
             </trans-unit>
             <trans-unit id="200" translate="yes" reformat="yes" xml:space="default">
-                <source>Your password has been changed. Please use the following information to login to your WLS2 account.</source>
-                <target>Ihr Passwort wurde geändert. Bitte verwenden Sie die folgenden Informationen zu Ihrem WLS2 Account einloggen.</target>
+                <source>Your password has been changed. Please use the following information to login to your LandNCall AB account.</source>
+                <target>Ihr Passwort wurde geändert. Bitte verwenden Sie die folgenden Informationen zu Ihrem LandNCall AB Account einloggen.</target>
             </trans-unit>
             <trans-unit id="201" translate="yes" reformat="yes" xml:space="default">
                 <source>Mobile Number: %s</source>
@@ -864,8 +864,8 @@
                 <target>Passwörter stimmen nicht überein</target>
             </trans-unit>
             <trans-unit id="212" translate="yes" reformat="yes" xml:space="default">
-                <source>Thank you for registeration your account at WLS. You will soon receive a delivery confirmation</source>
-                <target>Vielen Dank für Register tion Ihr Konto bei WLS. Sie Geschäfts-oder Firmenwert in Kürze eine Auslieferungsbestätigung</target>
+                <source>Thank you for registeration your account at LandNCall AB. You will soon receive a delivery confirmation</source>
+                <target>Vielen Dank für Register tion Ihr Konto bei LandNCall AB. Sie Geschäfts-oder Firmenwert in Kürze eine Auslieferungsbestätigung</target>
             </trans-unit>
             <trans-unit id="213" translate="yes" reformat="yes" xml:space="default">
                 <source>print</source>
@@ -938,8 +938,8 @@
             </trans-unit>
 
     <trans-unit id="230" translate="yes" reformat="yes" xml:space="default">
-                <source>We hereby confirm that you have received commissions deposited into your account that you have referred a friend about Smartsim from wls.Go in to "Payment History" to see what you have earned.</source>
-                <target>Wir bestätigen hiermit, dass Sie erhielt Aufträge hinterlegt auf Ihr Konto, dass Sie einen Freund über SmartSim aus wls.Go in die auf "Zahlungsprotokoll" bezeichnet zu sehen, was Sie verdient haben.</target>
+                <source>We hereby confirm that you have received commissions deposited into your account that you have referred a friend about Smartsim from LandNCall AB.Go in to "Payment History" to see what you have earned.</source>
+                <target>Wir bestätigen hiermit, dass Sie erhielt Aufträge hinterlegt auf Ihr Konto, dass Sie einen Freund über SmartSim aus LandNCall AB.Go in die auf "Zahlungsprotokoll" bezeichnet zu sehen, was Sie verdient haben.</target>
             </trans-unit>
 
     <trans-unit id="231" translate="yes" reformat="yes" xml:space="default">

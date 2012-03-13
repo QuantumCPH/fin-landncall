@@ -50,9 +50,9 @@
 				?>
 			</td>
 			<td >
-			<?php echo BaseUtil::format_number($registration->getAmount()) ?>
+			<?php echo BaseUtil::format_number($registration->getAmount()) ?> &euro;
 			</td>
-			<td ><?php echo BaseUtil::format_number($registration->getCommissionAmount())?>
+			<td ><?php echo BaseUtil::format_number($registration->getCommissionAmount())?> &euro;
 			</td>
 		</tr>
 		<?php endforeach; ?>
@@ -62,10 +62,10 @@
                     <td align="right"><strong><?php echo __('Total Registration Earnings:') ?></strong></td><td align="right"> <?php echo $i ?></td>
 		</tr>
 		<tr>
-		 <td align="right"><strong><?php echo __('Total Earnings:') ?></strong></td><td align="right"> <?php echo $registration_revenue; ?></td>
+		 <td align="right"><strong><?php echo __('Total Earnings:') ?></strong></td><td align="right"> <?php echo $registration_revenue; ?> &euro;</td>
 		</tr>
 		<tr>
-		 <td align="right"><strong><?php echo __('Total Commission Earned:') ?></strong></td><td align="right"> <?php echo $registration_commission; ?></td>
+		 <td align="right"><strong><?php echo __('Total Commission Earned:') ?></strong></td><td align="right"> <?php echo $registration_commission; ?> &euro;</td>
 		</tr>
         </table>
         </div>
@@ -102,14 +102,14 @@
 
                         
 			<td >
-			<?php echo BaseUtil::format_number($sms_registration->getAmount()) ?>
+			<?php echo BaseUtil::format_number($sms_registration->getAmount()) ?> &euro;
 			</td>
                         <?php if ( $sms_registration->getAmount() == 0) {?>
                             <td ><?php echo '10.00' ?>
 			</td>
                         <?php }else{ ?>
                         
-			<td ><?php echo BaseUtil::format_number($sms_registration->getCommissionAmount()) ?>
+			<td ><?php echo BaseUtil::format_number($sms_registration->getCommissionAmount()) ?> &euro;
 			</td>
                         <?php } ?>
                         
@@ -121,10 +121,10 @@
                     <td align="right"><strong><?php echo __('Total SMS Registration:') ?></strong></td><td align="right"> <?php echo $i ?></td>
 		</tr>
 		<tr>
-		 <td align="right"><strong><?php echo __('Total Earnings:') ?></strong></td><td align="right"> <?php echo $sms_registration_earnings ?></td>
+		 <td align="right"><strong><?php echo __('Total Earnings:') ?></strong></td><td align="right"> <?php echo $sms_registration_earnings ?> &euro;</td>
 		</tr>
 		<tr>
-		 <td align="right"><strong><?php echo __('Total Commission Earned:') ?></strong></td><td align="right"> <?php echo $sms_commission_earnings ?></td>
+		 <td align="right"><strong><?php echo __('Total Commission Earned:') ?></strong></td><td align="right"> <?php echo $sms_commission_earnings ?> &euro;</td>
 		</tr>
         </table>
         </div>    
@@ -162,9 +162,9 @@
 		
 
 			<td >
-			<?php echo BaseUtil::format_number($refill->getAmount()) ?>
+			<?php echo BaseUtil::format_number($refill->getAmount()) ?> &euro;
 			</td>
-			<td ><?php echo BaseUtil::format_number($refill->getCommissionAmount())?>
+			<td ><?php echo BaseUtil::format_number($refill->getCommissionAmount())?> &euro;
 			</td>
 		</tr>
 		<?php endforeach; ?>
@@ -174,10 +174,10 @@
                     <td align="right"><strong><?php echo __('Total Refills:') ?></strong></td><td align="right"> <?php echo $i ?></td>
 		</tr>
 		<tr>
-		 <td align="right"><strong><?php echo __('Total Earnings:') ?></strong></td><td align="right"> <?php echo $refill_revenue ?></td>
+		 <td align="right"><strong><?php echo __('Total Earnings:') ?></strong></td><td align="right"> <?php echo $refill_revenue ?> &euro;</td>
 		</tr>
 		<tr>
-		 <td align="right"><strong><?php echo __('Total Commission Earned:') ?></strong></td><td align="right"> <?php echo $refill_com ?></td>
+		 <td align="right"><strong><?php echo __('Total Commission Earned:') ?></strong></td><td align="right"> <?php echo $refill_com ?> &euro;</td>
 		</tr>
         </table>
         </div>
@@ -211,15 +211,13 @@
 		<td align="right">
 		<?php echo $registration_revenue
 
-		?>
+		?> &euro;
 		</td>
 	</tr>
 	<tr>
 		<td><?php echo __('Total commission earned on registration:') ?></td>
 		<td align="right">
-		<?php echo $registration_commission;
-
-		?>
+		<?php echo $registration_commission;?> &euro;
 		</td>
 	</tr>
 
@@ -231,7 +229,7 @@
 		<td align="right">
 		<?php echo $refill_revenue
 
-		?>
+		?> &euro;
 		</td>
 	</tr>
 	<tr>
@@ -239,7 +237,7 @@
 		<td align="right">
 		<?php echo $refill_com
 
-		?>
+		?> &euro;
 		</td>
         </tr>
 
@@ -251,13 +249,13 @@
 		<td align="right">
 		<?php echo $ef_sum;
 
-		?>
+		?> &euro;
 		</td>
 	</tr>
         <tr>
 		<td><?php echo __('Total') ?> <strong><?php echo __('commission earned')?> </strong><?php echo __('on refill from shop:') ?></td>
 		<td align="right">
-		<?php echo $ef_com;?>
+		<?php echo $ef_com;?> &euro;
                 </td>
         </tr>
         <tr>
@@ -268,13 +266,13 @@
 		<td align="right">
 		<?php echo $sms_registration_earnings;
 
-		?>
+		?> &euro;
 		</td>
 	</tr>
       <tr>
 		<td><?php echo __('Total') ?> <strong> <?php echo __('Commission earned') ?> </strong><?php echo __('on SMS Registeration:') ?></td>
 		<td align="right">
-		<?php echo $sms_commission_earnings;?>
+		<?php echo $sms_commission_earnings;?> &euro;
                 </td>
         </tr>
      -->

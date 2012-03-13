@@ -61,7 +61,7 @@ $wrap_content  = isset($wrap)?$wrap:false;
 	<?php echo __('Do not hesitate to contact us if you have any questions.') ?>
 	</p>
         <p>
-            <a href="mailto:support@wls2.com">support@wls2.com</a>
+            <a href="mailto:support@landncall.com">support@landncall.com</a>
 	</p>
         <p>
 	<?php echo __('Yours sincerely,') ?>
@@ -73,7 +73,7 @@ $wrap_content  = isset($wrap)?$wrap:false;
 <?php endif; ?>
 <table width="600px">
 	<tr style="border:0px solid #fff">
-		<td colspan="4" align="right" style="text-align:right; border:0px solid #fff"><?php echo image_tag('http://wls2.zerocall.com/images/logo.gif');?></td>
+		<td colspan="4" align="right" style="text-align:right; border:0px solid #fff"><?php echo image_tag('http://landncall.zerocall.com/images/logo.gif');?></td>
 	</tr>
 </table>
 <table class="receipt" cellspacing="0" width="600px">
@@ -94,8 +94,6 @@ $wrap_content  = isset($wrap)?$wrap:false;
 	  $eC = EnableCountryPeer::doSelectOne($eC);
 	  echo $eC->getName();
 	  ?>
-
-
       <br /><br />
       <?php echo __('Mobile Number') ?>: <br />
       <?php echo $customer->getMobileNumber() ?><br />
@@ -138,27 +136,27 @@ $wrap_content  = isset($wrap)?$wrap:false;
     <td>&nbsp;</td>
     <td><?php echo __('Subtotal') ?></td>
     <td>&nbsp;</td>
-    <td><?php echo format_number($subTotal = $order->getProduct()->getPrice()+$order->getProduct()->getRegistrationFee()) ?></td>
+    <td><?php echo format_number($subTotal = $order->getProduct()->getPrice()+$order->getProduct()->getRegistrationFee()) ?> &euro;</td>
   </tr>
 
   <tr class="footer">
     <td>&nbsp;</td>
     <td><?php echo __('VAT') ?> (<?php echo $vat==0?'0%':'25%' ?>)</td>
     <td>&nbsp;</td>
-    <td><?php echo format_number($vat) ?></td>
+    <td><?php echo format_number($vat) ?> &euro;</td>
   </tr>
   <tr class="footer">
     <td>&nbsp;</td>
     <td><?php echo __('Total') ?></td>
     <td>&nbsp;</td>
-    <td><?php echo format_number($subTotal+$vat) ?></td>
+    <td><?php echo format_number($subTotal+$vat) ?> &euro;</td>
   </tr>
   <tr>
   	<td colspan="4" style="border-bottom: 2px solid #c0c0c0;">&nbsp;</td>
   </tr>
   <tr class="footer">
     <td class="payer_summary" colspan="4" style="font-weight:normal; white-space: nowrap;">
-    <?php echo __('WLS2&nbsp;&nbsp;&nbsp;&nbsp;Box XXXXX, XX-XXX XX XXXXXXX&nbsp;&nbsp;&nbsp; XXX.XX.XXXXXX-XXXX');?> </td>
+    <?php echo __('LandNCall AB&nbsp;&nbsp;&nbsp;&nbsp;Box XXXXX, XX-XXX XX XXXXXXX&nbsp;&nbsp;&nbsp; XXX.XX.XXXXXX-XXXX');?> </td>
   </tr>
 </table>
         

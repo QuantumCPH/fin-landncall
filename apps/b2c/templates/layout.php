@@ -46,7 +46,7 @@
 //$alert_fonet_customer = CustomerPeer::
 ?>
 
-<!-- end header --> <?php echo $sf_content; ?></div>
+<!-- end header --> <?php  echo $sf_content; ?></div>
 <!-- end wrap -->
 
 <script type="text/javascript"> 
@@ -89,10 +89,10 @@
 
 </script>
 <?php if($sf_user->getCulture()=='en'){    ?>
-   <script type="text/javascript" src="http://wls2.zerocall.com/js/jquery.validate1.js"></script>
+   <script type="text/javascript" src="http://landncall.zerocall.com/js/jquery.validate1.js"></script>
 
    <?php }else{  ?>
-      <script type="text/javascript" src="http://wls2.zerocall.com/js/jquery.validatede.js"></script>
+      <script type="text/javascript" src="http://landncall.zerocall.com/js/jquery.validatede.js"></script>
  <?php  } ?>
 </body>
 </html>

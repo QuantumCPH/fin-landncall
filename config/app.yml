@@ -1,0 +1,6 @@
+# default values
+all:
+  main_url: 'http://localhost/fin-landncall/web/agent_dev.php/'
+  customer_url: 'http://localhost/fin-landncall/web/b2c_dev.php/'
+  admin_url: 'http://localhost/fin-landncall/web/backend_dev.php/'  
+  country_code: 358
