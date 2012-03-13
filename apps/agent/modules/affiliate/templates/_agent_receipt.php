@@ -9,9 +9,6 @@ use_helper('Number');
 
 	table.receipt {
 		width: 600px;
-		//font-family: arial;
-		//font-size: .7em;
-
 		border: 2px solid #ccc;
 	}
 
@@ -51,7 +48,7 @@ $wrap_content  = isset($wrap)?$wrap:false;
 
 <table class="receipt" cellspacing="0" width="600px">
 <tr bgcolor="#CCCCCC" class="receipt_header">
-    <td colspan="4"> LandNCall
+    <td colspan="4"> LandNCall AB
     </td>
   </tr>
   <tr>
@@ -112,19 +109,19 @@ $wrap_content  = isset($wrap)?$wrap:false;
     <td>&nbsp;</td>
     <td><?php echo __('Subtotal') ?></td>
     <td>&nbsp;</td>
-    <td><?php echo format_number($subtotal) ?></td>
+    <td><?php echo format_number($subtotal) ?> &euro;</td>
   </tr>
   <tr class="footer">
     <td>&nbsp;</td>
     <td><?php echo __('VAT') ?> (<?php echo '0%' ?>)</td>
     <td>&nbsp;</td>
-    <td><?php echo format_number(0.00) ?></td>
+    <td><?php echo format_number(0.00) ?> &euro;</td>
   </tr>
   <tr class="footer">
     <td>&nbsp;</td>
     <td><?php echo __('Total') ?></td>
     <td>&nbsp;</td>
-    <td><?php echo format_number($agent_order->getAmount()) ?></td>
+    <td><?php echo format_number($agent_order->getAmount()) ?> &euro;</td>
   </tr>
 </table>
 <?php if($wrap_content): ?>

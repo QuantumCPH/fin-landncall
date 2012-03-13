@@ -27,8 +27,8 @@
             </trans-unit>
 			
             <trans-unit id="6" translate="yes" reformat="yes" xml:space="default">
-                <source>Wls2</source>
-                <target>Wls2</target>
+                <source>LandNCall AB</source>
+                <target>LandNCall AB</target>
             </trans-unit>
             <trans-unit id="7" translate="yes" reformat="yes" xml:space="default">
                 <source>All Registered Customer</source>
@@ -741,8 +741,8 @@
                 <target>Mehrwertsteuer no</target>
             </trans-unit>
             <trans-unit id="159" translate="yes" reformat="yes" xml:space="default">
-                <source>WLS2 Setting</source>
-                <target>WLS2 einstellen</target>
+                <source>LandNCall AB Setting</source>
+                <target>LandNCall AB einstellen</target>
             </trans-unit>
             <trans-unit id="160" translate="yes" reformat="yes" xml:space="default">
                 <source>Manufacturer:</source>
@@ -1182,8 +1182,8 @@
                 <target>New Meine Mitarbeiter</target>
             </trans-unit>
             <trans-unit id="268" translate="yes" reformat="yes" xml:space="default">
-                <source>Login to WLS2 Admin</source>
-                <target>Melden Sie sich WLS2 Admin</target>
+                <source>Login to LandNCall AB Admin</source>
+                <target>Melden Sie sich LandNCall AB Admin</target>
             </trans-unit>
             <trans-unit id="269" translate="yes" reformat="yes" xml:space="default">
                 <source>Login</source>

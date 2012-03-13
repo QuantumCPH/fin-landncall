@@ -1,4 +1,4 @@
-<div id="sf_admin_container"><h1><?php echo __('WLS &#8211; FAQ') ?></h1></div>
+<div id="sf_admin_container"><h1><?php echo __('LandNCall AB &#8211; FAQ') ?></h1></div>
         
  <div class="borderDiv">
 

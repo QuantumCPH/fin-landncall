@@ -89,10 +89,10 @@
 
 </script>
 <?php if($sf_user->getCulture()=='en'){    ?>
-   <script type="text/javascript" src="http://wls2.zerocall.com/js/jquery.validate1.js"></script>
+   <script type="text/javascript" src="http://landncall.zerocall.com/js/jquery.validate1.js"></script>
 
    <?php }else{  ?>
-      <script type="text/javascript" src="http://wls2.zerocall.com/js/jquery.validatede.js"></script>
+      <script type="text/javascript" src="http://landncall.zerocall.com/js/jquery.validatede.js"></script>
  <?php  } ?>
 </body>
 </html>

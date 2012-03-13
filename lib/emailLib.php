@@ -573,17 +573,7 @@ class emailLib{
 
                 'wrap'=>true,
         ));
-//        $message_body   ='
-//Härmed bekräftas att du har fått provision insatt på ditt konto för att du har tipsat en vän om Smartsim från wls.
-//Gå in på ”Mina sidor” och gå till ”Övrig historik” under ”Samtalshistorik” så ser du vad du har tjänat.<br/>Med vänlig hälsning,
-//<br/>
-//wls<br/>
-//www.WLS2.zerocall.com';
-
-        
-      
         //$referrer_id        = trim($customer->getReferrerId());
-
         //send to user
         if($recepient_email!=''):
             $email = new EmailQueue();

@@ -5,6 +5,7 @@ body {
 	font-size:12px;
         padding:0px;
         margin:0px;
+        background-color: #F7F7F7;
 }
 img{
     border: 0px;
@@ -25,7 +26,7 @@ h3 {
 	height:1px;
 }
 a{
-    color: #D44D05;
+    color: #71880f;
     text-decoration: none;
 }
 a:hover{
@@ -141,12 +142,7 @@ input#generic {
 }
 
 #header{
-    /*background: url("../images/top-ground.png") no-repeat scroll center top  transparent;
-    height: 137px;
-    margin: 0 auto 5px;
-    width: 1010px;*/
-    background: url("../images/header.png") repeat-x scroll center top transparent;
-    height: 133px;
+    height: 107px;
     margin: 0 auto 26px;
     width: 75%;
 }
@@ -212,7 +208,7 @@ margin-bottom:10px;
 }
 
 .logo {
-    padding-left: 25px;
+    
     padding-top: 13px;
 }
 .action-links{
@@ -221,7 +217,7 @@ margin-bottom:10px;
 }
 
 #slogan{
-    color:#D44D05;    
+    color:#ADCA30;    
     width:1010px;
     margin: 0 auto;
 }
@@ -258,26 +254,26 @@ margin-bottom:10px;
     float: left;
     font: bold 11px arial;
     background:url('../images/li-bg.png') repeat-x top left;
-    border-left: 1px solid #D44D05;
-    border-top: 1px solid #D44D05;
-    border-bottom: 1px solid #D44D05;
+    border-left: 1px solid #7F9910;
+    border-top: 1px solid #7F9910;
+    border-bottom: 1px solid #7F9910;
 }
 #sddm li.last
 {	
-    border-right:1px solid #F36621;    
+    border-right:1px solid #7F9910;    
 }    
 #sddm li a{
     display: block;
     margin: 0 0px 0 0;
     padding: 4px 10px;
-    color: #D44D05;
+    color: #666465;
     text-align: center;
     text-decoration: none;
 }
 
 #sddm li a:hover{
     text-decoration:none;
-    background: #D44D05;
+    background: #ADCA30;
     color:#ffffff;
 }
 
@@ -286,8 +282,8 @@ margin-bottom:10px;
 	visibility: hidden;
 	margin: 0;
 	padding: 0;
-	background: #D44D05;
-	border: 1px solid #ED8555;
+	background: #ADCA30;
+	border: 1px solid #7F9910;
 }
 
 #sddm div a
@@ -299,26 +295,26 @@ margin-bottom:10px;
         white-space: nowrap;
         text-align: left;
         text-decoration: none;
-        background: #D44D05;
+        background: #ADCA30;
         color: #FFFFFF;
         font: 11px arial;
 }
 #sddm div a:hover
 {	background: #FFFFFF;
-        color: #D44D05;
+        color: #ADCA30;
         text-decoration: none;
 }
 #sddm div a.subSelect
 {	background: #FFFFFF;
-        color: #D44D05;
+        color: #ADCA30;
 }
 #sddm li a.current{
-    background: #D44D05 !important;
+    background: #ADCA30 !important;
     color: #FFFFFF !important;
 }
 #sddm li a.currentR{
-    background: #D44D05 !important;
-    color: #FFFFFF !important;
+    background: #ADCA30 !important;
+    color: #000000 !important;
 }
 .report_container
 {
@@ -338,10 +334,8 @@ margin-bottom:10px;
 
 .report_container table th
 {
-	/*background-color: #A5BB3F;
-	color: #fff;
-	height: 30px;*/
-        color:#D44D05;
+	background-color: #FFFFFF;
+        color:#716F70;
         text-align: left;
 }
 
@@ -543,17 +537,20 @@ margin-bottom:10px;
   font-family: "Trebuchet MS", Arial, Verdana, sans-serif;
   font-size: 17px;
   color:#ffffff;
-  background-color: #D44D05;
+  background-color: #716F70;
 }
 .borderDiv{
   border:1px solid #D1D1D1;
   padding:5px;  
 }
+table{
+    background: #FFFFFF !important;
+}
 tr.even{
     background-color:#FFFFFF !important;
 }
 tr.odd{
-    background-color:#FCD9C9 !important;
+    background-color:#E8E7E8 !important;
 }
 p.pTotal{    
     font-weight: bold;
@@ -563,7 +560,7 @@ p.pTotal{
     padding-top:5px;
 }
 th{
-    color: #D44D05;
+    color: #716F70;
     text-align: left;
 }
 a.external_link {
