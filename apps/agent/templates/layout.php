@@ -130,7 +130,7 @@
                                 </div>-->
 
                 <div class="clr"></div>
-                <div id="menu">
+                
                     <!--                <h1>menu</h1>-->
                 <?php
                 if ($sf_user->isAuthenticated()) {
@@ -145,7 +145,7 @@
                     //$routing = $sf_context->getInstance()->getRouting();
                     //echo $routing;
                 ?>
-                    <ul id="sddm">
+                 <div id="menu">   <ul id="sddm">
                         <li>
                         <?php
                         if ($actionName == 'report' && $modulName == "affiliate" && $sf_request->getParameter('show_summary') == 1) {
@@ -221,10 +221,10 @@
 
                         <li class="last"><?php echo link_to(__('Logout'), 'agentUser/logout'); ?></li>
 
-                    </ul>
+                    </ul><div class="clr"></div>  </div>
 <?php } ?>
-                <div class="clr"></div>
-            </div>
+                
+          
             <div id="content">
 <?php if ($sf_user->hasFlash('message')): ?>
                             <div id="info-message" class="grid_9 save-ok">
