@@ -364,10 +364,31 @@ a.userDelete, a.userCancel{
 .powered{
     font-size: 11px;
     float: right;
+
     margin-top: 10px;
    
 }
 .powered a{
     color: #716F70;
     text-decoration: none;
+
+}
+button#trigger_enddate{
+    background-image:url(../images/date.png) !important;
+    margin:0px;
+    padding:0px;
+    border:none !important;
+    width: 16px;
+    height: 16px;
+    vertical-align: middle !important
+}
+button#trigger_startdate{
+    background-image:url(../images/date.png) !important;
+    margin:0px;
+    padding:0px;
+    border:none !important;
+    width: 16px;
+    height: 16px;
+    vertical-align: middle !important;
+
 }

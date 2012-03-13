@@ -5,6 +5,33 @@
         <a href="<?php echo url_for('company/usage') . '?company_id=' . $company->getId(); ?>" class="external_link" target="_self"><?php echo __('Usage') ?></a>
         <a href="<?php echo url_for('company/paymenthistory') . '?company_id=' . $company->getId() . '&filter=filter' ?>" class="external_link" target="_self"><?php echo __('Payment History') ?></a>
     </div>
+
+            <div class="sf_admin_filters">
+            <form action="" id="searchform" method="POST" name="searchform">
+                <fieldset>
+                    <div class="form-row">
+                        <label><?php echo __('From');?>:</label>
+                        <div class="content">
+
+                            <?php echo input_date_tag('startdate', $fromdate, 'rich=true') ?>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <label><?php echo __('To');?>:</label>
+                        <div class="content">
+
+                            <?php echo input_date_tag('enddate', $todate, 'rich=true') ?>
+                        </div>
+                    </div>
+
+                </fieldset>
+
+                <ul class="sf_admin_actions">
+                   <li><input type="button" class="sf_admin_action_filter" value="reset" name="reset" onclick="document.location.href='<?PHP echo sfConfig::get('app_admin_url')."company/usage?company_id=". $company->getId();?>'"></li>
+                   <li><input type="submit" class="sf_admin_action_filter" value="filter" name="filter"></li>
+                </ul>
+            </form>
+        </div>
     <h1><?php echo __('Call History'); ?></h1>
     <table width="100%" cellspacing="0" cellpadding="2" class="tblAlign" border='0'>
 
