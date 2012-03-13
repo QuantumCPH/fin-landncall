@@ -31,7 +31,7 @@ h2{
     font-weight:bold;*/
 }
 .topNav{
-    width:558px;
+    width:501px;
     margin: 0 auto 52px;
 }
 
@@ -233,7 +233,7 @@ tr.odd{
     color:#3d3d3d;
     font-weight: normal;
     margin-top:34px;
-    margin-left:44px;
+    margin-left:33px;
     margin-bottom: 14px;
     text-align: left;
     font-size: 14px;
@@ -241,7 +241,7 @@ tr.odd{
 .bg-img .fieldName{
    color:#3d3d3d;
    text-align: left;
-   margin-left: 44px;
+   margin-left: 33px;
    font-size: 13px;
    font-weight: bold;
    margin-bottom:8px;
@@ -254,9 +254,11 @@ tr.odd{
 .bg-img .Inputfield #login_email,.bg-img .Inputfield #login_password{
     background: url('../images/field-img.png') no-repeat top;
     width: 331px;
-    height: 27px;
+     height: 25px;
+    line-height: 25px;
+    padding-left: 11px;
+    width: 320px;
     border:0px;
-    padding-left:18px;
 }
 .bg-img .submitButton{
     text-align: left;
@@ -268,7 +270,7 @@ tr.odd{
     height:27px;
     color:#ffffff;
     border:0px;
-    margin-left: 44px;
+    margin-left: 33px;
     font-weight: bold;
     text-align: center;
     padding-bottom: 3px;

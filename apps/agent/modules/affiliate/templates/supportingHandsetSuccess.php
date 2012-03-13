@@ -208,5 +208,5 @@
  </div>    
 <script language="javascript" type="text/javascript">
 	jq = jQuery.noConflict();
-	jq('table tr:not(:first-child):even').css('background-color', '#E8E7E8');
+	jq('table tr:not(:first-child):even').css('background-color', '#eef8bd');
 </script>
