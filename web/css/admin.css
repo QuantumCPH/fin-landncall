@@ -207,19 +207,19 @@ tr.odd{
    margin:0 auto 40px;
 }
 .bg-img .left{
-   background: url('../images/left-login-page-box.png') no-repeat left;
+   background: url('../images/left-login-page-box-admin.png') no-repeat left;
    float: left;
    width: 42px;
    height:327px;
 }
 .bg-img .right{
-   background: url('../images/right-login-page-box.png') no-repeat right;
+   background: url('../images/right-login-page-box-admin.png') no-repeat right;
    float: left;
    width: 42px;
    height:327px;
 }
 .bg-img .centerImg{
-  background: url('../images/center-login-page-box.png') repeat-x; 
+  background: url('../images/center-login-page-box-admin.png') repeat-x; 
   height:327px;
   float:left;
   width: 423px;
@@ -262,16 +262,19 @@ tr.odd{
     text-align: left;
 } 
 .bg-img .submitButton button{
-    background:url('../images/bg-login-btn.jpg') no-repeat;
+    /*background:url('../images/bg-login-btn.jpg') no-repeat;*/
+    background:url('../images/login-btn.png') no-repeat;
     width:79px;
     height:27px;
     color:#ffffff;
     border:0px;
     margin-left: 44px;
     font-weight: bold;
+    text-align: center;
+    padding-bottom: 3px;
 }
 .bg-img .submitButton button:hover{
-    background:url('../images/bg-login-btn_ol.jpg') no-repeat;
+    background:url('../images/login-btn-hover.png') no-repeat;
 }
 .bg-img .fieldName .fieldError {
     float: right;
@@ -355,4 +358,8 @@ a.userDelete, a.userCancel{
     font-size: 22px;
     font-weight: bold;
     margin: 20px 5px;
+}
+.powered{
+    font-size: 11px;
+    float: right;
 }
