@@ -74,10 +74,11 @@
             <div class="clr"></div>
          
   	</div>
-        <div id="slogan">
+      
+      <?php if($sf_user->isAuthenticated()): ?>
+              <div id="slogan">
            <h1><?php echo __('Admin Portal'); ?></h1>    
         </div> 
-      <?php if($sf_user->isAuthenticated()): ?>
      <div class="topNav" align="center">  
       <ul id="sddm">
              <li><a href="#"

@@ -89,23 +89,7 @@
 <?php echo image_tag('/images/zapna_logo_small.png'); // link_to(image_tag('/images/logo.gif'), '@homepage');  ?>
                 </div>
             </div>
-            <div id="slogan">
-                <h1><?php echo __('CRM/Billing/Agent Portal'); ?></h1>
-<?php if ($sf_user->getAttribute('username', '', 'agentsession')) { ?>
-                <div id="loggedInUser">
-                    <?php echo __('Logged in as:') ?><b>&nbsp;<?php echo $sf_user->getAttribute('username', '', 'agentsession') ?></b><br />
-                    <?php
-                    if ($agent_company) {
-                        if ($agent_company->getIsPrepaid()) {
- ?>
-                    <?php echo __('Your Balance is:') ?> <b><?php echo $agent_company->getBalance(); ?></b>
-                    <?php } ?>
-<?php } ?>
-                </div>
-<?php } ?>
-
-                <div class="clr"></div>
-            </div>
+            
 
             <?php
 //                $enableCountry = new Criteria();
@@ -145,6 +129,23 @@
                     //$routing = $sf_context->getInstance()->getRouting();
                     //echo $routing;
                 ?>
+                    <div id="slogan">
+                <h1><?php echo __('Agent Portal'); ?></h1>
+<?php if ($sf_user->getAttribute('username', '', 'agentsession')) { ?>
+                <div id="loggedInUser">
+                    <?php echo __('Logged in as:') ?><b>&nbsp;<?php echo $sf_user->getAttribute('username', '', 'agentsession') ?></b><br />
+                    <?php
+                    if ($agent_company) {
+                        if ($agent_company->getIsPrepaid()) {
+ ?>
+                    <?php echo __('Your Balance is:') ?> <b><?php echo $agent_company->getBalance(); ?></b>
+                    <?php } ?>
+<?php } ?>
+                </div>
+<?php } ?>
+
+                <div class="clr"></div>
+            </div>
                  <div id="menu">   <ul id="sddm">
                         <li>
                         <?php

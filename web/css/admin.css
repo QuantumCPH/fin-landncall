@@ -364,4 +364,10 @@ a.userDelete, a.userCancel{
 .powered{
     font-size: 11px;
     float: right;
+    margin-top: 10px;
+   
+}
+.powered a{
+    color: #716F70;
+    text-decoration: none;
 }

@@ -3,7 +3,7 @@
         <div class="left"></div>
         <div class="centerImg"> 
             <h1><?php echo __('Log in to account') ?></h1>
-            <h2><?php echo __("provide your email and password");?></h2>
+            <h2><?php echo __("Provide your email and password");?></h2>
             <?php echo $form->renderGlobalErrors() ?>
             <div class="fieldName"> 
               <?php echo $form['username']->renderLabel() ?>
@@ -27,7 +27,7 @@
                 <div class="clr"></div> 
             </div>
             <div class="submitButton">
-                 <button  type="submit"><?php echo __('login') ?></button>
+                 <button  type="submit"><?php echo __('Login') ?></button>
             </div>     
 
     <div class="clr"></div>
