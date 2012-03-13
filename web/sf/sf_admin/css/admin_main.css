@@ -184,7 +184,7 @@
 {
   margin-bottom: 3px;
   margin-top: 3px;
-  border: 1px solid #E8E7E8;
+  border: 1px solid #716F70;
   background-color: #E8E7E8;
 }
 
@@ -452,5 +452,6 @@ div .sf_admin_action_delete
 } 
 .UpdateBtn:hover{
     background: url("../images/login-button-hover.png") no-repeat scroll 0 0 transparent !important;    
-}  
+}
+
     

@@ -1,5 +1,16 @@
 <?php use_helper('I18N') ?>
 <?php use_helper('Number') ?>
+<?PHP
+if(isset($_POST['startdate']) && isset($_POST['enddate'])){
+    $fromdate=$_POST['startdate'];
+    $todate=$_POST['enddate'];
+}else{
+    $tomorrow1 = mktime(0, 0, 0, date("m"), date("d") - 15, date("Y"));
+    $fromdate = date("Y-m-d", $tomorrow1);
+    $todate = date("Y-m-d");
+}
+
+?>
 <div id="sf_admin_container">
     <div class="alert_bar">
         <?php echo __('Call history is updated after every 1 minutes.') ?>
@@ -26,7 +37,35 @@
                     <li><a class="external_link" href="allRegisteredCustomer"><?php echo __('View All Customer') ?></a></li>
                     <li><a class="external_link" href="paymenthistory?id=<?php echo $_REQUEST['id']; ?>"><?php echo __('Payment History') ?></a></li>
                     <li><a class="external_link"  href="customerDetail?id=<?php echo $_REQUEST['id']; ?>"><?php echo __('Customer Detail') ?></a></li>
-                </ul></div>
+                </ul>
+            </div>
+            <div class="sf_admin_filters">
+            <form action="" id="searchform" method="POST" name="searchform">
+                <fieldset>
+                    <div class="form-row">
+                        <label><?php echo __('From');?>:</label>
+                        <div class="content">
+
+                            <?php echo input_date_tag('startdate', $fromdate, 'rich=true') ?>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <label><?php echo __('To');?>:</label>
+                        <div class="content">
+
+                            <?php echo input_date_tag('enddate', $todate, 'rich=true') ?>
+                        </div>
+                    </div>
+
+                </fieldset>
+
+                <ul class="sf_admin_actions">
+                   <li><input type="button" class="sf_admin_action_filter" value="reset" name="reset" onclick="document.location.href='<?PHP echo sfConfig::get('app_admin_url')."customer/callhistory?id=". $_REQUEST['id'];?>'"></li>
+                   <li><input type="submit" class="sf_admin_action_filter" value="filter" name="filter"></li>
+                </ul>
+            </form>
+        </div>
+
             <h1><?php echo __('Call History') ?></h1>
             <table width="100%" cellspacing="0" cellpadding="2" class="tblAlign" border='0'>
 
@@ -43,12 +82,12 @@
             $amount_total = 0;
 
 
+            echo $fromdate;echo $todate;
 
-
-            $tomorrow1 = mktime(0, 0, 0, date("m"), date("d") - 15, date("Y"));
-            $fromdate = date("Y-m-d", $tomorrow1);
-            $tomorrow = mktime(0, 0, 0, date("m"), date("d") + 1, date("Y"));
-            $todate = date("Y-m-d", $tomorrow);
+//            $tomorrow1 = mktime(0, 0, 0, date("m"), date("d") - 15, date("Y"));
+//            $fromdate = date("Y-m-d", $tomorrow1);
+//            $tomorrow = mktime(0, 0, 0, date("m"), date("d") + 1, date("Y"));
+//            $todate = date("Y-m-d", $tomorrow);
 
 
 
