@@ -72,7 +72,11 @@
   		<?php echo image_tag('/images/zapna_logo_small.png') ?>
             </div>       
             <div class="clr"></div>
+         
   	</div>
+        <div id="slogan">
+           <h1><?php echo __('Admin Portal'); ?></h1>    
+        </div>    
         <div class="clr"></div>
       <?php if($sf_user->isAuthenticated()): ?>
      <div class="topNav" align="center">  

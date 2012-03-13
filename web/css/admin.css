@@ -16,7 +16,7 @@ h2{
 #header{
     width:75%;
     height: 107px;
-    margin:0 auto 26px;
+    margin:0 auto 0px;
 }
 .logo{
     padding-top: 13px;
@@ -345,4 +345,14 @@ a.userDelete, a.userCancel{
     margin-right: 0;
     padding: 6px 5px;
     text-decoration: none !important;
+}
+#slogan {
+    color: #ADCA30;
+    margin: 0 auto;
+    width: 1010px;
+}
+#slogan h1{
+    font-size: 22px;
+    font-weight: bold;
+    margin: 20px 5px;
 }
