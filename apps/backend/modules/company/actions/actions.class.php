@@ -388,7 +388,7 @@ class companyActions extends sfActions {
         $this->todate = date("Y-m-d");
 
     }
-        //$this->callHistory = CompanyEmployeActivation::callHistory($this->company, $fromdate, $todate);
+        $this->callHistory = CompanyEmployeActivation::callHistory($this->company, $this->fromdate, $this->todate);
     }
 
     public function executeRefill(sfWebRequest $request) {
