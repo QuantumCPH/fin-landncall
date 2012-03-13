@@ -96,5 +96,5 @@ all:
 #
 #    # i18n
 #   default_culture:        en        # Default user culture
-    default_culture:        de_DE
+    default_culture:        en
     charset:                utf-8
