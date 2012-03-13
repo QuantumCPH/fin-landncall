@@ -54,9 +54,9 @@ h2{
     float: left;
     font: bold 11px arial;
     background:url('../images/li-bg.png') repeat-x top left;
-    border-left: 1px solid #7F9910;
-    border-top: 1px solid #7F9910;
-    border-bottom: 1px solid #7F9910;
+    border-left: 1px solid #8b898a;
+    border-top: 1px solid #8b898a;
+    border-bottom: 1px solid #8b898a;
 }
 #sddm li.last
 {	
@@ -71,7 +71,7 @@ h2{
 	text-decoration: none}
 
 #sddm li a:hover
-{	background: #ADCA30;
+{	background: #716F70;
         color:#ffffff;
 }
 
@@ -81,7 +81,7 @@ h2{
 	margin: 0;
 	padding: 0;
 	background: #ADCA30;
-	border: 1px solid #7F9910;
+	border: 1px solid #8b898a;
 }
 
 #sddm div a
@@ -93,24 +93,24 @@ h2{
         white-space: nowrap;
         text-align: left;
         text-decoration: none;
-        background: #ADCA30;
+        background: #716F70;
         color: #FFFFFF;
         font: 11px arial;
 }
 #sddm div a:hover
 {	background: #FFFFFF;
-        color: #ADCA30;
+        color: #716F70;
 }
 #sddm div a.subSelect
 {	background: #FFFFFF;
-        color: #ADCA30;
+        color: #716F70;
 }
 #sf_admin_container{
     margin:0 auto;
     width:75%;
 }
 #sddm li a.current{
-    background: #B1C844 !important;
+    background: #716F70 !important;
     color: #ffffff !important;
 }
 a.label{

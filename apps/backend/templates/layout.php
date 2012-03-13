@@ -326,10 +326,11 @@
           	
         </ul>
              </div>
-      <?php endif; ?> 
-    <br />
+            <br />
          
       <div class="clr"></div>
+      <?php endif; ?> 
+    
     <?php echo $sf_content ?>
     </div> <!--  end wrapper -->
 
