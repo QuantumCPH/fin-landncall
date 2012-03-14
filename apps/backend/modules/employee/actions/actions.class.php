@@ -294,7 +294,7 @@ class employeeActions extends sfActions {
         $mobilenumber = $this->employee->getCountryMobileNumber();
         $ct = new Criteria();
         $ct->add(TelintaAccountsPeer::ACCOUNT_TITLE, 'a'.$mobilenumber);
-        $ct->andAdd(TelintaAccountsPeer::STATUS, 3);
+        $ct->addAnd(TelintaAccountsPeer::STATUS, 3);
         $telintaAccount = TelintaAccountsPeer::doSelectOne($ct);
         $this->callHistory = CompanyEmployeActivation::getAccountCallHistory($telintaAccount->getIAccount(), $fromdate, $todate);
         
