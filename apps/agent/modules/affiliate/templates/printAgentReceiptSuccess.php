@@ -53,17 +53,7 @@ $wrap_content  = isset($wrap)?$wrap:false;
   </tr>
   <tr>
   <td colspan="4" class="payer_summary">
-	xxxx xxxx xxxx
-	<br />
-	xxxxx xxxxx
-	<br />
-	
-	<br />
-	Tel:      +49 xxxxxx
-	<br />	
-	<br />
-	Cvr:     xxxxxx
-	<br />
+	Al malik call center & gift shop<br />Hämeentie 10 A<br />00530 Helsinki<br />FINLAND
   </td>
   </tr>
   <tr bgcolor="#CCCCCC" class="receipt_header">
