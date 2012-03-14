@@ -128,33 +128,13 @@
         $accountInfo = CompanyEmployeActivation::getAccountInfo($telintaAccount->getIAccount());
         $telintaGetBalance = $accountInfo->account_info->balance;
 
-//$telintaGetBalance;
         $telintaGetBalance1=0;
-//        $telintaGetBalance1 = file_get_contents('https://mybilling.telinta.com/htdocs/zapna/zapna.pl?action=getbalance&name=cb'.$mobileID.'&type=account');
-//        $telintaGetBalance1 = str_replace('success=OK&Balance=', '', $telintaGetBalance1);
-//        $telintaGetBalance1 = str_replace('-', '', $telintaGetBalance1);
-        //$telintaGetBalance;
 
-//         $regtype=$employee->getRegistrationType();
         $telintaGetBalancerese=0;
-//        if(isset($regtype) && $regtype==1){
-//        $voip = new Criteria();
-//
-//        $voip->add(SeVoipNumberPeer::CUSTOMER_ID, $employee->getCountryMobileNumber());
-//        $voip->addAnd(SeVoipNumberPeer::IS_ASSIGNED, 1);
-//        $voipv = SeVoipNumberPeer::doSelectOne($voip);
-//
-//        if(isset ($voipv)){
-//
-//       $resenummer=$voipv->getNumber();
-//       $resenummer = substr($resenummer, 2);
-//       $telintaGetBalancerese = file_get_contents('https://mybilling.telinta.com/htdocs/zapna/zapna.pl?action=getbalance&name='.$resenummer.'&type=account');
-//       $telintaGetBalancerese = str_replace('success=OK&Balance=', '', $telintaGetBalancerese);
-//       $telintaGetBalancerese = str_replace('-', '', $telintaGetBalancerese);
-//
-//        }
-//        }
-      echo  $balnc=(float)$telintaGetBalance+(float)$telintaGetBalance1+($telintaGetBalancerese>0)?(float)$telintaGetBalancerese:0;
+        
+        $telintaGetBalancerese = ($telintaGetBalancerese>0)?(float)$telintaGetBalancerese:0;
+
+      echo  $balnc = (float)$telintaGetBalance + (float)$telintaGetBalance1 + $telintaGetBalancerese;
           echo "&euro;";
                                                 ?></td>
 
