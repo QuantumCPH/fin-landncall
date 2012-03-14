@@ -106,6 +106,7 @@ class AgentCompany extends BaseAgentCompany
        $c = new Criteria();
        $c->add(TransactionPeer::AGENT_COMPANY_ID,$this->getId());
        $c->add(TransactionPeer::DESCRIPTION,'Registration' );
+        $c->addAnd(TransactionPeer::TRANSACTION_STATUS_ID,'3' );
        $transactions=TransactionPeer::doSelect($c);
        $sum=0.00;
        $per=0.00;
