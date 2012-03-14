@@ -82,7 +82,7 @@ if(isset($_POST['startdate']) && isset($_POST['enddate'])){
             $amount_total = 0;
 
 
-            echo $fromdate;echo $todate;
+           // echo $fromdate;echo $todate;
 
 //            $tomorrow1 = mktime(0, 0, 0, date("m"), date("d") - 15, date("Y"));
 //            $fromdate = date("Y-m-d", $tomorrow1);
