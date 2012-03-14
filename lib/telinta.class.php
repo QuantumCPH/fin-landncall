@@ -180,7 +180,7 @@ class Telienta {
                             'password' => 'asdf1asd',
                             'h323_password' => 'asdf1asd',
                             'activation_date' => date('Y-m-d'),
-                            'batch_name' => $customer->getUniqueid(),
+                            'batch_name' => "FLB2C".$customer->getUniqueid(),
                             'follow_me_enabled' => $followMeEnabled
                             )));
         } catch (SoapFault $e) {
