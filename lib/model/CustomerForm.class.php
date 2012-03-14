@@ -168,13 +168,13 @@ class CustomerForm extends BaseCustomerForm
 			new sfValidatorRegex(
 				array(
 					'pattern'=>$poboxPattern,
-                                        'max_length'=>5,
-                                        'min_length' =>4 ,
+                                        'max_length'=>2,
+                                        'min_length' =>2 ,
 
 				),
                                 array(
-                                        'max_length' => '"%value%" is too long 5 characters max.',
-                                        'min_length' => '"%value%" is too short 4 characters min.',
+                                        'max_length' => '"%value%" is too long 2 characters max.',
+                                        'min_length' => '"%value%" is too short 2 characters min.',
                                         'invalid'=>sfContext::getInstance()->getI18N()->__('Please enter a valid postal code with 4 or 5 digits.'))
 			)
 		)
