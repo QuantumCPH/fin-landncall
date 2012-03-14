@@ -16,9 +16,9 @@ class CompanyEmployeActivation {
     //put your code here
 
 
-    private static $iParent = 74137;                //Company Resller ID on Telinta
+    private static $iParent = 77415;                //Company Resller ID on Telinta
     private static $currency = 'EUR';
-    private static $a_iProduct = 10281;
+    private static $a_iProduct = 10786;
     private static $CBProduct = '';
     private static $VoipProduct = '';
     private static $telintaSOAPUrl = "https://mybilling.telinta.com";

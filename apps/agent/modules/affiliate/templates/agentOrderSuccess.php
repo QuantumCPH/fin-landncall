@@ -30,7 +30,6 @@
             <td><?php echo $agentOrder->getAmount() ?></td>
             <td><a href="<?php echo url_for('affiliate/printAgentReceipt?aoid='.$agentOrder->getId(), true) ?>" target="_blank"><?php echo __('Receipt');?> </a>
             </td>
-            
         </tr>
 
         <?php } ?>
