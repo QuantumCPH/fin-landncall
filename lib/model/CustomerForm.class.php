@@ -161,21 +161,21 @@ class CustomerForm extends BaseCustomerForm
         }else{
             $po_boxPattern = sfContext::getInstance()->getI18N()->__("Please enter a valid postal code. E.g. 33444");
                    }
-		$poboxPattern = "/^[0-9\s]{4,5}$/";
+		$poboxPattern = "/^[0-9\s]{2,2}$/";
 	$this->validatorSchema['po_box_number'] = new sfValidatorAnd(
 		array(
 			 $this->validatorSchema['po_box_number'],
 			new sfValidatorRegex(
 				array(
 					'pattern'=>$poboxPattern,
-                                        'max_length'=>5,
-                                        'min_length' =>4 ,
+                                        'max_length'=>2,
+                                        'min_length' =>2,
 
 				),
                                 array(
-                                        'max_length' => '"%value%" is too long 5 characters max.',
-                                        'min_length' => '"%value%" is too short 4 characters min.',
-                                        'invalid'=>sfContext::getInstance()->getI18N()->__('Please enter a valid postal code with 4 or 5 digits.'))
+                                        'max_length' => '"%value%" is too long 2 characters max.',
+                                        'min_length' => '"%value%" is too short 2 characters min.',
+                                        'invalid'=>sfContext::getInstance()->getI18N()->__('Please enter a valid postal code with 2 digits.'))
 			)
 		)
 	);
