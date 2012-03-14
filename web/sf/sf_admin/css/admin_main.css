@@ -4,7 +4,7 @@
 #sf_admin_container a:link, #sf_admin_container a:visited
 {
   text-decoration: none;
-  color:#FFFFFF;
+  color:#000;
 }
 
 #sf_admin_container a:hover
