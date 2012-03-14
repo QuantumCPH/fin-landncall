@@ -415,7 +415,7 @@ jQuery('#sf_admin_edit_form').validate({
                         jQuery('#error').val("error");
                 }else{
 		//check the username exists or not from ajax
-		jQuery.post("https://landncall.zerocall.com/backend.php/company/vat",{ vat_no:val } ,function(data)
+		jQuery.post("<?PHP echo sfConfig::get('app_admin_url')?>company/vat",{ vat_no:val } ,function(data)
         {//alert(data);
 		  if(data=='no') //if username not avaiable
 		  {
@@ -463,7 +463,7 @@ jQuery('#sf_admin_edit_form').validate({
                         jQuery('#error').val("error");
                 }else{
 
-		jQuery.post("https://landncall.zerocall.com/backend.php/employee/mobile",{ mobile_no: val} ,function(data)
+		jQuery.post("<?PHP echo sfConfig::get('app_admin_url')?>employee/mobile",{ mobile_no: val} ,function(data)
         {
 		  if(data=='no') //if username not avaiable
 		  {
