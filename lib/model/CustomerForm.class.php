@@ -175,7 +175,7 @@ class CustomerForm extends BaseCustomerForm
                                 array(
                                         'max_length' => '"%value%" is too long 2 characters max.',
                                         'min_length' => '"%value%" is too short 2 characters min.',
-                                        'invalid'=>sfContext::getInstance()->getI18N()->__('Please enter a valid postal code with 4 or 5 digits.'))
+                                        'invalid'=>sfContext::getInstance()->getI18N()->__('Please enter a valid postal code with 2 digits.'))
 			)
 		)
 	);
