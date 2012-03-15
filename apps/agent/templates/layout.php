@@ -198,7 +198,7 @@
                             }
                             ?></li>
     <!--                    <li><?php //echo link_to(__('Package Conversion'), 'affiliate/conversionform'); ?></li>-->
-                        <li><?php
+<!--                        <li><?php
                             if ($modulName == "affiliate" && $actionName == 'supportingHandset') {
                                 echo link_to(__('Supporting Handsets'), 'affiliate/supportingHandset', array('class' => 'current'));
                             } else {
@@ -218,7 +218,7 @@
                             } else {
                                 echo link_to(__('FAQ'), 'affiliate/faq');
                             }
-                            ?></li>
+                            ?></li>-->
 
                         <li class="last"><?php echo link_to(__('Logout'), 'agentUser/logout'); ?></li>
 
