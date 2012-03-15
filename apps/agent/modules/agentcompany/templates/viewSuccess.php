@@ -21,11 +21,6 @@
     
     <?php endif; ?>
 <?php endif; ?>
-<!--<a href="#" onclick="showBank()" title="bank info"><?php echo __('Bank info') ?></a>
-&nbsp; | &nbsp;
-<a href="#" onclick="showCommission()" title="commission info"><?php echo __('Commission info') ?></a>
-&nbsp; | &nbsp;
--->
  <?php if($agent_company->getIsPrepaid()): ?>
  <?php echo link_to(__('Payment History'), 'affiliate/paymentHistory',array('class'=>'external_link')) ?>
 <?php endif; ?>

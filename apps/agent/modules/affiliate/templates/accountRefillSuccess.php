@@ -69,7 +69,25 @@
 
 
 </script>
+<?php echo link_to(__('Company Info'), 'agentcompany/view',array('class'=>'external_link')) ?>
 
+<?php if($sf_user->isAuthenticated()): ?>
+     <?php if($agent_company->getIsPrepaid()): ?>
+
+        <?php echo link_to(__('Account Recharge'), 'affiliate/accountRefill',array('class'=>'external_link')) ?>
+
+
+
+        <?php echo link_to(__('Recharge Receipts'), 'affiliate/agentOrder',array('class'=>'external_link')) ?>
+
+
+
+    <?php endif; ?>
+<?php endif; ?>
+ <?php if($agent_company->getIsPrepaid()): ?>
+ <?php echo link_to(__('Payment History'), 'affiliate/paymentHistory',array('class'=>'external_link')) ?>
+<?php endif; ?>
+<br/>
 <div id="sf_admin_container"><h1><?php echo __('Account Refill') ?></h1></div>
         
   <div class="borderDiv"> 
