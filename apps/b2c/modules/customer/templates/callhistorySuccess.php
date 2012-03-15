@@ -36,7 +36,7 @@
                                 <td class="title" ><?php echo __('Phone Number') ?></td>
                                 <td class="title"><?php echo __('Duration') ?></td>
                                 <td class="title"><?php echo __('VAT') ?></td>
-                                <td class="title"><?php echo __('Cost <small>(Incl. VAT)</small>') ?></td>
+                                <td class="title"><?php echo __('Cost') ?></td>
                                 <td class="title"><?php echo __('Call Type') ?></td>
                             </tr>
 
@@ -76,7 +76,7 @@
                                 <tr>
                                     <td><?php echo $xdr->connect_time; ?></td>
                                     <td><?php echo $xdr->CLD; ?></td>
-                                    <td><?php echo number_format($xdr->charged_quantity / 60, 2); ?></td>
+                                    <td><?php  echo  date('i:s',$xdr->charged_quantity); ?></td>
                                     <td><?php echo number_format($xdr->charged_amount / 4, 2); ?></td>
                                     <td><?php echo number_format($xdr->charged_amount, 2);
                                 $amount_total+= number_format($xdr->charged_amount, 2); ?> &euro;</td>
