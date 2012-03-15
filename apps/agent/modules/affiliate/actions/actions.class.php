@@ -1151,4 +1151,7 @@ class affiliateActions extends sfActions {
         $this->redirect($pathArray['HTTP_REFERER']);
 
     }
+    public function executeReject(sfWebRequest $request){
+       
+    }
 }

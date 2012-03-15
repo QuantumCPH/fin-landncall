@@ -100,7 +100,7 @@
                 <input type="hidden" name="test" value="yes" />
                 <input type="hidden" name="account" value="YTIP" />
                 <input type="hidden" name="status" value="" />
-                <input type="hidden" name="cancelurl" value="<?php echo sfConfig::get('app_main_url') . "affiliate/" ?>thankyou/?accept=cancel" />
+                <input type="hidden" name="cancelurl" value="<?php echo sfConfig::get('app_main_url') . "affiliate/" ?>reject" />
                 <input type="hidden" name="callbackurl" value="<?php echo sfConfig::get('app_main_url') . "affiliate/" ?>accountRefill" />
                 <input type="hidden" name="accepturl" id="accepturl"  value="<?php echo sfConfig::get('app_main_url') . "affiliate/" ?>thankyou?accept=yes&subscriptionid=&orderid=<?php echo $agent_order->getAgentOrderId(); ?>&amount=50000">
                 <input type="submit" value="<?php echo __('Recharge');?>" style="margin-left:26px !important;margin-top:10px;" />

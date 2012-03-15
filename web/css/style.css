@@ -231,6 +231,8 @@ margin-bottom:10px;
     width: 136px;
     white-space:nowrap;  
     margin: 20px 5px;
+    font-weight: bold;
+    font-size: 14px;
 }
 .clr{
     clear:both;
