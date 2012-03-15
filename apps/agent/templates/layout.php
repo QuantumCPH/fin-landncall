@@ -117,7 +117,7 @@
                 
                     <!--                <h1>menu</h1>-->
                 <?php
-                if ($sf_user->isAuthenticated()) {
+                if ($sf_user->isAuthenticated() && $sf_user->getAttribute('username', '', 'agentsession')!='') {
                     $modulName = $sf_context->getModuleName();
                     $actionName = $sf_context->getActionName();
                     // print_r($request->getPathInfoArray());
