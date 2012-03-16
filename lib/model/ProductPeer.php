@@ -7,7 +7,7 @@ class ProductPeer extends BaseProductPeer
 		return array(100, 200, 300);
 	}
 	public static function getRefillHashChoices(){
-		return array('100' => 100, '200' => 200, '500'=> 500);
+		return array('10' => 10, '20' => 20, '30' => 30, '50'=> 50);
 	}
 	
 	public static function getAutoRefillLowerLimitHashChoices()
@@ -16,8 +16,4 @@ class ProductPeer extends BaseProductPeer
 		 
 		return array_combine($limits, $limits);
 	}
-        public static function getRefillCompany(){
-		return array('10' => 10, '20' => 20, '30' => 30, '50'=> 50);
-	}
-        
 }
