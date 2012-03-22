@@ -172,6 +172,12 @@
                       }else{
                         echo link_to(__('Agent Company Refil'), 'agent_company/selectCompany');
                       }?>
+                       <?php
+                      if($actionName=="selectPCompany" && $modulName=="agent_company"){
+                        echo link_to(__('Agent Company Payment History'), 'agent_company/selectPCompany', array('class'=>'subSelect'));
+                      }else{
+                        echo link_to(__('Agent Company Payment History'), 'agent_company/selectPCompany');
+                      }?>
 
 
                 </div>

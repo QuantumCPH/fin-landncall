@@ -31,6 +31,9 @@ $c = new Criteria();
 //        }
 
      }
+
+
+
     public function executeCountrycity($request){
 
 		$this->country_id = 2;
@@ -279,7 +282,7 @@ public function executeNewsEdit(sfWebRequest $request)
             $remainingbalance = $agent->getBalance();
             $aph = new AgentPaymentHistory();
             $aph->setAgentId($agent_order->getAgentCompanyId());
-            $aph->setExpeneseType(3);
+            $aph->setExpeneseType(8);
             $aph->setAmount($amount);
             $aph->setRemainingBalance($remainingbalance);
             $aph->save();
@@ -294,7 +297,48 @@ public function executeNewsEdit(sfWebRequest $request)
 
 
 
+    public function executeSelectPCompany($request){
 
+
+
+       // $id = $request->getParameter('id');
+
+      //  $this->form = new AgentCommissionForm();
+$c = new Criteria();
+                $c->add(AgentCompanyPeer::IS_PREPAID,1);
+		$Lcompanies = AgentCompanyPeer::doSelect($c);
+                $this->Lcompanies=$Lcompanies;
+//        if($id){
+//           $this->form->setDefault('agent_company_id', $id);
+//        }
+
+     }
+
+
+
+  public function executeAgentCompanyPayment(sfWebrequest $request) {
+
+      $agentId=0;
+      $c = new Criteria();
+                $c->add(AgentCompanyPeer::IS_PREPAID,1);
+		$Lcompanies = AgentCompanyPeer::doSelect($c);
+                $this->Lcompanies=$Lcompanies;
+       $exptype = $request->getParameter('expense');
+         $agentId = $request->getParameter('agent_company_id');
+       $this->agentidd=$agentId;
+        $ca = new Criteria();
+         if($agentId>0){
+        $ca->add(AgentPaymentHistoryPeer::AGENT_ID,$agentId);
+         }
+        if($exptype==1){
+          $ca->add(AgentPaymentHistoryPeer::EXPENESE_TYPE,8);
+        }
+        $agent = AgentPaymentHistoryPeer::doSelect($ca);
+          if($agentId>0){
+         $this->agent_company = AgentCompanyPeer::retrieveByPK($agentId);
+          }
+        $this->agents = $agent;
+    }
 
 
 
