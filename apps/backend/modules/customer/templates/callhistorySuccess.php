@@ -80,7 +80,7 @@ if(isset($_POST['startdate']) && isset($_POST['enddate'])){
                 </tr>
         <?php
             $amount_total = 0;
-
+            $counters=0;
 
            // echo $fromdate;echo $todate;
 
@@ -113,7 +113,7 @@ if(isset($_POST['startdate']) && isset($_POST['enddate'])){
 
 
 <?php
-                $counters++;
+      $counters++;
 ?>
 
 
@@ -146,7 +146,7 @@ if(isset($_POST['startdate']) && isset($_POST['enddate'])){
 ?>
 
 
-<?php if (count($callRecords) == 0): ?>
+<?php if (count($tilentaCallHistryResult->xdr_list) == 0): ?>
                 <tr>
                     <td colspan="6"><p><?php echo __('There are currently no call records to show.') ?></p></td>
             </tr>

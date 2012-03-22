@@ -14,6 +14,23 @@ class agent_companyActions extends autoagent_companyActions
          public function handleErrorSave() {
      $this->forward('agent_company','edit');
   }
+
+    public function executeSelectCompany($request){
+
+
+
+       // $id = $request->getParameter('id');
+
+      //  $this->form = new AgentCommissionForm();
+$c = new Criteria();
+                $c->add(AgentCompanyPeer::IS_PREPAID,1);
+		$Lcompanies = AgentCompanyPeer::doSelect($c);
+                $this->Lcompanies=$Lcompanies;
+//        if($id){
+//           $this->form->setDefault('agent_company_id', $id);
+//        }
+
+     }
     public function executeCountrycity($request){
 
 		$this->country_id = 2;
@@ -225,6 +242,60 @@ public function executeNewsEdit(sfWebRequest $request)
 
 
 }
+
+    public function executeRefilAgentCompany($request){
+        
+     
+   $agentId = $request->getParameter('agent_company_id');
+   $amount = $request->getParameter('refill_amount');
+
+  $c = new Criteria();
+            $agent_order = new AgentOrder();
+            $agent_order->setAgentCompanyId($agentId);
+            $agent_order->setStatus('1');
+            $agent_order->save();
+
+            $agent_order->setAgentOrderId('a0' . $agent_order->getId());
+            $agent_order->save();
+
+ $order_id =  $agent_order->getAgentOrderId();
+       
+        if ($order_id and $amount) {
+            $c = new Criteria();
+            $c->add(AgentOrderPeer::AGENT_ORDER_ID, $order_id);
+            $c->add(AgentOrderPeer::STATUS, 1);
+            $agent_order = AgentOrderPeer::doSelectOne($c);
+              $agent_order->setAmount($amount);
+            $agent_order->setOrderDescription('agent Refill by admin');
+            $agent_order->setStatus(3);
+            $agent_order->save();
+
+            $agent = AgentCompanyPeer::retrieveByPK($agent_order->getAgentCompanyId());
+            $agent->setBalance($agent->getBalance() + ($amount));
+            $agent->save();
+            $this->agent = $agent;
+
+            $amount = $amount;
+            $remainingbalance = $agent->getBalance();
+            $aph = new AgentPaymentHistory();
+            $aph->setAgentId($agent_order->getAgentCompanyId());
+            $aph->setExpeneseType(3);
+            $aph->setAmount($amount);
+            $aph->setRemainingBalance($remainingbalance);
+            $aph->save();
+
+            $this->getUser()->setFlash('message', $this->getContext()->getI18N()->__('Your Selected Agent Company is Refill Successful ') . $amount . $this->getContext()->getI18N()->__(' EURO is approved'));
+            emailLib::sendAdminRefilEmail($this->agent, $agent_order);
+            $this->redirect('agent_company/index');
+
+        }
+          return sfView::NONE;
+     }
+
+
+
+
+
 
 
 }

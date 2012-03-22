@@ -165,6 +165,15 @@
                       }else{
                         echo link_to(__('Agent Commission Package'), 'agent_commission_package/index');
                       }?>
+
+                      <?php
+                      if($actionName=="selectCompany" && $modulName=="agent_company"){
+                        echo link_to(__('Agent Company Refil'), 'agent_company/selectCompany', array('class'=>'subSelect'));
+                      }else{
+                        echo link_to(__('Agent Company Refil'), 'agent_company/selectCompany');
+                      }?>
+
+
                 </div>
             </li>
             <li>
