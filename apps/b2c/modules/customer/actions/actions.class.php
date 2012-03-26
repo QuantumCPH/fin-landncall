@@ -16,7 +16,7 @@ require_once(sfConfig::get('sf_lib_dir') . '/telinta.class.php');
  */
 class customerActions extends sfActions {
   private function getTargetUrl() {
-        return sfConfig::get('app_main_url');
+        return sfConfig::get('app_customer_url');
     }
 
 
