@@ -198,18 +198,18 @@
                     }
                     ?>
                     <?php 
-                    if($actionName=='list' && $modulName=="faqs"){
-                        echo link_to(__('FAQ'), 'faqs/index', array('class'=>'subSelect'));
-                    }else{
-                        echo link_to(__('FAQ'), 'faqs/index');
-                    }
+//                    if($actionName=='list' && $modulName=="faqs"){
+//                        echo link_to(__('FAQ'), 'faqs/index', array('class'=>'subSelect'));
+//                    }else{
+//                        echo link_to(__('FAQ'), 'faqs/index');
+//                    }
                     ?>
                     <?php 
-                    if($actionName=='index' && $modulName=="userguide"){
-                        echo link_to(__('User Guide'), 'userguide/index', array('class'=>'subSelect'));
-                    }else{
-                        echo link_to(__('User Guide'), 'userguide/index');
-                    }?>
+//                    if($actionName=='index' && $modulName=="userguide"){
+//                        echo link_to(__('User Guide'), 'userguide/index', array('class'=>'subSelect'));
+//                    }else{
+//                        echo link_to(__('User Guide'), 'userguide/index');
+//                    }?>
 
                 </div>
             </li>
