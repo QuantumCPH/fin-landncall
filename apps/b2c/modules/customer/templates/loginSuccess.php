@@ -13,7 +13,7 @@
 	<div id="login-modal" style="background-repeat: repeat-x; width: 470px; margin-top: 16px; background: none;">
 	<div class="login-left">
 	<h4  style="text-align:left;"><?php echo __('Log into your pages') ?></h4>
-	<form method="post" id="login_form" action="<?php echo $target; ?>/customer/login">
+	<form method="post" id="login_form" action="<?php echo $target; ?>customer/login">
 	<label  style="text-align:left;"><?php echo __('Enter cell phone number') ?></label><br />
 	<input type="text"  class="input"  name="mobile_number" id="mobile_number" />
 	<p style="color: red; margin-bottom:1px; position: relative; top: -2px;">
