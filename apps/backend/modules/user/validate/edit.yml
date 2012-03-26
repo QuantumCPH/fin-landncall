@@ -10,7 +10,7 @@ fields:
   user{password}:
     required:
       msg:              The user password cannot be left blank.
-  user{role_id}:
-    required:
-      msg:              The user role cannot be left blank.
+  #user{role_id}:
+  #  required:
+   #   msg:              The user role cannot be left blank.
 
