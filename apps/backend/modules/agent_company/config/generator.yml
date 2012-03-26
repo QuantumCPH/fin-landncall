@@ -14,6 +14,10 @@ generator:
       fields:
          enablecountry: {name: Country}
          cvr_number: {name: Vat Number}
+      actions: 
+        _list: ~
+        _save: ~
+        _save_and_add: ~
 
     list:
          
@@ -27,5 +31,5 @@ generator:
       max_per_page: 500
       object_actions:
         _edit: ~
-        _delete: ~
+        #_delete: ~
       #  viewDetail : {label: view details, action: view}
