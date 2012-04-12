@@ -163,7 +163,7 @@ $wrap_content  = isset($wrap)?$wrap:false;
             echo $recepient_agentRec->getPostCode()." ".$recepient_agentRec->getCity()."<br />";
             echo $recepient_agentRec->getCountry();
           }else{
-            echo __('Al malik call center & gift shop<br />Hämeentie 10 A<br />00530 Helsinki<br />FINLAND');   
+           // echo __('Al malik call center & gift shop<br />Hämeentie 10 A<br />00530 Helsinki<br />FINLAND');   
           }
         ?>
     </td>

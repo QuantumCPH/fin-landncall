@@ -124,7 +124,7 @@ class affiliateActions extends sfActions {
             $c = new Criteria();
             $c->add(AgentCompanyPeer::ID, $agent_company_id);
             $this->recepient_agentRec = AgentCompanyPeer::doSelectOne($c);
-            //echo $this->recepient_agentRec->getName();
+            echo $this->recepient_agentRec->getName();
             $recepient_agent_name = AgentCompanyPeer::doSelectOne($c)->getName();
         }else{
             $recepient_agent_name = '';
@@ -147,6 +147,7 @@ class affiliateActions extends sfActions {
                 'agent_name' => $recepient_agent_name,
                 'vat' => $vat,
                 'wrap'=>false,
+                'recepient_agentRec'=>$this->recepient_agentRec,
             ));
         }
         return sfView::NONE;
