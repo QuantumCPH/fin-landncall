@@ -124,7 +124,7 @@ class affiliateActions extends sfActions {
             $c = new Criteria();
             $c->add(AgentCompanyPeer::ID, $agent_company_id);
             $this->recepient_agentRec = AgentCompanyPeer::doSelectOne($c);
-            echo $this->recepient_agentRec->getName();
+           // $this->recepient_agentRec->getName();
             $recepient_agent_name = AgentCompanyPeer::doSelectOne($c)->getName();
         }else{
             $recepient_agent_name = '';
