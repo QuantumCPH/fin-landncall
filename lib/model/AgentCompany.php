@@ -173,7 +173,14 @@ class AgentCompany extends BaseAgentCompany
      * 
      */
 
-
+   public function getCountry(){
+       $cc = new Criteria();
+       $cc->add(EnableCountryPeer::ID, $this->getCountryId());
+       $cc = EnableCountryPeer::doSelectOne($cc);
+       $country_name = $cc->getName();
+       
+       return $country_name;
+   }
   
    
     
