@@ -14,7 +14,7 @@
 
     <?php } ?></select><br/>
  <label for="agent_commission_agent_company_id">Refill By Admin</label><input type="checkbox" value="1" name="expense"><br/><br/>
-    <input type="submit" name="Agent Company" value="Agent Company Payment History">
+    <input type="submit" name="Agent Company" value="Agent Company Payment History" />
 
 
 
