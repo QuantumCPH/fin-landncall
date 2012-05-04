@@ -55,6 +55,12 @@
     if($expensetype==2 || $expensetype==4){  echo __("Customer Refill");  }
     if($expensetype==3){  echo __("Agent Account Refill");  }
       if($expensetype==8){  echo __("Agent Account Refill By Admin");  }
+      if($expensetype==9){
+        $ctd = new Criteria();
+        $ctd->add(TransactionDescriptionPeer::ID,$agent->getOrderDescription());        
+        $tdd = TransactionDescriptionPeer::doSelectOne($ctd);
+        echo $tdd->getTitle();        
+      }
      ?></td>
   <td><?php  echo $agent->getAmount();   ?></td>
     <td><?php  echo $agent->getRemainingBalance();  ?></td>

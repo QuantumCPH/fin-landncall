@@ -86,20 +86,16 @@
             </td>
             <td><?php  echo $agent_company->getCvrNumber();   ?></td>
             <?}?>
-            <td><?php 
-               $expensetype=$agent->getExpeneseType(); 
-                if($expensetype==1){  echo __("Customer Registration");  }
-                if($expensetype==2 || $expensetype==4){  echo __("Customer Refill");  }
-                if($expensetype==3){  echo __("Agent Account Refill");  }
-                if($expensetype==8){  echo __("Agent Account Refill By Admin");  }
-                if($expensetype==9 && $agent->getOrderDescription()){
-                    $c = new Criteria();
-                    $c->add(TransactionDescriptionPeer::ID,$agent->getOrderDescription());
-                    $transaction_desc = TransactionDescriptionPeer::doSelectOne($c);
-                    echo $transaction_desc->getTitle();
-                }
-                
-            ?></td>
+            <td>
+             <?php
+             if($agent->getOrderDescription()){
+                $c = new Criteria();
+                $c->add(TransactionDescriptionPeer::ID,$agent->getOrderDescription());
+                $transaction_desc = TransactionDescriptionPeer::doSelectOne($c);
+                echo $transaction_desc->getTitle();
+             }
+            ?> 
+            </td>
             <td><?php  echo $agent->getAmount();   ?></td>
             <td><a href="<?php echo url_for(sfConfig::get('app_admin_url').'agent_company/printAgentReceipt?aoid='.$agent->getId(), true) ?>"><img alt="view Detail" title="view Detail" src="../../sf/sf_admin/images/default_icon.png" /></a>
          </tr>

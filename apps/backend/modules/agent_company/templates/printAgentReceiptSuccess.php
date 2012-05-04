@@ -84,26 +84,25 @@ $wrap_content  = isset($wrap)?$wrap:false;
 
       <br /><br />
       <?php echo __('Phone Number') ?>: <br />
-      <?php echo $agent->getHeadPhoneNumber() ?><br />
-       <?php if($agent_order->getOrderDescription()){
-               $c = new Criteria();
-                $c->add(TransactionDescriptionPeer::ID,$agent_order->getOrderDescription());
-                $transaction_desc = TransactionDescriptionPeer::doSelectOne($c);
-                echo $transaction_desc->getTitle();
-           } ?>
+      <?php echo $agent->getHeadPhoneNumber() ?><br />       
       
     </td>
   </tr>
   <tr class="order_summary_header" bgcolor="#CCCCCC">
     <td><?php echo __('Date') ?></td>
-    <td><?php //echo __('Description') ?></td>
+    <td><?php echo __('Description') ?></td>
     <td><?php echo __('Quantity') ?></td>
     <td><?php echo __('Amount') ?></td>
   </tr>
   <tr>
     <td><?php echo $agent_order->getCreatedAt('m-d-Y') ?></td>
     <td>
-        
+      <?php if($agent_order->getOrderDescription()){
+               $c = new Criteria();
+                $c->add(TransactionDescriptionPeer::ID,$agent_order->getOrderDescription());
+                $transaction_desc = TransactionDescriptionPeer::doSelectOne($c);
+                echo $transaction_desc->getTitle();
+           } ?>  
     </td>
     <td>1<?php //echo $agent_order->getQuantity() ?></td>
     <td><?php echo format_number($subtotal = $agent_order->getAmount()) //($order->getProduct()->getPrice() - $order->getProduct()->getPrice()*.2) * $order->getQuantity()) ?></td>

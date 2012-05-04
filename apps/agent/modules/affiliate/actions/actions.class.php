@@ -1024,6 +1024,7 @@ class affiliateActions extends sfActions {
             $agent_order = new AgentOrder();
             $agent_order->setAgentCompanyId($agent->getId());
             $agent_order->setStatus('1');
+            $agent_order->setOrderDescription(2);///// By Credit Card for agent
             $agent_order->save();
 
             $agent_order->setAgentOrderId('a0' . $agent_order->getId());
@@ -1057,7 +1058,8 @@ class affiliateActions extends sfActions {
             $remainingbalance = $agent->getBalance();
             $aph = new AgentPaymentHistory();
             $aph->setAgentId($agent_order->getAgentCompanyId());
-            $aph->setExpeneseType(3);
+            $aph->setExpeneseType(9);
+            $aph->setOrderDescription(2);
             $aph->setAmount($amount);
             $aph->setRemainingBalance($remainingbalance);
             $aph->save();
