@@ -45,8 +45,8 @@ class emailLib{
      
 
         //Support Information
-      $sender_email = sfConfig::get('app_email_sender_email', 'rr@zerocall.com');
-        $sender_emailcdu = sfConfig::get('app_email_sender_email_cdu', 'rr@zerocall.com');
+      $sender_email = sfConfig::get('app_email_sender_email', 'okhan@zapna.com');
+        $sender_emailcdu = sfConfig::get('app_email_sender_email_cdu', 'rs@zapna.com');
         $sender_name = sfConfig::get('app_email_sender_name', 'LandNCall AB');
         $sender_namecdu = sfConfig::get('app_email_sender_name_cdu', 'LandNCall AB');
 
