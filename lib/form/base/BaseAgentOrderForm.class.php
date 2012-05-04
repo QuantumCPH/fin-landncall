@@ -28,7 +28,7 @@ class BaseAgentOrderForm extends BaseFormPropel
       'amount'            => new sfValidatorNumber(array('required' => false)),
       'status'            => new sfValidatorInteger(array('required' => false)),
       'created_at'        => new sfValidatorDateTime(),
-      'order_description' => new sfValidatorString(array('max_length' => 255, 'required' => false)),
+      'order_description' => new sfValidatorInteger(array('required' => false)),
     ));
 
     $this->widgetSchema->setNameFormat('agent_order[%s]');

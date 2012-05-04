@@ -1,5 +1,6 @@
 all:
-  main_url: 'http://flnc.zerocall.com/agent.php/'
-  customer_url: 'http://flnc.zerocall.com/b2c.php/'
-  admin_url: 'http://flnc.zerocall.com/backend.php/'  
+  #main_url: 'http://flnc.zerocall.com/agent.php/'
+  main_url: 'http://localhost/fin-landncall/web/agent_dev.php/'
+  customer_url: 'http://localhost/fin-landncall/web/b2c.php/'
+  admin_url: 'http://localhost/fin-landncall/web/backend.php/'  
   country_code: 358

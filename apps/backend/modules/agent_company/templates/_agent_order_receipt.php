@@ -91,7 +91,15 @@ $wrap_content  = isset($wrap)?$wrap:false;
   <tr> 
     <td><?php echo $createddate ?></td>
     <td>
-   <?php echo __('Agent Refill');?>
+   <?php //echo __('Agent Refill');?>
+        <td><?php 
+    if($description){
+                $c = new Criteria();
+                $c->add(TransactionDescriptionPeer::ID,$description);
+                $transaction_desc = TransactionDescriptionPeer::doSelectOne($c);
+                echo $transaction_desc->getTitle();
+            }
+    ?></td>
 	</td>
     <td>1</td>
     <td><?php echo format_number($subtotal=$transaction) //($order->getProduct()->getPrice() - $order->getProduct()->getPrice()*.2) * $order->getQuantity()) ?></td>

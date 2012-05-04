@@ -152,7 +152,7 @@
                     ?>
 
                     <?php 
-                     if($actionName=="selectCompany"){  
+                     if($actionName=="selectCompany" && $modulName=="agent_commission"){  
                        echo link_to(__('Agent Per Product'), 'agent_commission/selectCompany', array('class'=>'subSelect'));
                      }else{
                        echo link_to(__('Agent Per Product'), 'agent_commission/selectCompany'); 
@@ -168,16 +168,24 @@
 
                       <?php
                       if($actionName=="selectCompany" && $modulName=="agent_company"){
-                        echo link_to(__('Agent Company Refil'), 'agent_company/selectCompany', array('class'=>'subSelect'));
+                        echo link_to(__('Refil Agent Company'), 'agent_company/selectCompany', array('class'=>'subSelect'));
                       }else{
-                        echo link_to(__('Agent Company Refil'), 'agent_company/selectCompany');
-                      }?>
-                       <?php
+                        echo link_to(__('Refil Agent Company'), 'agent_company/selectCompany');
+                      }
+                  
+                      if($actionName=="chargeCompany" && $modulName=="agent_company"){
+                        echo link_to(__('Charge Agent Company'), 'agent_company/chargeCompany', array('class'=>'subSelect'));
+                      }else{
+                        echo link_to(__('Charge Agent Company'), 'agent_company/chargeCompany');
+                      }
+                     ?>
+                     <?php
                       if($actionName=="selectPCompany" && $modulName=="agent_company"){
-                        echo link_to(__('Agent Company Payment History'), 'agent_company/selectPCompany', array('class'=>'subSelect'));
+                        echo link_to(__('Payment History'), 'agent_company/agentCompanyPayment', array('class'=>'subSelect'));
                       }else{
-                        echo link_to(__('Agent Company Payment History'), 'agent_company/selectPCompany');
-                      }?>
+                        echo link_to(__('Payment History'), 'agent_company/agentCompanyPayment');
+                      }
+                      ?>
 
 
                 </div>
@@ -283,6 +291,13 @@
                         }
                         ?>
                         <a href="javascript:;" class="label"><b><?php echo __('General Setting') ?> </b></a>
+                        <?php 
+                        if($actionName=='index' && $modulName=="transactionDescription"){
+                          echo link_to(__('Transaction Description'), 'transactionDescription/index',array('class'=>'subSelect'));
+                        }else{
+                          echo link_to(__('Transaction Description'), 'transactionDescription/index'); 
+                        }
+                        ?>
                         <?php 
                         if($actionName=='list' && $modulName=="product"){
                           echo link_to(__('Products'), 'product/index',array('class'=>'subSelect'));

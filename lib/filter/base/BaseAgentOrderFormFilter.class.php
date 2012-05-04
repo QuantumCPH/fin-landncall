@@ -28,7 +28,7 @@ class BaseAgentOrderFormFilter extends BaseFormFilterPropel
       'amount'            => new sfValidatorSchemaFilter('text', new sfValidatorNumber(array('required' => false))),
       'status'            => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
       'created_at'        => new sfValidatorDateRange(array('required' => false, 'from_date' => new sfValidatorDate(array('required' => false)), 'to_date' => new sfValidatorDate(array('required' => false)))),
-      'order_description' => new sfValidatorPass(array('required' => false)),
+      'order_description' => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
     ));
 
     $this->widgetSchema->setNameFormat('agent_order_filters[%s]');
@@ -52,7 +52,7 @@ class BaseAgentOrderFormFilter extends BaseFormFilterPropel
       'amount'            => 'Number',
       'status'            => 'Number',
       'created_at'        => 'Date',
-      'order_description' => 'Text',
+      'order_description' => 'Number',
     );
   }
 }
