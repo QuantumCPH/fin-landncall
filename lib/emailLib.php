@@ -62,7 +62,7 @@ class emailLib{
             $email2->setReceipientName($recepient_agent_name);
             $email2->setReceipientEmail($recepient_agent_email);
             $email2->setAgentId($agent_company_id);
-             $email2->setEmailType('Finland Agnet refill via agent');
+             $email2->setEmailType('Finland Agent refill via agent');
             $email2->setMessage($message_body);
 
             $email2->save();
@@ -76,7 +76,7 @@ class emailLib{
             $email3->setReceipientName($sender_name);
             $email3->setReceipientEmail($sender_email);
             $email3->setAgentId($agent_company_id);
-            $email3->setEmailType('Finland Agnet refill via agent');
+            $email3->setEmailType('Finland Agent refill via agent');
             $email3->setMessage($message_body);
             $email3->save();
         endif;
@@ -88,7 +88,7 @@ class emailLib{
             $email4->setReceipientName($sender_namecdu);
             $email4->setReceipientEmail($sender_emailcdu);
             $email4->setAgentId($agent_company_id);
-            $email4->setEmailType('Finland Agnet refill via agent');
+            $email4->setEmailType('Finland Agent refill via agent');
             $email4->setMessage($message_body);
             $email4->save();
         endif;
@@ -140,8 +140,8 @@ class emailLib{
 
 
         //Support Information
-      $sender_email = sfConfig::get('app_email_sender_email', 'okhan@zapna.com');
-        $sender_emailcdu = sfConfig::get('app_email_sender_email_cdu', 'rs@zapna.com');
+      $sender_email = sfConfig::get('app_email_sender_email', 'rr@zerocall.com');
+        $sender_emailcdu = sfConfig::get('app_email_sender_email_cdu', 'rr@zerocall.com');
         $sender_name = sfConfig::get('app_email_sender_name', 'LandNCall AB');
         $sender_namecdu = sfConfig::get('app_email_sender_name_cdu', 'LandNCall AB');
 
@@ -157,7 +157,7 @@ class emailLib{
             $email2->setReceipientName($recepient_agent_name);
             $email2->setReceipientEmail($recepient_agent_email);
             $email2->setAgentId($agent_company_id);
-             $email2->setEmailType('Finland Agnet refill via admin');
+             $email2->setEmailType('Finland Agent refill via admin');
             $email2->setMessage($message_body);
 
             $email2->save();
@@ -171,7 +171,7 @@ class emailLib{
             $email3->setReceipientName($sender_name);
             $email3->setReceipientEmail($sender_email);
             $email3->setAgentId($agent_company_id);
-            $email3->setEmailType('Finland Agnet refill via admin');
+            $email3->setEmailType('Finland Agent refill via admin');
             $email3->setMessage($message_body);
             $email3->save();
         endif;
@@ -183,7 +183,7 @@ class emailLib{
             $email4->setReceipientName($sender_namecdu);
             $email4->setReceipientEmail($sender_emailcdu);
             $email4->setAgentId($agent_company_id);
-            $email4->setEmailType('Finland Agnet refill via admin');
+            $email4->setEmailType('Finland Agent refill via admin');
             $email4->setMessage($message_body);
             $email4->save();
         endif;
