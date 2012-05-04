@@ -98,7 +98,7 @@ $wrap_content  = isset($wrap)?$wrap:false;
                 $transaction_desc = TransactionDescriptionPeer::doSelectOne($c);
                 echo $transaction_desc->getTitle();
             }
-    ?>
+    ?></td>
         <td>1</td>
     <td><?php echo format_number($subtotal=$transaction) //($order->getProduct()->getPrice() - $order->getProduct()->getPrice()*.2) * $order->getQuantity()) ?></td>
   </tr>
