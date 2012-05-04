@@ -122,11 +122,13 @@ class emailLib{
         $agentamount=$agent_order->getAmount();
         $createddate=$agent_order->getCreatedAt('m-d-Y');
         $agentid=$agent_order->getAgentOrderId();
+        $order_des=$agent_order->getOrderDescription();
         sfContext::getInstance()->getConfiguration()->loadHelpers('Partial');
         $message_body = get_partial('agent_company/agent_order_receipt', array(
                 'order'=>$agentid,
                 'transaction'=>$agentamount,
-                  'createddate'=>$createddate,
+                'createddate'=>$createddate,
+                'description'=>$order_des,
                 'vat'=>$vat,
                 'agent_name'=>$recepient_agent_name,
                 'wrap'=>false,
