@@ -102,7 +102,7 @@ if(isset($_POST['startdate']) && isset($_POST['enddate'])){
 
             $uniqueId = $customer->getUniqueid();
 
-            $tilentaCallHistryResult = Telienta::callHistory($customer, $fromdate, $todate);
+            $tilentaCallHistryResult = Telienta::callHistory($customer, $fromdate. ' 00:00:00', $todate. ' 23:59:59');
 
             //$urlval = "https://mybilling.telinta.com/htdocs/zapna/zapna.pl?type=customer&action=get_xdrs&name=".$numbername."&tz=Europe/Stockholm&from_date=".$fromdate."&to_date=".$todate;
 //No records for the entered period of
