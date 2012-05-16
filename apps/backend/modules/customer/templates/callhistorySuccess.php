@@ -118,7 +118,7 @@ if(isset($_POST['startdate']) && isset($_POST['enddate'])){
 
 
                 <tr>
-                    <td><?php echo $xdr->connect_time; ?></td>
+                    <td><?php echo date("Y-m-d", strtotime($xdr->connect_time)); ?></td>
                     <td><?php echo $xdr->CLD; ?></td>
                     <td><?php  $callval=$xdr->charged_quantity;
 if($callval>3600){
