@@ -16,8 +16,7 @@
 			 <?php endif; ?>
              <div class='inline-error'><?php echo $error_mobile_number ?></div>
             </li>
-            
-             <?php
+                         <?php
             $error_extra_refill = false;
             if($form['extra_refill']->hasError())
             	$error_extra_refill = true;

@@ -80,7 +80,7 @@ if(isset($_POST['startdate']) && isset($_POST['enddate'])){
                 </tr>
         <?php
             $amount_total = 0;
-
+            $counters=0;
 
            // echo $fromdate;echo $todate;
 
@@ -102,7 +102,7 @@ if(isset($_POST['startdate']) && isset($_POST['enddate'])){
 
             $uniqueId = $customer->getUniqueid();
 
-            $tilentaCallHistryResult = Telienta::callHistory($customer, $fromdate, $todate);
+            $tilentaCallHistryResult = Telienta::callHistory($customer, $fromdate. ' 00:00:00', $todate. ' 23:59:59');
 
             //$urlval = "https://mybilling.telinta.com/htdocs/zapna/zapna.pl?type=customer&action=get_xdrs&name=".$numbername."&tz=Europe/Stockholm&from_date=".$fromdate."&to_date=".$todate;
 //No records for the entered period of
@@ -113,14 +113,32 @@ if(isset($_POST['startdate']) && isset($_POST['enddate'])){
 
 
 <?php
-                $counters++;
+      $counters++;
 ?>
 
 
                 <tr>
-                    <td><?php echo $xdr->connect_time; ?></td>
+                    <td><?php echo date("Y-m-d H:i:s", strtotime($xdr->connect_time)); ?></td>
                     <td><?php echo $xdr->CLD; ?></td>
-                    <td><?php  echo  date('i:s',$xdr->charged_quantity); ?></td>
+                    <td><?php  $callval=$xdr->charged_quantity;
+if($callval>3600){
+
+ $hval=number_format($callval/3600);
+
+  $rval=$callval%3600;
+
+$minute=date('i',$rval);
+  $second=date('s',$rval);
+
+  $minute=$minute+$hval*60;
+
+  echo $minute.":".$second;
+}else{
+
+
+echo  date('i:s',$callval);
+
+} ?></td>
                     <td><?php echo number_format($xdr->charged_amount / 4, 2); ?></td>
                     <td><?php echo number_format($xdr->charged_amount, 2);
                 $amount_total+= number_format($xdr->charged_amount, 2); ?> &euro;</td>
@@ -146,7 +164,7 @@ if(isset($_POST['startdate']) && isset($_POST['enddate'])){
 ?>
 
 
-<?php if (count($callRecords) == 0): ?>
+<?php if (count($tilentaCallHistryResult->xdr_list) == 0): ?>
                 <tr>
                     <td colspan="6"><p><?php echo __('There are currently no call records to show.') ?></p></td>
             </tr>

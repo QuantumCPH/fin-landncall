@@ -152,7 +152,7 @@
                     ?>
 
                     <?php 
-                     if($actionName=="selectCompany"){  
+                     if($actionName=="selectCompany" && $modulName=="agent_commission"){  
                        echo link_to(__('Agent Per Product'), 'agent_commission/selectCompany', array('class'=>'subSelect'));
                      }else{
                        echo link_to(__('Agent Per Product'), 'agent_commission/selectCompany'); 
@@ -165,6 +165,29 @@
                       }else{
                         echo link_to(__('Agent Commission Package'), 'agent_commission_package/index');
                       }?>
+
+                      <?php
+                      if($actionName=="selectCompany" && $modulName=="agent_company"){
+                        echo link_to(__('Refil Agent Company'), 'agent_company/selectCompany', array('class'=>'subSelect'));
+                      }else{
+                        echo link_to(__('Refil Agent Company'), 'agent_company/selectCompany');
+                      }
+                  
+                      if($actionName=="chargeCompany" && $modulName=="agent_company"){
+                        echo link_to(__('Charge Agent Company'), 'agent_company/chargeCompany', array('class'=>'subSelect'));
+                      }else{
+                        echo link_to(__('Charge Agent Company'), 'agent_company/chargeCompany');
+                      }
+                     ?>
+                     <?php
+                      if($actionName=="selectPCompany" && $modulName=="agent_company"){
+                        echo link_to(__('Payment History'), 'agent_company/agentCompanyPayment', array('class'=>'subSelect'));
+                      }else{
+                        echo link_to(__('Payment History'), 'agent_company/agentCompanyPayment');
+                      }
+                      ?>
+
+
                 </div>
             </li>
             <li>
@@ -183,18 +206,18 @@
                     }
                     ?>
                     <?php 
-                    if($actionName=='list' && $modulName=="faqs"){
-                        echo link_to(__('FAQ'), 'faqs/index', array('class'=>'subSelect'));
-                    }else{
-                        echo link_to(__('FAQ'), 'faqs/index');
-                    }
+//                    if($actionName=='list' && $modulName=="faqs"){
+//                        echo link_to(__('FAQ'), 'faqs/index', array('class'=>'subSelect'));
+//                    }else{
+//                        echo link_to(__('FAQ'), 'faqs/index');
+//                    }
                     ?>
                     <?php 
-                    if($actionName=='index' && $modulName=="userguide"){
-                        echo link_to(__('User Guide'), 'userguide/index', array('class'=>'subSelect'));
-                    }else{
-                        echo link_to(__('User Guide'), 'userguide/index');
-                    }?>
+//                    if($actionName=='index' && $modulName=="userguide"){
+//                        echo link_to(__('User Guide'), 'userguide/index', array('class'=>'subSelect'));
+//                    }else{
+//                        echo link_to(__('User Guide'), 'userguide/index');
+//                    }?>
 
                 </div>
             </li>
@@ -268,6 +291,13 @@
                         }
                         ?>
                         <a href="javascript:;" class="label"><b><?php echo __('General Setting') ?> </b></a>
+                        <?php 
+                        if($actionName=='index' && $modulName=="transactionDescription"){
+                          echo link_to(__('Transaction Description'), 'transactionDescription/index',array('class'=>'subSelect'));
+                        }else{
+                          echo link_to(__('Transaction Description'), 'transactionDescription/index'); 
+                        }
+                        ?>
                         <?php 
                         if($actionName=='list' && $modulName=="product"){
                           echo link_to(__('Products'), 'product/index',array('class'=>'subSelect'));

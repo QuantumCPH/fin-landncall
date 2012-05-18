@@ -16,7 +16,7 @@ require_once(sfConfig::get('sf_lib_dir') . '/smsCharacterReplacement.php');
  */
 class paymentsActions extends sfActions {
  private function getTargetUrl() {
-        return sfConfig::get('app_main_url');
+        return sfConfig::get('app_customer_url');
     }
     /**
      * Executes index action

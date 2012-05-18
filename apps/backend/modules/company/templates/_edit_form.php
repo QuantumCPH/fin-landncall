@@ -69,8 +69,8 @@
 
   <?php $value = object_input_tag($company, 'getPostCode', array (
   'size' => 80,
-   'minlength'=>2,
-   'maxlength'=>2,
+   'minlength'=>5,
+   'maxlength'=>5,
   'control_name' => 'company[post_code]',
 )); echo $value ? $value : '&nbsp;' ?><br><label id="companyPost"></label>
     </div>

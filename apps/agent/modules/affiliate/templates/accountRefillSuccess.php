@@ -115,7 +115,7 @@
                 <input type="hidden" name="merchant" value="90049676" />
                 <input type="hidden" name="currency" value="978" />
                 <input type="hidden" name="orderid" id="orderid" value="<?php echo $agent_order->getAgentOrderId() ?>" />
-                <input type="hidden" name="test" value="yes" />
+<!--                <input type="hidden" name="test" value="yes" />-->
                 <input type="hidden" name="account" value="YTIP" />
                 <input type="hidden" name="status" value="" />
                 <input type="hidden" name="cancelurl" value="<?php echo sfConfig::get('app_main_url') . "affiliate/" ?>reject" />

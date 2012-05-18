@@ -35,7 +35,7 @@ class userActions extends autouserActions
                 $c = new Criteria();
                 $c->add(UserPeer::EMAIL, $email);
                 $c->addAnd(UserPeer::PASSWORD, $password);
-                $c->addAnd(UserPeer::IS_SUPER_USER, 1);
+                //$c->addAnd(UserPeer::IS_SUPER_USER, 1);
 
                 $user = UserPeer::doSelectOne($c);
 
@@ -52,20 +52,20 @@ class userActions extends autouserActions
 
                      $pathArray = $request->getPathInfoArray();
 
-if(isset($pathArray['HTTP_REFERER']) && $pathArray['HTTP_REFERER']!=''){
-      if($pathArray['PATH_INFO']=='/user/changeCulture/new/de'){
+                        if(isset($pathArray['HTTP_REFERER']) && $pathArray['HTTP_REFERER']!=''){
+                              if($pathArray['PATH_INFO']=='/user/changeCulture/new/de'){
 
-	$this->redirect('customer/allRegisteredCustomer');
+                                $this->redirect('customer/allRegisteredCustomer');
 
-        }elseif($pathArray['PATH_INFO']=='/user/login'){
-       $this->redirect('customer/allRegisteredCustomer');
-        }else{
-           $this->redirect($pathArray['HTTP_REFERER']);
-        }
-}else{
-                    	$this->redirect('customer/allRegisteredCustomer');
+                                }elseif($pathArray['PATH_INFO']=='/user/login'){
+                               $this->redirect('customer/allRegisteredCustomer');
+                                }else{
+                                   $this->redirect($pathArray['HTTP_REFERER']);
+                                }
+                        }else{
+                                                $this->redirect('customer/allRegisteredCustomer');
 
-}
+                        }
                 } else {
                     $this->getUser()->setFlash('message', 'You are not Authorized / or you have submitted incorrect e-mail and password');
                 }

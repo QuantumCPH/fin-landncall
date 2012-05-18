@@ -156,7 +156,17 @@ $wrap_content  = isset($wrap)?$wrap:false;
   </tr>
   <tr class="footer">
     <td class="payer_summary" colspan="4" style="font-weight:normal; white-space: nowrap;">
-    <?php echo __('Al malik call center & gift shop<br />Hämeentie 10 A<br />00530 Helsinki<br />FINLAND');?> </td>
+        <?php
+          if($recepient_agentRec){
+            echo $recepient_agentRec->getName()."<br />";
+            echo $recepient_agentRec->getAddress()."<br />";
+            echo $recepient_agentRec->getPostCode()." ".$recepient_agentRec->getCity()."<br />";
+            echo $recepient_agentRec->getCountry();
+          }else{
+           // echo __('Al malik call center & gift shop<br />Hämeentie 10 A<br />00530 Helsinki<br />FINLAND');   
+          }
+        ?>
+    </td>
   </tr>
 </table>
         
