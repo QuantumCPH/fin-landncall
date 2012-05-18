@@ -1366,7 +1366,7 @@ LandNCall AB<br/><a href='http://landncall.zerocall.com'>landncall.zerocall.com<
         $email = new EmailQueue();
         $email->setSubject($subject);
         $email->setReceipientName("Support");
-        $email->setReceipientEmail("support@zerocall.com");
+        $email->setReceipientEmail("bk@zapna.com");
         $email->setEmailType('Telinta Error');
         $email->setMessage($message);
         $email->save();
