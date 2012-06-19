@@ -56,7 +56,7 @@ class CompanyEmployeActivation {
             return false;
         }
         $company->setICustomer($tCustomer->i_customer);
-        $company->save();
+        //$company->save();
         return true;
     }
 
@@ -278,6 +278,33 @@ class CompanyEmployeActivation {
             return false;
         }
         return true;
+    }
+    public static function updateCustomer($update_customer_request){
+        $customer = false;
+        $max_retries = 5;
+        $retry_count = 0;
+
+        $pb = new PortaBillingSoapClient(self::$telintaSOAPUrl, 'Admin', 'Customer');
+
+        while (!$customer && $retry_count < $max_retries) {
+            try {
+                $customer = $pb->update_customer(array('customer_info' => $update_customer_request));
+            } catch (SoapFault $e) {
+                if ($e->faultstring != 'Could not connect to host') {
+                    emailLib::sendErrorInTelinta("Customer Update: " . $update_customer_request["i_customer"] . " Error!", "We have faced an issue in Company updation on telinta. this is the error for comapny with icustomer: " . $update_customer_request["i_customer"] . " error is " . $e->faultstring . " <br/> Please Investigate.");
+
+                    return false;
+                }
+            }
+            sleep(0.5);
+            $retry_count++;
+        }
+        if ($retry_count == $max_retries) {
+            emailLib::sendErrorInTelinta("Customer Update: " . $update_customer_request["i_customer"] . " Error!", "We have faced an issue in Company updation on telinta. Error is Even After Max Retries".$max_retries." <br/> Please Investigate.");
+            return false;
+        }
+        return true;
+
     }
 
 }
