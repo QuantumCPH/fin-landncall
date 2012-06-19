@@ -38,8 +38,8 @@ class CompanyEmployeActivation {
                                 'iso_4217' => self::$currency,
                                 'i_parent' => self::$iParent,
                                 'i_customer_type' => 1,
-                                'opening_balance' => -(5000),
-                                'credit_limit' => null,
+                                'opening_balance' => 0,
+                                'credit_limit' => 5000,
                                 'dialing_rules' => array('ip' => '00'),
                                 'email' => 'okh@zapna.com'
                                 )));
