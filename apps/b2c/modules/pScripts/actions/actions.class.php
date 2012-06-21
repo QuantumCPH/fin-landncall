@@ -3030,7 +3030,47 @@ if(($caltype!="IC") && ($caltype!="hc")){
 
   }
 
+ public function executeAccountRefill(sfWebRequest $request) {
 
+        //call Culture Method For Get Current Set Culture - Against Feature# 6.1 --- 01/24/11 - Ahtsham
+
+
+
+        $ca = new Criteria();
+        $ca->add(AgentCompanyPeer::ID, $agent_company_id = $this->getUser()->getAttribute('agent_company_id', '', 'agentsession'));
+        $agent = AgentCompanyPeer::doSelectOne($ca);
+        $this->forward404Unless($agent);
+        $this->agent_company = $agent;
+
+        if (isset($_REQUEST['error'])) {
+
+
+            $agent_order_id = $request->getParameter('orderid');
+
+            $aoc = new Criteria();
+            $aoc->add(AgentOrderPeer::AGENT_ORDER_ID, $agent_order_id);
+            $agent_order = AgentOrderPeer::doSelectOne($aoc);
+
+            $this->getUser()->setFlash('message', $this->getContext()->getI18N()->__('Your Credit Card Information was not approved'));
+            $this->agent_order_id = $agent_order_id;
+            $this->agent_order = $agent_order;
+        } else {
+
+
+            $c = new Criteria();
+            $agent_order = new AgentOrder();
+            $agent_order->setAgentCompanyId($agent->getId());
+            $agent_order->setStatus('1');
+            $agent_order->setOrderDescription(2);///// By Credit Card for agent
+            $agent_order->save();
+
+            $agent_order->setAgentOrderId('a0' . $agent_order->getId());
+            $agent_order->save();
+
+            $this->agent_order = $agent_order;
+        }
+        return sfView::NONE;
+    }
  
 
 
