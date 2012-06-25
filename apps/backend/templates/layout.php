@@ -127,7 +127,26 @@
                          echo link_to(__('All Registered Customer'), 'customer/allRegisteredCustomer', array('class'=>'subSelect')); 
                      }else{
                          echo link_to(__('All Registered Customer'), 'customer/allRegisteredCustomer');
-                     }?>
+                     }
+
+                     if($actionName=="selectChargeCustomer"){
+                         echo link_to(__('Charge Customer'), 'customer/selectChargeCustomer', array('class'=>'subSelect'));
+                     }else{
+                         echo link_to(__('Charge Customer'), 'customer/selectChargeCustomer');
+                     }
+
+                     if($actionName=="selectRefillCustomer"){
+                         echo link_to(__('Refill'), 'customer/selectRefillCustomer', array('class'=>'subSelect'));
+                     }else{
+                         echo link_to(__('Refill'), 'customer/selectRefillCustomer');
+                     }
+
+                     if($actionName=="completePaymenthistory"){
+                         echo link_to(__('Payment History'), 'customer/completePaymenthistory', array('class'=>'subSelect'));
+                     }else{
+                         echo link_to(__('Payment History'), 'customer/completePaymenthistory');
+                     }
+                     ?>
                 </div>
             </li>
 
