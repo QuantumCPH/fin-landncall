@@ -1439,7 +1439,7 @@ LandNCall AB<br/><a href='http://landncall.zerocall.com'>landncall.zerocall.com<
             $email->setEmailType('LandnCall refill/charge via admin');
             $email->setMessage($message_body);
             $email->save();
-        }/*
+        }
         //----------------------------------------
 
         //------------------Sent the Email To Agent
@@ -1496,7 +1496,7 @@ LandNCall AB<br/><a href='http://landncall.zerocall.com'>landncall.zerocall.com<
             $email4->setMessage($message_body);
             $email4->save();
         endif;
-        //-----------------------------------------*/
+        //-----------------------------------------
     }
 }
 ?>
