@@ -33,7 +33,7 @@
         <div class="form-row">
             <label for="agent_commission_agent_company_id"><strong>Charge Amount</strong></label>
             <div class="content">
-                <input type="text" name="charge_amount"  class="required number" />  SEK
+                <input type="text" name="charge_amount"  class="required number" />  €
             </div>
         </div>
         <div class="form-row">

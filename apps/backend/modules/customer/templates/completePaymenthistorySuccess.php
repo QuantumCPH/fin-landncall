@@ -43,7 +43,7 @@
         <th  width="15%"  class="title"><?php echo __('Order Numer') ?></th>
         <th  width="20%" class="title"><?php echo __('Date &amp; Time') ?></th>
         <th  width="55%" class="title"><?php echo __('Description') ?></th>
-        <th width="10%" class="title"><?php echo __('Amount') ?>(SEK)</th>
+        <th width="10%" class="title"><?php echo __('Amount') ?>(€)</th>
     </tr>
 <?php 
     $amount_total = 0;
@@ -71,7 +71,7 @@
  <?php else: ?>
     <tr>
         <td align="right" colspan="3"><strong>Total</strong></td>
-         <td ><?php echo format_number($amount_total) ?> SEK</td>
+         <td ><?php echo format_number($amount_total) ?> €</td>
      </tr>	
 <?php endif; ?>
   </table>
