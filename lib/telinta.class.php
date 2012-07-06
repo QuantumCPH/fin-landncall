@@ -29,7 +29,7 @@ class Telienta {
 
     public static function ResgiterCustomer(Customer $customer, $OpeningBalance) {
         $pb = new PortaBillingSoapClient(self::$telintaSOAPUrl, 'Admin', 'Customer');
-        $uniqueid = "FLB2C" . $customer->getUniqueid();
+        $uniqueid = "FLB2C" . $customer->getId().$customer->getUniqueid();
         $tCustomer = false;
         $max_retries = 10;
         $retry_count = 0;
@@ -222,7 +222,7 @@ class Telienta {
                                 'password' => 'asdf1asd',
                                 'h323_password' => 'asdf1asd',
                                 'activation_date' => date('Y-m-d'),
-                                'batch_name' => "FLB2C" . $customer->getUniqueid(),
+                                'batch_name' => "FLB2C" . $customer->getId().$customer->getUniqueid(),
                                 'follow_me_enabled' => $followMeEnabled
                                 )));
             } catch (SoapFault $e) {

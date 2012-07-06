@@ -370,6 +370,13 @@
                         }else{
                           echo link_to(__('Edit B2B Credit Limit'), 'company/indexAll');
                         }
+           
+                        if($actionName=='deActivateCustomer' && $modulName=="customer"){
+                          echo link_to(__('DeActivat eCustomer'), 'customer/deActivateCustomer',array('class'=>'subSelect'));
+                        }else{
+                          echo link_to(__('DeActivat eCustomer'), 'customer/deActivateCustomer');
+                        }
+                        
                         ?>
                 </div>
             </li>
