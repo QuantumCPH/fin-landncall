@@ -3,3 +3,7 @@ all:
   customer_url: 'http://flnc.zerocall.com/b2c.php/'
   admin_url: 'http://flnc.zerocall.com/backend.php/'  
   country_code: 358
+  recipient_name_rs: Flnc-LandNCall
+  recipient_email_rs: rs@zapna.com
+  recipient_name_support: Flnc-LandNCall
+  recipient_email_support: support.tech@zerocall.com
