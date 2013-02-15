@@ -3072,6 +3072,10 @@ if(($caltype!="IC") && ($caltype!="hc")){
         return sfView::NONE;
     }
  
-
+public function executeFetchCustomerWithBalance(sfWebRequest $request){
+        $c = new Criteria();
+        $c->add(CustomerPeer::CUSTOMER_STATUS_ID,3);
+        $this->customers = CustomerPeer::doSelect($c);
+    }
 
 }
